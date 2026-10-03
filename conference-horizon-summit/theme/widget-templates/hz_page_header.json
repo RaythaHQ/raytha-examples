@@ -1,0 +1,25 @@
+{
+  "label": "Horizon: page header",
+  "fields": [
+    {
+      "developerName": "eyebrow",
+      "label": "Breadcrumb label",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "titleLine1",
+      "label": "Title line 1",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "titleLine2",
+      "label": "Title line 2 (gradient)",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "subtitle",
+      "label": "Subtitle",
+      "fieldType": "long_text"
+    }
+  ]
+}

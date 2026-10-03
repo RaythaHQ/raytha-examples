@@ -1,0 +1,37 @@
+{
+  "label": "Horizon: about + stats",
+  "fields": [
+    {
+      "developerName": "eyebrow",
+      "label": "Eyebrow",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "headline",
+      "label": "Headline",
+      "fieldType": "long_text"
+    },
+    {
+      "developerName": "body",
+      "label": "Body",
+      "fieldType": "long_text"
+    },
+    {
+      "developerName": "stats",
+      "label": "Stats",
+      "fieldType": "repeater",
+      "subFields": [
+        {
+          "developerName": "value",
+          "label": "Value",
+          "fieldType": "single_line_text"
+        },
+        {
+          "developerName": "label",
+          "label": "Label",
+          "fieldType": "single_line_text"
+        }
+      ]
+    }
+  ]
+}

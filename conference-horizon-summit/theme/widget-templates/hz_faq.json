@@ -1,0 +1,27 @@
+{
+  "label": "Horizon: FAQ group",
+  "fields": [
+    {
+      "developerName": "heading",
+      "label": "Group heading",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "items",
+      "label": "Questions",
+      "fieldType": "repeater",
+      "subFields": [
+        {
+          "developerName": "question",
+          "label": "Question",
+          "fieldType": "single_line_text"
+        },
+        {
+          "developerName": "answer",
+          "label": "Answer",
+          "fieldType": "wysiwyg"
+        }
+      ]
+    }
+  ]
+}

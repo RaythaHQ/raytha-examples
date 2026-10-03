@@ -1,0 +1,10 @@
+{
+  "label": "Horizon: rich text",
+  "fields": [
+    {
+      "developerName": "content",
+      "label": "Content",
+      "fieldType": "wysiwyg"
+    }
+  ]
+}

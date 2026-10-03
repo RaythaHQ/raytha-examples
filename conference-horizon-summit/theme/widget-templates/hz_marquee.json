@@ -1,0 +1,10 @@
+{
+  "label": "Horizon: topic marquee",
+  "fields": [
+    {
+      "developerName": "items",
+      "label": "Topics (comma separated)",
+      "fieldType": "long_text"
+    }
+  ]
+}

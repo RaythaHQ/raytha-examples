@@ -1,0 +1,42 @@
+{
+  "label": "Horizon: feature cards",
+  "fields": [
+    {
+      "developerName": "eyebrow",
+      "label": "Eyebrow",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "headline",
+      "label": "Headline",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "cards",
+      "label": "Cards",
+      "fieldType": "repeater",
+      "subFields": [
+        {
+          "developerName": "icon",
+          "label": "Bootstrap icon name",
+          "fieldType": "single_line_text"
+        },
+        {
+          "developerName": "color",
+          "label": "Color",
+          "fieldType": "color"
+        },
+        {
+          "developerName": "title",
+          "label": "Title",
+          "fieldType": "single_line_text"
+        },
+        {
+          "developerName": "text",
+          "label": "Text",
+          "fieldType": "wysiwyg"
+        }
+      ]
+    }
+  ]
+}

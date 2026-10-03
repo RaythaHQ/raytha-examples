@@ -1,0 +1,60 @@
+{
+  "label": "Horizon: hero",
+  "fields": [
+    {
+      "developerName": "eyebrow",
+      "label": "Eyebrow",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "titleLine1",
+      "label": "Title line 1",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "titleLine2",
+      "label": "Title line 2 (gradient)",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "subtitle",
+      "label": "Subtitle",
+      "fieldType": "long_text"
+    },
+    {
+      "developerName": "dateLabel",
+      "label": "Date label",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "locationLabel",
+      "label": "Location label",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "countdownTo",
+      "label": "Countdown target (ISO datetime with offset)",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "primaryText",
+      "label": "Primary button text",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "primaryUrl",
+      "label": "Primary button URL",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "secondaryText",
+      "label": "Secondary button text",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "secondaryUrl",
+      "label": "Secondary button URL",
+      "fieldType": "single_line_text"
+    }
+  ]
+}

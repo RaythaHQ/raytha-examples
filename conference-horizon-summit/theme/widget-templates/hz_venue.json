@@ -1,0 +1,37 @@
+{
+  "label": "Horizon: venue",
+  "fields": [
+    {
+      "developerName": "name",
+      "label": "Venue name",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "address",
+      "label": "Address",
+      "fieldType": "long_text"
+    },
+    {
+      "developerName": "body",
+      "label": "Body",
+      "fieldType": "wysiwyg"
+    },
+    {
+      "developerName": "facts",
+      "label": "Facts",
+      "fieldType": "repeater",
+      "subFields": [
+        {
+          "developerName": "label",
+          "label": "Label",
+          "fieldType": "single_line_text"
+        },
+        {
+          "developerName": "value",
+          "label": "Value",
+          "fieldType": "single_line_text"
+        }
+      ]
+    }
+  ]
+}
