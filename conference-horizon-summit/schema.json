@@ -1,0 +1,712 @@
+{
+  "schemaVersion": 1,
+  "contentTypes": [
+    {
+      "developerName": "news",
+      "labelPlural": "News",
+      "labelSingular": "News item",
+      "description": "Announcements",
+      "defaultRouteTemplate": "news/{PrimaryField}",
+      "primaryField": "title",
+      "fields": [
+        {
+          "developerName": "title",
+          "label": "Headline",
+          "description": "",
+          "fieldType": "single_line_text",
+          "isRequired": true,
+          "choices": [],
+          "relatedContentType": null,
+          "subFields": []
+        },
+        {
+          "developerName": "content",
+          "label": "Body",
+          "description": "",
+          "fieldType": "wysiwyg",
+          "isRequired": false,
+          "choices": [],
+          "relatedContentType": null,
+          "subFields": []
+        },
+        {
+          "developerName": "summary",
+          "label": "Summary",
+          "description": "",
+          "fieldType": "long_text",
+          "isRequired": false,
+          "choices": [],
+          "relatedContentType": null,
+          "subFields": []
+        },
+        {
+          "developerName": "published_on",
+          "label": "Published on",
+          "description": "",
+          "fieldType": "date",
+          "isRequired": false,
+          "choices": [],
+          "relatedContentType": null,
+          "subFields": []
+        },
+        {
+          "developerName": "category",
+          "label": "Category",
+          "description": "",
+          "fieldType": "dropdown",
+          "isRequired": false,
+          "choices": [
+            {
+              "developerName": "announcement",
+              "label": "Announcement",
+              "disabled": false
+            },
+            {
+              "developerName": "speakers",
+              "label": "Speakers",
+              "disabled": false
+            },
+            {
+              "developerName": "program",
+              "label": "Program",
+              "disabled": false
+            },
+            {
+              "developerName": "travel",
+              "label": "Travel",
+              "disabled": false
+            }
+          ],
+          "relatedContentType": null,
+          "subFields": []
+        }
+      ],
+      "views": [
+        {
+          "developerName": "news",
+          "label": "News",
+          "description": "",
+          "isPublished": true,
+          "routePath": "news",
+          "template": "hz_list_news",
+          "columns": [
+            "PrimaryField"
+          ],
+          "sort": [
+            {
+              "developerName": "published_on",
+              "direction": "asc"
+            }
+          ],
+          "filter": [],
+          "defaultNumberOfItemsPerPage": 24,
+          "maxNumberOfItemsPerPage": 1000,
+          "ignoreClientFilterAndSortQueryParams": false
+        }
+      ]
+    },
+    {
+      "developerName": "sessions",
+      "labelPlural": "Sessions",
+      "labelSingular": "Session",
+      "description": "Agenda sessions",
+      "defaultRouteTemplate": "sessions/{PrimaryField}",
+      "primaryField": "title",
+      "fields": [
+        {
+          "developerName": "title",
+          "label": "Title",
+          "description": "",
+          "fieldType": "single_line_text",
+          "isRequired": true,
+          "choices": [],
+          "relatedContentType": null,
+          "subFields": []
+        },
+        {
+          "developerName": "content",
+          "label": "Description",
+          "description": "",
+          "fieldType": "wysiwyg",
+          "isRequired": false,
+          "choices": [],
+          "relatedContentType": null,
+          "subFields": []
+        },
+        {
+          "developerName": "summary",
+          "label": "Summary",
+          "description": "",
+          "fieldType": "long_text",
+          "isRequired": false,
+          "choices": [],
+          "relatedContentType": null,
+          "subFields": []
+        },
+        {
+          "developerName": "speaker",
+          "label": "Speaker",
+          "description": "",
+          "fieldType": "one_to_one_relationship",
+          "isRequired": false,
+          "choices": [],
+          "relatedContentType": "speakers",
+          "subFields": []
+        },
+        {
+          "developerName": "cospeaker",
+          "label": "Second speaker",
+          "description": "",
+          "fieldType": "one_to_one_relationship",
+          "isRequired": false,
+          "choices": [],
+          "relatedContentType": "speakers",
+          "subFields": []
+        },
+        {
+          "developerName": "track",
+          "label": "Track",
+          "description": "",
+          "fieldType": "one_to_one_relationship",
+          "isRequired": false,
+          "choices": [],
+          "relatedContentType": "tracks",
+          "subFields": []
+        },
+        {
+          "developerName": "day",
+          "label": "Day",
+          "description": "",
+          "fieldType": "dropdown",
+          "isRequired": false,
+          "choices": [
+            {
+              "developerName": "day_1",
+              "label": "Day 1 · Tue Apr 13",
+              "disabled": false
+            },
+            {
+              "developerName": "day_2",
+              "label": "Day 2 · Wed Apr 14",
+              "disabled": false
+            },
+            {
+              "developerName": "day_3",
+              "label": "Day 3 · Thu Apr 15",
+              "disabled": false
+            }
+          ],
+          "relatedContentType": null,
+          "subFields": []
+        },
+        {
+          "developerName": "start_time",
+          "label": "Start time (24h, CT)",
+          "description": "",
+          "fieldType": "single_line_text",
+          "isRequired": false,
+          "choices": [],
+          "relatedContentType": null,
+          "subFields": []
+        },
+        {
+          "developerName": "end_time",
+          "label": "End time (24h, CT)",
+          "description": "",
+          "fieldType": "single_line_text",
+          "isRequired": false,
+          "choices": [],
+          "relatedContentType": null,
+          "subFields": []
+        },
+        {
+          "developerName": "room",
+          "label": "Room",
+          "description": "",
+          "fieldType": "dropdown",
+          "isRequired": false,
+          "choices": [
+            {
+              "developerName": "main_stage",
+              "label": "Main Stage",
+              "disabled": false
+            },
+            {
+              "developerName": "hall_a",
+              "label": "Hall A · Colorado",
+              "disabled": false
+            },
+            {
+              "developerName": "hall_b",
+              "label": "Hall B · Pecan",
+              "disabled": false
+            },
+            {
+              "developerName": "workshop_lab",
+              "label": "Workshop Lab",
+              "disabled": false
+            },
+            {
+              "developerName": "studio_5",
+              "label": "Studio 5",
+              "disabled": false
+            }
+          ],
+          "relatedContentType": null,
+          "subFields": []
+        },
+        {
+          "developerName": "format",
+          "label": "Format",
+          "description": "",
+          "fieldType": "dropdown",
+          "isRequired": false,
+          "choices": [
+            {
+              "developerName": "keynote",
+              "label": "Keynote",
+              "disabled": false
+            },
+            {
+              "developerName": "talk",
+              "label": "Talk",
+              "disabled": false
+            },
+            {
+              "developerName": "workshop",
+              "label": "Workshop",
+              "disabled": false
+            },
+            {
+              "developerName": "panel",
+              "label": "Panel",
+              "disabled": false
+            },
+            {
+              "developerName": "fireside",
+              "label": "Fireside chat",
+              "disabled": false
+            }
+          ],
+          "relatedContentType": null,
+          "subFields": []
+        },
+        {
+          "developerName": "level",
+          "label": "Level",
+          "description": "",
+          "fieldType": "dropdown",
+          "isRequired": false,
+          "choices": [
+            {
+              "developerName": "all_levels",
+              "label": "All levels",
+              "disabled": false
+            },
+            {
+              "developerName": "intermediate",
+              "label": "Intermediate",
+              "disabled": false
+            },
+            {
+              "developerName": "advanced",
+              "label": "Advanced",
+              "disabled": false
+            }
+          ],
+          "relatedContentType": null,
+          "subFields": []
+        },
+        {
+          "developerName": "sort_key",
+          "label": "Sort key (day*10000+hhmm)",
+          "description": "",
+          "fieldType": "number",
+          "isRequired": false,
+          "choices": [],
+          "relatedContentType": null,
+          "subFields": []
+        }
+      ],
+      "views": [
+        {
+          "developerName": "agenda",
+          "label": "Agenda",
+          "description": "",
+          "isPublished": true,
+          "routePath": "agenda",
+          "template": "hz_list_sessions",
+          "columns": [
+            "PrimaryField"
+          ],
+          "sort": [
+            {
+              "developerName": "sort_key",
+              "direction": "asc"
+            }
+          ],
+          "filter": [],
+          "defaultNumberOfItemsPerPage": 100,
+          "maxNumberOfItemsPerPage": 1000,
+          "ignoreClientFilterAndSortQueryParams": false
+        },
+        {
+          "developerName": "keynotes",
+          "label": "Keynotes",
+          "description": "",
+          "isPublished": true,
+          "routePath": "agenda/keynotes",
+          "template": "hz_list_sessions",
+          "columns": [
+            "PrimaryField"
+          ],
+          "sort": [
+            {
+              "developerName": "sort_key",
+              "direction": "asc"
+            }
+          ],
+          "filter": [
+            {
+              "id": "6f1c2a3e-8b4d-4c1a-9e2f-1a2b3c4d5e6f",
+              "parentId": null,
+              "type": "filter_condition",
+              "groupOperator": "and",
+              "field": "format",
+              "conditionOperator": "eq",
+              "value": "keynote"
+            }
+          ],
+          "defaultNumberOfItemsPerPage": 100,
+          "maxNumberOfItemsPerPage": 1000,
+          "ignoreClientFilterAndSortQueryParams": false
+        }
+      ]
+    },
+    {
+      "developerName": "speakers",
+      "labelPlural": "Speakers",
+      "labelSingular": "Speaker",
+      "description": "Conference speakers",
+      "defaultRouteTemplate": "speakers/{PrimaryField}",
+      "primaryField": "title",
+      "fields": [
+        {
+          "developerName": "title",
+          "label": "Name",
+          "description": "",
+          "fieldType": "single_line_text",
+          "isRequired": true,
+          "choices": [],
+          "relatedContentType": null,
+          "subFields": []
+        },
+        {
+          "developerName": "content",
+          "label": "Bio",
+          "description": "",
+          "fieldType": "wysiwyg",
+          "isRequired": false,
+          "choices": [],
+          "relatedContentType": null,
+          "subFields": []
+        },
+        {
+          "developerName": "job_title",
+          "label": "Job title",
+          "description": "",
+          "fieldType": "single_line_text",
+          "isRequired": false,
+          "choices": [],
+          "relatedContentType": null,
+          "subFields": []
+        },
+        {
+          "developerName": "company",
+          "label": "Company",
+          "description": "",
+          "fieldType": "single_line_text",
+          "isRequired": false,
+          "choices": [],
+          "relatedContentType": null,
+          "subFields": []
+        },
+        {
+          "developerName": "photo",
+          "label": "Photo",
+          "description": "",
+          "fieldType": "attachment",
+          "isRequired": false,
+          "choices": [],
+          "relatedContentType": null,
+          "subFields": []
+        },
+        {
+          "developerName": "location",
+          "label": "Based in",
+          "description": "",
+          "fieldType": "single_line_text",
+          "isRequired": false,
+          "choices": [],
+          "relatedContentType": null,
+          "subFields": []
+        },
+        {
+          "developerName": "featured",
+          "label": "Featured on home page",
+          "description": "",
+          "fieldType": "checkbox",
+          "isRequired": false,
+          "choices": [],
+          "relatedContentType": null,
+          "subFields": []
+        },
+        {
+          "developerName": "sort_order",
+          "label": "Sort order",
+          "description": "",
+          "fieldType": "number",
+          "isRequired": false,
+          "choices": [],
+          "relatedContentType": null,
+          "subFields": []
+        }
+      ],
+      "views": [
+        {
+          "developerName": "speakers",
+          "label": "Speakers",
+          "description": "",
+          "isPublished": true,
+          "routePath": "speakers",
+          "template": "hz_list_speakers",
+          "columns": [
+            "PrimaryField"
+          ],
+          "sort": [
+            {
+              "developerName": "sort_order",
+              "direction": "asc"
+            }
+          ],
+          "filter": [],
+          "defaultNumberOfItemsPerPage": 50,
+          "maxNumberOfItemsPerPage": 1000,
+          "ignoreClientFilterAndSortQueryParams": false
+        }
+      ]
+    },
+    {
+      "developerName": "sponsors",
+      "labelPlural": "Sponsors",
+      "labelSingular": "Sponsor",
+      "description": "Event sponsors",
+      "defaultRouteTemplate": "sponsors/{PrimaryField}",
+      "primaryField": "title",
+      "fields": [
+        {
+          "developerName": "title",
+          "label": "Name",
+          "description": "",
+          "fieldType": "single_line_text",
+          "isRequired": true,
+          "choices": [],
+          "relatedContentType": null,
+          "subFields": []
+        },
+        {
+          "developerName": "content",
+          "label": "About",
+          "description": "",
+          "fieldType": "wysiwyg",
+          "isRequired": false,
+          "choices": [],
+          "relatedContentType": null,
+          "subFields": []
+        },
+        {
+          "developerName": "summary",
+          "label": "One-liner",
+          "description": "",
+          "fieldType": "long_text",
+          "isRequired": false,
+          "choices": [],
+          "relatedContentType": null,
+          "subFields": []
+        },
+        {
+          "developerName": "tier",
+          "label": "Tier",
+          "description": "",
+          "fieldType": "dropdown",
+          "isRequired": false,
+          "choices": [
+            {
+              "developerName": "platinum",
+              "label": "Platinum",
+              "disabled": false
+            },
+            {
+              "developerName": "gold",
+              "label": "Gold",
+              "disabled": false
+            },
+            {
+              "developerName": "silver",
+              "label": "Silver",
+              "disabled": false
+            }
+          ],
+          "relatedContentType": null,
+          "subFields": []
+        },
+        {
+          "developerName": "logo",
+          "label": "Logo",
+          "description": "",
+          "fieldType": "attachment",
+          "isRequired": false,
+          "choices": [],
+          "relatedContentType": null,
+          "subFields": []
+        },
+        {
+          "developerName": "website",
+          "label": "Website",
+          "description": "",
+          "fieldType": "single_line_text",
+          "isRequired": false,
+          "choices": [],
+          "relatedContentType": null,
+          "subFields": []
+        },
+        {
+          "developerName": "sort_order",
+          "label": "Sort order",
+          "description": "",
+          "fieldType": "number",
+          "isRequired": false,
+          "choices": [],
+          "relatedContentType": null,
+          "subFields": []
+        }
+      ],
+      "views": [
+        {
+          "developerName": "sponsors",
+          "label": "Sponsors",
+          "description": "",
+          "isPublished": true,
+          "routePath": "sponsors",
+          "template": "hz_list_sponsors",
+          "columns": [
+            "PrimaryField"
+          ],
+          "sort": [
+            {
+              "developerName": "sort_order",
+              "direction": "asc"
+            }
+          ],
+          "filter": [],
+          "defaultNumberOfItemsPerPage": 100,
+          "maxNumberOfItemsPerPage": 1000,
+          "ignoreClientFilterAndSortQueryParams": false
+        }
+      ]
+    },
+    {
+      "developerName": "tracks",
+      "labelPlural": "Tracks",
+      "labelSingular": "Track",
+      "description": "Program tracks",
+      "defaultRouteTemplate": "tracks/{PrimaryField}",
+      "primaryField": "title",
+      "fields": [
+        {
+          "developerName": "title",
+          "label": "Title",
+          "description": "",
+          "fieldType": "single_line_text",
+          "isRequired": true,
+          "choices": [],
+          "relatedContentType": null,
+          "subFields": []
+        },
+        {
+          "developerName": "content",
+          "label": "Description",
+          "description": "",
+          "fieldType": "wysiwyg",
+          "isRequired": false,
+          "choices": [],
+          "relatedContentType": null,
+          "subFields": []
+        },
+        {
+          "developerName": "summary",
+          "label": "Summary",
+          "description": "",
+          "fieldType": "long_text",
+          "isRequired": false,
+          "choices": [],
+          "relatedContentType": null,
+          "subFields": []
+        },
+        {
+          "developerName": "color",
+          "label": "Color",
+          "description": "",
+          "fieldType": "color",
+          "isRequired": false,
+          "choices": [],
+          "relatedContentType": null,
+          "subFields": []
+        },
+        {
+          "developerName": "icon",
+          "label": "Icon (Bootstrap icon name)",
+          "description": "",
+          "fieldType": "single_line_text",
+          "isRequired": false,
+          "choices": [],
+          "relatedContentType": null,
+          "subFields": []
+        },
+        {
+          "developerName": "sort_order",
+          "label": "Sort order",
+          "description": "",
+          "fieldType": "number",
+          "isRequired": false,
+          "choices": [],
+          "relatedContentType": null,
+          "subFields": []
+        }
+      ],
+      "views": [
+        {
+          "developerName": "tracks",
+          "label": "Tracks",
+          "description": "",
+          "isPublished": true,
+          "routePath": "tracks",
+          "template": "hz_list_tracks",
+          "columns": [
+            "PrimaryField"
+          ],
+          "sort": [
+            {
+              "developerName": "sort_order",
+              "direction": "asc"
+            }
+          ],
+          "filter": [],
+          "defaultNumberOfItemsPerPage": 50,
+          "maxNumberOfItemsPerPage": 1000,
+          "ignoreClientFilterAndSortQueryParams": false
+        }
+      ]
+    }
+  ]
+}
