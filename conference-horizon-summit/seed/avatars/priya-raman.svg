@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" width="400" height="500" role="img" aria-label="Illustrated portrait of Priya Raman">
+<defs>
+<linearGradient id="bgpriyaraman" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset="1" stop-color="#a3e635"/></linearGradient>
+<radialGradient id="glowpriyaraman" cx=".5" cy=".38" r=".6"><stop offset="0" stop-color="#fff" stop-opacity=".35"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="400" height="500" fill="#0c0b1d"/>
+<rect width="400" height="500" fill="url(#bgpriyaraman)" opacity=".9"/>
+<rect width="400" height="500" fill="url(#glowpriyaraman)"/>
+<circle cx="330" cy="70" r="90" fill="#fff" opacity=".07"/><circle cx="40" cy="430" r="120" fill="#000" opacity=".12"/>
+<path d="M128 330c-18-80-10-150 10-180 16-26 38-40 62-40s48 14 62 40c22 32 28 100 10 180-10-40-14-80-16-120-14-30-34-46-56-50-22 6-44 22-56 52-2 40-6 78-16 118z" fill="#1d1a26"/>
+<path d="M70 500c6-96 60-150 130-150s124 54 130 150z" fill="#4c1d95"/>
+<path d="M176 300h48v58c-8 12-40 12-48 0z" fill="#a86f4c"/>
+<path d="M176 330c14 8 34 8 48 0v10c-14 8-34 8-48 0z" fill="#000" opacity=".12"/>
+<ellipse cx="200" cy="222" rx="60" ry="76" fill="#a86f4c"/>
+<ellipse cx="140" cy="228" rx="10" ry="16" fill="#a86f4c"/><ellipse cx="260" cy="228" rx="10" ry="16" fill="#a86f4c"/>
+
+<g fill="#1a1423"><ellipse cx="177" cy="211" rx="5" ry="6"/><ellipse cx="223" cy="211" rx="5" ry="6"/></g>
+<path d="M166 194q11-7 22 0M212 194q11-7 22 0" stroke="#1a1423" stroke-width="4" fill="none" stroke-linecap="round" opacity=".7"/>
+<path d="M200 220q-6 18 0 22" stroke="#000" stroke-opacity=".18" stroke-width="4" fill="none" stroke-linecap="round"/>
+<path d="M182 260q18 14 36 0" stroke="#5a2a2a" stroke-width="5" fill="none" stroke-linecap="round"/>
+<g fill="none" stroke="#0b0b14" stroke-width="5" opacity=".85"><rect x="160" y="196" width="34" height="26" rx="9"/><rect x="206" y="196" width="34" height="26" rx="9"/><path d="M194 208h12"/></g>
+</svg>

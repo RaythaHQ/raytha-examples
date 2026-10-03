@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" width="400" height="500" role="img" aria-label="Illustrated portrait of Hannah Lindqvist">
+<defs>
+<linearGradient id="bghannahlindqvist" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fb923c"/><stop offset="1" stop-color="#8b5cf6"/></linearGradient>
+<radialGradient id="glowhannahlindqvist" cx=".5" cy=".38" r=".6"><stop offset="0" stop-color="#fff" stop-opacity=".35"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="400" height="500" fill="#0c0b1d"/>
+<rect width="400" height="500" fill="url(#bghannahlindqvist)" opacity=".9"/>
+<rect width="400" height="500" fill="url(#glowhannahlindqvist)"/>
+<circle cx="330" cy="70" r="90" fill="#fff" opacity=".07"/><circle cx="40" cy="430" r="120" fill="#000" opacity=".12"/>
+<circle cx="200" cy="96" r="30" fill="#d9b26f"/>
+<path d="M70 500c6-96 60-150 130-150s124 54 130 150z" fill="#e2e8f0"/>
+<path d="M176 300h48v58c-8 12-40 12-48 0z" fill="#f5d0b5"/>
+<path d="M176 330c14 8 34 8 48 0v10c-14 8-34 8-48 0z" fill="#000" opacity=".12"/>
+<ellipse cx="200" cy="222" rx="60" ry="76" fill="#f5d0b5"/>
+<ellipse cx="140" cy="228" rx="10" ry="16" fill="#f5d0b5"/><ellipse cx="260" cy="228" rx="10" ry="16" fill="#f5d0b5"/>
+<path d="M140 205c0-62 30-96 60-96s62 30 62 92c-12-30-38-44-62-44-26 0-50 16-60 48z" fill="#d9b26f"/>
+<g fill="#1a1423"><ellipse cx="177" cy="211" rx="5" ry="6"/><ellipse cx="223" cy="211" rx="5" ry="6"/></g>
+<path d="M166 194q11-7 22 0M212 194q11-7 22 0" stroke="#1a1423" stroke-width="4" fill="none" stroke-linecap="round" opacity=".7"/>
+<path d="M200 220q-6 18 0 22" stroke="#000" stroke-opacity=".18" stroke-width="4" fill="none" stroke-linecap="round"/>
+<path d="M182 260q18 14 36 0" stroke="#5a2a2a" stroke-width="5" fill="none" stroke-linecap="round"/>
+
+</svg>
