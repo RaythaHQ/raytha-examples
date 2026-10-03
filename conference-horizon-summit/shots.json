@@ -1,0 +1,19 @@
+[
+  {"name": "01-home-hero-1440.png", "path": "/", "device": "desktop"},
+  {"name": "02-home-full-1440.png", "path": "/", "device": "desktop", "full_page": true},
+  {"name": "03-agenda-filtered-1440.png", "path": "/agenda?day=day_2&track=ai-data", "device": "desktop", "scroll": 400},
+  {"name": "04-agenda-day1-1440.png", "path": "/agenda?day=day_1", "device": "desktop", "full_page": true},
+  {"name": "05-speakers-1440.png", "path": "/speakers", "device": "desktop", "full_page": true},
+  {"name": "06-speaker-detail-1440.png", "path": "/speakers/hannah-lindqvist", "device": "desktop", "full_page": true},
+  {"name": "07-session-detail-1440.png", "path": "/sessions/retrieval-that-holds-up", "device": "desktop", "full_page": true},
+  {"name": "08-sponsors-1440.png", "path": "/sponsors", "device": "desktop", "full_page": true},
+  {"name": "09-venue-1440.png", "path": "/venue", "device": "desktop", "full_page": true},
+  {"name": "10-faq-1440.png", "path": "/faq", "device": "desktop", "full_page": true},
+  {"name": "11-search-1440.png", "path": "/search?q=design", "device": "desktop", "full_page": true},
+  {"name": "12-tracks-1440.png", "path": "/tracks", "device": "desktop", "full_page": true},
+  {"name": "13-attendee-hub-locked-1440.png", "path": "/attendee-hub", "device": "desktop"},
+  {"name": "14-attendee-hub-signed-in-1440.png", "path": "/attendee-hub", "device": "desktop", "full_page": true, "login": true},
+  {"name": "15-home-mobile-390.png", "path": "/", "device": "mobile"},
+  {"name": "16-agenda-mobile-390.png", "path": "/agenda?day=day_1", "device": "mobile", "scroll": 820},
+  {"name": "17-speaker-mobile-390.png", "path": "/speakers/maya-okafor", "device": "mobile"}
+]
