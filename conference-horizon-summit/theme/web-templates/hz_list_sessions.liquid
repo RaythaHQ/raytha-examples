@@ -1,0 +1,96 @@
+{% assign base = PathBase | append: "/agenda" %}
+{% assign qday = QueryParams.day %}
+{% assign qtrack = QueryParams.track %}
+{% unless qday == "day_1" or qday == "day_2" or qday == "day_3" %}{% assign qday = "" %}{% endunless %}
+{% assign tracks = get_content_items(ContentType="tracks", OrderBy="sort_order asc", PageSize=20) %}
+{% assign trackid = "" %}{% assign trackname = "" %}
+{% for t in tracks.Items %}{% assign tslug = t.RoutePath | remove: "tracks/" %}{% if tslug == qtrack %}{% assign trackid = t.Id %}{% assign trackname = t.PrimaryField %}{% endif %}{% endfor %}
+{% if trackid == "" %}{% assign qtrack = "" %}{% endif %}
+{% assign is_keynotes = false %}{% if Target.Label == "Keynotes" %}{% assign is_keynotes = true %}{% endif %}
+{% if qday != "" or qtrack != "" %}
+  {% capture flt %}{% if qday != "" %}day eq '{{ qday }}'{% endif %}{% if qday != "" and qtrack != "" %} and {% endif %}{% if qtrack != "" %}track eq '{{ trackid }}'{% endif %}{% if is_keynotes %} and format eq 'keynote'{% endif %}{% endcapture %}
+  {% assign res = get_content_items(ContentType="sessions", Filter=flt, OrderBy="sort_key asc", PageSize=100) %}
+  {% assign items = res.Items %}{% assign total = res.TotalCount %}
+{% else %}
+  {% assign items = Target.Items %}{% assign total = Target.TotalCount %}
+{% endif %}
+
+<section class="page-hero">
+  <div class="mesh"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div>
+  <div class="wrap">
+    <div class="crumbs"><a href="{{ PathBase }}/">Home</a><span>/</span><span>Agenda</span>{% if is_keynotes %}<span>/</span><span>Keynotes</span>{% endif %}</div>
+    <h1>{% if is_keynotes %}The <span class="grad-text">keynotes</span>{% else %}Three days.<br><span class="grad-text">Twenty sessions.</span>{% endif %}</h1>
+    <p class="lead-hz">April 13–15, 2027 at Mueller Commons, Austin. All times are Central Time. Filter by day or track, then add any session to your calendar.</p>
+  </div>
+</section>
+
+<section class="section-tight">
+  <div class="wrap">
+    <div class="filters reveal">
+      {% capture tq %}{% if qtrack != "" %}&track={{ qtrack }}{% endif %}{% endcapture %}
+      {% capture dq %}{% if qday != "" %}day={{ qday }}{% endif %}{% endcapture %}
+      {% if is_keynotes %}{% assign here = PathBase | append: "/agenda/keynotes" %}{% else %}{% assign here = base %}{% endif %}
+      <nav class="seg" aria-label="Filter by day">
+        <a href="{{ here }}?{{ tq | remove_first: '&' }}" class="{% if qday == '' %}on{% endif %}">All days</a>
+        <a href="{{ here }}?day=day_1{{ tq }}" class="{% if qday == 'day_1' %}on{% endif %}">Day 1 <small>TUE 13</small></a>
+        <a href="{{ here }}?day=day_2{{ tq }}" class="{% if qday == 'day_2' %}on{% endif %}">Day 2 <small>WED 14</small></a>
+        <a href="{{ here }}?day=day_3{{ tq }}" class="{% if qday == 'day_3' %}on{% endif %}">Day 3 <small>THU 15</small></a>
+      </nav>
+      <nav class="chips" aria-label="Filter by track">
+        <a class="chip {% if qtrack == '' and is_keynotes == false %}on{% endif %}" href="{{ base }}?{{ dq }}">All tracks</a>
+        {% for t in tracks.Items %}{% assign tslug = t.RoutePath | remove: "tracks/" %}
+        <a class="chip {% if tslug == qtrack %}on{% endif %}" style="--c:{{ t.PublishedContent.color }}" href="{{ here }}?{% if dq != '' %}{{ dq }}&{% endif %}track={{ tslug }}"><span class="dot" style="background:{{ t.PublishedContent.color }}"></span>{{ t.PrimaryField }}</a>
+        {% endfor %}
+        <a class="chip {% if is_keynotes %}on{% endif %}" style="--c:#ec4899" href="{{ PathBase }}/agenda/keynotes{% if dq != '' %}?{{ dq }}{% endif %}"><i class="bi bi-stars"></i> Keynotes only</a>
+      </nav>
+      <div class="mono muted" style="font-size:.82rem">{{ total }} session{% if total != 1 %}s{% endif %}{% if trackname != "" %} · {{ trackname }}{% endif %}{% if qday != "" %} · {{ qday | replace: "day_", "Day " }}{% endif %}</div>
+    </div>
+
+    {% if total == 0 %}
+      <div class="glass empty">No sessions match those filters. <a class="link-arrow" href="{{ base }}">Reset filters <i class="bi bi-arrow-right"></i></a></div>
+    {% endif %}
+
+    {% assign days = "day_1,day_2,day_3" | split: "," %}
+    {% for d in days %}
+      {% assign count = 0 %}
+      {% for s in items %}{% capture sd %}{{ s.PublishedContent.day }}{% endcapture %}{% if sd == d %}{% assign count = count | plus: 1 %}{% endif %}{% endfor %}
+      {% if count > 0 %}
+      <div class="day-block">
+        <div class="day-head">
+          <h2>{{ d | replace: "day_1", "Tuesday" | replace: "day_2", "Wednesday" | replace: "day_3", "Thursday" }}</h2>
+          <span class="mono">{{ d | replace: "day_1", "Day 1 · April 13" | replace: "day_2", "Day 2 · April 14" | replace: "day_3", "Day 3 · April 15" }} · {{ count }} sessions</span>
+        </div>
+        <div class="timeline">
+        {% for s in items %}{% capture sd %}{{ s.PublishedContent.day }}{% endcapture %}{% if sd == d %}
+          {% assign c = s.PublishedContent.track.PublishedContent.color | default: "#8b5cf6" %}
+          {% capture fmt %}{{ s.PublishedContent.format }}{% endcapture %}
+          <div class="slot reveal" style="--c:{{ c }}">
+            <div class="slot-time">{{ s.PublishedContent.start_time }}<span>– {{ s.PublishedContent.end_time }}</span></div>
+            <a class="session-card glass lift" href="{{ PathBase }}/{{ s.RoutePath }}">
+              <div>
+                <div class="session-tags">
+                  <span class="pill {% if fmt == 'keynote' %}fmt-keynote{% endif %}">{{ fmt | replace: "keynote", "Keynote" | replace: "talk", "Talk" | replace: "workshop", "Workshop" | replace: "panel", "Panel" | replace: "fireside", "Fireside chat" }}</span>
+                  <span class="pill"><span class="dot" style="background:{{ c }}"></span>{{ s.PublishedContent.track.PrimaryField }}</span>
+                </div>
+                <h3>{{ s.PrimaryField }}</h3>
+                <div class="who">
+                  {% assign sp = s.PublishedContent.speaker %}
+                  {% if sp.PublishedContent.photo %}<img src="{{ sp.PublishedContent.photo | attachment_redirect_url }}" alt="" loading="lazy">{% endif %}
+                  {% assign co = s.PublishedContent.cospeaker %}
+                  {% if co.PublishedContent.photo %}<img src="{{ co.PublishedContent.photo | attachment_redirect_url }}" alt="" loading="lazy" style="margin-left:-18px">{% endif %}
+                  <span><b>{{ sp.PrimaryField }}</b>{% if co.PrimaryField %} &amp; <b>{{ co.PrimaryField }}</b>{% endif %} · {{ sp.PublishedContent.company }}</span>
+                </div>
+              </div>
+              <div class="room">
+                <div><i class="bi bi-geo-alt-fill"></i> {{ s.PublishedContent.room | replace: "main_stage", "Main Stage" | replace: "hall_a", "Hall A · Colorado" | replace: "hall_b", "Hall B · Pecan" | replace: "workshop_lab", "Workshop Lab" | replace: "studio_5", "Studio 5" }}</div>
+                <div style="margin-top:6px;color:var(--dim)">{{ s.PublishedContent.level | replace: "all_levels", "All levels" | replace: "intermediate", "Intermediate" | replace: "advanced", "Advanced" }}</div>
+              </div>
+            </a>
+          </div>
+        {% endif %}{% endfor %}
+        </div>
+      </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>

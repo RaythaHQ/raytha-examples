@@ -1,0 +1,63 @@
+{% assign c = Target.PublishedContent.track.PublishedContent.color | default: "#8b5cf6" %}
+{% capture fmt %}{{ Target.PublishedContent.format }}{% endcapture %}
+{% assign sp = Target.PublishedContent.speaker %}
+{% assign co = Target.PublishedContent.cospeaker %}
+<section class="page-hero" style="--c:{{ c }}">
+  <div class="mesh"><div class="blob b1" style="background:radial-gradient(circle,{{ c }},transparent 65%)"></div><div class="blob b2"></div><div class="blob b4"></div></div>
+  <div class="wrap">
+    <div class="crumbs"><a href="{{ PathBase }}/">Home</a><span>/</span><a href="{{ PathBase }}/agenda">Agenda</a><span>/</span><a href="{{ PathBase }}/{{ Target.PublishedContent.track.RoutePath }}">{{ Target.PublishedContent.track.PrimaryField }}</a></div>
+    <div class="session-tags" style="margin-top:26px">
+      <span class="pill {% if fmt == 'keynote' %}fmt-keynote{% endif %}">{{ fmt | replace: "keynote", "Keynote" | replace: "talk", "Talk" | replace: "workshop", "Workshop" | replace: "panel", "Panel" | replace: "fireside", "Fireside chat" }}</span>
+      <a class="pill" href="{{ PathBase }}/{{ Target.PublishedContent.track.RoutePath }}"><span class="dot" style="background:{{ c }}"></span>{{ Target.PublishedContent.track.PrimaryField }}</a>
+      <span class="pill">{{ Target.PublishedContent.level | replace: "all_levels", "All levels" | replace: "intermediate", "Intermediate" | replace: "advanced", "Advanced" }}</span>
+    </div>
+    <h1 style="max-width:1000px;font-size:clamp(2.4rem,5.2vw,4.4rem)">{{ Target.PrimaryField }}</h1>
+    <p class="lead-hz">{{ Target.PublishedContent.summary }}</p>
+  </div>
+</section>
+<section class="section-tight">
+  <div class="wrap session-layout">
+    <div>
+      {% capture firstp %}<p>{{ Target.PublishedContent.summary }}</p>{% endcapture %}<div class="prose reveal">{{ Target.PublishedContent.content.Text | remove_first: firstp }}</div>
+      <h2 class="reveal" style="font-size:1.6rem;margin:56px 0 22px">Speaker{% if co.PrimaryField %}s{% endif %}</h2>
+      <div class="grid-2">
+        {% for person in (1..2) %}{% if forloop.first %}{% assign who = sp %}{% else %}{% assign who = co %}{% endif %}
+        {% if who.PrimaryField %}
+        <a class="glass lift speaker-mini reveal" href="{{ PathBase }}/{{ who.RoutePath }}">
+          {% if who.PublishedContent.photo %}<img src="{{ who.PublishedContent.photo | attachment_redirect_url }}" alt="">{% endif %}
+          <div><h3>{{ who.PrimaryField }}</h3><div class="muted" style="font-size:.9rem;line-height:1.4">{{ who.PublishedContent.job_title }}<br><span style="color:var(--ink)">{{ who.PublishedContent.company }}</span></div></div>
+          <i class="bi bi-arrow-up-right"></i>
+        </a>
+        {% endif %}{% endfor %}
+      </div>
+    </div>
+    <aside>
+      <div class="glass session-facts reveal">
+        <div class="fact"><span class="mono">When</span><strong>{{ Target.PublishedContent.day | replace: "day_1", "Tuesday, April 13" | replace: "day_2", "Wednesday, April 14" | replace: "day_3", "Thursday, April 15" }}</strong><span class="muted">{{ Target.PublishedContent.start_time }} – {{ Target.PublishedContent.end_time }} CT</span></div>
+        <div class="fact"><span class="mono">Where</span><strong>{{ Target.PublishedContent.room | replace: "main_stage", "Main Stage" | replace: "hall_a", "Hall A · Colorado" | replace: "hall_b", "Hall B · Pecan" | replace: "workshop_lab", "Workshop Lab" | replace: "studio_5", "Studio 5" }}</strong><span class="muted">Mueller Commons, Austin</span></div>
+        <div class="fact"><span class="mono">Track</span><strong><span class="dot" style="background:{{ c }};margin-right:8px"></span>{{ Target.PublishedContent.track.PrimaryField }}</strong></div>
+        <a class="btn-hz btn-primary-hz" style="width:100%;justify-content:center;margin-top:8px" href="{{ PathBase }}/calendar/session.ics?id={{ Target.Id }}"><i class="bi bi-calendar-plus"></i> Add to calendar</a>
+        <a class="btn-hz btn-ghost-hz" style="width:100%;justify-content:center;margin-top:10px" href="{{ PathBase }}/agenda?day={{ Target.PublishedContent.day }}">See the rest of the day</a>
+      </div>
+    </aside>
+  </div>
+</section>
+{% capture flt %}track eq '{{ Target.PublishedContent.track.Id }}'{% endcapture %}
+{% capture tid %}{{ Target.Id }}{% endcapture %}
+{% assign more = get_content_items(ContentType="sessions", Filter=flt, OrderBy="sort_key asc", PageSize=10) %}
+<section class="section-tight" style="border-top:1px solid var(--line)">
+  <div class="wrap">
+    <div class="section-head"><div><span class="eyebrow">More in this track</span><h2 style="font-size:clamp(1.8rem,3.4vw,2.8rem)">{{ Target.PublishedContent.track.PrimaryField }}</h2></div><a class="link-arrow" href="{{ PathBase }}/agenda?track={{ Target.PublishedContent.track.RoutePath | remove: 'tracks/' }}">Filter the agenda <i class="bi bi-arrow-right"></i></a></div>
+    <div class="grid-3">
+    {% assign shown = 0 %}
+    {% for s in more.Items %}{% capture oid %}{{ s.Id }}{% endcapture %}{% if oid != tid and shown < 3 %}{% assign shown = shown | plus: 1 %}
+      <a class="glass lift news-card reveal" style="min-height:220px" href="{{ PathBase }}/{{ s.RoutePath }}">
+        <span class="date">{{ s.PublishedContent.day | replace: "day_1", "TUE 13" | replace: "day_2", "WED 14" | replace: "day_3", "THU 15" }} · {{ s.PublishedContent.start_time }}</span>
+        <h3 style="font-family:var(--sans);font-weight:700;letter-spacing:-.02em">{{ s.PrimaryField }}</h3>
+        <p>{{ s.PublishedContent.speaker.PrimaryField }}</p>
+        <span class="link-arrow">View session <i class="bi bi-arrow-right"></i></span>
+      </a>
+    {% endif %}{% endfor %}
+    </div>
+  </div>
+</section>
