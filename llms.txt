@@ -1,0 +1,31 @@
+# Raytha examples
+
+> Complete websites built on Raytha (the free, open source .NET CMS) by an AI agent with the raytha CLI. Each example is a folder with the brief the agent got, the site as files (content model, Liquid theme, Raytha Functions, seed content, site pages, menus), and an idempotent build.sh that rebuilds it into any Raytha 2.x instance from RAYTHA_URL and RAYTHA_API_KEY. MIT licensed. All content is fictional.
+
+To rebuild an example: run Raytha (Railway template or `docker compose`), create an admin API key, install the CLI (`curl -fsSL https://raytha.com/cli/install.sh | sh`), set RAYTHA_URL and RAYTHA_API_KEY, then `cd <example> && DRY_RUN=1 bash build.sh && bash build.sh`. Requires jq.
+
+## Examples
+
+- [Horizon Summit 2027 (conference-horizon-summit)](https://github.com/RaythaHQ/raytha-examples/tree/main/conference-horizon-summit): conference site with 5 content types (speakers, sessions, tracks, sponsors, news), an agenda filtered by day and track via list views and query parameters, speaker and session pages, a tiered sponsor wall, 14 widget templates for site pages, 3 Raytha Functions (.ics downloads, JSON agenda feed), site search, and a members-only Attendee Hub gated by a user group
+- [Brief for Horizon Summit](https://github.com/RaythaHQ/raytha-examples/blob/main/conference-horizon-summit/brief.md): the only input the agent had
+
+## For agents building Raytha sites
+
+- [AGENTS.md](https://github.com/RaythaHQ/raytha-examples/blob/main/AGENTS.md): CLI output contract, work-from-files loop, dry-runs, `raytha check`, and pitfalls found in real builds (set list view templates explicitly after a schema import, absolute URLs in Functions come from the site's configured URL, prefer CDN assets in themes, dropdown values are objects in Liquid)
+- [skills/raytha-site-builder/SKILL.md](https://github.com/RaythaHQ/raytha-examples/blob/main/skills/raytha-site-builder/SKILL.md): skill for Cursor and Claude Code that builds a whole site from a brief
+- [templates/brief-template.md](https://github.com/RaythaHQ/raytha-examples/blob/main/templates/brief-template.md): fill-in brief format
+- [Official raytha CLI skill](https://github.com/RaythaHQ/raytha-cli/blob/main/skills/raytha/SKILL.md): command reference rules for agents
+
+## Scripts
+
+- [scripts/new-example.sh](https://github.com/RaythaHQ/raytha-examples/blob/main/scripts/new-example.sh): scaffold an example folder
+- [scripts/export-from-instance.sh](https://github.com/RaythaHQ/raytha-examples/blob/main/scripts/export-from-instance.sh): export theme, schema, functions, pages and menus from a running site
+- [scripts/capture-screenshots.py](https://github.com/RaythaHQ/raytha-examples/blob/main/scripts/capture-screenshots.py): Playwright screenshots from a shots.json
+- [scripts/scan-secrets.sh](https://github.com/RaythaHQ/raytha-examples/blob/main/scripts/scan-secrets.sh): pre-commit secret scan
+
+## Related
+
+- [Raytha](https://github.com/RaythaHQ/raytha): the CMS
+- [raytha CLI](https://github.com/RaythaHQ/raytha-cli): the command line tool
+- [Use cases on raytha.com](https://raytha.com/use-cases): write-ups of each example
+- [raytha.com llms.txt](https://raytha.com/llms.txt): documentation index

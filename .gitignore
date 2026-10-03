@@ -1,0 +1,28 @@
+# Secrets and local config: never commit these
+.env
+.env.*
+!.env.example
+*.key
+*api-key*
+*credentials*
+demo-users*
+secrets/
+
+# Local working files
+work/
+tmp/
+*.log
+.DS_Store
+Thumbs.db
+
+# Raw screenshot captures (curated images are linked from each example's screenshots/README.md)
+**/screenshots/*.png
+
+# Python
+__pycache__/
+.venv/
+*.pyc
+
+# Editors
+.vscode/
+.idea/
