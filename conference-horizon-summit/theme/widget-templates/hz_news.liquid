@@ -1,0 +1,17 @@
+{% assign n = widget.settings.count | default: 3 %}
+{% assign news = get_content_items(ContentType="news", OrderBy="published_on desc", PageSize=n) %}
+<section class="section" style="padding-top:40px">
+  <div class="wrap">
+    <div class="section-head reveal"><div><span class="eyebrow">{{ widget.settings.eyebrow }}</span><h2>{{ widget.settings.headline }}</h2></div><a class="link-arrow" href="{{ PathBase }}/news">All news <i class="bi bi-arrow-right"></i></a></div>
+    <div class="grid-3">
+      {% for item in news.Items %}
+      <a class="glass lift news-card reveal" href="{{ PathBase }}/{{ item.RoutePath }}" style="transition-delay:{{ forloop.index0 | times: 80 }}ms">
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:10px"><span class="pill">{{ item.PublishedContent.category | capitalize }}</span><span class="date">{{ item.PublishedContent.published_on | date: "%b %d" | upcase }}</span></div>
+        <h3>{{ item.PrimaryField }}</h3>
+        <p>{{ item.PublishedContent.summary }}</p>
+        <span class="link-arrow">Read <i class="bi bi-arrow-right"></i></span>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>

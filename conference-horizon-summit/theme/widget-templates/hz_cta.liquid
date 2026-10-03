@@ -1,0 +1,16 @@
+<section class="section" style="padding-top:20px">
+  <div class="wrap">
+    <div class="glass cta-band big reveal">
+      <div class="mesh" style="opacity:.9"><div class="blob b1" style="top:-20vw"></div><div class="blob b2" style="top:-15vw"></div><div class="blob b3" style="top:-5vw"></div></div>
+      <div>
+        <span class="eyebrow">{{ widget.settings.eyebrow }}</span>
+        <h2>{{ widget.settings.headline }}</h2>
+        <p class="muted" style="max-width:560px;margin:0">{{ widget.settings.body }}</p>
+      </div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        {% if widget.settings.primaryText %}<a class="btn-hz btn-primary-hz" href="{{ widget.settings.primaryUrl }}"><i class="bi bi-calendar-plus"></i> {{ widget.settings.primaryText }}</a>{% endif %}
+        {% if widget.settings.secondaryText %}<a class="btn-hz btn-ghost-hz" href="{{ widget.settings.secondaryUrl }}">{{ widget.settings.secondaryText }} <i class="bi bi-arrow-right"></i></a>{% endif %}
+      </div>
+    </div>
+  </div>
+</section>

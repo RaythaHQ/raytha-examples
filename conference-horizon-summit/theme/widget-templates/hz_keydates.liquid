@@ -1,0 +1,14 @@
+<section class="section" style="padding-top:40px">
+  <div class="wrap">
+    <div class="section-head reveal"><div><span class="eyebrow">{{ widget.settings.eyebrow }}</span><h2>{{ widget.settings.headline }}</h2></div></div>
+    <div class="dates-row">
+      {% for d in widget.settings.dates %}
+      <div class="date-card glass reveal {% if d.highlight %}hl{% endif %}" style="transition-delay:{{ forloop.index0 | times: 80 }}ms">
+        <span class="mono date-when">{{ d.date }}</span>
+        <h3>{{ d.title }}</h3>
+        <p>{{ d.text }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

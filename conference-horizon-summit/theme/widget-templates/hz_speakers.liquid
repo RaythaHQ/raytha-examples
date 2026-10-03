@@ -1,0 +1,19 @@
+{% assign n = widget.settings.count | default: 8 %}
+{% assign speakers = get_content_items(ContentType="speakers", Filter="featured eq 'true'", OrderBy="sort_order asc", PageSize=n) %}
+<section class="section" style="padding-top:40px">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div><span class="eyebrow">{{ widget.settings.eyebrow }}</span><h2>{{ widget.settings.headline }}</h2></div>
+      <div><p>{{ widget.settings.intro }}</p><a class="link-arrow" style="margin-top:14px" href="{{ PathBase }}/speakers">All speakers <i class="bi bi-arrow-right"></i></a></div>
+    </div>
+    <div class="speaker-grid">
+      {% for sp in speakers.Items %}
+      <a class="speaker-card reveal" href="{{ PathBase }}/{{ sp.RoutePath }}" style="transition-delay:{{ forloop.index0 | modulo: 4 | times: 80 }}ms">
+        {% if sp.PublishedContent.photo %}<img src="{{ sp.PublishedContent.photo.Value | attachment_redirect_url }}" alt="Portrait of {{ sp.PrimaryField }}">{% endif %}
+        <span class="arrow"><i class="bi bi-arrow-up-right"></i></span>
+        <div class="meta"><h3>{{ sp.PrimaryField }}</h3><div class="role">{{ sp.PublishedContent.job_title }}<br><b>{{ sp.PublishedContent.company }}</b></div></div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>

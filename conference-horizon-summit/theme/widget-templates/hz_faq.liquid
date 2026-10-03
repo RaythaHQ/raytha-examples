@@ -1,0 +1,13 @@
+<section class="faq-group">
+  <div class="wrap faq-grid">
+    <h2 class="reveal">{{ widget.settings.heading }}</h2>
+    <div>
+      {% for it in widget.settings.items %}
+      <details class="faq reveal" {% if forloop.first %}open{% endif %}>
+        <summary>{{ it.question }}<span class="plus"></span></summary>
+        <div class="faq-a prose">{{ it.answer }}</div>
+      </details>
+      {% endfor %}
+    </div>
+  </div>
+</section>

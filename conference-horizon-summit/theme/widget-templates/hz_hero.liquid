@@ -1,0 +1,38 @@
+<section class="hero-hz" {% if widget.html_id %}id="{{ widget.html_id }}"{% endif %}>
+  <div class="mesh hero-mesh"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div><div class="blob b4"></div></div>
+  <div class="horizon-arc" aria-hidden="true"><div class="sun"></div><div class="arc"></div></div>
+  <div class="wrap hero-inner">
+    <div class="hero-top reveal">
+      {% if widget.settings.eyebrow %}<span class="pill live"><span class="dot pulse"></span>{{ widget.settings.eyebrow }}</span>{% endif %}
+    </div>
+    <h1 class="hero-title">
+      <span class="line reveal">{{ widget.settings.titleLine1 }}</span>
+      {% assign t2 = widget.settings.titleLine2 | split: " " %}<span class="line reveal grad-text" style="transition-delay:.12s">{% for w in t2 %}{% if forloop.last and forloop.length > 1 %}<span class="yr">{{ w }}</span>{% else %}{{ w }} {% endif %}{% endfor %}</span>
+    </h1>
+    <div class="hero-bottom">
+      <div class="reveal" style="transition-delay:.24s">
+        {% if widget.settings.subtitle %}<p class="hero-sub">{{ widget.settings.subtitle }}</p>{% endif %}
+        <div class="hero-meta">
+          {% if widget.settings.dateLabel %}<span><i class="bi bi-calendar4-week"></i> {{ widget.settings.dateLabel }}</span>{% endif %}
+          {% if widget.settings.locationLabel %}<span><i class="bi bi-geo-alt"></i> {{ widget.settings.locationLabel }}</span>{% endif %}
+        </div>
+        <div class="hero-ctas">
+          {% if widget.settings.primaryText %}<a class="btn-hz btn-primary-hz" href="{{ widget.settings.primaryUrl }}">{{ widget.settings.primaryText }} <i class="bi bi-arrow-right"></i></a>{% endif %}
+          {% if widget.settings.secondaryText %}<a class="btn-hz btn-ghost-hz" href="{{ widget.settings.secondaryUrl }}"><i class="bi bi-calendar-plus"></i> {{ widget.settings.secondaryText }}</a>{% endif %}
+        </div>
+      </div>
+      {% if widget.settings.countdownTo %}
+      <div class="glass countdown reveal" style="transition-delay:.36s" data-countdown="{{ widget.settings.countdownTo }}">
+        <div class="mono cd-label">Doors open in</div>
+        <div class="cd-grid">
+          <div><b data-d>000</b><span>days</span></div>
+          <div><b data-h>00</b><span>hrs</span></div>
+          <div><b data-m>00</b><span>min</span></div>
+          <div><b data-s>00</b><span>sec</span></div>
+        </div>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+  <a class="scroll-cue" href="#program" aria-label="Scroll"><span></span></a>
+</section>

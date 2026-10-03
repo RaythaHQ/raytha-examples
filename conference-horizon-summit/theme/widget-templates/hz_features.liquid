@@ -1,0 +1,14 @@
+<section class="section-tight">
+  <div class="wrap">
+    {% if widget.settings.headline %}<div class="section-head reveal"><div><span class="eyebrow">{{ widget.settings.eyebrow }}</span><h2 style="font-size:clamp(1.8rem,3.4vw,2.8rem)">{{ widget.settings.headline }}</h2></div></div>{% endif %}
+    <div class="grid-3">
+      {% for c in widget.settings.cards %}
+      <div class="glass lift feature reveal" style="--c:{{ c.color | default: '#8b5cf6' }};transition-delay:{{ forloop.index0 | modulo: 3 | times: 80 }}ms">
+        <div class="ico"><i class="bi bi-{{ c.icon }}"></i></div>
+        <h3>{{ c.title }}</h3>
+        <div class="muted">{{ c.text }}</div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

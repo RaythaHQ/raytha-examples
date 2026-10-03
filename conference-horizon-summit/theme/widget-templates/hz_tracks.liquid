@@ -1,0 +1,16 @@
+{% assign tracks = get_content_items(ContentType="tracks", OrderBy="sort_order asc", PageSize=10) %}
+<section class="section" style="padding-top:40px">
+  <div class="wrap">
+    <div class="section-head reveal"><div><span class="eyebrow">{{ widget.settings.eyebrow }}</span><h2>{{ widget.settings.headline }}</h2></div><p>{{ widget.settings.intro }}</p></div>
+    <div class="track-tiles">
+      {% for t in tracks.Items %}
+      <a class="glass lift track-tile reveal" href="{{ PathBase }}/agenda?track={{ t.RoutePath | remove: 'tracks/' }}" style="--c:{{ t.PublishedContent.color }};transition-delay:{{ forloop.index0 | times: 60 }}ms">
+        <span class="track-ico"><i class="bi bi-{{ t.PublishedContent.icon }}"></i></span>
+        <h3>{{ t.PrimaryField }}</h3>
+        <p>{{ t.PublishedContent.summary }}</p>
+        <span class="link-arrow">Browse sessions <i class="bi bi-arrow-right"></i></span>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,6 @@
+{% assign topics = widget.settings.items | split: "," %}
+<section class="topic-marquee" aria-label="Topics">
+  <div class="marquee"><div class="marquee-track">
+    {% for r in (1..2) %}{% for t in topics %}<span class="topic">{{ t | strip }}</span><span class="star">✦</span>{% endfor %}{% endfor %}
+  </div></div>
+</section>

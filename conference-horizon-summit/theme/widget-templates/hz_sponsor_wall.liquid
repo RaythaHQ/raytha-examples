@@ -1,0 +1,14 @@
+{% assign sponsors = get_content_items(ContentType="sponsors", OrderBy="sort_order asc", PageSize=50) %}
+<section class="section" style="padding-top:40px">
+  <div class="wrap">
+    <div class="section-head reveal"><div><span class="eyebrow">{{ widget.settings.eyebrow }}</span><h2>{{ widget.settings.headline }}</h2></div><a class="link-arrow" href="{{ PathBase }}/sponsors">Meet the partners <i class="bi bi-arrow-right"></i></a></div>
+    {% assign tiers = "platinum,gold,silver" | split: "," %}
+    {% for tier in tiers %}
+      <div class="logo-wall {{ tier }} reveal" style="margin-bottom:22px">
+      {% for sp in sponsors.Items %}{% capture t %}{{ sp.PublishedContent.tier }}{% endcapture %}{% if t == tier %}
+        <a class="logo-cell" href="{{ PathBase }}/{{ sp.RoutePath }}"><img src="{{ sp.PublishedContent.logo.Value | attachment_redirect_url }}" alt="{{ sp.PrimaryField }}"><span class="lbl">{{ tier }}</span></a>
+      {% endif %}{% endfor %}
+      </div>
+    {% endfor %}
+  </div>
+</section>
