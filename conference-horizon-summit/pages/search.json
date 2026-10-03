@@ -1,0 +1,13 @@
+{
+ "header": [
+  {
+   "widgetType": "hz_page_header",
+   "settings": {
+    "eyebrow": "Search",
+    "titleLine1": "Find a",
+    "titleLine2": "session.",
+    "subtitle": "Search speakers, companies, sessions and news."
+   }
+  }
+ ]
+}

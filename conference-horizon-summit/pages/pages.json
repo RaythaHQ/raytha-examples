@@ -1,0 +1,37 @@
+[
+  {
+    "title": "Home",
+    "routePath": "home",
+    "template": "hz_home",
+    "sections": "pages/home.json",
+    "home": true
+  },
+  {
+    "title": "Venue & travel",
+    "routePath": "venue",
+    "template": "hz_page",
+    "sections": "pages/venue.json",
+    "home": false
+  },
+  {
+    "title": "FAQ",
+    "routePath": "faq",
+    "template": "hz_page",
+    "sections": "pages/faq.json",
+    "home": false
+  },
+  {
+    "title": "Attendee Hub",
+    "routePath": "attendee-hub",
+    "template": "hz_attendee_hub",
+    "sections": "pages/hub.json",
+    "home": false
+  },
+  {
+    "title": "Search",
+    "routePath": "search",
+    "template": "hz_search",
+    "sections": "pages/search.json",
+    "home": false
+  }
+]

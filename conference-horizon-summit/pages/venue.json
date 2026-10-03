@@ -1,0 +1,86 @@
+{
+ "header": [
+  {
+   "widgetType": "hz_page_header",
+   "settings": {
+    "eyebrow": "Venue & travel",
+    "titleLine1": "Meet us in",
+    "titleLine2": "East Austin.",
+    "subtitle": "Mueller Commons is a converted aircraft hangar ten minutes from downtown, with a main stage, two breakout halls, a workshop lab and a courtyard for the evening events."
+   }
+  }
+ ],
+ "main": [
+  {
+   "widgetType": "hz_venue",
+   "settings": {
+    "name": "Mueller Commons",
+    "address": "4550 Hangar Lane\nAustin, TX 78723",
+    "body": "<p>The venue is fully step-free, with quiet rooms on both floors, a parents' room, gender-neutral restrooms and live captioning on every stage.</p>",
+    "facts": [
+     {
+      "label": "From AUS airport",
+      "value": "20 min by car"
+     },
+     {
+      "label": "From downtown",
+      "value": "10 min \u00b7 Bus 20"
+     },
+     {
+      "label": "Main Stage",
+      "value": "1,400 seats"
+     },
+     {
+      "label": "Wi-Fi",
+      "value": "Details in Attendee Hub"
+     }
+    ]
+   }
+  },
+  {
+   "widgetType": "hz_features",
+   "settings": {
+    "eyebrow": "Travel",
+    "headline": "Getting here and getting around",
+    "cards": [
+     {
+      "icon": "airplane",
+      "color": "#22d3ee",
+      "title": "Flying in",
+      "text": "<p>Austin\u2013Bergstrom (AUS) has direct flights from 90+ cities. Rideshare to the venue takes about 20 minutes.</p>"
+     },
+     {
+      "icon": "building",
+      "color": "#8b5cf6",
+      "title": "Hotel block",
+      "text": "<p>Discounted rooms at two hotels within a ten-minute walk. Book by March 12, 2027 for the conference rate.</p>"
+     },
+     {
+      "icon": "bus-front",
+      "color": "#ec4899",
+      "title": "Transit",
+      "text": "<p>CapMetro route 20 stops outside. We run a free shuttle loop from downtown each morning and evening.</p>"
+     },
+     {
+      "icon": "bicycle",
+      "color": "#a3e635",
+      "title": "Bikes & scooters",
+      "text": "<p>Secure bike parking at the north entrance and a scooter corral on Hangar Lane.</p>"
+     },
+     {
+      "icon": "cup-hot",
+      "color": "#fb923c",
+      "title": "Food",
+      "text": "<p>Breakfast and lunch are included, with vegetarian, vegan, halal and gluten-free options marked on every station.</p>"
+     },
+     {
+      "icon": "moon-stars",
+      "color": "#f59e0b",
+      "title": "Evenings",
+      "text": "<p>Courtyard social on Day 1, a live music night on Day 2 (it is Austin), and a quiet closing dinner on Day 3.</p>"
+     }
+    ]
+   }
+  }
+ ]
+}

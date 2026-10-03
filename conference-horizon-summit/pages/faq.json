@@ -1,0 +1,71 @@
+{
+ "header": [
+  {
+   "widgetType": "hz_page_header",
+   "settings": {
+    "eyebrow": "FAQ",
+    "titleLine1": "Questions,",
+    "titleLine2": "answered.",
+    "subtitle": "Everything you need to know before April. Can't find it here? Email hello@horizonsummit.example."
+   }
+  }
+ ],
+ "main": [
+  {
+   "widgetType": "hz_faq",
+   "settings": {
+    "heading": "The event",
+    "items": [
+     {
+      "question": "When and where is Horizon Summit 2027?",
+      "answer": "<p>April 13\u201315, 2027 at Mueller Commons, 4550 Hangar Lane, Austin, Texas. Doors open at 7:30am each day.</p>"
+     },
+     {
+      "question": "Who is it for?",
+      "answer": "<p>Engineers, designers, product people and engineering leaders. Talks assume you build or run software for a living.</p>"
+     },
+     {
+      "question": "Will sessions be recorded?",
+      "answer": "<p>Yes. Recordings of every Main Stage and Hall session are posted to the Attendee Hub within 48 hours. Workshops are not recorded.</p>"
+     }
+    ]
+   }
+  },
+  {
+   "widgetType": "hz_faq",
+   "settings": {
+    "heading": "Attending",
+    "items": [
+     {
+      "question": "How do I get into the Attendee Hub?",
+      "answer": "<p>Sign in with the account linked to your badge. The Hub has the Wi-Fi details, workshop setup notes, the venue map and recordings.</p>"
+     },
+     {
+      "question": "How do workshop seats work?",
+      "answer": "<p>Workshops have 60 seats each. Seat allocation opens in the Attendee Hub on January 15, 2027.</p>"
+     },
+     {
+      "question": "Is there a code of conduct?",
+      "answer": "<p>Yes, and we enforce it. Our safety team is on site and reachable by phone throughout the event.</p>"
+     }
+    ]
+   }
+  },
+  {
+   "widgetType": "hz_faq",
+   "settings": {
+    "heading": "Accessibility & travel",
+    "items": [
+     {
+      "question": "Is the venue accessible?",
+      "answer": "<p>The venue is step-free throughout, with live captioning on every stage, reserved seating and quiet rooms on both floors.</p>"
+     },
+     {
+      "question": "Is there a hotel discount?",
+      "answer": "<p>Yes. See the <a href=\"/venue\">venue and travel page</a> for our two partner hotels. Book by March 12, 2027.</p>"
+     }
+    ]
+   }
+  }
+ ]
+}

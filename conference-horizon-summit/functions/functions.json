@@ -1,0 +1,23 @@
+[
+  {
+    "developerName": "agenda.json",
+    "name": "Agenda JSON feed",
+    "trigger": "http_request",
+    "file": "agenda.json.js",
+    "routePath": "calendar/agenda.json"
+  },
+  {
+    "developerName": "event.ics",
+    "name": "Event calendar (.ics)",
+    "trigger": "http_request",
+    "file": "event.ics.js",
+    "routePath": "calendar/horizon-summit-2027.ics"
+  },
+  {
+    "developerName": "session.ics",
+    "name": "Session calendar (.ics)",
+    "trigger": "http_request",
+    "file": "session.ics.js",
+    "routePath": "calendar/session.ics"
+  }
+]

@@ -1,0 +1,59 @@
+{
+ "header": [
+  {
+   "widgetType": "hz_page_header",
+   "settings": {
+    "eyebrow": "Attendee Hub",
+    "titleLine1": "Attendee",
+    "titleLine2": "Hub.",
+    "subtitle": "Everything you need on the day, in one place. For signed-in attendees only."
+   }
+  }
+ ],
+ "members": [
+  {
+   "widgetType": "hz_features",
+   "settings": {
+    "cards": [
+     {
+      "icon": "wifi",
+      "color": "#22d3ee",
+      "title": "Wi-Fi",
+      "text": "<p>Network <strong>Horizon-2027</strong><br>Password <strong>build-the-horizon</strong></p>"
+     },
+     {
+      "icon": "laptop",
+      "color": "#8b5cf6",
+      "title": "Workshop setup",
+      "text": "<p>Clone the starter repos and install the toolchain before you arrive. Setup notes: <code>git clone example.com/horizon/workshops</code></p>"
+     },
+     {
+      "icon": "map",
+      "color": "#ec4899",
+      "title": "Venue map",
+      "text": "<p>Main Stage on the ground floor, Halls A and B on level 1, Workshop Lab and Studio 5 at the north end.</p>"
+     },
+     {
+      "icon": "play-circle",
+      "color": "#fb923c",
+      "title": "Recordings",
+      "text": "<p>Session recordings appear here within 48 hours of each talk.</p>"
+     },
+     {
+      "icon": "telephone",
+      "color": "#a3e635",
+      "title": "Safety team",
+      "text": "<p>On site all three days. Call or text +1 (512) 555-0127 any time.</p>"
+     },
+     {
+      "icon": "calendar-check",
+      "color": "#f59e0b",
+      "title": "Your calendar",
+      "text": "<p>Every session page has an Add to calendar button that downloads an .ics file.</p>"
+     }
+    ]
+   }
+  }
+ ],
+ "public": []
+}

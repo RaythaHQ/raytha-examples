@@ -1,0 +1,131 @@
+{
+ "hero": [
+  {
+   "widgetType": "hz_hero",
+   "settings": {
+    "eyebrow": "April 13\u201315, 2027 \u00b7 Austin, Texas",
+    "titleLine1": "Horizon",
+    "titleLine2": "Summit \u201927",
+    "subtitle": "Three days with the engineers, designers and leaders building what comes next. Twenty sessions, five tracks, no vendor pitches.",
+    "dateLabel": "Apr 13\u201315, 2027",
+    "locationLabel": "Mueller Commons, Austin TX",
+    "countdownTo": "2027-04-13T09:00:00-05:00",
+    "primaryText": "Explore the agenda",
+    "primaryUrl": "/agenda",
+    "secondaryText": "Add to calendar",
+    "secondaryUrl": "/calendar/horizon-summit-2027.ics"
+   }
+  }
+ ],
+ "main": [
+  {
+   "widgetType": "hz_marquee",
+   "settings": {
+    "items": "AI agents in production, Platform engineering, Design systems, Supply chain security, Evaluation, Developer experience, Staff-plus careers, Incident response, Retrieval, Accessibility"
+   }
+  },
+  {
+   "widgetType": "hz_stats",
+   "settings": {
+    "eyebrow": "Why Horizon",
+    "headline": "A conference for people who ship, run and lead real software.",
+    "body": "Horizon Summit is practitioner-led and independent. Every talk is selected by a program committee of working engineers and designers, and every speaker builds the thing they are talking about.",
+    "stats": [
+     {
+      "value": "3",
+      "label": "days in Austin"
+     },
+     {
+      "value": "20",
+      "label": "curated sessions"
+     },
+     {
+      "value": "12",
+      "label": "speakers from 11 companies"
+     },
+     {
+      "value": "1,800",
+      "label": "attendees expected"
+     }
+    ]
+   }
+  },
+  {
+   "widgetType": "hz_speakers",
+   "settings": {
+    "eyebrow": "Featured speakers",
+    "headline": "Who\u2019s on stage",
+    "intro": "Researchers, staff engineers, founders and design leads, sharing what worked and what didn\u2019t.",
+    "count": 8
+   }
+  },
+  {
+   "widgetType": "hz_tracks",
+   "settings": {
+    "eyebrow": "Five tracks",
+    "headline": "Pick your path",
+    "intro": "Follow one track for three days, or move between them. Every session page links to the rest of its track."
+   }
+  },
+  {
+   "widgetType": "hz_keydates",
+   "settings": {
+    "eyebrow": "Key dates",
+    "headline": "On the way to April",
+    "dates": [
+     {
+      "date": "Sep 29, 2026",
+      "title": "Agenda live",
+      "text": "All twenty sessions published, with rooms and times.",
+      "highlight": false
+     },
+     {
+      "date": "Jan 15, 2027",
+      "title": "Workshop seats",
+      "text": "Workshop seat allocation opens for attendees in the Attendee Hub.",
+      "highlight": false
+     },
+     {
+      "date": "Mar 12, 2027",
+      "title": "Hotel block closes",
+      "text": "Last day for the discounted rate at our two partner hotels.",
+      "highlight": false
+     },
+     {
+      "date": "Apr 13, 2027",
+      "title": "Doors open",
+      "text": "Badge pickup from 7:30am. Opening keynote at 9:00am on the Main Stage.",
+      "highlight": true
+     }
+    ]
+   }
+  },
+  {
+   "widgetType": "hz_sponsor_wall",
+   "settings": {
+    "eyebrow": "Partners",
+    "headline": "Backed by teams we admire"
+   }
+  },
+  {
+   "widgetType": "hz_news",
+   "settings": {
+    "eyebrow": "Latest",
+    "headline": "News & announcements",
+    "count": 3
+   }
+  },
+  {
+   "widgetType": "hz_cta",
+   "settings": {
+    "eyebrow": "Save the date",
+    "headline": "See you in Austin.",
+    "body": "Put April 13\u201315 in your calendar now, then come back to build your schedule once workshop seats open.",
+    "primaryText": "Add to calendar",
+    "primaryUrl": "/calendar/horizon-summit-2027.ics",
+    "secondaryText": "Browse speakers",
+    "secondaryUrl": "/speakers"
+   }
+  }
+ ]
+}

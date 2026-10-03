@@ -1,0 +1,38 @@
+{
+  "developerName": "footer",
+  "label": "Footer",
+  "items": [
+    {
+      "label": "Agenda",
+      "link": "/agenda"
+    },
+    {
+      "label": "Keynotes",
+      "link": "/agenda/keynotes"
+    },
+    {
+      "label": "Speakers",
+      "link": "/speakers"
+    },
+    {
+      "label": "Tracks",
+      "link": "/tracks"
+    },
+    {
+      "label": "Sponsors",
+      "link": "/sponsors"
+    },
+    {
+      "label": "Venue & travel",
+      "link": "/venue"
+    },
+    {
+      "label": "FAQ",
+      "link": "/faq"
+    },
+    {
+      "label": "Search",
+      "link": "/search"
+    }
+  ]
+}

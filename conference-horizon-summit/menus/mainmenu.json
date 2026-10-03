@@ -1,0 +1,34 @@
+{
+  "developerName": "mainmenu",
+  "label": "Main menu",
+  "items": [
+    {
+      "label": "Agenda",
+      "link": "/agenda"
+    },
+    {
+      "label": "Speakers",
+      "link": "/speakers"
+    },
+    {
+      "label": "Tracks",
+      "link": "/tracks"
+    },
+    {
+      "label": "Sponsors",
+      "link": "/sponsors"
+    },
+    {
+      "label": "Venue",
+      "link": "/venue"
+    },
+    {
+      "label": "News",
+      "link": "/news"
+    },
+    {
+      "label": "FAQ",
+      "link": "/faq"
+    }
+  ]
+}
