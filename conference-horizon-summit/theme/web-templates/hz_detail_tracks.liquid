@@ -1,0 +1,34 @@
+{% assign c = Target.PublishedContent.color | default: "#8b5cf6" %}
+{% capture flt %}track eq '{{ Target.Id }}'{% endcapture %}
+{% assign talks = get_content_items(ContentType="sessions", Filter=flt, OrderBy="sort_key asc", PageSize=50) %}
+<section class="page-hero">
+  <div class="mesh"><div class="blob b1" style="background:radial-gradient(circle,{{ c }},transparent 65%)"></div><div class="blob b2"></div></div>
+  <div class="wrap">
+    <div class="crumbs"><a href="{{ PathBase }}/">Home</a><span>/</span><a href="{{ PathBase }}/tracks">Tracks</a><span>/</span><span>{{ Target.PrimaryField }}</span></div>
+    <span class="track-ico" style="--c:{{ c }};margin-top:28px;display:inline-grid"><i class="bi bi-{{ Target.PublishedContent.icon }}"></i></span>
+    <h1>{{ Target.PrimaryField }}</h1>
+    <p class="lead-hz">{{ Target.PublishedContent.summary }}</p>
+  </div>
+</section>
+<section class="section-tight">
+  <div class="wrap">
+    <div class="timeline">
+    {% for s in talks.Items %}
+      {% capture fmt %}{{ s.PublishedContent.format }}{% endcapture %}
+      {% assign sp = s.PublishedContent.speaker %}
+      <div class="slot reveal" style="--c:{{ c }}">
+        <div class="slot-time">{{ s.PublishedContent.day | replace: "day_1", "Tue 13" | replace: "day_2", "Wed 14" | replace: "day_3", "Thu 15" }}<span>{{ s.PublishedContent.start_time }} – {{ s.PublishedContent.end_time }}</span></div>
+        <a class="session-card glass lift" href="{{ PathBase }}/{{ s.RoutePath }}">
+          <div>
+            <div class="session-tags"><span class="pill {% if fmt == 'keynote' %}fmt-keynote{% endif %}">{{ fmt | replace: "keynote", "Keynote" | replace: "talk", "Talk" | replace: "workshop", "Workshop" | replace: "panel", "Panel" | replace: "fireside", "Fireside chat" }}</span></div>
+            <h3>{{ s.PrimaryField }}</h3>
+            <div class="who">{% if sp.PublishedContent.photo %}<img src="{{ sp.PublishedContent.photo | attachment_redirect_url }}" alt="">{% endif %}<span><b>{{ sp.PrimaryField }}</b> · {{ sp.PublishedContent.company }}</span></div>
+          </div>
+          <div class="room"><i class="bi bi-geo-alt-fill"></i> {{ s.PublishedContent.room | replace: "main_stage", "Main Stage" | replace: "hall_a", "Hall A · Colorado" | replace: "hall_b", "Hall B · Pecan" | replace: "workshop_lab", "Workshop Lab" | replace: "studio_5", "Studio 5" }}</div>
+        </a>
+      </div>
+    {% endfor %}
+    </div>
+    <a class="btn-hz btn-ghost-hz" style="margin-top:40px" href="{{ PathBase }}/agenda?track={{ Target.RoutePath | remove: 'tracks/' }}">Open in the agenda <i class="bi bi-arrow-right"></i></a>
+  </div>
+</section>

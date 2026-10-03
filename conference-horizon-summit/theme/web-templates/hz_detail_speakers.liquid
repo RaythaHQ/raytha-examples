@@ -1,0 +1,54 @@
+{% assign sid = Target.Id %}
+{% capture flt %}speaker eq '{{ sid }}' or cospeaker eq '{{ sid }}'{% endcapture %}
+{% assign talks = get_content_items(ContentType="sessions", Filter=flt, OrderBy="sort_key asc", PageSize=20) %}
+<section class="page-hero" style="padding-bottom:100px">
+  <div class="mesh"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div>
+  <div class="wrap">
+    <div class="crumbs"><a href="{{ PathBase }}/">Home</a><span>/</span><a href="{{ PathBase }}/speakers">Speakers</a><span>/</span><span>{{ Target.PrimaryField }}</span></div>
+    <div class="speaker-hero">
+      <div class="speaker-photo reveal">
+        {% if Target.PublishedContent.photo %}<img src="{{ Target.PublishedContent.photo.Value | attachment_redirect_url }}" alt="Portrait of {{ Target.PrimaryField }}">{% endif %}
+        <div class="ring"></div>
+      </div>
+      <div class="reveal">
+        <span class="eyebrow">Speaker · Horizon Summit 2027</span>
+        <h1 style="margin:.9rem 0 1rem">{{ Target.PrimaryField }}</h1>
+        <p class="speaker-role">{{ Target.PublishedContent.job_title }} <span class="muted">at</span> <span class="grad-text">{{ Target.PublishedContent.company }}</span></p>
+        <div class="session-tags" style="margin:18px 0 26px">
+          {% if Target.PublishedContent.location %}<span class="pill"><i class="bi bi-geo-alt"></i> {{ Target.PublishedContent.location }}</span>{% endif %}
+          <span class="pill"><i class="bi bi-mic"></i> {{ talks.TotalCount }} session{% if talks.TotalCount != 1 %}s{% endif %}</span>
+        </div>
+        <div class="prose">{{ Target.PublishedContent.content.Text }}</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section-tight">
+  <div class="wrap">
+    <div class="section-head"><div><span class="eyebrow">On the agenda</span><h2 style="font-size:clamp(1.8rem,3.4vw,2.8rem)">Sessions with {{ Target.PrimaryField | split: " " | first }}</h2></div></div>
+    <div class="timeline">
+    {% for s in talks.Items %}
+      {% assign c = s.PublishedContent.track.PublishedContent.color | default: "#8b5cf6" %}
+      {% capture fmt %}{{ s.PublishedContent.format }}{% endcapture %}
+      <div class="slot reveal" style="--c:{{ c }}">
+        <div class="slot-time">{{ s.PublishedContent.day | replace: "day_1", "Tue 13" | replace: "day_2", "Wed 14" | replace: "day_3", "Thu 15" }}<span>{{ s.PublishedContent.start_time }} – {{ s.PublishedContent.end_time }}</span></div>
+        <a class="session-card glass lift" href="{{ PathBase }}/{{ s.RoutePath }}">
+          <div>
+            <div class="session-tags">
+              <span class="pill {% if fmt == 'keynote' %}fmt-keynote{% endif %}">{{ fmt | replace: "keynote", "Keynote" | replace: "talk", "Talk" | replace: "workshop", "Workshop" | replace: "panel", "Panel" | replace: "fireside", "Fireside chat" }}</span>
+              <span class="pill"><span class="dot" style="background:{{ c }}"></span>{{ s.PublishedContent.track.PrimaryField }}</span>
+            </div>
+            <h3>{{ s.PrimaryField }}</h3>
+            <p class="muted" style="margin:0;font-size:.95rem">{{ s.PublishedContent.summary }}</p>
+          </div>
+          <div class="room"><i class="bi bi-geo-alt-fill"></i> {{ s.PublishedContent.room | replace: "main_stage", "Main Stage" | replace: "hall_a", "Hall A · Colorado" | replace: "hall_b", "Hall B · Pecan" | replace: "workshop_lab", "Workshop Lab" | replace: "studio_5", "Studio 5" }}</div>
+        </a>
+      </div>
+    {% endfor %}
+    </div>
+    <div style="margin-top:56px;display:flex;gap:12px;flex-wrap:wrap">
+      <a class="btn-hz btn-ghost-hz" href="{{ PathBase }}/speakers"><i class="bi bi-arrow-left" style="transform:none"></i> All speakers</a>
+      <a class="btn-hz btn-primary-hz" href="{{ PathBase }}/agenda">Full agenda <i class="bi bi-arrow-right"></i></a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,32 @@
+{% assign is_member = false %}
+{% for g in CurrentUser.UserGroups %}{% if g == "attendees" %}{% assign is_member = true %}{% endif %}{% endfor %}
+{% if CurrentUser.IsAdmin %}{% assign is_member = true %}{% endif %}
+{{ render_section("header", wrap=false) }}
+{% if is_member %}
+  <section class="section-tight" style="padding-bottom:0">
+    <div class="wrap">
+      <div class="glass member-bar reveal">
+        <span class="avatar-ring">{{ CurrentUser.FirstName | slice: 0 }}{{ CurrentUser.LastName | slice: 0 }}</span>
+        <div><div class="mono muted" style="font-size:.75rem;letter-spacing:.14em">SIGNED IN · ATTENDEES</div><strong style="font-size:1.15rem">Welcome back, {{ CurrentUser.FirstName }}.</strong></div>
+        <a class="btn-hz btn-ghost-hz" style="margin-left:auto" href="{{ PathBase }}/account/logout">Sign out</a>
+      </div>
+    </div>
+  </section>
+  {{ render_section("members", wrap=false) }}
+{% else %}
+  <section class="section-tight">
+    <div class="wrap">
+      <div class="glass locked reveal">
+        <div class="lock-ico"><i class="bi bi-shield-lock"></i></div>
+        <h2>This area is for attendees.</h2>
+        <p class="muted">The Attendee Hub has the Wi-Fi details, workshop setup notes, the venue map and session recordings. Sign in with the account linked to your badge to see it.</p>
+        <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:26px">
+          <a class="btn-hz btn-primary-hz" href="{{ PathBase }}/account/login?returnUrl={{ PathBase }}/attendee-hub">Sign in <i class="bi bi-arrow-right"></i></a>
+          <a class="btn-hz btn-ghost-hz" href="{{ PathBase }}/faq">Attendee FAQ</a>
+        </div>
+        {% if CurrentUser.IsAuthenticated %}<p class="mono muted" style="margin-top:22px;font-size:.8rem">You are signed in as {{ CurrentUser.EmailAddress }}, but this account is not in the attendees group yet.</p>{% endif %}
+      </div>
+    </div>
+  </section>
+  {{ render_section("public", wrap=false) }}
+{% endif %}

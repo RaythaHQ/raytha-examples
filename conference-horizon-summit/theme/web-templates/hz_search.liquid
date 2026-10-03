@@ -1,0 +1,58 @@
+{% assign q = QueryParams.q | strip | remove: "'" | remove: '"' | truncate: 60, "" %}
+{{ render_section("header", wrap=false) }}
+<section class="section-tight" style="padding-top:0">
+  <div class="wrap">
+    <form class="search-box glass reveal" action="{{ PathBase }}/search" method="get" role="search">
+      <i class="bi bi-search"></i>
+      <input type="search" name="q" value="{{ q | escape }}" placeholder="Search speakers, sessions, companies, news…" aria-label="Search" autofocus>
+      <button class="btn-hz btn-primary-hz" type="submit">Search</button>
+    </form>
+    {% if q != "" %}
+      {% capture f1 %}contains(title,'{{ q }}') or contains(summary,'{{ q }}'){% endcapture %}
+      {% capture f2 %}contains(title,'{{ q }}') or contains(company,'{{ q }}') or contains(job_title,'{{ q }}'){% endcapture %}
+      {% capture f3 %}contains(title,'{{ q }}') or contains(summary,'{{ q }}'){% endcapture %}
+      {% assign rs = get_content_items(ContentType="sessions", Filter=f1, OrderBy="sort_key asc", PageSize=30) %}
+      {% assign rp = get_content_items(ContentType="speakers", Filter=f2, OrderBy="sort_order asc", PageSize=30) %}
+      {% assign rn = get_content_items(ContentType="news", Filter=f3, PageSize=30) %}
+      {% assign total = rs.TotalCount | plus: rp.TotalCount | plus: rn.TotalCount %}
+      <p class="mono muted" style="margin:28px 0 8px">{{ total }} result{% if total != 1 %}s{% endif %} for “{{ q | escape }}”</p>
+      {% if rp.TotalCount > 0 %}
+        <h2 class="search-h">Speakers</h2>
+        <div class="grid-3">
+        {% for sp in rp.Items %}
+          <a class="glass lift speaker-mini" href="{{ PathBase }}/{{ sp.RoutePath }}">
+            {% if sp.PublishedContent.photo %}<img src="{{ sp.PublishedContent.photo.Value | attachment_redirect_url }}" alt="">{% endif %}
+            <div><h3>{{ sp.PrimaryField }}</h3><div class="muted" style="font-size:.88rem;line-height:1.4">{{ sp.PublishedContent.job_title }}<br><span style="color:var(--ink)">{{ sp.PublishedContent.company }}</span></div></div>
+          </a>
+        {% endfor %}
+        </div>
+      {% endif %}
+      {% if rs.TotalCount > 0 %}
+        <h2 class="search-h">Sessions</h2>
+        <div class="grid-2">
+        {% for s in rs.Items %}
+          <a class="glass lift news-card" style="min-height:0" href="{{ PathBase }}/{{ s.RoutePath }}">
+            <span class="date">{{ s.PublishedContent.day | replace: "day_1", "TUE 13" | replace: "day_2", "WED 14" | replace: "day_3", "THU 15" }} · {{ s.PublishedContent.start_time }} · {{ s.PublishedContent.track.PrimaryField }}</span>
+            <h3 style="font-family:var(--sans);font-weight:700;letter-spacing:-.02em;font-size:1.25rem">{{ s.PrimaryField }}</h3>
+            <p style="margin:0">{{ s.PublishedContent.speaker.PrimaryField }}</p>
+          </a>
+        {% endfor %}
+        </div>
+      {% endif %}
+      {% if rn.TotalCount > 0 %}
+        <h2 class="search-h">News</h2>
+        <div class="grid-2">
+        {% for n in rn.Items %}
+          <a class="glass lift news-card" style="min-height:0" href="{{ PathBase }}/{{ n.RoutePath }}"><span class="date">{{ n.PublishedContent.published_on | date: "%b %d, %Y" | upcase }}</span><h3 style="font-size:1.25rem">{{ n.PrimaryField }}</h3><p style="margin:0">{{ n.PublishedContent.summary }}</p></a>
+        {% endfor %}
+        </div>
+      {% endif %}
+      {% if total == 0 %}<div class="glass empty" style="margin-top:20px">Nothing matched. Try a speaker name, a company, or a topic like “security”.</div>{% endif %}
+    {% else %}
+      <div class="chips" style="margin-top:22px"><span class="mono muted" style="font-size:.8rem;align-self:center;margin-right:6px">TRY</span>
+        {% assign sugg = "evaluation,Kubernetes,design,security,Lumenstack,keynote" | split: "," %}
+        {% for s in sugg %}<a class="chip" href="{{ PathBase }}/search?q={{ s }}">{{ s }}</a>{% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</section>

@@ -1,0 +1,29 @@
+<section class="page-hero">
+  <div class="mesh"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div>
+  <div class="wrap">
+    <div class="crumbs"><a href="{{ PathBase }}/">Home</a><span>/</span><span>Sponsors</span></div>
+    <h1>Made possible<br><span class="grad-text">by our partners.</span></h1>
+    <p class="lead-hz">Horizon Summit is independent and practitioner-led. These companies help keep it that way, and none of them buy a slot on the agenda.</p>
+  </div>
+</section>
+<section class="section-tight">
+  <div class="wrap">
+    {% assign tiers = "platinum,gold,silver" | split: "," %}
+    {% for tier in tiers %}
+      <div class="tier-label reveal"><span class="gem" style="background:{% if tier == 'platinum' %}linear-gradient(135deg,#e0e7ff,#a78bfa){% elsif tier == 'gold' %}linear-gradient(135deg,#fde68a,#f59e0b){% else %}linear-gradient(135deg,#e5e7eb,#94a3b8){% endif %}"></span>{{ tier | capitalize }} partners</div>
+      <div class="logo-wall {{ tier }} reveal">
+      {% for sp in Target.Items %}{% capture t %}{{ sp.PublishedContent.tier }}{% endcapture %}{% if t == tier %}
+        <a class="logo-cell" href="{{ PathBase }}/{{ sp.RoutePath }}" title="{{ sp.PrimaryField }}">
+          <img src="{{ sp.PublishedContent.logo.Value | attachment_redirect_url }}" alt="{{ sp.PrimaryField }}">
+          <span class="lbl">{{ sp.PrimaryField }}</span>
+        </a>
+      {% endif %}{% endfor %}
+      </div>
+    {% endfor %}
+    <div class="glass cta-band reveal" style="margin-top:96px">
+      <div class="mesh" style="opacity:.8"><div class="blob b2" style="top:-20vw"></div><div class="blob b1" style="top:-10vw;left:40%"></div></div>
+      <div><span class="eyebrow">Partner with us</span><h2>Put your team in front of 1,800 builders.</h2><p class="muted" style="max-width:520px;margin:0">Expo booths, workshop hosting and community packages are available for 2027. The prospectus covers audience, pricing and dates.</p></div>
+      <a class="btn-hz btn-primary-hz" href="mailto:partners@horizonsummit.example?subject=Horizon%20Summit%202027%20sponsorship">Request the prospectus <i class="bi bi-arrow-right"></i></a>
+    </div>
+  </div>
+</section>
