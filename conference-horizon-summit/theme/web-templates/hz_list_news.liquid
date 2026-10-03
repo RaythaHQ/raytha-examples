@@ -1,0 +1,20 @@
+<section class="page-hero">
+  <div class="mesh"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div>
+  <div class="wrap">
+    <div class="crumbs"><a href="{{ PathBase }}/">Home</a><span>/</span><span>News</span></div>
+    <h1>News &amp;<br><span class="grad-text">announcements.</span></h1>
+    <p class="lead-hz">Speaker drops, program updates and travel notes on the way to April.</p>
+  </div>
+</section>
+<section class="section-tight">
+  <div class="wrap grid-2">
+    {% for n in Target.Items %}
+    <a class="glass lift news-card reveal" href="{{ PathBase }}/{{ n.RoutePath }}">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px"><span class="pill">{{ n.PublishedContent.category | capitalize }}</span><span class="date">{{ n.PublishedContent.published_on | date: "%b %d, %Y" | upcase }}</span></div>
+      <h3>{{ n.PrimaryField }}</h3>
+      <p>{{ n.PublishedContent.summary }}</p>
+      <span class="link-arrow">Read more <i class="bi bi-arrow-right"></i></span>
+    </a>
+    {% endfor %}
+  </div>
+</section>

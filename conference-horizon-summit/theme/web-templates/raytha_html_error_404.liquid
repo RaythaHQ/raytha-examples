@@ -1,0 +1,13 @@
+<section class="page-hero" style="min-height:80vh;display:flex;align-items:center;border:0">
+  <div class="mesh"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div>
+  <div class="wrap">
+    <span class="eyebrow">Error 404</span>
+    <h1 style="font-size:clamp(5rem,18vw,16rem);line-height:.85;margin:20px 0"><span class="grad-text">404</span></h1>
+    <p class="lead-hz">This page is past the horizon. It may have moved, or never existed.</p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:28px">
+      <a class="btn-hz btn-primary-hz" href="{{ PathBase }}/">Back to home <i class="bi bi-arrow-right"></i></a>
+      <a class="btn-hz btn-ghost-hz" href="{{ PathBase }}/agenda">See the agenda</a>
+    </div>
+    {% if Target.ErrorId %}<p class="mono muted" style="margin-top:24px;font-size:.8rem">Error id: {{ Target.ErrorId }}</p>{% endif %}
+  </div>
+</section>

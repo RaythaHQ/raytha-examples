@@ -1,0 +1,24 @@
+{% capture tier %}{{ Target.PublishedContent.tier }}{% endcapture %}
+<section class="page-hero">
+  <div class="mesh"><div class="blob b1"></div><div class="blob b2"></div></div>
+  <div class="wrap">
+    <div class="crumbs"><a href="{{ PathBase }}/">Home</a><span>/</span><a href="{{ PathBase }}/sponsors">Sponsors</a><span>/</span><span>{{ Target.PrimaryField }}</span></div>
+    <div class="sponsor-hero">
+      <div class="glass sponsor-logo reveal"><img src="{{ Target.PublishedContent.logo.Value | attachment_redirect_url }}" alt="{{ Target.PrimaryField }} logo"></div>
+      <div class="reveal">
+        <span class="pill">{{ tier | capitalize }} partner</span>
+        <h1 style="margin:1rem 0">{{ Target.PrimaryField }}</h1>
+        <p class="lead-hz">{{ Target.PublishedContent.summary }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section-tight">
+  <div class="wrap-narrow">
+    <div class="prose">{{ Target.PublishedContent.content.Text }}</div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:32px">
+      <a class="btn-hz btn-ghost-hz" href="{{ PathBase }}/sponsors">All sponsors</a>
+      {% if Target.PublishedContent.website %}<a class="btn-hz btn-primary-hz" href="{{ Target.PublishedContent.website }}" rel="nofollow noopener" target="_blank">Visit website <i class="bi bi-arrow-up-right"></i></a>{% endif %}
+    </div>
+  </div>
+</section>

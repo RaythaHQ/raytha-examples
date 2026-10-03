@@ -1,0 +1,24 @@
+<section class="page-hero">
+  <div class="mesh"><div class="blob b1"></div><div class="blob b4"></div><div class="blob b2"></div></div>
+  <div class="wrap">
+    <div class="crumbs"><a href="{{ PathBase }}/">Home</a><span>/</span><span>Tracks</span></div>
+    <h1>Five tracks,<br><span class="grad-text">one horizon.</span></h1>
+    <p class="lead-hz">Every session belongs to a track. Pick one and follow it for three days, or mix and match.</p>
+  </div>
+</section>
+<section class="section-tight">
+  <div class="wrap track-list">
+    {% for t in Target.Items %}
+    {% capture flt %}track eq '{{ t.Id }}'{% endcapture %}
+    {% assign n = get_content_items(ContentType="sessions", Filter=flt, PageSize=1) %}
+    <a class="track-row reveal" href="{{ PathBase }}/{{ t.RoutePath }}" style="--c:{{ t.PublishedContent.color }}">
+      <span class="track-num mono">0{{ forloop.index }}</span>
+      <span class="track-ico"><i class="bi bi-{{ t.PublishedContent.icon }}"></i></span>
+      <span class="track-name">{{ t.PrimaryField }}</span>
+      <span class="track-sum muted">{{ t.PublishedContent.summary }}</span>
+      <span class="pill">{{ n.TotalCount }} sessions</span>
+      <i class="bi bi-arrow-up-right track-go"></i>
+    </a>
+    {% endfor %}
+  </div>
+</section>

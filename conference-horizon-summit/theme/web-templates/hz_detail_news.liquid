@@ -1,0 +1,15 @@
+<section class="page-hero">
+  <div class="mesh"><div class="blob b1"></div><div class="blob b2"></div></div>
+  <div class="wrap-narrow">
+    <div class="crumbs"><a href="{{ PathBase }}/">Home</a><span>/</span><a href="{{ PathBase }}/news">News</a></div>
+    <div class="session-tags" style="margin-top:26px"><span class="pill">{{ Target.PublishedContent.category | capitalize }}</span><span class="pill mono">{{ Target.PublishedContent.published_on | date: "%B %d, %Y" }}</span></div>
+    <h1 style="font-size:clamp(2.2rem,4.8vw,3.8rem)">{{ Target.PrimaryField }}</h1>
+    <p class="lead-hz">{{ Target.PublishedContent.summary }}</p>
+  </div>
+</section>
+<section class="section-tight">
+  <div class="wrap-narrow">
+    <div class="prose">{{ Target.PublishedContent.content.Text }}</div>
+    <a class="btn-hz btn-ghost-hz" style="margin-top:32px" href="{{ PathBase }}/news">All news</a>
+  </div>
+</section>

@@ -1,0 +1,24 @@
+<section class="page-hero">
+  <div class="mesh"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b4"></div></div>
+  <div class="wrap">
+    <div class="crumbs"><a href="{{ PathBase }}/">Home</a><span>/</span><span>Speakers</span></div>
+    <h1>The people<br><span class="grad-text">on stage.</span></h1>
+    <p class="lead-hz">{{ Target.TotalCount }} engineers, designers, researchers and leaders who build the things they talk about. No vendor pitches.</p>
+  </div>
+</section>
+<section class="section-tight">
+  <div class="wrap">
+    <div class="speaker-grid">
+      {% for sp in Target.Items %}
+      <a class="speaker-card reveal" href="{{ PathBase }}/{{ sp.RoutePath }}" style="transition-delay:{{ forloop.index0 | modulo: 4 | times: 70 }}ms">
+        {% if sp.PublishedContent.photo %}<img src="{{ sp.PublishedContent.photo.Value | attachment_redirect_url }}" alt="Portrait of {{ sp.PrimaryField }}" loading="lazy">{% endif %}
+        <span class="arrow"><i class="bi bi-arrow-up-right"></i></span>
+        <div class="meta">
+          <h3>{{ sp.PrimaryField }}</h3>
+          <div class="role">{{ sp.PublishedContent.job_title }}<br><b>{{ sp.PublishedContent.company }}</b></div>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>

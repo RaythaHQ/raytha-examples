@@ -1,0 +1,12 @@
+<section class="page-hero" style="min-height:70vh;display:flex;align-items:center;border:0">
+  <div class="mesh"><div class="blob b1"></div><div class="blob b2"></div></div>
+  <div class="wrap">
+    <span class="eyebrow">Error 500</span>
+    <h1>Something <span class="grad-text">broke.</span></h1>
+    <p class="lead-hz">An unexpected error occurred. We have the details.</p>
+    {% if Target.ErrorId %}<p class="mono muted">Error id: {{ Target.ErrorId }}</p>{% endif %}
+    {% if Target.ErrorMessage %}<p class="mono muted">{{ Target.ErrorMessage }}</p>{% endif %}
+    {% if Target.IsDevelopmentMode %}<pre class="mono muted" style="white-space:pre-wrap;font-size:.75rem">{{ Target.StackTrace }}</pre>{% endif %}
+    <a class="btn-hz btn-primary-hz" style="margin-top:28px" href="{{ PathBase }}/">Back to home <i class="bi bi-arrow-right"></i></a>
+  </div>
+</section>
