@@ -1,0 +1,18 @@
+[
+  {"name": "01-home-hero-1440.png", "path": "/", "device": "desktop"},
+  {"name": "02-home-full-1440.png", "path": "/", "device": "desktop", "full_page": true},
+  {"name": "03-schedule-1440.png", "path": "/schedule", "device": "desktop", "full_page": true},
+  {"name": "04-story-1440.png", "path": "/story", "device": "desktop", "full_page": true},
+  {"name": "05-travel-1440.png", "path": "/travel", "device": "desktop", "full_page": true},
+  {"name": "06-things-to-do-1440.png", "path": "/things-to-do", "device": "desktop", "full_page": true},
+  {"name": "07-faq-1440.png", "path": "/faq", "device": "desktop", "full_page": true},
+  {"name": "08-registry-1440.png", "path": "/registry", "device": "desktop", "full_page": true},
+  {"name": "09-gallery-1440.png", "path": "/gallery", "device": "desktop", "full_page": true},
+  {"name": "10-rsvp-1440.png", "path": "/rsvp", "device": "desktop", "full_page": true},
+  {"name": "11-thanks-1440.png", "path": "/rsvp/thanks?a=yes&name=Sam", "device": "desktop"},
+  {"name": "12-guests-1440.png", "path": "/guests", "device": "desktop", "full_page": true, "login": true},
+  {"name": "13-event-1440.png", "path": "/schedule/ceremony", "device": "desktop", "full_page": true},
+  {"name": "14-home-mobile-390.png", "path": "/", "device": "mobile"},
+  {"name": "15-schedule-mobile-390.png", "path": "/schedule", "device": "mobile"},
+  {"name": "16-rsvp-mobile-390.png", "path": "/rsvp", "device": "mobile", "full_page": true}
+]

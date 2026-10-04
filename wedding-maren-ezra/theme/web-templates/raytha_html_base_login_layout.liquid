@@ -1,0 +1,7 @@
+<section class="section" style="padding-top:70px"><div class="wrap fgrid" style="grid-template-columns:1fr 1fr;align-items:center">
+  <div><span class="label t">Guests</span><h1 style="font-size:clamp(3rem,6vw,4.8rem);margin:12px 0 18px">Welcome <em>back</em></h1>
+    <p style="font-size:1.12rem;color:var(--ink2);max-width:480px">Sign in with the email address your invitation went to and the password on your save-the-date card. Guests can see shuttle times, day-of phone numbers, the after-party and the shared photo album.</p>
+    <p style="margin-top:24px" class="muted">No sign-in needed to RSVP. <a href="{{ PathBase }}/rsvp" style="color:var(--terra)">Go straight to the RSVP form</a>.</p></div>
+  <div class="form login">{% renderbody %}</div>
+</div></section>
+<style>.login label{display:block;font-weight:600;font-size:.94rem;margin:0 0 6px}.login input[type=email],.login input[type=password],.login input[type=text]{font:inherit;width:100%;padding:.85rem 1rem;border:1px solid var(--line2);border-radius:14px;background:var(--paper);margin-bottom:18px;outline:0}.login input:focus{border-color:var(--terra);box-shadow:0 0 0 4px rgba(184,88,58,.14)}.login .btn{border:0}@media(max-width:860px){.fgrid[style]{grid-template-columns:1fr!important}}</style>

@@ -1,0 +1,21 @@
+{%- assign p = Target.PublishedContent -%}
+{%- assign is_guest = false -%}{%- for g in CurrentUser.UserGroups -%}{%- if g == "guests" -%}{%- assign is_guest = true -%}{%- endif -%}{%- endfor -%}
+{%- capture go %}{{ p.guests_only | downcase }}{% endcapture -%}{%- capture d %}{{ p.day }}{% endcapture -%}
+{%- case d -%}{%- when "friday" -%}{%- assign dl = "Friday, June 11, 2027" -%}{%- when "sunday" -%}{%- assign dl = "Sunday, June 13, 2027" -%}{%- else -%}{%- assign dl = "Saturday, June 12, 2027" -%}{%- endcase -%}
+{%- if go == "true" and is_guest == false -%}
+<section class="phead"><div class="wrap"><div class="crumbs"><a href="{{ PathBase }}/">Home</a><span>/</span><a href="{{ PathBase }}/schedule">Schedule</a></div><h1>Guests <em>only</em></h1></div></section>
+<section class="section" style="padding-top:20px"><div class="wrap"><div class="gate"><i class="bi bi-lock big"></i><h2 style="font-size:2.4rem;margin:12px 0">Sign in to see this event</h2><p class="muted">The details are on the guest page for signed-in guests.</p><a class="btn btn-t" href="{{ PathBase }}/account/login?returnUrl=/{{ Target.RoutePath }}">Guest sign in</a></div></div></section>
+{%- else -%}
+<section class="phead"><div class="wrap"><div class="crumbs"><a href="{{ PathBase }}/">Home</a><span>/</span><a href="{{ PathBase }}/schedule">Schedule</a><span>/</span><span>{{ Target.PrimaryField }}</span></div>
+  <span class="label t" style="display:block;margin-top:24px">{{ dl }} · {{ p.time_label }}</span><h1>{{ Target.PrimaryField }}</h1><p>{{ p.summary }}</p></div></section>
+<section class="section" style="padding-top:20px"><div class="narrow">
+  <div class="facts" style="grid-template-columns:repeat(3,1fr)">
+    <div><span class="label">Where</span><b>{{ p.venue }}</b><span class="muted" style="font-size:.88rem">{{ p.address }}</span></div>
+    <div><span class="label">When</span><b>{{ p.time_label }}</b><span class="muted" style="font-size:.88rem">{{ dl }}</span></div>
+    <div><span class="label">Wear</span><b>{{ p.dress_code }}</b><a class="muted" style="font-size:.88rem" href="{{ PathBase }}/faq#attire">What does that mean?</a></div>
+  </div>
+  <div class="prose" style="font-size:1.1rem">{{ p.details }}</div>
+  <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:30px">{% if go != "true" %}<a class="btn btn-t" href="{{ PathBase }}/calendar.ics?id={{ Target.Id }}"><i class="bi bi-calendar-plus"></i> Add to calendar</a>{% endif %}<a class="btn btn-line" href="{{ p.map_url }}" target="_blank" rel="noopener"><i class="bi bi-geo-alt"></i> Open the map</a><a class="btn btn-line" href="{{ PathBase }}/schedule">Full schedule</a></div>
+</div></section>
+<style>@media(max-width:700px){.facts[style]{grid-template-columns:1fr!important}}</style>
+{%- endif -%}

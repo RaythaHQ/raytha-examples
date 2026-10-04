@@ -1,0 +1,31 @@
+{%- comment -%} One template for the simple item pages (story chapters, hotels, places, questions, registries, photos). The first route segment says which kind of item it is. {%- endcomment -%}
+{%- assign p = Target.PublishedContent -%}{%- assign seg = Target.RoutePath | split: "/" | first -%}
+{%- case seg -%}
+{%- when "story" -%}{%- assign back = "story" -%}{%- assign bl = "Our story" -%}
+{%- when "travel" -%}{%- assign back = "travel" -%}{%- assign bl = "Travel" -%}
+{%- when "things-to-do" -%}{%- assign back = "things-to-do" -%}{%- assign bl = "Things to do" -%}
+{%- when "faq" -%}{%- assign back = "faq" -%}{%- assign bl = "FAQ" -%}
+{%- when "registry" -%}{%- assign back = "registry" -%}{%- assign bl = "Registry" -%}
+{%- else -%}{%- assign back = "gallery" -%}{%- assign bl = "Gallery" -%}
+{%- endcase -%}
+<section class="section" style="padding-top:60px"><div class="wrap">
+  <div class="crumbs" style="justify-content:flex-start;margin-bottom:34px"><a href="{{ PathBase }}/">Home</a><span>/</span><a href="{{ PathBase }}/{{ back }}">{{ bl }}</a></div>
+  {%- if seg == "story" or seg == "gallery" %}
+  <div class="detail"><div class="arch reveal"><img src="{{ p.image.Value | attachment_redirect_url }}" alt="Illustration: {{ Target.PrimaryField }}"></div>
+    <div><span class="label t">{{ p.year }} · {{ p.place }}</span><h1 style="font-size:clamp(3rem,6vw,5rem);margin:12px 0 20px">{{ Target.PrimaryField }}</h1>{% if seg == "story" %}<div class="prose" style="font-size:1.12rem">{{ p.body }}</div>{% endif %}
+      <a class="btn btn-line" style="margin-top:26px" href="{{ PathBase }}/{{ back }}"><i class="bi bi-arrow-left"></i> Back to {{ bl | downcase }}</a></div></div>
+  {%- else %}
+  <div class="narrow" style="margin:0">
+    {%- if seg == "travel" %}<span class="label t">{{ p.town }} · {{ p.drive }} from Willowbank</span>{% elsif seg == "things-to-do" %}<span class="label t">{{ p.town }}</span>{% elsif seg == "registry" %}<span class="label t">{{ p.store }}</span>{% else %}<span class="label t">Question</span>{% endif %}
+    <h1 style="font-size:clamp(2.8rem,6vw,4.6rem);margin:12px 0 20px">{{ Target.PrimaryField }}</h1>
+    {%- if seg == "faq" %}<div class="prose" style="font-size:1.12rem">{{ p.answer }}</div>
+    {%- else %}<p style="font-size:1.15rem;color:var(--ink2)">{{ p.description }}</p>{% endif %}
+    {%- if seg == "things-to-do" %}<p style="font:italic 400 1.6rem var(--serif);color:var(--terra)">&ldquo;{{ p.our_note }}&rdquo;</p>{% endif %}
+    {%- if seg == "travel" %}<div class="facts"><div><span class="label">Group rate</span><b>{{ p.rate }}</b></div><div><span class="label">Booking code</span><b>{{ p.block_code }}</b></div><div><span class="label">Book by</span><b>{{ p.cutoff.Value | date: "%B %-d, %Y" }}</b></div><div><span class="label">Phone</span><b>{{ p.phone }}</b></div></div>{% endif %}
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:26px">
+      {%- if seg == "travel" %}<a class="btn btn-t" href="{{ p.booking_url }}" target="_blank" rel="noopener">Book with the group rate <i class="bi bi-box-arrow-up-right"></i></a>{% endif %}
+      {%- if seg == "registry" or seg == "things-to-do" %}<a class="btn btn-t" href="{{ p.url }}" target="_blank" rel="noopener">Visit the website <i class="bi bi-box-arrow-up-right"></i></a>{% endif %}
+      <a class="btn btn-line" href="{{ PathBase }}/{{ back }}"><i class="bi bi-arrow-left"></i> Back to {{ bl | downcase }}</a></div>
+  </div>
+  {%- endif %}
+</div></section>

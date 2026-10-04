@@ -1,0 +1,15 @@
+{%- comment -%} Guest-only page. The sections are only rendered on the server for signed-in members of the "guests" user group; everyone else gets the sign-in card and none of the private details. {%- endcomment -%}
+{%- assign is_guest = false -%}{%- for g in CurrentUser.UserGroups -%}{%- if g == "guests" -%}{%- assign is_guest = true -%}{%- endif -%}{%- endfor -%}
+{%- if is_guest -%}
+<div style="text-align:center;padding-top:28px"><span class="chip lock"><i class="bi bi-unlock"></i> Signed in as {{ CurrentUser.FirstName }} · <a href="{{ PathBase }}/account/logout" style="text-decoration:underline">Sign out</a></span></div>
+{{ render_section("hero", wrap=false) }}
+{{ render_section("main", wrap=false) }}
+{%- else -%}
+<section class="phead"><div class="wrap"><div class="crumbs"><a href="{{ PathBase }}/">Home</a><span>/</span><span>Guest page</span></div><h1>Just for <em>our guests</em></h1><p>Shuttle times, day-of phone numbers, the after-party and the shared photo album live here.</p></div></section>
+<section class="section" style="padding-top:30px"><div class="wrap">
+  <div class="gate reveal"><i class="bi bi-envelope-heart big"></i><h2 style="font-size:2.6rem;margin:14px 0 10px">Sign in to see the details</h2>
+    <p class="muted">{% if CurrentUser.IsAuthenticated %}You're signed in, but this account isn't on the guest list yet. Email us and we'll sort it out.{% else %}Use the email address we sent your invitation to and the password printed on your save-the-date card.{% endif %}</p>
+    {% unless CurrentUser.IsAuthenticated %}<a class="btn btn-t" href="{{ PathBase }}/account/login?returnUrl=/guests">Guest sign in <i class="bi bi-arrow-right"></i></a>{% endunless %}
+    <p style="margin:22px 0 0;font-size:.9rem" class="muted">Lost your card? <a href="mailto:hello@example.com" style="color:var(--terra)">hello@example.com</a></p></div>
+</div></section>
+{%- endif -%}
