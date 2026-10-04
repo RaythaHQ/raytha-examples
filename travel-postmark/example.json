@@ -1,0 +1,1 @@
+{"name": "Postmark Trips", "theme": "postmark", "types": ["tiers", "reveals", "reviews", "faqs", "trip_requests"], "detailTemplates": {"tiers": "pm_detail_tier", "reveals": "pm_detail_reveal", "reviews": "pm_detail_item", "faqs": "pm_detail_item", "trip_requests": "pm_detail_private"}, "groups": []}

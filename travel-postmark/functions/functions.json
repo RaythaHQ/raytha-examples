@@ -1,0 +1,4 @@
+[
+ {"developerName": "forms.plan", "name": "Trip planner handler", "trigger": "http_request", "file": "plan.js", "routePath": "forms/plan"},
+ {"developerName": "clue.json", "name": "Random clue from a past reveal", "trigger": "http_request", "file": "clue.js", "routePath": "clue.json"}
+]
