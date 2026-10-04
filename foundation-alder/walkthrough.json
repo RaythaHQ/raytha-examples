@@ -1,0 +1,161 @@
+{
+  "slug": "alder-foundation",
+  "name": "The Alder Foundation",
+  "viewport": [
+    1440,
+    810
+  ],
+  "output": [
+    1920,
+    1080
+  ],
+  "colorScheme": "light",
+  "title": {
+    "kicker": "Raytha use case",
+    "heading": "The Alder Foundation",
+    "subheading": "A foundation site with grant programs, a filterable list of grantees, impact stories, annual reports and application guidelines, built on Raytha by an AI agent with the CLI.",
+    "hold": 1.3
+  },
+  "end": {
+    "heading": "Built with Raytha",
+    "subheading": "Open-source .NET CMS. Get the brief, screenshots and a one-command rebuild kit.",
+    "url": "raytha.com/use-cases/alder-foundation",
+    "hold": 2.3
+  },
+  "scenes": [
+    {
+      "url": "/",
+      "caption": "A foundation home: mission, programs and the numbers",
+      "actions": [
+        {
+          "hold": 1.0,
+          "poster": true
+        },
+        {
+          "scroll": 1500,
+          "dur": 2.2
+        },
+        {
+          "hold": 0.7
+        }
+      ]
+    },
+    {
+      "url": "/programs/open-water",
+      "caption": "Each program shows who can apply, the grant size and the deadline",
+      "actions": [
+        {
+          "hold": 0.8
+        },
+        {
+          "scroll": 560,
+          "dur": 1.4
+        },
+        {
+          "hold": 0.5
+        }
+      ]
+    },
+    {
+      "url": "/grantees",
+      "caption": "Every grant since 2023, filtered by program, year and region",
+      "actions": [
+        {
+          "hold": 0.5
+        },
+        {
+          "click": ".chips a[href*='program=open-water']",
+          "dur": 0.9
+        },
+        {
+          "click": ".chips a[href*='year=2025']",
+          "dur": 0.9
+        },
+        {
+          "scroll": 420,
+          "dur": 1.0
+        },
+        {
+          "hold": 0.6
+        }
+      ]
+    },
+    {
+      "url": "/stories/four-days-after-the-flood",
+      "caption": "Impact stories tied to the grantee and the program",
+      "actions": [
+        {
+          "hold": 0.8
+        },
+        {
+          "scroll": 700,
+          "dur": 1.6
+        },
+        {
+          "hold": 0.5
+        }
+      ]
+    },
+    {
+      "url": "/reports/annual-report-2025",
+      "caption": "Annual reports with totals, a president's letter and grants by program",
+      "actions": [
+        {
+          "hold": 0.7
+        },
+        {
+          "scroll": 900,
+          "dur": 1.8
+        },
+        {
+          "hold": 0.5
+        }
+      ]
+    },
+    {
+      "url": "/apply",
+      "caption": "Guidelines, a timeline and an applicant FAQ",
+      "actions": [
+        {
+          "hold": 0.5
+        },
+        {
+          "scroll": {
+            "selector": "details",
+            "offset": 200
+          },
+          "dur": 1.2
+        },
+        {
+          "click": "details:nth-of-type(2) summary",
+          "dur": 0.8,
+          "navigates": false,
+          "waitMs": 400
+        },
+        {
+          "hold": 0.6
+        }
+      ]
+    },
+    {
+      "url": "/reports/annual-report-2025",
+      "phone": true,
+      "phoneCaption": {
+        "kicker": "Responsive",
+        "text": "Readable on a phone, too"
+      },
+      "actions": [
+        {
+          "hold": 0.5
+        },
+        {
+          "scroll": 700,
+          "dur": 1.8
+        },
+        {
+          "hold": 0.4
+        }
+      ]
+    }
+  ]
+}
