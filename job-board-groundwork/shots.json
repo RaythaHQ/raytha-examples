@@ -1,0 +1,17 @@
+[
+  {"name": "01-home-hero-1440.png", "path": "/", "device": "desktop"},
+  {"name": "02-home-full-1440.png", "path": "/", "device": "desktop", "full_page": true},
+  {"name": "03-jobs-1440.png", "path": "/jobs", "device": "desktop"},
+  {"name": "04-jobs-filtered-1440.png", "path": "/jobs?category=engineering&type=remote&salary=130000", "device": "desktop", "full_page": true},
+  {"name": "05-jobs-search-1440.png", "path": "/jobs?q=battery", "device": "desktop", "full_page": true},
+  {"name": "06-job-detail-1440.png", "path": "/jobs/battery-data-scientist", "device": "desktop", "full_page": true},
+  {"name": "07-companies-1440.png", "path": "/companies", "device": "desktop", "full_page": true},
+  {"name": "08-company-detail-1440.png", "path": "/companies/gridwise", "device": "desktop", "full_page": true},
+  {"name": "09-remote-1440.png", "path": "/jobs/remote?tag=python", "device": "desktop", "full_page": true},
+  {"name": "10-about-1440.png", "path": "/about", "device": "desktop", "full_page": true},
+  {"name": "11-hub-locked-1440.png", "path": "/hub", "device": "desktop"},
+  {"name": "12-hub-signed-in-1440.png", "path": "/hub", "device": "desktop", "full_page": true, "login": true},
+  {"name": "13-home-mobile-390.png", "path": "/", "device": "mobile"},
+  {"name": "14-jobs-mobile-390.png", "path": "/jobs?type=remote", "device": "mobile", "scroll": 640},
+  {"name": "15-job-mobile-390.png", "path": "/jobs/net-engineer-installer-platform", "device": "mobile"}
+]
