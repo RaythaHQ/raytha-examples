@@ -1,0 +1,7 @@
+{%- assign s = widget.settings -%}{%- assign lim = s.count | append: "" | plus: 0 -%}{%- if lim == 0 %}{% assign lim = 3 %}{% endif -%}{%- assign ms = get_content_items(ContentType="media", OrderBy="sort_order asc", PageSize=lim) -%}
+<section class="section"><div class="wrap">
+  <div class="shead"><div><span class="kick">{{ s.kicker }}</span><h2>{{ s.headline }} <em>{{ s.accent }}</em></h2><p>{{ s.subtitle }}</p></div><a class="btn btn-line" href="/media">All media <i class="bi bi-arrow-right"></i></a></div>
+  <div class="grid3">{% for m in ms.Items %}{% assign p = m.PublishedContent %}{% capture mk %}{{ p.kind }}{% endcapture %}
+    <a class="mitem reveal" style="margin:0" href="{% if mk == 'photo' %}/{{ m.RoutePath }}{% else %}{{ p.url }}{% endif %}"{% if mk != "photo" %} target="_blank" rel="noopener"{% endif %}><div class="ph"><img src="{{ p.image | attachment_redirect_url }}" alt="{{ m.PrimaryField }}" loading="lazy" style="aspect-ratio:4/3;object-fit:cover">{% if mk != "photo" %}<span class="play"><i class="bi {% if mk == 'video' %}bi-play-fill{% else %}bi-headphones{% endif %}"></i></span><span class="len">{{ p.length }}</span>{% endif %}</div>
+      <div class="tx"><h3>{{ m.PrimaryField }}</h3><p>{{ p.taken }}</p></div></a>{% endfor %}</div>
+</div></section>

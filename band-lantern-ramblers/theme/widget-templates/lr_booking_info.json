@@ -1,0 +1,8 @@
+{"label": "Ramblers: booking info", "fields": [
+  {"developerName": "facts", "label": "Key facts", "fieldType": "repeater", "subFields": [{"developerName": "icon", "label": "Icon (Bootstrap Icons name)", "fieldType": "single_line_text"}, {"developerName": "title", "label": "Title", "fieldType": "single_line_text"}, {"developerName": "text", "label": "Text", "fieldType": "long_text"}]},
+  {"developerName": "list_title", "label": "What we bring, title", "fieldType": "single_line_text"},
+  {"developerName": "includes", "label": "What we bring", "fieldType": "repeater", "subFields": [{"developerName": "text", "label": "Item", "fieldType": "single_line_text"}]},
+  {"developerName": "rooms_title", "label": "Rooms we've played, title", "fieldType": "single_line_text"},
+  {"developerName": "rooms", "label": "Rooms we've played", "fieldType": "repeater", "subFields": [{"developerName": "name", "label": "Name", "fieldType": "single_line_text"}, {"developerName": "detail", "label": "Detail", "fieldType": "single_line_text"}]},
+  {"developerName": "note", "label": "Note", "fieldType": "long_text"}
+]}

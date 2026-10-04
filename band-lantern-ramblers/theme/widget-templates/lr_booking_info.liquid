@@ -1,0 +1,9 @@
+{%- assign s = widget.settings -%}
+<section class="section" style="padding-top:20px"><div class="wrap">
+  <div class="grid3">{% for f in s.facts %}<div class="card reveal"><i class="bi {{ f.icon }}" style="font-size:1.7rem;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent"></i><h3 style="font-size:1.45rem;margin:14px 0 8px">{{ f.title }}</h3><p style="color:var(--cream2);margin:0">{{ f.text }}</p></div>{% endfor %}</div>
+  <div class="grid2" style="margin-top:60px;gap:40px">
+    <div><span class="kick">{{ s.list_title }}</span><ul class="checks" style="margin-top:18px">{% for i in s.includes %}<li><i class="bi bi-check2-circle"></i><span>{{ i.text }}</span></li>{% endfor %}</ul></div>
+    <div><span class="kick">{{ s.rooms_title }}</span><ul class="checks" style="margin-top:18px">{% for r in s.rooms %}<li><i class="bi bi-geo-alt"></i><span><b style="color:var(--cream)">{{ r.name }}</b> · {{ r.detail }}</span></li>{% endfor %}</ul>
+      <p class="muted" style="margin-top:18px;font-size:.92rem">{{ s.note }}</p></div>
+  </div>
+</div></section>

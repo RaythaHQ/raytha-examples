@@ -1,0 +1,20 @@
+{%- comment -%} Top songs, counted from every setlist each time the page renders (same method as the /songs page). {%- endcomment -%}
+{%- assign s = widget.settings -%}{%- assign lim = s.count | append: "" | plus: 0 -%}{%- if lim == 0 %}{% assign lim = 6 %}{% endif -%}
+{%- assign sls = get_content_items(ContentType="setlists", OrderBy="date desc", PageSize=500) -%}
+{%- assign all = "^" -%}{%- assign nshows = 0 -%}
+{%- for x in sls.Items -%}{%- assign p = x.PublishedContent -%}{%- assign nshows = nshows | plus: 1 -%}
+  {%- capture blk %}{{ p.set1 }}
+{{ p.set2 }}
+{{ p.encore }}{% endcapture -%}{%- assign ls = blk | newline_to_br | split: "<br />" -%}
+  {%- for l in ls -%}{%- assign t = l | remove: ">" | strip -%}{%- if t != "" and t != "Drums" and t != "Space" -%}{%- assign all = all | append: "|" | append: t | append: "|" -%}{%- endif -%}{%- endfor -%}
+{%- endfor -%}{%- assign all = all | append: "$" -%}
+{%- assign uniq = all | remove: "^" | remove: "$" | split: "|" | uniq -%}{%- assign keyed = "" -%}{%- assign distinct = 0 -%}
+{%- for u in uniq -%}{%- if u != "" -%}{%- assign distinct = distinct | plus: 1 -%}{%- assign tok = "|" | append: u | append: "|" -%}{%- assign c = all | split: tok | size | minus: 1 | plus: 1000 -%}{%- assign keyed = keyed | append: c | append: "~" | append: u | append: "^^" -%}{%- endif -%}{%- endfor -%}
+{%- assign ranked = keyed | split: "^^" | sort | reverse -%}{%- assign top = ranked | first | split: "~" | first | minus: 1000 -%}
+<section class="section alt"><div class="wrap split r">
+  <div><span class="kick">{{ s.kicker }}</span><h2 style="font-size:clamp(2.4rem,4.6vw,3.8rem);margin:14px 0 18px">{{ s.headline }} <em>{{ s.accent }}</em></h2><p style="color:var(--cream2);font-size:1.06rem">{{ s.subtitle }}</p>
+    <div class="row" style="margin:26px 0"><div class="stat" style="padding:18px 22px"><b style="font-size:2.4rem">{{ nshows }}</b><span>Shows</span></div><div class="stat" style="padding:18px 22px"><b style="font-size:2.4rem">{{ distinct }}</b><span>Songs</span></div></div>
+    <a class="btn btn-g" href="/songs">All the song stats <i class="bi bi-bar-chart"></i></a></div>
+  <div class="bars">{% for r in ranked limit: lim %}{% assign parts = r | split: "~" %}{% assign c = parts[0] | minus: 1000 %}{% assign w = c | times: 100 | divided_by: top %}
+    <div class="bar reveal"><a href="/setlists?song={{ parts[1] | url_encode }}">{{ parts[1] }}</a><div class="t"><i style="width:{{ w }}%;animation-delay:{{ forloop.index0 | times: 80 }}ms"></i></div><span class="n">{{ c }}×</span></div>{% endfor %}</div>
+</div></section>

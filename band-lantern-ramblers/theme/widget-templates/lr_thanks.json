@@ -1,0 +1,6 @@
+{"label": "Ramblers: thank-you", "fields": [
+  {"developerName": "kicker", "label": "Kicker", "fieldType": "single_line_text"},
+  {"developerName": "headline", "label": "Headline (the first name is added after it)", "fieldType": "single_line_text"},
+  {"developerName": "accent", "label": "Words in gradient italics", "fieldType": "single_line_text"},
+  {"developerName": "text", "label": "Text", "fieldType": "long_text"}
+]}

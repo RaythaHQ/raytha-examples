@@ -1,0 +1,10 @@
+{%- assign s = widget.settings -%}{%- assign sls = get_content_items(ContentType="setlists", OrderBy="date desc", PageSize=1) -%}
+{%- for x in sls.Items %}{% assign p = x.PublishedContent %}{% assign sh = p.show %}
+<section class="section alt" style="padding-top:40px"><div class="wrap split r" style="align-items:start">
+  <div><span class="kick">{{ s.kicker }}</span><h2 style="font-size:clamp(2.4rem,4.6vw,3.6rem);margin:14px 0 12px">{{ sh.PublishedContent.venue }}</h2><p class="mono" style="color:var(--sun)">{{ p.date.Value | date: "%a %b %-d, %Y" }} · {{ sh.PublishedContent.city }}, {{ sh.PublishedContent.region }}</p>
+    {%- if p.notes != "" %}<p style="color:var(--cream2);font-style:italic;font-size:1.08rem">“{{ p.notes }}”</p>{% endif %}
+    <div class="row" style="margin-top:22px"><a class="btn btn-g" href="/{{ x.RoutePath }}">Full setlist</a><a class="btn btn-line" href="/setlists">The archive</a></div></div>
+  <div class="sets card">{% assign names = "Set one|Set two|Encore" | split: "|" %}{% for k in (1..3) %}{% case k %}{% when 1 %}{% capture raw %}{{ p.set1 }}{% endcapture %}{% when 2 %}{% capture raw %}{{ p.set2 }}{% endcapture %}{% else %}{% capture raw %}{{ p.encore }}{% endcapture %}{% endcase %}
+    <div><h4>{{ names[forloop.index0] }}</h4><ol>{% assign ls = raw | newline_to_br | split: "<br />" %}{% for l in ls %}{% assign t = l | remove: ">" | strip %}{% if t != "" %}<li>{{ t }}{% if l contains ">" %}<span class="sg">&gt;</span>{% endif %}</li>{% endif %}{% endfor %}</ol></div>{% endfor %}</div>
+</div></section>
+{%- endfor %}

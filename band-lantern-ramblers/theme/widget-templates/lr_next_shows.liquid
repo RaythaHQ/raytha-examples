@@ -1,0 +1,13 @@
+{%- assign s = widget.settings -%}{%- assign today = "now" | date: "%Y-%m-%d" -%}{%- assign lim = s.count | append: "" | plus: 0 -%}{%- if lim == 0 %}{% assign lim = 4 %}{% endif -%}
+{%- assign shows = get_content_items(ContentType="shows", OrderBy="date asc", PageSize=100) -%}
+<section class="section"><div class="wrap">
+  <div class="shead"><div><span class="kick">{{ s.kicker }}</span><h2>{{ s.headline }} <em>{{ s.accent }}</em></h2><p>{{ s.subtitle }}</p></div><a class="btn btn-line" href="/tour">All tour dates <i class="bi bi-arrow-right"></i></a></div>
+  <div class="shows">
+  {%- assign n = 0 %}{% for e in shows.Items %}{% assign p = e.PublishedContent %}{% capture d %}{{ p.date.Value | date: "%Y-%m-%d" }}{% endcapture %}{% if d >= today and n < lim %}{% assign n = n | plus: 1 %}{% capture st %}{{ p.status }}{% endcapture %}{% capture bill %}{{ p.billing }}{% endcapture %}
+    <article class="show reveal{% if bill != 'Two sets' and bill != '' %} special{% endif %}">
+      <div class="date"><span class="m">{{ p.date.Value | date: "%b" }}</span><span class="d">{{ p.date.Value | date: "%-d" }}</span><span class="w">{{ p.date.Value | date: "%a" }}</span></div>
+      <div><h3><a href="/{{ e.RoutePath }}">{{ p.venue }}</a></h3><div class="meta"><span><i class="bi bi-geo-alt"></i> {{ p.city }}, {{ p.region }}</span>{% if bill != "Two sets" %}<span style="color:var(--sun)"><i class="bi bi-stars"></i> {{ bill }}</span>{% endif %}</div></div>
+      <div class="acts"><span class="pill {{ st }}">{{ st | replace: "on_sale", "On sale" | replace: "few_left", "Few left" | replace: "sold_out", "Sold out" | replace: "free", "Free show" | replace: "announced", "Tickets soon" }}</span>{% if st == "on_sale" or st == "few_left" %}<a class="btn btn-g btn-sm" href="{{ p.ticket_url }}" target="_blank" rel="noopener">Tickets <i class="bi bi-box-arrow-up-right"></i></a>{% else %}<a class="btn btn-line btn-sm" href="/{{ e.RoutePath }}">Details</a>{% endif %}</div>
+    </article>{% endif %}{% endfor %}
+  </div>
+</div></section>

@@ -1,0 +1,19 @@
+{%- assign s = widget.settings -%}{%- assign today = "now" | date: "%Y-%m-%d" -%}
+{%- assign shows = get_content_items(ContentType="shows", OrderBy="date asc", PageSize=100) -%}
+<section class="hero"><div class="blobs" aria-hidden="true"><span></span><span></span><span></span><span></span></div><div class="grain"></div>
+  <div class="wrap hero-grid">
+    <div><span class="kick">{{ s.kicker }}</span>
+      <h1>{{ s.title_one }} <em>{{ s.title_two }}</em></h1>
+      <p class="lead">{{ s.lead }}</p>
+      <div class="row"><a class="btn btn-g" href="{{ s.primary_url }}">{{ s.primary_label }} <i class="bi bi-arrow-right"></i></a>{% if s.secondary_label %}<a class="btn btn-line" href="{{ s.secondary_url }}">{{ s.secondary_label }}</a>{% endif %}</div>
+    </div>
+    {%- assign found = false %}{% for e in shows.Items %}{% if found == false %}{% assign p = e.PublishedContent %}{% capture d %}{{ p.date.Value | date: "%Y-%m-%d" }}{% endcapture %}{% if d >= today %}{% assign found = true %}{% capture st %}{{ p.status }}{% endcapture %}
+    <a class="next reveal" href="{{ PathBase }}/{{ e.RoutePath }}" style="display:block">
+      <div class="poster"><img src="{{ p.poster | attachment_redirect_url }}" alt="Poster for the next show"></div>
+      <div class="row" style="justify-content:space-between;align-items:center"><span class="kick">Next show</span><span class="pill {{ st }}" data-days="{{ d }}"></span></div>
+      <h3>{{ p.venue }}</h3><div class="muted">{{ p.date.Value | date: "%a %b %-d" }} · {{ p.city }}, {{ p.region }}</div>
+    </a>{% endif %}{% endif %}{% endfor %}
+  </div>
+</section>
+{%- assign words = s.ticker | newline_to_br | split: "<br />" -%}
+<div class="ticker" aria-hidden="true"><div>{% for r in (1..2) %}{% for w in words %}{% assign t = w | strip %}{% if t != "" %}<span>{{ t }}</span><b>&#10022;</b>{% endif %}{% endfor %}{% endfor %}</div></div>

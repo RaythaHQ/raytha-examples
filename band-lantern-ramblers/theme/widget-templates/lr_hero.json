@@ -1,0 +1,11 @@
+{"label": "Ramblers: hero with the next show", "fields": [
+  {"developerName": "kicker", "label": "Kicker", "fieldType": "single_line_text"},
+  {"developerName": "title_one", "label": "Name, first word", "fieldType": "single_line_text"},
+  {"developerName": "title_two", "label": "Name, second word", "fieldType": "single_line_text"},
+  {"developerName": "lead", "label": "Intro", "fieldType": "long_text"},
+  {"developerName": "primary_label", "label": "Main button label", "fieldType": "single_line_text"},
+  {"developerName": "primary_url", "label": "Main button link", "fieldType": "single_line_text"},
+  {"developerName": "secondary_label", "label": "Second button label", "fieldType": "single_line_text"},
+  {"developerName": "secondary_url", "label": "Second button link", "fieldType": "single_line_text"},
+  {"developerName": "ticker", "label": "Scrolling ticker (one phrase per line)", "fieldType": "long_text"}
+]}
