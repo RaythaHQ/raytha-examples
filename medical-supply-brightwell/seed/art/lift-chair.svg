@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="Illustration">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#dff2ee"/><stop offset="1" stop-color="#e8f1f8"/></linearGradient></defs>
+<rect width="800" height="600" fill="url(#bg)"/><circle cx="640" cy="120" r="150" fill="#ffffff" opacity=".55"/><circle cx="130" cy="520" r="90" fill="#0f8b8d" opacity=".08"/>
+<ellipse cx="400" cy="530" rx="300" ry="26" fill="#0b2545" opacity=".08"/>
+<path d="M260 420 q-40 0 -40 -60 v-180 q0 -40 50 -40 h260 q50 0 50 40 v180 q0 60 -40 60z" fill="#0f8b8d" stroke="#0b2545" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/><rect x="270" y="190" width="260" height="130" rx="40" fill="#ffffff" stroke="#0b2545" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><rect x="250" y="330" width="300" height="70" rx="26" fill="#ffffff" stroke="#0b2545" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><path d="M300 420 l-20 80 M500 420 l20 80" stroke="#0b2545" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/><rect x="580" y="380" width="44" height="80" rx="12" fill="#ffffff" stroke="#0b2545" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="602" cy="405" r="7" fill="#f4a259"/>
+</svg>
