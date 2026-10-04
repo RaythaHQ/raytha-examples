@@ -1,0 +1,89 @@
+{
+ "hero": [
+  {
+   "widgetType": "al_page_header",
+   "settings": {
+    "kicker": "How to apply",
+    "headline": "A short application,",
+    "accent": "a quick answer.",
+    "subtitle": "Read the guidelines, check that your work fits a program, then send a five-question letter of inquiry through our grants portal."
+   }
+  }
+ ],
+ "main": [
+  {
+   "widgetType": "al_eligibility",
+   "settings": {
+    "kicker": "Eligibility",
+    "headline": "Is your organization",
+    "accent": "a fit?",
+    "subtitle": "If you're not sure, ask. We would rather have the conversation early.",
+    "yes_title": "We fund",
+    "yes_list": "Nonprofits, tribes and public agencies working in the Alder River region\nCommunity groups without nonprofit status, through a fiscal sponsor\nOrganizations led by the communities they serve\nGeneral operating costs as well as projects\nGroups that have never had a foundation grant before",
+    "no_title": "We don't fund",
+    "no_list": "Individuals or scholarships\nWork outside the Alder River region\nPolitical campaigns or lobbying\nRaising money for endowments or buildings\nDebt repayment or work that is already finished"
+   }
+  },
+  {
+   "widgetType": "al_steps",
+   "settings": {
+    "kicker": "Timeline",
+    "headline": "From first note to",
+    "accent": "first payment.",
+    "subtitle": "Most grants take ten to twelve weeks from letter of inquiry to payment. Rapid Response decides in ten working days.",
+    "steps": [
+     {
+      "title": "Talk to us",
+      "when": "Any time",
+      "text": "Optional, and encouraged. Book a 20-minute call or come to office hours."
+     },
+     {
+      "title": "Letter of inquiry",
+      "when": "Week 0",
+      "text": "Five questions in the grants portal: who you are, what you do, what you need and why now."
+     },
+     {
+      "title": "Conversation",
+      "when": "Within 3 weeks",
+      "text": "If your work fits, a program officer calls you and invites a full application."
+     },
+     {
+      "title": "Full application",
+      "when": "Weeks 3 to 8",
+      "text": "About six pages, or a proposal you already wrote for another funder, plus a budget."
+     },
+     {
+      "title": "Decision and payment",
+      "when": "Within 10 weeks",
+      "text": "The board meets every month. Payments go out within two weeks of a yes."
+     }
+    ]
+   }
+  },
+  {
+   "widgetType": "al_faq",
+   "settings": {
+    "kicker": "Applicant FAQ",
+    "headline": "Questions",
+    "accent": "applicants ask.",
+    "subtitle": "About eligibility, the application and what happens after.",
+    "count": 6
+   }
+  },
+  {
+   "widgetType": "al_cta",
+   "settings": {
+    "kicker": "Ready?",
+    "headline": "Start your letter of",
+    "accent": "inquiry.",
+    "subtitle": "Applications are made in our grants portal, not on this website.",
+    "primary_label": "Open the grants portal",
+    "primary_url": "https://grants.example.org/alder",
+    "primary_external": "yes",
+    "secondary_label": "Email a program officer",
+    "secondary_url": "mailto:grants@alder.example",
+    "note": "The grants portal is a placeholder link in this example. No application data is collected on this site."
+   }
+  }
+ ]
+}

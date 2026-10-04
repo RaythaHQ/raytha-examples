@@ -1,0 +1,125 @@
+{
+ "hero": [
+  {
+   "widgetType": "al_hero",
+   "settings": {
+    "kicker": "The Alder Foundation",
+    "headline": "Trust the people closest to",
+    "accent": "the work.",
+    "subtitle": "We fund community-led work across the Alder River region: neighborhoods, rivers, early reading and paid job training. Short applications, flexible money, long commitments.",
+    "primary_label": "Explore our programs",
+    "primary_url": "/programs",
+    "secondary_label": "See who we fund",
+    "secondary_url": "/grantees"
+   }
+  }
+ ],
+ "main": [
+  {
+   "widgetType": "al_mission",
+   "settings": {
+    "kicker": "Our mission",
+    "headline": "A region where every community has what it needs to",
+    "accent": "thrive.",
+    "body": "<p>Eleanor and James Alder made their fortune from the forests of this valley. In 1993 they gave most of it back, asking that it be spent by people who know the region and trusted to the people doing the work.</p><p>Thirty-three years later, that is still how we work. We fund groups that are led by the communities they serve, we keep our applications short, and we stay for the long haul.</p>",
+    "values": [
+     {
+      "title": "Trust first",
+      "text": "Most of our grants are flexible money. Grantees know best what their work needs."
+     },
+     {
+      "title": "Stay longer",
+      "text": "Our average grant lasts two years. Some partners have been with us for twenty."
+     },
+     {
+      "title": "Less paperwork",
+      "text": "A five-question letter of inquiry, and you can reuse reports you wrote for other funders."
+     }
+    ]
+   }
+  },
+  {
+   "widgetType": "al_programs",
+   "settings": {
+    "kicker": "Grant programs",
+    "headline": "Five ways we",
+    "accent": "give.",
+    "subtitle": "Each program has its own officer and deadline. Not sure where you fit? Ask us."
+   }
+  },
+  {
+   "widgetType": "al_numbers",
+   "settings": {
+    "kicker": "Since 1993",
+    "headline": "Thirty-three years in",
+    "accent": "the valley.",
+    "subtitle": "",
+    "items": [
+     {
+      "value": "118",
+      "prefix": "",
+      "suffix": "",
+      "label": "grants made in 2025"
+     },
+     {
+      "value": "62",
+      "prefix": "",
+      "suffix": "%",
+      "label": "of 2025 grants were flexible, general operating support"
+     },
+     {
+      "value": "2",
+      "prefix": "",
+      "suffix": " yrs",
+      "label": "average length of a grant"
+     },
+     {
+      "value": "10",
+      "prefix": "",
+      "suffix": " days",
+      "label": "longest wait for a Rapid Response decision"
+     }
+    ]
+   }
+  },
+  {
+   "widgetType": "al_story",
+   "settings": {
+    "kicker": "Impact story"
+   }
+  },
+  {
+   "widgetType": "al_recent",
+   "settings": {
+    "kicker": "Newest grants",
+    "headline": "Who we funded",
+    "accent": "this year.",
+    "subtitle": "The largest grants approved in 2026 so far. Every grant since 2023 is on the grantees page.",
+    "count": 6
+   }
+  },
+  {
+   "widgetType": "al_report",
+   "settings": {
+    "kicker": "Annual report",
+    "headline": "Our year,",
+    "accent": "in the open."
+   }
+  },
+  {
+   "widgetType": "al_cta",
+   "settings": {
+    "kicker": "Apply",
+    "headline": "Doing good work in the",
+    "accent": "Alder River region?",
+    "subtitle": "Start with a five-question letter of inquiry. We answer every one within three weeks.",
+    "primary_label": "Read the guidelines",
+    "primary_url": "/apply",
+    "primary_external": "no",
+    "secondary_label": "Book a call",
+    "secondary_url": "/apply#timeline",
+    "note": ""
+   }
+  }
+ ]
+}

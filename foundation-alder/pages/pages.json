@@ -1,0 +1,23 @@
+[
+ {
+  "title": "The Alder Foundation",
+  "routePath": "home",
+  "template": "al_home",
+  "sections": "pages/home.json",
+  "home": true
+ },
+ {
+  "title": "About us",
+  "routePath": "about",
+  "template": "al_page",
+  "sections": "pages/about.json",
+  "home": false
+ },
+ {
+  "title": "How to apply",
+  "routePath": "apply",
+  "template": "al_page",
+  "sections": "pages/apply.json",
+  "home": false
+ }
+]

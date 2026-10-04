@@ -1,0 +1,148 @@
+{
+ "hero": [
+  {
+   "widgetType": "al_page_header",
+   "settings": {
+    "kicker": "About us",
+    "headline": "Given back to the valley,",
+    "accent": "for good.",
+    "subtitle": "A private foundation started in 1993 by Eleanor and James Alder, with a board and staff who live in the region we serve."
+   }
+  }
+ ],
+ "main": [
+  {
+   "widgetType": "al_text",
+   "settings": {
+    "kicker": "Our story",
+    "headline": "From timber to",
+    "accent": "trust.",
+    "body": "<p>The Alder family logged these hills for three generations. In 1993, Eleanor and James Alder sold the company and put most of the proceeds into a foundation, with one instruction: spend it here, and let the people of the valley lead.</p><p>Today the endowment is about $212 million. We grant around 5 percent of it every year, and we have never funded outside the Alder River region.</p><p>Our board includes a tenant organizer, a tribal fisheries manager, a school librarian and a union electrician, alongside two Alder grandchildren. Half of our board seats are held by people who have led a grantee organization.</p>",
+    "side_title": "The foundation in numbers",
+    "facts": [
+     {
+      "label": "Founded",
+      "value": "1993"
+     },
+     {
+      "label": "Endowment",
+      "value": "About $212 million"
+     },
+     {
+      "label": "Granted in 2025",
+      "value": "$7.35 million"
+     },
+     {
+      "label": "Staff",
+      "value": "14"
+     },
+     {
+      "label": "Board members",
+      "value": "11"
+     },
+     {
+      "label": "Office",
+      "value": "210 River Street, Marlow"
+     }
+    ]
+   }
+  },
+  {
+   "widgetType": "al_mission",
+   "settings": {
+    "kicker": "How we work",
+    "headline": "Three promises we make to",
+    "accent": "every applicant.",
+    "body": "<p>We wrote these with our grantee advisory council in 2023, and we report on them every year.</p>",
+    "values": [
+     {
+      "title": "An answer in three weeks",
+      "text": "Every letter of inquiry gets a reply within three weeks, and every no comes with a reason."
+     },
+     {
+      "title": "No new paperwork",
+      "text": "Send us the proposal and reports you already wrote for another funder."
+     },
+     {
+      "title": "A real conversation",
+      "text": "Each program officer holds open office hours twice a month."
+     }
+    ]
+   }
+  },
+  {
+   "widgetType": "al_people",
+   "settings": {
+    "kicker": "Our people",
+    "headline": "The team you'll",
+    "accent": "talk to.",
+    "subtitle": "Program officers live in the communities they fund.",
+    "people": [
+     {
+      "name": "Miriam Osei",
+      "role": "President",
+      "bio": "Led the Lowlands Mutual Aid Network before joining the foundation in 2019.",
+      "color": "#16302a"
+     },
+     {
+      "name": "Daniel Reyes",
+      "role": "Program Officer, Rooted Communities",
+      "bio": "Former tenant organizer on Marlow's east side.",
+      "color": "#c8662b"
+     },
+     {
+      "name": "Hannah Whitcomb",
+      "role": "Program Officer, Open Water",
+      "bio": "Hydrologist; twelve years with the Alder River Keepers.",
+      "color": "#2f6f8f"
+     },
+     {
+      "name": "Priya Natarajan",
+      "role": "Program Officer, First Chapters",
+      "bio": "Children's librarian in Pinecrest for a decade.",
+      "color": "#7a5aa6"
+     },
+     {
+      "name": "Marcus Bell",
+      "role": "Program Officer, Working Futures",
+      "bio": "Union electrician and apprenticeship coordinator.",
+      "color": "#3f7d4e"
+     },
+     {
+      "name": "Rosa Lindgren",
+      "role": "Grants Manager, Rapid Response",
+      "bio": "Makes sure emergency grants go out within days.",
+      "color": "#b5453a"
+     },
+     {
+      "name": "Theo Lindqvist",
+      "role": "Storytelling Lead",
+      "bio": "Writes our impact stories with grantees.",
+      "color": "#5f7d4e"
+     },
+     {
+      "name": "Dana Okafor",
+      "role": "Learning and Evaluation",
+      "bio": "Runs our grantee perception survey and open data.",
+      "color": "#a9521f"
+     }
+    ]
+   }
+  },
+  {
+   "widgetType": "al_cta",
+   "settings": {
+    "kicker": "Get in touch",
+    "headline": "Questions about",
+    "accent": "our work?",
+    "subtitle": "Write to us, or come to office hours on Tuesdays and Thursdays.",
+    "primary_label": "Email the foundation",
+    "primary_url": "mailto:grants@alder.example",
+    "primary_external": "no",
+    "secondary_label": "How to apply",
+    "secondary_url": "/apply",
+    "note": ""
+   }
+  }
+ ]
+}
