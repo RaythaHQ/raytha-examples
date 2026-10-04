@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "contentTypes": [
+    {
+      "developerName": "stages",
+      "labelPlural": "Stages",
+      "labelSingular": "Stage",
+      "description": "Festival stages, with their position on the venue map",
+      "defaultRouteTemplate": "stages/{PrimaryField}",
+      "primaryField": "name",
+      "fields": [
+        {"developerName": "name", "label": "Name", "description": "", "fieldType": "single_line_text", "isRequired": true, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "short", "label": "Short name", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "vibe", "label": "What plays here", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "color", "label": "Colour", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "capacity", "label": "Capacity", "description": "", "fieldType": "number", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "map_x", "label": "Map position x (0-100)", "description": "", "fieldType": "number", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "map_y", "label": "Map position y (0-100)", "description": "", "fieldType": "number", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "description", "label": "About the stage", "description": "", "fieldType": "long_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "sort_order", "label": "Sort order", "description": "", "fieldType": "number", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []}
+      ],
+      "views": [
+        {"developerName": "venue", "label": "Venue map", "description": "", "isPublished": true, "routePath": "venue", "template": "ft_list_venue", "columns": ["PrimaryField"], "sort": [{"developerName": "sort_order", "direction": "asc"}], "filter": [], "defaultNumberOfItemsPerPage": 20, "maxNumberOfItemsPerPage": 1000, "ignoreClientFilterAndSortQueryParams": false}
+      ]
+    },
+    {
+      "developerName": "artists",
+      "labelPlural": "Artists",
+      "labelSingular": "Artist",
+      "description": "Every act on the lineup, with its set time and stage",
+      "defaultRouteTemplate": "artists/{PrimaryField}",
+      "primaryField": "name",
+      "fields": [
+        {"developerName": "name", "label": "Name", "description": "", "fieldType": "single_line_text", "isRequired": true, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "tagline", "label": "One-line description", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "genre", "label": "Genre", "description": "", "fieldType": "dropdown", "isRequired": false, "choices": [{"developerName": "indie", "label": "Indie", "disabled": false}, {"developerName": "rock", "label": "Rock", "disabled": false}, {"developerName": "pop", "label": "Pop", "disabled": false}, {"developerName": "electronic", "label": "Electronic", "disabled": false}, {"developerName": "hip_hop", "label": "Hip-hop", "disabled": false}, {"developerName": "soul", "label": "Soul and R&B", "disabled": false}, {"developerName": "folk", "label": "Folk", "disabled": false}], "relatedContentType": null, "subFields": []},
+        {"developerName": "day", "label": "Day", "description": "", "fieldType": "dropdown", "isRequired": false, "choices": [{"developerName": "fri", "label": "Friday", "disabled": false}, {"developerName": "sat", "label": "Saturday", "disabled": false}, {"developerName": "sun", "label": "Sunday", "disabled": false}], "relatedContentType": null, "subFields": []},
+        {"developerName": "stage", "label": "Stage", "description": "", "fieldType": "one_to_one_relationship", "isRequired": false, "choices": [], "relatedContentType": "stages", "subFields": []},
+        {"developerName": "start_min", "label": "Set start (minutes after noon)", "description": "", "fieldType": "number", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "duration", "label": "Set length (minutes)", "description": "", "fieldType": "number", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "time_label", "label": "Set time", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "headliner", "label": "Headliner", "description": "", "fieldType": "checkbox", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "tier", "label": "Poster line (1 = top)", "description": "", "fieldType": "number", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "origin", "label": "From", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "bio", "label": "Bio", "description": "", "fieldType": "wysiwyg", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "image", "label": "Image", "description": "", "fieldType": "attachment", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "listen_url", "label": "Listen link", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []}
+      ],
+      "views": [
+        {"developerName": "lineup", "label": "Lineup", "description": "", "isPublished": true, "routePath": "lineup", "template": "ft_list_lineup", "columns": ["PrimaryField"], "sort": [{"developerName": "tier", "direction": "asc"}, {"developerName": "name", "direction": "asc"}], "filter": [], "defaultNumberOfItemsPerPage": 100, "maxNumberOfItemsPerPage": 1000, "ignoreClientFilterAndSortQueryParams": false},
+        {"developerName": "schedule", "label": "Schedule", "description": "", "isPublished": true, "routePath": "schedule", "template": "ft_list_schedule", "columns": ["PrimaryField"], "sort": [{"developerName": "start_min", "direction": "asc"}], "filter": [], "defaultNumberOfItemsPerPage": 100, "maxNumberOfItemsPerPage": 1000, "ignoreClientFilterAndSortQueryParams": false}
+      ]
+    },
+    {
+      "developerName": "places",
+      "labelPlural": "Venue places",
+      "labelSingular": "Venue place",
+      "description": "Gates, food, water, first aid and other places on the venue map",
+      "defaultRouteTemplate": "places/{PrimaryField}",
+      "primaryField": "name",
+      "fields": [
+        {"developerName": "name", "label": "Name", "description": "", "fieldType": "single_line_text", "isRequired": true, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "kind", "label": "Kind", "description": "", "fieldType": "dropdown", "isRequired": false, "choices": [{"developerName": "gate", "label": "Entrance", "disabled": false}, {"developerName": "food", "label": "Food and drink", "disabled": false}, {"developerName": "water", "label": "Free water", "disabled": false}, {"developerName": "medical", "label": "First aid", "disabled": false}, {"developerName": "info", "label": "Information", "disabled": false}, {"developerName": "toilets", "label": "Toilets", "disabled": false}, {"developerName": "access", "label": "Accessibility", "disabled": false}, {"developerName": "lockers", "label": "Lockers and charging", "disabled": false}], "relatedContentType": null, "subFields": []},
+        {"developerName": "map_x", "label": "Map position x (0-100)", "description": "", "fieldType": "number", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "map_y", "label": "Map position y (0-100)", "description": "", "fieldType": "number", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "description", "label": "Details", "description": "", "fieldType": "long_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []}
+      ],
+      "views": [
+        {"developerName": "places", "label": "Venue places", "description": "", "isPublished": true, "routePath": "places", "template": "ft_list_places", "columns": ["PrimaryField"], "sort": [{"developerName": "name", "direction": "asc"}], "filter": [], "defaultNumberOfItemsPerPage": 50, "maxNumberOfItemsPerPage": 1000, "ignoreClientFilterAndSortQueryParams": false}
+      ]
+    },
+    {
+      "developerName": "faqs",
+      "labelPlural": "FAQs",
+      "labelSingular": "FAQ",
+      "description": "Questions and answers on the FAQ page",
+      "defaultRouteTemplate": "faq/{PrimaryField}",
+      "primaryField": "question",
+      "fields": [
+        {"developerName": "question", "label": "Question", "description": "", "fieldType": "single_line_text", "isRequired": true, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "answer", "label": "Answer", "description": "", "fieldType": "long_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "category", "label": "Category", "description": "", "fieldType": "dropdown", "isRequired": false, "choices": [{"developerName": "tickets", "label": "Tickets and entry", "disabled": false}, {"developerName": "travel", "label": "Getting there", "disabled": false}, {"developerName": "onsite", "label": "At the festival", "disabled": false}, {"developerName": "access", "label": "Accessibility", "disabled": false}], "relatedContentType": null, "subFields": []},
+        {"developerName": "sort_order", "label": "Sort order", "description": "", "fieldType": "number", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []}
+      ],
+      "views": [
+        {"developerName": "faq", "label": "FAQ", "description": "", "isPublished": true, "routePath": "faq", "template": "ft_list_faq", "columns": ["PrimaryField"], "sort": [{"developerName": "sort_order", "direction": "asc"}], "filter": [], "defaultNumberOfItemsPerPage": 100, "maxNumberOfItemsPerPage": 1000, "ignoreClientFilterAndSortQueryParams": false}
+      ]
+    }
+  ]
+}
