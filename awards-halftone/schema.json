@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "contentTypes": [
+    {
+      "developerName": "categories",
+      "labelPlural": "Award categories",
+      "labelSingular": "Award category",
+      "description": "The categories open for entries this year",
+      "defaultRouteTemplate": "categories/{PrimaryField}",
+      "primaryField": "name",
+      "fields": [
+        {"developerName": "name", "label": "Name", "description": "", "fieldType": "single_line_text", "isRequired": true, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "tagline", "label": "Tagline", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "description", "label": "Description", "description": "", "fieldType": "long_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "brief", "label": "What the judges look for", "description": "", "fieldType": "wysiwyg", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "deadline", "label": "Entry deadline", "description": "", "fieldType": "date", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "fee", "label": "Entry fee", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "formats", "label": "Accepted formats", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "color", "label": "Accent colour", "description": "", "fieldType": "color", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "sort_order", "label": "Sort order", "description": "", "fieldType": "number", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []}
+      ],
+      "views": [
+        {"developerName": "categories", "label": "Categories", "description": "", "isPublished": true, "routePath": "categories", "template": "ht_list_categories", "columns": ["PrimaryField"], "sort": [{"developerName": "sort_order", "direction": "asc"}], "filter": [], "defaultNumberOfItemsPerPage": 50, "maxNumberOfItemsPerPage": 1000, "ignoreClientFilterAndSortQueryParams": false}
+      ]
+    },
+    {
+      "developerName": "entries",
+      "labelPlural": "Entries",
+      "labelSingular": "Entry",
+      "description": "Entries in the 2026 gallery and past winners",
+      "defaultRouteTemplate": "entries/{PrimaryField}",
+      "primaryField": "title",
+      "fields": [
+        {"developerName": "title", "label": "Title", "description": "", "fieldType": "single_line_text", "isRequired": true, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "entrant", "label": "Entrant", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "studio", "label": "Studio or school", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "city", "label": "City", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "category", "label": "Category", "description": "", "fieldType": "one_to_one_relationship", "isRequired": false, "choices": [], "relatedContentType": "categories", "subFields": []},
+        {"developerName": "year", "label": "Year", "description": "", "fieldType": "number", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "medium", "label": "Medium", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "award", "label": "Award", "description": "", "fieldType": "dropdown", "isRequired": false, "choices": [{"developerName": "entry", "label": "2026 entry", "disabled": false}, {"developerName": "merit", "label": "Merit", "disabled": false}, {"developerName": "silver", "label": "Silver", "disabled": false}, {"developerName": "gold", "label": "Gold", "disabled": false}, {"developerName": "grand_prix", "label": "Grand Prix", "disabled": false}], "relatedContentType": null, "subFields": []},
+        {"developerName": "image", "label": "Image", "description": "", "fieldType": "attachment", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "statement", "label": "Statement", "description": "", "fieldType": "wysiwyg", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "featured", "label": "Featured", "description": "", "fieldType": "checkbox", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "sort_order", "label": "Sort order", "description": "", "fieldType": "number", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []}
+      ],
+      "views": [
+        {"developerName": "entries", "label": "Entry gallery", "description": "", "isPublished": true, "routePath": "entries", "template": "ht_list_entries", "columns": ["PrimaryField"], "sort": [{"developerName": "sort_order", "direction": "asc"}], "filter": [{"id": "9e820a3b-40c0-59eb-aa61-97480b174f2f", "parentId": null, "type": "filter_condition", "groupOperator": "and", "field": "year", "conditionOperator": "eq", "value": "2026"}], "defaultNumberOfItemsPerPage": 60, "maxNumberOfItemsPerPage": 1000, "ignoreClientFilterAndSortQueryParams": false},
+        {"developerName": "winners", "label": "Past winners", "description": "", "isPublished": true, "routePath": "winners", "template": "ht_list_winners", "columns": ["PrimaryField"], "sort": [{"developerName": "year", "direction": "desc"}, {"developerName": "sort_order", "direction": "asc"}], "filter": [{"id": "50337b8d-f08e-5ff3-8be2-6934fe876baf", "parentId": null, "type": "filter_condition", "groupOperator": "and", "field": "year", "conditionOperator": "lt", "value": "2026"}], "defaultNumberOfItemsPerPage": 60, "maxNumberOfItemsPerPage": 1000, "ignoreClientFilterAndSortQueryParams": false}
+      ]
+    },
+    {
+      "developerName": "applications",
+      "labelPlural": "Applications",
+      "labelSingular": "Application",
+      "description": "Entries sent through the Apply form. They arrive as drafts for review.",
+      "defaultRouteTemplate": "applications/{PrimaryField}",
+      "primaryField": "title",
+      "fields": [
+        {"developerName": "title", "label": "Title of the work", "description": "", "fieldType": "single_line_text", "isRequired": true, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "entrant_name", "label": "Entrant name", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "email", "label": "Email", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "studio", "label": "Studio or school", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "category", "label": "Category", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "link", "label": "Link to the work", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "statement", "label": "Statement", "description": "", "fieldType": "long_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "consent", "label": "Agreed to the rules", "description": "", "fieldType": "checkbox", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []}
+      ],
+      "views": [
+        {"developerName": "applications", "label": "Applications (private)", "description": "", "isPublished": false, "routePath": "applications", "template": "ht_detail_submission", "columns": ["PrimaryField"], "sort": [], "filter": [], "defaultNumberOfItemsPerPage": 50, "maxNumberOfItemsPerPage": 1000, "ignoreClientFilterAndSortQueryParams": false}
+      ]
+    },
+    {
+      "developerName": "nominations",
+      "labelPlural": "Nominations",
+      "labelSingular": "Nomination",
+      "description": "Nominations sent through the Nominate form. They arrive as drafts for review.",
+      "defaultRouteTemplate": "nominations/{PrimaryField}",
+      "primaryField": "nominee",
+      "fields": [
+        {"developerName": "nominee", "label": "Nominee", "description": "", "fieldType": "single_line_text", "isRequired": true, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "nominee_link", "label": "Link to their work", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "category", "label": "Category", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "reason", "label": "Why they deserve it", "description": "", "fieldType": "long_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "nominator_name", "label": "Nominated by", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "nominator_email", "label": "Nominator email", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []}
+      ],
+      "views": [
+        {"developerName": "nominations", "label": "Nominations (private)", "description": "", "isPublished": false, "routePath": "nominations", "template": "ht_detail_submission", "columns": ["PrimaryField"], "sort": [], "filter": [], "defaultNumberOfItemsPerPage": 50, "maxNumberOfItemsPerPage": 1000, "ignoreClientFilterAndSortQueryParams": false}
+      ]
+    }
+  ]
+}
