@@ -8,21 +8,21 @@ function went in through the CLI. Nobody opened the admin.
 - **Build time:** about 30 minutes of agent time, from an empty install to `raytha check` passing
 - **Write-up:** [raytha.com/use-cases/horizon-summit-2027](https://raytha.com/use-cases/horizon-summit-2027)
 
-![Horizon Summit home page](https://raytha.com/raytha/media-items/objectkey/CK4jAJJkZkK7NqGyHd0-1Q_horizon_summit_01_home_hero.webp)
+![Horizon Summit home page](https://raytha.com/raytha/media-items/objectkey/uzXF7ioaKU218L0jeugYbQ_horizon_summit_01_home_hero.webp)
 
 ## Screenshots
 
 | | |
 |---|---|
-| ![Agenda filtered by day and track](https://raytha.com/raytha/media-items/objectkey/4yhV7qevAEWq_Dc2YXcIJQ_horizon_summit_03_agenda_filtered.webp) | ![Speaker directory](https://raytha.com/raytha/media-items/objectkey/7im6mJtty0C5vwui7AkIWQ_horizon_summit_05_speakers.webp) |
+| ![Agenda filtered by day and track](https://raytha.com/raytha/media-items/objectkey/-ZnCVVc2UEuHXSQL6IiVeQ_horizon_summit_03_agenda_filtered.webp) | ![Speaker directory](https://raytha.com/raytha/media-items/objectkey/nns8Zx6FaEKY9jffRqj8xw_horizon_summit_05_speakers.webp) |
 | Agenda filtered by day and track | Speaker directory |
-| ![Session page](https://raytha.com/raytha/media-items/objectkey/vKI0jwzZkEaxHU46A034bQ_horizon_summit_07_session_detail.webp) | ![Attendee Hub](https://raytha.com/raytha/media-items/objectkey/UrnrGhdg0Uq-FmIKSyO4mw_horizon_summit_14_attendee_hub.webp) |
+| ![Session page](https://raytha.com/raytha/media-items/objectkey/rFZ3wnr-WEq_nLVkDoQNDQ_horizon_summit_07_session_detail.webp) | ![Attendee Hub](https://raytha.com/raytha/media-items/objectkey/3ptFAn9cIU6QgWUOpw6wnA_horizon_summit_14_attendee_hub.webp) |
 | Session page with Add to calendar | Members-only Attendee Hub |
 
 <p>
-  <img src="https://raytha.com/raytha/media-items/objectkey/9OLechcKZEi22T8pZFifcQ_horizon_summit_15_home_mobile.webp" width="240" alt="Home on a phone">
-  <img src="https://raytha.com/raytha/media-items/objectkey/vOgUj1AqTUGjqddrtyRlLg_horizon_summit_16_agenda_mobile.webp" width="240" alt="Agenda on a phone">
-  <img src="https://raytha.com/raytha/media-items/objectkey/qq2rew6Br0yP41GAu0n4qw_horizon_summit_17_speaker_mobile.webp" width="240" alt="Speaker page on a phone">
+  <img src="https://raytha.com/raytha/media-items/objectkey/Bi1kJZCPg0mGqvPRNYOaaw_horizon_summit_15_home_mobile.webp" width="240" alt="Home on a phone">
+  <img src="https://raytha.com/raytha/media-items/objectkey/trYQYEte1EGSKRIncDHFRA_horizon_summit_16_agenda_mobile.webp" width="240" alt="Agenda on a phone">
+  <img src="https://raytha.com/raytha/media-items/objectkey/ZJqmvWtKdkCz9U9X6khQiA_horizon_summit_17_speaker_mobile.webp" width="240" alt="Speaker page on a phone">
 </p>
 
 More in [screenshots/](screenshots/). Recapture them from your own build with [shots.json](shots.json) and
