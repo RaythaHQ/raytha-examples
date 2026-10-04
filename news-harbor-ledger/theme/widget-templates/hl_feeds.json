@@ -1,0 +1,15 @@
+{
+  "label": "Ledger: feeds and tips",
+  "fields": [
+    {
+      "developerName": "headline",
+      "label": "Heading",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "text",
+      "label": "Text",
+      "fieldType": "long_text"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+<section class="wrap" style="padding:80px 28px 40px;text-align:center">
+  <span class="kick">Error 404</span>
+  <h1 style="font-size:clamp(2.4rem,5vw,3.8rem);margin:14px auto 12px;max-width:760px">We couldn't find that page.</h1>
+  <p class="dek" style="max-width:560px;margin:0 auto">It may have moved, or the link may be mistyped. Here is where to find the news.</p>
+  <div class="chips" style="justify-content:center;margin-top:26px"><a href="{{ PathBase }}/">Front page</a><a href="{{ PathBase }}/news">Latest news</a><a href="{{ PathBase }}/most-read">Most read</a><a href="{{ PathBase }}/sections">All sections</a></div>
+  {% if Target.ErrorId %}<p class="mut" style="margin-top:22px;font-size:.78rem">Error id: {{ Target.ErrorId }}</p>{% endif %}
+</section>

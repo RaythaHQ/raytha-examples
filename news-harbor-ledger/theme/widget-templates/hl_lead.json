@@ -1,0 +1,15 @@
+{
+  "label": "Ledger: front page lead",
+  "fields": [
+    {
+      "developerName": "latest_label",
+      "label": "Left column heading",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "latest_count",
+      "label": "Headlines in left column",
+      "fieldType": "number"
+    }
+  ]
+}
