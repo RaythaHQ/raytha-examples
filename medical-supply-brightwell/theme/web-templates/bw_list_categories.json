@@ -1,0 +1,9 @@
+{
+  "label": "Brightwell list: equipment categories",
+  "isBaseLayout": false,
+  "parent": "raytha_html_base_layout",
+  "allowAccessForNewContentTypes": false,
+  "contentTypes": [
+    "categories"
+  ]
+}
