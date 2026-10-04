@@ -20,6 +20,9 @@ These examples go with the weekly [use cases on raytha.com](https://raytha.com/u
 |---------|---------------|
 | [<img src="https://raytha.com/raytha/media-items/objectkey/uzXF7ioaKU218L0jeugYbQ_horizon_summit_01_home_hero.webp" width="360" alt="Horizon Summit 2027">](conference-horizon-summit/) | **[Horizon Summit 2027](conference-horizon-summit/)**: a conference site with a filterable agenda, speaker and session pages, a tiered sponsor wall, `.ics` downloads from a Raytha Function, site search, and a members-only Attendee Hub. 5 content types, 14 widgets, 3 functions. |
 | [<img src="https://raytha.com/raytha/media-items/objectkey/6t-jZhocvEqtk0SbE02k_A_groundwork_01_home_hero.webp" width="360" alt="Groundwork climate tech job board">](job-board-groundwork/) | **[Groundwork](job-board-groundwork/)**: a remote job board for climate tech with listings you can filter and search by category, location type, salary and skill, company profiles, an external Apply link and JobPosting JSON-LD on every job, RSS and JSON feeds from Raytha Functions, and a members-only salary hub. 2 content types, 10 widgets, 2 functions. |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/yxBjCaWwv02PaLCf2EC_gg_orbitly_help_01_home_hero.webp" width="360" alt="Orbitly help center">](help-center-orbitly/) | **[Orbitly help center](help-center-orbitly/)**: a knowledge base for a fictional SaaS product with search as you type from a Raytha Function, topics, article pages with an outline and related articles, a changelog with an RSS feed, and a status page. 3 content types, 6 widgets, 2 functions. |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/AJBqKggehkCGdW2HvJrzQA_atlas_lms_01_home_hero.webp" width="360" alt="Atlas Learning course portal">](lms-portal-atlas/) | **[Atlas Learning](lms-portal-atlas/)**: a course portal with a catalog filtered by topic and level, course pages with a curriculum, free preview lessons, members-only lessons that never leave the server for visitors, and a My learning dashboard, all on Raytha's login and user groups. 3 content types, 8 widgets. |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/obNNiviyJkemqFMYRWLrrw_brightwell_dme_01_home_hero.webp" width="360" alt="Brightwell Medical Supply">](medical-supply-brightwell/) | **[Brightwell Medical Supply](medical-supply-brightwell/)**: a durable medical equipment provider's website with a catalog you can search by HCPCS code and filter by category, rent or buy, and coverage, product pages with specifications, patient guides, FAQs and locations with today's hours. No payment forms. 5 content types, 12 widgets. |
 
 ## Quickstart
 
@@ -90,9 +93,12 @@ The examples were built from a short brief with no human help. To do the same fo
 │   ├── brief.md  README.md  build.sh  schema.json  shots.json
 │   ├── theme/  functions/  seed/  pages/  menus/  screenshots/
 ├── job-board-groundwork/
+├── help-center-orbitly/         # newer examples share scripts/build-example.sh
+├── lms-portal-atlas/
+├── medical-supply-brightwell/
 ├── skills/raytha-site-builder/  # agent skill: brief -> finished Raytha site
 ├── templates/brief-template.md  # fill-in brief
-├── scripts/                     # new-example scaffold, screenshots, export, secret scan
+├── scripts/                     # shared build script, scaffold, screenshots, walkthroughs, export, secret scan
 ├── AGENTS.md                    # rules for coding agents building Raytha sites
 ├── CONTRIBUTING.md
 ├── llms.txt
@@ -103,9 +109,11 @@ The examples were built from a short brief with no human help. To do the same fo
 
 | Script | What it does |
 |--------|--------------|
+| [scripts/build-example.sh](scripts/build-example.sh) | Rebuilds an example folder from its `example.json`; the newer examples' `build.sh` files call it |
 | [scripts/new-example.sh](scripts/new-example.sh) | Scaffolds `<name>/` with a brief, README, build script and empty folders |
 | [scripts/export-from-instance.sh](scripts/export-from-instance.sh) | Pulls a site's theme, schema, functions, pages and menus into an example folder |
 | [scripts/capture-screenshots.py](scripts/capture-screenshots.py) | Desktop and mobile screenshots with Playwright, from a `shots.json` |
+| [scripts/make-walkthrough.py](scripts/make-walkthrough.py) | Records a 20 to 40 second walkthrough video of a built site from a `walkthrough.json` shot list ([usage](scripts/make-walkthrough.md)) |
 | [scripts/scan-secrets.sh](scripts/scan-secrets.sh) | Checks for keys, passwords, local URLs and real email addresses before you commit |
 
 ## Contributing
