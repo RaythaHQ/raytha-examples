@@ -1,0 +1,44 @@
+{%- assign days = "fri:Friday:July 16,sat:Saturday:July 17,sun:Sunday:July 18" | split: "," -%}
+{%- assign stages = get_content_items(ContentType="stages", OrderBy="sort_order asc", PageSize=10) -%}
+{%- assign qd = "fri" -%}{%- for d in days %}{% assign kv = d | split: ":" %}{% if QueryParams.day == kv[0] %}{% assign qd = kv[0] %}{% assign qdl = kv[1] %}{% assign qdd = kv[2] %}{% endif %}{% if qd == kv[0] %}{% assign qdl = kv[1] %}{% assign qdd = kv[2] %}{% endif %}{% endfor -%}
+{%- assign hours = "2 pm,3 pm,4 pm,5 pm,6 pm,7 pm,8 pm,9 pm,10 pm,11 pm,12 am" | split: "," -%}
+<section class="phead" style="padding-bottom:34px"><div class="wrap">
+  <span class="eyebrow"><i class="bi bi-calendar3-week"></i> Schedule</span>
+  <h1>{{ qdl }}, <span class="hl">{{ qdd }}.</span></h1>
+  <p>Every set on every stage. Gates open at noon. Star the sets you want and switch on <em>My picks</em> to see only those.</p>
+</div></section>
+<section style="padding:0 0 96px"><div class="wrap">
+  <div style="display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:26px">
+    <div class="chips" style="margin:0">{% for d in days %}{% assign kv = d | split: ":" %}<a href="{{ PathBase }}/schedule?day={{ kv[0] }}" class="{% if qd == kv[0] %}on{% endif %}">{{ kv[1] }}</a>{% endfor %}</div>
+    <div class="chips" style="margin:0"><button type="button" id="mine" onclick="document.getElementById('sched').classList.toggle('only');this.classList.toggle('on')"><i class="bi bi-star-fill"></i><span>My picks (<b data-pick-count style="font-weight:600">0</b>)</span></button></div>
+  </div>
+  <div style="overflow-x:auto;padding-bottom:6px"><div class="sched" id="sched" style="--cols:{{ stages.Items | size }}">
+    <div class="sh tcol"></div>
+    {%- for s in stages.Items %}<a class="sh" href="{{ PathBase }}/{{ s.RoutePath }}" style="grid-column:{{ forloop.index | plus: 1 }};--c:{{ s.PublishedContent.color }}"><span class="dot" style="background:{{ s.PublishedContent.color }}"></span><span><b>{{ s.PrimaryField }}</b><small>{{ s.PublishedContent.vibe }}</small></span></a>{% endfor %}
+    {%- for h in hours %}{% assign r = forloop.index0 | times: 4 | plus: 2 %}<div class="hr" style="grid-row:{{ r }} / span 4">{{ h }}</div>{% endfor %}
+    {%- for a in Target.Items %}{% assign p = a.PublishedContent %}{% capture dy %}{{ p.day }}{% endcapture %}{% if dy == qd %}
+      {%- assign col = 0 %}{% for s in stages.Items %}{% if s.PrimaryField == p.stage.PrimaryField %}{% assign col = forloop.index | plus: 1 %}{% assign sc = s.PublishedContent.color %}{% endif %}{% endfor %}
+      {%- assign st = p.start_min | append: "" | plus: 0 %}{% assign du = p.duration | append: "" | plus: 0 %}{% assign row = st | minus: 120 | divided_by: 15 | plus: 2 %}{% assign span = du | divided_by: 15 %}{% assign slug = a.RoutePath | split: "/" | last %}{% capture hd %}{{ p.headliner }}{% endcapture %}
+      <div class="set{% if hd == 'True' %} head{% endif %}" data-mine="{{ slug }}" style="grid-column:{{ col }};grid-row:{{ row }} / span {{ span }};--c:{{ sc }}">
+        <a href="{{ PathBase }}/{{ a.RoutePath }}"><small>{{ p.time_label }}</small><b>{{ a.PrimaryField }}</b><span class="tg">{{ p.tagline }}</span></a>
+        <button class="star" data-pick="{{ slug }}" aria-label="Star {{ a.PrimaryField }}"><i class="bi bi-star"></i></button>
+      </div>
+    {%- endif %}{% endfor %}
+  </div></div>
+  <p class="mut" style="margin-top:20px;font-size:.88rem"><i class="bi bi-info-circle"></i> Set times can change on the day. The screens by each stage and the Info tent always have the latest times.</p>
+</div></section>
+<style>
+  .sched{display:grid;grid-template-columns:70px repeat(var(--cols),minmax(170px,1fr));grid-template-rows:auto repeat(44,26px);gap:0 10px;position:relative;min-width:780px}
+  .sched .sh{grid-row:1;background:var(--night);padding:0 0 14px;display:flex;gap:10px;align-items:flex-start;border-bottom:2px solid var(--c,transparent);margin-bottom:10px}
+  .sched .sh b{display:block;font:700 1.02rem/1.2 var(--disp)}.sched .sh small{display:block;color:var(--mut);font-size:.78rem;margin-top:2px}.sched .sh .dot{margin-top:6px}
+  .sched .hr{grid-column:1;font:600 .78rem/1 var(--disp);color:var(--mut);border-top:1px dashed var(--line);padding-top:6px}
+  .sched .set{position:relative;margin:3px 0;border-radius:14px;background:color-mix(in srgb,var(--c) 20%,var(--night2));border-left:4px solid var(--c);overflow:hidden;transition:opacity .2s,transform .2s}
+  .sched .set:hover{transform:translateY(-2px)}
+  .sched .set a{display:block;padding:10px 42px 10px 14px;height:100%}
+  .sched .set small{display:block;font-size:.74rem;color:#c6d1dc;font-weight:600}.sched .set b{display:block;font:700 1.08rem/1.15 var(--disp);margin:4px 0}
+  .sched .set .tg{display:block;font-size:.8rem;color:#aebccb;line-height:1.35}
+  .sched .set.head{background:linear-gradient(160deg,color-mix(in srgb,var(--c) 70%,#000) ,var(--night2))}.sched .set.head b{font-size:1.3rem}
+  .sched .set .star{top:8px;right:8px;width:32px;height:32px;font-size:.9rem}
+  .sched.only .set:not(.picked){opacity:.18}
+  @media(max-width:860px){.sched{grid-template-columns:54px repeat(var(--cols),200px)}}
+</style>

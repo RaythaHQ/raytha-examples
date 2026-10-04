@@ -1,0 +1,35 @@
+{%- assign days = "fri:Friday:Jul 16,sat:Saturday:Jul 17,sun:Sunday:Jul 18" | split: "," -%}
+{%- assign genres = "indie:Indie,rock:Rock,pop:Pop,electronic:Electronic,hip_hop:Hip-hop,soul:Soul and R&B,folk:Folk" | split: "," -%}
+{%- assign stages = get_content_items(ContentType="stages", OrderBy="sort_order asc", PageSize=10) -%}
+{%- assign qd = "" -%}{%- for d in days %}{% assign kv = d | split: ":" %}{% if QueryParams.day == kv[0] %}{% assign qd = kv[0] %}{% endif %}{% endfor -%}
+{%- assign qg = "" -%}{%- for d in genres %}{% assign kv = d | split: ":" %}{% if QueryParams.genre == kv[0] %}{% assign qg = kv[0] %}{% endif %}{% endfor -%}
+{%- assign qs = "" -%}{%- for s in stages.Items %}{% assign sl = s.RoutePath | split: "/" | last %}{% if QueryParams.stage == sl %}{% assign qs = sl %}{% endif %}{% endfor -%}
+{%- capture base_d %}{% if qs != "" %}&stage={{ qs }}{% endif %}{% if qg != "" %}&genre={{ qg }}{% endif %}{% endcapture -%}
+{%- capture base_s %}{% if qd != "" %}&day={{ qd }}{% endif %}{% if qg != "" %}&genre={{ qg }}{% endif %}{% endcapture -%}
+{%- capture base_g %}{% if qd != "" %}&day={{ qd }}{% endif %}{% if qs != "" %}&stage={{ qs }}{% endif %}{% endcapture -%}
+<section class="phead"><div class="wrap">
+  <span class="eyebrow"><i class="bi bi-stars"></i> Lineup</span>
+  <h1>{{ Target.TotalCount }} artists. <span class="hl">Three days.</span> Four stages.</h1>
+  <p>Filter by day, stage or genre, and tap the star on any artist to build your own schedule. Your picks stay in this browser.</p>
+  <svg class="wv" viewBox="0 0 520 220" aria-hidden="true"><circle cx="300" cy="96" r="80" fill="#ff6b4a"/><path d="M0 140c40-26 80-26 120 0s80 26 120 0 80-26 120 0 80 26 160 0" stroke="#1fb5a8" stroke-width="14" fill="none"/><path d="M0 182c40-26 80-26 120 0s80 26 120 0 80-26 120 0 80 26 160 0" stroke="#ffb347" stroke-width="14" fill="none"/></svg>
+</div></section>
+<section style="padding:0 0 96px"><div class="wrap">
+  <div class="chips"><span class="lbl">Day</span><a href="{{ PathBase }}/lineup{% if base_d != '' %}?{{ base_d | remove_first: '&' }}{% endif %}" class="{% if qd == '' %}on{% endif %}">All days</a>{% for d in days %}{% assign kv = d | split: ":" %}<a href="{{ PathBase }}/lineup?day={{ kv[0] }}{{ base_d }}" class="{% if qd == kv[0] %}on{% endif %}">{{ kv[1] }} <span class="mut" style="font-size:.78rem">{{ kv[2] }}</span></a>{% endfor %}</div>
+  <div class="chips"><span class="lbl">Stage</span><a href="{{ PathBase }}/lineup{% if base_s != '' %}?{{ base_s | remove_first: '&' }}{% endif %}" class="{% if qs == '' %}on{% endif %}">All stages</a>{% for s in stages.Items %}{% assign sl = s.RoutePath | split: "/" | last %}<a href="{{ PathBase }}/lineup?stage={{ sl }}{{ base_s }}" class="{% if qs == sl %}on{% endif %}"><span class="dot" style="background:{{ s.PublishedContent.color }}"></span>{{ s.PublishedContent.short }}</a>{% endfor %}</div>
+  <div class="chips" style="margin-bottom:34px"><span class="lbl">Genre</span><a href="{{ PathBase }}/lineup{% if base_g != '' %}?{{ base_g | remove_first: '&' }}{% endif %}" class="{% if qg == '' %}on{% endif %}">All genres</a>{% for d in genres %}{% assign kv = d | split: ":" %}<a href="{{ PathBase }}/lineup?genre={{ kv[0] }}{{ base_g }}" class="{% if qg == kv[0] %}on{% endif %}">{{ kv[1] }}</a>{% endfor %}</div>
+  {%- assign n = 0 -%}
+  <div class="grid4">
+  {%- for a in Target.Items %}{% assign p = a.PublishedContent %}{% capture dy %}{{ p.day }}{% endcapture %}{% capture gn %}{{ p.genre }}{% endcapture %}{% assign sl = p.stage.RoutePath | split: "/" | last %}
+    {%- assign ok = true %}{% if qd != "" and qd != dy %}{% assign ok = false %}{% endif %}{% if qg != "" and qg != gn %}{% assign ok = false %}{% endif %}{% if qs != "" and qs != sl %}{% assign ok = false %}{% endif %}
+    {%- if ok %}{% assign n = n | plus: 1 %}{% capture hd %}{{ p.headliner }}{% endcapture %}
+    <article class="acard reveal" style="{% if hd == 'True' %}outline:2px solid var(--coral);outline-offset:-2px{% endif %}">
+      <button class="star" data-pick="{{ a.RoutePath | split: '/' | last }}" aria-label="Add {{ a.PrimaryField }} to my schedule"><i class="bi bi-star"></i></button>
+      <a href="{{ PathBase }}/{{ a.RoutePath }}"><div class="im"><img src="{{ p.image.Value | attachment_redirect_url }}" alt="" loading="lazy"></div>
+      <span class="when">{% for d in days %}{% assign kv = d | split: ":" %}{% if kv[0] == dy %}{{ kv[1] | slice: 0, 3 }}{% endif %}{% endfor %} {{ p.time_label | split: " to " | first }}</span>
+      <div class="bd">{% if hd == "True" %}<span class="eyebrow" style="color:var(--coral);font-size:.68rem;margin-bottom:6px">Headliner</span>{% endif %}<h3>{{ a.PrimaryField }}</h3><p class="mut" style="margin:0;font-size:.9rem;line-height:1.45">{{ p.tagline }}</p>
+        <div class="meta"><span class="pill"><span class="dot" style="background:{{ p.stage.PublishedContent.color }}"></span>{{ p.stage.PublishedContent.short }}</span>{% for d in genres %}{% assign kv = d | split: ":" %}{% if kv[0] == gn %}<span class="pill">{{ kv[1] }}</span>{% endif %}{% endfor %}</div></div></a>
+    </article>
+    {%- endif %}{% endfor %}
+  </div>
+  {% if n == 0 %}<div class="card" style="text-align:center;padding:48px"><h3>No artists match those filters</h3><p>Try another day or stage. <a href="{{ PathBase }}/lineup" style="color:var(--coral);text-decoration:underline">Clear filters</a></p></div>{% else %}<p class="mut" style="margin-top:28px;font-size:.9rem">Showing {{ n }} of {{ Target.TotalCount }} artists. <a href="{{ PathBase }}/schedule" style="color:var(--sand);text-decoration:underline">See them on the schedule</a> (<span data-pick-count>0</span> starred).</p>{% endif %}
+</div></section>

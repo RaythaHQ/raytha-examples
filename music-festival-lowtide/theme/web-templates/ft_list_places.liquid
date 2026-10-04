@@ -1,0 +1,3 @@
+<section class="phead"><div class="wrap"><div class="crumbs"><a href="{{ PathBase }}/venue">Venue</a><span>/</span><span>Places</span></div>
+  <h1>On-site <span class="hl">places.</span></h1><p>Gates, food, water, first aid and more. See them all on the <a href="{{ PathBase }}/venue" style="text-decoration:underline">venue map</a>.</p></div></section>
+<section style="padding:0 0 96px"><div class="wrap"><div class="grid3">{% for pl in Target.Items %}<a class="card" href="{{ PathBase }}/{{ pl.RoutePath }}"><h3 style="font-size:1.2rem">{{ pl.PrimaryField }}</h3><p>{{ pl.PublishedContent.description }}</p></a>{% endfor %}</div></div></section>
