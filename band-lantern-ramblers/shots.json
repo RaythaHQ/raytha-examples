@@ -1,0 +1,18 @@
+[
+ {"name": "01-home-hero-1440.png", "path": "/", "device": "desktop"},
+ {"name": "02-home-full-1440.png", "path": "/", "device": "desktop", "full_page": true},
+ {"name": "03-tour-1440.png", "path": "/tour", "device": "desktop", "full_page": true},
+ {"name": "04-songs-1440.png", "path": "/songs", "device": "desktop", "full_page": true},
+ {"name": "05-setlists-1440.png", "path": "/setlists", "device": "desktop", "full_page": true},
+ {"name": "06-setlists-song-1440.png", "path": "/setlists?song=Scarlet%20Begonias", "device": "desktop", "full_page": true},
+ {"name": "07-setlist-detail-1440.png", "path": "/setlists/2026-08-22-riverside-stage-at-jean-webb-park", "device": "desktop", "full_page": true},
+ {"name": "08-show-detail-1440.png", "path": "/shows/2026-10-31-the-lantern-room", "device": "desktop", "full_page": true},
+ {"name": "09-band-1440.png", "path": "/band", "device": "desktop", "full_page": true},
+ {"name": "10-member-1440.png", "path": "/band/june-calloway", "device": "desktop", "full_page": true},
+ {"name": "11-media-1440.png", "path": "/media", "device": "desktop", "full_page": true},
+ {"name": "12-booking-1440.png", "path": "/booking", "device": "desktop", "full_page": true},
+ {"name": "13-home-mobile-390.png", "path": "/", "device": "mobile"},
+ {"name": "14-tour-mobile-390.png", "path": "/tour", "device": "mobile", "full_page": true},
+ {"name": "15-songs-mobile-390.png", "path": "/songs", "device": "mobile"},
+ {"name": "16-setlist-mobile-390.png", "path": "/setlists/2026-08-22-riverside-stage-at-jean-webb-park", "device": "mobile", "full_page": true}
+]

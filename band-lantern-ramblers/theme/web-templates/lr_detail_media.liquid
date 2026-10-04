@@ -1,0 +1,7 @@
+{%- assign p = Target.PublishedContent -%}{%- capture mk %}{{ p.kind }}{% endcapture -%}
+<section class="phead slim"><div class="blobs" aria-hidden="true"><span></span><span></span><span></span><span></span></div><div class="grain"></div><div class="wrap"><div class="crumbs"><a href="{{ PathBase }}/">Home</a><span>/</span><a href="{{ PathBase }}/media">Media</a><span>/</span><span>{{ Target.PrimaryField }}</span></div></div></section>
+<section class="section" style="padding-top:30px"><div class="wrap detail media">
+  <div class="frame"><img src="{{ p.image | attachment_redirect_url }}" alt="{{ Target.PrimaryField }}"></div>
+  <div><span class="kick">{{ p.taken }}</span><h1 style="font-size:clamp(2.6rem,5vw,4rem);margin:16px 0 20px">{{ Target.PrimaryField }}</h1><p class="prose">{{ p.description }}</p><p class="muted">{{ p.credit }}</p>
+    <div class="row" style="margin-top:24px">{% if mk != "photo" %}<a class="btn btn-g" href="{{ p.url }}" target="_blank" rel="noopener">{% if mk == "video" %}Watch{% else %}Listen{% endif %} ({{ p.length }}) <i class="bi bi-box-arrow-up-right"></i></a>{% endif %}<a class="btn btn-line" href="{{ PathBase }}/media">All media</a></div></div>
+</div></section>

@@ -1,0 +1,11 @@
+{%- assign p = Target.PublishedContent -%}
+<section class="phead slim"><div class="blobs" aria-hidden="true"><span></span><span></span><span></span><span></span></div><div class="grain"></div><div class="wrap"><div class="crumbs"><a href="{{ PathBase }}/">Home</a><span>/</span><a href="{{ PathBase }}/band">The band</a><span>/</span><span>{{ Target.PrimaryField }}</span></div></div></section>
+<section class="section" style="padding-top:30px"><div class="wrap detail">
+  <div class="frame"><img src="{{ p.portrait | attachment_redirect_url }}" alt="Portrait of {{ Target.PrimaryField }}"></div>
+  <div><span class="kick" style="color:{{ p.color }}">{{ p.role }}</span><h1 style="font-size:clamp(3rem,6vw,5rem);margin:16px 0 22px">{{ Target.PrimaryField }}</h1>
+    <div class="prose">{{ p.bio }}</div>
+    <div class="facts"><div><span class="lbl">Joined</span><b>{{ p.since }}</b></div><div><span class="lbl">From</span><b>{{ p.hometown }}</b></div>
+      <div style="grid-column:1/-1"><span class="lbl">The song they'd play every night</span><b><a href="{{ PathBase }}/setlists?song={{ p.favorite_song | url_encode }}" style="color:var(--sun)">{{ p.favorite_song }} <i class="bi bi-arrow-right"></i></a></b></div>
+      <div style="grid-column:1/-1"><span class="lbl">Gear</span><b style="font:400 1rem/1.5 var(--sans);color:var(--cream2)">{{ p.gear }}</b></div></div>
+    <a class="btn btn-line" href="{{ PathBase }}/band"><i class="bi bi-arrow-left"></i> The whole band</a></div>
+</div></section>
