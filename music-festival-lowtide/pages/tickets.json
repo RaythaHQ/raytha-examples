@@ -1,0 +1,84 @@
+{
+ "hero": [
+  {
+   "widgetType": "ft_page_header",
+   "settings": {
+    "kicker": "Tickets",
+    "headline": "Pick a pass,",
+    "accent": "we'll see you there.",
+    "subtitle": "Tickets are sold by our ticketing partner, not on this website. Every button here opens their site, which is a placeholder link in this example."
+   }
+  }
+ ],
+ "main": [
+  {
+   "widgetType": "ft_passes",
+   "settings": {
+    "kicker": "2027 passes",
+    "headline": "Four ways",
+    "accent": "in.",
+    "subtitle": "Prices include fees. Under-10s get in free with a paying adult.",
+    "ticket_url": "https://tickets.example.com/lowtide-2027",
+    "note": "No payments happen on this site. Low Tide only sells tickets through its ticketing partner; we never sell through social media or resale apps.",
+    "items": [
+     {
+      "name": "Day pass",
+      "price": "$109",
+      "sub": "Friday, Saturday or Sunday",
+      "perks": "One day, every stage\nRe-entry on the same day\nFree shuttle from Halcyon Bay",
+      "code": "day",
+      "highlight": "no"
+     },
+     {
+      "name": "Weekend pass",
+      "price": "$249",
+      "sub": "All three days",
+      "perks": "All three days, every stage\nRe-entry every day\nFree shuttle from Halcyon Bay\nFree name change until July 9",
+      "code": "weekend",
+      "highlight": "yes"
+     },
+     {
+      "name": "Weekend Plus",
+      "price": "$389",
+      "sub": "All three days, with extras",
+      "perks": "Everything in Weekend\nShaded deck by the Tidepool Main Stage\nFast-lane entry at the Main Gate\nA locker for the weekend",
+      "code": "weekend-plus",
+      "highlight": "no"
+     },
+     {
+      "name": "Under 16",
+      "price": "$79",
+      "sub": "Ages 10 to 15, weekend",
+      "perks": "All three days with an adult\nA free water bottle\nEarplugs at the Info tent",
+      "code": "under-16",
+      "highlight": "no"
+     }
+    ]
+   }
+  },
+  {
+   "widgetType": "ft_faq",
+   "settings": {
+    "kicker": "Ticket questions",
+    "headline": "Before",
+    "accent": "you buy.",
+    "subtitle": "Transfers, ages, rain and more.",
+    "count": 4
+   }
+  },
+  {
+   "widgetType": "ft_cta",
+   "settings": {
+    "kicker": "Not sure yet?",
+    "headline": "Start with",
+    "accent": "the lineup.",
+    "subtitle": "Star the sets you want to see and come back when you have a plan.",
+    "primary_label": "Explore the lineup",
+    "primary_url": "/lineup",
+    "primary_external": "no",
+    "secondary_label": "Read the FAQ",
+    "secondary_url": "/faq"
+   }
+  }
+ ]
+}

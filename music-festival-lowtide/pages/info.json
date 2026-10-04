@@ -1,0 +1,125 @@
+{
+ "hero": [
+  {
+   "widgetType": "ft_page_header",
+   "settings": {
+    "kicker": "Plan your visit",
+    "headline": "Getting there, getting in,",
+    "accent": "getting home.",
+    "subtitle": "Driftwood Point is a car-light site. The easiest way in is the free shuttle from Halcyon Bay station."
+   }
+  }
+ ],
+ "main": [
+  {
+   "widgetType": "ft_info",
+   "settings": {
+    "kicker": "The basics",
+    "headline": "Know before",
+    "accent": "you go.",
+    "subtitle": "",
+    "items": [
+     {
+      "icon": "bus-front",
+      "color": "#1fb5a8",
+      "title": "Shuttle",
+      "text": "Free buses every 10 minutes from Halcyon Bay station, 11 am until 1:30 am. Step-free, with space for wheelchairs.",
+      "link_label": "",
+      "link_url": ""
+     },
+     {
+      "icon": "bicycle",
+      "color": "#ffb347",
+      "title": "Bike or walk",
+      "text": "The Beach Gate is a 25-minute walk along the boardwalk, with free parking for 2,000 bikes.",
+      "link_label": "See it on the map",
+      "link_url": "/venue"
+     },
+     {
+      "icon": "car-front",
+      "color": "#ff6b4a",
+      "title": "Car",
+      "text": "1,500 spaces at $25 a day, and they sell out. Car-share spaces are $10. Book with your tickets.",
+      "link_label": "",
+      "link_url": ""
+     },
+     {
+      "icon": "bag-check",
+      "color": "#b69cff",
+      "title": "What to bring",
+      "text": "An empty bottle, sunscreen, a small bag (under 30 by 40 cm), a blanket. No glass, umbrellas or drones.",
+      "link_label": "Full list",
+      "link_url": "/faq#what-can-i-bring"
+     },
+     {
+      "icon": "credit-card",
+      "color": "#5ec8ff",
+      "title": "Cashless",
+      "text": "Every trader takes cards and phones. Cash-to-card is at the Info tent.",
+      "link_label": "",
+      "link_url": ""
+     },
+     {
+      "icon": "heart-pulse",
+      "color": "#ff5a7a",
+      "title": "Looking after you",
+      "text": "Paramedics at First Aid all day, free water at two refill stations and a quiet welfare space.",
+      "link_label": "Find them on the map",
+      "link_url": "/venue"
+     }
+    ]
+   }
+  },
+  {
+   "widgetType": "ft_text",
+   "settings": {
+    "kicker": "Accessibility",
+    "headline": "A festival that works",
+    "accent": "for everyone.",
+    "subtitle": "",
+    "body": "<p>Main paths are matting or boardwalk, and every stage has step-free access. The accessible viewing platform at the Tidepool Main Stage has seats and space for wheelchairs, with room for one companion each.</p><p>If you need a companion to attend, their ticket is free. ASL interpreters sign every headline set on the screens, and you can request interpreters for other sets until July 1.</p><p>Write to <a href=\"mailto:access@lowtide.example\">access@lowtide.example</a> with anything else you need. A person reads every email.</p>",
+    "side_title": "Weekend at a glance",
+    "facts": [
+     {
+      "label": "Dates",
+      "value": "July 16 to 18, 2027"
+     },
+     {
+      "label": "Gates open",
+      "value": "Noon"
+     },
+     {
+      "label": "First sets",
+      "value": "2:30 pm"
+     },
+     {
+      "label": "Headliners",
+      "value": "9:30 pm"
+     },
+     {
+      "label": "Last set ends",
+      "value": "12:30 am"
+     },
+     {
+      "label": "Last shuttle",
+      "value": "1:30 am"
+     },
+     {
+      "label": "Ages",
+      "value": "All ages"
+     }
+    ]
+   }
+  },
+  {
+   "widgetType": "ft_faq",
+   "settings": {
+    "kicker": "More questions",
+    "headline": "Asked and",
+    "accent": "answered.",
+    "subtitle": "",
+    "count": 6
+   }
+  }
+ ]
+}

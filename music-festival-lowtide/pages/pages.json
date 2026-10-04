@@ -1,0 +1,23 @@
+[
+ {
+  "title": "Low Tide Festival 2027",
+  "routePath": "home",
+  "template": "ft_home",
+  "sections": "pages/home.json",
+  "home": true
+ },
+ {
+  "title": "Tickets",
+  "routePath": "tickets",
+  "template": "ft_page",
+  "sections": "pages/tickets.json",
+  "home": false
+ },
+ {
+  "title": "Plan your visit",
+  "routePath": "info",
+  "template": "ft_page",
+  "sections": "pages/info.json",
+  "home": false
+ }
+]
