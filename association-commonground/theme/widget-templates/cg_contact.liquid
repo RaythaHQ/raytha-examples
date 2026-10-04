@@ -1,0 +1,2 @@
+{%- assign s = widget.settings -%}
+<section class="section" style="padding-top:56px"><div class="wrap"><div class="grid3">{% for c in s.items %}<div class="ben reveal"><div class="ic" style="background:{% cycle 'var(--leaf)','var(--clay)','var(--sky)' %}"><i class="bi bi-{{ c.icon }}"></i></div><h3>{{ c.title }}</h3><p style="margin-bottom:14px">{{ c.text }}</p><a href="mailto:{{ c.email }}" style="font-weight:600;text-decoration:underline">{{ c.email }}</a></div>{% endfor %}</div></div></section>

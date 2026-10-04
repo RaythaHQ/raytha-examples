@@ -1,0 +1,42 @@
+{
+  "label": "Commonground: FAQ",
+  "fields": [
+    {
+      "developerName": "kicker",
+      "label": "Kicker",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "headline",
+      "label": "Headline",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "accent",
+      "label": "Words in italics",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "subtitle",
+      "label": "Subtitle",
+      "fieldType": "long_text"
+    },
+    {
+      "developerName": "items",
+      "label": "Questions",
+      "fieldType": "repeater",
+      "subFields": [
+        {
+          "developerName": "q",
+          "label": "Question",
+          "fieldType": "single_line_text"
+        },
+        {
+          "developerName": "a",
+          "label": "Answer",
+          "fieldType": "long_text"
+        }
+      ]
+    }
+  ]
+}

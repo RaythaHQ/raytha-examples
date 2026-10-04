@@ -1,0 +1,9 @@
+{%- assign s = widget.settings -%}{%- assign today = "now" | date: "%Y-%m-%d" -%}{%- assign lim = s.count | append: "" | plus: 0 -%}{%- if lim == 0 %}{% assign lim = 4 %}{% endif -%}
+{%- assign evs = get_content_items(ContentType="events", OrderBy="start asc", PageSize=40) -%}
+<section class="section"><div class="wrap">
+  <div class="shead"><div><span class="eyebrow">{{ s.kicker }}</span><h2>{{ s.headline }} <em>{{ s.accent }}</em></h2>{% if s.subtitle %}<p>{{ s.subtitle }}</p>{% endif %}</div><a class="btn btn-ghost" href="{{ PathBase }}/events">All events <i class="bi bi-arrow-right"></i></a></div>
+  <div>{% assign n = 0 %}{% for e in evs.Items %}{% assign q = e.PublishedContent %}{% capture d %}{{ q.start.Value | date: "%Y-%m-%d" }}{% endcapture %}{% if d >= today and n < lim %}{% assign n = n | plus: 1 %}{% capture fm %}{{ q.format }}{% endcapture %}{% capture au %}{{ q.audience }}{% endcapture %}
+    <a class="ev reveal" href="{{ PathBase }}/{{ e.RoutePath }}"><div class="date"><div><b>{{ q.start.Value | date: "%-d" }}</b><span>{{ q.start.Value | date: "%b" }}</span></div></div>
+      <div><h3>{{ e.PrimaryField }}</h3><div class="meta"><span class="pill {% if fm == 'online' %}sky{% elsif fm == 'hybrid' %}mustard{% else %}green{% endif %}">{{ fm | replace: "in_person", "In person" | replace: "online", "Online" | replace: "hybrid", "Hybrid" }}</span>{% if au == "members" %}<span class="pill clay"><i class="bi bi-lock-fill"></i> Members</span>{% endif %}<span><i class="bi bi-clock"></i> {{ q.time_label }}</span><span><i class="bi bi-geo-alt"></i> {{ q.location }}</span></div></div>
+      <span class="go btn btn-ghost">Details</span></a>{% endif %}{% endfor %}</div>
+</div></section>

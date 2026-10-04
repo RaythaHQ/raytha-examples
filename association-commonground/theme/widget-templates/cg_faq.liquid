@@ -1,0 +1,5 @@
+{%- assign s = widget.settings -%}
+<section class="section"><div class="wrap" style="display:grid;grid-template-columns:1fr 1.6fr;gap:56px" id="faq-grid">
+  <div><span class="eyebrow">{{ s.kicker }}</span><h2 style="font-size:clamp(2rem,3.6vw,3rem);margin-top:14px">{{ s.headline }} <em>{{ s.accent }}</em></h2><p class="muted" style="margin-top:14px">{{ s.subtitle }}</p></div>
+  <div class="faq">{% for f in s.items %}<details{% if forloop.first %} open{% endif %}><summary>{{ f.q }}</summary><p>{{ f.a }}</p></details>{% endfor %}</div>
+</div></section><style>@media(max-width:860px){#faq-grid{grid-template-columns:1fr!important;gap:24px!important}}</style>

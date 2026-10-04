@@ -1,0 +1,52 @@
+{
+  "label": "Commonground: contact details",
+  "fields": [
+    {
+      "developerName": "kicker",
+      "label": "Kicker",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "headline",
+      "label": "Headline",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "accent",
+      "label": "Words in italics",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "subtitle",
+      "label": "Subtitle",
+      "fieldType": "long_text"
+    },
+    {
+      "developerName": "items",
+      "label": "Contacts",
+      "fieldType": "repeater",
+      "subFields": [
+        {
+          "developerName": "icon",
+          "label": "Bootstrap icon name",
+          "fieldType": "single_line_text"
+        },
+        {
+          "developerName": "title",
+          "label": "Team",
+          "fieldType": "single_line_text"
+        },
+        {
+          "developerName": "text",
+          "label": "What to ask",
+          "fieldType": "long_text"
+        },
+        {
+          "developerName": "email",
+          "label": "Email",
+          "fieldType": "single_line_text"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{%- assign s = widget.settings -%}
+<section class="section"><div class="wrap"><div class="cta reveal">
+  <span class="eyebrow" style="color:#ffe2a3">{{ s.kicker }}</span>
+  <h2 style="margin-top:14px">{{ s.headline }} <em>{{ s.accent }}</em></h2><p>{{ s.subtitle }}</p>
+  <div class="row"><a class="btn btn-green" href="{{ s.primary_url }}">{{ s.primary_label }}</a>{% if s.secondary_label %}<a class="btn btn-line" href="{{ s.secondary_url }}">{{ s.secondary_label }}</a>{% endif %}</div>
+  <svg class="deco" viewBox="0 0 400 300" aria-hidden="true"><path d="M200 300V120" stroke="#1f3b2c" stroke-width="10" stroke-linecap="round"/><ellipse cx="140" cy="150" rx="70" ry="34" transform="rotate(-30 140 150)" fill="#e0a526"/><ellipse cx="262" cy="110" rx="76" ry="36" transform="rotate(28 262 110)" fill="#3f7d5a"/><ellipse cx="170" cy="230" rx="56" ry="26" transform="rotate(-18 170 230)" fill="#1f3b2c"/><circle cx="330" cy="230" r="40" fill="#f6f1e7" opacity=".35"/></svg>
+</div></div></section>

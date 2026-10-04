@@ -1,0 +1,5 @@
+{%- assign s = widget.settings -%}
+<section class="section"><div class="wrap">
+  <div class="shead"><div><span class="eyebrow">{{ s.kicker }}</span><h2>{{ s.headline }} <em>{{ s.accent }}</em></h2></div><p>{{ s.subtitle }}</p></div>
+  <div class="grid3">{% for b in s.items %}<div class="ben reveal"><div class="ic" style="background:{{ b.color }}"><i class="bi bi-{{ b.icon }}"></i></div><h3>{{ b.title }}</h3><p>{{ b.text }}</p></div>{% endfor %}</div>
+</div></section>

@@ -1,0 +1,6 @@
+{%- assign s = widget.settings -%}
+{%- assign cs = get_content_items(ContentType="chapters", OrderBy="members desc", PageSize=4) -%}
+<section class="section dark"><div class="wrap">
+  <div class="shead"><div><span class="eyebrow">{{ s.kicker }}</span><h2>{{ s.headline }} <em style="color:var(--mustard)">{{ s.accent }}</em></h2><p>{{ s.subtitle }}</p></div><a class="btn btn-clay" href="{{ PathBase }}/chapters">Chapter directory <i class="bi bi-arrow-right"></i></a></div>
+  <div class="grid4">{% for c in cs.Items %}{% assign p = c.PublishedContent %}<a class="chap reveal" style="--c:{{ p.color }};color:var(--ink)" href="{{ PathBase }}/{{ c.RoutePath }}"><h3>{{ c.PrimaryField }}</h3><span class="loc">{{ p.city }}, {{ p.state }}</span><div class="nums"><div><b>{{ p.members }}</b>members</div><div><b>{{ p.gardens }}</b>gardens</div></div></a>{% endfor %}</div>
+</div></section>
