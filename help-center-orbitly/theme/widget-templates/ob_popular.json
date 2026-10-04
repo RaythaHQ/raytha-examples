@@ -1,0 +1,8 @@
+{
+  "label": "Orbitly: popular articles and latest releases",
+  "fields": [
+    {"developerName": "kicker", "label": "Kicker", "fieldType": "single_line_text"},
+    {"developerName": "headline", "label": "Headline", "fieldType": "single_line_text"},
+    {"developerName": "count", "label": "Number of articles", "fieldType": "number"}
+  ]
+}

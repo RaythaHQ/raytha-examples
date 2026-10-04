@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "contentTypes": [
+    {
+      "developerName": "categories",
+      "labelPlural": "Categories",
+      "labelSingular": "Category",
+      "description": "Help center sections",
+      "defaultRouteTemplate": "help/{PrimaryField}",
+      "primaryField": "name",
+      "fields": [
+        {"developerName": "name", "label": "Name", "description": "", "fieldType": "single_line_text", "isRequired": true, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "description", "label": "Description", "description": "", "fieldType": "long_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "icon", "label": "Bootstrap icon name", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "color", "label": "Colour", "description": "", "fieldType": "color", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "sort_order", "label": "Sort order", "description": "", "fieldType": "number", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []}
+      ],
+      "views": [
+        {"developerName": "categories", "label": "Categories", "description": "", "isPublished": true, "routePath": "help", "template": "ob_list_categories", "columns": ["PrimaryField"], "sort": [{"developerName": "sort_order", "direction": "asc"}], "filter": [], "defaultNumberOfItemsPerPage": 50, "maxNumberOfItemsPerPage": 1000, "ignoreClientFilterAndSortQueryParams": false}
+      ]
+    },
+    {
+      "developerName": "articles",
+      "labelPlural": "Articles",
+      "labelSingular": "Article",
+      "description": "Help articles",
+      "defaultRouteTemplate": "articles/{PrimaryField}",
+      "primaryField": "title",
+      "fields": [
+        {"developerName": "title", "label": "Title", "description": "", "fieldType": "single_line_text", "isRequired": true, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "summary", "label": "Summary", "description": "", "fieldType": "long_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "content", "label": "Body", "description": "", "fieldType": "wysiwyg", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "category", "label": "Category", "description": "", "fieldType": "one_to_one_relationship", "isRequired": true, "choices": [], "relatedContentType": "categories", "subFields": []},
+        {"developerName": "tags", "label": "Tags", "description": "", "fieldType": "multiple_select", "isRequired": false, "choices": [{"developerName": "getting_started", "label": "Getting started", "disabled": false}, {"developerName": "projects", "label": "Projects", "disabled": false}, {"developerName": "timeline", "label": "Timeline", "disabled": false}, {"developerName": "tasks", "label": "Tasks", "disabled": false}, {"developerName": "team", "label": "Team", "disabled": false}, {"developerName": "permissions", "label": "Permissions", "disabled": false}, {"developerName": "billing", "label": "Billing", "disabled": false}, {"developerName": "integrations", "label": "Integrations", "disabled": false}, {"developerName": "api", "label": "API", "disabled": false}, {"developerName": "security", "label": "Security", "disabled": false}, {"developerName": "mobile", "label": "Mobile", "disabled": false}, {"developerName": "import", "label": "Import", "disabled": false}], "relatedContentType": null, "subFields": []},
+        {"developerName": "updated_on", "label": "Last updated", "description": "", "fieldType": "date", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "read_minutes", "label": "Reading time (minutes)", "description": "", "fieldType": "number", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "popular", "label": "Popular", "description": "", "fieldType": "checkbox", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "sort_order", "label": "Order in category", "description": "", "fieldType": "number", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []}
+      ],
+      "views": [
+        {"developerName": "articles", "label": "All articles", "description": "", "isPublished": true, "routePath": "articles", "template": "ob_list_articles", "columns": ["PrimaryField"], "sort": [{"developerName": "updated_on", "direction": "desc"}], "filter": [], "defaultNumberOfItemsPerPage": 100, "maxNumberOfItemsPerPage": 1000, "ignoreClientFilterAndSortQueryParams": false}
+      ]
+    },
+    {
+      "developerName": "releases",
+      "labelPlural": "Releases",
+      "labelSingular": "Release",
+      "description": "Changelog entries",
+      "defaultRouteTemplate": "changelog/{PrimaryField}",
+      "primaryField": "title",
+      "fields": [
+        {"developerName": "title", "label": "Title", "description": "", "fieldType": "single_line_text", "isRequired": true, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "version", "label": "Version", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "released_on", "label": "Released on", "description": "", "fieldType": "date", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "kind", "label": "Kind", "description": "", "fieldType": "dropdown", "isRequired": false, "choices": [{"developerName": "new", "label": "New", "disabled": false}, {"developerName": "improved", "label": "Improved", "disabled": false}, {"developerName": "fixed", "label": "Fixed", "disabled": false}], "relatedContentType": null, "subFields": []},
+        {"developerName": "summary", "label": "Summary", "description": "", "fieldType": "long_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "content", "label": "Notes", "description": "", "fieldType": "wysiwyg", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []}
+      ],
+      "views": [
+        {"developerName": "releases", "label": "Changelog", "description": "", "isPublished": true, "routePath": "changelog", "template": "ob_list_releases", "columns": ["PrimaryField"], "sort": [{"developerName": "released_on", "direction": "desc"}], "filter": [], "defaultNumberOfItemsPerPage": 50, "maxNumberOfItemsPerPage": 1000, "ignoreClientFilterAndSortQueryParams": false}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "label": "Orbitly: contact options",
+  "fields": [
+    {"developerName": "headline", "label": "Headline", "fieldType": "single_line_text"},
+    {"developerName": "subtitle", "label": "Subtitle", "fieldType": "long_text"},
+    {"developerName": "options", "label": "Options", "fieldType": "repeater", "subFields": [
+      {"developerName": "icon", "label": "Bootstrap icon name", "fieldType": "single_line_text"},
+      {"developerName": "title", "label": "Title", "fieldType": "single_line_text"},
+      {"developerName": "body", "label": "Body", "fieldType": "single_line_text"},
+      {"developerName": "url", "label": "Link", "fieldType": "single_line_text"}
+    ]}
+  ]
+}

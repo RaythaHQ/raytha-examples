@@ -1,0 +1,16 @@
+{
+  "label": "Orbitly: system status board",
+  "fields": [
+    {"developerName": "summary", "label": "Overall status line", "fieldType": "single_line_text"},
+    {"developerName": "components", "label": "Components", "fieldType": "repeater", "subFields": [
+      {"developerName": "name", "label": "Name", "fieldType": "single_line_text"},
+      {"developerName": "uptime", "label": "90-day uptime", "fieldType": "single_line_text"},
+      {"developerName": "degraded", "label": "Days with issues (1-90, comma separated)", "fieldType": "single_line_text"}
+    ]},
+    {"developerName": "incidents", "label": "Recent incidents", "fieldType": "repeater", "subFields": [
+      {"developerName": "date", "label": "Date", "fieldType": "single_line_text"},
+      {"developerName": "title", "label": "Title", "fieldType": "single_line_text"},
+      {"developerName": "body", "label": "What happened", "fieldType": "long_text"}
+    ]}
+  ]
+}

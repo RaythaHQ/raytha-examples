@@ -1,0 +1,14 @@
+{
+  "label": "Orbitly: hero with instant search",
+  "fields": [
+    {"developerName": "kicker", "label": "Kicker", "fieldType": "single_line_text"},
+    {"developerName": "headline", "label": "Headline", "fieldType": "single_line_text"},
+    {"developerName": "accent", "label": "Headline accent (gradient)", "fieldType": "single_line_text"},
+    {"developerName": "subtitle", "label": "Subtitle", "fieldType": "long_text"},
+    {"developerName": "placeholder", "label": "Search placeholder", "fieldType": "single_line_text"},
+    {"developerName": "popular", "label": "Popular searches", "fieldType": "repeater", "subFields": [
+      {"developerName": "label", "label": "Label", "fieldType": "single_line_text"},
+      {"developerName": "url", "label": "Link", "fieldType": "single_line_text"}
+    ]}
+  ]
+}
