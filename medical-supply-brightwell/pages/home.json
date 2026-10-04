@@ -1,0 +1,174 @@
+{
+ "hero": [
+  {
+   "widgetType": "bw_hero",
+   "settings": {
+    "kicker": "Medicare-enrolled supplier",
+    "headline": "Home medical equipment",
+    "accent": "delivered and set up",
+    "subtitle": "Oxygen, CPAP, wheelchairs, hospital beds and bathroom safety. We check your coverage, deliver within one or two business days and show you how everything works.",
+    "hero_code": "E1390",
+    "quick": [
+     {
+      "label": "Oxygen",
+      "url": "/equipment/respiratory"
+     },
+     {
+      "label": "CPAP",
+      "url": "/products/cpap-system-with-heated-humidifier"
+     },
+     {
+      "label": "Wheelchairs",
+      "url": "/equipment/mobility"
+     },
+     {
+      "label": "Hospital beds",
+      "url": "/equipment/hospital-beds"
+     }
+    ],
+    "trust": [
+     {
+      "icon": "shield-check",
+      "text": "Medicare and most plans"
+     },
+     {
+      "icon": "truck",
+      "text": "Delivery in 1 to 2 days"
+     },
+     {
+      "icon": "telephone",
+      "text": "Real people answer"
+     }
+    ],
+    "cards": [
+     {
+      "icon": "truck",
+      "title": "Delivered and set up",
+      "text": "Most orders in 1 to 2 business days"
+     },
+     {
+      "icon": "shield-check",
+      "title": "Coverage checked first",
+      "text": "We call you with your cost"
+     },
+     {
+      "icon": "lungs",
+      "title": "Respiratory therapist",
+      "text": "On call 24 hours a day"
+     }
+    ]
+   }
+  }
+ ],
+ "main": [
+  {
+   "widgetType": "bw_categories",
+   "settings": {
+    "kicker": "Equipment",
+    "headline": "What do you need help with?",
+    "subtitle": "Six categories, everything fitted and explained by our own technicians and respiratory therapists."
+   }
+  },
+  {
+   "widgetType": "bw_featured",
+   "settings": {
+    "kicker": "Most ordered",
+    "headline": "Equipment our patients rely on",
+    "subtitle": "Each product page shows the HCPCS billing code, what it costs to rent or buy, and what insurance usually covers.",
+    "count": 6
+   }
+  },
+  {
+   "widgetType": "bw_steps",
+   "settings": {
+    "kicker": "How ordering works",
+    "headline": "We handle the paperwork from prescription to setup",
+    "subtitle": "There are no forms to fill in on this website. Call us, or ask your doctor to send an order.",
+    "steps": [
+     {
+      "title": "Your doctor sends an order",
+      "body": "Or call us and we will contact your doctor's office for you."
+     },
+     {
+      "title": "We check your coverage",
+      "body": "We confirm your benefits and call you with your cost before anything is delivered."
+     },
+     {
+      "title": "We deliver and set up",
+      "body": "A technician or respiratory therapist sets everything up and shows you how it works."
+     },
+     {
+      "title": "We stay in touch",
+      "body": "Resupply reminders, repairs and a 24-hour line for oxygen and breathing equipment."
+     }
+    ]
+   }
+  },
+  {
+   "widgetType": "bw_insurance",
+   "settings": {
+    "kicker": "Insurance",
+    "headline": "We work with Medicare and most insurance plans",
+    "body": "We are a Medicare-enrolled supplier and accept assignment. We bill your plan directly and tell you what you owe before delivery.",
+    "button_label": "Medicare and your equipment",
+    "button_url": "/resources/medicare-and-your-equipment",
+    "plans": [
+     {
+      "name": "Medicare Part B"
+     },
+     {
+      "name": "Medicare Advantage"
+     },
+     {
+      "name": "Medicaid"
+     },
+     {
+      "name": "Most commercial plans"
+     },
+     {
+      "name": "Workers' compensation"
+     },
+     {
+      "name": "HSA and FSA cards"
+     }
+    ]
+   }
+  },
+  {
+   "widgetType": "bw_locations",
+   "settings": {
+    "kicker": "Locations",
+    "headline": "Three places to visit and one number to call",
+    "subtitle": "Try equipment in a showroom, get a repair while you wait, or have a CPAP mask fitted by appointment."
+   }
+  },
+  {
+   "widgetType": "bw_resources",
+   "settings": {
+    "kicker": "Patient resources",
+    "headline": "Plain-language guides for patients and caregivers",
+    "count": 3
+   }
+  },
+  {
+   "widgetType": "bw_faq",
+   "settings": {
+    "kicker": "FAQ",
+    "headline": "Common questions",
+    "topic": "",
+    "count": 5
+   }
+  },
+  {
+   "widgetType": "bw_cta",
+   "settings": {
+    "headline": "Talk to a real person today",
+    "body": "Our order desk can answer questions, check your coverage and arrange delivery. Monday to Friday 8 am to 6 pm, Saturday 9 am to 1 pm.",
+    "primary_label": "(800) 555-0134",
+    "primary_url": "tel:+18005550134",
+    "secondary_label": "Email the order desk",
+    "secondary_url": "mailto:orders@example.com"
+   }
+  }
+ ]
+}

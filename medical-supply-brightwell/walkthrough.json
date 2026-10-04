@@ -1,0 +1,161 @@
+{
+  "slug": "brightwell-medical-supply",
+  "name": "Brightwell Medical Supply",
+  "viewport": [
+    1440,
+    810
+  ],
+  "output": [
+    1920,
+    1080
+  ],
+  "colorScheme": "light",
+  "title": {
+    "kicker": "Raytha use case",
+    "heading": "Brightwell Medical Supply",
+    "subheading": "A medical equipment provider's website with a searchable catalog, coverage details and patient guides, built on Raytha by an AI agent with the CLI.",
+    "hold": 1.6
+  },
+  "end": {
+    "heading": "Built with Raytha",
+    "subheading": "Open-source .NET CMS. Get the brief, screenshots and a one-command rebuild kit.",
+    "url": "raytha.com/use-cases/brightwell-medical-supply",
+    "hold": 2.6
+  },
+  "scenes": [
+    {
+      "url": "/",
+      "caption": "Search the catalog by name or HCPCS code",
+      "actions": [
+        {
+          "hold": 1.0,
+          "poster": true
+        },
+        {
+          "type": {
+            "selector": ".hero .search input[name=q]",
+            "text": "oxygen",
+            "cps": 9
+          },
+          "press": "Enter"
+        },
+        {
+          "hold": 1.0
+        }
+      ]
+    },
+    {
+      "url": "/products",
+      "caption": "Filter by category, rent or buy, and coverage",
+      "actions": [
+        {
+          "hold": 0.4
+        },
+        {
+          "scroll": 360,
+          "dur": 1.1
+        },
+        {
+          "click": ".side a[href*='acquire=rent']",
+          "dur": 0.9
+        },
+        {
+          "hold": 0.3
+        },
+        {
+          "scroll": 360,
+          "dur": 0.9
+        },
+        {
+          "click": ".side a[href*='coverage=medicare']",
+          "dur": 0.9
+        },
+        {
+          "hold": 0.3
+        },
+        {
+          "hold": 0.5
+        }
+      ]
+    },
+    {
+      "url": "/products/cpap-system-with-heated-humidifier",
+      "caption": "Product pages with specs, coverage and order by phone",
+      "actions": [
+        {
+          "hold": 0.8
+        },
+        {
+          "scroll": 760,
+          "dur": 1.9
+        },
+        {
+          "hold": 0.5
+        }
+      ]
+    },
+    {
+      "url": "/faq",
+      "caption": "FAQs from a content type, filtered as you type",
+      "actions": [
+        {
+          "hold": 0.4
+        },
+        {
+          "type": {
+            "selector": "#faqfilter",
+            "text": "rental",
+            "cps": 9
+          }
+        },
+        {
+          "hold": 0.6
+        },
+        {
+          "click": "details.q:not([style*='none']) summary",
+          "dur": 0.8,
+          "navigates": false
+        },
+        {
+          "hold": 0.8
+        }
+      ]
+    },
+    {
+      "url": "/locations",
+      "caption": "Locations with today's hours highlighted",
+      "actions": [
+        {
+          "hold": 0.5
+        },
+        {
+          "scroll": 520,
+          "dur": 1.6
+        },
+        {
+          "hold": 0.6
+        }
+      ]
+    },
+    {
+      "url": "/",
+      "phone": true,
+      "phoneCaption": {
+        "kicker": "Responsive",
+        "text": "Find equipment from a phone"
+      },
+      "actions": [
+        {
+          "hold": 0.5
+        },
+        {
+          "scroll": 1200,
+          "dur": 2.1
+        },
+        {
+          "hold": 0.4
+        }
+      ]
+    }
+  ]
+}

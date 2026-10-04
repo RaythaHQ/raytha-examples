@@ -1,0 +1,117 @@
+{
+ "hero": [
+  {
+   "widgetType": "bw_page_header",
+   "settings": {
+    "kicker": "How to order",
+    "headline": "How to order equipment",
+    "subtitle": "Most equipment needs a prescription and some paperwork before insurance will pay. We take care of most of it. You will never be asked to pay on this website."
+   }
+  }
+ ],
+ "main": [
+  {
+   "widgetType": "bw_steps",
+   "settings": {
+    "kicker": "Step by step",
+    "headline": "Four steps to equipment at home",
+    "subtitle": "Most people have their equipment within one or two business days of a complete order.",
+    "steps": [
+     {
+      "title": "Get an order from your doctor",
+      "body": "Ask your doctor or discharge planner to send us an order, or call us and we will request it for you."
+     },
+     {
+      "title": "We verify your benefits",
+      "body": "We check your plan, request any prior authorization and call you with your cost."
+     },
+     {
+      "title": "Delivery and setup",
+      "body": "We bring the equipment, set it up, and train you and your caregivers until you are comfortable."
+     },
+     {
+      "title": "Ongoing support",
+      "body": "We handle resupply, repairs and rental pickups. Call any time you need us."
+     }
+    ]
+   }
+  },
+  {
+   "widgetType": "bw_checklist",
+   "settings": {
+    "kicker": "For your doctor",
+    "headline": "What a complete order includes",
+    "body": "Missing details are the most common reason an order is delayed. If anything is missing, we contact your doctor's office directly.",
+    "items": [
+     {
+      "text": "Your name, date of birth and insurance details"
+     },
+     {
+      "text": "The equipment, accessories and how long you need it"
+     },
+     {
+      "text": "Your diagnosis and why the equipment is needed at home"
+     },
+     {
+      "text": "Notes from a visit in the last six months"
+     },
+     {
+      "text": "Your doctor's signature and the date"
+     }
+    ],
+    "aside_title": "Prescribers",
+    "aside_body": "Fax orders and visit notes to (800) 555-0139, or send them electronically. Our intake team reviews every order the same business day and calls your office if anything is missing."
+   }
+  },
+  {
+   "widgetType": "bw_insurance",
+   "settings": {
+    "kicker": "Insurance",
+    "headline": "Plans we work with",
+    "body": "We bill your plan directly. If your plan does not cover an item, we will tell you the self-pay price before you decide.",
+    "button_label": "Understanding your bill",
+    "button_url": "/resources/understanding-your-bill",
+    "plans": [
+     {
+      "name": "Medicare Part B"
+     },
+     {
+      "name": "Medicare Advantage"
+     },
+     {
+      "name": "Medicaid"
+     },
+     {
+      "name": "Most commercial plans"
+     },
+     {
+      "name": "Workers' compensation"
+     },
+     {
+      "name": "HSA and FSA cards"
+     }
+    ]
+   }
+  },
+  {
+   "widgetType": "bw_faq",
+   "settings": {
+    "kicker": "Ordering FAQ",
+    "headline": "Questions about ordering",
+    "topic": "ordering",
+    "count": 5
+   }
+  },
+  {
+   "widgetType": "bw_cta",
+   "settings": {
+    "headline": "Ready to order?",
+    "body": "Call the order desk and have your insurance card ready. We will take it from there.",
+    "primary_label": "(800) 555-0134",
+    "primary_url": "tel:+18005550134",
+    "secondary_label": "Visit a showroom",
+    "secondary_url": "/locations"
+   }
+  }
+ ]
+}
