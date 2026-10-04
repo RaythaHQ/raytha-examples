@@ -1,0 +1,42 @@
+{
+  "slug": "horizon-summit-2027",
+  "name": "Horizon Summit 2027",
+  "viewport": [1440, 810],
+  "output": [1920, 1080],
+  "colorScheme": "dark",
+  "title": {"kicker": "Raytha use case · Week 1", "heading": "Horizon Summit 2027", "subheading": "A three-day tech conference site, built on Raytha by an AI agent with the CLI.", "hold": 1.6},
+  "end": {"heading": "Built with Raytha", "subheading": "Open-source .NET CMS. Get the brief, screenshots and a one-command rebuild kit.", "url": "raytha.com/use-cases/horizon-summit-2027", "hold": 2.6},
+  "login": {"path": "/account/login", "emailEnv": "SITE_USER_EMAIL", "passwordEnv": "SITE_USER_PASSWORD"},
+  "scenes": [
+    {"url": "/", "caption": "A custom theme from the Raytha CLI, no admin clicks", "actions": [
+      {"hold": 1.2, "poster": true},
+      {"scroll": 1150, "dur": 3.0},
+      {"hold": 0.5}
+    ]},
+    {"url": "/agenda?day=day_1", "caption": "Agenda: list views filtered by day and track", "startScroll": 230, "actions": [
+      {"hold": 0.5},
+      {"click": ".filters a.chip[href*='track=ai-data']", "dur": 0.9},
+      {"hold": 0.4},
+      {"scroll": 520, "dur": 1.8},
+      {"hold": 0.5}
+    ]},
+    {"url": "/speakers", "caption": "Speakers, each with a page that lists their sessions", "actions": [
+      {"hold": 0.3},
+      {"scroll": {"selector": "a.speaker-card[href='/speakers/hannah-lindqvist']", "offset": 260}, "dur": 1.2},
+      {"click": "a.speaker-card[href='/speakers/hannah-lindqvist']", "dur": 0.8},
+      {"hold": 0.5},
+      {"scroll": 560, "dur": 1.8},
+      {"hold": 0.4}
+    ]},
+    {"url": "/attendee-hub", "signin": true, "caption": "Members-only Attendee Hub, gated by a user group", "actions": [
+      {"hold": 0.8},
+      {"scroll": 520, "dur": 1.8},
+      {"hold": 0.5}
+    ]},
+    {"url": "/agenda?day=day_2", "phone": true, "phoneCaption": {"kicker": "Responsive", "text": "Every page works on a phone, too"}, "actions": [
+      {"hold": 0.6},
+      {"scroll": 900, "dur": 2.0},
+      {"hold": 0.5}
+    ]}
+  ]
+}

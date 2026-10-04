@@ -1,0 +1,48 @@
+{
+  "slug": "groundwork-job-board",
+  "name": "Groundwork",
+  "viewport": [1440, 810],
+  "output": [1920, 1080],
+  "colorScheme": "light",
+  "title": {"kicker": "Raytha use case · Week 2", "heading": "Groundwork", "subheading": "A climate tech job board with salaries on every listing, built on Raytha by an AI agent with the CLI.", "hold": 1.6},
+  "end": {"heading": "Built with Raytha", "subheading": "Open-source .NET CMS. Get the brief, screenshots and a one-command rebuild kit.", "url": "raytha.com/use-cases/groundwork-job-board", "hold": 2.6},
+  "login": {"path": "/account/login", "emailEnv": "SITE_USER_EMAIL", "passwordEnv": "SITE_USER_PASSWORD"},
+  "scenes": [
+    {"url": "/", "caption": "Climate tech jobs, with the salary on every listing", "actions": [
+      {"hold": 1.1, "poster": true},
+      {"type": {"selector": ".hero-search input[name=q]", "text": "python", "cps": 10}, "dur": 0.9, "press": "Enter"},
+      {"hold": 0.4},
+      {"scroll": 420, "dur": 1.6},
+      {"hold": 0.4}
+    ]},
+    {"url": "/jobs", "caption": "Filters by salary, skill and type: a list view plus Liquid", "startScroll": {"selector": "a.chip[href='/jobs?salary=130000']", "offset": 430}, "actions": [
+      {"hold": 0.4},
+      {"click": "a.chip[href='/jobs?salary=130000']", "dur": 0.9},
+      {"hold": 0.5},
+      {"scroll": 420, "dur": 1.6},
+      {"hold": 0.4}
+    ]},
+    {"url": "/jobs/battery-data-scientist", "caption": "Job pages with JobPosting JSON-LD for Google for Jobs", "actions": [
+      {"hold": 0.6},
+      {"scroll": 560, "dur": 1.8},
+      {"hold": 0.4}
+    ]},
+    {"url": "/companies", "caption": "Companies linked to their jobs with relationship fields", "actions": [
+      {"hold": 0.3},
+      {"click": "a.co-card[href='/companies/gridwise']", "dur": 0.8},
+      {"hold": 0.5},
+      {"scroll": 480, "dur": 1.5},
+      {"hold": 0.3}
+    ]},
+    {"url": "/hub", "signin": true, "caption": "Members' Hub: salary benchmarks for the members group", "actions": [
+      {"hold": 0.7},
+      {"scroll": 520, "dur": 1.7},
+      {"hold": 0.5}
+    ]},
+    {"url": "/jobs", "phone": true, "phoneCaption": {"kicker": "Responsive", "text": "Search and apply from a phone"}, "actions": [
+      {"hold": 0.5},
+      {"scroll": 900, "dur": 1.9},
+      {"hold": 0.4}
+    ]}
+  ]
+}

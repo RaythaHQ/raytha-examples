@@ -26,3 +26,7 @@ __pycache__/
 # Editors
 .vscode/
 .idea/
+
+# Walkthrough videos (host MP4s on the Raytha site, link them from READMEs)
+walkthrough-out/
+*.mp4
