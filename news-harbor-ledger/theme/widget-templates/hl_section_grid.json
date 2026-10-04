@@ -1,0 +1,15 @@
+{
+  "label": "Ledger: section columns",
+  "fields": [
+    {
+      "developerName": "sections",
+      "label": "Section names, comma separated",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "count",
+      "label": "Headlines per section",
+      "fieldType": "number"
+    }
+  ]
+}

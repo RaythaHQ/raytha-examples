@@ -1,0 +1,3 @@
+{%- assign s = widget.settings -%}
+<section class="wrap" style="padding-top:44px"><div class="shd"><h2>{{ s.headline }}</h2><span class="kick">{{ s.kicker }}</span></div><div class="stdg">{% for it in s.items %}<div><span class="n">{{ forloop.index | prepend: "0" }}</span><h3 class="h-m">{{ it.title }}</h3><p class="mut" style="margin:6px 0 0">{{ it.text }}</p></div>{% endfor %}</div></section>
+<style>.stdg{display:grid;grid-template-columns:repeat(3,1fr);gap:28px 34px}.stdg .n{display:block;font:800 1.1rem/1 var(--serif);color:var(--red);margin-bottom:8px}@media(max-width:860px){.stdg{grid-template-columns:1fr}}</style>

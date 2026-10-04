@@ -1,0 +1,11 @@
+{%- assign s = widget.settings -%}{% assign lim = s.count | append: "" | plus: 0 %}{% if lim == 0 %}{% assign lim = 3 %}{% endif %}{% assign names = s.sections | split: "," %}
+{%- assign secs = get_content_items(ContentType="sections", OrderBy="sort_order asc", PageSize=20) -%}{%- assign all = get_content_items(ContentType="articles", OrderBy="published_on desc", PageSize=200) -%}
+<section class="wrap sgr" style="margin-top:46px">
+{%- for nm in names %}{% assign nm2 = nm | strip %}{% for sec in secs.Items %}{% if sec.PrimaryField == nm2 %}
+  <div><div class="shd" style="border-top-color:{{ sec.PublishedContent.color }}"><h2>{{ sec.PrimaryField }}</h2><a href="{{ PathBase }}/{{ sec.RoutePath }}">More</a></div>{% assign k = 0 %}
+  {%- for x in all.Items %}{% assign q = x.PublishedContent %}{% capture ft %}{{ q.featured }}{% endcapture %}{% if q.section.PrimaryField == sec.PrimaryField and ft != "True" and k < lim %}{% assign k = k | plus: 1 %}
+    <a href="{{ PathBase }}/{{ x.RoutePath }}" class="sgi">{% if k == 1 %}<img class="thumb" src="{{ q.image.Value | attachment_redirect_url }}" alt="" style="margin-bottom:10px">{% endif %}<h3 class="{% if k == 1 %}h-m{% else %}h-s{% endif %} hd">{{ x.PrimaryField }}</h3>{% if k == 1 %}<p class="dek" style="font-size:.95rem">{{ q.dek | truncatewords: 22 }}</p>{% endif %}</a>
+  {%- endif %}{% endfor %}</div>
+{%- endif %}{% endfor %}{% endfor %}
+</section>
+<style>.sgr{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}.sgi{display:block;padding:12px 0;border-top:1px solid var(--line)}.sgi:first-of-type{border-top:0;padding-top:0}@media(max-width:900px){.sgr{grid-template-columns:1fr}}</style>

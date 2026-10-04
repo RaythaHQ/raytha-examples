@@ -1,0 +1,167 @@
+{
+  "slug": "harbor-ledger",
+  "name": "The Harbor Ledger",
+  "viewport": [
+    1440,
+    810
+  ],
+  "output": [
+    1920,
+    1080
+  ],
+  "colorScheme": "light",
+  "title": {
+    "kicker": "Raytha use case",
+    "heading": "The Harbor Ledger",
+    "subheading": "A local news site with sections, bylines, a breaking banner, live updates, most-read and RSS and JSON feeds, built on Raytha by an AI agent with the CLI.",
+    "hold": 1.3
+  },
+  "end": {
+    "heading": "Built with Raytha",
+    "subheading": "Open-source .NET CMS. Get the brief, screenshots and a one-command rebuild kit.",
+    "url": "raytha.com/use-cases/harbor-ledger",
+    "hold": 2.3
+  },
+  "scenes": [
+    {
+      "url": "/",
+      "caption": "A front page with the top story, live updates and section rows",
+      "actions": [
+        {
+          "hold": 1.0,
+          "poster": true
+        },
+        {
+          "scroll": 1500,
+          "dur": 2.4
+        },
+        {
+          "hold": 0.6
+        }
+      ]
+    },
+    {
+      "url": "/news/noreaster-floods-the-causeway-strands-ferries-and-cuts-power-to-9000",
+      "caption": "A breaking story with timestamped live updates",
+      "actions": [
+        {
+          "hold": 0.6
+        },
+        {
+          "scroll": {
+            "selector": "#live",
+            "offset": 110
+          },
+          "dur": 1.4
+        },
+        {
+          "hold": 0.5
+        },
+        {
+          "click": "[data-lf='key']",
+          "dur": 0.8,
+          "navigates": false,
+          "waitMs": 300
+        },
+        {
+          "hold": 0.9
+        }
+      ]
+    },
+    {
+      "url": "/news",
+      "caption": "The latest news, filtered by section and story type",
+      "actions": [
+        {
+          "hold": 0.5
+        },
+        {
+          "click": ".chips a[href*='section=harbor-climate']",
+          "dur": 0.9
+        },
+        {
+          "click": ".chips a[href*='type=news']",
+          "dur": 0.9
+        },
+        {
+          "scroll": 380,
+          "dur": 1.0
+        },
+        {
+          "hold": 0.5
+        }
+      ]
+    },
+    {
+      "url": "/staff/priya-raman",
+      "caption": "Every byline links to the reporter's page",
+      "actions": [
+        {
+          "hold": 0.7
+        },
+        {
+          "scroll": 420,
+          "dur": 1.2
+        },
+        {
+          "hold": 0.4
+        }
+      ]
+    },
+    {
+      "url": "/most-read",
+      "caption": "Most read, from a reads field the newsroom can sync",
+      "actions": [
+        {
+          "hold": 0.6
+        },
+        {
+          "scroll": 700,
+          "dur": 1.6
+        },
+        {
+          "hold": 0.5
+        }
+      ]
+    },
+    {
+      "url": "/about",
+      "caption": "RSS and JSON feeds, served by Raytha Functions",
+      "actions": [
+        {
+          "hold": 0.3
+        },
+        {
+          "scroll": {
+            "selector": ".fdb",
+            "offset": 240
+          },
+          "dur": 1.6
+        },
+        {
+          "hold": 1.1
+        }
+      ]
+    },
+    {
+      "url": "/news/noreaster-floods-the-causeway-strands-ferries-and-cuts-power-to-9000",
+      "phone": true,
+      "phoneCaption": {
+        "kicker": "Responsive",
+        "text": "Live updates on a phone"
+      },
+      "actions": [
+        {
+          "hold": 0.5
+        },
+        {
+          "scroll": 1100,
+          "dur": 2.0
+        },
+        {
+          "hold": 0.4
+        }
+      ]
+    }
+  ]
+}

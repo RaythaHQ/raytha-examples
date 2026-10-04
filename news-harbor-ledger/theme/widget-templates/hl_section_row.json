@@ -1,0 +1,15 @@
+{
+  "label": "Ledger: section row",
+  "fields": [
+    {
+      "developerName": "section",
+      "label": "Section name (exactly as in Sections)",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "count",
+      "label": "Stories to show",
+      "fieldType": "number"
+    }
+  ]
+}

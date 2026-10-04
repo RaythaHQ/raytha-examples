@@ -1,0 +1,32 @@
+{
+  "label": "Ledger: standards list",
+  "fields": [
+    {
+      "developerName": "kicker",
+      "label": "Kicker",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "headline",
+      "label": "Headline",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "items",
+      "label": "Standards",
+      "fieldType": "repeater",
+      "subFields": [
+        {
+          "developerName": "title",
+          "label": "Title",
+          "fieldType": "single_line_text"
+        },
+        {
+          "developerName": "text",
+          "label": "Text",
+          "fieldType": "long_text"
+        }
+      ]
+    }
+  ]
+}
