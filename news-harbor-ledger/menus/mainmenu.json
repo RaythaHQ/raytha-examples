@@ -1,0 +1,46 @@
+{
+ "developerName": "mainmenu",
+ "label": "Main menu",
+ "items": [
+  {
+   "label": "Front page",
+   "link": "/"
+  },
+  {
+   "label": "Latest",
+   "link": "/news"
+  },
+  {
+   "label": "City Hall",
+   "link": "/section/city-hall"
+  },
+  {
+   "label": "Harbor & Climate",
+   "link": "/section/harbor-climate"
+  },
+  {
+   "label": "Business",
+   "link": "/section/business"
+  },
+  {
+   "label": "Schools",
+   "link": "/section/schools"
+  },
+  {
+   "label": "Sports",
+   "link": "/section/sports"
+  },
+  {
+   "label": "Arts & Life",
+   "link": "/section/arts-life"
+  },
+  {
+   "label": "Opinion",
+   "link": "/section/opinion"
+  },
+  {
+   "label": "Most read",
+   "link": "/most-read"
+  }
+ ]
+}

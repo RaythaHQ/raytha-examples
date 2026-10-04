@@ -1,0 +1,60 @@
+{
+ "main": [
+  {
+   "widgetType": "hl_lead",
+   "settings": {
+    "latest_label": "Latest",
+    "latest_count": 7
+   }
+  },
+  {
+   "widgetType": "hl_section_row",
+   "settings": {
+    "section": "City Hall",
+    "count": 4
+   }
+  },
+  {
+   "widgetType": "hl_mostread",
+   "settings": {
+    "headline": "Most read this week",
+    "note": "Ranked by each article's \"reads in the last 7 days\" field. The numbers are seeded for this demo; a real newsroom would sync them from its analytics through the Raytha API."
+   }
+  },
+  {
+   "widgetType": "hl_section_row",
+   "settings": {
+    "section": "Harbor & Climate",
+    "count": 4
+   }
+  },
+  {
+   "widgetType": "hl_section_row",
+   "settings": {
+    "section": "Business",
+    "count": 4
+   }
+  },
+  {
+   "widgetType": "hl_section_grid",
+   "settings": {
+    "sections": "Schools, Sports, Arts & Life",
+    "count": 3
+   }
+  },
+  {
+   "widgetType": "hl_opinion",
+   "settings": {
+    "headline": "Opinion",
+    "count": 2
+   }
+  },
+  {
+   "widgetType": "hl_feeds",
+   "settings": {
+    "headline": "Get the Ledger your way",
+    "text": "Every story is in our RSS and JSON feeds, and each section has its own feed. Saw something we should know about? Send us a tip; an editor reads every message."
+   }
+  }
+ ]
+}

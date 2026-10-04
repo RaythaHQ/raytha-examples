@@ -1,0 +1,66 @@
+{
+ "main": [
+  {
+   "widgetType": "hl_page_head",
+   "settings": {
+    "kicker": "About us",
+    "headline": "Local news, owned by no one but the community",
+    "subtitle": "The Harbor Ledger has covered Port Merrow since 1884. In 2019 it relaunched as a nonprofit newsroom, funded by readers, local foundations and businesses who believe a city needs reporters."
+   }
+  },
+  {
+   "widgetType": "hl_text",
+   "settings": {
+    "kicker": "",
+    "headline": "What we cover",
+    "body": "<p>We cover the decisions that shape daily life in Port Merrow: city hall and the school board, the working waterfront, housing and jobs, and the storms and rising water that the city is learning to live with. We also cover the things that make it home, from Friday night football to the best chowder on the boardwalk.</p><p>Our journalism is free to read, with no paywall. We publish corrections in public, and our news reporting is separate from our opinion pages.</p>"
+   }
+  },
+  {
+   "widgetType": "hl_standards",
+   "settings": {
+    "kicker": "Our standards",
+    "headline": "How we work",
+    "items": [
+     {
+      "title": "Corrections in the open",
+      "text": "When we get something wrong, we fix it and add a correction note to the story. In live updates, corrections are posted as their own update."
+     },
+     {
+      "title": "Named sources",
+      "text": "We name our sources whenever we can, and explain why when we can't."
+     },
+     {
+      "title": "News and opinion apart",
+      "text": "Editorials are written by the editorial board. Our reporters do not write opinion about the subjects they cover."
+     },
+     {
+      "title": "Every byline has a page",
+      "text": "Each reporter has a page with their beat, email address and recent work, so you know who is writing and how to reach them."
+     },
+     {
+      "title": "Storm coverage",
+      "text": "During emergencies, live updates are timestamped and pinned to the top of every page with a red banner."
+     },
+     {
+      "title": "Who funds us",
+      "text": "Readers give most of our budget. Donors have no say in what we cover, and we list every gift over $1,000 in our annual report."
+     }
+    ]
+   }
+  },
+  {
+   "widgetType": "hl_staff_strip",
+   "settings": {
+    "headline": "The newsroom"
+   }
+  },
+  {
+   "widgetType": "hl_feeds",
+   "settings": {
+    "headline": "Contact the newsroom",
+    "text": "Story tips go to tips@harborledger.example, letters to letters@harborledger.example. Our office is at 18 Water Street, Port Merrow. Follow every story through the RSS and JSON feeds."
+   }
+  }
+ ]
+}

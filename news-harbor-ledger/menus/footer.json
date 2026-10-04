@@ -1,0 +1,30 @@
+{
+ "developerName": "footer",
+ "label": "Footer",
+ "items": [
+  {
+   "label": "About us",
+   "link": "/about"
+  },
+  {
+   "label": "Our newsroom",
+   "link": "/staff"
+  },
+  {
+   "label": "Latest news",
+   "link": "/news"
+  },
+  {
+   "label": "Most read",
+   "link": "/most-read"
+  },
+  {
+   "label": "Live updates",
+   "link": "/live"
+  },
+  {
+   "label": "All sections",
+   "link": "/sections"
+  }
+ ]
+}

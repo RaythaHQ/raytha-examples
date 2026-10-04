@@ -1,0 +1,16 @@
+[
+ {
+  "title": "The Harbor Ledger",
+  "routePath": "home",
+  "template": "hl_home",
+  "sections": "pages/home.json",
+  "home": true
+ },
+ {
+  "title": "About us",
+  "routePath": "about",
+  "template": "hl_page",
+  "sections": "pages/about.json",
+  "home": false
+ }
+]
