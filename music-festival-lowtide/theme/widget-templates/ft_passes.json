@@ -1,0 +1,72 @@
+{
+  "label": "Low Tide: ticket passes",
+  "fields": [
+    {
+      "developerName": "kicker",
+      "label": "Kicker",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "headline",
+      "label": "Headline",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "accent",
+      "label": "Highlighted words",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "subtitle",
+      "label": "Subtitle",
+      "fieldType": "long_text"
+    },
+    {
+      "developerName": "ticket_url",
+      "label": "Ticketing partner link (external)",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "note",
+      "label": "Small print",
+      "fieldType": "long_text"
+    },
+    {
+      "developerName": "items",
+      "label": "Passes",
+      "fieldType": "repeater",
+      "subFields": [
+        {
+          "developerName": "name",
+          "label": "Pass name",
+          "fieldType": "single_line_text"
+        },
+        {
+          "developerName": "price",
+          "label": "Price",
+          "fieldType": "single_line_text"
+        },
+        {
+          "developerName": "sub",
+          "label": "Who it is for",
+          "fieldType": "single_line_text"
+        },
+        {
+          "developerName": "perks",
+          "label": "Includes (one per line)",
+          "fieldType": "long_text"
+        },
+        {
+          "developerName": "code",
+          "label": "Pass code for the link",
+          "fieldType": "single_line_text"
+        },
+        {
+          "developerName": "highlight",
+          "label": "Highlight? (yes/no)",
+          "fieldType": "single_line_text"
+        }
+      ]
+    }
+  ]
+}

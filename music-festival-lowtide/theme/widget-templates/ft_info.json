@@ -1,0 +1,62 @@
+{
+  "label": "Low Tide: info cards",
+  "fields": [
+    {
+      "developerName": "kicker",
+      "label": "Kicker",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "headline",
+      "label": "Headline",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "accent",
+      "label": "Highlighted words",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "subtitle",
+      "label": "Subtitle",
+      "fieldType": "long_text"
+    },
+    {
+      "developerName": "items",
+      "label": "Cards",
+      "fieldType": "repeater",
+      "subFields": [
+        {
+          "developerName": "icon",
+          "label": "Bootstrap icon name",
+          "fieldType": "single_line_text"
+        },
+        {
+          "developerName": "color",
+          "label": "Colour (hex)",
+          "fieldType": "single_line_text"
+        },
+        {
+          "developerName": "title",
+          "label": "Title",
+          "fieldType": "single_line_text"
+        },
+        {
+          "developerName": "text",
+          "label": "Text",
+          "fieldType": "long_text"
+        },
+        {
+          "developerName": "link_label",
+          "label": "Link label",
+          "fieldType": "single_line_text"
+        },
+        {
+          "developerName": "link_url",
+          "label": "Link",
+          "fieldType": "single_line_text"
+        }
+      ]
+    }
+  ]
+}

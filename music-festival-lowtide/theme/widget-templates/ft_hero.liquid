@@ -1,0 +1,39 @@
+{%- assign s = widget.settings -%}
+{%- assign heads = get_content_items(ContentType="artists", Filter="headliner eq 'true'", OrderBy="start_min asc", PageSize=3) -%}
+<section class="hero"><div class="sky"></div>
+  <svg class="sun" viewBox="0 0 600 600" aria-hidden="true"><defs><linearGradient id="sg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffd166"/><stop offset=".55" stop-color="#ff6b4a"/><stop offset="1" stop-color="#d9366b"/></linearGradient></defs><mask id="sm"><rect width="600" height="600" fill="#fff"/>{% for i in (1..7) %}<rect x="0" y="{{ i | times: 34 | plus: 300 }}" width="600" height="{{ i | times: 3 | plus: 4 }}" fill="#000"/>{% endfor %}</mask><circle cx="300" cy="300" r="280" fill="url(#sg)" mask="url(#sm)"/></svg>
+  <svg class="waves" viewBox="0 0 1440 260" preserveAspectRatio="none" aria-hidden="true"><path class="w1" d="M0 120 C180 60 360 180 540 120 S900 60 1080 120 S1320 180 1440 120 V260 H0Z" fill="#1fb5a8" opacity=".85"/><path class="w2" d="M0 170 C200 120 380 220 600 170 S960 120 1160 170 S1380 210 1440 180 V260 H0Z" fill="#12233a"/><path class="w3" d="M0 215 C220 185 420 245 640 215 S1000 185 1220 215 S1400 235 1440 225 V260 H0Z" fill="#0b1622"/></svg>
+  <div class="wrap hero-in">
+    <span class="eyebrow" style="color:var(--sand)"><span class="dot" style="background:var(--coral)"></span> {{ s.kicker }}</span>
+    <h1>{{ s.headline }}<br><span class="hl">{{ s.accent }}</span></h1>
+    <div class="hero-meta"><span><i class="bi bi-calendar-event"></i> {{ s.date_label }}</span><span><i class="bi bi-geo-alt"></i> {{ s.place_label }}</span></div>
+    <p class="lead">{{ s.subtitle }}</p>
+    <div class="row"><a class="btn btn-coral ext" href="{{ s.primary_url }}" rel="noopener">{{ s.primary_label }}</a><a class="btn btn-line" href="{{ s.secondary_url }}">{{ s.secondary_label }} <i class="bi bi-arrow-right"></i></a></div>
+    <div class="cd" id="cd" data-to="{{ s.countdown_to }}"><div><b data-u="d">--</b><span>days</span></div><div><b data-u="h">--</b><span>hours</span></div><div><b data-u="m">--</b><span>minutes</span></div><div><b data-u="s">--</b><span>seconds</span></div></div>
+    <div class="heads">{% for h in heads.Items %}<a href="{{ PathBase }}/{{ h.RoutePath }}"><small>{% capture dy %}{{ h.PublishedContent.day }}{% endcapture %}{% if dy == "fri" %}Friday{% elsif dy == "sat" %}Saturday{% else %}Sunday{% endif %}</small>{{ h.PrimaryField }}</a>{% endfor %}</div>
+  </div>
+</section>
+<style>
+  .hero{position:relative;overflow:hidden;min-height:calc(100vh - 110px);display:flex;align-items:center;padding:56px 0 170px}
+  .hero .sky{position:absolute;inset:0;background:radial-gradient(80% 70% at 75% 30%,#3b1f5c 0%,#12233a 45%,#0b1622 80%)}
+  .hero .sun{position:absolute;right:4%;top:8%;width:min(46vw,620px);animation:rise 1.6s cubic-bezier(.2,.8,.2,1) both}
+  @keyframes rise{from{transform:translateY(80px);opacity:0}}
+  .hero .waves{position:absolute;left:0;right:0;bottom:0;width:100%;height:260px}
+  .hero .waves path{animation:sway 9s ease-in-out infinite alternate}.hero .waves .w2{animation-duration:12s}.hero .waves .w3{animation-duration:7s}
+  @keyframes sway{to{transform:translateX(-40px)}}
+  .hero-in{position:relative;z-index:2;width:100%}
+  .hero h1{font-size:clamp(3.6rem,9vw,8.2rem);line-height:.88;letter-spacing:-.05em;margin:18px 0 22px}
+  .hero-meta{display:flex;gap:22px;flex-wrap:wrap;font:600 1.15rem/1.2 var(--disp)}.hero-meta i{color:var(--tang);margin-right:6px}
+  .hero .lead{font-size:1.15rem;color:#c6d1dc;max-width:540px;margin:20px 0 30px}
+  .hero .row{display:flex;gap:12px;flex-wrap:wrap}
+  .cd{display:flex;gap:10px;margin-top:30px}.cd div{background:rgba(18,35,58,.75);backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:16px;padding:12px 16px;min-width:84px;text-align:center}
+  .cd b{display:block;font:700 2rem/1 var(--disp);font-variant-numeric:tabular-nums}.cd span{font-size:.72rem;color:var(--mut);text-transform:uppercase;letter-spacing:.12em}
+  .heads{display:flex;gap:30px;flex-wrap:wrap;margin-top:30px}.heads a{font:700 clamp(1.3rem,2.4vw,2rem)/1.05 var(--disp);letter-spacing:-.03em}.heads a:hover{color:var(--coral)}.heads small{display:block;font:600 .7rem/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--tang);margin-bottom:6px}
+  @media(max-width:860px){.hero .sun{width:80vw;right:-20vw;top:4%;opacity:.55}.cd div{min-width:0;flex:1;padding:10px 6px}.cd b{font-size:1.5rem}}
+</style>
+<script>
+(function(){var el=document.getElementById('cd');if(!el)return;var to=new Date(el.dataset.to).getTime();
+  function tick(){var d=Math.max(0,to-Date.now()),u={d:Math.floor(d/864e5),h:Math.floor(d/36e5)%24,m:Math.floor(d/6e4)%60,s:Math.floor(d/1e3)%60};
+    el.querySelectorAll('b').forEach(function(b){var v=u[b.dataset.u];b.textContent=b.dataset.u==='d'?v:String(v).padStart(2,'0')})}
+  tick();setInterval(tick,1000)})();
+</script>

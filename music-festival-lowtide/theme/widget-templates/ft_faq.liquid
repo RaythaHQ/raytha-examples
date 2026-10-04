@@ -1,0 +1,6 @@
+{%- assign s = widget.settings -%}{%- assign lim = s.count | append: "" | plus: 0 -%}{%- if lim == 0 %}{% assign lim = 5 %}{% endif -%}
+{%- assign fq = get_content_items(ContentType="faqs", OrderBy="sort_order asc", PageSize=lim) -%}
+<section class="section"><div class="wrap" style="display:grid;grid-template-columns:1fr 1.5fr;gap:60px" id="fqg">
+  <div><span class="eyebrow">{{ s.kicker }}</span><h2 style="font-size:clamp(2.2rem,4vw,3.4rem);margin:12px 0 16px">{{ s.headline }} <span class="hl">{{ s.accent }}</span></h2><p class="mut">{{ s.subtitle }}</p><a class="btn btn-line" href="{{ PathBase }}/faq" style="margin-top:12px">All questions <i class="bi bi-arrow-right"></i></a></div>
+  <div class="faq">{% for f in fq.Items %}<details{% if forloop.first %} open{% endif %}><summary>{{ f.PrimaryField }}</summary><p>{{ f.PublishedContent.answer }}</p></details>{% endfor %}</div>
+</div></section><style>@media(max-width:860px){#fqg{grid-template-columns:1fr!important;gap:20px!important}}</style>

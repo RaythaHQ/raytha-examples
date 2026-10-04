@@ -1,0 +1,5 @@
+{%- assign s = widget.settings -%}
+<section class="section light"><div class="wrap">
+  <div class="shead"><div><span class="eyebrow">{{ s.kicker }}</span><h2>{{ s.headline }} <span style="color:#c2410c">{{ s.accent }}</span></h2></div>{% if s.subtitle %}<p>{{ s.subtitle }}</p>{% endif %}</div>
+  <div class="grid3">{% for c in s.items %}<div class="card reveal" style="display:flex;flex-direction:column"><div class="ic" style="background:{{ c.color }}"><i class="bi bi-{{ c.icon }}"></i></div><h3>{{ c.title }}</h3><p>{{ c.text }}</p>{% if c.link_label != "" %}<a href="{{ c.link_url }}" style="margin-top:auto;padding-top:16px;font-weight:600;display:inline-flex;gap:6px;color:#c2410c">{{ c.link_label }} <i class="bi bi-arrow-right"></i></a>{% endif %}</div>{% endfor %}</div>
+</div></section>

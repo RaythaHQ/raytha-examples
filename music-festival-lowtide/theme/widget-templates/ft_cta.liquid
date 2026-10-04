@@ -1,0 +1,7 @@
+{%- assign s = widget.settings -%}
+<section class="section tight"><div class="wrap"><div class="cta reveal">
+  <svg viewBox="0 0 400 400" aria-hidden="true"><circle cx="200" cy="200" r="190" fill="#ffd166"/><circle cx="200" cy="200" r="150" fill="#ffb347"/><circle cx="200" cy="200" r="105" fill="#ff8466"/></svg>
+  <span class="eyebrow" style="color:var(--night)">{{ s.kicker }}</span><h2>{{ s.headline }} {{ s.accent }}</h2><p>{{ s.subtitle }}</p>
+  <div style="display:flex;gap:12px;flex-wrap:wrap;position:relative"><a class="btn btn-dark{% if s.primary_external == 'yes' %} ext{% endif %}" href="{{ s.primary_url }}"{% if s.primary_external == 'yes' %} rel="noopener"{% endif %}>{{ s.primary_label }}</a>{% if s.secondary_label != "" %}<a class="btn" style="border-color:var(--night);color:var(--night)" href="{{ s.secondary_url }}">{{ s.secondary_label }}</a>{% endif %}</div>
+</div></div></section>
+<style>.cta{position:relative;overflow:hidden;border-radius:30px;background:var(--coral);color:var(--night);padding:64px 56px}.cta h2{font-size:clamp(2.4rem,5vw,4.4rem);margin:14px 0 14px;max-width:760px;position:relative}.cta p{max-width:560px;margin:0 0 28px;font-size:1.1rem;position:relative}.cta svg{position:absolute;right:-90px;top:-90px;width:420px;opacity:.9}@media(max-width:700px){.cta{padding:44px 26px}.cta svg{width:260px;right:-120px}}</style>
