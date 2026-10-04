@@ -1,0 +1,54 @@
+{
+ "posters": [
+  "poster-01",
+  "poster-02",
+  "poster-03",
+  "poster-04",
+  "poster-05",
+  "poster-06",
+  "poster-07",
+  "poster-08",
+  "poster-09",
+  "poster-10",
+  "poster-11",
+  "poster-12",
+  "poster-13",
+  "poster-14",
+  "photo-halloween",
+  "photo-scarlet",
+  "photo-nye",
+  "photo-lights",
+  "photo-darkstar",
+  "photo-river",
+  "photo-terrapin",
+  "photo-soundcheck",
+  "photo-franklins",
+  "hero-lights"
+ ],
+ "portraits": [
+  [
+   "member-june",
+   "JC"
+  ],
+  [
+   "member-theo",
+   "TM"
+  ],
+  [
+   "member-rosa",
+   "RV"
+  ],
+  [
+   "member-desmond",
+   "DO"
+  ],
+  [
+   "member-wren",
+   "WH"
+  ],
+  [
+   "member-silas",
+   "SP"
+  ]
+ ]
+}
