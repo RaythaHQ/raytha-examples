@@ -1,0 +1,1 @@
+{"name": "Lantern Ramblers", "theme": "ramblers", "types": ["shows", "setlists", "members", "media", "booking_requests"], "detailTemplates": {"shows": "lr_detail_show", "setlists": "lr_detail_setlist", "members": "lr_detail_member", "media": "lr_detail_media", "booking_requests": "lr_detail_private"}, "groups": []}

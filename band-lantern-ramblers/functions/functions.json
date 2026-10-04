@@ -1,0 +1,4 @@
+[
+ {"developerName": "forms.booking", "name": "Booking inquiry handler", "trigger": "http_request", "file": "booking.js", "routePath": "forms/booking"},
+ {"developerName": "songs.json", "name": "Song stats as JSON", "trigger": "http_request", "file": "songs.js", "routePath": "songs.json"}
+]
