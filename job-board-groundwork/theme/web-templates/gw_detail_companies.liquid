@@ -1,0 +1,45 @@
+{%- assign c = Target -%}{%- assign pc = Target.PublishedContent -%}
+{%- assign seckeys = "solar,storage,grid,carbon,mobility,food,buildings,data" | split: "," -%}
+{%- assign secnames = "Solar,Energy storage,Grid & utilities,Carbon removal,Mobility,Food & agriculture,Buildings,Climate data" | split: "," -%}
+{%- capture sec %}{{ pc.sector }}{% endcapture -%}{%- assign secname = sec -%}{%- for k in seckeys -%}{%- if k == sec -%}{%- assign secname = secnames[forloop.index0] -%}{%- endif -%}{%- endfor -%}
+{%- capture size %}{{ pc.size }}{% endcapture -%}
+{%- assign cid = c.Id | append: "" -%}{%- capture cf %}company eq '{{ cid }}'{% endcapture -%}
+{%- assign cj = get_content_items(ContentType="jobs", Filter=cf, OrderBy="posted_on desc", PageSize=50) -%}
+<section class="co-hero" style="--c:{{ pc.brand_color }}">
+  <div class="wrap">
+    <div class="crumbs"><a href="{{ PathBase }}/">Home</a><span>/</span><a href="{{ PathBase }}/companies">Companies</a><span>/</span><span>{{ c.PrimaryField }}</span></div>
+    <div class="co-hero-grid">
+      <img class="logo-sq lg" src="{{ pc.logo | attachment_redirect_url }}" alt="{{ c.PrimaryField }} logo">
+      <div><span class="eyebrow">{{ secname }}</span><h1 style="margin-top:.5rem">{{ c.PrimaryField }}</h1><p class="muted" style="margin:.4rem 0 0;font-size:1.12rem">{{ pc.tagline }}</p></div>
+      <a class="btn-gw btn-line" href="{{ pc.website }}" target="_blank" rel="noopener nofollow">Website <i class="bi bi-box-arrow-up-right"></i></a>
+    </div>
+  </div>
+</section>
+<section class="section-tight" style="padding-bottom:104px">
+  <div class="wrap detail-layout">
+    <div>
+      <div class="section-head" style="margin-bottom:20px"><div><span class="eyebrow">Hiring now</span><h2 style="font-size:clamp(1.7rem,3vw,2.4rem)">{{ cj.TotalCount }} open role{% if cj.TotalCount != 1 %}s{% endif %}</h2></div></div>
+      <div class="job-list">
+      {% for j in cj.Items %}
+        {%- capture lt %}{{ j.PublishedContent.location_type }}{% endcapture -%}{%- capture cur %}{{ j.PublishedContent.currency }}{% endcapture -%}{%- assign sym = cur | replace: "USD", "$" | replace: "CAD", "CA$" | replace: "EUR", "€" | replace: "GBP", "£" -%}
+        <a class="card lift job-row reveal" href="{{ PathBase }}/{{ j.RoutePath }}" style="--c:{{ pc.brand_color }}">
+          <img class="logo-sq" src="{{ pc.logo | attachment_redirect_url }}" alt="" loading="lazy">
+          <div><h3>{{ j.PrimaryField }}</h3><div class="co">{{ j.PublishedContent.location }}</div>
+            <div class="meta"><span class="pill {{ lt }}">{{ lt | replace: "remote", "Remote" | replace: "hybrid", "Hybrid" | replace: "onsite", "On-site" }}</span></div></div>
+          <div class="side"><span class="salary">{{ sym }}{{ j.PublishedContent.salary_min | append: "" | divided_by: 1000 | floor }}k – {{ sym }}{{ j.PublishedContent.salary_max | append: "" | divided_by: 1000 | floor }}k</span><span class="when">{{ j.PublishedContent.posted_on.Value | date: "%b %-d" }}</span></div>
+        </a>
+      {% endfor %}
+      </div>
+      <div class="prose" style="margin-top:48px"><h2>About {{ c.PrimaryField }}</h2>{{ pc.content }}</div>
+    </div>
+    <aside>
+      <div class="card facts">
+        <div class="fact"><span>Sector</span><b>{{ secname }}</b></div>
+        <div class="fact"><span>Headquarters</span><b>{{ pc.hq }}</b></div>
+        <div class="fact"><span>Team size</span><b>{{ size | replace: "s_1_50", "1–50" | replace: "s_51_200", "51–200" | replace: "s_201_1000", "201–1,000" | replace: "s_1000_plus", "1,000+" }}</b></div>
+        <div class="fact"><span>Founded</span><b>{{ pc.founded }}</b></div>
+      </div>
+      <div class="card" style="padding:24px"><h3 style="font-size:1.2rem;margin-bottom:8px"><i class="bi bi-house-heart" style="color:var(--moss)"></i> Remote policy</h3><p class="muted" style="margin:0;font-size:.95rem">{{ pc.remote_policy }}</p></div>
+    </aside>
+  </div>
+</section>

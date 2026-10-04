@@ -1,0 +1,112 @@
+{%- assign j = Target -%}
+{%- assign pc = Target.PublishedContent -%}
+{%- assign co = pc.company -%}
+{%- assign cpc = co.PublishedContent -%}
+{%- assign catkeys = "engineering,data,hardware,product,design,science,operations,sales" | split: "," -%}
+{%- assign catnames = "Software engineering,Data & ML,Hardware & systems,Product,Design,Science & research,Operations,Sales & partnerships" | split: "," -%}
+{%- assign tagkeys = "python,typescript,react,go,rust,csharp,sql,ml,gis,kubernetes,embedded,power_systems,batteries,lca,energy_markets,figma,b2b_saas,policy" | split: "," -%}
+{%- assign tagnames = "Python,TypeScript,React,Go,Rust,C# / .NET,SQL,Machine learning,GIS,Kubernetes,Embedded,Power systems,Batteries,Life-cycle analysis,Energy markets,Figma,B2B SaaS,Policy" | split: "," -%}
+{%- capture cat %}{{ pc.category }}{% endcapture -%}{%- assign catname = cat -%}{%- for k in catkeys -%}{%- if k == cat -%}{%- assign catname = catnames[forloop.index0] -%}{%- endif -%}{%- endfor -%}
+{%- capture lt %}{{ pc.location_type }}{% endcapture -%}
+{%- capture cur %}{{ pc.currency }}{% endcapture -%}
+{%- assign sym = cur | replace: "USD", "$" | replace: "CAD", "CA$" | replace: "EUR", "€" | replace: "GBP", "£" -%}
+{%- capture emp %}{{ pc.employment_type }}{% endcapture -%}
+{%- capture sen %}{{ pc.seniority }}{% endcapture -%}
+{%- assign smin = pc.salary_min | append: "" | divided_by: 1000 | floor -%}{%- assign smax = pc.salary_max | append: "" | divided_by: 1000 | floor -%}
+{%- assign coid = co.Id | append: "" -%}{%- assign jid = j.Id | append: "" -%}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "JobPosting",
+  "title": {{ j.PrimaryField | json }},
+  "description": {{ pc.content | append: "" | json }},
+  "datePosted": "{{ pc.posted_on.Value | date: '%Y-%m-%d' }}",
+  "validThrough": "{{ pc.valid_through.Value | date: '%Y-%m-%d' }}T23:59:00",
+  "employmentType": "{{ emp | replace: 'full_time', 'FULL_TIME' | replace: 'part_time', 'PART_TIME' | replace: 'contract', 'CONTRACTOR' }}",
+  "identifier": { "@type": "PropertyValue", "name": "Groundwork", "value": "{{ jid }}" },
+  "hiringOrganization": { "@type": "Organization", "name": {{ co.PrimaryField | json }}, "sameAs": {{ cpc.website | append: "" | json }}, "logo": "{{ CurrentOrganization.WebsiteUrl | append: "|" | replace: "/|", "" | remove: "|" }}{{ cpc.logo | attachment_redirect_url }}" },
+  {%- if lt == "remote" %}
+  "jobLocationType": "TELECOMMUTE",
+  "applicantLocationRequirements": { "@type": "Country", "name": "{{ pc.country }}" },
+  {%- else %}
+  "jobLocation": { "@type": "Place", "address": { "@type": "PostalAddress", "addressLocality": {{ pc.location | split: " · " | first | split: "," | first | append: "" | json }}, "addressCountry": "{{ pc.country }}" } },
+  {%- endif %}
+  "baseSalary": { "@type": "MonetaryAmount", "currency": "{{ cur }}", "value": { "@type": "QuantitativeValue", "minValue": {{ pc.salary_min | append: "" | floor }}, "maxValue": {{ pc.salary_max | append: "" | floor }}, "unitText": "YEAR" } },
+  "directApply": false
+}
+</script>
+
+<section class="page-head" style="padding-bottom:40px">
+  <svg class="contours" viewBox="0 0 1200 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><path d="M-40 330C240 250 420 380 680 300S1040 200 1240 250"/><path d="M-40 270C260 190 440 320 700 240S1050 140 1240 190"/><path d="M-40 210C280 130 460 260 720 180S1060 80 1240 130"/></svg>
+  <div class="wrap">
+    <div class="crumbs"><a href="{{ PathBase }}/">Home</a><span>/</span><a href="{{ PathBase }}/jobs">Jobs</a><span>/</span><a href="{{ PathBase }}/jobs?category={{ cat }}">{{ catname }}</a></div>
+    <div class="job-head" style="margin-top:26px">
+      <img class="logo-sq lg" src="{{ cpc.logo | attachment_redirect_url }}" alt="{{ co.PrimaryField }} logo">
+      <div>
+        <h1>{{ j.PrimaryField }}</h1>
+        <div class="co-line"><a href="{{ PathBase }}/{{ co.RoutePath }}">{{ co.PrimaryField }}</a> · {{ pc.location }}</div>
+      </div>
+      <div class="apply-box">
+        <span class="salary">{{ sym }}{{ smin }}k – {{ sym }}{{ smax }}k <small class="muted" style="font-size:.7em">/ year</small></span>
+        <a class="btn-gw btn-dark" href="{{ pc.apply_url }}" target="_blank" rel="noopener nofollow">Apply on {{ co.PrimaryField }}'s site <i class="bi bi-box-arrow-up-right"></i></a>
+      </div>
+    </div>
+    <div class="job-facts">
+      <span class="pill {{ lt }}">{{ lt | replace: "remote", "Remote" | replace: "hybrid", "Hybrid" | replace: "onsite", "On-site" }}</span>
+      <span class="pill"><i class="bi bi-briefcase"></i>{{ emp | replace: "full_time", "Full-time" | replace: "part_time", "Part-time" | replace: "contract", "Contract" }}</span>
+      <span class="pill"><i class="bi bi-bar-chart-steps"></i>{{ sen | replace: "mid", "Mid-level" | replace: "senior", "Senior" | replace: "staff", "Staff / Principal" | replace: "lead", "Lead / Manager" }}</span>
+      <span class="pill"><i class="bi bi-calendar3"></i>Posted {{ pc.posted_on.Value | date: "%b %-d, %Y" }}</span>
+      {% for t in pc.tags %}{% capture tk %}{{ t }}{% endcapture %}{% for k in tagkeys %}{% if k == tk %}<a class="tag" href="{{ PathBase }}/jobs?tag={{ k }}">{{ tagnames[forloop.index0] }}</a>{% endif %}{% endfor %}{% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section-tight">
+  <div class="wrap detail-layout">
+    <article class="prose reveal">
+      {{ pc.content }}
+      <div class="card" style="padding:24px;margin-top:32px;display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap">
+        <div><strong style="font-size:1.1rem">Interested?</strong><br><span class="muted" style="font-size:.95rem">Applications go straight to {{ co.PrimaryField }}. Groundwork never sees your CV.</span></div>
+        <a class="btn-gw btn-lime" href="{{ pc.apply_url }}" target="_blank" rel="noopener nofollow">Apply now <i class="bi bi-arrow-up-right"></i></a>
+      </div>
+    </article>
+    <aside>
+      <div class="card facts">
+        <div class="fact"><span>Salary</span><b class="salary">{{ sym }}{{ smin }}k – {{ sym }}{{ smax }}k</b></div>
+        <div class="fact"><span>Category</span><b>{{ catname }}</b></div>
+        <div class="fact"><span>Location</span><b>{{ pc.location }}</b></div>
+        <div class="fact"><span>Open until</span><b>{{ pc.valid_through.Value | date: "%b %-d, %Y" }}</b></div>
+      </div>
+      <div class="card co-mini" style="--c:{{ cpc.brand_color }}">
+        <div class="row"><img class="logo-sq" src="{{ cpc.logo | attachment_redirect_url }}" alt=""><div><h3>{{ co.PrimaryField }}</h3><span class="muted" style="font-size:.88rem">{{ cpc.hq }}</span></div></div>
+        <p class="muted" style="margin:0;font-size:.94rem">{{ cpc.tagline }}</p>
+        {% capture cf %}company eq '{{ coid }}'{% endcapture %}
+        {% assign cjobs = get_content_items(ContentType="jobs", Filter=cf, OrderBy="posted_on desc", PageSize=10) %}
+        <a class="link-arrow" href="{{ PathBase }}/{{ co.RoutePath }}">{{ cjobs.TotalCount }} open role{% if cjobs.TotalCount != 1 %}s{% endif %} at {{ co.PrimaryField }} <i class="bi bi-arrow-right"></i></a>
+      </div>
+    </aside>
+  </div>
+</section>
+
+{% capture sf %}category eq '{{ cat }}'{% endcapture %}
+{% assign similar = get_content_items(ContentType="jobs", Filter=sf, OrderBy="posted_on desc", PageSize=4) %}
+{% if similar.TotalCount > 1 %}
+<section class="section-tight" style="padding-top:24px;padding-bottom:96px">
+  <div class="wrap">
+    <div class="section-head" style="margin-bottom:24px"><div><span class="eyebrow">Similar roles</span><h2 style="font-size:clamp(1.7rem,3vw,2.4rem)">More in {{ catname }}</h2></div><a class="link-arrow" href="{{ PathBase }}/jobs?category={{ cat }}">All {{ catname }} jobs <i class="bi bi-arrow-right"></i></a></div>
+    <div class="job-grid">
+    {% assign shown = 0 %}
+    {% for s in similar.Items %}{% assign sid = s.Id | append: "" %}{% if sid != jid and shown < 3 %}{% assign shown = shown | plus: 1 %}
+      {%- assign sco = s.PublishedContent.company -%}{%- capture scur %}{{ s.PublishedContent.currency }}{% endcapture -%}{%- assign ssym = scur | replace: "USD", "$" | replace: "CAD", "CA$" | replace: "EUR", "€" | replace: "GBP", "£" -%}{%- capture slt %}{{ s.PublishedContent.location_type }}{% endcapture -%}
+      <a class="card lift job-card reveal" href="{{ PathBase }}/{{ s.RoutePath }}">
+        <div class="top"><img class="logo-sq sm" src="{{ sco.PublishedContent.logo | attachment_redirect_url }}" alt=""><span class="pill {{ slt }}">{{ slt | replace: "remote", "Remote" | replace: "hybrid", "Hybrid" | replace: "onsite", "On-site" }}</span></div>
+        <h3>{{ s.PrimaryField }}</h3>
+        <div class="co">{{ sco.PrimaryField }}</div>
+        <div class="foot"><span class="salary">{{ ssym }}{{ s.PublishedContent.salary_min | append: "" | divided_by: 1000 | floor }}k – {{ ssym }}{{ s.PublishedContent.salary_max | append: "" | divided_by: 1000 | floor }}k</span><i class="bi bi-arrow-right"></i></div>
+      </a>
+    {% endif %}{% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}

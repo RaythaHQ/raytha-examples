@@ -1,0 +1,72 @@
+{%- comment -%} Members' Hub. Members of the "members" user group get live salary benchmarks and saved searches. The members-only HTML is never sent to anyone else. {%- endcomment -%}
+{%- assign is_member = false -%}
+{%- for g in CurrentUser.UserGroups -%}{%- if g == "members" -%}{%- assign is_member = true -%}{%- endif -%}{%- endfor -%}
+{%- if CurrentUser.IsAdmin -%}{%- assign is_member = true -%}{%- endif -%}
+{{ render_section("header", wrap=false) }}
+{% if is_member %}
+  <section class="section-tight" style="padding-bottom:0">
+    <div class="wrap">
+      <div class="card member-bar reveal">
+        <span class="avatar">{{ CurrentUser.FirstName | slice: 0 }}{{ CurrentUser.LastName | slice: 0 }}</span>
+        <div><div class="mono muted" style="font-size:.72rem;letter-spacing:.14em">SIGNED IN · MEMBERS</div><strong style="font-size:1.12rem">Welcome back, {{ CurrentUser.FirstName }}.</strong></div>
+        <a class="btn-gw btn-line" style="margin-left:auto" href="{{ PathBase }}/account/logout">Sign out</a>
+      </div>
+    </div>
+  </section>
+  {%- assign catkeys = "engineering,data,hardware,product,design,science,operations,sales" | split: "," -%}
+  {%- assign catnames = "Software engineering,Data & ML,Hardware & systems,Product,Design,Science & research,Operations,Sales & partnerships" | split: "," -%}
+  <section class="section-tight">
+    <div class="wrap" style="display:grid;grid-template-columns:1.35fr 1fr;gap:28px;align-items:start" id="hubgrid">
+      <div class="card reveal" style="padding:28px">
+        <span class="eyebrow">Salary benchmarks · USD roles</span>
+        <h2 style="font-size:1.9rem;margin:.6rem 0 6px">What climate tech pays right now</h2>
+        <p class="muted" style="margin:0 0 18px;font-size:.95rem">Calculated live from every open US-dollar listing on Groundwork. The bar shows the range from the lowest starting salary to the highest top of band.</p>
+        <table class="bench">
+          <thead><tr><th>Category</th><th>Roles</th><th>Average band</th><th style="width:34%">Range</th></tr></thead>
+          <tbody>
+          {% for k in catkeys %}
+            {%- capture bf %}category eq '{{ k }}' and currency eq 'USD'{% endcapture -%}
+            {%- assign r = get_content_items(ContentType="jobs", Filter=bf, PageSize=100) -%}
+            {%- if r.TotalCount > 0 -%}
+              {%- assign lo = 999999 -%}{%- assign hi = 0 -%}{%- assign summin = 0 -%}{%- assign summax = 0 -%}
+              {%- for j in r.Items -%}
+                {%- assign a = j.PublishedContent.salary_min | append: "" | floor -%}{%- assign b = j.PublishedContent.salary_max | append: "" | floor -%}
+                {%- assign summin = summin | plus: a -%}{%- assign summax = summax | plus: b -%}
+                {%- if a < lo -%}{%- assign lo = a -%}{%- endif -%}{%- if b > hi -%}{%- assign hi = b -%}{%- endif -%}
+              {%- endfor -%}
+              {%- assign avgmin = summin | divided_by: r.TotalCount | divided_by: 1000 | floor -%}{%- assign avgmax = summax | divided_by: r.TotalCount | divided_by: 1000 | floor -%}
+              {%- assign left = lo | minus: 80000 | times: 100 | divided_by: 160000 -%}{%- assign width = hi | minus: lo | times: 100 | divided_by: 160000 -%}
+              <tr><td><a href="{{ PathBase }}/jobs?category={{ k }}" style="font-weight:600">{{ catnames[forloop.index0] }}</a></td><td class="mono">{{ r.TotalCount }}</td><td class="salary">${{ avgmin }}k – ${{ avgmax }}k</td><td><div class="bar"><i style="left:{{ left }}%;width:{{ width }}%"></i></div><small class="mono muted" style="font-size:.7rem">${{ lo | divided_by: 1000 | floor }}k – ${{ hi | divided_by: 1000 | floor }}k</small></td></tr>
+            {%- endif -%}
+          {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <div class="reveal"><span class="eyebrow">Saved searches</span><h2 style="font-size:1.6rem;margin:.6rem 0 4px">Curated for members</h2><p class="muted" style="margin:0 0 6px;font-size:.92rem">Live counts. Each one is a plain URL, so bookmark it or subscribe to its feed.</p></div>
+        {%- assign saved = "Remote Python, top of band $160k+|tag=python&type=remote&salary=160000|contains(tags,'python') and location_type eq 'remote' and salary_max ge 160000;Grid and power systems|tag=power_systems|contains(tags,'power_systems');Design roles, any location|category=design|category eq 'design';Machine learning for the planet|tag=ml|contains(tags,'ml');Hardware roles, best paid first|category=hardware&sort=salary|category eq 'hardware'" | split: ";" -%}
+        {% for s in saved %}{% assign p = s | split: "|" %}
+          {%- assign r = get_content_items(ContentType="jobs", Filter=p[2], PageSize=1) -%}
+          <a class="card lift saved reveal" href="{{ PathBase }}/jobs?{{ p[1] }}"><div><h3>{{ p[0] }}</h3><span class="mono muted" style="font-size:.74rem">/jobs?{{ p[1] }}</span></div><span class="n">{{ r.TotalCount }}</span></a>
+        {% endfor %}
+      </div>
+    </div>
+    <style>@media (max-width:900px){#hubgrid{grid-template-columns:1fr!important}}</style>
+  </section>
+  {{ render_section("members", wrap=false) }}
+{% else %}
+  <section class="section-tight" style="padding-bottom:104px">
+    <div class="wrap">
+      <div class="card locked reveal">
+        <div class="lock-ico"><i class="bi bi-bookmark-star"></i></div>
+        <h2>The Members' Hub is for members.</h2>
+        <p class="muted">Members get live salary benchmarks by category, curated saved searches and early notice of featured roles. Sign in to see it.</p>
+        <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:24px">
+          <a class="btn-gw btn-dark" href="{{ PathBase }}/account/login?returnUrl={{ PathBase }}/hub">Sign in <i class="bi bi-arrow-right"></i></a>
+          <a class="btn-gw btn-line" href="{{ PathBase }}/jobs">Browse jobs</a>
+        </div>
+        {% if CurrentUser.IsAuthenticated %}<p class="mono muted" style="margin-top:20px;font-size:.78rem">You are signed in as {{ CurrentUser.EmailAddress }}, but this account is not in the members group.</p>{% endif %}
+      </div>
+    </div>
+  </section>
+{% endif %}

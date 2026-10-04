@@ -1,0 +1,149 @@
+{%- comment -%} Jobs list. Filters come from query params: q, category, type, salary, tag, sort. Every value is checked against a known list before it goes into the filter. {%- endcomment -%}
+{%- assign base = PathBase | append: "/jobs" -%}
+{%- assign is_remote_view = false -%}{%- if Target.RoutePath == "jobs/remote" -%}{%- assign is_remote_view = true -%}{%- endif -%}
+{%- assign catkeys = "engineering,data,hardware,product,design,science,operations,sales" | split: "," -%}
+{%- assign catnames = "Software engineering,Data & ML,Hardware & systems,Product,Design,Science & research,Operations,Sales & partnerships" | split: "," -%}
+{%- assign tagkeys = "python,typescript,react,go,rust,csharp,sql,ml,gis,kubernetes,embedded,power_systems,batteries,lca,energy_markets,figma,b2b_saas,policy" | split: "," -%}
+{%- assign tagnames = "Python,TypeScript,React,Go,Rust,C# / .NET,SQL,Machine learning,GIS,Kubernetes,Embedded,Power systems,Batteries,Life-cycle analysis,Energy markets,Figma,B2B SaaS,Policy" | split: "," -%}
+{%- assign salkeys = "80000,100000,130000,160000" | split: "," -%}
+{%- assign q = QueryParams.q | strip | remove: "'" | remove: '"' | truncate: 50, "" -%}
+{%- assign qcat = "" -%}{%- assign qcatname = "" -%}{%- for k in catkeys -%}{%- if QueryParams.category == k -%}{%- assign qcat = k -%}{%- assign qcatname = catnames[forloop.index0] -%}{%- endif -%}{%- endfor -%}
+{%- assign qtag = "" -%}{%- assign qtagname = "" -%}{%- for k in tagkeys -%}{%- if QueryParams.tag == k -%}{%- assign qtag = k -%}{%- assign qtagname = tagnames[forloop.index0] -%}{%- endif -%}{%- endfor -%}
+{%- assign qsal = "" -%}{%- for k in salkeys -%}{%- if QueryParams.salary == k -%}{%- assign qsal = k -%}{%- endif -%}{%- endfor -%}
+{%- assign qtype = "" -%}{%- if QueryParams.type == "remote" or QueryParams.type == "hybrid" or QueryParams.type == "onsite" -%}{%- assign qtype = QueryParams.type -%}{%- endif -%}
+{%- if is_remote_view -%}{%- assign qtype = "remote" -%}{%- endif -%}
+{%- assign qsort = "" -%}{%- if QueryParams.sort == "salary" -%}{%- assign qsort = "salary" -%}{%- endif -%}
+{%- assign flt = "" -%}
+{%- if q != "" -%}{%- capture part %} and (contains(title,'{{ q }}') or contains(summary,'{{ q }}') or contains(location,'{{ q }}') or contains(tags,'{{ q | downcase | replace: " ", "_" }}')){% endcapture -%}{%- assign flt = flt | append: part -%}{%- endif -%}
+{%- if qcat != "" -%}{%- assign flt = flt | append: " and category eq '" | append: qcat | append: "'" -%}{%- endif -%}
+{%- if qtype != "" -%}{%- assign flt = flt | append: " and location_type eq '" | append: qtype | append: "'" -%}{%- endif -%}
+{%- if qsal != "" -%}{%- assign flt = flt | append: " and salary_max ge " | append: qsal -%}{%- endif -%}
+{%- if qtag != "" -%}{%- assign flt = flt | append: " and contains(tags,'" | append: qtag | append: "')" -%}{%- endif -%}
+{%- assign flt = flt | remove_first: " and " -%}
+{%- assign order = "posted_on desc" -%}{%- if qsort == "salary" -%}{%- assign order = "salary_max desc" -%}{%- endif -%}
+{%- if flt != "" or qsort != "" -%}
+  {%- assign res = get_content_items(ContentType="jobs", Filter=flt, OrderBy=order, PageSize=100) -%}
+  {%- assign items = res.Items -%}{%- assign total = res.TotalCount -%}
+{%- else -%}
+  {%- assign items = Target.Items -%}{%- assign total = Target.TotalCount -%}
+{%- endif -%}
+{%- comment -%} Query string builder: each link keeps the other filters. {%- endcomment -%}
+{%- capture keep_q %}{% if q != "" %}&q={{ q | url_encode }}{% endif %}{% endcapture -%}
+{%- capture keep_cat %}{% if qcat != "" %}&category={{ qcat }}{% endif %}{% endcapture -%}
+{%- capture keep_type %}{% if qtype != "" and is_remote_view == false %}&type={{ qtype }}{% endif %}{% endcapture -%}
+{%- capture keep_sal %}{% if qsal != "" %}&salary={{ qsal }}{% endif %}{% endcapture -%}
+{%- capture keep_tag %}{% if qtag != "" %}&tag={{ qtag }}{% endif %}{% endcapture -%}
+{%- capture keep_sort %}{% if qsort != "" %}&sort={{ qsort }}{% endif %}{% endcapture -%}
+{%- if is_remote_view -%}{%- assign here = PathBase | append: "/jobs/remote" -%}{%- else -%}{%- assign here = base -%}{%- endif -%}
+
+<section class="page-head">
+  <svg class="contours" viewBox="0 0 1200 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><path d="M600 200m-120 0a120 80 0 1 0 240 0a120 80 0 1 0-240 0"/><path d="M600 200m-200 0a200 130 0 1 0 400 0a200 130 0 1 0-400 0"/><path d="M600 200m-290 0a290 185 0 1 0 580 0a290 185 0 1 0-580 0"/><path d="M600 200m-390 0a390 245 0 1 0 780 0a390 245 0 1 0-780 0"/><path d="M600 200m-500 0a500 310 0 1 0 1000 0a500 310 0 1 0-1000 0"/></svg>
+  <div class="wrap">
+    <div class="crumbs"><a href="{{ PathBase }}/">Home</a><span>/</span><a href="{{ base }}">Jobs</a>{% if is_remote_view %}<span>/</span><span>Remote</span>{% endif %}</div>
+    <h1>{% if is_remote_view %}Fully <em class="accent">remote</em> climate jobs.{% elsif qcatname != "" %}{{ qcatname }} <em class="accent">jobs</em> in climate tech.{% else %}Every open role, <em class="accent">salary included.</em>{% endif %}</h1>
+    <p class="lead">Filter by category, location, salary and skills. Every listing links straight to the employer's own application page.</p>
+    <form class="search-inline" action="{{ here }}" method="get" role="search" style="margin-top:26px;max-width:620px">
+      <input class="field" type="search" name="q" value="{{ q | escape }}" placeholder="Title, skill or place" aria-label="Search jobs">
+      {% if qcat != "" %}<input type="hidden" name="category" value="{{ qcat }}">{% endif %}{% if qtype != "" and is_remote_view == false %}<input type="hidden" name="type" value="{{ qtype }}">{% endif %}{% if qsal != "" %}<input type="hidden" name="salary" value="{{ qsal }}">{% endif %}{% if qtag != "" %}<input type="hidden" name="tag" value="{{ qtag }}">{% endif %}
+      <button class="btn-gw btn-dark" type="submit"><i class="bi bi-search"></i> Search</button>
+    </form>
+  </div>
+</section>
+
+<section class="section-tight">
+  <div class="wrap jobs-layout">
+    <aside class="filters" aria-label="Filters">
+      <div class="cat-block">
+        <h4>Category</h4>
+        <ul class="opt-list">
+          <li><a class="{% if qcat == '' %}on{% endif %}" href="{{ here }}?{{ keep_q }}{{ keep_type }}{{ keep_sal }}{{ keep_tag }}{{ keep_sort }}">All categories</a></li>
+          {% for k in catkeys %}<li><a class="{% if qcat == k %}on{% endif %}" href="{{ here }}?category={{ k }}{{ keep_q }}{{ keep_type }}{{ keep_sal }}{{ keep_tag }}{{ keep_sort }}">{{ catnames[forloop.index0] }}</a></li>{% endfor %}
+        </ul>
+      </div>
+      {% unless is_remote_view %}
+      <div>
+        <h4>Location</h4>
+        <nav class="seg">
+          <a class="{% if qtype == '' %}on{% endif %}" href="{{ here }}?{{ keep_q }}{{ keep_cat }}{{ keep_sal }}{{ keep_tag }}{{ keep_sort }}">Any</a>
+          <a class="{% if qtype == 'remote' %}on{% endif %}" href="{{ here }}?type=remote{{ keep_q }}{{ keep_cat }}{{ keep_sal }}{{ keep_tag }}{{ keep_sort }}">Remote</a>
+          <a class="{% if qtype == 'hybrid' %}on{% endif %}" href="{{ here }}?type=hybrid{{ keep_q }}{{ keep_cat }}{{ keep_sal }}{{ keep_tag }}{{ keep_sort }}">Hybrid</a>
+          <a class="{% if qtype == 'onsite' %}on{% endif %}" href="{{ here }}?type=onsite{{ keep_q }}{{ keep_cat }}{{ keep_sal }}{{ keep_tag }}{{ keep_sort }}">On-site</a>
+        </nav>
+      </div>
+      {% endunless %}
+      <div>
+        <h4>Salary up to at least</h4>
+        <div class="chips">
+          <a class="chip {% if qsal == '' %}on{% endif %}" href="{{ here }}?{{ keep_q }}{{ keep_cat }}{{ keep_type }}{{ keep_tag }}{{ keep_sort }}">Any</a>
+          {% for k in salkeys %}<a class="chip {% if qsal == k %}on{% endif %}" href="{{ here }}?salary={{ k }}{{ keep_q }}{{ keep_cat }}{{ keep_type }}{{ keep_tag }}{{ keep_sort }}">{{ k | divided_by: 1000 }}k+</a>{% endfor %}
+        </div>
+      </div>
+      <div>
+        <h4>Skills</h4>
+        <div class="chips">
+          {% for k in tagkeys %}<a class="chip {% if qtag == k %}on{% endif %}" href="{{ here }}?{% if qtag != k %}tag={{ k }}{% endif %}{{ keep_q }}{{ keep_cat }}{{ keep_type }}{{ keep_sal }}{{ keep_sort }}">{{ tagnames[forloop.index0] }}</a>{% endfor %}
+        </div>
+      </div>
+    </aside>
+
+    <div>
+      <div class="results-bar">
+        <div><span class="count">{{ total }}</span> <span class="muted">open role{% if total != 1 %}s{% endif %}</span></div>
+        <nav class="seg" style="min-width:230px" aria-label="Sort">
+          <a class="{% if qsort == '' %}on{% endif %}" href="{{ here }}?{{ keep_q }}{{ keep_cat }}{{ keep_type }}{{ keep_sal }}{{ keep_tag }}">Newest</a>
+          <a class="{% if qsort == 'salary' %}on{% endif %}" href="{{ here }}?sort=salary{{ keep_q }}{{ keep_cat }}{{ keep_type }}{{ keep_sal }}{{ keep_tag }}">Highest salary</a>
+        </nav>
+      </div>
+      {% if q != "" or qcat != "" or qsal != "" or qtag != "" or qtype != "" and is_remote_view == false %}
+      <div class="active-filters">
+        {% if q != "" %}<a href="{{ here }}?{{ keep_cat }}{{ keep_type }}{{ keep_sal }}{{ keep_tag }}{{ keep_sort }}">“{{ q | escape }}” <i class="bi bi-x"></i></a>{% endif %}
+        {% if qcat != "" %}<a href="{{ here }}?{{ keep_q }}{{ keep_type }}{{ keep_sal }}{{ keep_tag }}{{ keep_sort }}">{{ qcatname }} <i class="bi bi-x"></i></a>{% endif %}
+        {% if qtype != "" and is_remote_view == false %}<a href="{{ here }}?{{ keep_q }}{{ keep_cat }}{{ keep_sal }}{{ keep_tag }}{{ keep_sort }}">{{ qtype | replace: "onsite", "On-site" | capitalize }} <i class="bi bi-x"></i></a>{% endif %}
+        {% if qsal != "" %}<a href="{{ here }}?{{ keep_q }}{{ keep_cat }}{{ keep_type }}{{ keep_tag }}{{ keep_sort }}">{{ qsal | divided_by: 1000 }}k+ <i class="bi bi-x"></i></a>{% endif %}
+        {% if qtag != "" %}<a href="{{ here }}?{{ keep_q }}{{ keep_cat }}{{ keep_type }}{{ keep_sal }}{{ keep_sort }}">{{ qtagname }} <i class="bi bi-x"></i></a>{% endif %}
+        <a href="{{ here }}" style="background:transparent;color:var(--muted);border:1px solid var(--line-2)">Clear all</a>
+      </div>
+      {% endif %}
+
+      {% if q != "" %}
+        {% capture cf %}contains(name,'{{ q }}') or contains(tagline,'{{ q }}'){% endcapture %}
+        {% assign cos = get_content_items(ContentType="companies", Filter=cf, PageSize=4) %}
+        {% if cos.TotalCount > 0 %}
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px">
+          {% for c in cos.Items %}<a class="card lift" style="display:flex;gap:10px;align-items:center;padding:10px 16px 10px 10px" href="{{ PathBase }}/{{ c.RoutePath }}"><img class="logo-sq sm" src="{{ c.PublishedContent.logo | attachment_redirect_url }}" alt=""><span><b>{{ c.PrimaryField }}</b><br><small class="muted">Company profile</small></span></a>{% endfor %}
+        </div>
+        {% endif %}
+      {% endif %}
+
+      {% if total == 0 %}
+        <div class="card empty">No roles match those filters yet. <a class="link-arrow" href="{{ here }}">Clear filters <i class="bi bi-arrow-right"></i></a></div>
+      {% endif %}
+      <div class="job-list">
+      {% for j in items %}
+        {%- assign co = j.PublishedContent.company -%}
+        {%- capture lt %}{{ j.PublishedContent.location_type }}{% endcapture -%}
+        {%- capture cur %}{{ j.PublishedContent.currency }}{% endcapture -%}
+        {%- assign sym = cur | replace: "USD", "$" | replace: "CAD", "CA$" | replace: "EUR", "€" | replace: "GBP", "£" -%}
+        {%- capture feat %}{{ j.PublishedContent.featured }}{% endcapture -%}
+        <a class="card lift job-row reveal {% if feat == 'true' or feat == 'True' %}is-feat{% endif %}" href="{{ PathBase }}/{{ j.RoutePath }}" style="--c:{{ co.PublishedContent.brand_color }}">
+          <img class="logo-sq" src="{{ co.PublishedContent.logo | attachment_redirect_url }}" alt="{{ co.PrimaryField }} logo" loading="lazy">
+          <div>
+            <h3>{{ j.PrimaryField }}</h3>
+            <div class="co"><b>{{ co.PrimaryField }}</b> · {{ j.PublishedContent.location }}</div>
+            <div class="meta">
+              {% if feat == 'true' or feat == 'True' %}<span class="pill feat"><i class="bi bi-star-fill"></i> Featured</span>{% endif %}
+              <span class="pill {{ lt }}">{{ lt | replace: "remote", "Remote" | replace: "hybrid", "Hybrid" | replace: "onsite", "On-site" }}</span>
+              {% for t in j.PublishedContent.tags limit: 3 %}{% capture tk %}{{ t }}{% endcapture %}{% for k in tagkeys %}{% if k == tk %}<span class="tag">{{ tagnames[forloop.index0] }}</span>{% endif %}{% endfor %}{% endfor %}
+            </div>
+          </div>
+          <div class="side">
+            <span class="salary">{{ sym }}{{ j.PublishedContent.salary_min | append: "" | divided_by: 1000 | floor }}k – {{ sym }}{{ j.PublishedContent.salary_max | append: "" | divided_by: 1000 | floor }}k</span>
+            <span class="when">{{ j.PublishedContent.posted_on.Value | date: "%b %-d" }}</span>
+          </div>
+        </a>
+      {% endfor %}
+      </div>
+      <p class="mono muted" style="font-size:.8rem;margin-top:22px"><i class="bi bi-rss"></i> Follow this search: <a class="link-arrow" style="font-family:var(--sans)" href="{{ PathBase }}/feeds/jobs.rss?{% if qcat != '' %}category={{ qcat }}&{% endif %}{% if qtype != '' %}type={{ qtype }}{% endif %}">RSS feed</a></p>
+    </div>
+  </div>
+</section>

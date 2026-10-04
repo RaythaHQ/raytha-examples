@@ -1,0 +1,32 @@
+{%- assign seckeys = "solar,storage,grid,carbon,mobility,food,buildings,data" | split: "," -%}
+{%- assign secnames = "Solar,Energy storage,Grid & utilities,Carbon removal,Mobility,Food & agriculture,Buildings,Climate data" | split: "," -%}
+<section class="page-head">
+  <svg class="contours" viewBox="0 0 1200 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><path d="M-40 330C240 250 420 380 680 300S1040 200 1240 250"/><path d="M-40 270C260 190 440 320 700 240S1050 140 1240 190"/><path d="M-40 210C280 130 460 260 720 180S1060 80 1240 130"/><path d="M-40 150C300 70 480 200 740 120S1070 20 1240 70"/></svg>
+  <div class="wrap">
+    <div class="crumbs"><a href="{{ PathBase }}/">Home</a><span>/</span><span>Companies</span></div>
+    <h1>The companies <em class="accent">doing the work.</em></h1>
+    <p class="lead">{{ Target.TotalCount }} climate tech employers, from grid software to direct air capture. Each profile lists every role they have open right now.</p>
+  </div>
+</section>
+<section class="section-tight" style="padding-bottom:104px">
+  <div class="wrap job-grid">
+  {% for c in Target.Items %}
+    {%- assign cid = c.Id | append: "" -%}{%- capture cf %}company eq '{{ cid }}'{% endcapture -%}
+    {%- assign cj = get_content_items(ContentType="jobs", Filter=cf, PageSize=1) -%}
+    {%- capture sec %}{{ c.PublishedContent.sector }}{% endcapture -%}{%- assign secname = sec -%}{%- for k in seckeys -%}{%- if k == sec -%}{%- assign secname = secnames[forloop.index0] -%}{%- endif -%}{%- endfor -%}
+    <a class="card lift co-card reveal" href="{{ PathBase }}/{{ c.RoutePath }}" style="--c:{{ c.PublishedContent.brand_color }}">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start"><img class="logo-sq" src="{{ c.PublishedContent.logo | attachment_redirect_url }}" alt="{{ c.PrimaryField }} logo" loading="lazy"><span class="pill">{{ secname }}</span></div>
+      <h3>{{ c.PrimaryField }}</h3>
+      <p>{{ c.PublishedContent.tagline }}</p>
+      <div class="foot"><span class="muted"><i class="bi bi-geo-alt"></i> {{ c.PublishedContent.hq }}</span><b style="color:var(--moss)">{{ cj.TotalCount }} open role{% if cj.TotalCount != 1 %}s{% endif %} <i class="bi bi-arrow-right"></i></b></div>
+    </a>
+  {% endfor %}
+    <a class="card co-card co-note reveal" href="{{ PathBase }}/about">
+      <span class="eyebrow">How we choose</span>
+      <h3>Every company here cuts or removes emissions as its core business.</h3>
+      <p>No offset resellers, no greenwashing. And every listing shows a real salary range. Read the rules we hold employers to.</p>
+      <div class="foot"><span></span><b>About Groundwork <i class="bi bi-arrow-right"></i></b></div>
+    </a>
+  </div>
+  <style>.co-note{grid-column:span 2;background:var(--forest);color:#d7e2d9;border-color:var(--forest)}.co-note h3{color:#fff;font-size:1.7rem;max-width:560px}.co-note p{color:#b9c9bd}.co-note .foot b{color:var(--lime)}.co-note .eyebrow{color:var(--lime)}.co-note::before{display:none}.co-note .foot{border-color:rgba(255,255,255,.14)}@media (max-width:640px){.co-note{grid-column:auto}}</style>
+</section>
