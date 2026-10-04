@@ -1,0 +1,23 @@
+{%- comment -%} The average and the star breakdown are worked out here from the reviews themselves. {%- endcomment -%}
+{%- assign total = 0 %}{% assign n = 0 %}{% assign c5 = 0 %}{% assign c4 = 0 %}{% assign c3 = 0 %}{% assign gifts = 0 %}
+{%- for r in Target.Items %}{% assign v = r.PublishedContent.rating | append: "" | plus: 0 %}{% assign total = total | plus: v %}{% assign n = n | plus: 1 %}{% if v == 5 %}{% assign c5 = c5 | plus: 1 %}{% elsif v == 4 %}{% assign c4 = c4 | plus: 1 %}{% else %}{% assign c3 = c3 | plus: 1 %}{% endif %}{% capture gf %}{{ r.PublishedContent.gift | downcase }}{% endcapture %}{% if gf == "true" %}{% assign gifts = gifts | plus: 1 %}{% endif %}{% endfor -%}
+{%- assign avg10 = total | times: 10 | divided_by: n -%}{%- assign avgw = avg10 | divided_by: 10 -%}{%- assign avgd = avg10 | modulo: 10 -%}
+<section class="phead"><svg class="big-pm" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="46" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="50" cy="50" r="30" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 44c7-5 14 5 21 0s14-5 21 0 14 5 21 0 14-5 21 0M8 56c7-5 14 5 21 0s14-5 21 0 14 5 21 0 14-5 21 0" fill="none" stroke="currentColor" stroke-width="2"/></svg><div class="wrap"><div class="crumbs"><a href="{{ PathBase }}/">Home</a><span>/</span><span>Reviews</span></div>
+  <h1>Postcards <em>home</em></h1><p>What travellers told us after they got back. We publish every review, good or not quite.</p></div></section>
+<section class="section" style="padding-top:50px"><div class="wrap">
+  <div class="grid4" style="margin-bottom:50px">
+    <div class="card reveal"><span class="label" style="color:var(--muted)">Average</span><div style="font:400 3.4rem/1 var(--serif);margin-top:10px">{{ avgw }}.{{ avgd }}</div><div class="stars" style="font-size:1.2rem">★★★★★</div></div>
+    <div class="card reveal"><span class="label" style="color:var(--muted)">Reviews</span><div style="font:400 3.4rem/1 var(--serif);margin-top:10px">{{ n }}</div><div class="muted">from all four trip tiers</div></div>
+    <div class="card reveal" style="grid-column:span 2"><span class="label" style="color:var(--muted)">Breakdown</span>
+      {%- assign bars = "5|4|3 or less" | split: "|" %}{% for b in bars %}{% case forloop.index %}{% when 1 %}{% assign c = c5 %}{% when 2 %}{% assign c = c4 %}{% else %}{% assign c = c3 %}{% endcase %}{% assign w = c | times: 100 | divided_by: n %}
+      <div style="display:grid;grid-template-columns:90px 1fr 30px;gap:12px;align-items:center;margin-top:12px;font-size:.9rem"><span>{{ b }} ★</span><span style="height:10px;border-radius:9px;background:var(--paper2);overflow:hidden"><i style="display:block;height:100%;width:{{ w }}%;background:var(--mustard)"></i></span><span class="mono">{{ c }}</span></div>{% endfor %}
+      <p class="muted" style="margin:12px 0 0;font-size:.88rem">{{ gifts }} of these trips were gifts.</p></div>
+  </div>
+  <div class="masonry">
+  {%- for r in Target.Items %}{% assign p = r.PublishedContent %}{% assign t = p.tier %}{% assign v = p.rating | append: "" | plus: 0 %}{% capture gf %}{{ p.gift | downcase }}{% endcapture %}
+    <article class="rv reveal"><div class="row" style="justify-content:space-between"><span class="stars">{% for i in (1..5) %}{% if i <= v %}★{% else %}☆{% endif %}{% endfor %}</span><span class="row" style="gap:6px"><span class="chip" style="background:transparent;border:1.5px solid {{ t.PublishedContent.color }};color:{{ t.PublishedContent.color }}">{{ t.PrimaryField }}</span>{% if gf == "true" %}<span class="chip gift"><i class="bi bi-gift"></i> Gift</span>{% endif %}</span></div>
+      <h3>{{ p.headline }}</h3><p>{{ p.quote }}</p>
+      <div class="who"><span class="av" style="background:{{ t.PublishedContent.color }}">{{ r.PrimaryField | slice: 0 }}</span><div><b>{{ r.PrimaryField }}</b><div class="muted" style="font-size:.86rem">{{ p.home }} · went to {{ p.went_to }}</div></div></div></article>
+  {%- endfor %}
+  </div>
+</div></section>

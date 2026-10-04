@@ -1,0 +1,10 @@
+{%- assign s = widget.settings -%}{%- assign lim = s.count | append: "" | plus: 0 -%}{%- if lim == 0 %}{% assign lim = 3 %}{% endif -%}{%- assign rs = get_content_items(ContentType="reveals", OrderBy="sort_order desc", PageSize=lim) -%}
+<section class="section"><div class="wrap">
+  <div class="shead"><span class="label">{{ s.kicker }}</span><h2>{{ s.headline }} <em>{{ s.accent }}</em></h2><p>{{ s.subtitle }}</p></div>
+  <div class="grid3">{% for r in rs.Items %}{% assign p = r.PublishedContent %}
+    <div class="flip reveal" tabindex="0" role="button" aria-label="Flip to see where this clue led"><div class="in">
+      <div class="f"><span class="label" style="color:var(--blue)">Clue no. {{ p.sort_order }}</span><q>{{ p.clue }}</q><span class="mono muted" style="font-size:.74rem;text-transform:uppercase;letter-spacing:.1em"><i class="bi bi-arrow-repeat"></i> Tap to flip</span></div>
+      <div class="b"><img src="{{ p.postcard | attachment_redirect_url }}" alt="" loading="lazy"><span class="label" style="color:#fff">It was</span><h3>{{ r.PrimaryField }}</h3><p style="margin:4px 0 12px;opacity:.9">{{ p.country }} · {{ p.travelers | split: "," | first }}</p><a href="/{{ r.RoutePath }}" class="btn btn-sm" style="background:#fff;color:var(--ink);align-self:flex-start">Read the story</a></div>
+    </div></div>{% endfor %}</div>
+  <div style="text-align:center;margin-top:40px"><a class="btn btn-line" href="/reveals">All past reveals</a></div>
+</div></section>

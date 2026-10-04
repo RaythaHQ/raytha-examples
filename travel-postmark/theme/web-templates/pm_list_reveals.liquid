@@ -1,0 +1,15 @@
+{%- comment -%} Past reveals as postcards. ?region= narrows by region (checked against the known regions). {%- endcomment -%}
+{%- assign rg = QueryParams.region | strip -%}{%- assign keys = "americas,europe,asia,africa,oceania" | split: "," -%}{%- assign names = "The Americas,Europe,Asia,Africa,Oceania" | split: "," -%}
+{%- assign okr = false %}{% for k in keys %}{% if k == rg %}{% assign okr = true %}{% endif %}{% endfor %}{% if okr == false %}{% assign rg = "" %}{% endif -%}
+<section class="phead"><svg class="big-pm" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="46" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="50" cy="50" r="30" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 44c7-5 14 5 21 0s14-5 21 0 14 5 21 0 14-5 21 0M8 56c7-5 14 5 21 0s14-5 21 0 14 5 21 0 14-5 21 0" fill="none" stroke="currentColor" stroke-width="2"/></svg><div class="wrap"><div class="crumbs"><a href="{{ PathBase }}/">Home</a><span>/</span><span>Past reveals</span></div>
+  <h1>Where the <em>envelopes</em> led</h1><p>{{ Target.Items | size }} trips from the last couple of years: the clue we sent, the moment at the airport, and how it went.</p></div></section>
+<section class="section" style="padding-top:44px"><div class="wrap">
+  <div class="filters" style="margin-bottom:40px"><a href="{{ PathBase }}/reveals" class="{% if rg == '' %}on{% endif %}">Everywhere</a>{% for k in keys %}<a href="{{ PathBase }}/reveals?region={{ k }}" class="{% if rg == k %}on{% endif %}">{{ names[forloop.index0] }}</a>{% endfor %}</div>
+  <div class="postcards">
+  {%- for r in Target.Items %}{% assign p = r.PublishedContent %}{% capture reg %}{{ p.region }}{% endcapture %}{% if rg == "" or rg == reg %}{% assign t = p.tier %}
+    <a class="pc reveal" href="{{ PathBase }}/{{ r.RoutePath }}"><div class="ph"><img src="{{ p.postcard | attachment_redirect_url }}" alt="Postcard of {{ r.PrimaryField }}" loading="lazy"><span class="pm">{{ t.PrimaryField }}<br>{{ p.when | split: " " | last }}</span></div>
+      <div class="tx"><h3>{{ r.PrimaryField }}</h3><div class="meta">{{ p.country }} · {{ p.when }}</div><p class="clue">“{{ p.clue }}”</p></div></a>
+  {%- endif %}{% endfor %}
+  </div>
+</div></section>
+<section class="section tight"><div class="wrap"><div class="cta reveal"><span class="label">Your turn</span><h2>Where will yours lead?</h2><p>Tell us your dates and what you love. We'll do the rest and seal it in an envelope.</p><div class="row"><a class="btn btn-r" href="{{ PathBase }}/plan">Plan my trip</a><a class="btn btn-line" href="{{ PathBase }}/reviews">Read the reviews</a></div></div></div></section>

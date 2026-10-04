@@ -1,0 +1,24 @@
+<section class="phead"><svg class="big-pm" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="46" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="50" cy="50" r="30" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 44c7-5 14 5 21 0s14-5 21 0 14 5 21 0 14-5 21 0M8 56c7-5 14 5 21 0s14-5 21 0 14 5 21 0 14-5 21 0" fill="none" stroke="currentColor" stroke-width="2"/></svg><div class="wrap"><div class="crumbs"><a href="{{ PathBase }}/">Home</a><span>/</span><span>Trips and prices</span></div>
+  <h1>Four trips, <em>one envelope</em></h1><p>Every trip includes flights, hotels, booked experiences and a sealed envelope. Prices are per person and are a guide only: we send a fixed quote by email before you decide, and nothing is ever paid on this website.</p></div></section>
+<section class="section" style="padding-top:60px"><div class="wrap grid2" style="gap:34px;align-items:stretch;max-width:1000px">
+{%- for t in Target.Items %}{% assign p = t.PublishedContent %}{% capture pop %}{{ p.popular | downcase }}{% endcapture %}
+  <a class="stamp reveal" href="{{ PathBase }}/{{ t.RoutePath }}" style="--c:{{ p.color }}">{% if pop == "true" %}<span class="pop">Most popular</span>{% endif %}<div class="inner">
+    <span class="denom">{{ p.stamp }}</span><h3>{{ t.PrimaryField }}</h3><p class="tag">{{ p.tagline }}</p>
+    <div class="price">{{ p.price_range }}</div><div class="pp">per person · guide price</div>
+    <div class="facts" style="margin-top:14px"><span><i class="bi bi-moon-stars"></i> {{ p.nights }}</span></div><p class="muted" style="font-size:.88rem;margin:8px 0 0">{{ p.reach }}</p>
+    <ul>{% assign ls = p.includes | newline_to_br | split: "<br />" %}{% for l in ls limit: 4 %}{% assign x = l | strip %}{% if x != "" %}<li>{{ x }}</li>{% endif %}{% endfor %}</ul>
+    <span class="btn btn-line btn-sm" style="margin-top:auto;align-self:flex-start;margin-top:22px">Details <i class="bi bi-arrow-right"></i></span></div></a>
+{%- endfor %}
+</div></section>
+<section class="section alt"><div class="wrap">
+  <div class="shead"><span class="label">Compare</span><h2>What's in <em>each trip</em></h2></div>
+  <div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;min-width:720px;background:var(--card);border-radius:16px;overflow:hidden">
+    <thead><tr><th style="text-align:left;padding:18px;font:700 .72rem var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)"></th>{% for t in Target.Items %}<th style="text-align:left;padding:18px;font:400 1.35rem var(--serif);color:{{ t.PublishedContent.color }}">{{ t.PrimaryField }}</th>{% endfor %}</tr></thead>
+    <tbody>
+      {%- assign rows = "price_range|nights|reach|best_for" | split: "|" %}{% assign labels = "Guide price per person|Nights|How far|Best for" | split: "|" %}
+      {%- for r in rows %}{% assign ri = forloop.index0 %}<tr>{% capture lab %}{{ labels[ri] }}{% endcapture %}<td style="padding:16px 18px;border-top:1px solid var(--line);font:700 .72rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)">{{ lab }}</td>
+        {%- for t in Target.Items %}{% assign p = t.PublishedContent %}<td style="padding:16px 18px;border-top:1px solid var(--line)">{% case r %}{% when "price_range" %}{{ p.price_range }}{% when "nights" %}{{ p.nights }}{% when "reach" %}{{ p.reach }}{% else %}{{ p.best_for }}{% endcase %}</td>{% endfor %}</tr>{% endfor %}
+    </tbody></table></div>
+  <p class="muted" style="margin-top:18px;font-size:.92rem">Guide prices assume two people sharing and flights from a major US airport. Where you land in the range depends on your airport, dates and group size.</p>
+</div></section>
+<section class="section tight"><div class="wrap"><div class="cta reveal"><span class="label">Ready?</span><h2>Tell us what you love</h2><p>Five minutes of questions. We reply with a fixed quote within two working days, and there's no obligation.</p><div class="row"><a class="btn btn-r" href="{{ PathBase }}/plan">Plan my trip</a><a class="btn btn-line" href="{{ PathBase }}/gift">Give one as a gift</a></div></div></div></section>
