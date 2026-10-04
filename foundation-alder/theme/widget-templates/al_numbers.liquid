@@ -1,0 +1,5 @@
+{%- assign s = widget.settings -%}
+<section class="section dark nums"><svg class="rw" viewBox="0 0 1440 300" preserveAspectRatio="none" aria-hidden="true"><path d="M0 180 C240 120 420 260 720 190 S1200 110 1440 170" stroke="#2f6f8f" stroke-width="60" fill="none" opacity=".35"/><path d="M0 200 C240 140 420 280 720 210 S1200 130 1440 190" stroke="#e9a676" stroke-width="2" fill="none" opacity=".5"/></svg><div class="wrap" style="position:relative"><div class="shead"><div><span class="eyebrow">{{ s.kicker }}</span><h2>{{ s.headline }} <em>{{ s.accent }}</em></h2></div>{% if s.subtitle != "" %}<p>{{ s.subtitle }}</p>{% endif %}</div>
+  <div class="grid4">{% for n in s.items %}<div class="nb reveal"><span class="num" data-count="{{ n.value }}" data-pre="{{ n.prefix }}" data-suf="{{ n.suffix }}">{{ n.prefix }}{{ n.value }}{{ n.suffix }}</span><p>{{ n.label }}</p></div>{% endfor %}</div>
+</div></section>
+<style>.nums{position:relative;overflow:hidden}.nums .rw{position:absolute;left:0;right:0;bottom:-40px;width:100%;height:300px}.nb{border-top:1px solid rgba(246,241,231,.25);padding-top:22px}.nb .num{color:#fff}.nb p{color:#a9bcb0;margin:10px 0 0}</style>

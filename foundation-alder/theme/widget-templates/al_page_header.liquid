@@ -1,0 +1,2 @@
+{%- assign s = widget.settings -%}
+<section class="phead"><div class="wrap"><svg class="leaf" viewBox="0 0 200 300" aria-hidden="true"><path d="M100 10c60 50 80 120 0 280C20 130 40 60 100 10z" fill="#16302a"/><path d="M100 40v250M100 90l-40-30M100 130l45-35M100 170l-40-32M100 210l38-30" stroke="#f6f1e7" stroke-width="5" stroke-linecap="round"/></svg><span class="eyebrow">{{ s.kicker }}</span><h1>{{ s.headline }} <em>{{ s.accent }}</em></h1>{% if s.subtitle != "" %}<p class="lead">{{ s.subtitle }}</p>{% endif %}</div></section>

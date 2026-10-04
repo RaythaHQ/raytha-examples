@@ -1,0 +1,4 @@
+{%- assign s = widget.settings -%}
+<section class="section alt"><div class="wrap"><div class="shead"><div><span class="eyebrow">{{ s.kicker }}</span><h2>{{ s.headline }} <em>{{ s.accent }}</em></h2></div>{% if s.subtitle != "" %}<p>{{ s.subtitle }}</p>{% endif %}</div>
+  <div class="grid4">{% for m in s.people %}{% assign ws = m.name | split: " " %}<div class="card reveal" style="padding:26px"><span class="mono" style="background:{{ m.color }};width:64px;height:64px;font-size:1.3rem;margin-bottom:18px">{{ ws[0] | slice: 0 }}{{ ws[1] | slice: 0 }}</span><h3 style="font-size:1.35rem;margin-bottom:4px">{{ m.name }}</h3><p style="font-weight:600;color:var(--rust2);font-size:.9rem;margin-bottom:10px">{{ m.role }}</p><p style="font-size:.94rem">{{ m.bio }}</p></div>{% endfor %}</div>
+</div></section>

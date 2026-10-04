@@ -1,0 +1,13 @@
+{%- assign s = widget.settings -%}{%- assign ps = get_content_items(ContentType="programs", OrderBy="sort_order asc", PageSize=10) -%}
+<section class="section alt"><div class="wrap"><div class="shead"><div><span class="eyebrow">{{ s.kicker }}</span><h2>{{ s.headline }} <em>{{ s.accent }}</em></h2></div>{% if s.subtitle != "" %}<p>{{ s.subtitle }}</p>{% endif %}</div>
+  <div class="pgrid">{% for x in ps.Items %}{% assign p = x.PublishedContent %}{% capture st %}{{ p.status }}{% endcapture %}
+    <a class="pc reveal" href="{{ PathBase }}/{{ x.RoutePath }}" style="--c:{{ p.color }}"><div class="ic" style="background:var(--c)"><i class="bi bi-{{ p.icon }}"></i></div><h3>{{ x.PrimaryField }}</h3><p>{{ p.tagline }}</p>
+      <div class="pf"><span>{{ p.grant_range }}</span><span class="{% if st == 'open' or st == 'rolling' %}ok{% endif %}">{% if st == "open" %}Open until {{ p.deadline.Value | date: "%b %-d" }}{% elsif st == "rolling" %}Rolling{% elsif st == "invite" %}By invitation{% else %}Closed{% endif %}</span></div></a>{% endfor %}
+    <a class="pc pc-all reveal" href="{{ PathBase }}/apply"><h3>Not sure which program fits?</h3><p>Book a 20-minute call with a program officer. We would rather talk early than turn you down later.</p><span class="btn btn-paper" style="margin-top:auto;align-self:flex-start">How to apply <i class="bi bi-arrow-right"></i></span></a>
+  </div>
+</div></section>
+<style>.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.pc{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:16px;padding:30px;min-height:300px;position:relative;overflow:hidden;transition:transform .2s,box-shadow .2s}
+.pc::after{content:"";position:absolute;left:0;right:0;bottom:0;height:4px;background:var(--c);transform:scaleX(0);transform-origin:left;transition:transform .35s}.pc:hover{transform:translateY(-4px);box-shadow:0 20px 44px rgba(22,48,42,.12)}.pc:hover::after{transform:none}
+.pc h3{font-size:1.75rem;margin-bottom:10px}.pc p{color:var(--mut);margin:0}.pf{display:flex;justify-content:space-between;gap:10px;margin-top:auto;padding-top:22px;font-size:.86rem;font-weight:600;color:#38403a}.pf .ok{color:#3f7d4e}
+.pc-all{background:var(--forest);color:var(--paper);border-color:var(--forest)}.pc-all p{color:#a9bcb0;margin-bottom:22px}
+@media(max-width:1000px){.pgrid{grid-template-columns:1fr 1fr}}@media(max-width:640px){.pgrid{grid-template-columns:1fr}}</style>
