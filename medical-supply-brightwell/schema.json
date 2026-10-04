@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "contentTypes": [
+    {
+      "developerName": "categories",
+      "labelPlural": "Equipment categories",
+      "labelSingular": "Equipment category",
+      "description": "Groups of equipment, such as mobility or respiratory",
+      "defaultRouteTemplate": "equipment/{PrimaryField}",
+      "primaryField": "name",
+      "fields": [
+        {"developerName": "name", "label": "Name", "description": "", "fieldType": "single_line_text", "isRequired": true, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "tagline", "label": "Tagline", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "description", "label": "Description", "description": "", "fieldType": "long_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "icon", "label": "Bootstrap icon name", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "color", "label": "Accent colour", "description": "", "fieldType": "color", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "sort_order", "label": "Sort order", "description": "", "fieldType": "number", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []}
+      ],
+      "views": [
+        {"developerName": "equipment", "label": "Equipment", "description": "", "isPublished": true, "routePath": "equipment", "template": "bw_list_categories", "columns": ["PrimaryField"], "sort": [{"developerName": "sort_order", "direction": "asc"}], "filter": [], "defaultNumberOfItemsPerPage": 50, "maxNumberOfItemsPerPage": 1000, "ignoreClientFilterAndSortQueryParams": false}
+      ]
+    },
+    {
+      "developerName": "products",
+      "labelPlural": "Products",
+      "labelSingular": "Product",
+      "description": "Equipment we rent or sell",
+      "defaultRouteTemplate": "products/{PrimaryField}",
+      "primaryField": "name",
+      "fields": [
+        {"developerName": "name", "label": "Name", "description": "", "fieldType": "single_line_text", "isRequired": true, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "category", "label": "Category", "description": "", "fieldType": "one_to_one_relationship", "isRequired": true, "choices": [], "relatedContentType": "categories", "subFields": []},
+        {"developerName": "hcpcs", "label": "HCPCS code", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "summary", "label": "Summary", "description": "", "fieldType": "long_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "description", "label": "Description", "description": "", "fieldType": "wysiwyg", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "specs", "label": "Specifications (Label: value, one per line)", "description": "", "fieldType": "long_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "whats_included", "label": "In the box (one per line)", "description": "", "fieldType": "long_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "acquire", "label": "Rent or buy", "description": "", "fieldType": "dropdown", "isRequired": false, "choices": [{"developerName": "rent", "label": "Rental", "disabled": false}, {"developerName": "buy", "label": "Purchase", "disabled": false}, {"developerName": "rent_or_buy", "label": "Rental or purchase", "disabled": false}], "relatedContentType": null, "subFields": []},
+        {"developerName": "coverage", "label": "Coverage", "description": "", "fieldType": "dropdown", "isRequired": false, "choices": [{"developerName": "medicare", "label": "Medicare Part B and most insurance", "disabled": false}, {"developerName": "insurance", "label": "Most private insurance", "disabled": false}, {"developerName": "self_pay", "label": "Self-pay, HSA and FSA eligible", "disabled": false}], "relatedContentType": null, "subFields": []},
+        {"developerName": "prescription", "label": "Prescription required", "description": "", "fieldType": "checkbox", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "price_note", "label": "Self-pay price note", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "image", "label": "Image", "description": "", "fieldType": "attachment", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "featured", "label": "Featured", "description": "", "fieldType": "checkbox", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "sort_order", "label": "Sort order", "description": "", "fieldType": "number", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []}
+      ],
+      "views": [
+        {"developerName": "products", "label": "All equipment", "description": "", "isPublished": true, "routePath": "products", "template": "bw_list_products", "columns": ["PrimaryField"], "sort": [{"developerName": "sort_order", "direction": "asc"}], "filter": [], "defaultNumberOfItemsPerPage": 60, "maxNumberOfItemsPerPage": 1000, "ignoreClientFilterAndSortQueryParams": false}
+      ]
+    },
+    {
+      "developerName": "resources",
+      "labelPlural": "Patient resources",
+      "labelSingular": "Patient resource",
+      "description": "Guides for patients and caregivers",
+      "defaultRouteTemplate": "resources/{PrimaryField}",
+      "primaryField": "title",
+      "fields": [
+        {"developerName": "title", "label": "Title", "description": "", "fieldType": "single_line_text", "isRequired": true, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "kind", "label": "Kind", "description": "", "fieldType": "dropdown", "isRequired": false, "choices": [{"developerName": "getting_started", "label": "Getting started", "disabled": false}, {"developerName": "insurance", "label": "Insurance and billing", "disabled": false}, {"developerName": "care", "label": "Use and care", "disabled": false}], "relatedContentType": null, "subFields": []},
+        {"developerName": "summary", "label": "Summary", "description": "", "fieldType": "long_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "body", "label": "Body", "description": "", "fieldType": "wysiwyg", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "minutes", "label": "Reading time (minutes)", "description": "", "fieldType": "number", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "category", "label": "Related equipment", "description": "", "fieldType": "one_to_one_relationship", "isRequired": false, "choices": [], "relatedContentType": "categories", "subFields": []},
+        {"developerName": "sort_order", "label": "Sort order", "description": "", "fieldType": "number", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []}
+      ],
+      "views": [
+        {"developerName": "resources", "label": "Patient resources", "description": "", "isPublished": true, "routePath": "resources", "template": "bw_list_resources", "columns": ["PrimaryField"], "sort": [{"developerName": "sort_order", "direction": "asc"}], "filter": [], "defaultNumberOfItemsPerPage": 50, "maxNumberOfItemsPerPage": 1000, "ignoreClientFilterAndSortQueryParams": false}
+      ]
+    },
+    {
+      "developerName": "faqs",
+      "labelPlural": "FAQs",
+      "labelSingular": "FAQ",
+      "description": "Common questions",
+      "defaultRouteTemplate": "faq/{PrimaryField}",
+      "primaryField": "question",
+      "fields": [
+        {"developerName": "question", "label": "Question", "description": "", "fieldType": "single_line_text", "isRequired": true, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "answer", "label": "Answer", "description": "", "fieldType": "long_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "topic", "label": "Topic", "description": "", "fieldType": "dropdown", "isRequired": false, "choices": [{"developerName": "ordering", "label": "Ordering", "disabled": false}, {"developerName": "insurance", "label": "Insurance", "disabled": false}, {"developerName": "delivery", "label": "Delivery and setup", "disabled": false}, {"developerName": "rentals", "label": "Rentals and returns", "disabled": false}, {"developerName": "service", "label": "Service and repairs", "disabled": false}], "relatedContentType": null, "subFields": []},
+        {"developerName": "sort_order", "label": "Sort order", "description": "", "fieldType": "number", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []}
+      ],
+      "views": [
+        {"developerName": "faq", "label": "FAQ", "description": "", "isPublished": true, "routePath": "faq", "template": "bw_list_faqs", "columns": ["PrimaryField"], "sort": [{"developerName": "sort_order", "direction": "asc"}], "filter": [], "defaultNumberOfItemsPerPage": 100, "maxNumberOfItemsPerPage": 1000, "ignoreClientFilterAndSortQueryParams": false}
+      ]
+    },
+    {
+      "developerName": "locations",
+      "labelPlural": "Locations",
+      "labelSingular": "Location",
+      "description": "Showrooms and service centers",
+      "defaultRouteTemplate": "locations/{PrimaryField}",
+      "primaryField": "name",
+      "fields": [
+        {"developerName": "name", "label": "Name", "description": "", "fieldType": "single_line_text", "isRequired": true, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "kind", "label": "Kind", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "street", "label": "Street", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "city", "label": "City and state", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "zip", "label": "ZIP", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "phone", "label": "Phone", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "email", "label": "Email", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "hours", "label": "Hours (Day: time, one per line)", "description": "", "fieldType": "long_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "services", "label": "Services (one per line)", "description": "", "fieldType": "long_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "parking", "label": "Parking and access", "description": "", "fieldType": "long_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "map_x", "label": "Map position x (0-100)", "description": "", "fieldType": "number", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "map_y", "label": "Map position y (0-100)", "description": "", "fieldType": "number", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "sort_order", "label": "Sort order", "description": "", "fieldType": "number", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []}
+      ],
+      "views": [
+        {"developerName": "locations", "label": "Locations", "description": "", "isPublished": true, "routePath": "locations", "template": "bw_list_locations", "columns": ["PrimaryField"], "sort": [{"developerName": "sort_order", "direction": "asc"}], "filter": [], "defaultNumberOfItemsPerPage": 50, "maxNumberOfItemsPerPage": 1000, "ignoreClientFilterAndSortQueryParams": false}
+      ]
+    }
+  ]
+}
