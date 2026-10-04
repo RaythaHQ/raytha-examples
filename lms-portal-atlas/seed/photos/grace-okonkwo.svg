@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" width="400" height="500" role="img" aria-label="Illustrated portrait of Grace Okonkwo">
+<defs>
+<linearGradient id="bggraceokonkwo" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e8553d"/><stop offset="1" stop-color="#f2a20c"/></linearGradient>
+<radialGradient id="glowgraceokonkwo" cx=".5" cy=".38" r=".6"><stop offset="0" stop-color="#fff" stop-opacity=".35"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="400" height="500" fill="url(#bggraceokonkwo)"/>
+<rect width="400" height="500" fill="url(#glowgraceokonkwo)"/>
+<circle cx="330" cy="70" r="90" fill="#fff" opacity=".12"/><path d="M0 380 L400 300 L400 500 L0 500z" fill="#16130f" opacity=".08"/>
+<circle cx="200" cy="96" r="30" fill="#1d1a26"/>
+<path d="M70 500c6-96 60-150 130-150s124 54 130 150z" fill="#1f4d3a"/>
+<path d="M176 300h48v58c-8 12-40 12-48 0z" fill="#5c3a26"/>
+<path d="M176 330c14 8 34 8 48 0v10c-14 8-34 8-48 0z" fill="#000" opacity=".12"/>
+<ellipse cx="200" cy="222" rx="60" ry="76" fill="#5c3a26"/>
+<ellipse cx="140" cy="228" rx="10" ry="16" fill="#5c3a26"/><ellipse cx="260" cy="228" rx="10" ry="16" fill="#5c3a26"/>
+<path d="M140 205c0-62 30-96 60-96s62 30 62 92c-12-30-38-44-62-44-26 0-50 16-60 48z" fill="#1d1a26"/>
+<g fill="#1a1423"><ellipse cx="177" cy="211" rx="5" ry="6"/><ellipse cx="223" cy="211" rx="5" ry="6"/></g>
+<path d="M166 194q11-7 22 0M212 194q11-7 22 0" stroke="#1a1423" stroke-width="4" fill="none" stroke-linecap="round" opacity=".7"/>
+<path d="M200 220q-6 18 0 22" stroke="#000" stroke-opacity=".18" stroke-width="4" fill="none" stroke-linecap="round"/>
+<path d="M182 260q18 14 36 0" stroke="#5a2a2a" stroke-width="5" fill="none" stroke-linecap="round"/>
+
+</svg>

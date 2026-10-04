@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="1200" height="750" role="img" aria-label="Course cover artwork">
+<defs><radialGradient id="g" cx=".8" cy=".1" r="1"><stop offset="0" stop-color="#fff" stop-opacity=".28"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient></defs>
+<rect width="1200" height="750" fill="#c2410c"/><rect width="1200" height="750" fill="url(#g)"/>
+<text x="140" y="600" font-family="Georgia,serif" font-size="560" font-weight="700" fill="#f6f1e7">A</text><text x="560" y="600" font-family="Helvetica,Arial,sans-serif" font-size="460" font-weight="300" fill="#16130f" opacity=".85">a</text><g stroke="#f6f1e7" stroke-width="3" opacity=".6"><path d="M80 600H1120"/><path d="M80 380H1120" stroke-dasharray="10 12"/><path d="M80 200H1120" stroke-dasharray="10 12"/></g><circle cx="1000" cy="200" r="22" fill="#16130f"/>
+</svg>
