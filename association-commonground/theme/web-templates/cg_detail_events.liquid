@@ -1,0 +1,20 @@
+{%- assign p = Target.PublishedContent -%}{%- capture fm %}{{ p.format }}{% endcapture -%}{%- capture au %}{{ p.audience }}{% endcapture -%}
+{%- assign today = "now" | date: "%Y-%m-%d" -%}{%- capture d %}{{ p.start.Value | date: "%Y-%m-%d" }}{% endcapture -%}
+<section class="section" style="padding-top:48px"><div class="wrap">
+  <div class="crumbs" style="margin-bottom:26px"><a href="{{ PathBase }}/">Home</a><span>/</span><a href="{{ PathBase }}/events">Events</a><span>/</span><span>{{ Target.PrimaryField }}</span></div>
+  <div class="split">
+    <div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap"><span class="pill {% if fm == 'online' %}sky{% elsif fm == 'hybrid' %}mustard{% else %}green{% endif %}">{{ fm | replace: "in_person", "In person" | replace: "online", "Online" | replace: "hybrid", "Hybrid" }}</span>{% if au == "members" %}<span class="pill clay"><i class="bi bi-lock-fill"></i> Members only</span>{% else %}<span class="pill">Open to everyone</span>{% endif %}{% if d < today %}<span class="pill">This event has passed</span>{% endif %}</div>
+      <h1 style="font-size:clamp(2.5rem,5vw,4rem);margin:16px 0 14px">{{ Target.PrimaryField }}</h1>
+      <p style="font-size:1.2rem;color:var(--ink2);margin:0 0 28px">{{ p.summary }}</p>
+      <div class="card" style="margin-bottom:30px"><div class="im" style="aspect-ratio:16/8"><img src="{{ p.image.Value | attachment_redirect_url }}" alt=""></div></div>
+      <div class="prose">{{ p.body }}</div>
+    </div>
+    <aside class="aside">
+      <div class="box"><div style="display:flex;gap:16px;align-items:center;margin-bottom:16px"><div class="date" style="width:76px;height:76px"><div><b style="font-size:1.8rem">{{ p.start.Value | date: "%-d" }}</b><span>{{ p.start.Value | date: "%b" }}</span></div></div><div><b style="font:600 1.2rem var(--serif)">{{ p.start.Value | date: "%A, %B %-d, %Y" }}</b><div class="muted">{{ p.time_label }}</div></div></div>
+        <div class="facts"><div><span>Where</span><b>{{ p.location }}</b></div>{% if p.chapter.PrimaryField %}<div><span>Hosted by</span><b><a href="{{ PathBase }}/{{ p.chapter.RoutePath }}" style="text-decoration:underline">{{ p.chapter.PrimaryField }}</a></b></div>{% endif %}<div><span>Who can come</span><b>{% if au == "members" %}Members{% else %}Everyone{% endif %}</b></div></div>
+        {% if d >= today %}<a class="btn btn-green ext" href="{{ p.register_url }}" rel="noopener" style="width:100%;justify-content:center;margin-top:18px">Register</a><p class="muted" style="font-size:.8rem;margin:10px 0 0;text-align:center">Registration opens on our events partner's site.</p>{% endif %}</div>
+      {% if au == "members" %}<div class="box" style="background:#f5d9cf;border-color:#efc3b3"><h3>Members only</h3><p style="margin:0;font-size:.93rem;color:#6d2a1c">Sign in with your member account when you register. Not a member? <a href="{{ PathBase }}/membership" style="text-decoration:underline">Join from $45 a year</a>.</p></div>{% endif %}
+    </aside>
+  </div>
+</div></section>
