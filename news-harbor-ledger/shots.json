@@ -1,0 +1,20 @@
+[
+  {"name": "01-home-hero-1440.png", "path": "/", "device": "desktop"},
+  {"name": "02-home-full-1440.png", "path": "/", "device": "desktop", "full_page": true},
+  {"name": "03-breaking-story-1440.png", "path": "/news/noreaster-floods-the-causeway-strands-ferries-and-cuts-power-to-9000", "device": "desktop"},
+  {"name": "04-live-updates-1440.png", "path": "/news/noreaster-floods-the-causeway-strands-ferries-and-cuts-power-to-9000", "device": "desktop", "scroll": 1080},
+  {"name": "05-story-1440.png", "path": "/news/the-seawall-was-built-for-a-sea-that-no-longer-exists", "device": "desktop", "full_page": true},
+  {"name": "06-latest-1440.png", "path": "/news", "device": "desktop", "full_page": true},
+  {"name": "07-latest-filtered-1440.png", "path": "/news?section=harbor-climate&type=news", "device": "desktop", "full_page": true},
+  {"name": "08-section-1440.png", "path": "/section/business", "device": "desktop", "full_page": true},
+  {"name": "09-sections-1440.png", "path": "/sections", "device": "desktop", "full_page": true},
+  {"name": "10-staff-page-1440.png", "path": "/staff/priya-raman", "device": "desktop", "full_page": true},
+  {"name": "11-masthead-1440.png", "path": "/staff", "device": "desktop", "full_page": true},
+  {"name": "12-most-read-1440.png", "path": "/most-read", "device": "desktop", "full_page": true},
+  {"name": "13-live-index-1440.png", "path": "/live", "device": "desktop", "full_page": true},
+  {"name": "14-about-1440.png", "path": "/about", "device": "desktop", "full_page": true},
+  {"name": "15-home-mobile-390.png", "path": "/", "device": "mobile"},
+  {"name": "16-live-mobile-390.png", "path": "/news/noreaster-floods-the-causeway-strands-ferries-and-cuts-power-to-9000", "device": "mobile", "scroll": 1000},
+  {"name": "17-latest-mobile-390.png", "path": "/news", "device": "mobile", "scroll": 300},
+  {"name": "18-most-read-mobile-390.png", "path": "/most-read", "device": "mobile", "scroll": 200}
+]

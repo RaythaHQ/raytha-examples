@@ -1,0 +1,7 @@
+{"name": "City Hall", "blurb": "Council, budgets and the people who run Port Merrow", "color": "#1f4e79", "icon": "bank2", "sort_order": 1}
+{"name": "Harbor & Climate", "blurb": "The working waterfront, storms and the rising sea", "color": "#0f7c7a", "icon": "water", "sort_order": 2}
+{"name": "Business", "blurb": "Jobs, rents, the port economy and Main Street", "color": "#8a5a12", "icon": "briefcase", "sort_order": 3}
+{"name": "Schools", "blurb": "Classrooms, budgets and the families they serve", "color": "#6b3fa0", "icon": "backpack2", "sort_order": 4}
+{"name": "Sports", "blurb": "Merrow High, the Gulls and weekend leagues", "color": "#b23a1d", "icon": "trophy", "sort_order": 5}
+{"name": "Arts & Life", "blurb": "Music, food, theater and neighborhood life", "color": "#a8326e", "icon": "palette", "sort_order": 6}
+{"name": "Opinion", "blurb": "Editorials, columns and letters", "color": "#3c3c3c", "icon": "chat-quote", "sort_order": 7}
