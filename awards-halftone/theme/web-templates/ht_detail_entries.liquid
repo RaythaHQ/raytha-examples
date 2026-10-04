@@ -1,0 +1,35 @@
+{%- assign p = Target.PublishedContent -%}
+{%- capture aw %}{{ p.award }}{% endcapture -%}{%- capture yr %}{{ p.year }}{% endcapture -%}
+{%- capture awl %}{% case aw %}{% when "grand_prix" %}Grand Prix{% when "gold" %}Gold{% when "silver" %}Silver{% when "merit" %}Merit{% else %}2026 entry{% endcase %}{% endcapture -%}
+{%- if yr == "2026" -%}{%- assign backurl = "/entries" -%}{%- assign backlabel = "Entry gallery" -%}{%- else -%}{%- assign backurl = "/winners" -%}{%- assign backlabel = "Past winners" -%}{%- endif -%}
+{%- capture f %}category eq '{{ p.category.Id | append: "" }}'{% endcapture -%}
+{%- assign more = get_content_items(ContentType="entries", Filter=f, OrderBy="year desc", PageSize=8) -%}
+{%- capture fy %}year eq '{{ yr }}'{% endcapture -%}{%- assign sib = get_content_items(ContentType="entries", Filter=fy, OrderBy="sort_order asc", PageSize=60) -%}
+{%- assign prev = nil -%}{%- assign next = nil -%}{%- assign found = false -%}
+{%- for s in sib.Items -%}{%- if found and next == nil -%}{%- assign next = s -%}{%- endif -%}{%- if s.Id == Target.Id -%}{%- assign found = true -%}{%- endif -%}{%- unless found -%}{%- assign prev = s -%}{%- endunless -%}{%- endfor -%}
+<section class="section" style="padding-top:56px"><div class="wrap">
+  <div class="crumbs" style="margin-bottom:34px"><a href="{{ PathBase }}/">Home</a><span>/</span><a href="{{ PathBase }}{{ backurl }}">{{ backlabel }}</a><span>/</span><a href="{{ PathBase }}/{{ p.category.RoutePath }}">{{ p.category.PrimaryField }}</a></div>
+  <div class="ed">
+    <div class="frame reveal"><img src="{{ p.image.Value | attachment_redirect_url }}" alt="{{ Target.PrimaryField }} by {{ p.entrant }}"></div>
+    <div style="position:sticky;top:110px">
+      <span class="tag {{ aw }}">{% if aw != "entry" %}<span class="dot"></span>{% endif %}{{ awl }}{% if aw != "entry" %} · {{ yr }}{% endif %}</span>
+      <h1>{{ Target.PrimaryField }}</h1>
+      {%- capture en %}{{ p.entrant }}{% endcapture -%}{%- capture st %}{{ p.studio | strip }}{% endcapture -%}
+      <div class="by">{{ en }}{% if st != "" and st != en %}, {{ st }}{% endif %}</div>
+      <div class="facts">
+        <div><span class="label">Category</span><b><a href="{{ PathBase }}/{{ p.category.RoutePath }}">{{ p.category.PrimaryField }}</a></b></div>
+        <div><span class="label">Year</span><b>{{ yr }}</b></div>
+        <div><span class="label">Medium</span><b>{{ p.medium }}</b></div>
+        <div><span class="label">City</span><b>{{ p.city }}</b></div>
+      </div>
+      <span class="label">Statement</span>
+      <div class="prose" style="margin-top:10px">{{ p.statement }}</div>
+      {% if yr == "2026" %}<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:24px"><a class="btn btn-acc" href="{{ PathBase }}/apply?category={{ p.category.RoutePath | remove: 'categories/' }}">Enter {{ p.category.PrimaryField }}</a><a class="btn btn-line" href="{{ PathBase }}/entries?category={{ p.category.RoutePath | remove: 'categories/' }}">More in this category</a></div>{% endif %}
+    </div>
+  </div>
+  <div class="pn">{% if prev %}<a href="{{ PathBase }}/{{ prev.RoutePath }}"><span class="label"><i class="bi bi-arrow-left"></i> Previous</span><b>{{ prev.PrimaryField }}</b></a>{% else %}<span></span>{% endif %}{% if next %}<a href="{{ PathBase }}/{{ next.RoutePath }}"><span class="label">Next <i class="bi bi-arrow-right"></i></span><b>{{ next.PrimaryField }}</b></a>{% endif %}</div>
+</div></section>
+<section class="section band tight"><div class="wrap">
+  <div class="shead" style="margin-bottom:28px"><div><span class="label acc">{{ p.category.PrimaryField }}</span><h2 style="font-size:2.6rem">More from this category</h2></div><a class="btn btn-line" href="{{ PathBase }}/{{ p.category.RoutePath }}">About the category <i class="bi bi-arrow-right"></i></a></div>
+  <div class="strip">{% for e in more.Items %}{% if e.Id != Target.Id %}{% assign q = e.PublishedContent %}{% capture qa %}{{ q.award }}{% endcapture %}<a class="work" href="{{ PathBase }}/{{ e.RoutePath }}"><div class="im"><img src="{{ q.image.Value | attachment_redirect_url }}" alt="{{ e.PrimaryField }} by {{ q.entrant }}" loading="lazy">{% if qa != "entry" %}<span class="tag {{ qa }}">{{ q.year }} · {{ qa | replace: "grand_prix", "Grand Prix" | capitalize }}</span>{% endif %}</div><div class="bd"><h3>{{ e.PrimaryField }}</h3><div class="by">{{ q.entrant }}</div></div></a>{% endif %}{% endfor %}</div>
+</div></section>

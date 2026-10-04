@@ -1,0 +1,20 @@
+{%- comment -%} Entry gallery. ?category=<slug> narrows it; the slug is checked against the real categories before it goes into the filter. {%- endcomment -%}
+{%- assign cats = get_content_items(ContentType="categories", OrderBy="sort_order asc", PageSize=20) -%}
+{%- assign qcatid = "" -%}{%- assign qcatname = "" -%}{%- assign qslug = "" -%}
+{%- for c in cats.Items -%}{%- assign s = c.RoutePath | remove: "categories/" -%}{%- if QueryParams.category == s -%}{%- assign qslug = s -%}{%- assign qcatid = c.Id | append: "" -%}{%- assign qcatname = c.PrimaryField -%}{%- endif -%}{%- endfor -%}
+{%- if qcatid != "" -%}{%- capture f %}year eq '2026' and category eq '{{ qcatid }}'{% endcapture -%}{%- assign res = get_content_items(ContentType="entries", Filter=f, OrderBy="sort_order asc", PageSize=60) -%}{%- assign items = res.Items -%}{%- assign total = res.TotalCount -%}
+{%- else -%}{%- assign items = Target.Items -%}{%- assign total = Target.TotalCount -%}{%- endif -%}
+<section class="phead"><div class="wrap"><div class="crumbs"><a href="{{ PathBase }}/">Home</a><span>/</span><a href="{{ PathBase }}/entries">Entry gallery</a>{% if qcatname != "" %}<span>/</span><span>{{ qcatname }}</span>{% endif %}</div>
+  <h1>{% if qcatname != "" %}{{ qcatname }}, <em>so far.</em>{% else %}The 2026 entries, <em>so far.</em>{% endif %}</h1><p>A selection of work entered this year, published with each entrant's permission. The jury sees every entry, not just these. Shortlists are announced on 12 March 2027.</p></div></section>
+<section class="section" style="padding-top:48px"><div class="wrap">
+  <div class="filters"><a href="{{ PathBase }}/entries" class="{% if qslug == '' %}on{% endif %}">All categories</a>{% for c in cats.Items %}{% assign s = c.RoutePath | remove: "categories/" %}<a href="{{ PathBase }}/entries?category={{ s }}" class="{% if qslug == s %}on{% endif %}" style="--c:{{ c.PublishedContent.color }}"><i></i>{{ c.PrimaryField }}</a>{% endfor %}</div>
+  <p class="label" style="margin:0 0 22px">{{ total }} entr{% if total == 1 %}y{% else %}ies{% endif %}</p>
+  <div class="gal">
+  {%- for e in items %}{% assign p = e.PublishedContent %}
+    <a class="work reveal" href="{{ PathBase }}/{{ e.RoutePath }}"><div class="im"><img src="{{ p.image.Value | attachment_redirect_url }}" alt="{{ e.PrimaryField }} by {{ p.entrant }}" loading="lazy"><span class="tag">{{ p.category.PrimaryField }}</span></div>
+      <div class="bd"><h3>{{ e.PrimaryField }}</h3><div class="by">{{ p.entrant }} · {{ p.city }}</div><div class="ft"><span class="label">{{ p.medium }}</span></div></div></a>
+  {%- endfor %}
+  </div>
+  {% if total == 0 %}<p class="muted">No entries in this category yet. <a href="{{ PathBase }}/apply" style="color:var(--accent)">Be the first</a>.</p>{% endif %}
+</div></section>
+<section class="section tight"><div class="wrap"><div class="cta"><span class="label acc">Entries close soon</span><h2 style="margin-top:14px">Your work could be <em>on this wall.</em></h2><p>Enter in any of six categories. It takes about ten minutes, and you can change your entry until the deadline.</p><div class="row"><a class="btn btn-acc" href="{{ PathBase }}/apply">Enter your work <i class="bi bi-arrow-right"></i></a><a class="btn btn-line" href="{{ PathBase }}/categories">See the categories</a></div></div></div></section>

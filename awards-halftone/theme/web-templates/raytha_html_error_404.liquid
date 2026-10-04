@@ -1,0 +1,7 @@
+<section class="section" style="min-height:62vh;display:flex;align-items:center"><div class="wrap">
+  <span class="label acc">Error 404</span>
+  <h1 style="font-size:clamp(3.2rem,8vw,6.4rem);margin:18px 0 18px;max-width:900px">This frame is <em>empty.</em></h1>
+  <p style="font-size:1.15rem;color:var(--ink2);max-width:560px">The page may have moved, or the entry may no longer be in the gallery.</p>
+  <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:26px"><a class="btn btn-ink" href="{{ PathBase }}/">Home</a><a class="btn btn-line" href="{{ PathBase }}/entries">Entry gallery</a><a class="btn btn-line" href="{{ PathBase }}/winners">Past winners</a></div>
+  {% if Target.ErrorId %}<p class="muted" style="margin-top:24px;font-size:.8rem">Error id: {{ Target.ErrorId }}</p>{% endif %}
+</div></section>

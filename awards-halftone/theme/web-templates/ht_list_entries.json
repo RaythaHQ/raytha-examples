@@ -1,0 +1,9 @@
+{
+  "label": "Halftone list: entry gallery",
+  "isBaseLayout": false,
+  "parent": "raytha_html_base_layout",
+  "allowAccessForNewContentTypes": false,
+  "contentTypes": [
+    "entries"
+  ]
+}

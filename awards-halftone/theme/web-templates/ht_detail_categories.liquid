@@ -1,0 +1,27 @@
+{%- assign p = Target.PublishedContent -%}
+{%- assign slug = Target.RoutePath | remove: "categories/" -%}
+{%- capture f %}category eq '{{ Target.Id | append: "" }}' and year eq '2026'{% endcapture -%}{%- assign cur = get_content_items(ContentType="entries", Filter=f, OrderBy="sort_order asc", PageSize=12) -%}
+{%- capture fw %}category eq '{{ Target.Id | append: "" }}' and year lt '2026'{% endcapture -%}{%- assign past = get_content_items(ContentType="entries", Filter=fw, OrderBy="year desc", PageSize=12) -%}
+<section class="phead" style="--c:{{ p.color }}"><div class="wrap"><div class="crumbs"><a href="{{ PathBase }}/">Home</a><span>/</span><a href="{{ PathBase }}/categories">Categories</a><span>/</span><span>{{ Target.PrimaryField }}</span></div>
+  <h1>{{ Target.PrimaryField }}</h1><p>{{ p.tagline }} {{ p.description }}</p>
+  <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:28px;align-items:center"><a class="btn btn-acc" href="{{ PathBase }}/apply?category={{ slug }}">Enter {{ Target.PrimaryField }} <i class="bi bi-arrow-right"></i></a><a class="btn btn-line" href="{{ PathBase }}/nominate?category={{ slug }}">Nominate someone</a><span class="status" data-deadline="{{ p.deadline.Value | date: '%Y-%m-%d' }}" style="margin-left:6px">Open</span></div></div></section>
+<section class="section" style="padding-top:64px"><div class="wrap" style="display:grid;grid-template-columns:1fr 360px;gap:64px;align-items:start" id="cgrid">
+  <div><span class="label acc">The brief</span><h2 style="font-size:2.8rem;margin:12px 0 18px">What the judges look for</h2><div class="prose">{{ p.brief }}</div></div>
+  <aside class="aside" style="top:110px">
+    <div class="box" style="background:var(--panel)"><span class="label">At a glance</span>
+      <div class="facts" style="grid-template-columns:1fr;margin:14px 0 0">
+        <div><span class="label">Deadline</span><b>{{ p.deadline.Value | date: "%A %-d %B %Y" }}, 23:59 GMT</b></div>
+        <div><span class="label">Entry fee</span><b>{{ p.fee }}</b></div>
+        <div><span class="label">Formats</span><b>{{ p.formats }}</b></div>
+        <div style="border:0"><span class="label">Shortlist announced</span><b>12 March 2027</b></div>
+      </div></div>
+  </aside>
+</div><style>@media(max-width:900px){#cgrid{grid-template-columns:1fr!important}}</style></section>
+<section class="section band tight"><div class="wrap">
+  <div class="shead" style="margin-bottom:28px"><div><span class="label acc">{{ cur.TotalCount }} in the gallery</span><h2 style="font-size:2.6rem">This year's entries</h2></div><a class="btn btn-line" href="{{ PathBase }}/entries?category={{ slug }}">Open the gallery <i class="bi bi-arrow-right"></i></a></div>
+  <div class="strip">{% for e in cur.Items %}{% assign q = e.PublishedContent %}<a class="work" href="{{ PathBase }}/{{ e.RoutePath }}"><div class="im"><img src="{{ q.image.Value | attachment_redirect_url }}" alt="{{ e.PrimaryField }} by {{ q.entrant }}" loading="lazy"></div><div class="bd"><h3>{{ e.PrimaryField }}</h3><div class="by">{{ q.entrant }} · {{ q.city }}</div></div></a>{% endfor %}</div>
+</div></section>
+{% if past.TotalCount > 0 %}<section class="section tight"><div class="wrap">
+  <div class="shead" style="margin-bottom:28px"><div><span class="label acc">Past winners</span><h2 style="font-size:2.6rem">Winners in {{ Target.PrimaryField }}</h2></div></div>
+  <div class="grid4">{% for e in past.Items %}{% assign q = e.PublishedContent %}{% capture qa %}{{ q.award }}{% endcapture %}<a class="work" style="margin:0" href="{{ PathBase }}/{{ e.RoutePath }}"><div class="im"><img src="{{ q.image.Value | attachment_redirect_url }}" alt="{{ e.PrimaryField }} by {{ q.entrant }}" loading="lazy"><span class="tag {{ qa }}">{{ q.year }} · {{ qa | replace: "grand_prix", "Grand Prix" | capitalize }}</span></div><div class="bd"><h3>{{ e.PrimaryField }}</h3><div class="by">{{ q.entrant }}</div></div></a>{% endfor %}</div>
+</div></section>{% endif %}

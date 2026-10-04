@@ -1,0 +1,14 @@
+<section class="phead"><div class="wrap"><div class="crumbs"><a href="{{ PathBase }}/">Home</a><span>/</span><span>Categories</span></div><h1>Six categories, <em>one jury.</em></h1><p>Every category is judged by the full panel. Deadlines differ, so check yours before you start. Entries can be changed until the deadline.</p></div></section>
+<section class="section" style="padding-top:64px"><div class="wrap">
+  <div class="grid3">
+  {%- for c in Target.Items %}{% assign p = c.PublishedContent %}{% capture f %}category eq '{{ c.Id | append: "" }}' and year eq '2026'{% endcapture %}{% assign sl = get_content_items(ContentType="entries", Filter=f, PageSize=1) %}
+    <a class="cat reveal" style="--c:{{ p.color }}" href="{{ PathBase }}/{{ c.RoutePath }}">
+      <span class="label">{{ forloop.index | prepend: "0" }}</span>
+      <h3>{{ c.PrimaryField }}</h3><p>{{ p.tagline }}</p>
+      <p class="muted" style="font-size:.88rem">{{ p.description }}</p>
+      <div class="meta"><span class="label">Closes <b>{{ p.deadline.Value | date: "%-d %b %Y" }}</b></span><span class="status" data-deadline="{{ p.deadline.Value | date: '%Y-%m-%d' }}">Open</span></div>
+      <div style="display:flex;justify-content:space-between;font-size:.86rem;color:var(--ink2)"><span>{{ p.fee }}</span><span>{{ sl.TotalCount }} in the gallery <i class="bi bi-arrow-right"></i></span></div>
+    </a>
+  {%- endfor %}
+  </div>
+</div></section>

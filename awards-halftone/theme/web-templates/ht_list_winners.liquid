@@ -1,0 +1,13 @@
+{%- assign years = "2025,2024" | split: "," -%}
+<section class="phead"><div class="wrap"><div class="crumbs"><a href="{{ PathBase }}/">Home</a><span>/</span><span>Past winners</span></div><h1>Past winners, <em>year by year.</em></h1><p>Every Grand Prix, Gold, Silver and Merit award since the prize began. Click any work to read the jury's notes.</p></div></section>
+<section class="section" style="padding-top:20px"><div class="wrap">
+  {%- for y in years %}{% capture f %}year eq '{{ y }}'{% endcapture %}{% assign ws = get_content_items(ContentType="entries", Filter=f, OrderBy="sort_order asc", PageSize=40) %}
+  <div class="year" id="y{{ y }}"><h2>{{ y }}</h2><div>
+    {%- for e in ws.Items %}{% assign q = e.PublishedContent %}{% capture qa %}{{ q.award }}{% endcapture %}{% if qa == "grand_prix" %}
+    <a class="feature reveal" href="{{ PathBase }}/{{ e.RoutePath }}" style="margin-bottom:44px;grid-template-columns:.8fr 1.2fr;gap:40px"><div class="im"><img src="{{ q.image.Value | attachment_redirect_url }}" alt="{{ e.PrimaryField }} by {{ q.entrant }}"></div>
+      <div><span class="tag grand_prix"><span class="dot"></span>Grand Prix {{ y }}</span><h3 style="font-size:clamp(2.4rem,4vw,3.6rem)">{{ e.PrimaryField }}</h3><p style="color:var(--ink2);font-size:1.05rem;margin:0">{{ q.entrant }}, {{ q.city }} · {{ q.category.PrimaryField }}</p><blockquote>{{ q.statement | strip_html | truncatewords: 26 }}</blockquote><span class="label">Read the jury's notes <i class="bi bi-arrow-right"></i></span></div></a>
+    {%- endif %}{% endfor %}
+    <div class="grid3">{% for e in ws.Items %}{% assign q = e.PublishedContent %}{% capture qa %}{{ q.award }}{% endcapture %}{% if qa != "grand_prix" %}<a class="work reveal" style="margin:0" href="{{ PathBase }}/{{ e.RoutePath }}"><div class="im"><img src="{{ q.image.Value | attachment_redirect_url }}" alt="{{ e.PrimaryField }} by {{ q.entrant }}" loading="lazy"><span class="tag {{ qa }}"><span class="dot"></span>{{ qa | capitalize }}</span></div><div class="bd"><h3>{{ e.PrimaryField }}</h3><div class="by">{{ q.entrant }} · {{ q.category.PrimaryField }}</div></div></a>{% endif %}{% endfor %}</div>
+  </div></div>
+  {%- endfor %}
+</div></section>
