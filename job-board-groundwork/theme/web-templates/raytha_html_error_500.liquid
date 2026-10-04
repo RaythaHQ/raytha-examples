@@ -1,0 +1,13 @@
+<section class="page-head" style="min-height:66vh;display:flex;align-items:center;border:0">
+  <svg class="contours" viewBox="0 0 1400 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><path d="M1000 300m-120 0a120 80 0 1 0 240 0a120 80 0 1 0-240 0"/><path d="M1000 300m-250 0a250 165 0 1 0 500 0a250 165 0 1 0-500 0"/><path d="M1000 300m-400 0a400 265 0 1 0 800 0a400 265 0 1 0-800 0"/><path d="M1000 300m-580 0a580 385 0 1 0 1160 0a580 385 0 1 0-1160 0"/><path d="M1000 300m-790 0a790 525 0 1 0 1580 0a790 525 0 1 0-1580 0"/></svg>
+  <div class="wrap">
+    <span class="eyebrow">Error 500</span>
+    <h1 style="font-size:clamp(3rem,8vw,6.4rem);line-height:1">Something broke on our side.</h1>
+    <p class="lead">We have logged the error. Try again in a minute.</p>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:28px">
+      <a class="btn-gw btn-dark" href="{{ PathBase }}/jobs">Browse jobs <i class="bi bi-arrow-right"></i></a>
+      <a class="btn-gw btn-line" href="{{ PathBase }}/">Home</a>
+    </div>
+    {% if Target.ErrorId %}<p class="mono muted" style="margin-top:24px;font-size:.8rem">Error id: {{ Target.ErrorId }}</p>{% endif %}
+  </div>
+</section>
