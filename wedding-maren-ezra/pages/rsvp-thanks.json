@@ -1,0 +1,14 @@
+{
+ "hero": [],
+ "main": [
+  {
+   "widgetType": "wb_thanks",
+   "settings": {
+    "yes_headline": "We can't wait to see you",
+    "yes_text": "Your reply is with us. Next: book a room before the block closes, and add the weekend to your calendar so you don't double-book.",
+    "no_headline": "We'll miss you",
+    "no_text": "Thank you for letting us know. We'll raise a glass to you under the apple trees, and we'll share the photos on the guest page."
+   }
+  }
+ ]
+}

@@ -1,0 +1,88 @@
+{
+ "hero": [],
+ "main": [
+  {
+   "widgetType": "wb_guest_info",
+   "settings": {
+    "kicker": "Guests",
+    "headline": "The insider details",
+    "intro": "Everything that doesn't belong on the public internet: shuttle times, phone numbers for the day, and where the party goes after 11.",
+    "shuttles": [
+     {
+      "time": "3:40 pm",
+      "route": "Catskill Mill Inn → Willowbank"
+     },
+     {
+      "time": "3:45 pm",
+      "route": "The Wren, Hudson → Willowbank"
+     },
+     {
+      "time": "4:00 pm",
+      "route": "The Wren, Hudson → Willowbank (last one)"
+     },
+     {
+      "time": "10:30 pm",
+      "route": "Willowbank → both hotels"
+     },
+     {
+      "time": "11:15 pm",
+      "route": "Willowbank → both hotels"
+     },
+     {
+      "time": "12:15 am",
+      "route": "After-party → both hotels"
+     },
+     {
+      "time": "1:15 am",
+      "route": "After-party → both hotels (last one)"
+     }
+    ],
+    "contacts": [
+     {
+      "name": "Ada Whitfield",
+      "role": "Our planner, Hollow & Vine Events",
+      "phone": "+1 518-555-0142"
+     },
+     {
+      "name": "Priya Nair",
+      "role": "Maid of honour",
+      "phone": "+1 917-555-0163"
+     },
+     {
+      "name": "Jonah Adeyemi",
+      "role": "Best man",
+      "phone": "+1 646-555-0187"
+     },
+     {
+      "name": "Willowbank front office",
+      "role": "Lost and found, parking",
+      "phone": "+1 518-555-0101"
+     }
+    ],
+    "notes": [
+     {
+      "icon": "bi-moon-stars",
+      "title": "The after-party",
+      "text": "From 11 pm in the Cider Cellar, down the stone stairs behind the barn. Grilled cheese at midnight.",
+      "link_label": "",
+      "link_url": ""
+     },
+     {
+      "icon": "bi-camera",
+      "title": "Shared photo album",
+      "text": "Add your photos from the weekend. Our photographer's will go up in August.",
+      "link_label": "Open the album",
+      "link_url": "https://www.example.com/album/maren-ezra"
+     },
+     {
+      "icon": "bi-people",
+      "title": "Babysitters",
+      "text": "Three local sitters we trust are holding Saturday evening for guests' kids. Book them directly.",
+      "link_label": "See the list",
+      "link_url": "https://www.example.com/sitters"
+     }
+    ]
+   }
+  }
+ ]
+}

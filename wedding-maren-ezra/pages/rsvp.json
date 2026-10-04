@@ -1,0 +1,38 @@
+{
+ "hero": [
+  {
+   "widgetType": "wb_page_header",
+   "settings": {
+    "kicker": "RSVP",
+    "headline": "Will you",
+    "accent": "join us?",
+    "subtitle": "Please reply by April 15, 2027. One reply covers everyone on your invitation."
+   }
+  }
+ ],
+ "main": [
+  {
+   "widgetType": "wb_rsvp_form",
+   "settings": {
+    "headline": "Kindly reply",
+    "intro": "Fill this in once for everyone on your invitation. You can always email us if plans change.",
+    "aside_title": "Something we should know?",
+    "aside": "Tell us about allergies, accessibility needs or anything else in the note. We read every reply ourselves.",
+    "steps": [
+     {
+      "title": "We read your reply",
+      "text": "It comes straight to us and stays private. Nobody else sees it."
+     },
+     {
+      "title": "Book your hotel",
+      "text": "Room blocks close in May. The codes are on the travel page."
+     },
+     {
+      "title": "A final note in May",
+      "text": "We'll email shuttle times and anything else you need to know a few weeks before."
+     }
+    ]
+   }
+  }
+ ]
+}

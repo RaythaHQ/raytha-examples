@@ -1,0 +1,72 @@
+{
+ "hero": [
+  {
+   "widgetType": "wb_hero",
+   "settings": {
+    "kicker": "Together with their families",
+    "name_one": "Maren",
+    "name_two": "Ezra",
+    "when": "Saturday, June 12, 2027 · Willowbank Orchard, Germantown, NY",
+    "lead": "We're getting married under the apple trees, and we would love you to be there. This site has everything you need for the weekend: the schedule, where to stay, what to do, and the RSVP.",
+    "countdown_to": "2027-06-12T16:30:00-04:00",
+    "seal": "June 12 2027",
+    "primary_label": "RSVP by April 15",
+    "primary_url": "/rsvp",
+    "secondary_label": "The weekend",
+    "secondary_url": "/schedule"
+   }
+  }
+ ],
+ "main": [
+  {
+   "widgetType": "wb_welcome",
+   "settings": {
+    "kicker": "A note from us",
+    "text": "Ten years ago we met over a secondhand paperback. Since then there have been four apartments, one very loud beagle and more road trips than either of us can count.\nWe can't think of a better way to start the next chapter than in an orchard full of the people we love.",
+    "signature": "Maren & Ezra"
+   }
+  },
+  {
+   "widgetType": "wb_schedule_teaser",
+   "settings": {
+    "kicker": "The weekend at a glance",
+    "headline": "Three days in",
+    "accent": "the Hudson Valley",
+    "subtitle": "Welcome drinks on Friday, the wedding on Saturday afternoon, and a slow brunch on Sunday before everyone heads home."
+   }
+  },
+  {
+   "widgetType": "wb_story_teaser",
+   "settings": {
+    "kicker": "Our story",
+    "headline": "How we got",
+    "accent": "here",
+    "subtitle": "The short version, in six chapters.",
+    "count": 3
+   }
+  },
+  {
+   "widgetType": "wb_gallery_strip",
+   "settings": {
+    "kicker": "Gallery",
+    "headline": "A few",
+    "accent": "favourite days",
+    "subtitle": "Ten years of trips and long walks, drawn as postcards.",
+    "count": 4
+   }
+  },
+  {
+   "widgetType": "wb_cta",
+   "settings": {
+    "kicker": "RSVP by April 15, 2027",
+    "headline": "Will you",
+    "accent": "join us?",
+    "subtitle": "It takes two minutes. Tell us who's coming, choose your dinner, and request the song that will get you on the dance floor.",
+    "primary_label": "RSVP now",
+    "primary_url": "/rsvp",
+    "secondary_label": "Read the FAQ",
+    "secondary_url": "/faq"
+   }
+  }
+ ]
+}

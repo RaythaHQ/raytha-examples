@@ -1,0 +1,7 @@
+[
+ {"title": "Maren & Ezra", "routePath": "home", "template": "wb_home", "sections": "pages/home.json", "home": true},
+ {"title": "Travel", "routePath": "travel", "template": "wb_page", "sections": "pages/travel.json", "home": false},
+ {"title": "RSVP", "routePath": "rsvp", "template": "wb_page", "sections": "pages/rsvp.json", "home": false},
+ {"title": "Thank you", "routePath": "rsvp/thanks", "template": "wb_page", "sections": "pages/rsvp-thanks.json", "home": false},
+ {"title": "Guest page", "routePath": "guests", "template": "wb_guests", "sections": "pages/guests.json", "home": false}
+]

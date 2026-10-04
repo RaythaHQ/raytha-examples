@@ -1,0 +1,64 @@
+{
+ "hero": [
+  {
+   "widgetType": "wb_page_header",
+   "settings": {
+    "kicker": "Travel",
+    "headline": "Getting to",
+    "accent": "Willowbank",
+    "subtitle": "Willowbank Orchard is in Germantown, New York, about two hours north of New York City. Here's how to get here and where to stay."
+   }
+  }
+ ],
+ "main": [
+  {
+   "widgetType": "wb_ways",
+   "settings": {
+    "kicker": "Getting here",
+    "headline": "Train, plane",
+    "accent": "or car",
+    "subtitle": "However you travel, plan to arrive by Friday afternoon if you can.",
+    "ways": [
+     {
+      "icon": "bi-train-front",
+      "title": "By train",
+      "text": "Amtrak runs from New York Penn Station to Hudson in about two hours, right along the river. Sit on the left going north for the view. Hudson station is ten minutes from The Wren."
+     },
+     {
+      "icon": "bi-airplane",
+      "title": "By plane",
+      "text": "Albany International (ALB) is 45 minutes away and has the most flights. New York Stewart (SWF) is about an hour. Rent a car at either, or book a taxi ahead of time."
+     },
+     {
+      "icon": "bi-car-front",
+      "title": "By car",
+      "text": "From New York City, take the Taconic State Parkway north; it's the prettiest road in the state. Parking at Willowbank is free, in the field by the farm gate."
+     }
+    ]
+   }
+  },
+  {
+   "widgetType": "wb_hotels",
+   "settings": {
+    "kicker": "Where to stay",
+    "headline": "Room blocks at",
+    "accent": "three hotels",
+    "subtitle": "We've held rooms at a group rate. Mention the code when you book, and book before the block closes; unbooked rooms go back to the hotel.",
+    "note": "Prefer a rental? Hudson and Catskill have plenty. If you stay outside the shuttle route, plan a designated driver; taxis are scarce in the valley at night."
+   }
+  },
+  {
+   "widgetType": "wb_cta",
+   "settings": {
+    "kicker": "Next step",
+    "headline": "Booked your room?",
+    "accent": "Now RSVP.",
+    "subtitle": "Let us know you're coming and we'll save you a seat on the shuttle.",
+    "primary_label": "RSVP",
+    "primary_url": "/rsvp",
+    "secondary_label": "Things to do nearby",
+    "secondary_url": "/things-to-do"
+   }
+  }
+ ]
+}
