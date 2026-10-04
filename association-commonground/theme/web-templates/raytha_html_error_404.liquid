@@ -1,0 +1,7 @@
+<section class="section" style="min-height:60vh;display:flex;align-items:center"><div class="wrap">
+  <span class="eyebrow">Error 404</span>
+  <h1 style="font-size:clamp(3rem,7vw,5.6rem);margin:16px 0;max-width:860px">Nothing growing <em>here.</em></h1>
+  <p style="font-size:1.15rem;color:var(--ink2);max-width:560px">The page may have moved. Try one of these instead.</p>
+  <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:24px"><a class="btn btn-green" href="{{ PathBase }}/">Home</a><a class="btn btn-ghost" href="{{ PathBase }}/events">Events</a><a class="btn btn-ghost" href="{{ PathBase }}/chapters">Chapters</a><a class="btn btn-ghost" href="{{ PathBase }}/membership">Membership</a></div>
+  {% if Target.ErrorId %}<p class="muted" style="margin-top:22px;font-size:.8rem">Error id: {{ Target.ErrorId }}</p>{% endif %}
+</div></section>
