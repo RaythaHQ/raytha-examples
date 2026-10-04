@@ -1,0 +1,16 @@
+{%- assign s = widget.settings -%}
+{%- assign art = get_content_items(ContentType="story", OrderBy="sort_order desc", PageSize=1) -%}
+<section class="hero"><div class="wrap hero-grid">
+  <div class="reveal">
+    <span class="label t">{{ s.kicker }}</span>
+    <h1>{{ s.name_one }}<br><span class="amp">&amp;</span>{{ s.name_two }}</h1>
+    <p class="when">{{ s.when }}</p>
+    <p class="lead">{{ s.lead }}</p>
+    <div class="row"><a class="btn btn-t" href="{{ s.primary_url }}">{{ s.primary_label }} <i class="bi bi-arrow-right"></i></a><a class="btn btn-line" href="{{ s.secondary_url }}">{{ s.secondary_label }}</a></div>
+    <div class="count" data-countdown="{{ s.countdown_to }}" aria-label="Countdown to the wedding"><div><b>0</b><span>Days</span></div><div><b>00</b><span>Hours</span></div><div><b>00</b><span>Minutes</span></div><div><b>00</b><span>Seconds</span></div></div>
+  </div>
+  <div class="hero-art reveal"><svg class="leaf" viewBox="0 0 160 160" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M20 150C60 110 90 70 120 10"/><path d="M48 118c-14-4-24-16-26-30 14 2 25 13 26 30zM62 100c4-15 16-25 31-27-3 15-15 25-31 27zM74 82c-14-5-23-17-24-31 14 3 24 14 24 31zM88 62c5-14 17-23 32-24-4 14-16 23-32 24zM98 44c-12-7-19-19-18-33 13 5 20 18 18 33z"/></svg>
+    {%- for a in art.Items %}<div class="arch"><img src="{{ a.PublishedContent.image.Value | attachment_redirect_url }}" alt="Illustration of the orchard at Willowbank"></div>{% endfor %}
+    <div class="seal">{{ s.seal }}<small>Germantown, NY</small></div>
+  </div>
+</div></section>

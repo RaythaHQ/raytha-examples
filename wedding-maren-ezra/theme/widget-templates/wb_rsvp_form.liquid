@@ -1,0 +1,31 @@
+{%- comment -%} A plain HTML form that posts to the forms/rsvp Raytha Function. The function checks every value, saves the reply as a draft RSVP and redirects to /rsvp/thanks. "website" is a honeypot: people never see it, bots fill it in. {%- endcomment -%}
+{%- assign s = widget.settings -%}
+{%- assign evs = get_content_items(ContentType="events", Filter="guests_only eq 'false'", OrderBy="sort_order asc", PageSize=20) -%}
+<section class="section" style="padding-top:40px"><div class="wrap fgrid">
+  <form class="form reveal" method="post" action="{{ PathBase }}/forms/rsvp" data-rsvp>
+    <span class="label t">RSVP</span><h2 style="font-size:2.8rem;margin:10px 0 8px">{{ s.headline }}</h2><p class="muted" style="margin:0 0 26px">{{ s.intro }}</p>
+    <div class="alert" role="alert"></div>
+    <div class="hp" aria-hidden="true"><label>Website <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+    <div class="two"><div class="fld"><label for="guest_name">Your name</label><input id="guest_name" name="guest_name" required maxlength="120" autocomplete="name"></div>
+      <div class="fld"><label for="email">Email</label><input id="email" name="email" type="email" required maxlength="160" autocomplete="email"></div></div>
+    <fieldset class="fld"><legend>Can you come?</legend><div class="choice">
+      <label><input type="radio" name="attending" value="yes" required checked><b>Joyfully accepts</b><span>We'll be there with bells on</span></label>
+      <label><input type="radio" name="attending" value="no"><b>Regretfully declines</b><span>We'll be there in spirit</span></label></div></fieldset>
+    <div class="hide-no">
+      <div class="two"><div class="fld"><label for="party_size">How many of you?</label><select id="party_size" name="party_size">{% for i in (1..6) %}<option value="{{ i }}"{% if i == 2 %} selected{% endif %}>{{ i }} {% if i == 1 %}person{% else %}people{% endif %}</option>{% endfor %}</select><span class="hint">Everyone named on your invitation.</span></div>
+        <div class="fld"><label for="meal">Your dinner</label><select id="meal" name="meal" required><option value="">Choose one</option><option value="short_rib">Braised short rib</option><option value="halibut">Halibut with spring peas</option><option value="risotto">Wild mushroom risotto (vegetarian)</option><option value="kids">Kids' plate</option></select></div></div>
+      <div class="fld"><label for="other_guests">Who's coming with you? <small>names and their dinner choice</small></label><textarea id="other_guests" name="other_guests" maxlength="600" placeholder="e.g. Sam Rivera, halibut" style="min-height:80px"></textarea></div>
+      <fieldset class="fld"><legend>Which events will you come to?</legend><div class="checks">
+        {%- for e in evs.Items %}<label><input type="checkbox" name="events" value="{{ e.PrimaryField }}" checked> {{ e.PrimaryField }}<span>{% capture d %}{{ e.PublishedContent.day }}{% endcapture %}{{ d | capitalize }} · {{ e.PublishedContent.time_label | split: " – " | first }}</span></label>{% endfor %}</div></fieldset>
+      <div class="two"><div class="fld"><label for="dietary">Allergies or dietary needs <small>optional</small></label><input id="dietary" name="dietary" maxlength="300"></div>
+        <div class="fld"><label for="song">A song that will get you dancing <small>optional</small></label><input id="song" name="song" maxlength="140"></div></div>
+    </div>
+    <div class="fld"><label for="note">A note for us <small>optional</small></label><textarea id="note" name="note" maxlength="1000" placeholder="Advice, a memory, or just hello"></textarea></div>
+    <button class="btn btn-t" type="submit">Send our RSVP <i class="bi bi-send"></i></button>
+  </form>
+  <aside class="aside">
+    <div class="card" style="background:var(--forest);color:#efe8db;border-color:var(--forest)"><span class="label" style="color:#b7c2ad">Reply by</span><h3 style="font-size:2.6rem;margin:6px 0 6px">April 15, 2027</h3><p style="margin:0;color:#cfd6c6"><span data-days="2027-04-15"></span> left to reply.</p></div>
+    <div class="card"><h3>{{ s.aside_title }}</h3><p class="muted" style="margin:0">{{ s.aside }}</p></div>
+    <div class="card"><span class="label">What happens next</span>{% for st in s.steps %}<div style="display:grid;grid-template-columns:34px 1fr;gap:8px;padding:14px 0;{% unless forloop.first %}border-top:1px solid var(--line){% endunless %}"><span style="font:italic 500 1.6rem/1 var(--serif);color:var(--terra)">{{ forloop.index }}</span><div><b style="font-weight:600">{{ st.title }}</b><p class="muted" style="margin:4px 0 0;font-size:.92rem">{{ st.text }}</p></div></div>{% endfor %}</div>
+  </aside>
+</div></section>

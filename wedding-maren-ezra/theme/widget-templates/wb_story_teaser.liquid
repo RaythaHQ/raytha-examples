@@ -1,0 +1,8 @@
+{%- assign s = widget.settings -%}{%- assign n = s.count | default: 3 -%}
+{%- assign ch = get_content_items(ContentType="story", OrderBy="sort_order asc", PageSize=n) -%}
+<section class="section"><div class="wrap">
+  <div class="shead reveal"><span class="label t">{{ s.kicker }}</span><h2>{{ s.headline }} <em>{{ s.accent }}</em></h2><p>{{ s.subtitle }}</p></div>
+  <div class="story-strip">{% for c in ch.Items %}{% assign p = c.PublishedContent %}
+    <a class="reveal" href="{{ PathBase }}/story#{{ c.RoutePath | remove: 'story/' }}"><div class="arch"><img src="{{ p.image.Value | attachment_redirect_url }}" alt="Illustration: {{ c.PrimaryField }}" loading="lazy"></div><span class="yr">{{ p.year }} · {{ p.place }}</span><h3>{{ c.PrimaryField }}</h3></a>{% endfor %}</div>
+  <div style="text-align:center;margin-top:44px"><a class="btn btn-line" href="{{ PathBase }}/story">Read the whole story <i class="bi bi-arrow-right"></i></a></div>
+</div></section>

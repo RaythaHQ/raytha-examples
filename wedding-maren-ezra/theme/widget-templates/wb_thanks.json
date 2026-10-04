@@ -1,0 +1,6 @@
+{"label": "Willowbank: RSVP thank-you", "fields": [
+  {"developerName": "yes_headline", "label": "Headline when coming", "fieldType": "single_line_text"},
+  {"developerName": "yes_text", "label": "Text when coming", "fieldType": "long_text"},
+  {"developerName": "no_headline", "label": "Headline when not coming", "fieldType": "single_line_text"},
+  {"developerName": "no_text", "label": "Text when not coming", "fieldType": "long_text"}
+]}

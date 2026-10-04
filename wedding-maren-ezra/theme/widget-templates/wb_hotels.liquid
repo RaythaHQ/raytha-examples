@@ -1,0 +1,16 @@
+{%- assign s = widget.settings -%}
+{%- assign hs = get_content_items(ContentType="hotels", OrderBy="sort_order asc", PageSize=12) -%}
+<section class="section alt"><div class="wrap">
+  <div class="shead reveal"><span class="label t">{{ s.kicker }}</span><h2>{{ s.headline }} <em>{{ s.accent }}</em></h2><p>{{ s.subtitle }}</p></div>
+  <div class="grid3">{% for h in hs.Items %}{% assign p = h.PublishedContent %}{% capture sh %}{{ p.shuttle | downcase }}{% endcapture %}
+    <div class="hotel reveal" style="--c:{{ p.color }}">
+      <div class="top"><span class="label">{{ p.town }} · {{ p.drive }}</span><h3>{{ h.PrimaryField }}</h3></div>
+      <div class="bd"><span class="status" data-cutoff="{{ p.cutoff.Value | date: '%Y-%m-%d' }}">Book by {{ p.cutoff.Value | date: "%B %-d" }}</span>
+        <p style="margin:0;color:var(--ink2);font-size:.97rem">{{ p.description }}</p>
+        <div class="facts" style="margin:0;border-radius:0"><div style="border:0;padding:0;background:none"><span class="label">Group rate</span><b>{{ p.rate }}</b></div><div style="border:0;padding:0;background:none"><span class="label">Book by</span><b>{{ p.cutoff.Value | date: "%b %-d, %Y" }}</b></div></div>
+        <div style="font-size:.92rem">Code <span class="code">{{ p.block_code }}</span> · {{ p.phone }}</div>
+        {% if sh == "true" %}<span class="chip"><i class="bi bi-bus-front"></i> Wedding shuttle stops here</span>{% else %}<span class="chip t"><i class="bi bi-car-front"></i> You'll need a car</span>{% endif %}
+        <a class="btn btn-t" href="{{ p.booking_url }}" target="_blank" rel="noopener">Book the group rate <i class="bi bi-box-arrow-up-right"></i></a></div>
+    </div>{% endfor %}</div>
+  <p class="muted" style="text-align:center;max-width:640px;margin:36px auto 0">{{ s.note }}</p>
+</div></section>

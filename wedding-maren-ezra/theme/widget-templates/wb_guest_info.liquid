@@ -1,0 +1,11 @@
+{%- comment -%} Only placed on the guest page, whose template renders it for signed-in members of the guests group. {%- endcomment -%}
+{%- assign s = widget.settings -%}
+<section class="phead"><div class="wrap"><div class="crumbs"><a href="{{ PathBase }}/">Home</a><span>/</span><span>Guest page</span></div>
+  <h1>{{ s.headline }}</h1><p>{{ s.intro }}</p></div></section>
+<section class="section" style="padding-top:30px"><div class="wrap">
+  <div class="grid2">
+    <div class="card reveal"><span class="label t">Shuttles</span><h3 style="font-size:2.2rem;margin:6px 0 10px">Saturday shuttle times</h3><ul class="rows">{% for r in s.shuttles %}<li><b>{{ r.time }}</b><span>{{ r.route }}</span></li>{% endfor %}</ul></div>
+    <div class="card reveal"><span class="label t">On the day</span><h3 style="font-size:2.2rem;margin:6px 0 10px">Who to call</h3><ul class="rows">{% for c in s.contacts %}<li style="grid-template-columns:1fr auto"><span><b>{{ c.name }}</b><br><span class="muted" style="font-size:.9rem">{{ c.role }}</span></span><a href="tel:{{ c.phone | remove: ' ' | remove: '-' }}" style="color:var(--terra);font-weight:600;align-self:center">{{ c.phone }}</a></li>{% endfor %}</ul></div>
+  </div>
+  <div class="grid3" style="margin-top:26px">{% for n in s.notes %}<div class="card reveal"><i class="bi {{ n.icon }}" style="font-size:1.6rem;color:var(--terra)"></i><h3 style="font-size:1.9rem;margin:10px 0 8px">{{ n.title }}</h3><p class="muted" style="margin:0 0 12px">{{ n.text }}</p>{% capture lu %}{{ n.link_url | strip }}{% endcapture %}{% if lu != "" %}<a href="{{ n.link_url }}" style="color:var(--terra);font-weight:600" target="_blank" rel="noopener">{{ n.link_label }} <i class="bi bi-box-arrow-up-right"></i></a>{% endif %}</div>{% endfor %}</div>
+</div></section>

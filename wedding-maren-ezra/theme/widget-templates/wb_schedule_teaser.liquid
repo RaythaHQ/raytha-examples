@@ -1,0 +1,14 @@
+{%- assign s = widget.settings -%}
+{%- comment -%} Guests-only events are always left out here; the schedule page shows them to signed-in guests. {%- endcomment -%}
+{%- assign evs = get_content_items(ContentType="events", OrderBy="sort_order asc", PageSize=30) -%}
+{%- assign days = "friday,saturday,sunday" | split: "," -%}{%- assign names = "Friday,Saturday,Sunday" | split: "," -%}{%- assign dates = "June 11|June 12|June 13" | split: "|" -%}
+<section class="section forest"><div class="wrap">
+  <div class="shead reveal"><span class="label">{{ s.kicker }}</span><h2>{{ s.headline }} <em>{{ s.accent }}</em></h2><p>{{ s.subtitle }}</p></div>
+  <div class="sched-mini">{% for d in days %}{% assign di = forloop.index0 %}
+    <div class="card reveal"><span class="label">{{ dates[di] }}</span><h3>{{ names[di] }}</h3><ul>
+    {%- for e in evs.Items %}{% assign p = e.PublishedContent %}{% capture ed %}{{ p.day }}{% endcapture %}{% capture go %}{{ p.guests_only | downcase }}{% endcapture %}
+      {%- if ed == d %}{% if go != "true" %}<li><a href="{{ PathBase }}/{{ e.RoutePath }}">{{ e.PrimaryField }}</a><span>{{ p.time_label | split: " – " | first }}</span></li>{% endif %}{% endif %}
+    {%- endfor %}</ul></div>{% endfor %}
+  </div>
+  <div style="text-align:center;margin-top:44px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap"><a class="btn btn-paper" href="{{ PathBase }}/schedule">The full schedule <i class="bi bi-arrow-right"></i></a><a class="btn btn-ghost" href="{{ PathBase }}/calendar.ics"><i class="bi bi-calendar-plus"></i> Add to calendar</a></div>
+</div></section>
