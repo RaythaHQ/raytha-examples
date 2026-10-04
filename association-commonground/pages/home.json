@@ -1,0 +1,135 @@
+{
+ "hero": [
+  {
+   "widgetType": "cg_hero",
+   "settings": {
+    "kicker": "The association for community gardeners",
+    "headline": "Grow food, grow neighbours,",
+    "accent": "grow together.",
+    "subtitle": "Commonground connects 3,400 members and 260 community gardens through local chapters, hands-on workshops, a members-only resource library and a steady voice in city hall.",
+    "primary_label": "Become a member",
+    "primary_url": "/membership",
+    "secondary_label": "Find a chapter",
+    "secondary_url": "/chapters",
+    "stats": [
+     {
+      "value": "3,400",
+      "label": "members nationwide"
+     },
+     {
+      "value": "8",
+      "label": "local chapters"
+     },
+     {
+      "value": "260",
+      "label": "gardens supported"
+     },
+     {
+      "value": "41",
+      "label": "workshops last year"
+     }
+    ]
+   }
+  }
+ ],
+ "main": [
+  {
+   "widgetType": "cg_benefits",
+   "settings": {
+    "kicker": "Why join",
+    "headline": "Membership that",
+    "accent": "pays off in the dirt.",
+    "subtitle": "Every tier includes your local chapter, member rates and the full resource library.",
+    "items": [
+     {
+      "icon": "journal-richtext",
+      "color": "#c8553d",
+      "title": "The member library",
+      "text": "Toolkits, legal templates, insurance guides and every webinar recording, written by gardeners and volunteer experts."
+     },
+     {
+      "icon": "people",
+      "color": "#3f7d5a",
+      "title": "A local chapter",
+      "text": "Monthly meetups, shared workdays, seed swaps and a group chat full of people who know your soil."
+     },
+     {
+      "icon": "ticket-perforated",
+      "color": "#2f6f8f",
+      "title": "Member rates",
+      "text": "Lower prices at every workshop and at the Commonground Gathering, our annual three-day conference."
+     },
+     {
+      "icon": "bank",
+      "color": "#c98f0f",
+      "title": "A voice in city hall",
+      "text": "We track land-use rules in 40 cities and organise members when a garden is under threat."
+     },
+     {
+      "icon": "shield-check",
+      "color": "#1f3b2c",
+      "title": "Group insurance",
+      "text": "Garden Group members can join our liability policy, usually for less than half the open-market price."
+     },
+     {
+      "icon": "check2-square",
+      "color": "#8f3524",
+      "title": "A real vote",
+      "text": "Members elect the board and vote on how Supporter dues are spent. This year: 30 new gardens."
+     }
+    ]
+   }
+  },
+  {
+   "widgetType": "cg_events",
+   "settings": {
+    "kicker": "Coming up",
+    "headline": "Workshops, swaps",
+    "accent": "and the Gathering.",
+    "subtitle": "",
+    "count": 4
+   }
+  },
+  {
+   "widgetType": "cg_tiers",
+   "settings": {
+    "kicker": "Membership",
+    "headline": "Pick the tier that",
+    "accent": "fits your plot.",
+    "subtitle": "Twelve months, any chapter, upgrade any time. Pay-what-you-can is available on every tier.",
+    "join_url": "https://join.example.org/commonground",
+    "note": "This site takes no payments. Join buttons open our membership partner's secure site (a placeholder link in this example)."
+   }
+  },
+  {
+   "widgetType": "cg_chapters",
+   "settings": {
+    "kicker": "Chapters",
+    "headline": "Eight chapters,",
+    "accent": "one association.",
+    "subtitle": "Chapters run their own meetings and projects. Every member belongs to the one nearest them."
+   }
+  },
+  {
+   "widgetType": "cg_news",
+   "settings": {
+    "kicker": "News",
+    "headline": "From",
+    "accent": "the plots."
+   }
+  },
+  {
+   "widgetType": "cg_cta",
+   "settings": {
+    "kicker": "Ready when you are",
+    "headline": "Your garden is better",
+    "accent": "with company.",
+    "subtitle": "Join today and your chapter lead will say hello within a week. Not sure yet? Come to an open event first.",
+    "primary_label": "See membership options",
+    "primary_url": "/membership",
+    "secondary_label": "Browse events",
+    "secondary_url": "/events"
+   }
+  }
+ ]
+}

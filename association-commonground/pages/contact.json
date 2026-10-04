@@ -1,0 +1,67 @@
+{
+ "hero": [
+  {
+   "widgetType": "cg_page_header",
+   "settings": {
+    "kicker": "Contact",
+    "headline": "Talk to",
+    "accent": "a person.",
+    "subtitle": "Our staff team is small and our volunteers are busy gardening, but every message gets a reply within two working days."
+   }
+  }
+ ],
+ "main": [
+  {
+   "widgetType": "cg_contact",
+   "settings": {
+    "kicker": "",
+    "headline": "",
+    "accent": "",
+    "subtitle": "",
+    "items": [
+     {
+      "icon": "person-heart",
+      "title": "Membership team",
+      "text": "Joining, renewals, tiers, the low-income rate and group insurance.",
+      "email": "members@commonground.example"
+     },
+     {
+      "icon": "geo-alt",
+      "title": "Chapters",
+      "text": "Finding your chapter, starting a new one, or getting in touch with a chapter lead.",
+      "email": "chapters@commonground.example"
+     },
+     {
+      "icon": "megaphone",
+      "title": "Press and policy",
+      "text": "Interviews, land-use questions and help when a garden is under threat.",
+      "email": "policy@commonground.example"
+     }
+    ]
+   }
+  },
+  {
+   "widgetType": "cg_faq",
+   "settings": {
+    "kicker": "Before you write",
+    "headline": "Quick",
+    "accent": "answers.",
+    "subtitle": "",
+    "items": [
+     {
+      "q": "I joined but cannot sign in yet.",
+      "a": "Member logins are created within one business day of joining. If it has been longer, write to the membership team."
+     },
+     {
+      "q": "Can I visit the office?",
+      "a": "We share a small office at 1820 Fairmount Avenue in Philadelphia. Please email first so someone is there."
+     },
+     {
+      "q": "Do you give grants to gardens?",
+      "a": "Yes, through the new gardens fund. Applications open each January for groups in neighbourhoods without fresh food."
+     }
+    ]
+   }
+  }
+ ]
+}

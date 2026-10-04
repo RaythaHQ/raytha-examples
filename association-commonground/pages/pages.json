@@ -1,0 +1,37 @@
+[
+ {
+  "title": "Commonground",
+  "routePath": "home",
+  "template": "cg_home",
+  "sections": "pages/home.json",
+  "home": true
+ },
+ {
+  "title": "Membership",
+  "routePath": "membership",
+  "template": "cg_page",
+  "sections": "pages/membership.json",
+  "home": false
+ },
+ {
+  "title": "About",
+  "routePath": "about",
+  "template": "cg_page",
+  "sections": "pages/about.json",
+  "home": false
+ },
+ {
+  "title": "Contact",
+  "routePath": "contact",
+  "template": "cg_page",
+  "sections": "pages/contact.json",
+  "home": false
+ },
+ {
+  "title": "My membership",
+  "routePath": "members",
+  "template": "cg_members",
+  "sections": "pages/members.json",
+  "home": false
+ }
+]

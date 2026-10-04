@@ -1,0 +1,105 @@
+{
+ "hero": [
+  {
+   "widgetType": "cg_page_header",
+   "settings": {
+    "kicker": "Membership",
+    "headline": "Join the people who",
+    "accent": "keep gardens growing.",
+    "subtitle": "Four tiers, one association. Every membership includes a local chapter, member rates and the full resource library."
+   }
+  }
+ ],
+ "main": [
+  {
+   "widgetType": "cg_tiers",
+   "settings": {
+    "kicker": "Tiers",
+    "headline": "Choose",
+    "accent": "your tier.",
+    "subtitle": "Prices are per year. Every tier has a pay-what-you-can option with no paperwork.",
+    "join_url": "https://join.example.org/commonground",
+    "note": "Commonground does not take payments on this website. Joining happens on our membership partner's secure site, which is a placeholder link in this example."
+   }
+  },
+  {
+   "widgetType": "cg_join",
+   "settings": {
+    "kicker": "How to join",
+    "headline": "Three ways",
+    "accent": "in.",
+    "subtitle": "Most people join online in about three minutes. If you would rather talk to a person, we are happy to help.",
+    "items": [
+     {
+      "icon": "box-arrow-up-right",
+      "title": "Join online",
+      "text": "Pick a tier on our membership partner's secure site. Your member login arrives within one business day.",
+      "label": "Open the join form",
+      "url": "https://join.example.org/commonground",
+      "external": "yes"
+     },
+     {
+      "icon": "chat-heart",
+      "title": "Talk to us first",
+      "text": "Questions about tiers, group insurance or the low-income rate? The membership team answers within two days.",
+      "label": "Contact membership",
+      "url": "/contact",
+      "external": "no"
+     },
+     {
+      "icon": "calendar-event",
+      "title": "Come to an event",
+      "text": "Most chapter events are open to everyone. Meet members, then join on the day with your chapter lead.",
+      "label": "Upcoming events",
+      "url": "/events",
+      "external": "no"
+     }
+    ]
+   }
+  },
+  {
+   "widgetType": "cg_faq",
+   "settings": {
+    "kicker": "Questions",
+    "headline": "Membership",
+    "accent": "FAQ.",
+    "subtitle": "Still unsure? Write to members@commonground.example.",
+    "items": [
+     {
+      "q": "Do I need my own garden plot?",
+      "a": "No. About a third of members garden at home, on a balcony or at a school. You just need to care about growing food in shared places."
+     },
+     {
+      "q": "What is in the member library?",
+      "a": "Toolkits, legal templates, insurance guides and recordings of every members-only webinar. Members sign in on this site to open them."
+     },
+     {
+      "q": "How does pay-what-you-can work?",
+      "a": "Choose the option on the join form and enter any amount, including zero. Members on this rate get exactly the same benefits."
+     },
+     {
+      "q": "Can our garden join as a group?",
+      "a": "Yes. The Garden Group tier covers up to 25 named gardeners at one site, adds group insurance and gives you a listing in the chapter directory."
+     },
+     {
+      "q": "How do I cancel?",
+      "a": "Memberships do not auto-renew unless you ask them to. If you want a refund in the first 30 days, write to us and you will get one."
+     }
+    ]
+   }
+  },
+  {
+   "widgetType": "cg_cta",
+   "settings": {
+    "kicker": "Not ready to join?",
+    "headline": "Come garden",
+    "accent": "with us first.",
+    "subtitle": "Chapter events are open to everyone. Meet the people, then decide.",
+    "primary_label": "Browse events",
+    "primary_url": "/events",
+    "secondary_label": "Compare all tiers",
+    "secondary_url": "/tiers"
+   }
+  }
+ ]
+}

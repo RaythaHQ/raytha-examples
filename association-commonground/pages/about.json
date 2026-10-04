@@ -1,0 +1,74 @@
+{
+ "hero": [
+  {
+   "widgetType": "cg_page_header",
+   "settings": {
+    "kicker": "About",
+    "headline": "Started on a vacant lot",
+    "accent": "in 1998.",
+    "subtitle": "Commonground is a member-led nonprofit. Members elect the board, set our policy priorities and decide how surplus dues are spent."
+   }
+  }
+ ],
+ "main": [
+  {
+   "widgetType": "cg_text",
+   "settings": {
+    "kicker": "Our story",
+    "headline": "From one garden to",
+    "accent": "eight chapters.",
+    "body": "<p>Commonground began when twelve gardeners in Philadelphia fought to keep a lot they had farmed for six years. They won, and then got calls from gardeners in other cities who wanted to know how.</p><p>Today we are a national association of <strong>3,400 members</strong> in eight chapters. We publish toolkits, train new garden leaders, run a group insurance policy and track land-use rules in 40 cities.</p><p>We are a 501(c)(3) nonprofit funded mostly by member dues. Our books are open: the annual report and audited accounts are in the member library.</p>",
+    "quote": "A garden on a vacant lot is the cheapest public park a city will ever get.",
+    "quote_by": "Ruth Abernathy, founding member"
+   }
+  },
+  {
+   "widgetType": "cg_benefits",
+   "settings": {
+    "kicker": "What we do",
+    "headline": "Four things,",
+    "accent": "done well.",
+    "subtitle": "Everything we do comes back to keeping community gardens growing.",
+    "items": [
+     {
+      "icon": "mortarboard",
+      "color": "#3f7d5a",
+      "title": "Train garden leaders",
+      "text": "A six-week course for new coordinators, run twice a year in every chapter."
+     },
+     {
+      "icon": "bank",
+      "color": "#c8553d",
+      "title": "Protect land",
+      "text": "Policy tracking, legal clinics and member action when a garden is at risk."
+     },
+     {
+      "icon": "journal-richtext",
+      "color": "#2f6f8f",
+      "title": "Share what works",
+      "text": "A library of toolkits and templates, free to members, written by members."
+     },
+     {
+      "icon": "flower1",
+      "color": "#c98f0f",
+      "title": "Fund new gardens",
+      "text": "Half of Supporter dues go to new gardens in neighbourhoods without fresh food."
+     }
+    ]
+   }
+  },
+  {
+   "widgetType": "cg_cta",
+   "settings": {
+    "kicker": "Get involved",
+    "headline": "There is a plot",
+    "accent": "with your name on it.",
+    "subtitle": "Join a chapter, come to an event or talk to us about starting one where you live.",
+    "primary_label": "Become a member",
+    "primary_url": "/membership",
+    "secondary_label": "Contact us",
+    "secondary_url": "/contact"
+   }
+  }
+ ]
+}
