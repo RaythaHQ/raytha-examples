@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "contentTypes": [
+    {
+      "developerName": "instructors",
+      "labelPlural": "Instructors",
+      "labelSingular": "Instructor",
+      "description": "People who teach Atlas courses",
+      "defaultRouteTemplate": "instructors/{PrimaryField}",
+      "primaryField": "name",
+      "fields": [
+        {"developerName": "name", "label": "Name", "description": "", "fieldType": "single_line_text", "isRequired": true, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "role", "label": "Role", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "bio", "label": "Bio", "description": "", "fieldType": "long_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "photo", "label": "Photo", "description": "", "fieldType": "attachment", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "color", "label": "Accent colour", "description": "", "fieldType": "color", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "sort_order", "label": "Sort order", "description": "", "fieldType": "number", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []}
+      ],
+      "views": [
+        {"developerName": "instructors", "label": "Instructors", "description": "", "isPublished": true, "routePath": "instructors", "template": "al_list_instructors", "columns": ["PrimaryField"], "sort": [{"developerName": "sort_order", "direction": "asc"}], "filter": [], "defaultNumberOfItemsPerPage": 50, "maxNumberOfItemsPerPage": 1000, "ignoreClientFilterAndSortQueryParams": false}
+      ]
+    },
+    {
+      "developerName": "courses",
+      "labelPlural": "Courses",
+      "labelSingular": "Course",
+      "description": "Courses in the catalog",
+      "defaultRouteTemplate": "courses/{PrimaryField}",
+      "primaryField": "title",
+      "fields": [
+        {"developerName": "title", "label": "Title", "description": "", "fieldType": "single_line_text", "isRequired": true, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "tagline", "label": "Tagline", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "summary", "label": "Summary", "description": "", "fieldType": "long_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "description", "label": "Description", "description": "", "fieldType": "wysiwyg", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "category", "label": "Category", "description": "", "fieldType": "dropdown", "isRequired": false, "choices": [{"developerName": "data", "label": "Data and analytics", "disabled": false}, {"developerName": "design", "label": "Design", "disabled": false}, {"developerName": "product", "label": "Product", "disabled": false}, {"developerName": "leadership", "label": "Leadership", "disabled": false}], "relatedContentType": null, "subFields": []},
+        {"developerName": "level", "label": "Level", "description": "", "fieldType": "dropdown", "isRequired": false, "choices": [{"developerName": "beginner", "label": "Beginner", "disabled": false}, {"developerName": "intermediate", "label": "Intermediate", "disabled": false}, {"developerName": "advanced", "label": "Advanced", "disabled": false}], "relatedContentType": null, "subFields": []},
+        {"developerName": "hours", "label": "Length (hours)", "description": "", "fieldType": "number", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "instructor", "label": "Instructor", "description": "", "fieldType": "one_to_one_relationship", "isRequired": false, "choices": [], "relatedContentType": "instructors", "subFields": []},
+        {"developerName": "cover", "label": "Cover image", "description": "", "fieldType": "attachment", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "accent", "label": "Accent colour", "description": "", "fieldType": "color", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "outcomes", "label": "What you will learn (one per line)", "description": "", "fieldType": "long_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "featured", "label": "Featured", "description": "", "fieldType": "checkbox", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "learners", "label": "Learners enrolled", "description": "", "fieldType": "number", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "rating", "label": "Average rating", "description": "", "fieldType": "number", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "sort_order", "label": "Sort order", "description": "", "fieldType": "number", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []}
+      ],
+      "views": [
+        {"developerName": "courses", "label": "Course catalog", "description": "", "isPublished": true, "routePath": "courses", "template": "al_list_courses", "columns": ["PrimaryField"], "sort": [{"developerName": "sort_order", "direction": "asc"}], "filter": [], "defaultNumberOfItemsPerPage": 60, "maxNumberOfItemsPerPage": 1000, "ignoreClientFilterAndSortQueryParams": false}
+      ]
+    },
+    {
+      "developerName": "lessons",
+      "labelPlural": "Lessons",
+      "labelSingular": "Lesson",
+      "description": "Lessons inside a course, grouped into modules",
+      "defaultRouteTemplate": "learn/{PrimaryField}",
+      "primaryField": "title",
+      "fields": [
+        {"developerName": "title", "label": "Title", "description": "", "fieldType": "single_line_text", "isRequired": true, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "course", "label": "Course", "description": "", "fieldType": "one_to_one_relationship", "isRequired": true, "choices": [], "relatedContentType": "courses", "subFields": []},
+        {"developerName": "module", "label": "Module name", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "module_number", "label": "Module number", "description": "", "fieldType": "number", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "lesson_number", "label": "Lesson number", "description": "", "fieldType": "number", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "minutes", "label": "Length (minutes)", "description": "", "fieldType": "number", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "kind", "label": "Format", "description": "", "fieldType": "dropdown", "isRequired": false, "choices": [{"developerName": "video", "label": "Video", "disabled": false}, {"developerName": "reading", "label": "Reading", "disabled": false}, {"developerName": "exercise", "label": "Exercise", "disabled": false}, {"developerName": "quiz", "label": "Quiz", "disabled": false}], "relatedContentType": null, "subFields": []},
+        {"developerName": "is_preview", "label": "Free preview (anyone can view)", "description": "", "fieldType": "checkbox", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "summary", "label": "Summary", "description": "", "fieldType": "long_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "body", "label": "Lesson content", "description": "", "fieldType": "wysiwyg", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []}
+      ],
+      "views": [
+        {"developerName": "free_lessons", "label": "Free preview lessons", "description": "", "isPublished": true, "routePath": "free-lessons", "template": "al_list_lessons", "columns": ["PrimaryField"], "sort": [{"developerName": "module_number", "direction": "asc"}, {"developerName": "lesson_number", "direction": "asc"}], "filter": [], "defaultNumberOfItemsPerPage": 60, "maxNumberOfItemsPerPage": 1000, "ignoreClientFilterAndSortQueryParams": false}
+      ]
+    }
+  ]
+}
