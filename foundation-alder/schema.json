@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "contentTypes": [
+    {
+      "developerName": "programs",
+      "labelPlural": "Grant programs",
+      "labelSingular": "Grant program",
+      "description": "The foundation's grant programs",
+      "defaultRouteTemplate": "programs/{PrimaryField}",
+      "primaryField": "name",
+      "fields": [
+        {"developerName": "name", "label": "Name", "description": "", "fieldType": "single_line_text", "isRequired": true, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "tagline", "label": "One-line summary", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "color", "label": "Colour", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "icon", "label": "Bootstrap icon name", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "status", "label": "Status", "description": "", "fieldType": "dropdown", "isRequired": false, "choices": [{"developerName": "open", "label": "Open for applications", "disabled": false}, {"developerName": "rolling", "label": "Rolling, apply any time", "disabled": false}, {"developerName": "invite", "label": "By invitation", "disabled": false}, {"developerName": "closed", "label": "Closed this cycle", "disabled": false}], "relatedContentType": null, "subFields": []},
+        {"developerName": "deadline", "label": "Next deadline", "description": "", "fieldType": "date", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "grant_range", "label": "Grant size", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "term", "label": "Grant length", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "annual_budget", "label": "Annual budget (USD)", "description": "", "fieldType": "number", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "who", "label": "Who can apply", "description": "", "fieldType": "long_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "what", "label": "What we fund", "description": "", "fieldType": "long_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "not_fund", "label": "What we don't fund", "description": "", "fieldType": "long_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "description", "label": "About the program", "description": "", "fieldType": "wysiwyg", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "sort_order", "label": "Sort order", "description": "", "fieldType": "number", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []}
+      ],
+      "views": [
+        {"developerName": "programs", "label": "Grant programs", "description": "", "isPublished": true, "routePath": "programs", "template": "al_list_programs", "columns": ["PrimaryField"], "sort": [{"developerName": "sort_order", "direction": "asc"}], "filter": [], "defaultNumberOfItemsPerPage": 20, "maxNumberOfItemsPerPage": 1000, "ignoreClientFilterAndSortQueryParams": false}
+      ]
+    },
+    {
+      "developerName": "grantees",
+      "labelPlural": "Grantees",
+      "labelSingular": "Grantee",
+      "description": "Organizations we have funded, one item per grant",
+      "defaultRouteTemplate": "grantees/{PrimaryField}",
+      "primaryField": "name",
+      "fields": [
+        {"developerName": "name", "label": "Organization", "description": "", "fieldType": "single_line_text", "isRequired": true, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "program", "label": "Program", "description": "", "fieldType": "one_to_one_relationship", "isRequired": false, "choices": [], "relatedContentType": "programs", "subFields": []},
+        {"developerName": "year", "label": "Year awarded", "description": "", "fieldType": "dropdown", "isRequired": false, "choices": [{"developerName": "y2026", "label": "2026", "disabled": false}, {"developerName": "y2025", "label": "2025", "disabled": false}, {"developerName": "y2024", "label": "2024", "disabled": false}, {"developerName": "y2023", "label": "2023", "disabled": false}], "relatedContentType": null, "subFields": []},
+        {"developerName": "region", "label": "Region", "description": "", "fieldType": "dropdown", "isRequired": false, "choices": [{"developerName": "upper_valley", "label": "Upper Valley", "disabled": false}, {"developerName": "lowlands", "label": "Lowlands", "disabled": false}, {"developerName": "coast", "label": "The Coast", "disabled": false}, {"developerName": "marlow", "label": "City of Marlow", "disabled": false}, {"developerName": "regionwide", "label": "Region-wide", "disabled": false}], "relatedContentType": null, "subFields": []},
+        {"developerName": "amount", "label": "Grant amount (USD)", "description": "", "fieldType": "number", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "term", "label": "Grant length", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "purpose", "label": "What the grant is for", "description": "", "fieldType": "long_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "about", "label": "About the organization", "description": "", "fieldType": "long_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "website", "label": "Website", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []}
+      ],
+      "views": [
+        {"developerName": "grantees", "label": "Grantees", "description": "", "isPublished": true, "routePath": "grantees", "template": "al_list_grantees", "columns": ["PrimaryField"], "sort": [{"developerName": "amount", "direction": "desc"}], "filter": [], "defaultNumberOfItemsPerPage": 200, "maxNumberOfItemsPerPage": 1000, "ignoreClientFilterAndSortQueryParams": false}
+      ]
+    },
+    {
+      "developerName": "stories",
+      "labelPlural": "Impact stories",
+      "labelSingular": "Impact story",
+      "description": "Stories from the people and places our grants support",
+      "defaultRouteTemplate": "stories/{PrimaryField}",
+      "primaryField": "title",
+      "fields": [
+        {"developerName": "title", "label": "Title", "description": "", "fieldType": "single_line_text", "isRequired": true, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "dek", "label": "Standfirst", "description": "", "fieldType": "long_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "grantee", "label": "Grantee", "description": "", "fieldType": "one_to_one_relationship", "isRequired": false, "choices": [], "relatedContentType": "grantees", "subFields": []},
+        {"developerName": "program", "label": "Program", "description": "", "fieldType": "one_to_one_relationship", "isRequired": false, "choices": [], "relatedContentType": "programs", "subFields": []},
+        {"developerName": "published_on", "label": "Published", "description": "", "fieldType": "date", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "author", "label": "Written by", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "stat_value", "label": "Headline number", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "stat_label", "label": "What the number means", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "quote", "label": "Pull quote", "description": "", "fieldType": "long_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "quote_by", "label": "Quote from", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "image", "label": "Illustration", "description": "", "fieldType": "attachment", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "body", "label": "Story", "description": "", "fieldType": "wysiwyg", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "featured", "label": "Feature on the home page", "description": "", "fieldType": "checkbox", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []}
+      ],
+      "views": [
+        {"developerName": "stories", "label": "Impact stories", "description": "", "isPublished": true, "routePath": "stories", "template": "al_list_stories", "columns": ["PrimaryField"], "sort": [{"developerName": "published_on", "direction": "desc"}], "filter": [], "defaultNumberOfItemsPerPage": 50, "maxNumberOfItemsPerPage": 1000, "ignoreClientFilterAndSortQueryParams": false}
+      ]
+    },
+    {
+      "developerName": "reports",
+      "labelPlural": "Annual reports",
+      "labelSingular": "Annual report",
+      "description": "Annual reports with the year's numbers and a downloadable PDF",
+      "defaultRouteTemplate": "reports/{PrimaryField}",
+      "primaryField": "title",
+      "fields": [
+        {"developerName": "title", "label": "Title", "description": "", "fieldType": "single_line_text", "isRequired": true, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "year", "label": "Year", "description": "", "fieldType": "number", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "total_granted", "label": "Total granted (USD)", "description": "", "fieldType": "number", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "grants_count", "label": "Number of grants", "description": "", "fieldType": "number", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "new_partners", "label": "New grantee partners", "description": "", "fieldType": "number", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "assets", "label": "Endowment at year end (USD)", "description": "", "fieldType": "number", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "summary", "label": "Summary", "description": "", "fieldType": "long_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "highlights", "label": "Highlights (one per line)", "description": "", "fieldType": "long_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "letter", "label": "Letter from the president", "description": "", "fieldType": "wysiwyg", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "cover_color", "label": "Cover colour", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []}
+      ],
+      "views": [
+        {"developerName": "reports", "label": "Annual reports", "description": "", "isPublished": true, "routePath": "reports", "template": "al_list_reports", "columns": ["PrimaryField"], "sort": [{"developerName": "year", "direction": "desc"}], "filter": [], "defaultNumberOfItemsPerPage": 20, "maxNumberOfItemsPerPage": 1000, "ignoreClientFilterAndSortQueryParams": false}
+      ]
+    },
+    {
+      "developerName": "faqs",
+      "labelPlural": "Applicant FAQs",
+      "labelSingular": "Applicant FAQ",
+      "description": "Questions applicants ask, shown on the How to apply page",
+      "defaultRouteTemplate": "apply/faq/{PrimaryField}",
+      "primaryField": "question",
+      "fields": [
+        {"developerName": "question", "label": "Question", "description": "", "fieldType": "single_line_text", "isRequired": true, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "answer", "label": "Answer", "description": "", "fieldType": "long_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "category", "label": "Category", "description": "", "fieldType": "dropdown", "isRequired": false, "choices": [{"developerName": "eligibility", "label": "Eligibility", "disabled": false}, {"developerName": "process", "label": "Applying", "disabled": false}, {"developerName": "after", "label": "After you apply", "disabled": false}], "relatedContentType": null, "subFields": []},
+        {"developerName": "sort_order", "label": "Sort order", "description": "", "fieldType": "number", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []}
+      ],
+      "views": [
+        {"developerName": "faq", "label": "Applicant FAQ", "description": "", "isPublished": true, "routePath": "apply/faq", "template": "al_list_faq", "columns": ["PrimaryField"], "sort": [{"developerName": "sort_order", "direction": "asc"}], "filter": [], "defaultNumberOfItemsPerPage": 100, "maxNumberOfItemsPerPage": 1000, "ignoreClientFilterAndSortQueryParams": false}
+      ]
+    }
+  ]
+}
