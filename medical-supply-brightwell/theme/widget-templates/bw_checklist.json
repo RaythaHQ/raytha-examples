@@ -1,0 +1,42 @@
+{
+  "label": "Brightwell: checklist with aside",
+  "fields": [
+    {
+      "developerName": "kicker",
+      "label": "Kicker",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "headline",
+      "label": "Headline",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "body",
+      "label": "Body",
+      "fieldType": "long_text"
+    },
+    {
+      "developerName": "items",
+      "label": "Items",
+      "fieldType": "repeater",
+      "subFields": [
+        {
+          "developerName": "text",
+          "label": "Text",
+          "fieldType": "single_line_text"
+        }
+      ]
+    },
+    {
+      "developerName": "aside_title",
+      "label": "Aside title",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "aside_body",
+      "label": "Aside body",
+      "fieldType": "long_text"
+    }
+  ]
+}

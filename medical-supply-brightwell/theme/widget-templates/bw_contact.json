@@ -1,0 +1,47 @@
+{
+  "label": "Brightwell: contact cards",
+  "fields": [
+    {
+      "developerName": "kicker",
+      "label": "Kicker",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "headline",
+      "label": "Headline",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "cards",
+      "label": "Cards",
+      "fieldType": "repeater",
+      "subFields": [
+        {
+          "developerName": "icon",
+          "label": "Bootstrap icon",
+          "fieldType": "single_line_text"
+        },
+        {
+          "developerName": "title",
+          "label": "Title",
+          "fieldType": "single_line_text"
+        },
+        {
+          "developerName": "big",
+          "label": "Main line",
+          "fieldType": "single_line_text"
+        },
+        {
+          "developerName": "text",
+          "label": "Text",
+          "fieldType": "long_text"
+        },
+        {
+          "developerName": "url",
+          "label": "Link",
+          "fieldType": "single_line_text"
+        }
+      ]
+    }
+  ]
+}

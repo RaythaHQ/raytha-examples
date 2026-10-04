@@ -1,0 +1,37 @@
+{
+  "label": "Brightwell: numbered steps",
+  "fields": [
+    {
+      "developerName": "kicker",
+      "label": "Kicker",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "headline",
+      "label": "Headline",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "subtitle",
+      "label": "Subtitle",
+      "fieldType": "long_text"
+    },
+    {
+      "developerName": "steps",
+      "label": "Steps",
+      "fieldType": "repeater",
+      "subFields": [
+        {
+          "developerName": "title",
+          "label": "Title",
+          "fieldType": "single_line_text"
+        },
+        {
+          "developerName": "body",
+          "label": "Body",
+          "fieldType": "long_text"
+        }
+      ]
+    }
+  ]
+}

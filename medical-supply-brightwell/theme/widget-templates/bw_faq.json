@@ -1,0 +1,25 @@
+{
+  "label": "Brightwell: FAQ from content",
+  "fields": [
+    {
+      "developerName": "kicker",
+      "label": "Kicker",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "headline",
+      "label": "Headline",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "topic",
+      "label": "Topic developer name (blank for all)",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "count",
+      "label": "How many",
+      "fieldType": "number"
+    }
+  ]
+}

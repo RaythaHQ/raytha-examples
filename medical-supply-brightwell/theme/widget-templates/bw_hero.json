@@ -1,0 +1,86 @@
+{
+  "label": "Brightwell: hero with search",
+  "fields": [
+    {
+      "developerName": "kicker",
+      "label": "Kicker",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "headline",
+      "label": "Headline",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "accent",
+      "label": "Highlighted words",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "subtitle",
+      "label": "Subtitle",
+      "fieldType": "long_text"
+    },
+    {
+      "developerName": "hero_code",
+      "label": "HCPCS code of the product to show",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "quick",
+      "label": "Quick links",
+      "fieldType": "repeater",
+      "subFields": [
+        {
+          "developerName": "label",
+          "label": "Label",
+          "fieldType": "single_line_text"
+        },
+        {
+          "developerName": "url",
+          "label": "Link",
+          "fieldType": "single_line_text"
+        }
+      ]
+    },
+    {
+      "developerName": "trust",
+      "label": "Trust points",
+      "fieldType": "repeater",
+      "subFields": [
+        {
+          "developerName": "icon",
+          "label": "Bootstrap icon",
+          "fieldType": "single_line_text"
+        },
+        {
+          "developerName": "text",
+          "label": "Text",
+          "fieldType": "single_line_text"
+        }
+      ]
+    },
+    {
+      "developerName": "cards",
+      "label": "Floating cards",
+      "fieldType": "repeater",
+      "subFields": [
+        {
+          "developerName": "icon",
+          "label": "Bootstrap icon",
+          "fieldType": "single_line_text"
+        },
+        {
+          "developerName": "title",
+          "label": "Title",
+          "fieldType": "single_line_text"
+        },
+        {
+          "developerName": "text",
+          "label": "Text",
+          "fieldType": "single_line_text"
+        }
+      ]
+    }
+  ]
+}
