@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if Target.PrimaryField %}{{ Target.PrimaryField }} | {% elsif Target.Label %}{{ Target.Label }} | {% elsif Target.Title %}{{ Target.Title }} | {% endif %}Low Tide Festival 2027</title>
+  <meta name="description" content="Low Tide is a three-day music festival on Driftwood Point, Halcyon Bay: 36 artists on four stages by the water, July 16 to 18, 2027.">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230b1622'/%3E%3Ccircle cx='32' cy='28' r='14' fill='%23ff6b4a'/%3E%3Cpath d='M6 44c6-5 11-5 17 0s11 5 17 0 11-5 18 0' stroke='%231fb5a8' stroke-width='5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+  <style>
+    :root{--night:#0b1622;--night2:#12233a;--night3:#1a3150;--sand:#f4ead8;--sand2:#eadcc2;--coral:#ff6b4a;--tang:#ffb347;--sea:#1fb5a8;--lilac:#b69cff;--ink:#0b1622;--mut:#93a4b8;--line:rgba(244,234,216,.14);--r:18px;--disp:"Space Grotesk",system-ui,sans-serif;--sans:"Inter",system-ui,sans-serif}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}
+    body{margin:0;background:var(--night);color:var(--sand);font:400 16px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
+    h1,h2,h3,h4{font-family:var(--disp);font-weight:700;letter-spacing:-.025em;line-height:1.02;margin:0}
+    .wrap{max-width:1240px;margin:0 auto;padding:0 28px}
+    .ticker{background:var(--coral);color:var(--night);overflow:hidden;white-space:nowrap;font:700 .82rem/1 var(--disp);letter-spacing:.08em;text-transform:uppercase}
+    .ticker .tk{display:inline-flex;gap:28px;padding:10px 0;animation:tk 38s linear infinite}
+    .ticker .tk span{display:inline-flex;gap:28px;align-items:center}.ticker .tk span::after{content:"\2726";opacity:.6}
+    @keyframes tk{to{transform:translateX(-50%)}}
+    .nav{position:sticky;top:0;z-index:40;background:rgba(11,22,34,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+    .nav-in{display:flex;align-items:center;gap:26px;height:72px}
+    .brand{display:flex;align-items:center;gap:11px;font:700 1.3rem/1 var(--disp);letter-spacing:-.03em}
+    .brand small{display:block;font:500 .68rem/1.2 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--mut);margin-top:3px}
+    .nav ul{display:flex;gap:4px;list-style:none;margin:0 0 0 auto;padding:0}
+    .nav ul a{display:block;padding:.5rem .85rem;border-radius:999px;font-weight:500;font-size:.95rem;color:#d3dbe4}
+    .nav ul a:hover{background:var(--night2);color:#fff}.nav ul a.on{background:var(--sand);color:var(--night)}
+    .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.8rem 1.3rem;border-radius:999px;font:600 .95rem/1 var(--sans);border:2px solid transparent;cursor:pointer;transition:transform .15s,background .15s}
+    .btn:hover{transform:translateY(-2px)}
+    .btn-coral{background:var(--coral);color:var(--night)}.btn-coral:hover{background:#ff8466}
+    .btn-sand{background:var(--sand);color:var(--night)}.btn-line{border-color:rgba(244,234,216,.4);color:var(--sand)}.btn-line:hover{border-color:var(--sand)}
+    .btn-dark{background:var(--night);color:var(--sand)}
+    .ext::after{content:"\F1C5";font-family:bootstrap-icons;font-size:.8em;margin-left:.15rem}
+    .tog{display:none;margin-left:auto;background:none;border:0;color:var(--sand);font-size:1.7rem}
+    main{min-height:60vh}
+    .section{padding:96px 0}.section.tight{padding:64px 0}
+    .light{background:var(--sand);color:var(--ink)}.light .mut{color:#5d6b7c}
+    .mut{color:var(--mut)}
+    .eyebrow{display:inline-flex;align-items:center;gap:.5rem;font:600 .78rem/1 var(--disp);letter-spacing:.16em;text-transform:uppercase;color:var(--tang)}
+    .light .eyebrow{color:#c2410c}
+    .shead{display:flex;justify-content:space-between;align-items:end;gap:28px;margin-bottom:40px;flex-wrap:wrap}
+    .shead h2{font-size:clamp(2.2rem,4.6vw,3.8rem);margin-top:12px}.shead p{max-width:480px;margin:0;color:var(--mut)}.light .shead p{color:#5d6b7c}
+    .hl{background:linear-gradient(90deg,var(--coral),var(--tang));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .pill{display:inline-flex;align-items:center;gap:.35rem;padding:.3rem .7rem;border-radius:999px;font:600 .74rem/1.2 var(--sans);background:var(--night3);color:#dce4ec;white-space:nowrap}
+    .light .pill{background:#e3d4b8;color:var(--ink)}
+    .dot{width:9px;height:9px;border-radius:50%;display:inline-block;flex:none}
+    .chips{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:14px}
+    .chips .lbl{font:600 .72rem/1 var(--disp);letter-spacing:.14em;text-transform:uppercase;color:var(--mut);width:64px}
+    .chips a,.chips button{padding:.5rem .95rem;border-radius:999px;border:1.5px solid var(--line);font:500 .88rem/1 var(--sans);color:#d3dbe4;background:none;cursor:pointer;display:inline-flex;gap:.4rem;align-items:center}
+    .chips a:hover,.chips button:hover{border-color:var(--sand)}.chips a.on,.chips button.on{background:var(--sand);color:var(--night);border-color:var(--sand)}
+    .light .chips a,.light .chips button{border-color:#d6c4a3;color:var(--ink)}.light .chips a.on,.light .chips button.on{background:var(--night);color:var(--sand);border-color:var(--night)}
+    .grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+    .acard{position:relative;border-radius:var(--r);overflow:hidden;background:var(--night2);display:flex;flex-direction:column;transition:transform .2s}
+    .acard:hover{transform:translateY(-4px)}.acard .im{aspect-ratio:1;overflow:hidden}.acard .im img{width:100%;height:100%;object-fit:cover;transition:transform .5s}.acard:hover .im img{transform:scale(1.05)}
+    .acard .bd{padding:16px 18px 18px}.acard h3{font-size:1.32rem;margin-bottom:6px}.acard .meta{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+    .acard .when{position:absolute;top:12px;left:12px;background:rgba(11,22,34,.82);backdrop-filter:blur(6px);padding:.35rem .7rem;border-radius:999px;font:600 .74rem/1.2 var(--sans)}
+    .star{position:absolute;top:10px;right:10px;width:38px;height:38px;border-radius:50%;border:0;background:rgba(11,22,34,.82);color:var(--sand);font-size:1.05rem;cursor:pointer;display:grid;place-items:center;z-index:2}
+    .star.on{background:var(--tang);color:var(--night)}.star.on i::before{content:"\F586"}
+    .card{background:var(--night2);border:1px solid var(--line);border-radius:var(--r);padding:28px}.light .card{background:#fff;border-color:#e6d8bd}
+    .card h3{font-size:1.4rem;margin-bottom:8px}.card p{margin:0;color:var(--mut)}.light .card p{color:#4b596a}
+    .ic{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;font-size:1.3rem;color:var(--night);margin-bottom:16px}
+    .phead{padding:76px 0 46px;position:relative;overflow:hidden}
+    .phead h1{font-size:clamp(2.8rem,6.4vw,5.6rem);margin:14px 0 16px;max-width:980px}.phead p{font-size:1.15rem;color:#c6d1dc;max-width:640px;margin:0}
+    .phead .wv{position:absolute;right:-60px;bottom:-30px;width:520px;opacity:.5;pointer-events:none}
+    .crumbs{display:flex;gap:8px;font-size:.86rem;color:var(--mut)}.crumbs a:hover{color:var(--sand)}
+    .faq details{border-bottom:1px solid var(--line);padding:20px 0}.light .faq details{border-color:#dccaa8}
+    .faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px;font:600 1.15rem/1.35 var(--disp)}
+    .faq summary::-webkit-details-marker{display:none}.faq summary::after{content:"+";font-size:1.5rem;line-height:1;color:var(--coral);transition:transform .2s}
+    .faq details[open] summary::after{transform:rotate(45deg)}.faq details p{margin:12px 0 0;color:var(--mut);max-width:760px}.light .faq details p{color:#4b596a}
+    .prose p{margin:0 0 1.1em;font-size:1.08rem;color:#d3dbe4}.light .prose p{color:#2c3a4b}
+    .foot{background:#07101a;padding:72px 0 30px;border-top:1px solid var(--line)}
+    .foot .cols{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px}
+    .foot h4{font:600 .76rem/1 var(--disp);letter-spacing:.16em;text-transform:uppercase;color:var(--tang);margin-bottom:16px}
+    .foot ul{list-style:none;margin:0;padding:0;display:grid;gap:9px;color:#b8c5d2;font-size:.94rem}.foot ul a:hover{color:#fff}
+    .foot .big{font:700 clamp(3rem,9vw,8.5rem)/.9 var(--disp);letter-spacing:-.05em;margin:60px 0 26px;background:linear-gradient(90deg,var(--coral),var(--tang) 45%,var(--sea));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .foot .bottom{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:.84rem;color:#7e8fa2;border-top:1px solid var(--line);padding-top:22px}
+    .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s,transform .6s}.reveal.in{opacity:1;transform:none}
+    @media(max-width:1020px){.grid4{grid-template-columns:repeat(2,1fr)}.grid3{grid-template-columns:repeat(2,1fr)}.foot .cols{grid-template-columns:1fr 1fr}}
+    @media(max-width:860px){.nav ul,.nav .acts{display:none}.tog{display:block}.nav.open ul{display:flex;flex-direction:column;position:absolute;top:72px;left:0;right:0;background:var(--night);padding:14px 20px 22px;border-bottom:1px solid var(--line)}.nav.open .acts{display:flex;position:absolute;top:330px;left:20px}
+      .section{padding:64px 0}.grid2,.grid3{grid-template-columns:1fr}.wrap{padding:0 20px}.chips .lbl{width:100%}}
+    @media(max-width:560px){.grid4{grid-template-columns:1fr 1fr;gap:12px}.acard .bd{padding:12px}.acard h3{font-size:1.05rem}.foot .cols{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+{%- assign heads = get_content_items(ContentType="artists", Filter="headliner eq 'true'", OrderBy="start_min asc", PageSize=6) -%}
+<div class="ticker" aria-hidden="true"><div class="tk">{% for k in (1..2) %}<span>Low Tide 2027</span><span>July 16 to 18</span>{% for h in heads.Items %}<span>{{ h.PrimaryField }}</span>{% endfor %}<span>Driftwood Point, Halcyon Bay</span><span>36 artists, 4 stages</span>{% endfor %}</div></div>
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="{{ PathBase }}/"><svg width="42" height="42" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#12233a"/><circle cx="32" cy="27" r="13" fill="#ff6b4a"/><path d="M6 42c6-5 11-5 17 0s11 5 17 0 11-5 18 0" stroke="#1fb5a8" stroke-width="5" fill="none" stroke-linecap="round"/><path d="M6 52c6-5 11-5 17 0s11 5 17 0 11-5 18 0" stroke="#ffb347" stroke-width="5" fill="none" stroke-linecap="round"/></svg><span>Low Tide<small>Festival 2027</small></span></a>
+    {%- assign menu = get_main_menu() %}{% assign seg = Target.RoutePath | split: "/" | first %}{% if seg == "artists" %}{% assign seg = "lineup" %}{% elsif seg == "stages" or seg == "places" %}{% assign seg = "venue" %}{% endif %}
+    <ul>
+      {%- for mi in menu.MenuItems %}{% assign u = mi.Url | remove: PathBase | remove_first: "/" %}
+      <li><a href="{{ mi.Url }}" class="{% if u != '' and u == seg %}on{% endif %}">{{ mi.Label }}</a></li>
+      {%- endfor %}
+    </ul>
+    <div class="acts"><a class="btn btn-coral ext" href="https://tickets.example.com/lowtide-2027" rel="noopener">Tickets</a></div>
+    <button class="tog" aria-label="Menu" onclick="document.getElementById('nav').classList.toggle('open')"><i class="bi bi-list"></i></button>
+  </div>
+</header>
+<main>{% renderbody %}</main>
+<footer class="foot">
+  <div class="wrap">
+    <div class="cols">
+      <div><p style="font:600 1.5rem/1.2 var(--disp);margin:0 0 12px;letter-spacing:-.02em">Three days of music<br>where the bay meets the dunes.</p><p class="mut" style="margin:0;max-width:340px;font-size:.94rem">Low Tide is a fictional festival, built as a demo with Raytha. Tickets link to a placeholder partner site.</p></div>
+      {%- assign fm = get_menu("footer") %}
+      <div><h4>Festival</h4><ul>{% for mi in fm.MenuItems %}<li><a href="{{ mi.Url }}">{{ mi.Label }}</a></li>{% endfor %}</ul></div>
+      <div><h4>Stages</h4><ul>{% assign fst = get_content_items(ContentType="stages", OrderBy="sort_order asc", PageSize=6) %}{% for s in fst.Items %}<li><a href="{{ PathBase }}/{{ s.RoutePath }}" style="display:inline-flex;gap:8px;align-items:center"><span class="dot" style="background:{{ s.PublishedContent.color }}"></span>{{ s.PrimaryField }}</a></li>{% endfor %}</ul></div>
+      <div><h4>Contact</h4><ul><li><a href="mailto:hello@lowtide.example">hello@lowtide.example</a></li><li><a href="mailto:access@lowtide.example">access@lowtide.example</a></li><li>Driftwood Point, Halcyon Bay</li><li style="margin-top:10px"><a class="btn btn-coral ext" href="https://tickets.example.com/lowtide-2027" rel="noopener" style="padding:.6rem 1rem">Get tickets</a></li></ul></div>
+    </div>
+    <div class="big">Low Tide 2027</div>
+    <div class="bottom"><span>&copy; 2026 Low Tide Festival (fictional). July 16 to 18, 2027.</span><span>Built with <a href="https://raytha.com" style="color:#fff">Raytha</a></span></div>
+  </div>
+</footer>
+<script>
+(function(){
+  var io='IntersectionObserver' in window?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.06}):null;
+  document.querySelectorAll('.reveal').forEach(function(el){io?io.observe(el):el.classList.add('in')});
+  // My picks: stars saved in this browser only
+  var K='lowtide-picks',picks={};try{picks=JSON.parse(localStorage.getItem(K)||'{}')}catch(e){}
+  function paint(){document.querySelectorAll('[data-pick]').forEach(function(b){var on=!!picks[b.getAttribute('data-pick')];b.classList.toggle('on',on);b.setAttribute('aria-pressed',on);if(b.dataset.lbl){b.querySelector('span').textContent=on?'In my schedule':'Add to my schedule'}});
+    var n=Object.keys(picks).length;document.querySelectorAll('[data-pick-count]').forEach(function(e){e.textContent=n});
+    document.querySelectorAll('[data-mine]').forEach(function(e){e.classList.toggle('picked',!!picks[e.getAttribute('data-mine')])})}
+  document.addEventListener('click',function(ev){var b=ev.target.closest('[data-pick]');if(!b)return;ev.preventDefault();var k=b.getAttribute('data-pick');if(picks[k])delete picks[k];else picks[k]=1;try{localStorage.setItem(K,JSON.stringify(picks))}catch(e){}paint()});
+  paint();
+})();
+</script>
+</body>
+</html>

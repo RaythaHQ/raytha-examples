@@ -1,0 +1,7 @@
+<section class="section" style="min-height:62vh;display:flex;align-items:center"><div class="wrap">
+  <span class="eyebrow">Error 404</span>
+  <h1 style="font-size:clamp(3rem,8vw,6.4rem);margin:16px 0;max-width:900px">The tide took <span class="hl">this page.</span></h1>
+  <p style="font-size:1.15rem;color:#c6d1dc;max-width:560px">It may have moved. Try the lineup, the schedule or the map.</p>
+  <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:26px"><a class="btn btn-coral" href="{{ PathBase }}/">Home</a><a class="btn btn-line" href="{{ PathBase }}/lineup">Lineup</a><a class="btn btn-line" href="{{ PathBase }}/schedule">Schedule</a><a class="btn btn-line" href="{{ PathBase }}/venue">Venue map</a></div>
+  {% if Target.ErrorId %}<p class="mut" style="margin-top:22px;font-size:.8rem">Error id: {{ Target.ErrorId }}</p>{% endif %}
+</div></section>

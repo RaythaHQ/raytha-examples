@@ -1,0 +1,53 @@
+{%- assign places = get_content_items(ContentType="places", OrderBy="name asc", PageSize=50) -%}
+{%- assign kinds = "gate:Entrances:door-open:#f4ead8,food:Food and drink:cup-straw:#ffb347,water:Free water:droplet-fill:#5ec8ff,medical:First aid:heart-pulse-fill:#ff5a7a,info:Information:info-lg:#b69cff,toilets:Toilets:badge-wc:#93a4b8,access:Accessibility:universal-access:#1fb5a8,lockers:Lockers and charging:lightning-charge-fill:#ffd166" | split: "," -%}
+<section class="phead" style="padding-bottom:30px"><div class="wrap">
+  <span class="eyebrow"><i class="bi bi-map"></i> Venue</span>
+  <h1>Driftwood Point, <span class="hl">Halcyon Bay.</span></h1>
+  <p>Four stages on a sandy point between the bay and the dunes. Tap a stage for its schedule, or pick what you are looking for to find it on the map.</p>
+</div></section>
+<section style="padding:0 0 80px"><div class="wrap">
+  <div class="chips" id="legend"><button type="button" class="on" data-k="all">Everything</button>{% for k in kinds %}{% assign kv = k | split: ":" %}<button type="button" data-k="{{ kv[0] }}"><i class="bi bi-{{ kv[2] }}" style="color:{{ kv[3] }}"></i> {{ kv[1] }}</button>{% endfor %}</div>
+  <div class="vmap reveal" id="vmap">
+    <svg viewBox="0 0 1000 620" preserveAspectRatio="none" aria-hidden="true">
+      <defs><pattern id="sw" width="40" height="16" patternUnits="userSpaceOnUse"><path d="M0 8c10-6 20-6 20 0s10 6 20 0" stroke="#1d4766" stroke-width="2" fill="none"/></pattern>
+      <radialGradient id="sandg" cx=".55" cy=".45" r=".7"><stop offset="0" stop-color="#e9d7b2"/><stop offset="1" stop-color="#d2b98b"/></radialGradient></defs>
+      <rect width="1000" height="620" fill="#0f2e48"/><rect width="1000" height="620" fill="url(#sw)"/>
+      <path d="M1000 0 L1000 620 L120 620 C60 560 40 500 90 440 C150 370 120 300 170 240 C230 170 330 150 400 110 C480 60 560 40 640 30 C760 14 880 0 1000 0 Z" fill="#c4a874"/>
+      <path d="M1000 24 L1000 620 L160 620 C110 560 96 505 140 450 C196 382 170 312 218 254 C276 186 370 168 436 130 C510 86 586 66 660 56 C770 42 880 28 1000 24 Z" fill="url(#sandg)"/>
+      <path d="M300 520 C380 470 470 500 560 470 S720 420 800 450" stroke="#b39463" stroke-width="22" fill="none" stroke-linecap="round" opacity=".55"/>
+      <path d="M880 120 L560 230 L380 380 L170 560" stroke="#fff" stroke-width="7" fill="none" stroke-dasharray="2 14" stroke-linecap="round" opacity=".7"/>
+      <g fill="#7ea37a" opacity=".55"><circle cx="620" cy="560" r="26"/><circle cx="660" cy="575" r="20"/><circle cx="420" cy="560" r="22"/><circle cx="900" cy="520" r="30"/><circle cx="940" cy="300" r="24"/></g>
+      <g transform="translate(796 330)"><rect x="-9" y="-58" width="18" height="58" fill="#f4ead8"/><rect x="-12" y="-66" width="24" height="10" fill="#ff6b4a"/><circle cx="0" cy="-72" r="6" fill="#ffd166"/></g>
+      <text x="40" y="70" fill="#5f8fb5" font-family="Space Grotesk" font-size="22" font-weight="600" letter-spacing="6">HALCYON BAY</text>
+    </svg>
+    {%- for s in Target.Items %}{% assign p = s.PublishedContent %}<a class="vst" href="{{ PathBase }}/{{ s.RoutePath }}" style="left:{{ p.map_x }}%;top:{{ p.map_y }}%;--c:{{ p.color }}"><i></i><span><b>{{ s.PrimaryField }}</b><small>{{ p.vibe }}</small></span></a>{% endfor %}
+    {%- for pl in places.Items %}{% assign q = pl.PublishedContent %}{% capture k %}{{ q.kind }}{% endcapture %}{% for kk in kinds %}{% assign kv = kk | split: ":" %}{% if kv[0] == k %}{% assign ki = kv[2] %}{% assign kc = kv[3] %}{% endif %}{% endfor %}<button type="button" class="vpl" data-kind="{{ k }}" style="left:{{ q.map_x }}%;top:{{ q.map_y }}%;--c:{{ kc }}" aria-label="{{ pl.PrimaryField }}"><i class="bi bi-{{ ki }}"></i><span class="tip"><b>{{ pl.PrimaryField }}</b>{{ q.description }}</span></button>{% endfor %}
+  </div>
+</div></section>
+<section class="section light"><div class="wrap">
+  <div class="shead"><div><span class="eyebrow">The stages</span><h2>Four stages, <span style="color:#c2410c">four moods.</span></h2></div><p>Every stage is a short walk from the others. The furthest two are eight minutes apart.</p></div>
+  <div class="grid4">{% for s in Target.Items %}{% assign p = s.PublishedContent %}<a class="card reveal" href="{{ PathBase }}/{{ s.RoutePath }}" style="border-top:6px solid {{ p.color }}"><span class="pill" style="margin-bottom:14px">{{ p.capacity }} capacity</span><h3>{{ s.PrimaryField }}</h3><p style="font-weight:600;color:var(--ink);margin-bottom:8px">{{ p.vibe }}</p><p>{{ p.description }}</p><span style="display:inline-flex;gap:6px;margin-top:16px;font-weight:600;font-size:.9rem">Stage schedule <i class="bi bi-arrow-right"></i></span></a>{% endfor %}</div>
+</div></section>
+<section class="section"><div class="wrap">
+  <div class="shead"><div><span class="eyebrow">On site</span><h2>Where to find <span class="hl">everything.</span></h2></div><a class="btn btn-line" href="{{ PathBase }}/info">Plan your visit <i class="bi bi-arrow-right"></i></a></div>
+  <div class="grid3">{% for pl in places.Items %}{% assign q = pl.PublishedContent %}{% capture k %}{{ q.kind }}{% endcapture %}{% for kk in kinds %}{% assign kv = kk | split: ":" %}{% if kv[0] == k %}{% assign ki = kv[2] %}{% assign kc = kv[3] %}{% assign kl = kv[1] %}{% endif %}{% endfor %}<div class="card reveal" style="display:flex;gap:16px"><div class="ic" style="background:{{ kc }};flex:none;margin:0"><i class="bi bi-{{ ki }}"></i></div><div><span class="mut" style="font-size:.76rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em">{{ kl }}</span><h3 style="font-size:1.15rem;margin:4px 0 6px">{{ pl.PrimaryField }}</h3><p style="font-size:.92rem">{{ q.description }}</p></div></div>{% endfor %}</div>
+</div></section>
+<style>
+  .vmap{position:relative;border-radius:26px;overflow:hidden;aspect-ratio:1000/620;box-shadow:0 30px 80px rgba(0,0,0,.4)}
+  .vmap svg{position:absolute;inset:0;width:100%;height:100%}
+  .vst{position:absolute;transform:translate(-50%,-50%);display:flex;align-items:center;gap:10px;z-index:2}
+  .vst i{width:30px;height:30px;border-radius:50%;background:var(--c);box-shadow:0 0 0 8px color-mix(in srgb,var(--c) 35%,transparent),0 0 0 18px color-mix(in srgb,var(--c) 15%,transparent);animation:pulse 2.6s ease-in-out infinite}
+  .vst span{background:var(--night);padding:8px 12px;border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,.3)}.vst b{display:block;font:700 .98rem/1.1 var(--disp)}.vst small{color:var(--mut);font-size:.74rem}
+  @keyframes pulse{50%{box-shadow:0 0 0 12px color-mix(in srgb,var(--c) 30%,transparent),0 0 0 26px color-mix(in srgb,var(--c) 8%,transparent)}}
+  .vpl{position:absolute;transform:translate(-50%,-50%);width:34px;height:34px;border-radius:50%;border:3px solid var(--night);background:var(--c);color:var(--night);display:grid;place-items:center;cursor:pointer;z-index:1;transition:opacity .2s,transform .2s;font-size:.95rem;padding:0}
+  .vpl .tip{display:none;position:absolute;bottom:42px;left:50%;transform:translateX(-50%);width:230px;background:var(--sand);color:var(--ink);padding:12px 14px;border-radius:12px;font:400 .82rem/1.4 var(--sans);text-align:left;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+  .vpl .tip b{display:block;font:700 .95rem/1.2 var(--disp);margin-bottom:4px}
+  .vpl:hover,.vpl:focus{z-index:5;transform:translate(-50%,-50%) scale(1.15)}.vpl:hover .tip,.vpl:focus .tip{display:block}
+  .vmap.f .vpl{opacity:.12}.vmap.f .vpl.hit{opacity:1;transform:translate(-50%,-50%) scale(1.25)}
+  @media(max-width:760px){.vst span{display:none}.vst i{width:18px;height:18px}.vpl{width:24px;height:24px;font-size:.7rem;border-width:2px}.vmap{aspect-ratio:auto;height:420px}}
+</style>
+<script>
+(function(){var m=document.getElementById('vmap');document.querySelectorAll('#legend button').forEach(function(b){b.addEventListener('click',function(){
+  document.querySelectorAll('#legend button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');var k=b.dataset.k;
+  m.classList.toggle('f',k!=='all');m.querySelectorAll('.vpl').forEach(function(p){p.classList.toggle('hit',p.dataset.kind===k)})})})})();
+</script>
