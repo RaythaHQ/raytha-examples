@@ -1,0 +1,7 @@
+{%- assign s = widget.settings -%}{%- assign n = s.count | default: 4 -%}
+{%- assign ph = get_content_items(ContentType="photos", OrderBy="sort_order asc", PageSize=n) -%}
+<section class="section"><div class="wrap">
+  <div class="shead reveal"><span class="label t">{{ s.kicker }}</span><h2>{{ s.headline }} <em>{{ s.accent }}</em></h2><p>{{ s.subtitle }}</p></div>
+  <div class="strip">{% for x in ph.Items %}{% assign p = x.PublishedContent %}{% assign src = p.image.Value | attachment_redirect_url %}<a class="ph reveal" href="{{ src }}" data-lb data-cap="{{ x.PrimaryField }} · {{ p.place }}, {{ p.year }}"><figure style="margin:0"><img src="{{ src }}" alt="Illustration: {{ x.PrimaryField }}" loading="lazy"><figcaption>{{ x.PrimaryField }}<small>{{ p.place }} · {{ p.year }}</small></figcaption></figure></a>{% endfor %}</div>
+  <div style="text-align:center;margin-top:36px"><a class="btn btn-line" href="{{ PathBase }}/gallery">See the gallery <i class="bi bi-arrow-right"></i></a></div>
+</div></section>

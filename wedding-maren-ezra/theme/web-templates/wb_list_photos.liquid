@@ -1,0 +1,10 @@
+<section class="phead"><div class="wrap"><div class="crumbs"><a href="{{ PathBase }}/">Home</a><span>/</span><span>Gallery</span></div>
+  <h1>A few of our <em>favourite days</em></h1><p>Ten years of trips, apartments and long walks, drawn as little postcards. Tap any of them to see it larger.</p></div></section>
+<section class="section" style="padding-top:30px"><div class="wrap">
+  <div class="gal">
+  {%- for ph in Target.Items %}{% assign p = ph.PublishedContent %}{% assign src = p.image.Value | attachment_redirect_url %}
+    <a class="ph reveal" href="{{ src }}" data-lb data-cap="{{ ph.PrimaryField }} · {{ p.place }}, {{ p.year }}"><figure style="margin:0"><img src="{{ src }}" alt="Illustration: {{ ph.PrimaryField }}" loading="lazy"><figcaption>{{ ph.PrimaryField }}<small>{{ p.place }} · {{ p.year }}</small></figcaption></figure></a>
+  {%- endfor %}
+  </div>
+  <p class="muted" style="text-align:center;margin-top:30px">After the wedding, our photographer's pictures and yours will go in the shared album on the <a href="{{ PathBase }}/guests" style="color:var(--terra)">guest page</a>.</p>
+</div></section>

@@ -1,0 +1,11 @@
+<section class="phead"><div class="wrap"><div class="crumbs"><a href="{{ PathBase }}/">Home</a><span>/</span><span>Our story</span></div>
+  <h1>How we got <em>here</em></h1><p>Ten years, four apartments, one beagle and a canoe with no paddles. The short version, chapter by chapter.</p></div></section>
+<section class="section" style="padding-top:30px"><div class="wrap">
+  {%- for c in Target.Items %}{% assign p = c.PublishedContent %}
+  <article class="chapter reveal" id="{{ c.RoutePath | remove: 'story/' }}">
+    <div class="ch-art"><div class="arch"><img src="{{ p.image.Value | attachment_redirect_url }}" alt="Illustration: {{ c.PrimaryField }}, {{ p.place }}" loading="lazy"></div></div>
+    <div><div class="yr">{{ p.year }}</div><span class="label">{{ p.place }}</span><h2>{{ c.PrimaryField }}</h2><div class="prose">{{ p.body }}</div></div>
+  </article>
+  {%- endfor %}
+</div></section>
+<section class="section tight"><div class="wrap"><div class="cta"><span class="label" style="color:#b7c2ad">The next chapter</span><h2>Come and <em>celebrate with us</em></h2><p>Saturday, June 12, 2027, under the apple trees at Willowbank.</p><div class="row"><a class="btn btn-paper" href="{{ PathBase }}/rsvp">RSVP</a><a class="btn btn-ghost" href="{{ PathBase }}/schedule">See the schedule</a></div></div></div></section>

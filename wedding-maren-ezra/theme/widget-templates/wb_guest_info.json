@@ -1,0 +1,8 @@
+{"label": "Willowbank: guest details (use on the guest page only)", "fields": [
+  {"developerName": "kicker", "label": "Kicker", "fieldType": "single_line_text"},
+  {"developerName": "headline", "label": "Headline", "fieldType": "single_line_text"},
+  {"developerName": "intro", "label": "Intro", "fieldType": "long_text"},
+  {"developerName": "shuttles", "label": "Shuttle times", "fieldType": "repeater", "subFields": [{"developerName": "time", "label": "Time", "fieldType": "single_line_text"}, {"developerName": "route", "label": "Route", "fieldType": "single_line_text"}]},
+  {"developerName": "contacts", "label": "Day-of contacts", "fieldType": "repeater", "subFields": [{"developerName": "name", "label": "Name", "fieldType": "single_line_text"}, {"developerName": "role", "label": "Role", "fieldType": "single_line_text"}, {"developerName": "phone", "label": "Phone", "fieldType": "single_line_text"}]},
+  {"developerName": "notes", "label": "Notes", "fieldType": "repeater", "subFields": [{"developerName": "icon", "label": "Icon (Bootstrap Icons name)", "fieldType": "single_line_text"}, {"developerName": "title", "label": "Title", "fieldType": "single_line_text"}, {"developerName": "text", "label": "Text", "fieldType": "long_text"}, {"developerName": "link_label", "label": "Link label", "fieldType": "single_line_text"}, {"developerName": "link_url", "label": "Link", "fieldType": "single_line_text"}]}
+]}

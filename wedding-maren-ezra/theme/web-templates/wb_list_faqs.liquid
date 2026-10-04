@@ -1,0 +1,14 @@
+{%- assign topics = "rsvp,attire,travel,day,gifts" | split: "," -%}{%- assign tlabels = "RSVP and guests,What to wear,Getting there,On the day,Gifts" | split: "," -%}
+<section class="phead"><div class="wrap"><div class="crumbs"><a href="{{ PathBase }}/">Home</a><span>/</span><span>FAQ</span></div>
+  <h1>Good <em>questions</em></h1><p>Everything people have asked us so far. If yours isn't here, email us or call Ada, our planner.</p></div></section>
+<section class="section" style="padding-top:30px"><div class="narrow">
+  <nav class="faq-nav">{% for t in topics %}<a href="#{{ t }}">{{ tlabels[forloop.index0] }}</a>{% endfor %}</nav>
+  {%- for t in topics %}
+  <div class="faq-group reveal" id="{{ t }}"><span class="label t">{{ forloop.index }} / {{ topics.size }}</span><h2>{{ tlabels[forloop.index0] }}</h2>
+    {%- for q in Target.Items %}{% capture qt %}{{ q.PublishedContent.topic }}{% endcapture %}{% if qt == t %}
+    <details{% if forloop.first and t == "rsvp" %} open{% endif %}><summary>{{ q.PrimaryField }}</summary><div class="ans">{{ q.PublishedContent.answer }}</div></details>
+    {%- endif %}{% endfor %}
+  </div>
+  {%- endfor %}
+  <div class="card" style="text-align:center;margin-top:20px"><h3 style="font-size:2rem">Still wondering?</h3><p class="muted" style="margin:8px 0 18px">Email <a href="mailto:hello@example.com" style="color:var(--terra)">hello@example.com</a> or call Ada at Hollow &amp; Vine Events on +1 518-555-0142.</p><a class="btn btn-t" href="{{ PathBase }}/rsvp">RSVP now</a></div>
+</div></section>

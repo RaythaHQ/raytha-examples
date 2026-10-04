@@ -1,0 +1,13 @@
+<section class="phead"><div class="wrap"><div class="crumbs"><a href="{{ PathBase }}/">Home</a><span>/</span><span>Registry</span></div>
+  <h1>Your being there <em>is the gift</em></h1><p>Truly. But if you'd like to give something, here's where to find our registries. Each link opens the registry on its own site.</p></div></section>
+<section class="section" style="padding-top:30px"><div class="wrap">
+  <div class="grid2">
+  {%- for r in Target.Items %}{% assign p = r.PublishedContent %}
+    <a class="card reg lift reveal" href="{{ p.url }}" target="_blank" rel="noopener" style="--c:{{ p.color }}">
+      <span class="ic"><i class="bi {{ p.icon }}"></i></span><span class="label">{{ p.store }}</span><h3>{{ r.PrimaryField }}</h3><p>{{ p.description }}</p>
+      <span class="go">Visit the registry <i class="bi bi-box-arrow-up-right"></i></span>
+    </a>
+  {%- endfor %}
+  </div>
+  <p class="muted" style="text-align:center;margin-top:40px;font-size:.95rem">Bringing a gift on the day? There will be a card box at the barn. We'd rather you didn't carry anything big on the plane.</p>
+</div></section>

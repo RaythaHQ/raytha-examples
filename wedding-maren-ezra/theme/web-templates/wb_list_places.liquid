@@ -1,0 +1,18 @@
+{%- comment -%} Things to do. ?kind= is checked against the known kinds before it goes into the filter. {%- endcomment -%}
+{%- assign kinds = "eat,drink,outdoors,culture,shop" | split: "," -%}{%- assign klabels = "Eat,Drink,Outdoors,Art and history,Shop" | split: "," -%}{%- assign kicons = "bi-egg-fried,bi-cup-straw,bi-tree,bi-bank,bi-bag-heart" | split: "," -%}
+{%- assign qk = "" -%}{%- for k in kinds -%}{%- if QueryParams.kind == k -%}{%- assign qk = k -%}{%- endif -%}{%- endfor -%}
+{%- if qk != "" -%}{%- capture f %}kind eq '{{ qk }}'{% endcapture -%}{%- assign items = get_content_items(ContentType="places", Filter=f, OrderBy="sort_order asc", PageSize=60).Items -%}{%- else -%}{%- assign items = Target.Items -%}{%- endif -%}
+<section class="phead"><div class="wrap"><div class="crumbs"><a href="{{ PathBase }}/">Home</a><span>/</span><span>Things to do</span></div>
+  <h1>Make a <em>weekend</em> of it</h1><p>Our favourite places to eat, drink, walk and wander within half an hour of Willowbank. Every one of them comes with a note from us.</p></div></section>
+<section class="section" style="padding-top:30px"><div class="wrap">
+  <div class="filters"><a href="{{ PathBase }}/things-to-do" class="{% if qk == '' %}on{% endif %}">Everything</a>{% for k in kinds %}<a href="{{ PathBase }}/things-to-do?kind={{ k }}" class="{% if qk == k %}on{% endif %}"><i class="bi {{ kicons[forloop.index0] }}"></i> {{ klabels[forloop.index0] }}</a>{% endfor %}</div>
+  <div class="grid3">
+  {%- for it in items %}{% assign p = it.PublishedContent %}{% capture k %}{{ p.kind }}{% endcapture %}{% assign ki = 0 %}{% for kk in kinds %}{% if kk == k %}{% assign ki = forloop.index0 %}{% endif %}{% endfor %}
+    <a class="card place lift reveal" href="{{ PathBase }}/{{ it.RoutePath }}">
+      <div style="display:flex;justify-content:space-between;align-items:center"><span class="ic"><i class="bi {{ kicons[ki] }}"></i></span><span class="label">{{ p.town }}</span></div>
+      <span class="label t">{{ klabels[ki] }}</span><h3>{{ it.PrimaryField }}</h3><p>{{ p.description }}</p>
+      <div class="note">&ldquo;{{ p.our_note }}&rdquo;</div>
+    </a>
+  {%- endfor %}
+  </div>
+</div></section>

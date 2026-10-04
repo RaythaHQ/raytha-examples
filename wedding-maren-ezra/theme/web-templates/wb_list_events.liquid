@@ -1,0 +1,32 @@
+{%- comment -%} The weekend schedule, grouped by day. Events marked "guests only" are left out of the HTML entirely unless the visitor is a signed-in member of the guests group. {%- endcomment -%}
+{%- assign is_guest = false -%}{%- for g in CurrentUser.UserGroups -%}{%- if g == "guests" -%}{%- assign is_guest = true -%}{%- endif -%}{%- endfor -%}
+{%- assign days = "friday,saturday,sunday" | split: "," -%}{%- assign names = "Friday,Saturday,Sunday" | split: "," -%}{%- assign dates = "June 11|June 12, the wedding|June 13" | split: "|" -%}
+<section class="phead"><div class="wrap"><div class="crumbs"><a href="{{ PathBase }}/">Home</a><span>/</span><span>Schedule</span></div>
+  <h1>The <em>weekend</em></h1><p>Three days in the Hudson Valley. Come to as much as you can; the only part we'd hate for you to miss is Saturday at 4:30.</p>
+  <div style="margin-top:26px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap"><a class="btn btn-line" href="{{ PathBase }}/calendar.ics"><i class="bi bi-calendar-plus"></i> Add the weekend to your calendar</a><a class="btn btn-t" href="{{ PathBase }}/rsvp">RSVP</a></div></div></section>
+<section class="section" style="padding-top:40px"><div class="wrap">
+{%- for d in days %}{% assign di = forloop.index0 %}
+  <div class="day">
+    <div><span class="label t">Day {{ forloop.index }}</span><h2>{{ names[di] }}</h2><div class="date">{{ dates[di] }}</div></div>
+    <div>
+    {%- assign hidden = 0 -%}
+    {%- for e in Target.Items %}{% assign p = e.PublishedContent %}{% capture ed %}{{ p.day }}{% endcapture %}{% capture go %}{{ p.guests_only | downcase }}{% endcapture %}
+      {%- if ed == d -%}
+        {%- if go == "true" and is_guest == false -%}{%- assign hidden = hidden | plus: 1 -%}{%- else -%}
+      <article class="ev reveal{% if go == 'true' %} private{% endif %}">
+        <div class="tm"><i class="bi {{ p.icon }}"></i>{{ p.time_label }}</div>
+        <div>{% if go == "true" %}<span class="chip lock" style="background:#f0b38f;color:var(--forest);margin-bottom:10px"><i class="bi bi-unlock"></i> Guests only</span>{% endif %}
+          <h3><a href="{{ PathBase }}/{{ e.RoutePath }}">{{ e.PrimaryField }}</a></h3>
+          <div class="where">{{ p.venue }}</div><div class="addr">{{ p.address }}</div>
+          <p>{{ p.summary }}</p>
+          <div class="acts"><span class="chip{% if go == 'true' %} t{% endif %}"><i class="bi bi-stars"></i> {{ p.dress_code }}</span>{% if go != "true" %}<a href="{{ PathBase }}/calendar.ics?id={{ e.Id }}"><i class="bi bi-calendar-plus"></i> Add to calendar</a>{% endif %}<a href="{{ p.map_url }}" target="_blank" rel="noopener"><i class="bi bi-geo-alt"></i> Map</a><a href="{{ PathBase }}/{{ e.RoutePath }}">Details</a></div>
+        </div>
+      </article>
+        {%- endif -%}
+      {%- endif -%}
+    {%- endfor %}
+    {%- if hidden > 0 %}<div class="locked"><i class="bi bi-lock"></i><div><b>One more thing on {{ names[di] }} night.</b><br><span class="muted">Signed-in guests can see it. <a href="{{ PathBase }}/account/login?returnUrl=/schedule" style="color:var(--terra)">Sign in</a></span></div></div>{% endif %}
+    </div>
+  </div>
+{%- endfor %}
+</div></section>
