@@ -7,6 +7,8 @@ Usage:
 
 shots.json is a list of shots:
   {"name": "01-home-1440.png", "path": "/", "device": "desktop", "full_page": false, "scroll": 0, "login": false}
+Add "type": ["css selector", "text"] to type into a field (a search box, say) before the screenshot.
+Add "local": {"key": value} to set localStorage on the site before the page loads (for example saved progress).
 
 device is "desktop" (1440x900) or "mobile" (390x844). Shots with "login": true are taken after signing in
 with SITE_USER_EMAIL / SITE_USER_PASSWORD (a public site user, never an admin), if those are set.
@@ -64,7 +66,14 @@ async def main():
                     continue
                 contexts[key] = page
             page = contexts[key]
+            if shot.get("local"):
+                if not page.url.startswith(BASE):
+                    await page.goto(BASE + "/", wait_until="domcontentloaded")
+                await page.evaluate("o => { for (const k in o) localStorage.setItem(k, typeof o[k] === 'string' ? o[k] : JSON.stringify(o[k])) }", shot["local"])
             await prep(page, shot["path"], shot.get("scroll", 0))
+            if shot.get("type"):
+                await page.type(shot["type"][0], shot["type"][1], delay=60)
+                await page.wait_for_timeout(1200)
             await page.screenshot(path=os.path.join(out, shot["name"]), full_page=bool(shot.get("full_page")))
             print(shot["name"])
         await browser.close()

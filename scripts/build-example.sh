@@ -54,12 +54,12 @@ rt theme push ./theme --activate >/dev/null
 rt schema import schema.json | jq -r '.data | tostring' | cut -c1-300 >&2
 rt theme push ./theme >/dev/null
 
-# 2. Bind every view to the list template named in schema.json
+# 2. Bind every view to the list template named in schema.json (views with "isPublished": false stay private)
 step "Views: binding list templates"
-jq -r '.contentTypes[] | .developerName as $t | .views[] | "\($t) \(.developerName) \(.template)"' schema.json |
-while read -r t view tpl; do
+jq -r '.contentTypes[] | .developerName as $t | .views[] | "\($t) \(.developerName) \(.template) \(if .isPublished == false then "false" else "true" end)"' schema.json |
+while read -r t view tpl pub; do
   vid=$(rt content-type views list "$t" --all | jq -r --arg v "$view" '(.data.items // .data)[] | select(.developerName==$v) | .id')
-  if [[ -n "$vid" ]]; then rt content-type views settings "$t" "$vid" --template "$tpl" --published true >/dev/null; note "$t/$view -> $tpl"; fi
+  if [[ -n "$vid" ]]; then rt content-type views settings "$t" "$vid" --template "$tpl" --published "$pub" >/dev/null; note "$t/$view -> $tpl$([[ $pub == false ]] && echo ' (not published)')"; fi
 done
 
 # 3. Seed content (run from seed/ so @file: paths resolve), then the detail template for every item

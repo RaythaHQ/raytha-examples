@@ -23,6 +23,7 @@ These examples go with the weekly [use cases on raytha.com](https://raytha.com/u
 | [<img src="https://raytha.com/raytha/media-items/objectkey/yxBjCaWwv02PaLCf2EC_gg_orbitly_help_01_home_hero.webp" width="360" alt="Orbitly help center">](help-center-orbitly/) | **[Orbitly help center](help-center-orbitly/)**: a knowledge base for a fictional SaaS product with search as you type from a Raytha Function, topics, article pages with an outline and related articles, a changelog with an RSS feed, and a status page. 3 content types, 6 widgets, 2 functions. |
 | [<img src="https://raytha.com/raytha/media-items/objectkey/AJBqKggehkCGdW2HvJrzQA_atlas_lms_01_home_hero.webp" width="360" alt="Atlas Learning course portal">](lms-portal-atlas/) | **[Atlas Learning](lms-portal-atlas/)**: a course portal with a catalog filtered by topic and level, course pages with a curriculum, free preview lessons, members-only lessons that never leave the server for visitors, and a My learning dashboard, all on Raytha's login and user groups. 3 content types, 8 widgets. |
 | [<img src="https://raytha.com/raytha/media-items/objectkey/obNNiviyJkemqFMYRWLrrw_brightwell_dme_01_home_hero.webp" width="360" alt="Brightwell Medical Supply">](medical-supply-brightwell/) | **[Brightwell Medical Supply](medical-supply-brightwell/)**: a durable medical equipment provider's website with a catalog you can search by HCPCS code and filter by category, rent or buy, and coverage, product pages with specifications, patient guides, FAQs and locations with today's hours. No payment forms. 5 content types, 12 widgets. |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/ysBc0hzkM0y7qJE-PF8QPQ_halftone_awards_01_home_hero.webp" width="360" alt="Halftone Awards">](awards-halftone/) | **[Halftone Awards](awards-halftone/)**: an awards site with categories and live deadline countdowns, an entry gallery filtered by category, past winners by year, and entry and nomination forms that post to Raytha Functions and save drafts for review. 4 content types, 11 widgets, 2 functions. |
 
 ## Quickstart
 
@@ -96,6 +97,7 @@ The examples were built from a short brief with no human help. To do the same fo
 ├── help-center-orbitly/         # newer examples share scripts/build-example.sh
 ├── lms-portal-atlas/
 ├── medical-supply-brightwell/
+├── awards-halftone/
 ├── skills/raytha-site-builder/  # agent skill: brief -> finished Raytha site
 ├── templates/brief-template.md  # fill-in brief
 ├── scripts/                     # shared build script, scaffold, screenshots, walkthroughs, export, secret scan

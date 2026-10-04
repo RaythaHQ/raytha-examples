@@ -86,6 +86,21 @@ These are from real builds on Raytha 2.0.1 with CLI 0.1.1.
     is the company itself: read `.PrimaryField` and `.RoutePath` from it, no second lookup needed.
 18. **Route paths can't start a segment with a dot.** A title like ".NET Engineer" gives `jobs/.NET-Engineer`;
     changing it with `content settings` is rejected until you drop the dot.
+19. **Function routes can't start with `api`.** Raytha reserves that path, so `function create --route-path api/search`
+    fails validation. Use something like `search.json` or `feeds/search`.
+20. **`{% include %}` of another web template isn't supported.** It renders an error. Repeat small partials (a card,
+    say) in each template that needs them.
+21. **Checkbox values render as `True` or `False`.** `{% if lesson.PublishedContent.is_preview == "true" %}` never
+    matches. Capture and downcase first: `{% capture fp %}{{ lesson.PublishedContent.is_preview }}{% endcapture %}`
+    then compare `fp | downcase` to `"true"`.
+22. **Blank checks need a captured string.** A field value is an object, so `{% if p.studio != "" %}` is always true.
+    Capture it, strip it, then compare: `{% capture st %}{{ p.studio | strip }}{% endcapture %}{% if st != "" %}`.
+23. **HTML forms can post straight to a Function.** An `http_request` Function's `post(payload, query)` gets a form
+    post as a list of `{Key, Value}` pairs (`Value` is an array), with no antiforgery token needed. Save with
+    `API_V1.CreateContentItem(type, true, templateId, values)` (`true` saves a draft; the template id is required,
+    look it up by developer name with `API_V1.GetWebTemplates()`), then `return new RedirectResult("/thanks")`.
+    The endpoint is public: add a honeypot field, validate every value on the server, and keep submissions as drafts
+    in a content type whose views have `"isPublished": false`. See `awards-halftone/functions/`.
 
 ## Content and assets
 
