@@ -1,0 +1,14 @@
+<section class="phead"><div class="wrap"><div class="crumbs"><a href="{{ PathBase }}/">Home</a><span>/</span><a href="{{ PathBase }}/membership">Membership</a><span>/</span><span>Compare tiers</span></div>
+  <h1>Compare <em>every tier.</em></h1><p>All memberships run for twelve months, include your local chapter and can be upgraded at any time. Joining happens on our membership partner's secure site.</p></div></section>
+<section class="section" style="padding-top:60px"><div class="wrap">
+  <div class="tiers">
+  {%- for t in Target.Items %}{% assign p = t.PublishedContent %}{% capture hi %}{{ p.highlight }}{% endcapture %}{% assign bl = p.benefits | newline_to_br | split: "<br />" %}
+    <div class="tier{% if hi == 'True' %} hi{% endif %}">{% if hi == "True" %}<span class="flag">Most popular</span>{% endif %}
+      <h3>{{ t.PrimaryField }}</h3><div class="price">{{ p.price }}</div><div class="aud">{{ p.audience }}</div>
+      <ul>{% for b in bl %}{% assign bs = b | strip %}{% if bs != "" %}<li>{{ bs }}</li>{% endif %}{% endfor %}</ul>
+      <a class="btn {% if hi == 'True' %}btn-clay{% else %}btn-line{% endif %}" href="{{ PathBase }}/{{ t.RoutePath }}">See details</a>
+    </div>
+  {%- endfor %}
+  </div>
+  <p class="muted" style="margin-top:26px;font-size:.9rem"><i class="bi bi-info-circle"></i> This site does not take payments. The "Join" buttons open our membership partner (a placeholder link in this example). Prefer to talk first? <a href="{{ PathBase }}/contact" style="text-decoration:underline">Contact the membership team</a>.</p>
+</div></section>

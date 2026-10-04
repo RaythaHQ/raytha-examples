@@ -1,0 +1,31 @@
+{%- assign is_member = false -%}{%- for g in CurrentUser.UserGroups -%}{%- if g == "members" -%}{%- assign is_member = true -%}{%- endif -%}{%- endfor -%}{%- if CurrentUser.IsAdmin -%}{%- assign is_member = true -%}{%- endif -%}
+{%- assign kinds = "toolkit:Toolkit:bi-tools:#c8553d,template:Template:bi-file-earmark-text:#3f7d5a,recording:Recording:bi-camera-video:#2f6f8f,guide:Guide:bi-signpost-2:#c98f0f" | split: "," -%}
+{%- assign today = "now" | date: "%Y-%m-%d" -%}
+{% if is_member %}
+{%- assign res = get_content_items(ContentType="resources", OrderBy="sort_order asc", PageSize=4) -%}
+{%- assign evs = get_content_items(ContentType="events", OrderBy="start asc", PageSize=30) -%}
+<section class="phead"><div class="wrap"><div class="crumbs"><a href="{{ PathBase }}/">Home</a><span>/</span><span>My membership</span></div>
+  <h1>Welcome back{% if CurrentUser.FirstName %}, <em>{{ CurrentUser.FirstName }}.</em>{% else %}.{% endif %}</h1><p>Your membership is active. Everything in the library is open to you, and member pricing applies at every event.</p></div></section>
+<section class="section" style="padding-top:48px"><div class="wrap">
+  <div class="grid4" style="margin-bottom:56px">
+    <div class="ben"><div class="ic" style="background:var(--leaf)"><i class="bi bi-patch-check"></i></div><h3>Active</h3><p>Membership status</p></div>
+    <div class="ben"><div class="ic" style="background:var(--sky)"><i class="bi bi-journal-richtext"></i></div><h3>{{ res.TotalCount }} resources</h3><p>Open in the library</p></div>
+    <div class="ben"><div class="ic" style="background:var(--clay)"><i class="bi bi-ticket-perforated"></i></div><h3>Member rate</h3><p>At every workshop and the Gathering</p></div>
+    <div class="ben"><div class="ic" style="background:var(--mustard)"><i class="bi bi-check2-square"></i></div><h3>Your vote</h3><p>Board elections open in November</p></div>
+  </div>
+  <div class="split"><div>
+    <div class="shead" style="margin-bottom:20px"><h2 style="font-size:2rem;margin:0">From the library</h2><a class="btn btn-ghost" href="{{ PathBase }}/resources">Open the library</a></div>
+    <div style="display:grid;gap:12px">{% for r in res.Items %}{% assign p = r.PublishedContent %}{% capture k %}{{ p.kind }}{% endcapture %}{% for pair in kinds %}{% assign kv = pair | split: ":" %}{% if kv[0] == k %}{% assign kl = kv[1] %}{% assign ki = kv[2] %}{% assign kc = kv[3] %}{% endif %}{% endfor %}
+      <a class="res" href="{{ PathBase }}/{{ r.RoutePath }}"><div class="ic" style="background:{{ kc }}"><i class="bi {{ ki }}"></i></div><div><h3>{{ r.PrimaryField }}</h3><p>{{ p.summary }}</p></div><span class="pill green"><i class="bi bi-unlock"></i> Open</span></a>{% endfor %}</div>
+  </div>
+  <aside class="aside"><div class="box"><h3>Members-only events</h3>{% assign n = 0 %}{% for e in evs.Items %}{% assign q = e.PublishedContent %}{% capture au %}{{ q.audience }}{% endcapture %}{% capture d %}{{ q.start.Value | date: "%Y-%m-%d" }}{% endcapture %}{% if au == "members" and d >= today %}{% assign n = n | plus: 1 %}
+      <a href="{{ PathBase }}/{{ e.RoutePath }}" style="display:flex;gap:12px;padding:12px 0;border-top:1px solid var(--line)"><div class="date" style="width:54px;height:54px;border-radius:12px;flex:none"><div><b style="font-size:1.2rem">{{ q.start.Value | date: "%-d" }}</b><span style="font-size:.6rem">{{ q.start.Value | date: "%b" }}</span></div></div><div><b style="font-weight:600">{{ e.PrimaryField }}</b><div class="muted" style="font-size:.85rem">{{ q.time_label }}</div></div></a>{% endif %}{% endfor %}{% if n == 0 %}<p class="muted">None scheduled right now.</p>{% endif %}</div>
+    <div class="box"><h3>Account</h3><div class="facts"><div><span>Email</span><b>{{ CurrentUser.EmailAddress }}</b></div></div><a class="btn btn-ghost" href="{{ PathBase }}/account/logout" style="margin-top:14px">Sign out</a></div></aside>
+  </div>
+</div></section>
+{% else %}
+<section class="section"><div class="wrap" style="max-width:900px"><div class="lockwall"><span class="eyebrow" style="color:var(--mustard)">Members area</span>
+  <h2>{% if CurrentUser.IsAuthenticated %}Your account isn't linked to a membership yet.{% else %}Sign in to see your membership.{% endif %}</h2>
+  <p>{% if CurrentUser.IsAuthenticated %}If you joined recently, it can take one business day for your member access to switch on. Still stuck? Write to the membership team.{% else %}Your dashboard holds the member library, members-only events and your account details.{% endif %}</p>
+  <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:22px;position:relative;z-index:1">{% if CurrentUser.IsAuthenticated %}<a class="btn btn-clay" href="{{ PathBase }}/contact">Contact membership</a>{% else %}<a class="btn btn-clay" href="{{ PathBase }}/account/login?returnUrl=/members"><i class="bi bi-box-arrow-in-right"></i> Member sign in</a>{% endif %}<a class="btn btn-line" style="border-color:#fff;color:#fff" href="{{ PathBase }}/membership">Membership options</a></div></div></div></section>
+{% endif %}

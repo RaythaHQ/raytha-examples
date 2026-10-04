@@ -1,0 +1,7 @@
+{
+  "label": "Commonground list: compare tiers",
+  "isBaseLayout": false,
+  "parent": "raytha_html_base_layout",
+  "allowAccessForNewContentTypes": false,
+  "contentTypes": ["tiers"]
+}
