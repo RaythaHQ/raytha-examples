@@ -1,0 +1,5 @@
+{"label": "Willowbank: welcome note", "fields": [
+  {"developerName": "kicker", "label": "Kicker", "fieldType": "single_line_text"},
+  {"developerName": "text", "label": "Note", "fieldType": "long_text"},
+  {"developerName": "signature", "label": "Signature", "fieldType": "single_line_text"}
+]}

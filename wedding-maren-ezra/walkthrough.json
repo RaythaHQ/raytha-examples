@@ -1,0 +1,177 @@
+{
+  "slug": "maren-ezra-wedding",
+  "name": "Maren & Ezra",
+  "viewport": [
+    1440,
+    810
+  ],
+  "output": [
+    1920,
+    1080
+  ],
+  "colorScheme": "light",
+  "title": {
+    "kicker": "Raytha use case",
+    "heading": "Maren & Ezra",
+    "subheading": "A wedding website for guests: the schedule, travel and hotel blocks, things to do, FAQ, registry, gallery and a working RSVP, built on Raytha by an AI agent with the CLI.",
+    "hold": 1.6
+  },
+  "end": {
+    "heading": "Built with Raytha",
+    "subheading": "Open-source .NET CMS. Get the brief, screenshots and a one-command rebuild kit.",
+    "url": "raytha.com/use-cases/maren-ezra-wedding",
+    "hold": 2.6
+  },
+  "login": {
+    "path": "/account/login",
+    "emailEnv": "SITE_USER_EMAIL",
+    "passwordEnv": "SITE_USER_PASSWORD"
+  },
+  "scenes": [
+    {
+      "url": "/",
+      "caption": "A wedding site with a live countdown to the ceremony",
+      "actions": [
+        {
+          "hold": 1.2,
+          "poster": true
+        },
+        {
+          "scroll": 1000,
+          "dur": 2.0
+        },
+        {
+          "hold": 0.6
+        }
+      ]
+    },
+    {
+      "url": "/schedule",
+      "caption": "The weekend schedule, with add-to-calendar links",
+      "actions": [
+        {
+          "hold": 0.4
+        },
+        {
+          "scroll": 560,
+          "dur": 1.6
+        },
+        {
+          "hold": 0.6
+        }
+      ]
+    },
+    {
+      "url": "/travel",
+      "startScroll": {
+        "selector": ".hotel",
+        "offset": 260
+      },
+      "caption": "Hotel room blocks that count down to each cut-off date",
+      "actions": [
+        {
+          "hold": 0.8
+        },
+        {
+          "hover": ".hotel .btn",
+          "hold": 0.6
+        }
+      ]
+    },
+    {
+      "url": "/things-to-do",
+      "caption": "Things to do nearby, with a note from the couple",
+      "actions": [
+        {
+          "hold": 0.4
+        },
+        {
+          "click": ".filters a[href*='kind=outdoors']",
+          "dur": 0.9
+        },
+        {
+          "hold": 0.5
+        },
+        {
+          "scroll": 300,
+          "dur": 1.0
+        },
+        {
+          "hold": 0.4
+        }
+      ]
+    },
+    {
+      "url": "/rsvp",
+      "startScroll": 150,
+      "caption": "RSVPs post to a Raytha Function and arrive as private drafts",
+      "actions": [
+        {
+          "hold": 0.3
+        },
+        {
+          "type": {
+            "selector": "#guest_name",
+            "text": "Sam Rivera",
+            "cps": 12
+          }
+        },
+        {
+          "eval": "document.getElementById('email').value='sam@example.com';document.getElementById('meal').value='halibut';document.getElementById('other_guests').value='Lee Rivera, risotto'",
+          "waitMs": 200
+        },
+        {
+          "scroll": {
+            "selector": "form.form button[type=submit]",
+            "offset": 560
+          },
+          "dur": 1.6
+        },
+        {
+          "click": "form.form button[type=submit]",
+          "dur": 0.8
+        },
+        {
+          "hold": 1.2
+        }
+      ]
+    },
+    {
+      "url": "/guests",
+      "signin": true,
+      "caption": "Shuttle times and day-of numbers, for signed-in guests only",
+      "actions": [
+        {
+          "hold": 0.6
+        },
+        {
+          "scroll": 420,
+          "dur": 1.4
+        },
+        {
+          "hold": 0.6
+        }
+      ]
+    },
+    {
+      "url": "/",
+      "phone": true,
+      "phoneCaption": {
+        "kicker": "Responsive",
+        "text": "Every page works on a phone"
+      },
+      "actions": [
+        {
+          "hold": 0.5
+        },
+        {
+          "scroll": 1400,
+          "dur": 2.1
+        },
+        {
+          "hold": 0.4
+        }
+      ]
+    }
+  ]
+}

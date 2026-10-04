@@ -1,0 +1,7 @@
+{%- assign s = widget.settings -%}
+<section class="section" style="padding:100px 0 120px;text-align:center"><div class="narrow reveal"><svg class="sprig" width="70" height="30" viewBox="0 0 70 30" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M4 15h62"/><path d="M18 15c2-7 8-10 14-10-1 6-7 10-14 10zM36 15c2-7 8-10 14-10-1 6-7 10-14 10zM26 15c-2 7-8 10-14 10 1-6 7-10 14-10zM44 15c-2 7-8 10-14 10 1-6 7-10 14-10z"/></svg>
+  <div data-reply="yes"><span class="label t">RSVP received</span><h1 style="font-size:clamp(3rem,7vw,5.2rem);margin:14px 0 18px">{{ s.yes_headline }}<span data-name></span>!</h1><p style="font-size:1.15rem;color:var(--ink2)">{{ s.yes_text }}</p>
+    <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:28px"><a class="btn btn-t" href="{{ PathBase }}/travel">Book a hotel</a><a class="btn btn-line" href="{{ PathBase }}/calendar.ics"><i class="bi bi-calendar-plus"></i> Add the weekend to your calendar</a></div></div>
+  <div data-reply="no" style="display:none"><span class="label t">RSVP received</span><h1 style="font-size:clamp(3rem,7vw,5.2rem);margin:14px 0 18px">{{ s.no_headline }}</h1><p style="font-size:1.15rem;color:var(--ink2)">{{ s.no_text }}</p>
+    <div style="margin-top:28px"><a class="btn btn-line" href="{{ PathBase }}/registry">See the registry</a></div></div>
+</div></section>

@@ -1,0 +1,5 @@
+{%- assign s = widget.settings -%}
+<section class="section tight"><div class="wrap">
+  <div class="shead reveal"><span class="label t">{{ s.kicker }}</span><h2>{{ s.headline }} <em>{{ s.accent }}</em></h2><p>{{ s.subtitle }}</p></div>
+  <div class="grid3">{% for w in s.ways %}<div class="card way reveal"><i class="bi {{ w.icon }}"></i><div><h3>{{ w.title }}</h3><p>{{ w.text }}</p></div></div>{% endfor %}</div>
+</div></section>
