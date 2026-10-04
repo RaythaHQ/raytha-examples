@@ -1,0 +1,17 @@
+[
+  {"name": "01-home-hero-1440.png", "path": "/", "device": "desktop"},
+  {"name": "02-home-full-1440.png", "path": "/", "device": "desktop", "full_page": true},
+  {"name": "03-lineup-1440.png", "path": "/lineup", "device": "desktop", "full_page": true, "local": {"lowtide-picks": "{\"glass-harbor\":1,\"sol-marisol\":1,\"moth-signal\":1,\"oona-fairweather\":1}"}},
+  {"name": "04-lineup-filtered-1440.png", "path": "/lineup?day=sat&genre=electronic", "device": "desktop", "full_page": true},
+  {"name": "05-schedule-1440.png", "path": "/schedule?day=fri", "device": "desktop", "full_page": true, "local": {"lowtide-picks": "{\"glass-harbor\":1,\"sol-marisol\":1,\"moth-signal\":1,\"oona-fairweather\":1}"}},
+  {"name": "06-artist-1440.png", "path": "/artists/glass-harbor", "device": "desktop", "full_page": true},
+  {"name": "07-venue-1440.png", "path": "/venue", "device": "desktop", "full_page": true},
+  {"name": "08-stage-1440.png", "path": "/stages/kelp-forest", "device": "desktop", "full_page": true},
+  {"name": "09-faq-1440.png", "path": "/faq", "device": "desktop", "full_page": true},
+  {"name": "10-tickets-1440.png", "path": "/tickets", "device": "desktop", "full_page": true},
+  {"name": "11-info-1440.png", "path": "/info", "device": "desktop", "full_page": true},
+  {"name": "12-home-mobile-390.png", "path": "/", "device": "mobile"},
+  {"name": "13-lineup-mobile-390.png", "path": "/lineup", "device": "mobile", "scroll": 520},
+  {"name": "14-schedule-mobile-390.png", "path": "/schedule?day=sat", "device": "mobile", "scroll": 300},
+  {"name": "15-artist-mobile-390.png", "path": "/artists/aurora-fields", "device": "mobile", "scroll": 420}
+]

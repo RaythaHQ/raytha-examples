@@ -1,0 +1,12 @@
+{"name": "Main Gate", "kind": "gate", "map_x": 88, "map_y": 20, "description": "The main entrance from the shuttle drop-off and car park. Opens at noon each day; bag checks take about ten minutes at peak times."}
+{"name": "Beach Gate", "kind": "gate", "map_x": 12, "map_y": 88, "description": "Walk-in and bike entrance from the Halcyon Bay boardwalk. Free bike parking for 2,000 bikes."}
+{"name": "Harbor Food Court", "kind": "food", "map_x": 70, "map_y": 34, "description": "Twenty-two traders, from fish tacos to dal. Every trader has a vegan option and a dish under $12."}
+{"name": "Night Market", "kind": "food", "map_x": 38, "map_y": 48, "description": "Late-night street food, coffee and churros near the Kelp Forest. Open until 1 am."}
+{"name": "Water refill: Tidepool", "kind": "water", "map_x": 38, "map_y": 28, "description": "Free cold water. Bring an empty bottle or buy a festival bottle for $8."}
+{"name": "Water refill: Dunes", "kind": "water", "map_x": 48, "map_y": 70, "description": "Free cold water between the Driftwood Stage and the Kelp Forest."}
+{"name": "First Aid", "kind": "medical", "map_x": 62, "map_y": 46, "description": "Staffed by paramedics from noon until an hour after the last set. Also a quiet welfare space."}
+{"name": "Info and Lost Property", "kind": "info", "map_x": 80, "map_y": 30, "description": "Questions, lost property, phone charging and the festival map in print."}
+{"name": "Toilets: North", "kind": "toilets", "map_x": 62, "map_y": 17, "description": "Including accessible toilets and baby changing."}
+{"name": "Toilets: South", "kind": "toilets", "map_x": 74, "map_y": 72, "description": "Including accessible toilets."}
+{"name": "Accessible Viewing Platform", "kind": "access", "map_x": 40, "map_y": 36, "description": "Raised platform at the Tidepool Main Stage for wheelchair users and people who need a seat, with one companion each."}
+{"name": "Lockers and Charging", "kind": "lockers", "map_x": 86, "map_y": 42, "description": "Lockers big enough for a backpack, and phone charging. Book on the day at the Info tent."}
