@@ -1,0 +1,26 @@
+{
+ "developerName": "mainmenu",
+ "label": "Main menu",
+ "items": [
+  {
+   "label": "About",
+   "link": "/about"
+  },
+  {
+   "label": "Programs",
+   "link": "/programs"
+  },
+  {
+   "label": "Grantees",
+   "link": "/grantees"
+  },
+  {
+   "label": "Impact stories",
+   "link": "/stories"
+  },
+  {
+   "label": "Annual reports",
+   "link": "/reports"
+  }
+ ]
+}

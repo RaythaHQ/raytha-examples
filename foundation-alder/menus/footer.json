@@ -1,0 +1,34 @@
+{
+ "developerName": "footer",
+ "label": "Footer",
+ "items": [
+  {
+   "label": "About us",
+   "link": "/about"
+  },
+  {
+   "label": "Grant programs",
+   "link": "/programs"
+  },
+  {
+   "label": "Grantees",
+   "link": "/grantees"
+  },
+  {
+   "label": "Impact stories",
+   "link": "/stories"
+  },
+  {
+   "label": "Annual reports",
+   "link": "/reports"
+  },
+  {
+   "label": "How to apply",
+   "link": "/apply"
+  },
+  {
+   "label": "Applicant FAQ",
+   "link": "/apply/faq"
+  }
+ ]
+}
