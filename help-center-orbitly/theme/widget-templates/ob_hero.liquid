@@ -1,0 +1,42 @@
+{%- assign pop = get_content_items(ContentType="articles", Filter="popular eq 'true'", OrderBy="updated_on desc", PageSize=3) -%}
+{%- assign rel = get_content_items(ContentType="releases", OrderBy="released_on desc", PageSize=1).Items | first -%}
+<section class="hero">
+  <div class="hero-bg"><div class="grid"></div>
+  <svg class="orbits" viewBox="0 0 640 640" aria-hidden="true">
+    <circle cx="320" cy="320" r="110"/><circle cx="320" cy="320" r="190"/><circle cx="320" cy="320" r="280"/>
+    <g class="spin"><ellipse cx="320" cy="320" rx="250" ry="95" transform="rotate(-24 320 320)"/><circle class="dot" cx="548" cy="218" r="7"/></g>
+    <g class="spin2"><circle class="dot" cx="320" cy="130" r="5"/><circle class="dot" cx="510" cy="320" r="4" style="fill:#9fb0ff"/></g>
+  </svg></div>
+  <div class="wrap hero-2">
+   <div>
+    {% if widget.settings.kicker %}<span class="kicker">{{ widget.settings.kicker }}</span>{% endif %}
+    <h1>{{ widget.settings.headline }} <em>{{ widget.settings.accent }}</em></h1>
+    <p class="lead">{{ widget.settings.subtitle }}</p>
+    <div class="sbox" data-suggest><form action="{{ PathBase }}/articles" role="search"><i class="bi bi-search"></i><input name="q" placeholder="{{ widget.settings.placeholder | default: 'Search the help center' }}" autocomplete="off" aria-label="Search the help center"><button class="btn btn-primary">Search</button></form><div class="suggest"></div></div>
+    <div class="pop"><span>Popular:</span>{% for p in widget.settings.popular %}<a href="{{ PathBase }}{{ p.url }}">{{ p.label }}</a>{% endfor %}</div>
+   </div>
+   <div class="hero-peek" aria-hidden="true">
+    <div class="peek-card"><div class="peek-q"><i class="bi bi-search"></i>start a project<span class="caret"></span></div>
+      {% for a in pop.Items %}{% assign ac = a.PublishedContent.category %}<a href="{{ PathBase }}/{{ a.RoutePath }}" tabindex="-1" class="peek-row"><span class="ai" style="background:color-mix(in srgb,{{ ac.PublishedContent.color }} 18%,#fff);color:{{ ac.PublishedContent.color }}"><i class="bi bi-{{ ac.PublishedContent.icon }}"></i></span><span><b>{{ a.PrimaryField }}</b><small>{{ ac.PrimaryField }} · {{ a.PublishedContent.read_minutes | append: "" }} min</small></span></a>{% endfor %}
+    </div>
+    <a class="peek-pill" href="{{ PathBase }}/status" tabindex="-1"><span class="pulse"></span>All systems operational</a>
+    {% if rel %}<a class="peek-rel" href="{{ PathBase }}/{{ rel.RoutePath }}" tabindex="-1"><span class="chip">New in {{ rel.PublishedContent.version }}</span><b>{{ rel.PrimaryField }}</b></a>{% endif %}
+   </div>
+  </div>
+</section>
+<style>
+.hero-2{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:48px;align-items:center}
+.hero-peek{position:relative;padding:20px 0 40px}
+.peek-card{background:rgba(255,255,255,.97);color:var(--ink);border-radius:20px;padding:14px;box-shadow:0 40px 80px -30px rgba(0,0,0,.6);transform:rotate(-1.5deg);animation:float 7s ease-in-out infinite}
+.peek-q{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:12px;background:#f1f3ff;color:var(--ink2);font-size:.95rem;margin-bottom:6px}
+.peek-q .caret{width:2px;height:18px;background:var(--blue);animation:blink 1s steps(1) infinite}
+.peek-row{display:flex;gap:12px;align-items:center;padding:10px 8px;border-radius:12px}.peek-row:hover{background:#f6f7fb}
+.peek-row b{display:block;font-size:.95rem;font-weight:600}.peek-row small{color:var(--muted);font-size:.8rem}
+.peek-row .ai{flex:none;width:36px;height:36px;border-radius:10px;display:grid;place-items:center}
+.peek-pill{position:absolute;left:-28px;bottom:0;display:flex;align-items:center;gap:10px;background:#0f1a4a;border:1px solid rgba(255,255,255,.14);color:#dfffee;padding:.6rem 1rem;border-radius:999px;font-size:.88rem;font-weight:600;box-shadow:0 20px 40px -20px #000}
+.peek-rel{position:absolute;right:-12px;top:-18px;background:#fff;color:var(--ink);border-radius:16px;padding:12px 14px;box-shadow:0 30px 60px -25px rgba(0,0,0,.6);max-width:230px;transform:rotate(2deg);font-size:.88rem}
+.peek-rel b{display:block;margin-top:6px;font-weight:650}
+@keyframes float{50%{transform:rotate(-1.5deg) translateY(-8px)}}@keyframes blink{50%{opacity:0}}
+@media(max-width:980px){.hero-2{grid-template-columns:minmax(0,1fr)}.hero-peek{display:none}}
+@media(prefers-reduced-motion:reduce){.peek-card,.peek-q .caret{animation:none}}
+</style>

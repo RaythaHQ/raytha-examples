@@ -1,0 +1,16 @@
+{%- assign n = widget.settings.count | append: "" | plus: 0 -%}{%- if n == 0 -%}{%- assign n = 6 -%}{%- endif -%}
+{%- assign pop = get_content_items(ContentType="articles", Filter="popular eq 'true'", OrderBy="updated_on desc", PageSize=n) -%}
+{%- assign rels = get_content_items(ContentType="releases", OrderBy="released_on desc", PageSize=3) -%}
+<section class="section" style="background:#fff;border-block:1px solid var(--line)"><div class="wrap" style="display:grid;grid-template-columns:1.5fr 1fr;gap:40px" id="popgrid">
+  <div>
+    <div class="shead"><div><span class="kicker">{{ widget.settings.kicker }}</span><h2>{{ widget.settings.headline }}</h2></div></div>
+    <div class="alist">{% for a in pop.Items %}{% assign ac = a.PublishedContent.category %}<a class="arow reveal" href="{{ PathBase }}/{{ a.RoutePath }}"><span class="ai" style="background:color-mix(in srgb,{{ ac.PublishedContent.color }} 14%,#fff);color:{{ ac.PublishedContent.color }}"><i class="bi bi-{{ ac.PublishedContent.icon }}"></i></span><div><h3>{{ a.PrimaryField }}</h3><p>{{ a.PublishedContent.summary }}</p></div><i class="bi bi-arrow-right go"></i></a>{% endfor %}</div>
+  </div>
+  <div>
+    <div class="shead"><div><span class="kicker">Changelog</span><h2>Just shipped</h2></div><a class="btn btn-line" href="{{ PathBase }}/changelog">All</a></div>
+    {%- for r in rels.Items %}{% capture k %}{{ r.PublishedContent.kind }}{% endcapture %}
+    <a class="card lift box reveal" style="display:block;margin-bottom:12px" href="{{ PathBase }}/{{ r.RoutePath }}"><div style="display:flex;justify-content:space-between;align-items:center"><span class="chip {% if k == 'improved' %}mint{% elsif k == 'fixed' %}sun{% endif %}">{{ k | replace: "new", "New" | replace: "improved", "Improved" | replace: "fixed", "Fixed" }}</span><span class="muted" style="font-size:.8rem">{{ r.PublishedContent.version }} · {{ r.PublishedContent.released_on.Value | date: "%b %-d" }}</span></div><h3 style="font-size:1.08rem;margin:10px 0 4px">{{ r.PrimaryField }}</h3><p class="muted" style="margin:0;font-size:.9rem">{{ r.PublishedContent.summary }}</p></a>
+    {%- endfor %}
+  </div>
+</div></section>
+<style>@media(max-width:900px){#popgrid{grid-template-columns:1fr!important}}</style>
