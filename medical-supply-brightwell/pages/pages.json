@@ -1,0 +1,5 @@
+[
+ {"title": "Brightwell Medical Supply", "routePath": "home", "template": "bw_home", "sections": "pages/home.json", "home": true},
+ {"title": "How to order", "routePath": "how-to-order", "template": "bw_page", "sections": "pages/how-to-order.json", "home": false},
+ {"title": "Contact", "routePath": "contact", "template": "bw_page", "sections": "pages/contact.json", "home": false}
+]

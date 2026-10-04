@@ -1,0 +1,68 @@
+{
+ "hero": [
+  {
+   "widgetType": "bw_page_header",
+   "settings": {
+    "kicker": "Contact",
+    "headline": "Talk to us",
+    "subtitle": "Call, email or visit. We do not take orders or payments through this website, so a real person always helps you."
+   }
+  }
+ ],
+ "main": [
+  {
+   "widgetType": "bw_contact",
+   "settings": {
+    "kicker": "",
+    "headline": "",
+    "cards": [
+     {
+      "icon": "telephone",
+      "title": "Order desk",
+      "big": "(800) 555-0134",
+      "text": "Orders, coverage questions and delivery. Monday to Friday 8 am to 6 pm, Saturday 9 am to 1 pm.",
+      "url": "tel:+18005550134"
+     },
+     {
+      "icon": "lungs",
+      "title": "Respiratory, 24 hours",
+      "big": "(800) 555-0199",
+      "text": "Oxygen and breathing equipment problems, any time of day or night.",
+      "url": "tel:+18005550199"
+     },
+     {
+      "icon": "envelope",
+      "title": "Email",
+      "big": "orders@example.com",
+      "text": "For non-urgent questions. We reply within one business day.",
+      "url": "mailto:orders@example.com"
+     },
+     {
+      "icon": "tools",
+      "title": "Service and repairs",
+      "big": "(800) 555-0137",
+      "text": "Repairs, rental pickups and replacement parts.",
+      "url": "tel:+18005550137"
+     }
+    ]
+   }
+  },
+  {
+   "widgetType": "bw_locations",
+   "settings": {
+    "kicker": "Locations",
+    "headline": "Visit a showroom",
+    "subtitle": "Try before you buy, get a repair, or have a CPAP mask fitted by appointment."
+   }
+  },
+  {
+   "widgetType": "bw_faq",
+   "settings": {
+    "kicker": "Service FAQ",
+    "headline": "Help with your equipment",
+    "topic": "service",
+    "count": 4
+   }
+  }
+ ]
+}

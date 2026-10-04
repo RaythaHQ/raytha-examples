@@ -1,0 +1,16 @@
+[
+  {"name": "01-home-hero-1440.png", "path": "/", "device": "desktop"},
+  {"name": "02-home-full-1440.png", "path": "/", "device": "desktop", "full_page": true},
+  {"name": "03-equipment-1440.png", "path": "/equipment", "device": "desktop", "full_page": true},
+  {"name": "04-catalog-1440.png", "path": "/products?acquire=rent&coverage=medicare", "device": "desktop", "full_page": true},
+  {"name": "05-product-1440.png", "path": "/products/home-oxygen-concentrator", "device": "desktop", "full_page": true},
+  {"name": "06-category-1440.png", "path": "/equipment/mobility", "device": "desktop", "full_page": true},
+  {"name": "07-how-to-order-1440.png", "path": "/how-to-order", "device": "desktop", "full_page": true},
+  {"name": "08-resource-1440.png", "path": "/resources/medicare-and-your-equipment", "device": "desktop", "full_page": true},
+  {"name": "09-faq-1440.png", "path": "/faq", "device": "desktop", "full_page": true},
+  {"name": "10-locations-1440.png", "path": "/locations", "device": "desktop", "full_page": true},
+  {"name": "11-contact-1440.png", "path": "/contact", "device": "desktop", "full_page": true},
+  {"name": "12-home-mobile-390.png", "path": "/", "device": "mobile"},
+  {"name": "13-product-mobile-390.png", "path": "/products/cpap-system-with-heated-humidifier", "device": "mobile"},
+  {"name": "14-locations-mobile-390.png", "path": "/locations", "device": "mobile", "full_page": true}
+]

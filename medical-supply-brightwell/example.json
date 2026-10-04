@@ -1,0 +1,6 @@
+{
+  "name": "Brightwell Medical Supply",
+  "theme": "brightwell",
+  "types": ["categories", "products", "resources", "faqs", "locations"],
+  "detailTemplates": {"categories": "bw_detail_categories", "products": "bw_detail_products", "resources": "bw_detail_resources", "faqs": "bw_detail_faqs", "locations": "bw_detail_locations"}
+}

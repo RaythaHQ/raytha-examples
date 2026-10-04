@@ -1,0 +1,30 @@
+{
+ "developerName": "footer",
+ "label": "Footer",
+ "items": [
+  {
+   "label": "All products",
+   "link": "/products"
+  },
+  {
+   "label": "How to order",
+   "link": "/how-to-order"
+  },
+  {
+   "label": "Patient resources",
+   "link": "/resources"
+  },
+  {
+   "label": "FAQ",
+   "link": "/faq"
+  },
+  {
+   "label": "Locations",
+   "link": "/locations"
+  },
+  {
+   "label": "Contact",
+   "link": "/contact"
+  }
+ ]
+}

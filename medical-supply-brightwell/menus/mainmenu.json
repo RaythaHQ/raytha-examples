@@ -1,0 +1,30 @@
+{
+ "developerName": "mainmenu",
+ "label": "Main menu",
+ "items": [
+  {
+   "label": "Equipment",
+   "link": "/equipment"
+  },
+  {
+   "label": "All products",
+   "link": "/products"
+  },
+  {
+   "label": "How to order",
+   "link": "/how-to-order"
+  },
+  {
+   "label": "Patient resources",
+   "link": "/resources"
+  },
+  {
+   "label": "Locations",
+   "link": "/locations"
+  },
+  {
+   "label": "FAQ",
+   "link": "/faq"
+  }
+ ]
+}
