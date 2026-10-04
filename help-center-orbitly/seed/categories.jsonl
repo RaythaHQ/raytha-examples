@@ -1,0 +1,6 @@
+{"name": "Getting started", "description": "Set up your workspace, create a first project and learn the basics.", "icon": "rocket-takeoff", "color": "#3b5bfd", "sort_order": 1}
+{"name": "Projects and timelines", "description": "Plan work on the timeline, set milestones and track dependencies.", "icon": "bar-chart-steps", "color": "#7c4dff", "sort_order": 2}
+{"name": "Tasks and boards", "description": "Create tasks, move them across boards and keep work moving.", "icon": "kanban", "color": "#18c29c", "sort_order": 3}
+{"name": "Team and permissions", "description": "Invite people, manage roles and control who sees what.", "icon": "people", "color": "#f08c00", "sort_order": 4}
+{"name": "Billing and plans", "description": "Plans, invoices, seats and payment details.", "icon": "credit-card-2-front", "color": "#e64980", "sort_order": 5}
+{"name": "Integrations and API", "description": "Connect Slack, calendars and your own tools.", "icon": "plug", "color": "#0ca5c9", "sort_order": 6}
