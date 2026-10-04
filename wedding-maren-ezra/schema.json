@@ -1,0 +1,174 @@
+{
+  "schemaVersion": 1,
+  "contentTypes": [
+    {
+      "developerName": "story",
+      "labelPlural": "Our story",
+      "labelSingular": "Story chapter",
+      "description": "Chapters of how Maren and Ezra got here",
+      "defaultRouteTemplate": "story/{PrimaryField}",
+      "primaryField": "title",
+      "fields": [
+        {"developerName": "title", "label": "Title", "description": "", "fieldType": "single_line_text", "isRequired": true, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "year", "label": "Year", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "place", "label": "Place", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "body", "label": "Story", "description": "", "fieldType": "wysiwyg", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "image", "label": "Illustration", "description": "", "fieldType": "attachment", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "sort_order", "label": "Sort order", "description": "", "fieldType": "number", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []}
+      ],
+      "views": [
+        {"developerName": "story", "label": "Our story", "description": "", "isPublished": true, "routePath": "story", "template": "wb_list_story", "columns": ["PrimaryField"], "sort": [{"developerName": "sort_order", "direction": "asc"}], "filter": [], "defaultNumberOfItemsPerPage": 50, "maxNumberOfItemsPerPage": 1000, "ignoreClientFilterAndSortQueryParams": false}
+      ]
+    },
+    {
+      "developerName": "events",
+      "labelPlural": "Schedule",
+      "labelSingular": "Event",
+      "description": "Everything happening over the wedding weekend",
+      "defaultRouteTemplate": "schedule/{PrimaryField}",
+      "primaryField": "name",
+      "fields": [
+        {"developerName": "name", "label": "Name", "description": "", "fieldType": "single_line_text", "isRequired": true, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "day", "label": "Day", "description": "", "fieldType": "dropdown", "isRequired": false, "choices": [{"developerName": "friday", "label": "Friday, June 11", "disabled": false}, {"developerName": "saturday", "label": "Saturday, June 12", "disabled": false}, {"developerName": "sunday", "label": "Sunday, June 13", "disabled": false}], "relatedContentType": null, "subFields": []},
+        {"developerName": "start", "label": "Starts (24h, e.g. 16:30)", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "end", "label": "Ends (24h)", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "time_label", "label": "Time as shown", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "venue", "label": "Venue", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "address", "label": "Address", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "map_url", "label": "Map link", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "dress_code", "label": "Dress code", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "summary", "label": "Summary", "description": "", "fieldType": "long_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "details", "label": "Details", "description": "", "fieldType": "wysiwyg", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "icon", "label": "Icon (Bootstrap Icons name)", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "guests_only", "label": "Only for signed-in guests", "description": "", "fieldType": "checkbox", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "sort_order", "label": "Sort order", "description": "", "fieldType": "number", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []}
+      ],
+      "views": [
+        {"developerName": "schedule", "label": "Schedule", "description": "", "isPublished": true, "routePath": "schedule", "template": "wb_list_events", "columns": ["PrimaryField"], "sort": [{"developerName": "sort_order", "direction": "asc"}], "filter": [], "defaultNumberOfItemsPerPage": 50, "maxNumberOfItemsPerPage": 1000, "ignoreClientFilterAndSortQueryParams": false}
+      ]
+    },
+    {
+      "developerName": "hotels",
+      "labelPlural": "Hotels",
+      "labelSingular": "Hotel",
+      "description": "Hotel room blocks for guests",
+      "defaultRouteTemplate": "travel/{PrimaryField}",
+      "primaryField": "name",
+      "fields": [
+        {"developerName": "name", "label": "Name", "description": "", "fieldType": "single_line_text", "isRequired": true, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "town", "label": "Town", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "drive", "label": "Drive to the venue", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "rate", "label": "Group rate", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "block_code", "label": "Booking code", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "cutoff", "label": "Book by", "description": "", "fieldType": "date", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "booking_url", "label": "Booking link", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "phone", "label": "Phone", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "description", "label": "Description", "description": "", "fieldType": "long_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "shuttle", "label": "Wedding shuttle stops here", "description": "", "fieldType": "checkbox", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "color", "label": "Card colour", "description": "", "fieldType": "color", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "sort_order", "label": "Sort order", "description": "", "fieldType": "number", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []}
+      ],
+      "views": [
+
+      ]
+    },
+    {
+      "developerName": "places",
+      "labelPlural": "Things to do",
+      "labelSingular": "Place",
+      "description": "Where we like to eat, drink, walk and wander nearby",
+      "defaultRouteTemplate": "things-to-do/{PrimaryField}",
+      "primaryField": "name",
+      "fields": [
+        {"developerName": "name", "label": "Name", "description": "", "fieldType": "single_line_text", "isRequired": true, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "kind", "label": "Kind", "description": "", "fieldType": "dropdown", "isRequired": false, "choices": [{"developerName": "eat", "label": "Eat", "disabled": false}, {"developerName": "drink", "label": "Drink", "disabled": false}, {"developerName": "outdoors", "label": "Outdoors", "disabled": false}, {"developerName": "culture", "label": "Art and history", "disabled": false}, {"developerName": "shop", "label": "Shop", "disabled": false}], "relatedContentType": null, "subFields": []},
+        {"developerName": "town", "label": "Town", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "description", "label": "Description", "description": "", "fieldType": "long_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "our_note", "label": "Our note", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "url", "label": "Website", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "sort_order", "label": "Sort order", "description": "", "fieldType": "number", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []}
+      ],
+      "views": [
+        {"developerName": "things_to_do", "label": "Things to do", "description": "", "isPublished": true, "routePath": "things-to-do", "template": "wb_list_places", "columns": ["PrimaryField"], "sort": [{"developerName": "sort_order", "direction": "asc"}], "filter": [], "defaultNumberOfItemsPerPage": 50, "maxNumberOfItemsPerPage": 1000, "ignoreClientFilterAndSortQueryParams": false}
+      ]
+    },
+    {
+      "developerName": "faqs",
+      "labelPlural": "FAQ",
+      "labelSingular": "Question",
+      "description": "Questions guests ask",
+      "defaultRouteTemplate": "faq/{PrimaryField}",
+      "primaryField": "question",
+      "fields": [
+        {"developerName": "question", "label": "Question", "description": "", "fieldType": "single_line_text", "isRequired": true, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "answer", "label": "Answer", "description": "", "fieldType": "wysiwyg", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "topic", "label": "Topic", "description": "", "fieldType": "dropdown", "isRequired": false, "choices": [{"developerName": "rsvp", "label": "RSVP and guests", "disabled": false}, {"developerName": "attire", "label": "What to wear", "disabled": false}, {"developerName": "travel", "label": "Getting there", "disabled": false}, {"developerName": "day", "label": "On the day", "disabled": false}, {"developerName": "gifts", "label": "Gifts", "disabled": false}], "relatedContentType": null, "subFields": []},
+        {"developerName": "sort_order", "label": "Sort order", "description": "", "fieldType": "number", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []}
+      ],
+      "views": [
+        {"developerName": "faq", "label": "FAQ", "description": "", "isPublished": true, "routePath": "faq", "template": "wb_list_faqs", "columns": ["PrimaryField"], "sort": [{"developerName": "sort_order", "direction": "asc"}], "filter": [], "defaultNumberOfItemsPerPage": 50, "maxNumberOfItemsPerPage": 1000, "ignoreClientFilterAndSortQueryParams": false}
+      ]
+    },
+    {
+      "developerName": "registry",
+      "labelPlural": "Registry",
+      "labelSingular": "Registry",
+      "description": "Where to find our registries (external links)",
+      "defaultRouteTemplate": "registry/{PrimaryField}",
+      "primaryField": "name",
+      "fields": [
+        {"developerName": "name", "label": "Name", "description": "", "fieldType": "single_line_text", "isRequired": true, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "store", "label": "Store or organisation", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "description", "label": "Description", "description": "", "fieldType": "long_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "url", "label": "Link", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "icon", "label": "Icon (Bootstrap Icons name)", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "color", "label": "Card colour", "description": "", "fieldType": "color", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "sort_order", "label": "Sort order", "description": "", "fieldType": "number", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []}
+      ],
+      "views": [
+        {"developerName": "registry", "label": "Registry", "description": "", "isPublished": true, "routePath": "registry", "template": "wb_list_registry", "columns": ["PrimaryField"], "sort": [{"developerName": "sort_order", "direction": "asc"}], "filter": [], "defaultNumberOfItemsPerPage": 50, "maxNumberOfItemsPerPage": 1000, "ignoreClientFilterAndSortQueryParams": false}
+      ]
+    },
+    {
+      "developerName": "photos",
+      "labelPlural": "Gallery",
+      "labelSingular": "Photo",
+      "description": "Photos for the gallery",
+      "defaultRouteTemplate": "gallery/{PrimaryField}",
+      "primaryField": "caption",
+      "fields": [
+        {"developerName": "caption", "label": "Caption", "description": "", "fieldType": "single_line_text", "isRequired": true, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "place", "label": "Place", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "year", "label": "Year", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "image", "label": "Image", "description": "", "fieldType": "attachment", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "sort_order", "label": "Sort order", "description": "", "fieldType": "number", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []}
+      ],
+      "views": [
+        {"developerName": "gallery", "label": "Gallery", "description": "", "isPublished": true, "routePath": "gallery", "template": "wb_list_photos", "columns": ["PrimaryField"], "sort": [{"developerName": "sort_order", "direction": "asc"}], "filter": [], "defaultNumberOfItemsPerPage": 60, "maxNumberOfItemsPerPage": 1000, "ignoreClientFilterAndSortQueryParams": false}
+      ]
+    },
+    {
+      "developerName": "rsvps",
+      "labelPlural": "RSVPs",
+      "labelSingular": "RSVP",
+      "description": "Replies from the RSVP form. Saved as drafts, never published",
+      "defaultRouteTemplate": "rsvps/{PrimaryField}",
+      "primaryField": "guest_name",
+      "fields": [
+        {"developerName": "guest_name", "label": "Name", "description": "", "fieldType": "single_line_text", "isRequired": true, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "email", "label": "Email", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "attending", "label": "Attending", "description": "", "fieldType": "dropdown", "isRequired": false, "choices": [{"developerName": "yes", "label": "Joyfully accepts", "disabled": false}, {"developerName": "no", "label": "Regretfully declines", "disabled": false}], "relatedContentType": null, "subFields": []},
+        {"developerName": "party_size", "label": "Party size", "description": "", "fieldType": "number", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "other_guests", "label": "Names of other guests", "description": "", "fieldType": "long_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "events", "label": "Events attending", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "meal", "label": "Dinner choice", "description": "", "fieldType": "dropdown", "isRequired": false, "choices": [{"developerName": "short_rib", "label": "Braised short rib", "disabled": false}, {"developerName": "halibut", "label": "Halibut with spring peas", "disabled": false}, {"developerName": "risotto", "label": "Wild mushroom risotto (vegetarian)", "disabled": false}, {"developerName": "kids", "label": "Kids' plate", "disabled": false}], "relatedContentType": null, "subFields": []},
+        {"developerName": "dietary", "label": "Dietary needs", "description": "", "fieldType": "long_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "song", "label": "Song request", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "note", "label": "Note to the couple", "description": "", "fieldType": "long_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []}
+      ],
+      "views": [
+        {"developerName": "rsvps", "label": "RSVPs", "description": "", "isPublished": false, "routePath": "rsvps", "template": "wb_list_private", "columns": ["PrimaryField"], "sort": [{"developerName": "guest_name", "direction": "asc"}], "filter": [], "defaultNumberOfItemsPerPage": 50, "maxNumberOfItemsPerPage": 1000, "ignoreClientFilterAndSortQueryParams": false}
+      ]
+    }
+  ]
+}
