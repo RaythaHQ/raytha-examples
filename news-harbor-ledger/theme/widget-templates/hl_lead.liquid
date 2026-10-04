@@ -1,0 +1,33 @@
+{%- assign s = widget.settings -%}{% assign lc = s.latest_count | append: "" | plus: 0 %}{% if lc == 0 %}{% assign lc = 7 %}{% endif %}
+{%- assign fe = get_content_items(ContentType="articles", Filter="featured eq 'true'", OrderBy="published_on desc", PageSize=1) -%}
+{%- assign all = get_content_items(ContentType="articles", OrderBy="published_on desc", PageSize=40) -%}
+{%- assign leadr = "" %}{% for x in fe.Items %}{% assign lead = x %}{% assign leadr = x.RoutePath %}{% endfor %}{% if leadr == "" %}{% for x in all.Items %}{% if forloop.first %}{% assign lead = x %}{% assign leadr = x.RoutePath %}{% endif %}{% endfor %}{% endif -%}
+<section class="wrap lead">
+  <div class="lcol">
+    <div class="shd"><h2>{{ s.latest_label | default: "Latest" }}</h2><a href="{{ PathBase }}/news">All</a></div>
+    {%- assign k = 0 %}{% for x in all.Items %}{% if x.RoutePath != leadr and k < lc %}{% assign k = k | plus: 1 %}{% assign q = x.PublishedContent %}
+    <a class="lat" href="{{ PathBase }}/{{ x.RoutePath }}"><span class="mut" style="font-size:.74rem;font-weight:600">{{ q.published_on.Value | date: "%b %-d" }}{% capture tl %}{{ q.time_label | strip }}{% endcapture %}{% if tl != "" %} &middot; {{ q.time_label }}{% endif %}</span><span class="h-s hd" style="display:block;font-family:var(--serif);font-weight:600;margin-top:3px">{{ x.PrimaryField }}</span></a>{% endif %}{% endfor %}
+  </div>
+  <div class="ccol">{% assign q = lead.PublishedContent %}{% capture lv %}{{ q.is_live }}{% endcapture %}
+    <a href="{{ PathBase }}/{{ lead.RoutePath }}"><img class="thumb" src="{{ q.image.Value | attachment_redirect_url }}" alt="" style="aspect-ratio:16/9">
+    <span style="display:block;margin-top:16px">{% capture kd %}{{ q.kind }}{% endcapture %}{% capture lv %}{{ q.is_live }}{% endcapture %}{% if lv == "True" %}<span class="kick">&#9679; Live</span>{% elsif kd == "analysis" %}<span class="kick">Analysis</span>{% elsif kd == "opinion" %}<span class="kick k-opinion">Opinion</span>{% elsif kd == "explainer" %}<span class="kick">Explainer</span>{% else %}<span class="kick" style="color:{{ q.section.PublishedContent.color }}">{{ q.section.PrimaryField }}</span>{% endif %}</span><h1 class="h-xl hd" style="margin:8px 0 0">{{ lead.PrimaryField }}</h1><p class="dek" style="font-size:1.16rem">{{ q.dek }}</p><span style="display:block;margin-top:12px"><span class="meta"><b>{{ q.author.PrimaryField }}</b><span>&middot;</span><span>{{ q.published_on.Value | date: "%b %-d, %Y" }}</span>{% if q.read_minutes %}<span>&middot;</span><span>{{ q.read_minutes }} min read</span>{% endif %}</span></span></a>
+    {%- if lv == "True" %}{% assign lu = get_content_items(ContentType="live_updates", OrderBy="sequence desc", PageSize=20) %}{% assign k = 0 %}
+    <div class="lbox"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px"><span class="livedot red">Live updates</span><a href="{{ PathBase }}/{{ lead.RoutePath }}#live" style="font:600 .8rem/1 var(--sans)">See all <i class="bi bi-arrow-right"></i></a></div>
+      {%- for u in lu.Items %}{% if u.PublishedContent.story.PrimaryField == lead.PrimaryField and k < 3 %}{% assign k = k | plus: 1 %}<a class="lbi" href="{{ PathBase }}/{{ lead.RoutePath }}#{{ u.RoutePath | split: '/' | last }}"><b>{{ u.PublishedContent.time_label }}</b><span class="hd">{{ u.PrimaryField }}</span></a>{% endif %}{% endfor %}
+    </div>{% endif %}
+  </div>
+  <div class="rcol">{% assign k = 0 %}
+    {%- for x in all.Items %}{% assign q = x.PublishedContent %}{% capture kd %}{{ q.kind }}{% endcapture %}{% if x.RoutePath != leadr and kd != "opinion" and k < 3 %}{% assign k = k | plus: 1 %}
+    <a class="sec" href="{{ PathBase }}/{{ x.RoutePath }}">{% if k == 1 %}<img class="thumb" src="{{ q.image.Value | attachment_redirect_url }}" alt="" style="margin-bottom:12px">{% endif %}{% capture kd %}{{ q.kind }}{% endcapture %}{% capture lv %}{{ q.is_live }}{% endcapture %}{% if lv == "True" %}<span class="kick">&#9679; Live</span>{% elsif kd == "analysis" %}<span class="kick">Analysis</span>{% elsif kd == "opinion" %}<span class="kick k-opinion">Opinion</span>{% elsif kd == "explainer" %}<span class="kick">Explainer</span>{% else %}<span class="kick" style="color:{{ q.section.PublishedContent.color }}">{{ q.section.PrimaryField }}</span>{% endif %}<h3 class="h-m hd" style="margin:6px 0 0">{{ x.PrimaryField }}</h3>{% if k == 1 %}<p class="dek" style="font-size:.98rem">{{ q.dek | truncatewords: 26 }}</p>{% endif %}</a>{% endif %}{% endfor %}
+  </div>
+</section>
+<style>
+  .lead{display:grid;grid-template-columns:230px minmax(0,1fr) 300px;gap:0;padding-top:26px}
+  .lead>div{padding:0 24px}.lead>div+div{border-left:1px solid var(--line)}.lead .lcol{padding-left:0}.lead .rcol{padding-right:0}
+  .lat{display:block;padding:11px 0;border-top:1px solid var(--line)}.lat:first-of-type{border-top:0;padding-top:0}
+  .lbox{border:2px solid var(--ink);padding:14px 16px;margin-top:20px;background:#fff}
+  .lbi{display:grid;grid-template-columns:76px 1fr;gap:10px;padding:9px 0;border-top:1px solid var(--line);font-size:.92rem}.lbi b{color:var(--red);font-size:.84rem}
+  .sec{display:block;padding:16px 0;border-top:1px solid var(--line)}.sec:first-child{border-top:0;padding-top:0}
+  @media(max-width:1080px){.lead{grid-template-columns:minmax(0,1fr) 280px}.lead .lcol{display:none}.lead .ccol{padding-left:0}}
+  @media(max-width:760px){.lead{grid-template-columns:1fr}.lead>div{padding:0!important;border:0!important}.lead .rcol{margin-top:26px}}
+</style>
