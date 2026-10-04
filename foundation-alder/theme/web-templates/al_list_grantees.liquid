@@ -1,0 +1,50 @@
+{%- assign years = "y2026:2026,y2025:2025,y2024:2024,y2023:2023" | split: "," -%}{%- assign regions = "upper_valley:Upper Valley,lowlands:Lowlands,coast:The Coast,marlow:City of Marlow,regionwide:Region-wide" | split: "," -%}
+{%- assign progs = get_content_items(ContentType="programs", OrderBy="sort_order asc", PageSize=10) -%}
+{%- assign qp = "" %}{% for x in progs.Items %}{% assign sl = x.RoutePath | split: "/" | last %}{% if QueryParams.program == sl %}{% assign qp = sl %}{% assign qpn = x.PrimaryField %}{% endif %}{% endfor -%}
+{%- assign qy = "" %}{% for d in years %}{% assign kv = d | split: ":" %}{% if QueryParams.year == kv[1] %}{% assign qy = kv[0] %}{% endif %}{% endfor -%}
+{%- assign qr = "" %}{% for d in regions %}{% assign kv = d | split: ":" %}{% if QueryParams.region == kv[0] %}{% assign qr = kv[0] %}{% endif %}{% endfor -%}
+{%- capture bp %}{% if qy != "" %}&year={{ qy | remove: "y" }}{% endif %}{% if qr != "" %}&region={{ qr }}{% endif %}{% endcapture -%}
+{%- capture by %}{% if qp != "" %}&program={{ qp }}{% endif %}{% if qr != "" %}&region={{ qr }}{% endif %}{% endcapture -%}
+{%- capture br %}{% if qp != "" %}&program={{ qp }}{% endif %}{% if qy != "" %}&year={{ qy | remove: "y" }}{% endif %}{% endcapture -%}
+{%- assign n = 0 %}{% assign tot = 0 %}{% for g in Target.Items %}{% assign q = g.PublishedContent %}{% capture yr %}{{ q.year }}{% endcapture %}{% capture rg %}{{ q.region }}{% endcapture %}{% assign sl = q.program.RoutePath | split: "/" | last %}{% assign ok = true %}{% if qp != "" and qp != sl %}{% assign ok = false %}{% endif %}{% if qy != "" and qy != yr %}{% assign ok = false %}{% endif %}{% if qr != "" and qr != rg %}{% assign ok = false %}{% endif %}{% if ok %}{% assign n = n | plus: 1 %}{% assign a = q.amount | append: "" | plus: 0 %}{% assign tot = tot | plus: a %}{% endif %}{% endfor -%}
+<section class="phead"><div class="wrap"><svg class="leaf" viewBox="0 0 200 300" aria-hidden="true"><path d="M100 10c60 50 80 120 0 280C20 130 40 60 100 10z" fill="#16302a"/><path d="M100 40v250M100 90l-40-30M100 130l45-35M100 170l-40-32M100 210l38-30" stroke="#f6f1e7" stroke-width="5" stroke-linecap="round"/></svg>
+  <span class="eyebrow">Grantees</span>
+  <h1>Who we <em>fund.</em></h1>
+  <p class="lead">Every grant since 2023, filterable by program, year and region. We publish this list because our grantees' work should be easy to find.</p>
+</div></section>
+<section style="padding:40px 0 100px"><div class="wrap">
+  <div class="gfil">
+    <div class="chips"><span class="lbl">Program</span><a href="{{ PathBase }}/grantees{% if bp != '' %}?{{ bp | remove_first: '&' }}{% endif %}" class="{% if qp == '' %}on{% endif %}">All</a>{% for x in progs.Items %}{% assign sl = x.RoutePath | split: "/" | last %}<a href="{{ PathBase }}/grantees?program={{ sl }}{{ bp }}" class="{% if qp == sl %}on{% endif %}"><span class="dot" style="background:{{ x.PublishedContent.color }}"></span>{{ x.PrimaryField }}</a>{% endfor %}</div>
+    <div class="chips"><span class="lbl">Year</span><a href="{{ PathBase }}/grantees{% if by != '' %}?{{ by | remove_first: '&' }}{% endif %}" class="{% if qy == '' %}on{% endif %}">All years</a>{% for d in years %}{% assign kv = d | split: ":" %}<a href="{{ PathBase }}/grantees?year={{ kv[1] }}{{ by }}" class="{% if qy == kv[0] %}on{% endif %}">{{ kv[1] }}</a>{% endfor %}</div>
+    <div class="chips" style="margin:0"><span class="lbl">Region</span><a href="{{ PathBase }}/grantees{% if br != '' %}?{{ br | remove_first: '&' }}{% endif %}" class="{% if qr == '' %}on{% endif %}">All regions</a>{% for d in regions %}{% assign kv = d | split: ":" %}<a href="{{ PathBase }}/grantees?region={{ kv[0] }}{{ br }}" class="{% if qr == kv[0] %}on{% endif %}">{{ kv[1] }}</a>{% endfor %}</div>
+  </div>
+  <div class="gsum">
+    <div><span class="num" data-count="{{ tot }}" data-pre="$">{{ tot | format_number: "N0" | prepend: "$" }}</span><span class="mut">granted to {{ n }} {% if n == 1 %}organization{% else %}organizations{% endif %}{% if qpn %} in {{ qpn }}{% endif %}</span></div>
+    <div class="bars">{% for x in progs.Items %}{% assign pt = 0 %}{% for g in Target.Items %}{% assign q = g.PublishedContent %}{% capture yr %}{{ q.year }}{% endcapture %}{% capture rg %}{{ q.region }}{% endcapture %}{% assign ok = true %}{% if q.program.PrimaryField != x.PrimaryField %}{% assign ok = false %}{% endif %}{% if qy != "" and qy != yr %}{% assign ok = false %}{% endif %}{% if qr != "" and qr != rg %}{% assign ok = false %}{% endif %}{% if ok %}{% assign a = q.amount | append: "" | plus: 0 %}{% assign pt = pt | plus: a %}{% endif %}{% endfor %}{% assign pct = 0 %}{% if tot > 0 %}{% assign pct = pt | times: 100 | divided_by: tot %}{% endif %}
+      <div class="bar{% if qp != '' %}{% assign sl = x.RoutePath | split: '/' | last %}{% if sl != qp %} dim{% endif %}{% endif %}"><span>{{ x.PrimaryField }}</span><i style="--w:{{ pct }}%;--c:{{ x.PublishedContent.color }}"></i><b>{{ pt | format_number: "N0" | prepend: "$" }}</b></div>{% endfor %}</div>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin:40px 0 6px;flex-wrap:wrap"><h2 style="font-size:1.8rem">{{ n }} grants</h2><button class="btn btn-line" id="csv" type="button"><i class="bi bi-download"></i> Download this list (CSV)</button></div>
+  <div id="glist">
+  {%- for g in Target.Items %}{% assign q = g.PublishedContent %}{% capture yr %}{{ q.year }}{% endcapture %}{% capture rg %}{{ q.region }}{% endcapture %}{% assign sl = q.program.RoutePath | split: "/" | last %}{% assign ok = true %}{% if qp != "" and qp != sl %}{% assign ok = false %}{% endif %}{% if qy != "" and qy != yr %}{% assign ok = false %}{% endif %}{% if qr != "" and qr != rg %}{% assign ok = false %}{% endif %}{% if ok %}{% assign ws = g.PrimaryField | split: " " %}{% for d in regions %}{% assign kv = d | split: ":" %}{% if kv[0] == rg %}{% assign rl = kv[1] %}{% endif %}{% endfor %}
+    <a class="gt reveal" href="{{ PathBase }}/{{ g.RoutePath }}" data-row="{{ g.PrimaryField | escape }}|{{ q.program.PrimaryField }}|{{ yr | remove: 'y' }}|{{ rl }}|{{ q.amount }}"><span class="mono" style="background:{{ q.program.PublishedContent.color }}">{{ ws[0] | slice: 0 }}{{ ws[1] | slice: 0 }}</span>
+      <span><b style="font:500 1.3rem/1.2 var(--serif)">{{ g.PrimaryField }}</b><span class="mut" style="display:block;font-size:.96rem;margin:4px 0 8px">{{ q.purpose }}</span><span style="display:flex;gap:6px;flex-wrap:wrap"><span class="pill"><span class="dot" style="background:{{ q.program.PublishedContent.color }}"></span>{{ q.program.PrimaryField }}</span><span class="pill">{{ rl }}</span><span class="pill">{{ yr | remove: "y" }}</span></span></span>
+      <span style="text-align:right"><span class="amt">{{ q.amount | append: "" | plus: 0 | format_number: "N0" | prepend: "$" }}</span><small class="mut" style="display:block;margin-top:5px">{{ q.term }}</small></span></a>
+  {%- endif %}{% endfor %}
+  </div>
+  {% if n == 0 %}<div class="card" style="text-align:center;padding:50px"><h3>No grants match those filters</h3><p><a href="{{ PathBase }}/grantees" style="color:var(--rust2);text-decoration:underline">Clear the filters</a></p></div>{% endif %}
+</div></section>
+<style>
+  .gfil{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px 24px}
+  .gsum{display:grid;grid-template-columns:1fr 1.3fr;gap:50px;align-items:center;margin-top:34px;padding:34px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .gsum .num{display:block;font-size:clamp(3rem,6vw,5rem);color:var(--forest)}.gsum .mut{font-size:1.05rem}
+  .bars{display:grid;gap:12px}.bar{display:grid;grid-template-columns:150px 1fr 100px;gap:14px;align-items:center;font-size:.9rem;transition:opacity .2s}.bar.dim{opacity:.35}
+  .bar i{display:block;height:12px;border-radius:6px;background:var(--paper3);position:relative;overflow:hidden}.bar i::after{content:"";position:absolute;inset:0;width:var(--w);background:var(--c);border-radius:6px;animation:grow 1.1s cubic-bezier(.2,.8,.2,1) both}
+  .bar b{text-align:right;font:500 1rem/1 var(--serif)}@keyframes grow{from{width:0}}
+  @media(max-width:900px){.gsum{grid-template-columns:1fr;gap:26px}.bar{grid-template-columns:110px 1fr 80px}}
+</style>
+<script>
+document.getElementById('csv').addEventListener('click',function(){var rows=[['Organization','Program','Year','Region','Amount (USD)']];
+  document.querySelectorAll('#glist [data-row]').forEach(function(a){rows.push(a.getAttribute('data-row').split('|'))});
+  var csv=rows.map(function(r){return r.map(function(c){return '"'+String(c).replace(/"/g,'""')+'"'}).join(',')}).join('\n');
+  var a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'}));a.download='alder-grantees.csv';a.click()});
+</script>

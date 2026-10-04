@@ -1,0 +1,25 @@
+{%- assign gs = get_content_items(ContentType="grantees", PageSize=500) -%}
+<section class="phead"><div class="wrap"><svg class="leaf" viewBox="0 0 200 300" aria-hidden="true"><path d="M100 10c60 50 80 120 0 280C20 130 40 60 100 10z" fill="#16302a"/><path d="M100 40v250M100 90l-40-30M100 130l45-35M100 170l-40-32M100 210l38-30" stroke="#f6f1e7" stroke-width="5" stroke-linecap="round"/></svg>
+  <span class="eyebrow">Grant programs</span>
+  <h1>Five programs, <em>one region.</em></h1>
+  <p class="lead">Each program has its own officer, deadline and short application. Most of our grants are flexible money, and most last two years or more.</p>
+</div></section>
+<section style="padding:30px 0 100px"><div class="wrap">
+  {%- for x in Target.Items %}{% assign p = x.PublishedContent %}{% capture st %}{{ p.status }}{% endcapture %}{% assign n = 0 %}{% assign tot = 0 %}{% for g in gs.Items %}{% if g.PublishedContent.program.PrimaryField == x.PrimaryField %}{% assign n = n | plus: 1 %}{% assign a = g.PublishedContent.amount | append: "" | plus: 0 %}{% assign tot = tot | plus: a %}{% endif %}{% endfor %}
+  <a class="prow reveal" href="{{ PathBase }}/{{ x.RoutePath }}" style="--c:{{ p.color }}">
+    <span class="pn">0{{ forloop.index }}</span>
+    <div><div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px"><span class="pill st-{{ st }}">{% if st == "open" %}Open for applications{% elsif st == "rolling" %}Rolling, apply any time{% elsif st == "invite" %}By invitation{% else %}Closed this cycle{% endif %}</span>{% if st != "closed" %}<span class="pill"><i class="bi bi-calendar3"></i> Next deadline {{ p.deadline.Value | date: "%b %-d, %Y" }}</span>{% endif %}</div>
+      <h2><i class="bi bi-{{ p.icon }}" style="color:var(--c);font-size:.8em;margin-right:10px"></i>{{ x.PrimaryField }}</h2><p class="mut" style="font-size:1.12rem;margin:10px 0 0;max-width:620px">{{ p.tagline }}</p></div>
+    <dl><div><dt>Grant size</dt><dd>{{ p.grant_range }}</dd></div><div><dt>Length</dt><dd>{{ p.term }}</dd></div><div><dt>Funded so far</dt><dd>{{ tot | format_number: "N0" | prepend: "$" }} <small class="mut">to {{ n }} groups</small></dd></div></dl>
+    <i class="bi bi-arrow-up-right go"></i>
+  </a>{% endfor %}
+</div></section>
+<style>
+  .prow{display:grid;grid-template-columns:70px 1.5fr 1fr 40px;gap:30px;align-items:center;padding:38px 0;border-top:1px solid var(--line);position:relative;transition:background .2s}
+  .prow:last-child{border-bottom:1px solid var(--line)}.prow::before{content:"";position:absolute;left:0;top:-1px;width:0;height:3px;background:var(--c);transition:width .4s}.prow:hover::before{width:100%}
+  .prow .pn{font:400 1.1rem/1 var(--serif);color:var(--mut)}.prow h2{font-size:clamp(2rem,3.6vw,3rem)}
+  .prow dl{margin:0;display:grid;gap:12px}.prow dt{font:600 .7rem/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--mut)}.prow dd{margin:4px 0 0;font:500 1.15rem/1.2 var(--serif)}
+  .prow .go{font-size:1.6rem;color:var(--c);transition:transform .2s}.prow:hover .go{transform:translate(4px,-4px)}
+  .st-open{background:#dfe9d6;color:#2f4d22}.st-rolling{background:#d9e8ef;color:#1d4a5e}.st-invite{background:#ece0f2;color:#4f3470}.st-closed{background:#eadcd6;color:#7a2f22}
+  @media(max-width:900px){.prow{grid-template-columns:1fr;gap:16px}.prow .go{display:none}}
+</style>

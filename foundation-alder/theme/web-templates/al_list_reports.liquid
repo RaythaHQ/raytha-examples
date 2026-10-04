@@ -1,0 +1,19 @@
+{%- assign mx = 0 %}{% for r in Target.Items %}{% assign t = r.PublishedContent.total_granted | append: "" | plus: 0 %}{% if t > mx %}{% assign mx = t %}{% endif %}{% endfor -%}
+<section class="phead"><div class="wrap"><svg class="leaf" viewBox="0 0 200 300" aria-hidden="true"><path d="M100 10c60 50 80 120 0 280C20 130 40 60 100 10z" fill="#16302a"/><path d="M100 40v250M100 90l-40-30M100 130l45-35M100 170l-40-32M100 210l38-30" stroke="#f6f1e7" stroke-width="5" stroke-linecap="round"/></svg><span class="eyebrow">Annual reports</span><h1>Every year, <em>in the open.</em></h1><p class="lead">What we granted, to whom, and what we learned. Each report prints to a clean PDF.</p></div></section>
+<section style="padding:60px 0 40px"><div class="wrap"><div class="grid4">
+{%- for r in Target.Items %}{% assign q = r.PublishedContent %}
+  <a class="cover reveal" href="{{ PathBase }}/{{ r.RoutePath }}" style="--c:{{ q.cover_color }}"><span class="cy">{{ q.year }}</span><svg viewBox="0 0 200 200" aria-hidden="true">{% for i in (1..7) %}<circle cx="150" cy="150" r="{{ i | times: 22 }}" fill="none" stroke="rgba(255,255,255,.22)" stroke-width="1.5"/>{% endfor %}</svg><span class="ct">Annual Report</span><span class="cs">{{ q.total_granted | append: "" | plus: 0 | divided_by: 10000.0 | round | divided_by: 100.0 | prepend: "$" }}M to {{ q.grants_count }} grantees</span></a>{% endfor %}
+</div></div></section>
+<section class="section"><div class="wrap" style="display:grid;grid-template-columns:1fr 1.4fr;gap:70px;align-items:center" id="rg">
+  <div><span class="eyebrow">Giving over time</span><h2 style="font-size:clamp(2.2rem,4vw,3.4rem);margin:14px 0 16px">Growing, <em>year on year.</em></h2><p class="mut" style="font-size:1.08rem">Charted from the numbers in each report. Add next year's report and the chart updates itself.</p></div>
+  <div class="ychart">{% for r in Target.Items reversed %}{% assign q = r.PublishedContent %}{% assign t = q.total_granted | append: "" | plus: 0 %}{% assign h = t | times: 100 | divided_by: mx %}<div><b>{{ t | divided_by: 10000.0 | round | divided_by: 100.0 | prepend: "$" }}M</b><i style="--h:{{ h }}%;--c:{{ q.cover_color }}"></i><span>{{ q.year }}</span></div>{% endfor %}</div>
+</div></section>
+<style>
+  .cover{position:relative;aspect-ratio:3/4;border-radius:10px 18px 18px 10px;background:var(--c);color:#fff;padding:28px;display:flex;flex-direction:column;overflow:hidden;box-shadow:inset 10px 0 0 rgba(0,0,0,.14),0 24px 50px rgba(22,48,42,.18);transition:transform .25s}
+  .cover:hover{transform:translateY(-6px) rotate(-1deg)}.cover svg{position:absolute;right:-30px;bottom:-30px;width:90%}
+  .cover .cy{font:500 4.4rem/1 var(--serif);letter-spacing:-.04em;position:relative}.cover .ct{margin-top:auto;font:600 .78rem/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;position:relative}.cover .cs{font:400 1.12rem/1.3 var(--serif);margin-top:8px;position:relative}
+  .ychart{display:flex;gap:24px;align-items:flex-end;height:320px;border-bottom:1px solid var(--line);padding:0 10px}
+  .ychart>div{flex:1;display:flex;flex-direction:column;align-items:center;gap:10px;height:100%;justify-content:flex-end}.ychart i{display:block;width:100%;max-width:90px;height:var(--h);background:var(--c);border-radius:8px 8px 0 0;animation:up 1.2s cubic-bezier(.2,.8,.2,1) both}
+  .ychart b{font:500 1.2rem/1 var(--serif)}.ychart span{font:600 .85rem/1 var(--sans);color:var(--mut);margin-bottom:-30px}@keyframes up{from{height:0}}
+  @media(max-width:900px){#rg{grid-template-columns:1fr!important}}
+</style>
