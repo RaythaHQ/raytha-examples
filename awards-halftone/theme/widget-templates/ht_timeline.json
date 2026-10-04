@@ -1,0 +1,47 @@
+{
+  "label": "Halftone: key dates",
+  "fields": [
+    {
+      "developerName": "kicker",
+      "label": "Kicker",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "headline",
+      "label": "Headline",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "subtitle",
+      "label": "Subtitle",
+      "fieldType": "long_text"
+    },
+    {
+      "developerName": "dates",
+      "label": "Dates",
+      "fieldType": "repeater",
+      "subFields": [
+        {
+          "developerName": "date",
+          "label": "Date (YYYY-MM-DD)",
+          "fieldType": "single_line_text"
+        },
+        {
+          "developerName": "label",
+          "label": "Date as shown",
+          "fieldType": "single_line_text"
+        },
+        {
+          "developerName": "title",
+          "label": "Title",
+          "fieldType": "single_line_text"
+        },
+        {
+          "developerName": "text",
+          "label": "Text",
+          "fieldType": "long_text"
+        }
+      ]
+    }
+  ]
+}

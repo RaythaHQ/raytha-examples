@@ -1,0 +1,2 @@
+{%- assign s = widget.settings -%}
+<section class="section tight"><div class="wrap"><div class="cta reveal"><span class="label acc">{{ s.kicker }}</span><h2 style="margin-top:14px">{{ s.headline }} <em>{{ s.accent }}</em></h2><p>{{ s.text }}</p><div class="row"><a class="btn btn-acc" href="{{ s.primary_url }}">{{ s.primary_label }} <i class="bi bi-arrow-right"></i></a>{% if s.secondary_label != "" %}<a class="btn btn-line" href="{{ s.secondary_url }}">{{ s.secondary_label }}</a>{% endif %}</div></div></div></section>

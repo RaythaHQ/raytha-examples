@@ -1,0 +1,10 @@
+{%- assign s = widget.settings -%}
+{%- assign gp = get_content_items(ContentType="entries", Filter="award eq 'grand_prix'", OrderBy="year desc", PageSize=1) -%}
+{%- for e in gp.Items %}{% assign q = e.PublishedContent %}
+<section class="section band"><div class="wrap feature">
+  <a class="im reveal" href="{{ PathBase }}/{{ e.RoutePath }}"><img src="{{ q.image.Value | attachment_redirect_url }}" alt="{{ e.PrimaryField }} by {{ q.entrant }}"></a>
+  <div><span class="label acc">{{ s.kicker }}</span><h3>{{ e.PrimaryField }}</h3><p style="color:var(--ink2);font-size:1.1rem;margin:0">{{ q.entrant }}, {{ q.city }} · {{ q.category.PrimaryField }}, {{ q.year }}</p>
+    <blockquote>{{ s.quote }}</blockquote><p class="label" style="margin:0 0 28px">{{ s.judge }}</p>
+    <div style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn btn-ink" href="{{ PathBase }}/{{ e.RoutePath }}">See the work</a><a class="btn btn-line" href="{{ PathBase }}/winners">All past winners</a></div></div>
+</div></section>
+{%- endfor %}

@@ -1,0 +1,47 @@
+{
+  "label": "Halftone: entry or nomination form",
+  "fields": [
+    {
+      "developerName": "kind",
+      "label": "Form (apply or nominate)",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "headline",
+      "label": "Form heading",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "intro",
+      "label": "Intro",
+      "fieldType": "long_text"
+    },
+    {
+      "developerName": "aside_title",
+      "label": "Side box heading",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "aside",
+      "label": "Side box text",
+      "fieldType": "wysiwyg"
+    },
+    {
+      "developerName": "steps",
+      "label": "What happens next",
+      "fieldType": "repeater",
+      "subFields": [
+        {
+          "developerName": "title",
+          "label": "Title",
+          "fieldType": "single_line_text"
+        },
+        {
+          "developerName": "text",
+          "label": "Text",
+          "fieldType": "long_text"
+        }
+      ]
+    }
+  ]
+}

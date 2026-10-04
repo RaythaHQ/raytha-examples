@@ -1,0 +1,6 @@
+{%- assign s = widget.settings -%}{%- assign n = s.count | default: 8 -%}
+{%- assign es = get_content_items(ContentType="entries", Filter="year eq '2026'", OrderBy="sort_order asc", PageSize=n) -%}
+<section class="section"><div class="wrap">
+  <div class="shead"><div><span class="label acc">{{ s.kicker }}</span><h2>{{ s.headline }}</h2><p>{{ s.subtitle }}</p></div><a class="btn btn-line" href="{{ PathBase }}/entries">Open the gallery <i class="bi bi-arrow-right"></i></a></div>
+  <div class="strip">{% for e in es.Items %}{% assign q = e.PublishedContent %}<a class="work" href="{{ PathBase }}/{{ e.RoutePath }}"><div class="im"><img src="{{ q.image.Value | attachment_redirect_url }}" alt="{{ e.PrimaryField }} by {{ q.entrant }}" loading="lazy"><span class="tag">{{ q.category.PrimaryField }}</span></div><div class="bd"><h3>{{ e.PrimaryField }}</h3><div class="by">{{ q.entrant }} · {{ q.city }}</div></div></a>{% endfor %}</div>
+</div></section>

@@ -1,0 +1,25 @@
+{
+  "label": "Halftone: latest Grand Prix",
+  "fields": [
+    {
+      "developerName": "kicker",
+      "label": "Kicker",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "headline",
+      "label": "Headline",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "quote",
+      "label": "Jury quote",
+      "fieldType": "long_text"
+    },
+    {
+      "developerName": "judge",
+      "label": "Quoted judge",
+      "fieldType": "single_line_text"
+    }
+  ]
+}

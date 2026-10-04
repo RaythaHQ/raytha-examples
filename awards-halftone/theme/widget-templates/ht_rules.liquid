@@ -1,0 +1,5 @@
+{%- assign s = widget.settings -%}
+<section class="section" style="padding-top:64px"><div class="wrap rules">
+  <nav aria-label="Rules">{% for r in s.rules %}<a href="#{{ r.anchor }}">{{ forloop.index }}. {{ r.title }}</a>{% endfor %}</nav>
+  <div>{% for r in s.rules %}<div class="rule" id="{{ r.anchor }}"><span class="n">{{ forloop.index | prepend: "0" | slice: -2, 2 }}</span><div><h3>{{ r.title }}</h3><div class="prose">{{ r.body | newline_to_br }}</div></div></div>{% endfor %}</div>
+</div></section>

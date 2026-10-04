@@ -1,0 +1,8 @@
+{%- assign s = widget.settings -%}
+{%- assign cats = get_content_items(ContentType="categories", OrderBy="sort_order asc", PageSize=12) -%}
+<section class="section band"><div class="wrap">
+  <div class="shead"><div><span class="label acc">{{ s.kicker }}</span><h2>{{ s.headline }}</h2><p>{{ s.subtitle }}</p></div><a class="btn btn-line" href="{{ PathBase }}/categories">All categories <i class="bi bi-arrow-right"></i></a></div>
+  <div class="grid3">{% for c in cats.Items %}{% assign p = c.PublishedContent %}
+    <a class="cat reveal" style="--c:{{ p.color }}" href="{{ PathBase }}/{{ c.RoutePath }}"><span class="label">{{ forloop.index | prepend: "0" }}</span><h3>{{ c.PrimaryField }}</h3><p>{{ p.tagline }}</p>
+      <div class="meta"><span class="label">Closes <b>{{ p.deadline.Value | date: "%-d %b %Y" }}</b></span><span class="status" data-deadline="{{ p.deadline.Value | date: '%Y-%m-%d' }}">Open</span></div></a>{% endfor %}</div>
+</div></section>

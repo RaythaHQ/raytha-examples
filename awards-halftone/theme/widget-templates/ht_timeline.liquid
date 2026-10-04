@@ -1,0 +1,6 @@
+{%- assign s = widget.settings -%}
+<section class="section tight"><div class="wrap">
+  <div class="shead"><div><span class="label acc">{{ s.kicker }}</span><h2>{{ s.headline }}</h2><p>{{ s.subtitle }}</p></div></div>
+  <div class="tl">{% for d in s.dates %}<div data-date="{{ d.date }}"><span class="label">{{ d.label }}</span><b>{{ d.title }}</b><p>{{ d.text }}</p></div>{% endfor %}</div>
+  <script>(function(){var t=new Date();document.querySelectorAll('.tl [data-date]').forEach(function(el){var p=el.getAttribute('data-date').split('-');if(new Date(+p[0],+p[1]-1,+p[2])<t)el.classList.add('past')})})();</script>
+</div></section>

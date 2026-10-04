@@ -1,0 +1,5 @@
+{%- assign s = widget.settings -%}
+<section class="section"><div class="wrap">
+  <div class="shead"><div><span class="label acc">{{ s.kicker }}</span><h2>{{ s.headline }}</h2><p>{{ s.subtitle }}</p></div></div>
+  <div class="grid3">{% for j in s.judges %}{% assign parts = j.name | split: " " %}<div class="judge reveal" style="--c:{{ j.color }}"><span class="av"><span>{{ parts[0] | slice: 0 }}{{ parts.last | slice: 0 }}</span></span><h3>{{ j.name }}</h3><span class="label">{{ j.role }}</span><p>{{ j.bio }}</p></div>{% endfor %}</div>
+</div></section>

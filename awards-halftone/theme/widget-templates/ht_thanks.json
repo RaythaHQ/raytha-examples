@@ -1,0 +1,25 @@
+{
+  "label": "Halftone: thank-you message",
+  "fields": [
+    {
+      "developerName": "apply_title",
+      "label": "Heading after an entry",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "apply_text",
+      "label": "Text after an entry",
+      "fieldType": "long_text"
+    },
+    {
+      "developerName": "nominate_title",
+      "label": "Heading after a nomination",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "nominate_text",
+      "label": "Text after a nomination",
+      "fieldType": "long_text"
+    }
+  ]
+}

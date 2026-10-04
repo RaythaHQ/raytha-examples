@@ -1,0 +1,7 @@
+{%- assign s = widget.settings -%}
+<section class="section" data-thanks style="min-height:56vh;display:flex;align-items:center"><div class="wrap" style="max-width:860px">
+  <svg width="64" height="64" viewBox="0 0 64 64" aria-hidden="true"><g fill="#ff5a36"><circle cx="14" cy="14" r="11"/><circle cx="40" cy="14" r="8"/><circle cx="14" cy="40" r="8"/><circle cx="40" cy="40" r="5.5"/><circle cx="58" cy="40" r="3"/><circle cx="40" cy="58" r="3"/><circle cx="58" cy="58" r="2"/></g></svg>
+  <div data-for="apply"><h1 style="font-size:clamp(3rem,7vw,5.6rem);margin:26px 0 18px">{{ s.apply_title }}</h1><p style="font-size:1.18rem;color:var(--ink2);max-width:640px">{{ s.apply_text }}</p></div>
+  <div data-for="nominate" style="display:none"><h1 style="font-size:clamp(3rem,7vw,5.6rem);margin:26px 0 18px">{{ s.nominate_title }}</h1><p style="font-size:1.18rem;color:var(--ink2);max-width:640px">{{ s.nominate_text }}</p></div>
+  <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:30px"><a class="btn btn-ink" href="{{ PathBase }}/entries">Browse the gallery</a><a class="btn btn-line" href="{{ PathBase }}/apply">Enter another work</a><a class="btn btn-line" href="{{ PathBase }}/nominate">Nominate someone</a></div>
+</div></section>
