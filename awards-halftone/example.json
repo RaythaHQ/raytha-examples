@@ -1,0 +1,16 @@
+{
+ "name": "Halftone Awards",
+ "theme": "halftone",
+ "types": [
+  "categories",
+  "entries",
+  "applications",
+  "nominations"
+ ],
+ "detailTemplates": {
+  "categories": "ht_detail_categories",
+  "entries": "ht_detail_entries",
+  "applications": "ht_detail_submission",
+  "nominations": "ht_detail_submission"
+ }
+}

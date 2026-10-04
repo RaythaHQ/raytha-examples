@@ -1,0 +1,30 @@
+{
+ "developerName": "footer",
+ "label": "Footer",
+ "items": [
+  {
+   "label": "Enter your work",
+   "link": "/apply"
+  },
+  {
+   "label": "Nominate someone",
+   "link": "/nominate"
+  },
+  {
+   "label": "Entry gallery",
+   "link": "/entries"
+  },
+  {
+   "label": "Past winners",
+   "link": "/winners"
+  },
+  {
+   "label": "Jury",
+   "link": "/judges"
+  },
+  {
+   "label": "Rules",
+   "link": "/rules"
+  }
+ ]
+}

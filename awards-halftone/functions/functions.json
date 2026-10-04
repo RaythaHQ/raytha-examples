@@ -1,0 +1,4 @@
+[
+ {"developerName": "forms.apply", "name": "Entry form handler", "trigger": "http_request", "file": "apply.js", "routePath": "forms/apply"},
+ {"developerName": "forms.nominate", "name": "Nomination form handler", "trigger": "http_request", "file": "nominate.js", "routePath": "forms/nominate"}
+]

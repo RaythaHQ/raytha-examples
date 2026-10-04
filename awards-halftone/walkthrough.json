@@ -1,0 +1,150 @@
+{
+  "slug": "halftone-awards",
+  "name": "Halftone Awards",
+  "viewport": [
+    1440,
+    810
+  ],
+  "output": [
+    1920,
+    1080
+  ],
+  "colorScheme": "dark",
+  "title": {
+    "kicker": "Raytha use case",
+    "heading": "Halftone Awards",
+    "subheading": "An awards site with categories and deadlines, an entry gallery, past winners and working entry and nomination forms, built on Raytha by an AI agent with the CLI.",
+    "hold": 1.6
+  },
+  "end": {
+    "heading": "Built with Raytha",
+    "subheading": "Open-source .NET CMS. Get the brief, screenshots and a one-command rebuild kit.",
+    "url": "raytha.com/use-cases/halftone-awards",
+    "hold": 2.6
+  },
+  "scenes": [
+    {
+      "url": "/",
+      "caption": "Six categories, each with a live deadline countdown",
+      "actions": [
+        {
+          "hold": 1.0,
+          "poster": true
+        },
+        {
+          "scroll": 900,
+          "dur": 1.8
+        },
+        {
+          "hold": 0.8
+        }
+      ]
+    },
+    {
+      "url": "/entries",
+      "caption": "An entry gallery you can filter by category",
+      "actions": [
+        {
+          "hold": 0.4
+        },
+        {
+          "click": ".filters a[href*='category=poster-design']",
+          "dur": 0.9
+        },
+        {
+          "hold": 0.5
+        },
+        {
+          "scroll": 480,
+          "dur": 1.0
+        },
+        {
+          "click": ".gal .work",
+          "dur": 0.9
+        },
+        {
+          "hold": 0.6
+        },
+        {
+          "scroll": 320,
+          "dur": 1.0
+        },
+        {
+          "hold": 0.4
+        }
+      ]
+    },
+    {
+      "url": "/winners",
+      "caption": "Past winners, year by year",
+      "actions": [
+        {
+          "hold": 0.5
+        },
+        {
+          "scroll": 1100,
+          "dur": 2.2
+        },
+        {
+          "hold": 0.4
+        }
+      ]
+    },
+    {
+      "url": "/apply?category=photography",
+      "caption": "Entries post to a Raytha Function and arrive as drafts",
+      "actions": [
+        {
+          "hold": 0.4
+        },
+        {
+          "type": {
+            "selector": "#entrant_name",
+            "text": "Maya Lindgren",
+            "cps": 12
+          }
+        },
+        {
+          "eval": "document.getElementById('email').value='maya@example.com';document.getElementById('title').value='Harbour, 5 am';document.getElementById('link').value='https://example.com/harbour';document.getElementById('statement').value='Eight photographs of the harbour before the first ferry.'",
+          "waitMs": 200
+        },
+        {
+          "scroll": 820,
+          "dur": 1.3
+        },
+        {
+          "click": "input[name=consent]",
+          "dur": 0.7,
+          "navigates": false
+        },
+        {
+          "click": "form.form button[type=submit]",
+          "dur": 0.7
+        },
+        {
+          "hold": 1.2
+        }
+      ]
+    },
+    {
+      "url": "/",
+      "phone": true,
+      "phoneCaption": {
+        "kicker": "Responsive",
+        "text": "Enter and browse from a phone"
+      },
+      "actions": [
+        {
+          "hold": 0.5
+        },
+        {
+          "scroll": 1300,
+          "dur": 2.1
+        },
+        {
+          "hold": 0.4
+        }
+      ]
+    }
+  ]
+}

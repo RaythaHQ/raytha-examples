@@ -1,0 +1,26 @@
+{
+ "developerName": "mainmenu",
+ "label": "Main menu",
+ "items": [
+  {
+   "label": "Categories",
+   "link": "/categories"
+  },
+  {
+   "label": "Entry gallery",
+   "link": "/entries"
+  },
+  {
+   "label": "Past winners",
+   "link": "/winners"
+  },
+  {
+   "label": "Jury",
+   "link": "/judges"
+  },
+  {
+   "label": "Rules",
+   "link": "/rules"
+  }
+ ]
+}

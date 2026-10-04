@@ -1,0 +1,17 @@
+[
+  {"name": "01-home-hero-1440.png", "path": "/", "device": "desktop"},
+  {"name": "02-home-full-1440.png", "path": "/", "device": "desktop", "full_page": true},
+  {"name": "03-categories-1440.png", "path": "/categories", "device": "desktop", "full_page": true},
+  {"name": "04-category-1440.png", "path": "/categories/poster-design", "device": "desktop", "full_page": true},
+  {"name": "05-gallery-1440.png", "path": "/entries", "device": "desktop", "full_page": true},
+  {"name": "06-entry-1440.png", "path": "/entries/heat", "device": "desktop", "full_page": true},
+  {"name": "07-winners-1440.png", "path": "/winners", "device": "desktop", "full_page": true},
+  {"name": "08-apply-1440.png", "path": "/apply?category=poster-design", "device": "desktop", "full_page": true},
+  {"name": "09-nominate-1440.png", "path": "/nominate", "device": "desktop", "full_page": true},
+  {"name": "10-thanks-1440.png", "path": "/thanks?f=apply", "device": "desktop"},
+  {"name": "11-jury-1440.png", "path": "/judges", "device": "desktop", "full_page": true},
+  {"name": "12-rules-1440.png", "path": "/rules", "device": "desktop", "full_page": true},
+  {"name": "13-home-mobile-390.png", "path": "/", "device": "mobile"},
+  {"name": "14-entry-mobile-390.png", "path": "/entries/tidal", "device": "mobile"},
+  {"name": "15-apply-mobile-390.png", "path": "/apply", "device": "mobile", "full_page": true}
+]
