@@ -1,0 +1,18 @@
+{%- assign l = Target.PublishedContent -%}
+<section class="phead"><div class="wrap"><div class="crumbs"><a href="{{ PathBase }}/">Home</a><span>/</span><a href="{{ PathBase }}/locations">Locations</a><span>/</span><span>{{ Target.PrimaryField }}</span></div><h1>{{ Target.PrimaryField }}</h1><p>{{ l.kind }} · {{ l.street }}, {{ l.city }}</p>
+  <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:20px"><a class="btn btn-teal" href="tel:{{ l.phone | remove: ' ' | remove: '(' | remove: ')' | remove: '-' | prepend: '+1' }}"><i class="bi bi-telephone-fill"></i> {{ l.phone }}</a><a class="btn btn-line" href="mailto:{{ l.email }}"><i class="bi bi-envelope"></i> {{ l.email }}</a></div></div></section>
+<section class="section" style="padding-top:44px"><div class="wrap" style="display:grid;grid-template-columns:1.3fr 1fr;gap:32px;align-items:start" id="lgrid">
+  <div>
+    <div class="map reveal">
+      <svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="900" fill="#e4efee"/><path d="M-20 640 C300 560 420 760 760 700 S1220 520 1620 600" fill="none" stroke="#bfe0f0" stroke-width="70"/><g fill="#cfe7d9"><rect x="120" y="120" width="260" height="170" rx="30"/><rect x="1180" y="160" width="220" height="200" rx="30"/><circle cx="900" cy="300" r="90"/></g><g stroke="#fff" stroke-width="22" fill="none" stroke-linecap="round"><path d="M0 420H1600M560 0V900M1060 0V900M0 180L1600 260M300 900L760 0"/></g><g stroke="#fff" stroke-width="9" fill="none" opacity=".8"><path d="M0 300H1600M0 540H1600M0 780H1600M200 0V900M820 0V900M1300 0V900"/></g></svg>
+      <span class="pin" style="left:{{ l.map_x | append: '' }}%;top:{{ l.map_y | append: '' }}%"><b>{{ Target.PrimaryField }}</b><i class="bi bi-geo-alt-fill"></i></span>
+    </div>
+    <h2 style="font-size:1.5rem;margin:36px 0 14px">Services here</h2>
+    <div class="grid2">{% assign sv = l.services | newline_to_br | split: "<br />" %}{% for s in sv %}{% assign st = s | strip %}{% if st != "" %}<div class="card reveal" style="padding:16px 18px;display:flex;gap:10px"><i class="bi bi-check-circle-fill" style="color:var(--teal)"></i><span>{{ st }}</span></div>{% endif %}{% endfor %}</div>
+  </div>
+  <aside style="display:grid;gap:16px">
+    <div class="card loc" data-loc><h3>Opening hours</h3><span class="open-now"></span><ul class="hours">{% assign hl = l.hours | newline_to_br | split: "<br />" %}{% for h in hl %}{% assign ht = h | strip %}{% if ht != "" %}{% assign hp = ht | split: ": " %}<li data-day="{{ hp[0] }}"><span>{{ hp[0] }}</span><span>{{ hp[1] }}</span></li>{% endif %}{% endfor %}</ul></div>
+    <div class="card" style="padding:24px"><h3 style="font-size:1.1rem;margin-bottom:8px"><i class="bi bi-p-circle" style="color:var(--teal)"></i> Parking and access</h3><p style="margin:0;color:var(--ink2)">{{ l.parking }}</p></div>
+    <div class="order" style="margin:0"><h3>Can't make it in?</h3><p>We deliver and set up equipment at home, usually within one or two business days.</p><a class="btn btn-teal" href="{{ PathBase }}/how-to-order">How ordering works <i class="bi bi-arrow-right"></i></a></div>
+  </aside>
+</div><style>@media(max-width:900px){#lgrid{grid-template-columns:1fr!important}}</style></section>
