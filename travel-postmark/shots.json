@@ -1,0 +1,18 @@
+[
+ {"name": "01-home-hero-1440.png", "path": "/", "device": "desktop"},
+ {"name": "02-home-full-1440.png", "path": "/", "device": "desktop", "full_page": true},
+ {"name": "03-how-it-works-1440.png", "path": "/how-it-works", "device": "desktop", "full_page": true},
+ {"name": "04-trips-1440.png", "path": "/trips", "device": "desktop", "full_page": true},
+ {"name": "05-tier-1440.png", "path": "/trips/classic", "device": "desktop", "full_page": true},
+ {"name": "06-reveals-1440.png", "path": "/reveals", "device": "desktop", "full_page": true},
+ {"name": "07-reveal-detail-1440.png", "path": "/reveals/kyoto", "device": "desktop", "full_page": true},
+ {"name": "08-reviews-1440.png", "path": "/reviews", "device": "desktop", "full_page": true},
+ {"name": "09-faq-1440.png", "path": "/faq", "device": "desktop", "full_page": true},
+ {"name": "10-gift-1440.png", "path": "/gift", "device": "desktop", "full_page": true},
+ {"name": "11-plan-1440.png", "path": "/plan", "device": "desktop", "full_page": true},
+ {"name": "12-thanks-1440.png", "path": "/plan/thanks?name=Jo", "device": "desktop"},
+ {"name": "13-home-mobile-390.png", "path": "/", "device": "mobile"},
+ {"name": "14-trips-mobile-390.png", "path": "/trips", "device": "mobile", "full_page": true},
+ {"name": "15-reveals-mobile-390.png", "path": "/reveals", "device": "mobile"},
+ {"name": "16-plan-mobile-390.png", "path": "/plan", "device": "mobile", "full_page": true}
+]

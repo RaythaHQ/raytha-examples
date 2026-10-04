@@ -1,0 +1,5 @@
+{%- assign p = Target.PublishedContent -%}
+<section class="section"><div class="narrow"><div class="crumbs"><a href="{{ PathBase }}/">Home</a><span>/</span><a href="{{ PathBase }}/{% if p.answer %}faq{% else %}reviews{% endif %}">{% if p.answer %}FAQ{% else %}Reviews{% endif %}</a></div>
+  {%- if p.answer %}<h1 style="font-size:clamp(2.4rem,5vw,3.6rem);margin:20px 0">{{ Target.PrimaryField }}</h1><div class="prose">{{ p.answer }}</div>
+  {%- else %}{% assign v = p.rating | append: "" | plus: 0 %}<span class="stars" style="display:block;margin-top:20px;font-size:1.3rem">{% for i in (1..5) %}{% if i <= v %}★{% else %}☆{% endif %}{% endfor %}</span><h1 style="font-size:clamp(2.4rem,5vw,3.6rem);margin:12px 0 20px">{{ p.headline }}</h1><p class="prose" style="font-size:1.25rem">{{ p.quote }}</p><p class="muted">{{ Target.PrimaryField }}, {{ p.home }} · went to {{ p.went_to }}</p>{% endif %}
+  <a class="btn btn-line" href="{{ PathBase }}/plan" style="margin-top:20px">Plan my trip</a></div></section>

@@ -1,0 +1,9 @@
+{%- assign keys = "basics,surprise,money,gifts,travel" | split: "," -%}{%- assign names = "The basics,The surprise,Prices and changes,Gifts,On the trip" | split: "," -%}
+<section class="phead"><svg class="big-pm" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="46" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="50" cy="50" r="30" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 44c7-5 14 5 21 0s14-5 21 0 14 5 21 0 14-5 21 0M8 56c7-5 14 5 21 0s14-5 21 0 14 5 21 0 14-5 21 0" fill="none" stroke="currentColor" stroke-width="2"/></svg><div class="wrap"><div class="crumbs"><a href="{{ PathBase }}/">Home</a><span>/</span><span>FAQ</span></div>
+  <h1>Good <em>questions</em></h1><p>Everything people ask before they hand over their holiday. Still wondering? Write to hello@example.com.</p></div></section>
+<section class="section" style="padding-top:50px"><div class="wrap" style="display:grid;grid-template-columns:240px 1fr;gap:60px">
+  <nav class="topics" aria-label="Topics">{% for k in keys %}<a href="#{{ k }}">{{ names[forloop.index0] }}</a>{% endfor %}</nav>
+  <div>{% for k in keys %}<div id="{{ k }}" style="scroll-margin-top:110px;margin-bottom:40px"><span class="label">{{ names[forloop.index0] }}</span><div style="margin-top:10px">
+    {%- for q in Target.Items %}{% capture tp %}{{ q.PublishedContent.topic }}{% endcapture %}{% if tp == k %}<details class="q"><summary>{{ q.PrimaryField }}</summary><div class="a">{{ q.PublishedContent.answer }}</div></details>{% endif %}{% endfor %}</div></div>{% endfor %}</div>
+</div></section>
+<style>@media(max-width:860px){.section .wrap[style*="240px"]{grid-template-columns:1fr!important}.topics{position:static;display:flex;flex-wrap:wrap}}</style>
