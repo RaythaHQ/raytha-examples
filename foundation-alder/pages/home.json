@@ -116,8 +116,8 @@
     "primary_label": "Read the guidelines",
     "primary_url": "/apply",
     "primary_external": "no",
-    "secondary_label": "Book a call",
-    "secondary_url": "/apply#timeline",
+    "secondary_label": "Email a program officer",
+    "secondary_url": "mailto:grants@alder.example",
     "note": ""
    }
   }
