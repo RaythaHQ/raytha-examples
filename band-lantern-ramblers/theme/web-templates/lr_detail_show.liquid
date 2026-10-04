@@ -1,0 +1,21 @@
+{%- assign p = Target.PublishedContent -%}{%- assign today = "now" | date: "%Y-%m-%d" -%}{%- capture d %}{{ p.date.Value | date: "%Y-%m-%d" }}{% endcapture -%}{%- capture st %}{{ p.status }}{% endcapture -%}
+<section class="phead slim"><div class="blobs" aria-hidden="true"><span></span><span></span><span></span><span></span></div><div class="grain"></div><div class="wrap"><div class="crumbs"><a href="{{ PathBase }}/">Home</a><span>/</span><a href="{{ PathBase }}/tour">Tour</a><span>/</span><span>{{ p.date.Value | date: "%b %-d, %Y" }}</span></div></div></section>
+<section class="section" style="padding-top:30px"><div class="wrap detail">
+  <div class="frame"><img src="{{ p.poster | attachment_redirect_url }}" alt="Poster for {{ p.venue }}"></div>
+  <div>
+    <span class="kick">{{ p.date.Value | date: "%A, %B %-d, %Y" }}</span>
+    <h1 style="font-size:clamp(2.8rem,5.6vw,4.6rem);margin:16px 0 10px">{{ p.venue }}</h1>
+    <p style="font-size:1.25rem;color:var(--cream2)">{{ p.city }}, {{ p.region }}{% if p.billing %} · <span style="color:var(--sun)">{{ p.billing }}</span>{% endif %}</p>
+    {%- if d >= today %}
+    <div class="row" style="margin:24px 0"><span class="pill {{ st }}" style="font-size:.8rem;padding:.5rem .9rem">{{ st | replace: "on_sale", "On sale" | replace: "few_left", "Few left" | replace: "sold_out", "Sold out" | replace: "free", "Free show" | replace: "announced", "Tickets soon" }}</span><span class="pill" data-days="{{ d }}" style="font-size:.8rem;padding:.5rem .9rem"></span></div>
+    <div class="facts"><div><span class="lbl">Doors and show</span><b>{{ p.doors }}</b></div><div><span class="lbl">Tickets</span><b>{{ p.price_info }}</b></div><div><span class="lbl">Ages</span><b>{{ p.ages }}</b></div><div><span class="lbl">Taping</span><b>Welcome, as always</b></div></div>
+    <div class="prose">{{ p.notes }}</div>
+    <div class="row" style="margin-top:26px">{% if st == "on_sale" or st == "few_left" %}<a class="btn btn-g" href="{{ p.ticket_url }}" target="_blank" rel="noopener">Tickets from the venue <i class="bi bi-box-arrow-up-right"></i></a>{% endif %}<a class="btn btn-line" href="{{ PathBase }}/tour">All tour dates</a></div>
+    <p class="muted" style="font-size:.88rem;margin-top:18px">Tickets are sold by the venue, not by us. Prices are shown for information only.</p>
+    {%- else %}
+    {%- capture sf %}show eq '{{ Target.Id }}'{% endcapture %}{% assign sls = get_content_items(ContentType="setlists", Filter=sf, PageSize=1) %}
+    <p class="muted" style="margin:22px 0">We played this one. Here's what happened.</p>
+    {%- for s in sls.Items %}<a class="btn btn-g" href="{{ PathBase }}/{{ s.RoutePath }}">See the setlist <i class="bi bi-music-note-list"></i></a>{% endfor %}
+    {%- endif %}
+  </div>
+</div></section>

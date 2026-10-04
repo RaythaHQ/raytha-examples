@@ -1,0 +1,13 @@
+{%- assign k = QueryParams.kind | strip -%}
+<section class="phead"><div class="blobs" aria-hidden="true"><span></span><span></span><span></span><span></span></div><div class="grain"></div><div class="wrap"><div class="crumbs"><a href="{{ PathBase }}/">Home</a><span>/</span><span>Media</span></div>
+  <h1>Photos, video and <em>tapes</em></h1><p>Taping has been welcome at every show since day one. Recordings are free to stream and share, never for sale.</p></div></section>
+<section class="section" style="padding-top:20px"><div class="wrap">
+  <div class="filters" style="margin-bottom:30px">{% assign ks = "all|photo|video|audio" | split: "|" %}{% assign kl = "Everything|Photos|Video|Recordings" | split: "|" %}{% for x in ks %}<a href="{{ PathBase }}/media{% if x != 'all' %}?kind={{ x }}{% endif %}" class="{% if k == x or k == '' and x == 'all' %}on{% endif %}">{{ kl[forloop.index0] }}</a>{% endfor %}</div>
+  <div class="masonry">
+  {%- for m in Target.Items %}{% assign p = m.PublishedContent %}{% capture mk %}{{ p.kind }}{% endcapture %}{% if k == "" or k == mk %}
+    <a class="mitem reveal" href="{% if mk == 'photo' %}{{ PathBase }}/{{ m.RoutePath }}{% else %}{{ p.url }}{% endif %}"{% if mk != "photo" %} target="_blank" rel="noopener"{% endif %}>
+      <div class="ph"><img src="{{ p.image | attachment_redirect_url }}" alt="{{ m.PrimaryField }}" loading="lazy" style="{% cycle 'aspect-ratio:4/5', 'aspect-ratio:1', 'aspect-ratio:4/3' %};object-fit:cover">{% if mk != "photo" %}<span class="play"><i class="bi {% if mk == 'video' %}bi-play-fill{% else %}bi-headphones{% endif %}"></i></span><span class="len">{{ p.length }}</span>{% endif %}</div>
+      <div class="tx"><span class="pill">{% if mk == "photo" %}<i class="bi bi-camera"></i> Photo{% elsif mk == "video" %}<i class="bi bi-camera-video"></i> Video{% else %}<i class="bi bi-vinyl"></i> Recording{% endif %}</span><h3>{{ m.PrimaryField }}</h3><p>{{ p.taken }}</p></div></a>
+  {%- endif %}{% endfor %}
+  </div>
+</div></section>

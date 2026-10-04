@@ -1,0 +1,16 @@
+{%- assign p = Target.PublishedContent -%}{%- assign sh = p.show -%}{%- assign sp = sh.PublishedContent -%}
+<section class="phead"><div class="blobs" aria-hidden="true"><span></span><span></span><span></span><span></span></div><div class="grain"></div><div class="wrap"><div class="crumbs"><a href="{{ PathBase }}/">Home</a><span>/</span><a href="{{ PathBase }}/setlists">Setlists</a><span>/</span><span>{{ p.date.Value | date: "%b %-d, %Y" }}</span></div>
+  <span class="kick" style="margin-top:22px">{{ p.date.Value | date: "%A, %B %-d, %Y" }}</span><h1>{{ sp.venue | default: Target.PrimaryField }}</h1><p>{{ sp.city }}, {{ sp.region }}{% if sp.billing %} · {{ sp.billing }}{% endif %}</p></div></section>
+<section class="section" style="padding-top:10px"><div class="wrap detail wide">
+  <div class="sets two">
+  {%- assign names = "Set one|Set two|Encore" | split: "|" %}{% for k in (1..3) %}{% case k %}{% when 1 %}{% capture raw %}{{ p.set1 }}{% endcapture %}{% when 2 %}{% capture raw %}{{ p.set2 }}{% endcapture %}{% else %}{% capture raw %}{{ p.encore }}{% endcapture %}{% endcase %}
+    <div class="card"><h4>{{ names[forloop.index0] }}</h4><ol style="font-size:1.08rem">{% assign ls = raw | newline_to_br | split: "<br />" %}{% for l in ls %}{% assign t = l | remove: ">" | strip %}{% if t != "" %}<li>{% if t == "Drums" or t == "Space" %}<span class="muted">{{ t }}</span>{% else %}<a href="{{ PathBase }}/setlists?song={{ t | url_encode }}">{{ t }}</a>{% endif %}{% if l contains ">" %}<span class="sg">&gt;</span>{% endif %}</li>{% endif %}{% endfor %}</ol></div>
+  {%- endfor %}
+  </div>
+  <div>
+    <div class="frame"><img src="{{ sp.poster | attachment_redirect_url }}" alt="Show poster"></div>
+    {%- if p.notes != "" %}<div class="card" style="margin-top:22px"><span class="kick">Notes from the stage</span><p style="margin:12px 0 0;color:var(--cream2);font-style:italic">{{ p.notes }}</p></div>{% endif %}
+    <div class="row" style="margin-top:22px">{% if p.recording_url != "" %}<a class="btn btn-g" href="{{ p.recording_url }}" target="_blank" rel="noopener"><i class="bi bi-headphones"></i> Listen to the recording</a>{% endif %}<a class="btn btn-line" href="{{ PathBase }}/{{ sh.RoutePath }}">Show page</a></div>
+    <p class="muted" style="font-size:.86rem;margin-top:14px"><span class="mono" style="color:var(--teal)">&gt;</span> means the song ran straight into the next one.</p>
+  </div>
+</div></section>

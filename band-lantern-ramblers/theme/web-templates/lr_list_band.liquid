@@ -1,0 +1,9 @@
+<section class="phead"><div class="blobs" aria-hidden="true"><span></span><span></span><span></span><span></span></div><div class="grain"></div><div class="wrap"><div class="crumbs"><a href="{{ PathBase }}/">Home</a><span>/</span><span>The band</span></div>
+  <h1>Six players, <em>two drummers</em></h1><p>We've been playing these songs together since a Monday-night jam in 2014 ran three hours long. Nobody wanted to go home, so we didn't.</p></div></section>
+<section class="section" style="padding-top:20px"><div class="wrap grid3">
+{%- for m in Target.Items %}{% assign p = m.PublishedContent %}
+  <a class="member reveal" href="{{ PathBase }}/{{ m.RoutePath }}"><div class="ph"><img src="{{ p.portrait | attachment_redirect_url }}" alt="Portrait of {{ m.PrimaryField }}" loading="lazy"></div>
+    <div class="tx"><h3>{{ m.PrimaryField }}</h3><div class="role" style="color:{{ p.color }}">{{ p.role }}</div><p class="muted" style="font-size:.93rem;margin:12px 0 0">Since {{ p.since }} · from {{ p.hometown }}<br>Would play <span style="color:var(--cream)">{{ p.favorite_song }}</span> every night</p></div></a>
+{%- endfor %}
+</div></section>
+<section class="section tight"><div class="wrap"><div class="cta"><div class="blobs" aria-hidden="true"><span></span><span></span><span></span><span></span></div><div class="grain"></div><span class="kick">Sit in</span><h2>Got a song <em>request?</em></h2><p>Tell us at the merch table, or send it with a booking inquiry. We keep a list, and most of them get played eventually.</p><div class="row"><a class="btn btn-g" href="{{ PathBase }}/tour">See where we're playing</a><a class="btn btn-line" href="{{ PathBase }}/songs">What we play most</a></div></div></div></section>

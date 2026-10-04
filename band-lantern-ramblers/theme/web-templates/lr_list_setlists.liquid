@@ -1,0 +1,27 @@
+{%- comment -%} Setlist archive. ?year=2026 narrows by year, ?song=Name shows only the nights we played that song and highlights it. A line ending in ">" is a segue. {%- endcomment -%}
+{%- assign want = QueryParams.song | strip -%}{%- assign yr = QueryParams.year | strip -%}{%- assign wtok = "|" | append: want | append: "|" -%}
+{%- assign years = "" %}{% for s in Target.Items %}{% capture y %}{{ s.PublishedContent.date.Value | date: "%Y" }}{% endcapture %}{% unless years contains y %}{% assign years = years | append: y | append: "," %}{% endunless %}{% endfor %}{% assign years = years | split: "," %}
+<section class="phead"><div class="blobs" aria-hidden="true"><span></span><span></span><span></span><span></span></div><div class="grain"></div><div class="wrap"><div class="crumbs"><a href="{{ PathBase }}/">Home</a><span>/</span><span>Setlists</span></div>
+  <h1>Every song, <em>every night</em></h1><p>The full archive. Click a song to see every night we've played it, or check the <a href="{{ PathBase }}/songs" style="color:var(--sun)">song stats</a> for the big picture.</p></div></section>
+<section class="section" style="padding-top:20px"><div class="wrap">
+  <div class="filters" style="margin-bottom:30px"><a href="{{ PathBase }}/setlists" class="{% if yr == '' and want == '' %}on{% endif %}">All shows</a>{% for y in years %}<a href="{{ PathBase }}/setlists?year={{ y }}" class="{% if yr == y %}on{% endif %}">{{ y }}</a>{% endfor %}
+    {%- if want != "" %}<span class="pill" style="margin-left:8px;border-color:var(--sun);color:var(--sun)"><i class="bi bi-music-note"></i> {{ want }}</span><a href="{{ PathBase }}/setlists" style="border:0;padding:.45rem .4rem"><i class="bi bi-x-lg"></i> Clear</a>{% endif %}</div>
+  {%- assign shown = 0 %}
+  {%- for s in Target.Items %}{% assign p = s.PublishedContent %}{% capture y %}{{ p.date.Value | date: "%Y" }}{% endcapture %}
+    {%- capture blk %}{{ p.set1 }}
+{{ p.set2 }}
+{{ p.encore }}{% endcapture %}{% assign toks = "|" %}{% assign ls = blk | newline_to_br | split: "<br />" %}{% for l in ls %}{% assign t = l | remove: ">" | strip %}{% assign toks = toks | append: t | append: "|" %}{% endfor %}
+    {%- if yr == "" or yr == y %}{% if want == "" or toks contains wtok %}{% assign shown = shown | plus: 1 %}{% assign sh = p.show %}
+  <article class="sl reveal">
+    <div><span class="when">{{ p.date.Value | date: "%a %b %-d, %Y" }}</span><h3><a href="{{ PathBase }}/{{ s.RoutePath }}">{{ sh.PublishedContent.venue | default: s.PrimaryField }}</a></h3><div class="muted">{{ sh.PublishedContent.city }}, {{ sh.PublishedContent.region }}</div>
+      {%- if p.notes != "" %}<p class="muted" style="font-size:.9rem;margin-top:12px;font-style:italic">{{ p.notes | truncate: 110 }}</p>{% endif %}</div>
+    <div class="sets">
+      {%- assign names = "Set one|Set two|Encore" | split: "|" %}{% for k in (1..3) %}{% case k %}{% when 1 %}{% capture raw %}{{ p.set1 }}{% endcapture %}{% when 2 %}{% capture raw %}{{ p.set2 }}{% endcapture %}{% else %}{% capture raw %}{{ p.encore }}{% endcapture %}{% endcase %}
+      <div><h4>{{ names[forloop.index0] }}</h4><ol>{% assign ls = raw | newline_to_br | split: "<br />" %}{% for l in ls %}{% assign t = l | remove: ">" | strip %}{% if t != "" %}<li class="{% if t == want %}hit{% endif %}">{% if t == "Drums" or t == "Space" %}{{ t }}{% else %}<a href="{{ PathBase }}/setlists?song={{ t | url_encode }}">{{ t }}</a>{% endif %}{% if l contains ">" %}<span class="sg">&gt;</span>{% endif %}</li>{% endif %}{% endfor %}</ol></div>
+      {%- endfor %}
+    </div>
+  </article>
+    {%- endif %}{% endif %}
+  {%- endfor %}
+  {%- if shown == 0 %}<p class="muted">We haven't played that one yet. <a href="{{ PathBase }}/booking" style="color:var(--sun)">Request it</a>.</p>{% elsif want != "" %}<p class="muted" style="border-top:1px solid var(--line);padding-top:24px">Played {{ shown }} {% if shown == 1 %}time{% else %}times{% endif %} in the archive.</p>{% endif %}
+</div></section>
