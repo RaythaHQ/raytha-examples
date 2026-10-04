@@ -1,0 +1,7 @@
+[
+ {"title": "Postmark Trips", "routePath": "home", "template": "pm_home", "sections": "pages/home.json", "home": true},
+ {"title": "How it works", "routePath": "how-it-works", "template": "pm_page", "sections": "pages/how-it-works.json", "home": false},
+ {"title": "Gift a trip", "routePath": "gift", "template": "pm_page", "sections": "pages/gift.json", "home": false},
+ {"title": "Plan my trip", "routePath": "plan", "template": "pm_page", "sections": "pages/plan.json", "home": false},
+ {"title": "Thank you", "routePath": "plan/thanks", "template": "pm_page", "sections": "pages/plan-thanks.json", "home": false}
+]
