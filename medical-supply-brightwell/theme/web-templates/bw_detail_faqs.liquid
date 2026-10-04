@@ -1,0 +1,10 @@
+{%- assign q = Target.PublishedContent -%}
+{%- capture t %}{{ q.topic }}{% endcapture -%}
+{%- capture f %}topic eq '{{ t }}'{% endcapture -%}{%- assign more = get_content_items(ContentType="faqs", Filter=f, OrderBy="sort_order asc", PageSize=10) -%}
+<section class="phead"><div class="wrap"><div class="crumbs"><a href="{{ PathBase }}/">Home</a><span>/</span><a href="{{ PathBase }}/faq">FAQ</a></div><h1>{{ Target.PrimaryField }}</h1></div></section>
+<section class="section" style="padding-top:40px"><div class="wrap" style="max-width:820px">
+  <div class="card" style="padding:30px;font-size:1.12rem;color:var(--ink2)">{{ q.answer }}</div>
+  <h2 style="font-size:1.3rem;margin:40px 0 14px">Related questions</h2>
+  {% for m in more.Items %}{% if m.Id != Target.Id %}<details class="card q"><summary>{{ m.PrimaryField }}<i class="bi bi-plus-lg"></i></summary><p>{{ m.PublishedContent.answer }}</p></details>{% endif %}{% endfor %}
+  <p style="margin-top:28px"><a class="btn btn-line" href="{{ PathBase }}/faq"><i class="bi bi-arrow-left"></i> All questions</a></p>
+</div></section>

@@ -1,0 +1,12 @@
+{%- assign topics = "ordering,insurance,delivery,rentals,service" | split: "," -%}
+{%- assign tnames = "Ordering,Insurance,Delivery and setup,Rentals and returns,Service and repairs" | split: "," -%}
+<section class="phead"><div class="wrap"><div class="crumbs"><a href="{{ PathBase }}/">Home</a><span>/</span><span>FAQ</span></div><h1>Your questions answered</h1><p>The things people ask us most about ordering, insurance, delivery and rentals. Can't find yours? Call us.</p>
+  <div class="search" style="margin-top:22px"><i class="bi bi-search"></i><input id="faqfilter" placeholder="Filter questions, like Medicare or return" aria-label="Filter questions"></div>
+  <div class="filters" style="margin:16px 0 0">{% for t in topics %}<a href="#{{ t }}">{{ tnames[forloop.index0] }}</a>{% endfor %}</div></div></section>
+<section class="section" style="padding-top:44px"><div class="wrap" style="display:grid;grid-template-columns:1fr 320px;gap:48px;align-items:start" id="fgrid">
+  <div>{% for t in topics %}{% capture f %}topic eq '{{ t }}'{% endcapture %}{% assign qs = get_content_items(ContentType="faqs", Filter=f, OrderBy="sort_order asc", PageSize=50) %}
+    <div id="{{ t }}" data-topic style="scroll-margin-top:110px;margin-bottom:36px"><h2 style="font-size:1.4rem;margin-bottom:14px">{{ tnames[forloop.index0] }}</h2>
+    {% for q in qs.Items %}<details class="card q"><summary>{{ q.PrimaryField }}<i class="bi bi-plus-lg"></i></summary><p>{{ q.PublishedContent.answer }} <a href="{{ PathBase }}/{{ q.RoutePath }}" class="muted" style="font-size:.85rem;text-decoration:underline">Link</a></p></details>{% endfor %}</div>
+  {% endfor %}</div>
+  <aside class="order" style="position:sticky;top:100px;margin:0"><h3>Still have a question?</h3><p>Talk to a real person at our order desk, Monday to Friday 8 am to 6 pm and Saturday 9 am to 1 pm.</p><a class="btn btn-teal" href="tel:+18005550134" style="width:100%;justify-content:center"><i class="bi bi-telephone-fill"></i> (800) 555-0134</a><a class="btn btn-ghost" href="mailto:orders@example.com" style="width:100%;justify-content:center;margin-top:8px"><i class="bi bi-envelope"></i> orders@example.com</a></aside>
+</div><style>@media(max-width:900px){#fgrid{grid-template-columns:1fr!important}#fgrid aside{position:static!important}}</style></section>

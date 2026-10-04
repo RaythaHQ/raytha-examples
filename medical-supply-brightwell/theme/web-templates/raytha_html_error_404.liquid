@@ -1,0 +1,14 @@
+<section class="section" style="min-height:60vh;display:flex;align-items:center">
+  <div class="wrap" style="display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:center" id="nf">
+    <div>
+      <span class="eyebrow">Error 404</span>
+      <h1 style="font-size:clamp(2.6rem,6vw,4.4rem);margin:16px 0 14px;letter-spacing:-.04em">We can't find that page.</h1>
+      <p style="font-size:1.15rem;color:var(--ink2);max-width:540px">It may have moved. Search the catalog, or call us and we will point you to the right equipment.</p>
+      <form class="search" action="{{ PathBase }}/products" method="get" style="margin-top:24px"><i class="bi bi-search"></i><input name="q" placeholder="Search equipment" aria-label="Search equipment"><button class="btn btn-teal">Search</button></form>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:18px"><a class="btn btn-line" href="{{ PathBase }}/">Home</a><a class="btn btn-line" href="tel:+18005550134"><i class="bi bi-telephone"></i> (800) 555-0134</a></div>
+      {% if Target.ErrorId %}<p class="muted" style="margin-top:24px;font-size:.8rem">Error id: {{ Target.ErrorId }}</p>{% endif %}
+    </div>
+    <div class="card" style="aspect-ratio:1;border-radius:32px;display:grid;place-items:center;background:linear-gradient(150deg,var(--mint),var(--sky))"><i class="bi bi-signpost-split" style="font-size:7rem;color:var(--teal)"></i></div>
+  </div>
+  <style>@media(max-width:860px){#nf{grid-template-columns:1fr!important}#nf>.card{display:none!important}}</style>
+</section>

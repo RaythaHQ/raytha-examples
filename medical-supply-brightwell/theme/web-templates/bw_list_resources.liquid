@@ -1,0 +1,13 @@
+{%- assign kinds = "getting_started,insurance,care" | split: "," -%}
+{%- assign knames = "Getting started,Insurance and billing,Use and care" | split: "," -%}
+{%- assign kicons = "signpost-2,shield-check,heart" | split: "," -%}
+<section class="phead"><div class="wrap"><div class="crumbs"><a href="{{ PathBase }}/">Home</a><span>/</span><span>Patient resources</span></div><h1>Patient resources</h1><p>Plain-language guides for patients and caregivers: how ordering works, what insurance covers, and how to use and care for your equipment.</p>
+  <div class="filters" style="margin:22px 0 0">{% for k in kinds %}<a href="#{{ k }}"><i class="bi bi-{{ kicons[forloop.index0] }}"></i> {{ knames[forloop.index0] }}</a>{% endfor %}</div></div></section>
+<section class="section" style="padding-top:44px"><div class="wrap">
+  {% for k in kinds %}{% capture f %}kind eq '{{ k }}'{% endcapture %}{% assign rs = get_content_items(ContentType="resources", Filter=f, OrderBy="sort_order asc", PageSize=20) %}{% assign ki = kicons[forloop.index0] %}
+  <div id="{{ k }}" style="scroll-margin-top:110px;margin-bottom:52px">
+    <div class="shead" style="margin-bottom:20px"><div><span class="eyebrow">{{ rs.TotalCount }} guide{% if rs.TotalCount != 1 %}s{% endif %}</span><h2 style="font-size:1.8rem">{{ knames[forloop.index0] }}</h2></div></div>
+    <div class="grid3">{% for r in rs.Items %}<a class="card res lift reveal" href="{{ PathBase }}/{{ r.RoutePath }}"><span style="width:44px;height:44px;border-radius:12px;background:var(--mint);color:var(--teal);display:grid;place-items:center;font-size:1.2rem"><i class="bi bi-{{ ki }}"></i></span><h3>{{ r.PrimaryField }}</h3><p>{{ r.PublishedContent.summary }}</p><div class="meta"><span><i class="bi bi-clock"></i> {{ r.PublishedContent.minutes | append: "" }} min read</span><i class="bi bi-arrow-right"></i></div></a>{% endfor %}</div>
+  </div>
+  {% endfor %}
+</div></section>

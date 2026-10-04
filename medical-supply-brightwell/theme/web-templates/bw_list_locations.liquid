@@ -1,0 +1,17 @@
+<section class="phead"><div class="wrap"><div class="crumbs"><a href="{{ PathBase }}/">Home</a><span>/</span><span>Locations</span></div><h1>Visit a showroom</h1><p>Try equipment before you take it home, get a repair, or have a CPAP mask fitted. Delivery and setup are available everywhere we serve.</p></div></section>
+<section class="section" style="padding-top:44px"><div class="wrap">
+  <div class="map reveal" style="aspect-ratio:21/8;margin-bottom:28px">
+    <svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="900" fill="#e4efee"/><path d="M-20 640 C300 560 420 760 760 700 S1220 520 1620 600" fill="none" stroke="#bfe0f0" stroke-width="70"/><g fill="#cfe7d9"><rect x="120" y="120" width="260" height="170" rx="30"/><rect x="1180" y="160" width="220" height="200" rx="30"/><circle cx="900" cy="300" r="90"/></g><g stroke="#fff" stroke-width="22" fill="none" stroke-linecap="round"><path d="M0 420H1600M560 0V900M1060 0V900M0 180L1600 260M300 900L760 0"/></g><g stroke="#fff" stroke-width="9" fill="none" opacity=".8"><path d="M0 300H1600M0 540H1600M0 780H1600M200 0V900M820 0V900M1300 0V900"/></g></svg>
+    {% for l in Target.Items %}<a class="pin" href="{{ PathBase }}/{{ l.RoutePath }}" style="left:{{ l.PublishedContent.map_x | append: '' }}%;top:{{ l.PublishedContent.map_y | append: '' }}%"><b>{{ l.PrimaryField }}</b><i class="bi bi-geo-alt-fill"></i></a>{% endfor %}
+  </div>
+  <div class="grid3">{% for l in Target.Items %}{% assign lp = l.PublishedContent %}
+    <div class="card loc reveal" data-loc>
+      <span class="pill teal" style="align-self:flex-start">{{ lp.kind }}</span>
+      <h3><a href="{{ PathBase }}/{{ l.RoutePath }}">{{ l.PrimaryField }}</a></h3>
+      <div class="addr"><i class="bi bi-geo-alt muted"></i> {{ lp.street }}, {{ lp.city }}</div>
+      <a href="tel:{{ lp.phone | remove: ' ' | remove: '(' | remove: ')' | remove: '-' | prepend: '+1' }}" style="font-weight:800;font-size:1.1rem;color:var(--navy)"><i class="bi bi-telephone"></i> {{ lp.phone }}</a>
+      <span class="open-now"></span>
+      <ul class="hours">{% assign hl = lp.hours | newline_to_br | split: "<br />" %}{% for h in hl %}{% assign ht = h | strip %}{% if ht != "" %}{% assign hp = ht | split: ": " %}<li data-day="{{ hp[0] }}"><span>{{ hp[0] }}</span><span>{{ hp[1] }}</span></li>{% endif %}{% endfor %}</ul>
+      <a class="btn btn-line" href="{{ PathBase }}/{{ l.RoutePath }}" style="justify-content:center;margin-top:auto">Details and directions</a>
+    </div>{% endfor %}</div>
+</div></section>

@@ -1,0 +1,11 @@
+<section class="phead"><div class="wrap"><div class="crumbs"><a href="{{ PathBase }}/">Home</a><span>/</span><span>Equipment</span></div><h1>Home medical equipment by category</h1><p>Everything we rent and sell, grouped the way your doctor orders it. Every delivery includes setup and a walk-through.</p></div></section>
+<section class="section" style="padding-top:48px"><div class="wrap">
+  <div class="grid2">{% for c in Target.Items %}{% capture f %}category eq '{{ c.Id | append: "" }}'{% endcapture %}{% assign r = get_content_items(ContentType="products", Filter=f, OrderBy="sort_order asc", PageSize=4) %}
+    <a class="card cat lift reveal" style="--c:{{ c.PublishedContent.color }};padding:28px;flex-direction:row;gap:20px;align-items:flex-start" href="{{ PathBase }}/{{ c.RoutePath }}">
+      <span class="ic" style="flex:none"><i class="bi bi-{{ c.PublishedContent.icon }}"></i></span>
+      <span style="display:flex;flex-direction:column;gap:8px;flex:1"><h3 style="font-size:1.35rem">{{ c.PrimaryField }}</h3><p>{{ c.PublishedContent.description }}</p>
+        <span style="display:flex;gap:6px;flex-wrap:wrap;margin-top:6px">{% for x in r.Items %}<span class="pill line">{{ x.PrimaryField }}</span>{% endfor %}</span>
+        <span class="n">{{ r.TotalCount }} product{% if r.TotalCount != 1 %}s{% endif %} <i class="bi bi-arrow-right"></i></span></span>
+    </a>{% endfor %}</div>
+</div></section>
+<section class="section tight"><div class="wrap"><div class="cta reveal"><div><h2>Not sure what you need?</h2><p>Our order desk can talk you through the options and check what your plan covers. No pressure, no forms to fill in.</p></div><a class="btn btn-white" href="tel:+18005550134"><i class="bi bi-telephone-fill"></i> (800) 555-0134</a></div></div></section>
