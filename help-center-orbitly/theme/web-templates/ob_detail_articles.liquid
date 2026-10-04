@@ -1,0 +1,43 @@
+{%- assign a = Target -%}{%- assign pc = Target.PublishedContent -%}{%- assign cat = pc.category -%}{%- assign cpc = cat.PublishedContent -%}
+{%- assign aid = a.Id | append: "" -%}{%- assign cid = cat.Id | append: "" -%}
+{%- assign tagkeys = "getting_started,projects,timeline,tasks,team,permissions,billing,integrations,api,security,mobile,import" | split: "," -%}
+{%- assign tagnames = "Getting started,Projects,Timeline,Tasks,Team,Permissions,Billing,Integrations,API,Security,Mobile,Import" | split: "," -%}
+{%- capture tagstr %}{{ pc.tags }}{% endcapture -%}
+{%- capture f %}category eq '{{ cid }}'{% endcapture -%}
+{%- assign siblings = get_content_items(ContentType="articles", Filter=f, OrderBy="sort_order asc", PageSize=50) -%}
+{%- comment -%} Related: other articles that share the first tag, then the rest of the category. {%- endcomment -%}
+{%- assign firsttag = "" -%}{%- for k in tagkeys -%}{%- if firsttag == "" and tagstr contains k -%}{%- assign firsttag = k -%}{%- endif -%}{%- endfor -%}
+{%- capture rf %}contains(tags,'{{ firsttag }}') and category ne '{{ cid }}'{% endcapture -%}
+{%- assign related = get_content_items(ContentType="articles", Filter=rf, OrderBy="updated_on desc", PageSize=3) -%}
+{%- assign prev = nil -%}{%- assign next = nil -%}{%- assign found = false -%}
+{%- for s in siblings.Items -%}{%- assign sid = s.Id | append: "" -%}{%- if found and next == nil -%}{%- assign next = s -%}{%- endif -%}{%- if sid == aid -%}{%- assign found = true -%}{%- endif -%}{%- unless found -%}{%- assign prev = s -%}{%- endunless -%}{%- endfor -%}
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":{{ a.PrimaryField | json }},"description":{{ pc.summary | append: "" | json }},"dateModified":"{{ pc.updated_on.Value | date: '%Y-%m-%d' }}","articleSection":{{ cat.PrimaryField | json }}}</script>
+<section class="phead" style="background:linear-gradient(180deg,color-mix(in srgb,{{ cpc.color }} 10%,#fff),var(--bg))"><div class="wrap">
+  <div class="crumbs"><a href="{{ PathBase }}/">Help Center</a><i class="bi bi-chevron-right"></i><a href="{{ PathBase }}/{{ cat.RoutePath }}">{{ cat.PrimaryField }}</a></div>
+  <h1 style="max-width:820px">{{ a.PrimaryField }}</h1>
+  <p class="muted" style="max-width:700px;font-size:1.1rem;margin:0 0 14px">{{ pc.summary }}</p>
+  <div style="display:flex;gap:8px;flex-wrap:wrap"><span class="chip gray"><i class="bi bi-clock"></i>{{ pc.read_minutes | append: "" }} min read</span><span class="chip gray"><i class="bi bi-arrow-repeat"></i>Updated {{ pc.updated_on.Value | date: "%B %-d, %Y" }}</span>{% for k in tagkeys %}{% if tagstr contains k %}<a class="chip" href="{{ PathBase }}/articles?tag={{ k }}">#{{ tagnames[forloop.index0] }}</a>{% endif %}{% endfor %}</div>
+</div></section>
+<section class="section tight"><div class="wrap art-grid">
+  <article>
+    <div class="prose" id="prose">{{ pc.content }}</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:40px">
+      {% if prev %}<a class="card lift box" href="{{ PathBase }}/{{ prev.RoutePath }}"><span class="muted" style="font-size:.8rem"><i class="bi bi-arrow-left"></i> Previous</span><h4 style="margin:4px 0 0">{{ prev.PrimaryField }}</h4></a>{% else %}<span></span>{% endif %}
+      {% if next %}<a class="card lift box" style="text-align:right" href="{{ PathBase }}/{{ next.RoutePath }}"><span class="muted" style="font-size:.8rem">Next <i class="bi bi-arrow-right"></i></span><h4 style="margin:4px 0 0">{{ next.PrimaryField }}</h4></a>{% endif %}
+    </div>
+    <div class="card box" style="margin-top:20px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;background:linear-gradient(120deg,#0b1233,#1d2a7a);color:#fff;border:0">
+      <i class="bi bi-chat-heart" style="font-size:1.8rem;color:#8fe9d2"></i><div style="flex:1;min-width:220px"><strong>Still stuck?</strong><div style="color:#b9c2ea;font-size:.93rem">Our support team answers within one business day.</div></div>
+      <a class="btn btn-primary" href="mailto:support@example.com?subject={{ a.PrimaryField | url_encode }}">Email support</a>
+    </div>
+  </article>
+  <aside class="toc">
+    <div class="card box" id="tocbox"><h4>On this page</h4><nav id="toc"></nav></div>
+    <div class="card box"><h4>In {{ cat.PrimaryField }}</h4>{% for s in siblings.Items limit: 7 %}{% assign sid = s.Id | append: "" %}<a href="{{ PathBase }}/{{ s.RoutePath }}" style="display:block;padding:.35rem 0;font-size:.9rem;{% if sid == aid %}font-weight:650;color:var(--blue2){% else %}color:var(--ink2){% endif %}">{{ s.PrimaryField }}</a>{% endfor %}</div>
+    {% if related.TotalCount > 0 %}<div class="card box"><h4>Related articles</h4>{% for r in related.Items %}<a href="{{ PathBase }}/{{ r.RoutePath }}" style="display:block;padding:.35rem 0;font-size:.9rem;color:var(--ink2)"><i class="bi bi-link-45deg" style="color:var(--blue)"></i> {{ r.PrimaryField }}</a>{% endfor %}</div>{% endif %}
+  </aside>
+</div></section>
+<script>
+(function(){var hs=document.querySelectorAll('#prose h2'),toc=document.getElementById('toc');if(!hs.length){document.getElementById('tocbox').remove();return}
+hs.forEach(function(h,i){h.id='s'+(i+1);var a=document.createElement('a');a.href='#'+h.id;a.textContent=h.textContent;toc.appendChild(a)});
+var links=toc.querySelectorAll('a');addEventListener('scroll',function(){var cur=0;hs.forEach(function(h,i){if(h.getBoundingClientRect().top<140)cur=i});links.forEach(function(l,i){l.classList.toggle('on',i===cur)})},{passive:true});links[0].classList.add('on')})();
+</script>

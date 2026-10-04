@@ -1,0 +1,15 @@
+{%- assign pc = Target.PublishedContent -%}{%- assign cid = Target.Id | append: "" -%}
+{%- capture f %}category eq '{{ cid }}'{% endcapture -%}
+{%- assign arts = get_content_items(ContentType="articles", Filter=f, OrderBy="sort_order asc", PageSize=50) -%}
+{%- assign cats = get_content_items(ContentType="categories", OrderBy="sort_order asc", PageSize=20) -%}
+<section class="phead" style="--c:{{ pc.color }};background:linear-gradient(180deg,color-mix(in srgb,{{ pc.color }} 12%,#fff),var(--bg))"><div class="wrap">
+  <div class="crumbs"><a href="{{ PathBase }}/">Help Center</a><i class="bi bi-chevron-right"></i><a href="{{ PathBase }}/help">Topics</a><i class="bi bi-chevron-right"></i><span>{{ Target.PrimaryField }}</span></div>
+  <div style="display:flex;gap:18px;align-items:center;margin-top:14px"><span style="width:60px;height:60px;font-size:1.6rem;border-radius:17px;display:grid;place-items:center;color:#fff;background:{{ pc.color }};flex:none;box-shadow:0 14px 30px -12px {{ pc.color }}"><i class="bi bi-{{ pc.icon }}"></i></span>
+  <div><h1 style="margin:0 0 4px">{{ Target.PrimaryField }}</h1><p class="muted" style="margin:0">{{ pc.description }} · {{ arts.TotalCount }} articles</p></div></div>
+</div></section>
+<section class="section tight"><div class="wrap with-side">
+  <nav class="side"><h4>Topics</h4>{% for c in cats.Items %}<a href="{{ PathBase }}/{{ c.RoutePath }}" style="--c:{{ c.PublishedContent.color }}" class="{% if c.RoutePath == Target.RoutePath %}on{% endif %}"><i class="bi bi-{{ c.PublishedContent.icon }}"></i>{{ c.PrimaryField }}</a>{% endfor %}</nav>
+  <div class="card" style="padding:8px 22px">
+    <div class="alist">{% for a in arts.Items %}<a class="arow reveal" href="{{ PathBase }}/{{ a.RoutePath }}"><span class="ai" style="background:color-mix(in srgb,{{ pc.color }} 14%,#fff);color:{{ pc.color }}"><i class="bi bi-file-earmark-text"></i></span><div><h3>{{ a.PrimaryField }}</h3><p>{{ a.PublishedContent.summary }}</p></div><i class="bi bi-arrow-right go"></i></a>{% endfor %}</div>
+  </div>
+</div></section>

@@ -1,0 +1,36 @@
+{%- comment -%} Search results. ?q= matches title, summary and body; ?category= and ?tag= narrow it down. Values are checked before they reach the filter. {%- endcomment -%}
+{%- assign tagkeys = "getting_started,projects,timeline,tasks,team,permissions,billing,integrations,api,security,mobile,import" | split: "," -%}
+{%- assign tagnames = "Getting started,Projects,Timeline,Tasks,Team,Permissions,Billing,Integrations,API,Security,Mobile,Import" | split: "," -%}
+{%- assign q = QueryParams.q | strip | remove: "'" | remove: '"' | truncate: 60, "" -%}
+{%- assign cats = get_content_items(ContentType="categories", OrderBy="sort_order asc", PageSize=20) -%}
+{%- assign qcat = "" -%}{%- assign qcatname = "" -%}{%- for c in cats.Items -%}{%- assign cid = c.Id | append: "" -%}{%- if QueryParams.category == cid -%}{%- assign qcat = cid -%}{%- assign qcatname = c.PrimaryField -%}{%- endif -%}{%- endfor -%}
+{%- assign qtag = "" -%}{%- assign qtagname = "" -%}{%- for k in tagkeys -%}{%- if QueryParams.tag == k -%}{%- assign qtag = k -%}{%- assign qtagname = tagnames[forloop.index0] -%}{%- endif -%}{%- endfor -%}
+{%- assign flt = "" -%}
+{%- if q != "" -%}{%- capture part %} and (contains(title,'{{ q }}') or contains(summary,'{{ q }}') or contains(content,'{{ q }}')){% endcapture -%}{%- assign flt = flt | append: part -%}{%- endif -%}
+{%- if qcat != "" -%}{%- assign flt = flt | append: " and category eq '" | append: qcat | append: "'" -%}{%- endif -%}
+{%- if qtag != "" -%}{%- assign flt = flt | append: " and contains(tags,'" | append: qtag | append: "')" -%}{%- endif -%}
+{%- assign flt = flt | remove_first: " and " -%}
+{%- if flt != "" -%}{%- assign res = get_content_items(ContentType="articles", Filter=flt, OrderBy="updated_on desc", PageSize=100) -%}{%- assign items = res.Items -%}{%- assign total = res.TotalCount -%}
+{%- else -%}{%- assign items = Target.Items -%}{%- assign total = Target.TotalCount -%}{%- endif -%}
+{%- capture keepq %}{% if q != "" %}q={{ q | url_encode }}&{% endif %}{% endcapture -%}
+<section class="phead"><div class="wrap">
+  <div class="crumbs"><a href="{{ PathBase }}/">Help Center</a><i class="bi bi-chevron-right"></i><span>Search</span></div>
+  <h1>{% if q != "" %}Results for “{{ q }}”{% else %}All articles{% endif %}</h1>
+  <div class="sbox" data-suggest style="margin-top:18px"><form action="{{ PathBase }}/articles"><i class="bi bi-search"></i><input name="q" value="{{ q }}" placeholder="Search the help center" autocomplete="off" aria-label="Search">{% if qcat != "" %}<input type="hidden" name="category" value="{{ qcat }}">{% endif %}<button class="btn btn-primary">Search</button></form><div class="suggest"></div></div>
+</div></section>
+<section class="section tight"><div class="wrap with-side">
+  <nav class="side">
+    <h4>Topic</h4><a href="{{ PathBase }}/articles?{{ keepq }}" class="{% if qcat == '' %}on{% endif %}"><i class="bi bi-grid"></i>All topics</a>
+    {%- for c in cats.Items %}{% assign cid = c.Id | append: "" %}<a href="{{ PathBase }}/articles?{{ keepq }}category={{ cid }}" style="--c:{{ c.PublishedContent.color }}" class="{% if qcat == cid %}on{% endif %}"><i class="bi bi-{{ c.PublishedContent.icon }}"></i>{{ c.PrimaryField }}</a>{% endfor %}
+    <h4>Tag</h4><div style="display:flex;flex-wrap:wrap;gap:6px">{% for k in tagkeys %}<a class="chip {% if qtag != k %}gray{% endif %}" style="padding:.25rem .65rem;font-size:.78rem" href="{{ PathBase }}/articles?{{ keepq }}{% if qcat != '' %}category={{ qcat }}&{% endif %}{% if qtag != k %}tag={{ k }}{% endif %}">{{ tagnames[forloop.index0] }}</a>{% endfor %}</div>
+  </nav>
+  <div>
+    <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:14px"><strong style="font-family:var(--display);font-size:1.15rem">{{ total }} article{% if total != 1 %}s{% endif %}</strong>
+      {% if qcatname != "" %}<a class="chip" href="{{ PathBase }}/articles?{{ keepq }}{% if qtag != '' %}tag={{ qtag }}{% endif %}">{{ qcatname }} <i class="bi bi-x"></i></a>{% endif %}
+      {% if qtagname != "" %}<a class="chip mint" href="{{ PathBase }}/articles?{{ keepq }}{% if qcat != '' %}category={{ qcat }}{% endif %}">{{ qtagname }} <i class="bi bi-x"></i></a>{% endif %}</div>
+    <div class="card" style="padding:8px 22px">
+    {%- if total == 0 %}<div style="padding:48px 0;text-align:center"><i class="bi bi-search" style="font-size:2rem;color:var(--muted)"></i><h3 style="margin:12px 0 6px">No articles match</h3><p class="muted">Try fewer words, or <a style="color:var(--blue2)" href="mailto:support@example.com">ask the support team</a>.</p></div>{% endif %}
+    <div class="alist">{% for a in items %}{% assign ac = a.PublishedContent.category %}<a class="arow" href="{{ PathBase }}/{{ a.RoutePath }}"><span class="ai" style="background:color-mix(in srgb,{{ ac.PublishedContent.color }} 14%,#fff);color:{{ ac.PublishedContent.color }}"><i class="bi bi-{{ ac.PublishedContent.icon }}"></i></span><div><h3>{{ a.PrimaryField }}</h3><p>{{ a.PublishedContent.summary }}</p><span class="muted" style="font-size:.78rem">{{ ac.PrimaryField }} · Updated {{ a.PublishedContent.updated_on.Value | date: "%b %-d, %Y" }}</span></div><i class="bi bi-arrow-right go"></i></a>{% endfor %}</div>
+    </div>
+  </div>
+</div></section>

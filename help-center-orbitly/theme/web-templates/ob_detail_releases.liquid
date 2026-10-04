@@ -1,0 +1,7 @@
+{%- assign pc = Target.PublishedContent -%}{%- capture k %}{{ pc.kind }}{% endcapture -%}
+<section class="phead"><div class="narrow">
+  <div class="crumbs"><a href="{{ PathBase }}/">Help Center</a><i class="bi bi-chevron-right"></i><a href="{{ PathBase }}/changelog">Changelog</a><i class="bi bi-chevron-right"></i><span>{{ pc.version }}</span></div>
+  <h1>{{ Target.PrimaryField }}</h1>
+  <div style="display:flex;gap:8px"><span class="chip {% if k == 'improved' %}mint{% elsif k == 'fixed' %}sun{% endif %}">{{ k | replace: "new", "New" | replace: "improved", "Improved" | replace: "fixed", "Fixed" }}</span><span class="chip gray">{{ pc.version }} · {{ pc.released_on.Value | date: "%B %-d, %Y" }}</span></div>
+</div></section>
+<section class="section tight"><div class="narrow"><p style="font-size:1.15rem;color:var(--ink2)">{{ pc.summary }}</p><div class="prose">{{ pc.content }}</div><p style="margin-top:32px"><a class="btn btn-line" href="{{ PathBase }}/changelog"><i class="bi bi-arrow-left"></i> All releases</a></p></div></section>

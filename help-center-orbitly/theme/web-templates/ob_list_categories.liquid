@@ -1,0 +1,15 @@
+<section class="phead"><div class="wrap">
+  <div class="crumbs"><a href="{{ PathBase }}/">Help Center</a><i class="bi bi-chevron-right"></i><span>All topics</span></div>
+  <h1>Browse every topic</h1><p class="muted" style="margin:0;max-width:620px">Each section lists its articles in the order we recommend reading them.</p>
+</div></section>
+<section class="section tight"><div class="wrap" style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px" id="allcats">
+{%- for c in Target.Items %}{% assign cid = c.Id | append: "" %}{% capture f %}category eq '{{ cid }}'{% endcapture %}
+  {%- assign arts = get_content_items(ContentType="articles", Filter=f, OrderBy="sort_order asc", PageSize=6) %}
+  <div class="card reveal" style="padding:24px;--c:{{ c.PublishedContent.color }}">
+    <div style="display:flex;gap:14px;align-items:center;margin-bottom:8px"><span style="width:46px;height:46px;font-size:1.25rem;border-radius:13px;display:grid;place-items:center;color:#fff;background:{{ c.PublishedContent.color }};flex:none"><i class="bi bi-{{ c.PublishedContent.icon }}"></i></span>
+      <div><h2 style="font-size:1.25rem"><a href="{{ PathBase }}/{{ c.RoutePath }}">{{ c.PrimaryField }}</a></h2><span class="muted" style="font-size:.85rem">{{ arts.TotalCount }} articles</span></div></div>
+    <div class="alist">{% for a in arts.Items %}<a class="arow" href="{{ PathBase }}/{{ a.RoutePath }}"><div><h3>{{ a.PrimaryField }}</h3></div><i class="bi bi-arrow-right go"></i></a>{% endfor %}</div>
+  </div>
+{%- endfor %}
+</div></section>
+<style>@media(max-width:800px){#allcats{grid-template-columns:1fr!important}}</style>

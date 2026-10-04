@@ -1,0 +1,14 @@
+{%- assign kinds = "new,improved,fixed" | split: "," -%}{%- assign kindnames = "New,Improved,Fixed" | split: "," -%}
+{%- assign qk = "" -%}{%- for k in kinds -%}{%- if QueryParams.kind == k -%}{%- assign qk = k -%}{%- endif -%}{%- endfor -%}
+{%- if qk != "" -%}{%- capture f %}kind eq '{{ qk }}'{% endcapture -%}{%- assign items = get_content_items(ContentType="releases", Filter=f, OrderBy="released_on desc", PageSize=50).Items -%}{%- else -%}{%- assign items = Target.Items -%}{%- endif -%}
+<section class="phead"><div class="wrap">
+  <div class="crumbs"><a href="{{ PathBase }}/">Help Center</a><i class="bi bi-chevron-right"></i><span>Changelog</span></div>
+  <h1>What's new in Orbitly</h1><p class="muted" style="margin:0 0 18px;max-width:600px">Every release, newest first. Subscribe with the <a href="{{ PathBase }}/feeds/changelog.rss" style="color:var(--blue2)">RSS feed</a>.</p>
+  <div style="display:flex;gap:8px;flex-wrap:wrap"><a class="chip {% if qk != '' %}gray{% endif %}" href="{{ PathBase }}/changelog">All</a>{% for k in kinds %}<a class="chip {% if qk != k %}gray{% elsif k == 'new' %}{% elsif k == 'improved' %}mint{% else %}sun{% endif %}" href="{{ PathBase }}/changelog?kind={{ k }}">{{ kindnames[forloop.index0] }}</a>{% endfor %}</div>
+</div></section>
+<section class="section tight" style="padding-top:8px"><div class="narrow" style="width:min(940px,100% - 48px)">
+{%- for r in items %}{% capture k %}{{ r.PublishedContent.kind }}{% endcapture %}
+  <div class="rel reveal"><div><span class="ver">{{ r.PublishedContent.version }}</span><span class="when">{{ r.PublishedContent.released_on.Value | date: "%B %-d, %Y" }}</span></div>
+  <div><span class="chip {% if k == 'improved' %}mint{% elsif k == 'fixed' %}sun{% endif %}">{{ k | replace: "new", "New" | replace: "improved", "Improved" | replace: "fixed", "Fixed" }}</span><h2><a href="{{ PathBase }}/{{ r.RoutePath }}">{{ r.PrimaryField }}</a></h2><div class="prose">{{ r.PublishedContent.content }}</div></div></div>
+{%- endfor %}
+</div></section>
