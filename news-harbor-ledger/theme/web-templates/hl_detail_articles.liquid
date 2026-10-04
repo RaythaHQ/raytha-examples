@@ -1,0 +1,60 @@
+{%- assign q = Target.PublishedContent -%}{% capture lv %}{{ q.is_live }}{% endcapture %}{% capture bk %}{{ q.breaking }}{% endcapture %}{% capture kd %}{{ q.kind }}{% endcapture %}
+{%- assign au = q.author -%}{% assign ws = au.PrimaryField | split: " " %}
+<article class="wrap art">
+  <header class="ahead">
+    <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap"><a class="kick" href="{{ PathBase }}/{{ q.section.RoutePath }}" style="color:{{ q.section.PublishedContent.color }}">{{ q.section.PrimaryField }}</a>{% if kd != "news" %}<span class="pill">{% if kd == "analysis" %}Analysis{% elsif kd == "opinion" %}Opinion{% elsif kd == "feature" %}Feature{% else %}Explainer{% endif %}</span>{% endif %}{% if bk == "True" %}<span class="pill" style="background:var(--red);color:#fff">Breaking</span>{% endif %}{% if lv == "True" %}<a href="#live" class="pill" style="background:var(--ink);color:#fff"><span class="livedot" style="font-size:.66rem">Live updates</span></a>{% endif %}</div>
+    <h1>{{ Target.PrimaryField }}</h1>
+    <p class="adek">{{ q.dek }}</p>
+    <div class="byl"><a href="{{ PathBase }}/{{ au.RoutePath }}" class="av" style="background:{{ au.PublishedContent.color }}">{{ ws[0] | slice: 0 }}{{ ws[1] | slice: 0 }}</a><div><div>By <a href="{{ PathBase }}/{{ au.RoutePath }}" style="font-weight:700;text-decoration:underline;text-underline-offset:3px">{{ au.PrimaryField }}</a>, {{ au.PublishedContent.role | downcase }}</div><div class="mut" style="font-size:.84rem">{{ q.published_on.Value | date: "%B %-d, %Y" }}{% capture tl %}{{ q.time_label | strip }}{% endcapture %}{% if tl != "" %} at {{ q.time_label }}{% endif %}{% if q.read_minutes %} &middot; {{ q.read_minutes }} min read{% endif %}</div></div>
+      <button class="btn noprint" type="button" style="margin-left:auto" onclick="navigator.clipboard&&navigator.clipboard.writeText(location.href);this.innerHTML='<i class=\'bi bi-check2\'></i> Link copied'"><i class="bi bi-link-45deg"></i> Copy link</button></div>
+  </header>
+  <figure class="afig"><img src="{{ q.image.Value | attachment_redirect_url }}" alt="">{% capture cp %}{{ q.caption | strip }}{% endcapture %}{% if cp != "" %}<figcaption>{{ q.caption }}</figcaption>{% endif %}</figure>
+  <div class="agrid">
+    <div>
+      {%- if lv == "True" %}{% assign lu = get_content_items(ContentType="live_updates", OrderBy="sequence desc", PageSize=100) %}{% assign nlu = 0 %}{% assign nkey = 0 %}{% for u in lu.Items %}{% if u.PublishedContent.story.PrimaryField == Target.PrimaryField %}{% assign nlu = nlu | plus: 1 %}{% capture uk %}{{ u.PublishedContent.kind }}{% endcapture %}{% if uk == "key" %}{% assign nkey = nkey | plus: 1 %}{% endif %}{% endif %}{% endfor %}
+      <section class="live" id="live">
+        <div class="lhead"><span class="livedot red">Live updates</span><span class="mut" style="font-size:.84rem">{{ nlu }} updates &middot; newest first</span><span class="chips noprint" style="margin-left:auto"><a href="#live" class="on" data-lf="all">All</a><a href="#live" data-lf="key">Key developments ({{ nkey }})</a></span></div>
+        {%- for u in lu.Items %}{% assign p = u.PublishedContent %}{% if p.story.PrimaryField == Target.PrimaryField %}{% capture uk %}{{ p.kind }}{% endcapture %}
+        <div class="lu lu-{{ uk }}" data-k="{{ uk }}" id="{{ u.RoutePath | split: '/' | last }}"><div class="lt"><b>{{ p.time_label }}</b><span>{{ p.posted_on.Value | date: "%b %-d" }}</span></div>
+          <div><div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">{% if uk == "key" %}<span class="pill" style="background:var(--red);color:#fff">Key development</span>{% elsif uk == "official" %}<span class="pill" style="background:var(--navy);color:#fff">Official</span>{% elsif uk == "correction" %}<span class="pill" style="background:#f3e3b5;color:#5c4400">Correction</span>{% endif %}</div>
+          <h3>{{ u.PrimaryField }}</h3><p>{{ p.body }}</p>{% capture src %}{{ p.source | strip }}{% endcapture %}{% if src != "" %}<small class="mut">Source: {{ p.source }}</small>{% endif %}</div></div>
+        {%- endif %}{% endfor %}
+        <p class="mut" style="font-size:.84rem;margin:18px 0 0">Updates are posted by our editors as content items in Raytha and appear here, on the <a href="{{ PathBase }}/live" style="text-decoration:underline">live updates page</a> and in the breaking banner across the site.</p>
+      </section>
+      <h2 class="h-l" style="margin:44px 0 18px">The story so far</h2>
+      {%- endif %}
+      <div class="prose">{% capture lc %}{{ q.location | strip }}{% endcapture %}{% if lc != "" %}<span class="dl">{{ q.location }}</span> &mdash; {% endif %}{{ q.body }}</div>
+      {% capture cr %}{{ q.correction | strip }}{% endcapture %}{% if cr != "" %}<div class="corr"><b>Correction:</b> {{ q.correction }}</div>{% endif %}
+      <div class="abox"><a href="{{ PathBase }}/{{ au.RoutePath }}" class="av" style="background:{{ au.PublishedContent.color }};width:56px;height:56px">{{ ws[0] | slice: 0 }}{{ ws[1] | slice: 0 }}</a><div><b>{{ au.PrimaryField }}</b> <span class="mut">covers {{ au.PublishedContent.beat | downcase }}.</span> <a href="mailto:{{ au.PublishedContent.email }}" class="red" style="text-decoration:underline">{{ au.PublishedContent.email }}</a><p class="mut" style="margin:6px 0 0;font-size:.92rem">{{ au.PublishedContent.bio }}</p></div></div>
+    </div>
+    <aside class="noprint">
+      {%- assign mr = get_content_items(ContentType="articles", OrderBy="reads desc", PageSize=5) %}
+      <div class="shd"><h2>Most read</h2><a href="{{ PathBase }}/most-read">Top 10</a></div>
+      <ol class="mr">{% for x in mr.Items %}<li><a href="{{ PathBase }}/{{ x.RoutePath }}" class="hd">{{ x.PrimaryField }}</a></li>{% endfor %}</ol>
+      {%- assign more = get_content_items(ContentType="articles", OrderBy="published_on desc", PageSize=60) %}
+      <div class="shd" style="margin-top:34px"><h2>More {{ q.section.PrimaryField }}</h2></div>{% assign k = 0 %}
+      {%- for x in more.Items %}{% if x.PublishedContent.section.PrimaryField == q.section.PrimaryField and x.RoutePath != Target.RoutePath and k < 4 %}{% assign k = k | plus: 1 %}<a href="{{ PathBase }}/{{ x.RoutePath }}" style="display:block;padding:12px 0;border-top:1px solid var(--line)"><span class="h-s hd" style="font-family:var(--serif);font-weight:600">{{ x.PrimaryField }}</span><span class="mut" style="display:block;font-size:.78rem;margin-top:4px">{{ x.PublishedContent.published_on.Value | date: "%b %-d" }}</span></a>{% endif %}{% endfor %}
+    </aside>
+  </div>
+</article>
+<style>
+  .art{padding-top:30px}.ahead{max-width:860px}.ahead h1{font-size:clamp(2.1rem,4.4vw,3.5rem);letter-spacing:-.022em;line-height:1.06;margin:14px 0 14px}
+  .adek{font:400 1.32rem/1.45 var(--serif);color:var(--ink2);margin:0 0 22px}
+  .byl{display:flex;gap:12px;align-items:center;padding:14px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);font-size:.92rem}
+  .afig{margin:26px 0 0}.afig img{width:100%;max-height:540px;object-fit:cover}.afig figcaption{font-size:.8rem;color:var(--mut);padding:8px 0;border-bottom:1px solid var(--line)}
+  .agrid{display:grid;grid-template-columns:minmax(0,720px) 300px;gap:70px;margin-top:34px;justify-content:space-between}
+  .dl{font:700 .8rem/1 var(--sans);letter-spacing:.08em}
+  .corr{background:#fbf3d9;border-left:4px solid #d6a400;padding:14px 18px;font-size:.95rem;margin:10px 0 0}
+  .abox{display:flex;gap:16px;align-items:flex-start;border-top:3px solid var(--ink);padding-top:18px;margin-top:40px}
+  .mr{list-style:none;counter-reset:m;margin:0;padding:0}.mr li{counter-increment:m;display:grid;grid-template-columns:36px 1fr;gap:6px;padding:12px 0;border-top:1px solid var(--line);font:600 1rem/1.3 var(--serif)}.mr li:first-child{border-top:0}.mr li::before{content:counter(m);font:800 1.5rem/1 var(--serif);color:var(--red)}
+  .live{border:2px solid var(--ink);background:#fff;padding:22px 24px}
+  .lhead{display:flex;gap:14px;align-items:center;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:14px}
+  .lu{display:grid;grid-template-columns:86px 1fr;gap:16px;padding:18px 0;border-bottom:1px solid var(--line);position:relative}
+  .lu:last-of-type{border-bottom:0}.lt b{display:block;font:700 .95rem/1.2 var(--sans)}.lt span{font-size:.76rem;color:var(--mut)}
+  .lu h3{font-size:1.2rem;margin:6px 0 4px}.lu p{margin:0 0 6px;font:400 1.04rem/1.55 var(--serif)}
+  .lu-key{background:linear-gradient(90deg,rgba(196,22,28,.06),transparent 60%)}.lu-key .lt b{color:var(--red)}
+  .live.onlykey .lu:not(.lu-key){display:none}
+  @media(max-width:960px){.agrid{grid-template-columns:1fr;gap:40px}}
+  @media(max-width:600px){.live{padding:16px}.lu{grid-template-columns:1fr;gap:4px}.lt b,.lt span{display:inline;margin-right:6px}.byl .btn{display:none}}
+</style>
+<script>document.querySelectorAll('[data-lf]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();var box=document.getElementById('live');box.classList.toggle('onlykey',a.dataset.lf==='key');document.querySelectorAll('[data-lf]').forEach(function(b){b.classList.toggle('on',b===a)})})});</script>

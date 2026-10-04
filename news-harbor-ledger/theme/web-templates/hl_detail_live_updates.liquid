@@ -1,0 +1,7 @@
+{%- assign p = Target.PublishedContent -%}{% capture uk %}{{ p.kind }}{% endcapture %}
+<section class="wrap narrow" style="padding:40px 28px 0"><div class="mut" style="font-size:.86rem"><a href="{{ PathBase }}/live" style="text-decoration:underline">Live updates</a> / {{ p.posted_on.Value | date: "%B %-d, %Y" }} at {{ p.time_label }}</div>
+  <div style="margin-top:16px">{% if uk == "key" %}<span class="pill" style="background:var(--red);color:#fff">Key development</span>{% elsif uk == "official" %}<span class="pill" style="background:var(--navy);color:#fff">Official</span>{% elsif uk == "correction" %}<span class="pill" style="background:#f3e3b5;color:#5c4400">Correction</span>{% else %}<span class="pill">Update</span>{% endif %}</div>
+  <h1 style="font-size:clamp(2rem,4vw,3rem);margin:12px 0 14px">{{ Target.PrimaryField }}</h1>
+  <p class="prose">{{ p.body }}</p>{% capture src %}{{ p.source | strip }}{% endcapture %}{% if src != "" %}<p class="mut">Source: {{ p.source }}</p>{% endif %}
+  <div style="border-top:3px solid var(--ink);padding-top:16px;margin-top:30px"><span class="kick">Part of</span><a href="{{ PathBase }}/{{ p.story.RoutePath }}#{{ Target.RoutePath | split: '/' | last }}" style="display:block;margin-top:6px"><span class="h-l hd" style="font-family:var(--serif);font-weight:700">{{ p.story.PrimaryField }}</span></a></div>
+</section>
