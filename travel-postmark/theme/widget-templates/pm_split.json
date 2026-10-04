@@ -1,0 +1,12 @@
+{"label": "Postmark: postcard and text", "fields": [
+  {"developerName": "image_from", "label": "Postcard from the reveal of (destination name)", "fieldType": "single_line_text"},
+  {"developerName": "caption", "label": "Caption", "fieldType": "single_line_text"},
+  {"developerName": "kicker", "label": "Kicker", "fieldType": "single_line_text"},
+  {"developerName": "headline", "label": "Headline", "fieldType": "single_line_text"},
+  {"developerName": "accent", "label": "Words in red", "fieldType": "single_line_text"},
+  {"developerName": "body", "label": "Text", "fieldType": "wysiwyg"},
+  {"developerName": "points", "label": "Points", "fieldType": "repeater", "subFields": [{"developerName": "icon", "label": "Icon (Bootstrap Icons name)", "fieldType": "single_line_text"}, {"developerName": "title", "label": "Title", "fieldType": "single_line_text"}, {"developerName": "text", "label": "Text", "fieldType": "long_text"}]},
+  {"developerName": "button_label", "label": "Button label", "fieldType": "single_line_text"},
+  {"developerName": "button_url", "label": "Button link", "fieldType": "single_line_text"},
+  {"developerName": "alt", "label": "Tinted background", "fieldType": "checkbox"}
+]}

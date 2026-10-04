@@ -1,0 +1,8 @@
+{%- assign s = widget.settings -%}{%- assign rv = get_content_items(ContentType="reviews", OrderBy="sort_order asc", PageSize=3) -%}
+<section class="section alt"><div class="wrap">
+  <div class="shead c"><span class="label">{{ s.kicker }}</span><h2>{{ s.headline }} <em>{{ s.accent }}</em></h2></div>
+  <div class="grid3">{% for r in rv.Items %}{% assign p = r.PublishedContent %}{% assign t = p.tier %}{% assign v = p.rating | append: "" | plus: 0 %}
+    <article class="rv reveal" style="margin:0"><span class="stars">{% for i in (1..5) %}{% if i <= v %}★{% else %}☆{% endif %}{% endfor %}</span><h3>{{ p.headline }}</h3><p>{{ p.quote | truncate: 190 }}</p>
+      <div class="who"><span class="av" style="background:{{ t.PublishedContent.color }}">{{ r.PrimaryField | slice: 0 }}</span><div><b>{{ r.PrimaryField }}</b><div class="muted" style="font-size:.86rem">{{ t.PrimaryField }} · went to {{ p.went_to }}</div></div></div></article>{% endfor %}</div>
+  <div style="text-align:center;margin-top:36px"><a class="btn btn-line" href="/reviews">Read all the reviews</a></div>
+</div></section>

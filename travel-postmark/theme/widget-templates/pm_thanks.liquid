@@ -1,0 +1,8 @@
+{%- assign s = widget.settings -%}
+<section class="section" style="padding:120px 0;text-align:center"><div class="narrow">
+  <svg viewBox="0 0 100 100" width="110" style="margin:0 auto 26px;display:block;transform:rotate(-10deg)" aria-hidden="true"><circle cx="50" cy="50" r="46" fill="none" stroke="#d64545" stroke-width="3"/><circle cx="50" cy="50" r="30" fill="none" stroke="#1d2a44" stroke-width="2"/><text x="50" y="47" font-family="Space Mono,monospace" font-size="9" font-weight="700" fill="#1d2a44" text-anchor="middle">RECEIVED</text><text x="50" y="60" font-family="Space Mono,monospace" font-size="7" fill="#d64545" text-anchor="middle">POSTMARK</text></svg>
+  <span class="label">{{ s.kicker }}</span><h1 style="font-size:clamp(2.8rem,6vw,4.6rem);margin:14px 0 18px">{{ s.headline }}<span data-name></span>.</h1>
+  <p data-gift="no" style="font-size:1.15rem;color:var(--ink2);max-width:600px;margin:0 auto 30px">{{ s.text }}</p>
+  <p data-gift="yes" style="font-size:1.15rem;color:var(--ink2);max-width:600px;margin:0 auto 30px">{{ s.gift_text }}</p>
+  <div class="row" style="justify-content:center"><a class="btn btn-r" href="/reveals">Browse past reveals</a><a class="btn btn-line" href="/faq">Read the FAQ</a></div>
+</div></section>

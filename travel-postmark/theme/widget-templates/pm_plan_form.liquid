@@ -1,0 +1,25 @@
+{%- assign s = widget.settings -%}
+<section class="section" id="planner" style="padding-top:50px"><div class="wrap fgrid">
+  <form class="form" method="post" action="/forms/plan" data-plan novalidate>
+    <div class="alert" role="alert"></div>
+    <div class="hp" aria-hidden="true"><label>Website<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+    <span class="label">Step 1 · You</span><h2 style="font-size:2rem;margin:8px 0 18px">Who's travelling?</h2>
+    <div class="two"><div><label class="l" for="pn">Your name *</label><input type="text" id="pn" name="contact_name" required maxlength="120" autocomplete="name"></div><div><label class="l" for="pe">Email *</label><input type="email" id="pe" name="email" required maxlength="160" autocomplete="email"></div></div>
+    <div class="three"><div><label class="l" for="pa">Home airport *</label><input type="text" id="pa" name="home_airport" required maxlength="60" placeholder="e.g. ORD"></div><div><label class="l" for="pt">Travellers *</label><input type="number" id="pt" name="travelers" min="1" max="8" value="2" required></div><div><label class="l" for="pm">When</label><input type="text" id="pm" name="month" maxlength="40" placeholder="e.g. May 2027"></div></div>
+    <label class="check"><input type="checkbox" name="is_gift" value="true"> It's a gift for someone else</label>
+    <div class="giftbox"><label class="l" for="pr">Who's it for? *</label><input type="text" id="pr" name="recipient" maxlength="120" placeholder="Their name" style="margin-bottom:6px"><p class="muted" style="font-size:.88rem;margin:6px 0 0">We'll send them a gift envelope with a clue. They pick the dates later.</p></div>
+    <span class="label" style="display:block;margin-top:14px">Step 2 · The trip</span><h2 style="font-size:2rem;margin:8px 0 18px">How big an adventure?</h2>
+    <div class="tierpick" role="radiogroup" aria-label="Trip tier">{% for t in s.tiers %}<label><input type="radio" name="tier" value="{{ t.value }}"{% if forloop.index == 2 %} checked{% endif %}><span>{{ t.label }}<small>{{ t.note }}</small></span></label>{% endfor %}</div>
+    <label class="l">What do you love? Pick as many as you like</label>
+    <div class="vibes">{% for v in s.vibes %}<label><input type="checkbox" name="vibes" value="{{ v.value }}"><span><i class="bi {{ v.icon }}"></i> {{ v.label }}</span></label>{% endfor %}</div>
+    <label class="l" for="pg">Anywhere to rule out?</label><textarea id="pg" name="no_go" maxlength="600" placeholder="Places you've been, or never want to go"></textarea>
+    <label class="check"><input type="checkbox" name="passport" value="true" checked> Everyone has a passport valid for six months after the trip</label>
+    <label class="l" for="po">Anything else?</label><textarea id="po" name="notes" maxlength="1500" placeholder="Allergies, a big birthday, a fear of boats..."></textarea>
+    <button class="btn btn-r" type="submit">Send it to us <i class="bi bi-envelope-paper-heart"></i></button>
+    <p class="muted" style="font-size:.86rem;margin:16px 0 0">{{ s.small_print }}</p>
+  </form>
+  <aside style="display:grid;gap:20px;position:sticky;top:110px">
+    <div class="card"><span class="label">What happens next</span><ol style="margin:14px 0 0;padding-left:1.2rem;color:var(--ink2)">{% for st in s.steps %}<li style="padding:6px 0"><b style="color:var(--ink)">{{ st.title }}.</b> {{ st.text }}</li>{% endfor %}</ol></div>
+    <div class="card" style="background:var(--ink);color:var(--paper);border:0"><span class="label" style="color:var(--mustard)">No payment here</span><p style="margin:12px 0 0;color:#c7cbd8">{{ s.aside }}</p></div>
+  </aside>
+</div></section>

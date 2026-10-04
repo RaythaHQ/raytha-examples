@@ -1,0 +1,7 @@
+{%- assign s = widget.settings -%}{%- assign ts = get_content_items(ContentType="tiers", OrderBy="sort_order asc", PageSize=8) -%}
+<section class="section alt"><div class="wrap">
+  <div class="shead c"><span class="label">{{ s.kicker }}</span><h2>{{ s.headline }} <em>{{ s.accent }}</em></h2><p>{{ s.subtitle }}</p></div>
+  <div class="grid4" style="gap:26px">{% for t in ts.Items %}{% assign p = t.PublishedContent %}{% capture pop %}{{ p.popular | downcase }}{% endcapture %}
+    <a class="stamp mini reveal" href="/{{ t.RoutePath }}" style="--c:{{ p.color }}">{% if pop == "true" %}<span class="pop">Most popular</span>{% endif %}<div class="inner"><span class="denom">{{ p.stamp }}</span><h3>{{ t.PrimaryField }}</h3><p class="tag" style="font-size:.94rem">{{ p.tagline }}</p><div class="price" style="margin-top:auto">{{ p.price_range }}</div><div class="pp">per person · guide price</div></div></a>{% endfor %}</div>
+  <p class="muted" style="text-align:center;margin-top:30px;font-size:.92rem">{{ s.note }} <a href="/trips" style="color:var(--red);font-weight:700">Compare the trips →</a></p>
+</div></section>

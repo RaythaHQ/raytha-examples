@@ -1,0 +1,7 @@
+{%- assign s = widget.settings -%}{%- capture f %}destination eq '{{ s.image_from | replace: "'", "''" }}'{% endcapture -%}{%- assign im = get_content_items(ContentType="reveals", Filter=f, PageSize=1) -%}{%- assign img = "" %}{% for r in im.Items %}{% capture img %}{{ r.PublishedContent.postcard | attachment_redirect_url }}{% endcapture %}{% endfor -%}
+<section class="section{% if s.alt == true %} alt{% endif %}"><div class="wrap detail" style="align-items:center">
+  <div class="pc reveal" style="transform:rotate(-1.4deg)"><div class="ph"><img src="{{ img }}" alt="Postcard of {{ s.image_from }}" loading="lazy"></div><div class="tx"><div class="meta">{{ s.caption }}</div></div></div>
+  <div><span class="label">{{ s.kicker }}</span><h2 style="font-size:clamp(2.3rem,4.4vw,3.5rem);margin:14px 0 18px">{{ s.headline }} <em>{{ s.accent }}</em></h2><div class="prose">{{ s.body }}</div>
+    {% if s.points %}<ul style="list-style:none;padding:0;margin:20px 0 0">{% for pt in s.points %}<li style="display:flex;gap:12px;padding:10px 0;border-top:1px dashed var(--line)"><i class="bi {{ pt.icon }}" style="color:var(--red);font-size:1.2rem"></i><span><b>{{ pt.title }}.</b> <span class="muted">{{ pt.text }}</span></span></li>{% endfor %}</ul>{% endif %}
+    {% if s.button_label %}<a class="btn btn-r" style="margin-top:24px" href="{{ s.button_url }}">{{ s.button_label }} <i class="bi bi-arrow-right"></i></a>{% endif %}</div>
+</div></section>

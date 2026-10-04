@@ -1,0 +1,5 @@
+{"label": "Postmark: reviews strip", "fields": [
+  {"developerName": "kicker", "label": "Kicker", "fieldType": "single_line_text"},
+  {"developerName": "headline", "label": "Headline", "fieldType": "single_line_text"},
+  {"developerName": "accent", "label": "Words in red", "fieldType": "single_line_text"}
+]}

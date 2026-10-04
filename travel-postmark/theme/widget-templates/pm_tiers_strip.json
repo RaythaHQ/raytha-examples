@@ -1,0 +1,7 @@
+{"label": "Postmark: trip tiers as stamps", "fields": [
+  {"developerName": "kicker", "label": "Kicker", "fieldType": "single_line_text"},
+  {"developerName": "headline", "label": "Headline", "fieldType": "single_line_text"},
+  {"developerName": "accent", "label": "Words in red", "fieldType": "single_line_text"},
+  {"developerName": "subtitle", "label": "Subtitle", "fieldType": "long_text"},
+  {"developerName": "note", "label": "Note under the stamps", "fieldType": "long_text"}
+]}

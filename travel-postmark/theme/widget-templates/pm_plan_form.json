@@ -1,0 +1,7 @@
+{"label": "Postmark: trip planner form", "fields": [
+  {"developerName": "tiers", "label": "Tier choices", "fieldType": "repeater", "subFields": [{"developerName": "value", "label": "Value", "fieldType": "single_line_text"}, {"developerName": "label", "label": "Label", "fieldType": "single_line_text"}, {"developerName": "note", "label": "Note", "fieldType": "single_line_text"}]},
+  {"developerName": "vibes", "label": "Things people love", "fieldType": "repeater", "subFields": [{"developerName": "value", "label": "Value", "fieldType": "single_line_text"}, {"developerName": "label", "label": "Label", "fieldType": "single_line_text"}, {"developerName": "icon", "label": "Icon", "fieldType": "single_line_text"}]},
+  {"developerName": "small_print", "label": "Small print", "fieldType": "long_text"},
+  {"developerName": "steps", "label": "What happens next", "fieldType": "repeater", "subFields": [{"developerName": "title", "label": "Title", "fieldType": "single_line_text"}, {"developerName": "text", "label": "Text", "fieldType": "long_text"}]},
+  {"developerName": "aside", "label": "No-payment box text", "fieldType": "long_text"}
+]}

@@ -1,0 +1,5 @@
+{%- assign s = widget.settings -%}
+<section class="section{% if s.dark == true %} ink{% endif %}"><div class="wrap">
+  <div class="shead c"><span class="label">{{ s.kicker }}</span><h2>{{ s.headline }} <em>{{ s.accent }}</em></h2><p>{{ s.subtitle }}</p></div>
+  <div class="steps">{% for st in s.steps %}<div class="step reveal"><i class="bi {{ st.icon }} ic"></i><div class="n">0{{ forloop.index }}</div><h3>{{ st.title }}</h3><p>{{ st.text }}</p></div>{% endfor %}</div>
+</div></section>

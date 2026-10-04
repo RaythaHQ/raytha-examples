@@ -1,0 +1,6 @@
+{"label": "Postmark: thank-you", "fields": [
+  {"developerName": "kicker", "label": "Kicker", "fieldType": "single_line_text"},
+  {"developerName": "headline", "label": "Headline (first name added after it)", "fieldType": "single_line_text"},
+  {"developerName": "text", "label": "Text", "fieldType": "long_text"},
+  {"developerName": "gift_text", "label": "Text for a gift", "fieldType": "long_text"}
+]}

@@ -1,0 +1,16 @@
+{%- assign s = widget.settings -%}
+{%- assign rv = get_content_items(ContentType="reviews", PageSize=200) -%}{%- assign tot = 0 %}{% assign n = 0 %}{% for r in rv.Items %}{% assign v = r.PublishedContent.rating | append: "" | plus: 0 %}{% assign tot = tot | plus: v %}{% assign n = n | plus: 1 %}{% endfor %}{% if n > 0 %}{% assign a10 = tot | times: 10 | divided_by: n %}{% endif -%}
+{%- assign rs = get_content_items(ContentType="reveals", PageSize=1) -%}
+<section class="hero"><div class="wrap hero-grid">
+  <div><span class="label">{{ s.kicker }}</span>
+    <h1>{{ s.headline }} <em>{{ s.accent }}</em></h1>
+    <p class="lead">{{ s.lead }}</p>
+    <div class="row"><a class="btn btn-r" href="{{ s.primary_url }}">{{ s.primary_label }} <i class="bi bi-arrow-right"></i></a><a class="btn btn-line" href="{{ s.secondary_url }}">{{ s.secondary_label }}</a></div>
+    <div class="proof"><div><b>{{ a10 | divided_by: 10 }}.{{ a10 | modulo: 10 }} <span class="stars" style="font-size:1rem">★★★★★</span></b>from {{ n }} reviews</div><div><b>{{ rs.TotalCount }}</b>past reveals</div><div><b>4</b>trip tiers, from a weekend to ten nights</div></div>
+  </div>
+  <div class="env-wrap reveal" data-envelope role="button" tabindex="0" aria-label="Open the envelope for a clue">
+    <svg class="stamp-float" viewBox="0 0 90 110" aria-hidden="true"><path d="M0 0h90v110H0z" fill="#fffdf8"/><rect x="8" y="8" width="74" height="94" fill="#2f5d9e"/><circle cx="45" cy="48" r="20" fill="#e9b44c"/><path d="M8 80c12-10 24 4 37-4s25-8 37 0v26H8z" fill="#2f7d6d"/><text x="45" y="96" font-family="Space Mono,monospace" font-size="10" font-weight="700" fill="#fffdf8" text-anchor="middle">AIR MAIL</text></svg>
+    <div class="env"><div class="letter"><span class="label">{{ s.clue_label }}</span><q>{{ s.clue_fallback }}</q><span class="ans"></span></div><div class="pocket"></div><div class="flap"></div><div class="seal">P</div></div>
+    <div class="env-hint">{{ s.hint }}</div>
+  </div>
+</div></section>
