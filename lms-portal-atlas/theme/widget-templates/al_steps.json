@@ -1,0 +1,11 @@
+{
+  "label": "Atlas: how it works",
+  "fields": [
+    {"developerName": "kicker", "label": "Kicker", "fieldType": "single_line_text"},
+    {"developerName": "headline", "label": "Headline", "fieldType": "single_line_text"},
+    {"developerName": "steps", "label": "Steps", "fieldType": "repeater", "subFields": [
+      {"developerName": "title", "label": "Title", "fieldType": "single_line_text"},
+      {"developerName": "body", "label": "Body", "fieldType": "long_text"}
+    ]}
+  ]
+}

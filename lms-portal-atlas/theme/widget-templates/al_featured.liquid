@@ -1,0 +1,22 @@
+{%- assign n = widget.settings.count | append: "" | plus: 0 -%}{%- if n == 0 -%}{%- assign n = 6 -%}{%- endif -%}
+{%- assign cs = get_content_items(ContentType="courses", OrderBy="learners desc", PageSize=n) -%}
+<section class="section">
+  <div class="wrap">
+    <div class="shead"><div><span class="label dot">{{ widget.settings.kicker }}</span><h2>{{ widget.settings.headline }}</h2><p>{{ widget.settings.subtitle }}</p></div></div>
+    <div class="grid3">
+      {%- for c in cs.Items %}
+{%- capture cat %}{{ c.PublishedContent.category }}{% endcapture -%}{%- capture lvl %}{{ c.PublishedContent.level }}{% endcapture -%}
+{%- capture lf %}course eq '{{ c.Id | append: "" }}'{% endcapture -%}{%- assign cl = get_content_items(ContentType="lessons", Filter=lf, PageSize=1) -%}
+<a class="card course lift reveal" href="{{ PathBase }}/{{ c.RoutePath }}" style="--c:{{ c.PublishedContent.accent }}">
+  <div class="cv"><img src="{{ c.PublishedContent.cover.Value | attachment_redirect_url }}" alt="" loading="lazy"><span class="chip">{{ cat | replace: "data", "Data and analytics" | replace: "design", "Design" | replace: "product", "Product" | replace: "leadership", "Leadership" }}</span></div>
+  <div class="body">
+    <h3>{{ c.PrimaryField }}</h3>
+    <p>{{ c.PublishedContent.tagline }}</p>
+    <div class="who"><img src="{{ c.PublishedContent.instructor.PublishedContent.photo.Value | attachment_redirect_url }}" alt="">{{ c.PublishedContent.instructor.PrimaryField }}</div>
+    <div class="meta"><span><i class="bi bi-bar-chart"></i> {{ lvl | capitalize }}</span><span><i class="bi bi-collection-play"></i> {{ cl.TotalCount }} lessons</span><span><i class="bi bi-clock"></i> {{ c.PublishedContent.hours | append: "" }} h</span><span style="margin-left:auto"><i class="bi bi-star-fill star"></i> {{ c.PublishedContent.rating | append: "" }}</span></div>
+  </div>
+</a>
+{% endfor %}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,7 @@
+{
+  "label": "Atlas: topic tiles (live course counts)",
+  "fields": [
+    {"developerName": "kicker", "label": "Kicker", "fieldType": "single_line_text"},
+    {"developerName": "headline", "label": "Headline", "fieldType": "single_line_text"}
+  ]
+}
