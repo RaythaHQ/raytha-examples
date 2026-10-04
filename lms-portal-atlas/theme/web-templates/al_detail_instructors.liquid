@@ -1,0 +1,29 @@
+{%- assign p = Target.PublishedContent -%}
+{%- capture pf %}instructor eq '{{ Target.Id | append: "" }}'{% endcapture -%}{%- assign pc = get_content_items(ContentType="courses", Filter=pf, OrderBy="sort_order asc", PageSize=20) -%}
+<section class="section" style="padding-top:56px">
+  <div class="wrap" style="display:grid;grid-template-columns:380px 1fr;gap:64px;align-items:center" id="ihero">
+    <div class="card" style="overflow:hidden;transform:rotate(-2deg);border-width:8px;border-color:var(--card)"><img src="{{ p.photo.Value | attachment_redirect_url }}" alt="Illustrated portrait of {{ Target.PrimaryField }}"></div>
+    <div><div class="crumbs"><a href="{{ PathBase }}/instructors">Instructors</a><span>/</span><span>{{ Target.PrimaryField }}</span></div>
+      <h1 style="font-size:clamp(2.8rem,6vw,5rem);margin:16px 0 10px;letter-spacing:-.045em">{{ Target.PrimaryField }}</h1>
+      <p style="font-size:1.2rem;font-weight:600;margin:0 0 16px">{{ p.role }}</p>
+      <p class="muted" style="font-size:1.1rem;max-width:620px">{{ p.bio }}</p>
+    </div>
+  </div>
+  <style>@media(max-width:900px){#ihero{grid-template-columns:1fr!important;gap:32px!important}#ihero>.card{max-width:300px}}</style>
+</section>
+<section style="padding-bottom:96px"><div class="wrap">
+  <div class="shead"><div><span class="label dot">Courses</span><h2>Learn with {{ Target.PrimaryField | split: " " | first }}</h2></div></div>
+  <div class="grid3">{% for c in pc.Items %}
+{%- capture cat %}{{ c.PublishedContent.category }}{% endcapture -%}{%- capture lvl %}{{ c.PublishedContent.level }}{% endcapture -%}
+{%- capture lf %}course eq '{{ c.Id | append: "" }}'{% endcapture -%}{%- assign cl = get_content_items(ContentType="lessons", Filter=lf, PageSize=1) -%}
+<a class="card course lift reveal" href="{{ PathBase }}/{{ c.RoutePath }}" style="--c:{{ c.PublishedContent.accent }}">
+  <div class="cv"><img src="{{ c.PublishedContent.cover.Value | attachment_redirect_url }}" alt="" loading="lazy"><span class="chip">{{ cat | replace: "data", "Data and analytics" | replace: "design", "Design" | replace: "product", "Product" | replace: "leadership", "Leadership" }}</span></div>
+  <div class="body">
+    <h3>{{ c.PrimaryField }}</h3>
+    <p>{{ c.PublishedContent.tagline }}</p>
+    <div class="who"><img src="{{ c.PublishedContent.instructor.PublishedContent.photo.Value | attachment_redirect_url }}" alt="">{{ c.PublishedContent.instructor.PrimaryField }}</div>
+    <div class="meta"><span><i class="bi bi-bar-chart"></i> {{ lvl | capitalize }}</span><span><i class="bi bi-collection-play"></i> {{ cl.TotalCount }} lessons</span><span><i class="bi bi-clock"></i> {{ c.PublishedContent.hours | append: "" }} h</span><span style="margin-left:auto"><i class="bi bi-star-fill star"></i> {{ c.PublishedContent.rating | append: "" }}</span></div>
+  </div>
+</a>
+{% endfor %}</div>
+</div></section>

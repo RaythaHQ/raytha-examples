@@ -1,0 +1,56 @@
+{%- comment -%} Course catalog. Filters come from query params (category, level, q); each value is checked against a known list before it goes into the filter. {%- endcomment -%}
+{%- assign base = PathBase | append: "/courses" -%}
+{%- assign catkeys = "data,design,product,leadership" | split: "," -%}
+{%- assign catnames = "Data and analytics,Design,Product,Leadership" | split: "," -%}
+{%- assign lvlkeys = "beginner,intermediate,advanced" | split: "," -%}
+{%- assign q = QueryParams.q | strip | remove: "'" | remove: '"' | truncate: 40, "" -%}
+{%- assign qcat = "" -%}{%- assign qcatname = "" -%}{%- for k in catkeys -%}{%- if QueryParams.category == k -%}{%- assign qcat = k -%}{%- assign qcatname = catnames[forloop.index0] -%}{%- endif -%}{%- endfor -%}
+{%- assign qlvl = "" -%}{%- for k in lvlkeys -%}{%- if QueryParams.level == k -%}{%- assign qlvl = k -%}{%- endif -%}{%- endfor -%}
+{%- assign flt = "" -%}
+{%- if q != "" -%}{%- capture part %} and (contains(title,'{{ q }}') or contains(tagline,'{{ q }}') or contains(summary,'{{ q }}')){% endcapture -%}{%- assign flt = flt | append: part -%}{%- endif -%}
+{%- if qcat != "" -%}{%- assign flt = flt | append: " and category eq '" | append: qcat | append: "'" -%}{%- endif -%}
+{%- if qlvl != "" -%}{%- assign flt = flt | append: " and level eq '" | append: qlvl | append: "'" -%}{%- endif -%}
+{%- assign flt = flt | remove_first: " and " -%}
+{%- if flt != "" -%}{%- assign res = get_content_items(ContentType="courses", Filter=flt, OrderBy="sort_order asc", PageSize=60) -%}{%- assign items = res.Items -%}{%- assign total = res.TotalCount -%}
+{%- else -%}{%- assign items = Target.Items -%}{%- assign total = Target.TotalCount -%}{%- endif -%}
+{%- capture keep_lvl %}{% if qlvl != "" %}&level={{ qlvl }}{% endif %}{% endcapture -%}
+{%- capture keep_cat %}{% if qcat != "" %}&category={{ qcat }}{% endif %}{% endcapture -%}
+<section class="phead">
+  <div class="wrap">
+    <div class="crumbs"><a href="{{ PathBase }}/">Home</a><span>/</span><a href="{{ base }}">Courses</a>{% if qcatname != "" %}<span>/</span><span>{{ qcatname }}</span>{% endif %}</div>
+    <h1>{% if qcatname != "" %}{{ qcatname }} courses.{% else %}The course catalog.{% endif %}</h1>
+    <p>Every course opens with free preview lessons. Members get every lesson, plus progress tracking across the whole catalog.</p>
+  </div>
+</section>
+<section style="padding-bottom:96px">
+  <div class="wrap">
+    <div class="filters">
+      <a href="{{ base }}{% if keep_lvl != '' %}?{{ keep_lvl | remove_first: '&' }}{% endif %}" class="{% if qcat == '' %}on{% endif %}">All topics</a>
+      {% for k in catkeys %}<a href="{{ base }}?category={{ k }}{{ keep_lvl }}" class="{% if qcat == k %}on{% endif %}">{{ catnames[forloop.index0] }}</a>{% endfor %}
+      <form action="{{ base }}" method="get">{% if qcat != "" %}<input type="hidden" name="category" value="{{ qcat }}">{% endif %}<input name="q" value="{{ q }}" placeholder="Search courses" aria-label="Search courses"><button aria-label="Search"><i class="bi bi-search"></i></button></form>
+    </div>
+    <div class="filters" style="margin-top:-14px">
+      <span class="label" style="margin-right:4px">Level</span>
+      <a href="{{ base }}{% if keep_cat != '' %}?{{ keep_cat | remove_first: '&' }}{% endif %}" class="{% if qlvl == '' %}on{% endif %}" style="padding:.35rem .8rem;font-size:.85rem">Any</a>
+      {% for k in lvlkeys %}<a href="{{ base }}?level={{ k }}{{ keep_cat }}" class="{% if qlvl == k %}on{% endif %}" style="padding:.35rem .8rem;font-size:.85rem">{{ k | capitalize }}</a>{% endfor %}
+      <span class="muted" style="margin-left:auto;font-size:.9rem">{{ total }} course{% if total != 1 %}s{% endif %}{% if q != "" %} matching “{{ q }}”{% endif %}</span>
+    </div>
+    {% if total == 0 %}
+      <div class="card" style="padding:56px;text-align:center"><h2 style="font-size:2rem">No courses match yet.</h2><p class="muted">Try another topic or level, or <a href="{{ base }}" style="text-decoration:underline">see the full catalog</a>.</p></div>
+    {% else %}
+      <div class="grid3">{% for c in items %}
+{%- capture cat %}{{ c.PublishedContent.category }}{% endcapture -%}{%- capture lvl %}{{ c.PublishedContent.level }}{% endcapture -%}
+{%- capture lf %}course eq '{{ c.Id | append: "" }}'{% endcapture -%}{%- assign cl = get_content_items(ContentType="lessons", Filter=lf, PageSize=1) -%}
+<a class="card course lift reveal" href="{{ PathBase }}/{{ c.RoutePath }}" style="--c:{{ c.PublishedContent.accent }}">
+  <div class="cv"><img src="{{ c.PublishedContent.cover.Value | attachment_redirect_url }}" alt="" loading="lazy"><span class="chip">{{ cat | replace: "data", "Data and analytics" | replace: "design", "Design" | replace: "product", "Product" | replace: "leadership", "Leadership" }}</span></div>
+  <div class="body">
+    <h3>{{ c.PrimaryField }}</h3>
+    <p>{{ c.PublishedContent.tagline }}</p>
+    <div class="who"><img src="{{ c.PublishedContent.instructor.PublishedContent.photo.Value | attachment_redirect_url }}" alt="">{{ c.PublishedContent.instructor.PrimaryField }}</div>
+    <div class="meta"><span><i class="bi bi-bar-chart"></i> {{ lvl | capitalize }}</span><span><i class="bi bi-collection-play"></i> {{ cl.TotalCount }} lessons</span><span><i class="bi bi-clock"></i> {{ c.PublishedContent.hours | append: "" }} h</span><span style="margin-left:auto"><i class="bi bi-star-fill star"></i> {{ c.PublishedContent.rating | append: "" }}</span></div>
+  </div>
+</a>
+{% endfor %}</div>
+    {% endif %}
+  </div>
+</section>
