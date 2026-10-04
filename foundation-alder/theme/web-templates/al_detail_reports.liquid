@@ -1,0 +1,34 @@
+{%- assign p = Target.PublishedContent -%}{% assign yr = p.year | append: "" | plus: 0 %}{% capture yk %}y{{ yr }}{% endcapture %}
+{%- assign progs = get_content_items(ContentType="programs", OrderBy="sort_order asc", PageSize=10) -%}{%- assign gs = get_content_items(ContentType="grantees", OrderBy="amount desc", PageSize=500) -%}
+{%- assign hl = p.highlights | newline_to_br | split: "<br />" -%}
+<section class="rhead" style="--c:{{ p.cover_color }}"><svg viewBox="0 0 400 400" aria-hidden="true">{% for i in (1..12) %}<circle cx="320" cy="200" r="{{ i | times: 30 }}" fill="none" stroke="rgba(255,255,255,.18)" stroke-width="1.5"/>{% endfor %}</svg><div class="wrap">
+  <div class="crumbs noprint" style="color:rgba(255,255,255,.75)"><a href="{{ PathBase }}/reports">Annual reports</a><span>/</span><span>{{ yr }}</span></div>
+  <span class="eyebrow" style="color:#fff;margin-top:30px">The Alder Foundation</span><h1>Annual Report <em>{{ yr }}</em></h1><p>{{ p.summary }}</p>
+  <div class="noprint" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:28px"><button class="btn btn-paper" type="button" onclick="window.print()"><i class="bi bi-file-earmark-arrow-down"></i> Download PDF</button><a class="btn btn-ghost" href="{{ PathBase }}/grantees?year={{ yr }}">{{ yr }} grantees <i class="bi bi-arrow-right"></i></a></div>
+  <p class="noprint" style="font-size:.85rem;opacity:.75;margin-top:12px">The PDF is made by your browser's print dialog: choose "Save as PDF".</p>
+</div></section>
+<section class="section tight"><div class="wrap"><div class="grid4 rnums">
+  <div><span class="num" data-count="{{ p.total_granted | append: '' | plus: 0 | divided_by: 10000.0 | round | divided_by: 100.0 }}" data-pre="$" data-suf="M" data-dec="2">{{ p.total_granted | append: "" | plus: 0 | divided_by: 10000.0 | round | divided_by: 100.0 | prepend: "$" }}M</span><span>granted</span></div>
+  <div><span class="num" data-count="{{ p.grants_count }}">{{ p.grants_count }}</span><span>grants</span></div>
+  <div><span class="num" data-count="{{ p.new_partners }}">{{ p.new_partners }}</span><span>first-time grantees</span></div>
+  <div><span class="num">{{ p.assets | append: "" | plus: 0 | divided_by: 1000000 | prepend: "$" }}M</span><span>endowment at year end</span></div>
+</div></div></section>
+<section class="section alt" style="padding-top:80px"><div class="wrap" style="display:grid;grid-template-columns:1fr 1fr;gap:70px" id="rd">
+  <div><span class="eyebrow">Highlights</span><ol class="hls">{% for h in hl %}{% assign hs = h | strip %}{% if hs != "" %}<li>{{ hs }}</li>{% endif %}{% endfor %}</ol></div>
+  <div><span class="eyebrow">From the president</span><div class="prose" style="margin-top:18px;font-size:1.18rem">{{ p.letter }}</div></div>
+</div></section>
+{%- assign n = 0 %}{% assign tot = 0 %}{% for g in gs.Items %}{% capture y2 %}{{ g.PublishedContent.year }}{% endcapture %}{% if y2 == yk %}{% assign n = n | plus: 1 %}{% assign a = g.PublishedContent.amount | append: "" | plus: 0 %}{% assign tot = tot | plus: a %}{% endif %}{% endfor %}
+{%- if n > 0 %}<section class="section"><div class="wrap"><div class="shead"><div><span class="eyebrow">Grants listed on this site</span><h2>{{ yr }} grants <em>by program</em></h2></div><p>{{ n }} of the year's grants are published on this site, totalling {{ tot | format_number: "N0" | prepend: "$" }}.</p></div>
+  <div class="rbars">{% for x in progs.Items %}{% assign pt = 0 %}{% assign pn = 0 %}{% for g in gs.Items %}{% assign q = g.PublishedContent %}{% capture y2 %}{{ q.year }}{% endcapture %}{% if y2 == yk and q.program.PrimaryField == x.PrimaryField %}{% assign a = q.amount | append: "" | plus: 0 %}{% assign pt = pt | plus: a %}{% assign pn = pn | plus: 1 %}{% endif %}{% endfor %}{% assign pct = pt | times: 100 | divided_by: tot %}
+    <div><span><span class="dot" style="background:{{ x.PublishedContent.color }}"></span> {{ x.PrimaryField }} <small class="mut">{{ pn }} grants</small></span><i style="--w:{{ pct }}%;--c:{{ x.PublishedContent.color }}"></i><b>{{ pt | format_number: "N0" | prepend: "$" }}</b></div>{% endfor %}</div>
+  <div style="margin-top:40px">{% for g in gs.Items %}{% assign q = g.PublishedContent %}{% capture y2 %}{{ q.year }}{% endcapture %}{% if y2 == yk %}{% assign ws = g.PrimaryField | split: " " %}<a class="gt" href="{{ PathBase }}/{{ g.RoutePath }}"><span class="mono" style="background:{{ q.program.PublishedContent.color }}">{{ ws[0] | slice: 0 }}{{ ws[1] | slice: 0 }}</span><span><b style="font:500 1.2rem/1.2 var(--serif)">{{ g.PrimaryField }}</b><span class="mut" style="display:block;font-size:.92rem">{{ q.program.PrimaryField }}</span></span><span class="amt">{{ q.amount | append: "" | plus: 0 | format_number: "N0" | prepend: "$" }}</span></a>{% endif %}{% endfor %}</div>
+</div></section>{% endif %}
+<style>
+  .rhead{position:relative;overflow:hidden;background:var(--c);color:#fff;padding:70px 0 80px}.rhead svg{position:absolute;right:-120px;top:-60px;width:720px}.rhead .wrap{position:relative}
+  .rhead h1{font-size:clamp(3.2rem,7vw,6.2rem);margin:16px 0 18px}.rhead h1 em{color:#fff;opacity:.85}.rhead p{font:400 1.3rem/1.5 var(--serif);max-width:640px;margin:0}
+  .rnums>div{border-top:2px solid var(--ink);padding-top:18px}.rnums span:last-child{display:block;color:var(--mut);margin-top:8px}
+  .hls{list-style:none;counter-reset:h;padding:0;margin:20px 0 0}.hls li{counter-increment:h;display:grid;grid-template-columns:50px 1fr;padding:18px 0;border-top:1px solid var(--line);font:400 1.25rem/1.4 var(--serif)}.hls li::before{content:counter(h,decimal-leading-zero);font:600 .85rem/1.8 var(--sans);color:var(--rust)}
+  .rbars{display:grid;gap:16px}.rbars>div{display:grid;grid-template-columns:260px 1fr 120px;gap:18px;align-items:center}.rbars i{display:block;height:14px;border-radius:7px;background:var(--paper3);position:relative;overflow:hidden}.rbars i::after{content:"";position:absolute;inset:0;width:var(--w);background:var(--c);border-radius:7px}.rbars b{text-align:right;font:500 1.1rem/1 var(--serif)}
+  @media(max-width:900px){#rd{grid-template-columns:1fr!important;gap:36px!important}.rbars>div{grid-template-columns:1fr 90px}.rbars i{grid-column:1/-1;grid-row:2}}
+  @media print{.rhead{-webkit-print-color-adjust:exact;print-color-adjust:exact;padding:40px 0}.rbars i::after{-webkit-print-color-adjust:exact;print-color-adjust:exact}.alt{background:#fff}}
+</style>
