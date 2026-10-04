@@ -1,0 +1,16 @@
+{
+ "name": "Low Tide Festival",
+ "theme": "lowtide",
+ "types": [
+  "stages",
+  "artists",
+  "places",
+  "faqs"
+ ],
+ "detailTemplates": {
+  "stages": "ft_detail_stages",
+  "artists": "ft_detail_artists",
+  "places": "ft_detail_places",
+  "faqs": "ft_detail_faqs"
+ }
+}

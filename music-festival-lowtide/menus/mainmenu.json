@@ -1,0 +1,30 @@
+{
+ "developerName": "mainmenu",
+ "label": "Main menu",
+ "items": [
+  {
+   "label": "Lineup",
+   "link": "/lineup"
+  },
+  {
+   "label": "Schedule",
+   "link": "/schedule"
+  },
+  {
+   "label": "Venue",
+   "link": "/venue"
+  },
+  {
+   "label": "Tickets",
+   "link": "/tickets"
+  },
+  {
+   "label": "Plan your visit",
+   "link": "/info"
+  },
+  {
+   "label": "FAQ",
+   "link": "/faq"
+  }
+ ]
+}

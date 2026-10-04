@@ -1,0 +1,109 @@
+{
+ "hero": [
+  {
+   "widgetType": "ft_hero",
+   "settings": {
+    "kicker": "Driftwood Point, Halcyon Bay",
+    "headline": "Low Tide",
+    "accent": "2027",
+    "date_label": "July 16 to 18, 2027",
+    "place_label": "Driftwood Point, Halcyon Bay",
+    "subtitle": "Three days, four stages and 36 artists on a sandy point between the bay and the dunes. The sun sets behind the main stage every night.",
+    "countdown_to": "2027-07-16T12:00",
+    "primary_label": "Get tickets",
+    "primary_url": "https://tickets.example.com/lowtide-2027",
+    "secondary_label": "See the lineup",
+    "secondary_url": "/lineup"
+   }
+  }
+ ],
+ "main": [
+  {
+   "widgetType": "ft_poster",
+   "settings": {
+    "kicker": "The lineup",
+    "headline": "Thirty-six artists,",
+    "accent": "one long weekend.",
+    "subtitle": "Headliners close the Tidepool Main Stage every night at 9:30 pm. The Kelp Forest keeps going until 12:30 am."
+   }
+  },
+  {
+   "widgetType": "ft_spotlight",
+   "settings": {
+    "kicker": "Don't miss",
+    "headline": "Sets people will",
+    "accent": "talk about.",
+    "subtitle": "Tap the star to add a set to your schedule. Your picks stay in this browser.",
+    "count": 8
+   }
+  },
+  {
+   "widgetType": "ft_stages",
+   "settings": {
+    "kicker": "Four stages",
+    "headline": "Pick a stage,",
+    "accent": "any stage.",
+    "subtitle": "The furthest two stages are an eight-minute walk apart, so you can catch a bit of everything."
+   }
+  },
+  {
+   "widgetType": "ft_info",
+   "settings": {
+    "kicker": "Plan your visit",
+    "headline": "Everything you need",
+    "accent": "before you go.",
+    "subtitle": "Shuttles, hours, what to bring and how we make the weekend work for everyone.",
+    "items": [
+     {
+      "icon": "bus-front",
+      "color": "#1fb5a8",
+      "title": "Free shuttles",
+      "text": "Every 10 minutes from Halcyon Bay station, 11 am until 1:30 am. Or walk the boardwalk to the Beach Gate.",
+      "link_label": "Getting there",
+      "link_url": "/info"
+     },
+     {
+      "icon": "clock",
+      "color": "#ffb347",
+      "title": "Gates at noon",
+      "text": "First sets at 2:30 pm, headliners at 9:30 pm, and the Kelp Forest runs until 12:30 am.",
+      "link_label": "See the schedule",
+      "link_url": "/schedule"
+     },
+     {
+      "icon": "universal-access",
+      "color": "#b69cff",
+      "title": "Access for everyone",
+      "text": "Matting on main paths, a viewing platform, free companion tickets and ASL at every headline set.",
+      "link_label": "Accessibility",
+      "link_url": "/faq#are-there-sign-language-interpreters"
+     }
+    ]
+   }
+  },
+  {
+   "widgetType": "ft_faq",
+   "settings": {
+    "kicker": "FAQ",
+    "headline": "Quick",
+    "accent": "answers.",
+    "subtitle": "The things people ask most. Search all of them on the FAQ page.",
+    "count": 5
+   }
+  },
+  {
+   "widgetType": "ft_cta",
+   "settings": {
+    "kicker": "Tickets on sale",
+    "headline": "See you",
+    "accent": "at low tide.",
+    "subtitle": "Weekend passes from $249. Tickets are sold by our ticketing partner; the button below is a placeholder link in this example.",
+    "primary_label": "Get tickets",
+    "primary_url": "https://tickets.example.com/lowtide-2027",
+    "primary_external": "yes",
+    "secondary_label": "Compare passes",
+    "secondary_url": "/tickets"
+   }
+  }
+ ]
+}
