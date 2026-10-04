@@ -1,0 +1,30 @@
+{%- assign cats = "tickets:Tickets and entry:ticket-perforated,travel:Getting there:bus-front,onsite:At the festival:sun,access:Accessibility:universal-access" | split: "," -%}
+<section class="phead" style="padding-bottom:30px"><div class="wrap">
+  <span class="eyebrow"><i class="bi bi-question-circle"></i> FAQ</span>
+  <h1>Good questions, <span class="hl">short answers.</span></h1>
+  <p>Everything people ask us before the weekend. Still stuck? Write to <a href="mailto:hello@lowtide.example" style="text-decoration:underline">hello@lowtide.example</a>.</p>
+</div></section>
+<section style="padding:0 0 96px"><div class="wrap" style="display:grid;grid-template-columns:280px 1fr;gap:56px" id="faqw">
+  <aside><div style="position:sticky;top:96px">
+    <label style="display:block;position:relative;margin-bottom:18px"><i class="bi bi-search" style="position:absolute;left:16px;top:50%;transform:translateY(-50%);color:var(--mut)"></i><input id="fq" type="search" placeholder="Search the FAQ" style="width:100%;padding:.85rem 1rem .85rem 2.6rem;border-radius:999px;border:1.5px solid var(--line);background:var(--night2);color:var(--sand);font:500 .95rem var(--sans)"></label>
+    <div class="chips" style="flex-direction:column;align-items:stretch" id="fc"><button type="button" class="on" data-c="">All questions <span class="mut" style="margin-left:auto">{{ Target.TotalCount }}</span></button>{% for c in cats %}{% assign kv = c | split: ":" %}{% assign cnt = 0 %}{% for f in Target.Items %}{% capture fc %}{{ f.PublishedContent.category }}{% endcapture %}{% if fc == kv[0] %}{% assign cnt = cnt | plus: 1 %}{% endif %}{% endfor %}<button type="button" data-c="{{ kv[0] }}"><i class="bi bi-{{ kv[2] }}"></i> {{ kv[1] }} <span class="mut" style="margin-left:auto">{{ cnt }}</span></button>{% endfor %}</div>
+  </div></aside>
+  <div>
+    {%- for c in cats %}{% assign kv = c | split: ":" %}
+    <div class="fgrp" data-c="{{ kv[0] }}" style="margin-bottom:44px"><h2 style="font-size:1.7rem;display:flex;gap:12px;align-items:center"><i class="bi bi-{{ kv[2] }}" style="color:var(--tang)"></i> {{ kv[1] }}</h2>
+      <div class="faq">{% for f in Target.Items %}{% assign p = f.PublishedContent %}{% capture fc %}{{ p.category }}{% endcapture %}{% if fc == kv[0] %}<details id="{{ f.RoutePath | split: '/' | last }}"><summary>{{ f.PrimaryField }}</summary><p>{{ p.answer }}</p></details>{% endif %}{% endfor %}</div></div>
+    {%- endfor %}
+    <p id="fnone" class="mut" style="display:none">No questions match. Try a shorter word, or email us.</p>
+    <div class="card" style="display:flex;justify-content:space-between;gap:20px;align-items:center;flex-wrap:wrap;margin-top:20px"><div><h3>Ready to go?</h3><p>Tickets are sold by our ticketing partner.</p></div><a class="btn btn-coral ext" href="https://tickets.example.com/lowtide-2027" rel="noopener">Get tickets</a></div>
+  </div>
+</div></section>
+<style>@media(max-width:860px){#faqw{grid-template-columns:1fr!important;gap:24px!important}#faqw aside>div{position:static!important}}</style>
+<script>
+(function(){var q=document.getElementById('fq'),cur='';
+  function run(){var t=q.value.trim().toLowerCase(),any=false;document.querySelectorAll('.fgrp').forEach(function(g){var vis=0;
+    g.querySelectorAll('details').forEach(function(d){var ok=!t||d.textContent.toLowerCase().indexOf(t)>-1;d.style.display=ok?'':'none';if(ok)vis++;if(t&&ok)d.open=true});
+    var show=vis>0&&(!cur||g.dataset.c===cur);g.style.display=show?'':'none';if(show)any=true});document.getElementById('fnone').style.display=any?'none':''}
+  q.addEventListener('input',run);
+  document.querySelectorAll('#fc button').forEach(function(b){b.addEventListener('click',function(){document.querySelectorAll('#fc button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');cur=b.dataset.c;run()})});
+  if(location.hash){var d=document.getElementById(location.hash.slice(1));if(d)d.open=true}})();
+</script>

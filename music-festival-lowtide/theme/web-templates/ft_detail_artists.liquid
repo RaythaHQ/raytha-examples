@@ -1,0 +1,43 @@
+{%- assign p = Target.PublishedContent -%}{%- capture dy %}{{ p.day }}{% endcapture -%}{%- capture gn %}{{ p.genre }}{% endcapture -%}{%- capture hd %}{{ p.headliner }}{% endcapture -%}
+{%- assign days = "fri:Friday:July 16,sat:Saturday:July 17,sun:Sunday:July 18" | split: "," -%}{%- for d in days %}{% assign kv = d | split: ":" %}{% if kv[0] == dy %}{% assign dl = kv[1] %}{% assign dd = kv[2] %}{% endif %}{% endfor -%}
+{%- assign genres = "indie:Indie,rock:Rock,pop:Pop,electronic:Electronic,hip_hop:Hip-hop,soul:Soul and R&B,folk:Folk" | split: "," -%}{%- for d in genres %}{% assign kv = d | split: ":" %}{% if kv[0] == gn %}{% assign gl = kv[1] %}{% endif %}{% endfor -%}
+{%- assign slug = Target.RoutePath | split: "/" | last -%}{%- assign sc = p.stage.PublishedContent.color -%}
+{%- capture f %}day eq '{{ dy }}'{% endcapture -%}{%- assign same = get_content_items(ContentType="artists", Filter=f, OrderBy="start_min asc", PageSize=20) -%}
+<section style="padding:56px 0 90px;position:relative;overflow:hidden">
+  <div style="position:absolute;inset:0;background:radial-gradient(60% 70% at 85% 10%,color-mix(in srgb,{{ sc }} 35%,transparent),transparent 70%)"></div>
+  <div class="wrap" style="position:relative">
+    <div class="crumbs" style="margin-bottom:28px"><a href="{{ PathBase }}/lineup">Lineup</a><span>/</span><a href="{{ PathBase }}/lineup?day={{ dy }}">{{ dl }}</a><span>/</span><span>{{ Target.PrimaryField }}</span></div>
+    <div class="art-grid">
+      <div class="art-im reveal"><img src="{{ p.image.Value | attachment_redirect_url }}" alt="{{ Target.PrimaryField }}"></div>
+      <div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">{% if hd == "True" %}<span class="pill" style="background:var(--coral);color:var(--night)"><i class="bi bi-stars"></i> Headliner</span>{% endif %}<span class="pill">{{ gl }}</span><span class="pill"><i class="bi bi-geo-alt"></i> {{ p.origin }}</span></div>
+        <h1 style="font-size:clamp(3rem,7vw,6rem);margin:18px 0 14px">{{ Target.PrimaryField }}</h1>
+        <p style="font-size:1.3rem;color:#d3dbe4;margin:0 0 30px;max-width:560px">{{ p.tagline }}</p>
+        <div class="setcard" style="--c:{{ sc }}">
+          <div><span class="mut" style="font-size:.78rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase">Day</span><b>{{ dl }}</b><small>{{ dd }}, 2027</small></div>
+          <div><span class="mut" style="font-size:.78rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase">Set</span><b>{{ p.time_label | split: " to " | first }}</b><small>until {{ p.time_label | split: " to " | last }}</small></div>
+          <div><span class="mut" style="font-size:.78rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase">Stage</span><b><a href="{{ PathBase }}/{{ p.stage.RoutePath }}" style="display:inline-flex;gap:8px;align-items:center"><span class="dot" style="background:{{ sc }}"></span>{{ p.stage.PublishedContent.short }}</a></b><small>{{ p.stage.PublishedContent.vibe }}</small></div>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:24px">
+          <button class="btn btn-sand" data-pick="{{ slug }}" data-lbl="1" style="position:static"><i class="bi bi-star"></i> <span>Add to my schedule</span></button>
+          <a class="btn btn-line ext" href="{{ p.listen_url }}" rel="noopener"><i class="bi bi-headphones"></i> Listen</a>
+          <a class="btn btn-coral ext" href="https://tickets.example.com/lowtide-2027?day={{ dy }}" rel="noopener">{{ dl }} tickets</a>
+        </div>
+        <div class="prose" style="margin-top:38px;max-width:620px">{{ p.bio }}</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section light tight"><div class="wrap">
+  <div class="shead" style="margin-bottom:28px"><div><span class="eyebrow">Also on {{ dl }}</span><h2 style="font-size:clamp(2rem,4vw,3rem)">Make a day of it.</h2></div><a class="btn btn-dark" href="{{ PathBase }}/schedule?day={{ dy }}">{{ dl }} schedule <i class="bi bi-arrow-right"></i></a></div>
+  <div class="grid4">{% assign k = 0 %}{% assign mine = p.start_min | append: "" | plus: 0 %}{% for pass in (1..2) %}{% for a in same.Items %}{% assign q = a.PublishedContent %}{% assign st = q.start_min | append: "" | plus: 0 %}{% assign take = false %}{% if pass == 1 and st > mine %}{% assign take = true %}{% endif %}{% if pass == 2 and st <= mine %}{% assign take = true %}{% endif %}{% if a.Id == Target.Id %}{% assign take = false %}{% endif %}{% if take and k < 4 %}{% assign k = k | plus: 1 %}
+    <a class="acard" href="{{ PathBase }}/{{ a.RoutePath }}" style="background:var(--night);color:var(--sand)"><div class="im"><img src="{{ q.image.Value | attachment_redirect_url }}" alt="" loading="lazy"></div><span class="when">{{ q.time_label | split: " to " | first }}</span><div class="bd"><h3>{{ a.PrimaryField }}</h3><div class="meta"><span class="pill"><span class="dot" style="background:{{ q.stage.PublishedContent.color }}"></span>{{ q.stage.PublishedContent.short }}</span></div></div></a>{% endif %}{% endfor %}{% endfor %}</div>
+</div></section>
+<style>
+  .art-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:64px;align-items:start}
+  .art-im{border-radius:28px;overflow:hidden;box-shadow:0 40px 90px rgba(0,0,0,.45);position:sticky;top:100px}
+  .setcard{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);border-radius:20px;background:rgba(18,35,58,.7);overflow:hidden;border-top:4px solid var(--c)}
+  .setcard>div{padding:18px 20px;border-left:1px solid var(--line)}.setcard>div:first-child{border-left:0}
+  .setcard b{display:block;font:700 1.45rem/1.15 var(--disp);margin:6px 0 2px}.setcard small{color:var(--mut);font-size:.84rem}
+  @media(max-width:900px){.art-grid{grid-template-columns:1fr;gap:30px}.art-im{position:static}.setcard{grid-template-columns:1fr}.setcard>div{border-left:0;border-top:1px solid var(--line)}.setcard>div:first-child{border-top:0}}
+</style>

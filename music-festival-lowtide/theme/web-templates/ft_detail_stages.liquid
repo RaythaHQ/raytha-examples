@@ -1,0 +1,16 @@
+{%- assign p = Target.PublishedContent -%}
+{%- assign days = "fri:Friday:July 16,sat:Saturday:July 17,sun:Sunday:July 18" | split: "," -%}
+{%- assign all = get_content_items(ContentType="artists", OrderBy="start_min asc", PageSize=100) -%}
+<section class="phead" style="background:radial-gradient(70% 90% at 90% 0%,color-mix(in srgb,{{ p.color }} 40%,transparent),transparent 70%)"><div class="wrap">
+  <div class="crumbs"><a href="{{ PathBase }}/venue">Venue</a><span>/</span><span>{{ Target.PrimaryField }}</span></div>
+  <h1>{{ Target.PrimaryField }}</h1><p>{{ p.description }}</p>
+  <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:24px"><span class="pill" style="background:{{ p.color }};color:var(--night)">{{ p.vibe }}</span><span class="pill"><i class="bi bi-people"></i> {{ p.capacity }} capacity</span><a class="pill" href="{{ PathBase }}/venue"><i class="bi bi-map"></i> On the map</a></div>
+</div></section>
+<section style="padding:10px 0 96px"><div class="wrap"><div class="grid3">
+  {%- for d in days %}{% assign kv = d | split: ":" %}
+  <div class="card" style="border-top:5px solid {{ p.color }}"><span class="eyebrow">{{ kv[2] }}</span><h3 style="font-size:1.8rem;margin:8px 0 16px">{{ kv[1] }}</h3>
+    {%- assign n = 0 %}{% for a in all.Items %}{% assign q = a.PublishedContent %}{% capture dy %}{{ q.day }}{% endcapture %}{% if dy == kv[0] and q.stage.PrimaryField == Target.PrimaryField %}{% assign n = n | plus: 1 %}{% capture hd %}{{ q.headliner }}{% endcapture %}
+    <a href="{{ PathBase }}/{{ a.RoutePath }}" style="display:grid;grid-template-columns:64px 1fr;gap:14px;align-items:center;padding:12px 0;border-top:1px solid var(--line)"><img src="{{ q.image.Value | attachment_redirect_url }}" alt="" style="width:64px;height:64px;border-radius:12px;object-fit:cover" loading="lazy"><span><small class="mut" style="font-weight:600">{{ q.time_label }}</small><b style="display:block;font:700 1.12rem/1.2 var(--disp)">{{ a.PrimaryField }}{% if hd == "True" %} <i class="bi bi-stars" style="color:var(--coral)"></i>{% endif %}</b></span></a>{% endif %}{% endfor %}
+    {% if n == 0 %}<p>This stage is dark on {{ kv[1] }}. The dunes are still open.</p>{% endif %}
+  </div>{% endfor %}
+</div></div></section>

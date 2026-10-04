@@ -1,0 +1,4 @@
+{%- assign p = Target.PublishedContent -%}
+<section class="phead"><div class="wrap"><div class="crumbs"><a href="{{ PathBase }}/venue">Venue</a><span>/</span><span>{{ Target.PrimaryField }}</span></div>
+  <h1>{{ Target.PrimaryField }}</h1><p>{{ p.description }}</p>
+  <div style="display:flex;gap:10px;margin-top:26px"><a class="btn btn-sand" href="{{ PathBase }}/venue"><i class="bi bi-map"></i> Show on the map</a><a class="btn btn-line" href="{{ PathBase }}/info">Plan your visit</a></div></div></section>
