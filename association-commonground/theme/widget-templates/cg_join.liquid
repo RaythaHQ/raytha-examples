@@ -1,0 +1,5 @@
+{%- assign s = widget.settings -%}
+<section class="section"><div class="wrap">
+  <div class="shead"><div><span class="eyebrow">{{ s.kicker }}</span><h2>{{ s.headline }} <em>{{ s.accent }}</em></h2></div><p>{{ s.subtitle }}</p></div>
+  <div class="grid3">{% for o in s.items %}<div class="ben reveal" style="display:flex;flex-direction:column"><div class="ic" style="background:{% cycle 'var(--clay)','var(--leaf)','var(--sky)' %}"><i class="bi bi-{{ o.icon }}"></i></div><h3>{{ o.title }}</h3><p style="margin-bottom:20px">{{ o.text }}</p><a class="btn btn-ghost{% if o.external == 'yes' %} ext{% endif %}" style="margin-top:auto;align-self:flex-start" href="{{ o.url }}"{% if o.external == 'yes' %} rel="noopener"{% endif %}>{{ o.label }}</a></div>{% endfor %}</div>
+</div></section>

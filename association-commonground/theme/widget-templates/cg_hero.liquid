@@ -1,0 +1,19 @@
+{%- assign s = widget.settings -%}
+{%- assign ev = get_content_items(ContentType="events", Filter="format eq 'hybrid'", OrderBy="start desc", PageSize=1) -%}{%- assign g = ev.Items | first -%}
+{%- assign ch = get_content_items(ContentType="chapters", PageSize=1) -%}
+<section class="hero"><div class="wrap">
+  <div class="hero-grid">
+    <div>
+      <span class="eyebrow">{{ s.kicker }}</span>
+      <h1>{{ s.headline }} <em>{{ s.accent }}</em></h1>
+      <p class="lead">{{ s.subtitle }}</p>
+      <div class="row"><a class="btn btn-clay" href="{{ s.primary_url }}">{{ s.primary_label }} <i class="bi bi-arrow-right"></i></a><a class="btn btn-line" href="{{ s.secondary_url }}">{{ s.secondary_label }}</a></div>
+    </div>
+    <div style="position:relative">
+      {% if g %}<a class="hero-art" href="{{ PathBase }}/{{ g.RoutePath }}" style="display:block"><img src="{{ g.PublishedContent.image.Value | attachment_redirect_url }}" alt="{{ g.PrimaryField }}"></a>
+      <a class="hero-badge" href="{{ PathBase }}/{{ g.RoutePath }}" style="left:-18px;bottom:44px"><span class="ic" style="background:var(--clay)"><i class="bi bi-calendar2-heart"></i></span><span><b>{{ g.PrimaryField }}</b>{{ g.PublishedContent.time_label }} · {{ g.PublishedContent.location }}</span></a>{% endif %}
+      <a class="hero-badge" href="{{ PathBase }}/chapters" style="right:-6px;top:30px"><span class="ic" style="background:var(--leaf)"><i class="bi bi-geo-alt-fill"></i></span><span><b>{{ ch.TotalCount }} chapters</b>Find yours</span></a>
+    </div>
+  </div>
+  <div class="stats">{% for st in s.stats %}<div><b>{{ st.value }}</b><span>{{ st.label }}</span></div>{% endfor %}</div>
+</div></section>

@@ -1,0 +1,16 @@
+{%- assign s = widget.settings -%}
+{%- assign tiers = get_content_items(ContentType="tiers", OrderBy="sort_order asc", PageSize=10) -%}
+<section class="section band" id="tiers"><div class="wrap">
+  <div class="shead"><div><span class="eyebrow">{{ s.kicker }}</span><h2>{{ s.headline }} <em>{{ s.accent }}</em></h2></div><p>{{ s.subtitle }}</p></div>
+  <div class="tiers">
+  {%- for t in tiers.Items %}{% assign p = t.PublishedContent %}{% capture hi %}{{ p.highlight }}{% endcapture %}{% assign bl = p.benefits | newline_to_br | split: "<br />" %}{% assign slug = t.PrimaryField | downcase | replace: " ", "-" %}
+    <div class="tier reveal{% if hi == 'True' %} hi{% endif %}">{% if hi == "True" %}<span class="flag">Most popular</span>{% endif %}
+      <h3>{{ t.PrimaryField }}</h3><div class="price">{{ p.price }}</div><div class="aud">{{ p.audience }}</div>
+      <ul>{% for b in bl %}{% assign bs = b | strip %}{% if bs != "" and forloop.index <= 4 %}<li>{{ bs }}</li>{% endif %}{% endfor %}</ul>
+      <a class="btn {% if hi == 'True' %}btn-clay{% else %}btn-line{% endif %} ext" href="{{ s.join_url }}?tier={{ slug }}" rel="noopener">Join as {{ t.PrimaryField }}</a>
+      <a href="{{ PathBase }}/{{ t.RoutePath }}" style="text-align:center;font-size:.86rem;font-weight:600;margin-top:12px;text-decoration:underline;opacity:.8">What's included</a>
+    </div>
+  {%- endfor %}
+  </div>
+  {% if s.note %}<p class="muted" style="margin-top:24px;font-size:.88rem"><i class="bi bi-info-circle"></i> {{ s.note }}</p>{% endif %}
+</div></section>

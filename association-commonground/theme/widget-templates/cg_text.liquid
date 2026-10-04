@@ -1,0 +1,5 @@
+{%- assign s = widget.settings -%}
+<section class="section"><div class="wrap split">
+  <div><span class="eyebrow">{{ s.kicker }}</span><h2 style="font-size:clamp(2rem,3.8vw,3.1rem);margin:14px 0 22px">{{ s.headline }} <em>{{ s.accent }}</em></h2><div class="prose">{{ s.body }}</div></div>
+  {% if s.quote %}<aside class="aside"><div class="box" style="background:var(--green);color:#e8efe5;border:0;padding:34px"><i class="bi bi-quote" style="font-size:2.6rem;color:var(--mustard)"></i><p class="quote" style="font-size:1.5rem;margin:6px 0 18px;color:#fff">{{ s.quote }}</p><b style="font-weight:600;color:#c7d4c6">{{ s.quote_by }}</b></div></aside>{% endif %}
+</div></section>

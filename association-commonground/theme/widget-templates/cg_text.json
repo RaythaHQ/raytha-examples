@@ -1,0 +1,40 @@
+{
+  "label": "Commonground: text with quote",
+  "fields": [
+    {
+      "developerName": "kicker",
+      "label": "Kicker",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "headline",
+      "label": "Headline",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "accent",
+      "label": "Words in italics",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "subtitle",
+      "label": "Subtitle",
+      "fieldType": "long_text"
+    },
+    {
+      "developerName": "body",
+      "label": "Body",
+      "fieldType": "wysiwyg"
+    },
+    {
+      "developerName": "quote",
+      "label": "Pull quote",
+      "fieldType": "long_text"
+    },
+    {
+      "developerName": "quote_by",
+      "label": "Quote attribution",
+      "fieldType": "single_line_text"
+    }
+  ]
+}
