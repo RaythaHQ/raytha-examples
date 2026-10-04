@@ -1,0 +1,7 @@
+{%- assign s = widget.settings -%}
+<section class="section"><div class="wrap" style="display:grid;grid-template-columns:1fr 1.25fr;gap:80px" id="msn">
+  <div><span class="eyebrow">{{ s.kicker }}</span><h2 style="font-size:clamp(2.4rem,4.6vw,4rem);margin-top:16px">{{ s.headline }} <em>{{ s.accent }}</em></h2></div>
+  <div><div class="prose">{{ s.body }}</div><div class="vals">{% for v in s.values %}<div class="reveal"><span>0{{ forloop.index }}</span><h3>{{ v.title }}</h3><p>{{ v.text }}</p></div>{% endfor %}</div></div>
+</div></section>
+<style>.vals{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:30px}.vals>div{border-top:2px solid var(--forest);padding-top:16px}.vals span{font:600 .8rem/1 var(--sans);color:var(--rust);letter-spacing:.1em}.vals h3{font-size:1.45rem;margin:10px 0 8px}.vals p{margin:0;color:var(--mut);font-size:.98rem}
+@media(max-width:900px){#msn{grid-template-columns:1fr!important;gap:24px!important}.vals{grid-template-columns:1fr}}</style>

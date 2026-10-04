@@ -1,0 +1,9 @@
+{%- assign s = widget.settings -%}
+<section class="section tight"><div class="wrap"><div class="cta reveal"><svg viewBox="0 0 400 400" aria-hidden="true">{% for i in (1..9) %}<circle cx="330" cy="200" r="{{ i | times: 26 }}" fill="none" stroke="rgba(233,166,118,.35)" stroke-width="1.5"/>{% endfor %}</svg>
+  <span class="eyebrow">{{ s.kicker }}</span><h2>{{ s.headline }} <em>{{ s.accent }}</em></h2><p>{{ s.subtitle }}</p>
+  <div style="display:flex;gap:12px;flex-wrap:wrap;position:relative"><a class="btn btn-rust{% if s.primary_external == 'yes' %} ext{% endif %}" href="{{ s.primary_url }}"{% if s.primary_external == 'yes' %} rel="noopener"{% endif %}>{{ s.primary_label }}</a>{% if s.secondary_label != "" %}<a class="btn btn-ghost" href="{{ s.secondary_url }}">{{ s.secondary_label }}</a>{% endif %}</div>
+  {% if s.note != "" %}<p class="nt"><i class="bi bi-info-circle"></i> {{ s.note }}</p>{% endif %}
+</div></div></section>
+<style>.cta{position:relative;overflow:hidden;background:var(--forest);color:var(--paper);border-radius:22px;padding:70px 64px}.cta .eyebrow{color:#e9a676}.cta h2{font-size:clamp(2.4rem,5vw,4.2rem);margin:16px 0 16px;max-width:760px;position:relative}.cta h2 em{color:#e9a676}
+.cta>p{max-width:560px;color:#cfdcd3;font-size:1.12rem;margin:0 0 30px;position:relative}.cta .nt{font-size:.86rem;color:#a9bcb0;margin:20px 0 0;position:relative}.cta svg{position:absolute;right:-120px;top:-40px;width:560px}
+@media(max-width:700px){.cta{padding:46px 26px}.cta svg{width:340px;right:-160px}}</style>

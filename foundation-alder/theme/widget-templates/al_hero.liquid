@@ -1,0 +1,22 @@
+{%- assign s = widget.settings -%}
+{%- assign rs = get_content_items(ContentType="reports", PageSize=50) -%}{%- assign gs = get_content_items(ContentType="grantees", PageSize=500) -%}
+{%- assign tot = 0 %}{% assign cnt = 0 %}{% for r in rs.Items %}{% assign t = r.PublishedContent.total_granted | append: "" | plus: 0 %}{% assign tot = tot | plus: t %}{% assign c = r.PublishedContent.grants_count | append: "" | plus: 0 %}{% assign cnt = cnt | plus: c %}{% endfor -%}
+<section class="hero"><div class="wrap hero-g">
+  <div class="hero-t"><span class="eyebrow">{{ s.kicker }}</span><h1>{{ s.headline }} <em>{{ s.accent }}</em></h1><p class="lead">{{ s.subtitle }}</p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap"><a class="btn btn-rust" href="{{ s.primary_url }}">{{ s.primary_label }} <i class="bi bi-arrow-right"></i></a><a class="btn btn-line" href="{{ s.secondary_url }}">{{ s.secondary_label }}</a></div>
+    <div class="hstats"><div><b data-count="{{ tot | divided_by: 100000.0 | round | divided_by: 10.0 }}" data-pre="$" data-suf="M" data-dec="1">{{ tot | divided_by: 100000.0 | round | divided_by: 10.0 | prepend: "$" }}M</b><span>granted in the last {{ rs.TotalCount }} years</span></div><div><b data-count="{{ cnt }}">{{ cnt }}</b><span>grants made</span></div><div><b>5</b><span>regions, one river</span></div></div>
+  </div>
+  <div class="rings" aria-hidden="true"><svg viewBox="0 0 520 520">{% for i in (1..14) %}<circle class="rg" cx="260" cy="260" r="{{ i | times: 17 | plus: 8 }}" style="--d:{{ i | times: 90 }}ms" fill="none" stroke="{% if i == 14 %}#c8662b{% else %}#16302a{% endif %}" stroke-opacity="{% if i == 14 %}1{% else %}.{{ 15 | minus: i | times: 6 | plus: 8 }}{% endif %}" stroke-width="{% if i == 14 %}3{% else %}1.4{% endif %}"/>{% endfor %}<path d="M260 120c70 60 92 140 0 300-92-160-70-240 0-300z" fill="#c8662b" class="lf"/><path d="M260 160v260M260 220l-42-34M260 270l48-40M260 320l-40-32M260 365l34-28" stroke="#f6f1e7" stroke-width="5" stroke-linecap="round" class="lf"/></svg>
+    <span class="tag t1"><span class="dot" style="background:#2f6f8f"></span>Open Water</span><span class="tag t2"><span class="dot" style="background:#c8662b"></span>Rooted Communities</span><span class="tag t3"><span class="dot" style="background:#7a5aa6"></span>First Chapters</span></div>
+</div></section>
+<style>
+  .hero{padding:80px 0 90px;border-bottom:1px solid var(--line);overflow:hidden}.hero-g{display:grid;grid-template-columns:1.15fr 1fr;gap:50px;align-items:center}
+  .hero h1{font-size:clamp(3.2rem,6.6vw,6.2rem);line-height:.98;margin:22px 0 24px;letter-spacing:-.025em}.hero .lead{font-size:1.25rem;color:#454d47;max-width:560px;margin:0 0 32px}
+  .hstats{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:50px;padding-top:26px;border-top:1px solid var(--line)}.hstats b{display:block;font:500 2.5rem/1 var(--serif);letter-spacing:-.02em;color:var(--forest)}.hstats span{font-size:.88rem;color:var(--mut)}
+  .rings{position:relative}.rings svg{width:100%;display:block}
+  .rg{transform-origin:260px 260px;animation:ring 1.4s cubic-bezier(.2,.8,.2,1) both;animation-delay:var(--d)}@keyframes ring{from{transform:scale(.6);opacity:0}}
+  .lf{animation:lf 1.4s .9s cubic-bezier(.2,.8,.2,1) both;transform-origin:260px 420px}@keyframes lf{from{transform:scale(.3) rotate(-12deg);opacity:0}}
+  .tag{position:absolute;background:#fff;border:1px solid var(--line);border-radius:999px;padding:.5rem .9rem;font:600 .82rem/1 var(--sans);display:inline-flex;gap:8px;align-items:center;box-shadow:0 10px 24px rgba(22,48,42,.1);animation:fl 6s ease-in-out infinite}
+  .t1{left:2%;top:22%}.t2{right:0;top:52%;animation-delay:-2s}.t3{left:12%;bottom:8%;animation-delay:-4s}@keyframes fl{50%{transform:translateY(-10px)}}
+  @media(max-width:900px){.hero-g{grid-template-columns:1fr}.rings{max-width:420px;margin:0 auto}.hstats b{font-size:1.9rem}}
+</style>

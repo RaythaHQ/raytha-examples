@@ -1,0 +1,7 @@
+<section class="section" style="min-height:60vh;display:flex;align-items:center"><div class="wrap">
+  <span class="eyebrow">Error 404</span>
+  <h1 style="font-size:clamp(3rem,7vw,5.8rem);margin:18px 0;max-width:900px">This page has <em>moved downstream.</em></h1>
+  <p class="mut" style="font-size:1.2rem;max-width:560px">It may have been renamed or retired. These are good places to start.</p>
+  <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:26px"><a class="btn btn-forest" href="{{ PathBase }}/">Home</a><a class="btn btn-line" href="{{ PathBase }}/programs">Grant programs</a><a class="btn btn-line" href="{{ PathBase }}/grantees">Grantees</a><a class="btn btn-line" href="{{ PathBase }}/apply">How to apply</a></div>
+  {% if Target.ErrorId %}<p class="mut" style="margin-top:22px;font-size:.8rem">Error id: {{ Target.ErrorId }}</p>{% endif %}
+</div></section>
