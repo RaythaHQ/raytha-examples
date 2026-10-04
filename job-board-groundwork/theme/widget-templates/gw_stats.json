@@ -1,0 +1,6 @@
+{
+  "label": "Groundwork: live stats",
+  "fields": [
+    {"developerName": "note", "label": "Footnote", "fieldType": "single_line_text"}
+  ]
+}

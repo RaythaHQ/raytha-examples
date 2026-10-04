@@ -1,0 +1,10 @@
+<section class="section">
+  <div class="wrap">
+    <div class="section-head reveal"><div><span class="eyebrow">{{ widget.settings.eyebrow }}</span><h2>{{ widget.settings.headline }}</h2></div></div>
+    <div class="feat-grid">
+      {% for f in widget.settings.items %}
+      <div class="card feature reveal" style="transition-delay:{{ forloop.index0 | times: 60 }}ms"><span class="ico"><i class="bi bi-{{ f.icon | default: 'check2' }}"></i></span><h3>{{ f.title }}</h3><p>{{ f.body }}</p></div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

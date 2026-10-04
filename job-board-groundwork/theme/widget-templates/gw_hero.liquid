@@ -1,0 +1,32 @@
+{%- assign feat = get_content_items(ContentType="jobs", Filter="featured eq 'true'", OrderBy="posted_on desc", PageSize=3) -%}
+<section class="hero-gw">
+  <div class="hero-glow"></div>
+  <svg class="contours" viewBox="0 0 1400 700" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <path d="M1050 330m-90 0a90 60 0 1 0 180 0a90 60 0 1 0-180 0"/><path d="M1050 330m-170 0a170 115 0 1 0 340 0a170 115 0 1 0-340 0"/><path d="M1050 330m-260 0a260 175 0 1 0 520 0a260 175 0 1 0-520 0"/>
+    <path d="M1050 330m-360 0a360 240 0 1 0 720 0a360 240 0 1 0-720 0"/><path d="M1050 330m-470 0a470 315 0 1 0 940 0a470 315 0 1 0-940 0"/><path d="M1050 330m-590 0a590 395 0 1 0 1180 0a590 395 0 1 0-1180 0"/>
+    <path d="M1050 330m-720 0a720 480 0 1 0 1440 0a720 480 0 1 0-1440 0"/><path d="M1050 330m-860 0a860 575 0 1 0 1720 0a860 575 0 1 0-1720 0"/><path d="M1050 330m-1010 0a1010 675 0 1 0 2020 0a1010 675 0 1 0-2020 0"/>
+  </svg>
+  <div class="wrap hero-grid">
+    <div>
+      {% if widget.settings.eyebrow %}<span class="eyebrow">{{ widget.settings.eyebrow }}</span>{% endif %}
+      <h1 class="hero-title">{{ widget.settings.headline }} <em>{{ widget.settings.accent }}</em></h1>
+      <p class="hero-sub">{{ widget.settings.subtitle }}</p>
+      <form class="hero-search" action="{{ PathBase }}/jobs" method="get" role="search">
+        <input type="search" name="q" placeholder="{{ widget.settings.placeholder | default: 'Job title, skill or company' }}" aria-label="Search jobs">
+        <select name="type" aria-label="Location type"><option value="">Anywhere</option><option value="remote">Remote</option><option value="hybrid">Hybrid</option><option value="onsite">On-site</option></select>
+        <button class="btn-gw btn-lime" type="submit"><i class="bi bi-search"></i> Find jobs</button>
+      </form>
+      <div class="hero-pop"><span>Popular:</span>{% for p in widget.settings.popular %}<a href="{{ PathBase }}{{ p.url }}">{{ p.label }}</a>{% endfor %}</div>
+    </div>
+    <div class="hero-stack" aria-hidden="true">
+      {% for j in feat.Items %}
+        {%- assign co = j.PublishedContent.company -%}{%- capture cur %}{{ j.PublishedContent.currency }}{% endcapture -%}{%- assign sym = cur | replace: "USD", "$" | replace: "CAD", "CA$" | replace: "EUR", "€" | replace: "GBP", "£" -%}{%- capture lt %}{{ j.PublishedContent.location_type }}{% endcapture -%}
+        <a class="card job-card" href="{{ PathBase }}/{{ j.RoutePath }}" tabindex="-1">
+          <div class="top"><div style="display:flex;gap:12px;align-items:center"><img class="logo-sq sm" src="{{ co.PublishedContent.logo | attachment_redirect_url }}" alt=""><span class="muted" style="font-size:.9rem">{{ co.PrimaryField }}</span></div><span class="pill {{ lt }}">{{ lt | replace: "remote", "Remote" | replace: "hybrid", "Hybrid" | replace: "onsite", "On-site" }}</span></div>
+          <h3>{{ j.PrimaryField }}</h3>
+          <div class="foot"><span class="salary">{{ sym }}{{ j.PublishedContent.salary_min | append: "" | divided_by: 1000 | floor }}k – {{ sym }}{{ j.PublishedContent.salary_max | append: "" | divided_by: 1000 | floor }}k</span><span class="pill feat"><i class="bi bi-star-fill"></i> Featured</span></div>
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>

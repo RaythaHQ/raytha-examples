@@ -1,0 +1,16 @@
+{%- assign cos = get_content_items(ContentType="companies", OrderBy="sort_order asc", PageSize=10) -%}
+<section class="section" style="background:var(--paper-2);border-block:1px solid var(--line)">
+  <div class="wrap">
+    <div class="section-head reveal"><div><span class="eyebrow">{{ widget.settings.eyebrow }}</span><h2>{{ widget.settings.headline }}</h2></div><a class="link-arrow" href="{{ PathBase }}/companies">All companies <i class="bi bi-arrow-right"></i></a></div>
+    <div class="co-grid">
+    {% for c in cos.Items %}
+      {%- assign cid = c.Id | append: "" -%}{%- capture jf %}company eq '{{ cid }}'{% endcapture -%}
+      {%- assign js = get_content_items(ContentType="jobs", Filter=jf, PageSize=1) -%}
+      <a class="card lift co-tile reveal" href="{{ PathBase }}/{{ c.RoutePath }}" style="transition-delay:{{ forloop.index0 | times: 40 }}ms">
+        <img class="logo-sq" src="{{ c.PublishedContent.logo | attachment_redirect_url }}" alt="{{ c.PrimaryField }} logo" loading="lazy">
+        <div><h3>{{ c.PrimaryField }}</h3><div class="muted" style="font-size:.84rem;margin:2px 0 8px">{{ c.PublishedContent.tagline | truncate: 48 }}</div><div class="n">{{ js.TotalCount }} open {% if js.TotalCount == 1 %}role{% else %}roles{% endif %}</div></div>
+      </a>
+    {% endfor %}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,18 @@
+{%- assign catkeys = "engineering,data,hardware,product,design,science,operations,sales" | split: "," -%}
+{%- assign catnames = "Software engineering,Data & ML,Hardware & systems,Product,Design,Science & research,Operations,Sales & partnerships" | split: "," -%}
+{%- assign caticons = "code-slash,graph-up-arrow,cpu,kanban,vector-pen,thermometer-sun,gear-wide-connected,people" | split: "," -%}
+<section class="section" style="padding-top:24px">
+  <div class="wrap">
+    <div class="section-head reveal"><div><span class="eyebrow">{{ widget.settings.eyebrow }}</span><h2>{{ widget.settings.headline }}</h2></div>{% if widget.settings.body %}<p class="muted" style="max-width:420px;margin:0">{{ widget.settings.body }}</p>{% endif %}</div>
+    <div class="cat-grid">
+    {% for k in catkeys %}
+      {%- capture cf %}category eq '{{ k }}'{% endcapture -%}
+      {%- assign r = get_content_items(ContentType="jobs", Filter=cf, PageSize=1) -%}
+      <a class="card lift cat-tile reveal" href="{{ PathBase }}/jobs?category={{ k }}" style="transition-delay:{{ forloop.index0 | times: 40 }}ms">
+        <span class="ico"><i class="bi bi-{{ caticons[forloop.index0] }}"></i></span>
+        <div><h3>{{ catnames[forloop.index0] }}</h3><div class="n">{{ r.TotalCount }} open {% if r.TotalCount == 1 %}role{% else %}roles{% endif %} →</div></div>
+      </a>
+    {% endfor %}
+    </div>
+  </div>
+</section>

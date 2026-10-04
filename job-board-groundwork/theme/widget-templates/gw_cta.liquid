@@ -1,0 +1,12 @@
+<section class="section" style="padding-top:24px">
+  <div class="wrap">
+    <div class="cta-band reveal">
+      <svg class="contours" viewBox="0 0 1200 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><path d="M1000 200m-120 0a120 80 0 1 0 240 0a120 80 0 1 0-240 0"/><path d="M1000 200m-240 0a240 160 0 1 0 480 0a240 160 0 1 0-480 0"/><path d="M1000 200m-380 0a380 250 0 1 0 760 0a380 250 0 1 0-760 0"/><path d="M1000 200m-540 0a540 350 0 1 0 1080 0a540 350 0 1 0-1080 0"/></svg>
+      <div><span class="eyebrow">{{ widget.settings.eyebrow }}</span><h2>{{ widget.settings.headline }}</h2><p>{{ widget.settings.body }}</p></div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        {% if widget.settings.primaryText %}<a class="btn-gw btn-dark" href="{{ PathBase }}{{ widget.settings.primaryUrl }}">{{ widget.settings.primaryText }} <i class="bi bi-arrow-right"></i></a>{% endif %}
+        {% if widget.settings.secondaryText %}<a class="btn-gw btn-line" href="{{ PathBase }}{{ widget.settings.secondaryUrl }}">{{ widget.settings.secondaryText }}</a>{% endif %}
+      </div>
+    </div>
+  </div>
+</section>

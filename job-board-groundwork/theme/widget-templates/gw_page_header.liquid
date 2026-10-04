@@ -1,0 +1,8 @@
+<section class="page-head">
+  <svg class="contours" viewBox="0 0 1400 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><path d="M1150 120m-110 0a110 70 0 1 0 220 0a110 70 0 1 0-220 0"/><path d="M1150 120m-230 0a230 145 0 1 0 460 0a230 145 0 1 0-460 0"/><path d="M1150 120m-370 0a370 230 0 1 0 740 0a370 230 0 1 0-740 0"/><path d="M1150 120m-530 0a530 330 0 1 0 1060 0a530 330 0 1 0-1060 0"/><path d="M1150 120m-720 0a720 450 0 1 0 1440 0a720 450 0 1 0-1440 0"/></svg>
+  <div class="wrap">
+    <div class="crumbs"><a href="{{ PathBase }}/">Groundwork</a><span>/</span><span>{{ widget.settings.crumb | default: widget.settings.headline }}</span></div>
+    <h1>{{ widget.settings.headline }}</h1>
+    {% if widget.settings.lead %}<p class="lead">{{ widget.settings.lead }}</p>{% endif %}
+  </div>
+</section>

@@ -1,0 +1,11 @@
+<section class="section-tight" style="padding-bottom:88px">
+  <div class="wrap-narrow">
+    {% if widget.settings.heading %}<h2 class="reveal" style="font-size:2rem;margin-bottom:12px">{{ widget.settings.heading }}</h2>{% endif %}
+    {% for it in widget.settings.items %}
+    <details class="faq reveal" {% if forloop.first %}open{% endif %}>
+      <summary>{{ it.question }}<i class="bi bi-plus-lg"></i></summary>
+      <div class="faq-a prose">{{ it.answer }}</div>
+    </details>
+    {% endfor %}
+  </div>
+</section>

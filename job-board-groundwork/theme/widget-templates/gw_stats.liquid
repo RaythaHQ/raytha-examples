@@ -1,0 +1,19 @@
+{%- comment -%} Live numbers: counted from content on every render. {%- endcomment -%}
+{%- assign alljobs = get_content_items(ContentType="jobs", PageSize=1) -%}
+{%- assign remote = get_content_items(ContentType="jobs", Filter="location_type eq 'remote'", PageSize=1) -%}
+{%- assign cos = get_content_items(ContentType="companies", PageSize=1) -%}
+{%- assign usd = get_content_items(ContentType="jobs", Filter="currency eq 'USD'", PageSize=100) -%}
+{%- assign sum = 0 -%}{%- for j in usd.Items -%}{%- assign a = j.PublishedContent.salary_min | append: "" | plus: 0 -%}{%- assign b = j.PublishedContent.salary_max | append: "" | plus: 0 -%}{%- assign mid = a | plus: b | divided_by: 2 -%}{%- assign sum = sum | plus: mid -%}{%- endfor -%}
+{%- assign avg = 0 -%}{%- if usd.TotalCount > 0 -%}{%- assign avg = sum | divided_by: usd.TotalCount | divided_by: 1000 | floor -%}{%- endif -%}
+{%- assign pct = 0 -%}{%- if alljobs.TotalCount > 0 -%}{%- assign pct = remote.TotalCount | times: 100 | divided_by: alljobs.TotalCount | floor -%}{%- endif -%}
+<section class="section-tight" style="padding-top:64px;padding-bottom:24px">
+  <div class="wrap">
+    <div class="stats-row reveal">
+      <div class="stat"><b>{{ alljobs.TotalCount }}</b><span>open roles today</span></div>
+      <div class="stat"><b>{{ cos.TotalCount }}</b><span>climate tech companies hiring</span></div>
+      <div class="stat"><b>{{ pct }}%</b><span>of roles are fully remote</span></div>
+      <div class="stat"><b>${{ avg }}k</b><span>average mid-band salary, USD roles</span></div>
+    </div>
+    {% if widget.settings.note %}<p class="mono muted" style="font-size:.74rem;margin:12px 4px 0">{{ widget.settings.note }}</p>{% endif %}
+  </div>
+</section>

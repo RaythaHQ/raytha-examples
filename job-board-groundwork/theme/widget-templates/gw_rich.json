@@ -1,0 +1,10 @@
+{
+  "label": "Groundwork: rich text",
+  "fields": [
+    {
+      "developerName": "content",
+      "label": "Content",
+      "fieldType": "wysiwyg"
+    }
+  ]
+}

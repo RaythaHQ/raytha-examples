@@ -1,0 +1,19 @@
+{%- assign n = widget.settings.count | default: 6 -%}
+{%- assign feat = get_content_items(ContentType="jobs", Filter="featured eq 'true'", OrderBy="posted_on desc", PageSize=n) -%}
+<section class="section">
+  <div class="wrap">
+    <div class="section-head reveal"><div><span class="eyebrow">{{ widget.settings.eyebrow }}</span><h2>{{ widget.settings.headline }}</h2></div><a class="link-arrow" href="{{ PathBase }}/jobs">Browse all roles <i class="bi bi-arrow-right"></i></a></div>
+    <div class="job-grid">
+    {% for j in feat.Items %}
+      {%- assign co = j.PublishedContent.company -%}{%- capture cur %}{{ j.PublishedContent.currency }}{% endcapture -%}{%- assign sym = cur | replace: "USD", "$" | replace: "CAD", "CA$" | replace: "EUR", "€" | replace: "GBP", "£" -%}{%- capture lt %}{{ j.PublishedContent.location_type }}{% endcapture -%}
+      <a class="card lift job-card reveal" href="{{ PathBase }}/{{ j.RoutePath }}" style="transition-delay:{{ forloop.index0 | times: 60 }}ms">
+        <div class="top"><img class="logo-sq" src="{{ co.PublishedContent.logo | attachment_redirect_url }}" alt="{{ co.PrimaryField }} logo" loading="lazy"><span class="pill {{ lt }}">{{ lt | replace: "remote", "Remote" | replace: "hybrid", "Hybrid" | replace: "onsite", "On-site" }}</span></div>
+        <h3>{{ j.PrimaryField }}</h3>
+        <div class="co">{{ co.PrimaryField }} · {{ j.PublishedContent.location | split: " · " | last }}</div>
+        <p class="muted" style="margin:0;font-size:.93rem">{{ j.PublishedContent.summary | truncate: 110 }}</p>
+        <div class="foot"><span class="salary">{{ sym }}{{ j.PublishedContent.salary_min | append: "" | divided_by: 1000 | floor }}k – {{ sym }}{{ j.PublishedContent.salary_max | append: "" | divided_by: 1000 | floor }}k</span><span class="mono muted" style="font-size:.74rem">{{ j.PublishedContent.posted_on.Value | date: "%b %-d" }}</span></div>
+      </a>
+    {% endfor %}
+    </div>
+  </div>
+</section>

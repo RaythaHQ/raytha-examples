@@ -1,0 +1,8 @@
+{
+  "label": "Groundwork: page header",
+  "fields": [
+    {"developerName": "crumb", "label": "Breadcrumb label", "fieldType": "single_line_text"},
+    {"developerName": "headline", "label": "Headline", "fieldType": "single_line_text"},
+    {"developerName": "lead", "label": "Lead paragraph", "fieldType": "long_text"}
+  ]
+}

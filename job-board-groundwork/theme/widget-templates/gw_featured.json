@@ -1,0 +1,8 @@
+{
+  "label": "Groundwork: featured jobs",
+  "fields": [
+    {"developerName": "eyebrow", "label": "Eyebrow", "fieldType": "single_line_text"},
+    {"developerName": "headline", "label": "Headline", "fieldType": "single_line_text"},
+    {"developerName": "count", "label": "How many", "fieldType": "number"}
+  ]
+}
