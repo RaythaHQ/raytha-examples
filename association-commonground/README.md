@@ -7,7 +7,7 @@ template, content type, item, page, user group and menu went in through the CLI.
 - **Brief:** [brief.md](brief.md)
 - **Build time:** about an hour of agent time, from an empty install to `raytha check` passing
 - **Write-up:** [raytha.com/use-cases/commonground-association](https://raytha.com/use-cases/commonground-association)
-- **Walkthrough video:** [MP4, 39 s](https://raytha.com/raytha/media-items/objectkey/tHS4mIpgl0GpjpkBIXUCbA_commonground_association_walkthrough.mp4) (shot list: [walkthrough.json](walkthrough.json))
+- **Walkthrough video:** [MP4, 39 s](https://raytha.com/raytha/media-items/objectkey/xPX-nCH0fkG6GoPxTFSprA_commonground_association_walkthrough.mp4) (shot list: [walkthrough.json](walkthrough.json))
 
 ![Commonground home page](https://raytha.com/raytha/media-items/objectkey/UuInALAw5UuRF91xAq6tOg_commonground_01_home_hero.webp)
 
