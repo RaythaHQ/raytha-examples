@@ -49,6 +49,10 @@ fields), and link the raytha.com copy from the example's README.
 |---------|-----------|-------|
 | Horizon Summit 2027 | [walkthrough.json](../conference-horizon-summit/walkthrough.json) | [use case page](https://raytha.com/use-cases/horizon-summit-2027#walkthrough) · [MP4, 32 s](https://raytha.com/raytha/media-items/objectkey/47Ij3hbgO0SBPUGwoXh-6w_horizon_summit_2027_walkthrough.mp4) |
 | Groundwork | [walkthrough.json](../job-board-groundwork/walkthrough.json) | [use case page](https://raytha.com/use-cases/groundwork-job-board#walkthrough) · [MP4, 34 s](https://raytha.com/raytha/media-items/objectkey/iPe_Om6NCkubPr8z3fgViA_groundwork_job_board_walkthrough.mp4) |
+| Orbitly help center | [walkthrough.json](../help-center-orbitly/walkthrough.json) | [use case page](https://raytha.com/use-cases/orbitly-help-center#walkthrough) · [MP4, 30 s](https://raytha.com/raytha/media-items/objectkey/e5CN46HnDkaUUrwTxrHCsQ_orbitly_help_center_walkthrough.mp4) |
+| Atlas Learning | [walkthrough.json](../lms-portal-atlas/walkthrough.json) | [use case page](https://raytha.com/use-cases/atlas-learning-portal#walkthrough) · [MP4, 34 s](https://raytha.com/raytha/media-items/objectkey/lWLEOS8HTkGjXHxXdgeczw_atlas_learning_portal_walkthrough.mp4) |
+| Brightwell Medical Supply | [walkthrough.json](../medical-supply-brightwell/walkthrough.json) | [use case page](https://raytha.com/use-cases/brightwell-medical-supply#walkthrough) · [MP4, 36 s](https://raytha.com/raytha/media-items/objectkey/9pdCqxo6rU2K_eFnS0krAw_brightwell_medical_supply_walkthrough.mp4) |
+| Halftone Awards | [walkthrough.json](../awards-halftone/walkthrough.json) | [use case page](https://raytha.com/use-cases/halftone-awards#walkthrough) · [MP4, 35 s](https://raytha.com/raytha/media-items/objectkey/Ibglwxveok6Ukqruh0ssig_halftone_awards_walkthrough.mp4) |
 
 ## Shot list
 
