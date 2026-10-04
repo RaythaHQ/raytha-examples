@@ -1,0 +1,4 @@
+[
+ {"developerName": "forms.rsvp", "name": "RSVP form handler", "trigger": "http_request", "file": "rsvp.js", "routePath": "forms/rsvp"},
+ {"developerName": "calendar.ics", "name": "Wedding weekend calendar", "trigger": "http_request", "file": "calendar.js", "routePath": "calendar.ics"}
+]
