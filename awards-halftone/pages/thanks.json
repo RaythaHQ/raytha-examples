@@ -1,0 +1,14 @@
+{
+ "hero": [],
+ "main": [
+  {
+   "widgetType": "ht_thanks",
+   "settings": {
+    "apply_title": "Thank you. Your entry is in.",
+    "apply_text": "We will confirm by email within two working days, with a link to change your entry before the deadline. Good luck.",
+    "nominate_title": "Thank you for the nomination.",
+    "nominate_text": "We will read it this week and contact the nominee. If they agree, their work goes to the jury like every other entry."
+   }
+  }
+ ]
+}

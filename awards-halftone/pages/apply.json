@@ -1,0 +1,39 @@
+{
+ "hero": [
+  {
+   "widgetType": "ht_page_header",
+   "settings": {
+    "kicker": "Enter",
+    "headline": "Enter your",
+    "accent": "work.",
+    "subtitle": "One form per entry. You can enter as many works as you like, in any category, until its deadline."
+   }
+  }
+ ],
+ "main": [
+  {
+   "widgetType": "ht_form",
+   "settings": {
+    "kind": "apply",
+    "headline": "Tell us about the work",
+    "intro": "All fields are required unless marked optional. We never publish your email.",
+    "aside_title": "Before you start",
+    "aside": "<ul><li>Have a link to your work ready. A portfolio page or shared folder is fine.</li><li>Check the <a href=\"/categories\">category deadlines</a>.</li><li>Fees are paid after we confirm your entry, never on this site.</li><li>Students enter for free with a student email.</li></ul>",
+    "steps": [
+     {
+      "title": "We confirm by email",
+      "text": "Within two working days, with a link to change your entry."
+     },
+     {
+      "title": "The jury scores",
+      "text": "Each judge scores on their own, then the panel meets in February."
+     },
+     {
+      "title": "Shortlist on 12 March",
+      "text": "Shortlisted entrants hear first, by email, before it is public."
+     }
+    ]
+   }
+  }
+ ]
+}

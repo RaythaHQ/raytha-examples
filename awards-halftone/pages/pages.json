@@ -1,0 +1,44 @@
+[
+ {
+  "title": "Halftone Awards",
+  "routePath": "home",
+  "template": "ht_home",
+  "sections": "pages/home.json",
+  "home": true
+ },
+ {
+  "title": "Enter your work",
+  "routePath": "apply",
+  "template": "ht_page",
+  "sections": "pages/apply.json",
+  "home": false
+ },
+ {
+  "title": "Nominate someone",
+  "routePath": "nominate",
+  "template": "ht_page",
+  "sections": "pages/nominate.json",
+  "home": false
+ },
+ {
+  "title": "Thank you",
+  "routePath": "thanks",
+  "template": "ht_page",
+  "sections": "pages/thanks.json",
+  "home": false
+ },
+ {
+  "title": "Jury",
+  "routePath": "judges",
+  "template": "ht_page",
+  "sections": "pages/judges.json",
+  "home": false
+ },
+ {
+  "title": "Rules",
+  "routePath": "rules",
+  "template": "ht_page",
+  "sections": "pages/rules.json",
+  "home": false
+ }
+]

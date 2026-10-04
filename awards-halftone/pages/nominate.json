@@ -1,0 +1,39 @@
+{
+ "hero": [
+  {
+   "widgetType": "ht_page_header",
+   "settings": {
+    "kicker": "Nominate",
+    "headline": "Nominate",
+    "accent": "someone.",
+    "subtitle": "Seen work that deserves a bigger room? Tell us. Nominations are free and the nominee never pays an entry fee."
+   }
+  }
+ ],
+ "main": [
+  {
+   "widgetType": "ht_form",
+   "settings": {
+    "kind": "nominate",
+    "headline": "Who should the jury see?",
+    "intro": "We will contact the nominee before anything happens. Your name is only shared with them if you say so.",
+    "aside_title": "Good nominations",
+    "aside": "<ul><li>Explain why the work matters, not just that you like it.</li><li>Add a link if the work is online.</li><li>You can nominate yourself. Many winners did.</li></ul>",
+    "steps": [
+     {
+      "title": "We read every nomination",
+      "text": "The team checks that the work fits the rules."
+     },
+     {
+      "title": "We contact the nominee",
+      "text": "Nothing is entered or published without their permission."
+     },
+     {
+      "title": "The jury decides",
+      "text": "Nominated work is judged exactly like every other entry."
+     }
+    ]
+   }
+  }
+ ]
+}

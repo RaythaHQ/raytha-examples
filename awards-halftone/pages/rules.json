@@ -1,0 +1,60 @@
+{
+ "hero": [
+  {
+   "widgetType": "ht_page_header",
+   "settings": {
+    "kicker": "Rules",
+    "headline": "The rules, in",
+    "accent": "plain words.",
+    "subtitle": "Short and readable on purpose. If anything is unclear, email entries@example.com and a person will answer."
+   }
+  }
+ ],
+ "main": [
+  {
+   "widgetType": "ht_rules",
+   "settings": {
+    "kicker": "",
+    "headline": "",
+    "subtitle": "",
+    "rules": [
+     {
+      "anchor": "who",
+      "title": "Who can enter",
+      "body": "Anyone, anywhere, over 18. Students of any age can enter the Student category with a note from their course leader.\nJudges, their studios and their families cannot enter this year."
+     },
+     {
+      "anchor": "what",
+      "title": "What you can enter",
+      "body": "Work made or first published between 1 July 2025 and the category deadline.\nSelf-initiated work is welcome in every category."
+     },
+     {
+      "anchor": "fees",
+      "title": "Fees",
+      "body": "Fees are listed on each category page. We confirm your entry by email first and send a payment link after that. We never take payment on this website.\nStudents enter for free."
+     },
+     {
+      "anchor": "ai",
+      "title": "Generated images",
+      "body": "Work made mainly with image generators is not eligible. Tools used for small fixes are fine, as long as you mention them in your statement."
+     },
+     {
+      "anchor": "judging",
+      "title": "How judging works",
+      "body": "Every judge scores every entry on their own, then the panel meets to agree the shortlist and awards. A judge who knows an entrant steps aside for that entry."
+     },
+     {
+      "anchor": "rights",
+      "title": "Your rights",
+      "body": "You keep all rights to your work. By entering, you allow us to show it in the gallery, at the ceremony and in press about the awards, always with your name.\nYou can ask us to remove work from the gallery at any time."
+     },
+     {
+      "anchor": "privacy",
+      "title": "Privacy",
+      "body": "We use your details only to run the awards. We never sell or share them, and we delete entry details two years after the ceremony."
+     }
+    ]
+   }
+  }
+ ]
+}

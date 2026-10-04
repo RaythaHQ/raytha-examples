@@ -1,0 +1,152 @@
+{
+ "hero": [
+  {
+   "widgetType": "ht_hero",
+   "settings": {
+    "kicker": "The Halftone Awards 2026",
+    "headline": "Work that makes you",
+    "accent": "look twice.",
+    "subtitle": "An international prize for illustration, poster and editorial design, photography and type. Six categories, one jury, and a gallery that grows as the entries come in.",
+    "primary_label": "Enter your work",
+    "primary_url": "/apply",
+    "secondary_label": "Nominate someone",
+    "secondary_url": "/nominate",
+    "stats": [
+     {
+      "value": "6",
+      "label": "Categories"
+     },
+     {
+      "value": "41",
+      "label": "Countries last year"
+     },
+     {
+      "value": "€12k",
+      "label": "Prize fund"
+     }
+    ]
+   }
+  }
+ ],
+ "main": [
+  {
+   "widgetType": "ht_categories",
+   "settings": {
+    "kicker": "Categories",
+    "headline": "Six categories, six deadlines",
+    "subtitle": "Pick the category that fits your work best. Not sure? Enter the one you would want to win."
+   }
+  },
+  {
+   "widgetType": "ht_gallery",
+   "settings": {
+    "kicker": "Entry gallery",
+    "headline": "The 2026 entries, so far",
+    "subtitle": "A selection of this year's work, shown with each entrant's permission.",
+    "count": 8
+   }
+  },
+  {
+   "widgetType": "ht_timeline",
+   "settings": {
+    "kicker": "Key dates",
+    "headline": "From first entry to the ceremony",
+    "subtitle": "All deadlines are at 23:59 GMT on the day.",
+    "dates": [
+     {
+      "date": "2026-09-01",
+      "label": "1 Sep 2026",
+      "title": "Entries open",
+      "text": "All six categories open for entries and nominations."
+     },
+     {
+      "date": "2026-12-11",
+      "label": "11 Dec 2026",
+      "title": "First deadline",
+      "text": "Illustration and Poster Design close at 23:59 GMT."
+     },
+     {
+      "date": "2027-01-15",
+      "label": "15 Jan 2027",
+      "title": "Main deadline",
+      "text": "Editorial, Photography and Type Design close. Students have until 5 February."
+     },
+     {
+      "date": "2027-04-24",
+      "label": "24 Apr 2027",
+      "title": "Ceremony in Lisbon",
+      "text": "Shortlist on 12 March, winners announced live in April."
+     }
+    ]
+   }
+  },
+  {
+   "widgetType": "ht_grandprix",
+   "settings": {
+    "kicker": "Last year's Grand Prix",
+    "headline": "",
+    "quote": "The quietest picture in the room, and the one none of us could stop going back to.",
+    "judge": "Clara Okonjo, chair of the jury"
+   }
+  },
+  {
+   "widgetType": "ht_judges",
+   "settings": {
+    "kicker": "The jury",
+    "headline": "Six judges see every entry",
+    "subtitle": "Each judge scores every entry on their own before the panel meets. Judges never score work they know.",
+    "judges": [
+     {
+      "name": "Clara Okonjo",
+      "role": "Chair of the jury, illustrator",
+      "bio": "Illustrator and teacher whose picture books are published in 14 languages.",
+      "color": "#ff5a36"
+     },
+     {
+      "name": "Henrik Vass",
+      "role": "Poster designer",
+      "bio": "Runs a two-person studio known for festival posters and screen prints.",
+      "color": "#f2c14e"
+     },
+     {
+      "name": "Sofia Mendes",
+      "role": "Art director, The Weekend Review",
+      "bio": "Has redesigned three national magazines and still prefers paper.",
+      "color": "#2f6fdb"
+     },
+     {
+      "name": "Daniel Kim",
+      "role": "Photographer",
+      "bio": "Documentary photographer covering coastal towns and the people who stay.",
+      "color": "#2a9d8f"
+     },
+     {
+      "name": "Lena Fischer",
+      "role": "Type designer",
+      "bio": "Designs text typefaces for newspapers and teaches type at a design academy.",
+      "color": "#b4321f"
+     },
+     {
+      "name": "Ravi Sharma",
+      "role": "Head of design, City Libraries",
+      "bio": "Leads a public design team and mentors the student category winners.",
+      "color": "#9b5de5"
+     }
+    ]
+   }
+  },
+  {
+   "widgetType": "ht_cta",
+   "settings": {
+    "kicker": "Entries are open",
+    "headline": "Ready when",
+    "accent": "you are.",
+    "text": "Entering takes about ten minutes. You can change your entry until the deadline, and students enter for free.",
+    "primary_label": "Enter your work",
+    "primary_url": "/apply",
+    "secondary_label": "Read the rules",
+    "secondary_url": "/rules"
+   }
+  }
+ ]
+}

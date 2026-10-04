@@ -1,0 +1,108 @@
+{
+ "hero": [
+  {
+   "widgetType": "ht_page_header",
+   "settings": {
+    "kicker": "Jury",
+    "headline": "The 2026",
+    "accent": "jury.",
+    "subtitle": "Six working practitioners from six disciplines. Every judge sees every entry, scores on their own, and steps aside from work they know."
+   }
+  }
+ ],
+ "main": [
+  {
+   "widgetType": "ht_judges",
+   "settings": {
+    "kicker": "Judges",
+    "headline": "Meet the panel",
+    "subtitle": "The panel changes every year. Past judges can enter again after two years.",
+    "judges": [
+     {
+      "name": "Clara Okonjo",
+      "role": "Chair of the jury, illustrator",
+      "bio": "Illustrator and teacher whose picture books are published in 14 languages.",
+      "color": "#ff5a36"
+     },
+     {
+      "name": "Henrik Vass",
+      "role": "Poster designer",
+      "bio": "Runs a two-person studio known for festival posters and screen prints.",
+      "color": "#f2c14e"
+     },
+     {
+      "name": "Sofia Mendes",
+      "role": "Art director, The Weekend Review",
+      "bio": "Has redesigned three national magazines and still prefers paper.",
+      "color": "#2f6fdb"
+     },
+     {
+      "name": "Daniel Kim",
+      "role": "Photographer",
+      "bio": "Documentary photographer covering coastal towns and the people who stay.",
+      "color": "#2a9d8f"
+     },
+     {
+      "name": "Lena Fischer",
+      "role": "Type designer",
+      "bio": "Designs text typefaces for newspapers and teaches type at a design academy.",
+      "color": "#b4321f"
+     },
+     {
+      "name": "Ravi Sharma",
+      "role": "Head of design, City Libraries",
+      "bio": "Leads a public design team and mentors the student category winners.",
+      "color": "#9b5de5"
+     }
+    ]
+   }
+  },
+  {
+   "widgetType": "ht_timeline",
+   "settings": {
+    "kicker": "How judging works",
+    "headline": "Three rounds, one room",
+    "subtitle": "",
+    "dates": [
+     {
+      "date": "2027-01-20",
+      "label": "Round 1",
+      "title": "Scored alone",
+      "text": "Each judge scores every entry from 1 to 10 without seeing the others."
+     },
+     {
+      "date": "2027-02-10",
+      "label": "Round 2",
+      "title": "Shortlist",
+      "text": "The panel meets for two days and agrees a shortlist for each category."
+     },
+     {
+      "date": "2027-03-12",
+      "label": "Round 3",
+      "title": "Awards",
+      "text": "Gold, Silver and Merit in each category, then one Grand Prix."
+     },
+     {
+      "date": "2027-04-24",
+      "label": "Ceremony",
+      "title": "Lisbon",
+      "text": "Winners are announced live and the work goes on show for a month."
+     }
+    ]
+   }
+  },
+  {
+   "widgetType": "ht_cta",
+   "settings": {
+    "kicker": "Entries are open",
+    "headline": "Show them",
+    "accent": "your best work.",
+    "text": "Enter in any of six categories, or nominate someone whose work deserves a wider room.",
+    "primary_label": "Enter your work",
+    "primary_url": "/apply",
+    "secondary_label": "Nominate someone",
+    "secondary_url": "/nominate"
+   }
+  }
+ ]
+}
