@@ -1,0 +1,181 @@
+{
+  "slug": "lowtide-festival",
+  "name": "Low Tide Festival",
+  "viewport": [
+    1440,
+    810
+  ],
+  "output": [
+    1920,
+    1080
+  ],
+  "colorScheme": "dark",
+  "title": {
+    "kicker": "Raytha use case",
+    "heading": "Low Tide Festival",
+    "subheading": "A music festival site with a filterable lineup, a schedule by stage and day, artist pages, a venue map and an FAQ, built on Raytha by an AI agent with the CLI.",
+    "hold": 1.3
+  },
+  "end": {
+    "heading": "Built with Raytha",
+    "subheading": "Open-source .NET CMS. Get the brief, screenshots and a one-command rebuild kit.",
+    "url": "raytha.com/use-cases/lowtide-festival",
+    "hold": 2.3
+  },
+  "scenes": [
+    {
+      "url": "/",
+      "caption": "A festival home with a live countdown and the lineup poster",
+      "actions": [
+        {
+          "hold": 1.0,
+          "poster": true
+        },
+        {
+          "scroll": 1150,
+          "dur": 2.0
+        },
+        {
+          "hold": 0.8
+        }
+      ]
+    },
+    {
+      "url": "/lineup",
+      "caption": "The lineup filters by day, stage and genre",
+      "actions": [
+        {
+          "hold": 0.5
+        },
+        {
+          "click": ".chips a[href$='day=sat']",
+          "dur": 0.9
+        },
+        {
+          "click": ".chips a[href*='genre=electronic']",
+          "dur": 0.9
+        },
+        {
+          "scroll": {
+            "selector": ".acard",
+            "offset": 260
+          },
+          "dur": 0.9
+        },
+        {
+          "click": ".acard .star",
+          "dur": 0.6,
+          "navigates": false,
+          "waitMs": 400
+        },
+        {
+          "hold": 0.6
+        }
+      ]
+    },
+    {
+      "url": "/schedule?day=sat",
+      "caption": "A schedule grid for every stage and day, with your starred sets",
+      "actions": [
+        {
+          "hold": 0.6
+        },
+        {
+          "scroll": 380,
+          "dur": 1.0
+        },
+        {
+          "hold": 0.5
+        },
+        {
+          "click": "#mine",
+          "dur": 0.9,
+          "navigates": false,
+          "waitMs": 400
+        },
+        {
+          "hold": 0.6
+        },
+        {
+          "click": "#mine",
+          "dur": 0.5,
+          "navigates": false,
+          "waitMs": 400
+        }
+      ]
+    },
+    {
+      "url": "/artists/aurora-fields",
+      "caption": "Artist pages with set times, stage and a listen link",
+      "actions": [
+        {
+          "hold": 0.8
+        },
+        {
+          "click": "button[data-lbl]",
+          "dur": 0.8,
+          "navigates": false,
+          "waitMs": 400
+        },
+        {
+          "scroll": 520,
+          "dur": 1.2
+        },
+        {
+          "hold": 0.5
+        }
+      ]
+    },
+    {
+      "url": "/venue",
+      "caption": "A venue map: stages, food, water and first aid",
+      "actions": [
+        {
+          "hold": 0.4
+        },
+        {
+          "scroll": {
+            "selector": "#legend",
+            "offset": 120
+          },
+          "dur": 0.8
+        },
+        {
+          "click": "#legend button[data-k='water']",
+          "dur": 1.0,
+          "navigates": false,
+          "waitMs": 400
+        },
+        {
+          "click": "#legend button[data-k='food']",
+          "dur": 1.0,
+          "navigates": false,
+          "waitMs": 400
+        },
+        {
+          "hold": 0.4
+        }
+      ]
+    },
+    {
+      "url": "/schedule?day=fri",
+      "phone": true,
+      "phoneCaption": {
+        "kicker": "Responsive",
+        "text": "Plan the weekend from a phone"
+      },
+      "actions": [
+        {
+          "hold": 0.5
+        },
+        {
+          "scroll": 700,
+          "dur": 1.8
+        },
+        {
+          "hold": 0.4
+        }
+      ]
+    }
+  ]
+}

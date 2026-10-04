@@ -1,0 +1,7 @@
+{%- assign s = widget.settings -%}{%- assign lim = s.count | append: "" | plus: 0 -%}{%- if lim == 0 %}{% assign lim = 8 %}{% endif -%}
+{%- assign items = get_content_items(ContentType="artists", Filter="tier eq 2", OrderBy="name asc", PageSize=lim) -%}
+<section class="section tight"><div class="wrap">
+  <div class="shead"><div><span class="eyebrow">{{ s.kicker }}</span><h2>{{ s.headline }} <span class="hl">{{ s.accent }}</span></h2></div>{% if s.subtitle %}<p>{{ s.subtitle }}</p>{% endif %}</div>
+  <div class="grid4">{% for a in items.Items %}{% assign p = a.PublishedContent %}{% capture dy %}{{ p.day }}{% endcapture %}
+    <article class="acard reveal"><button class="star" data-pick="{{ a.RoutePath | split: '/' | last }}" aria-label="Star {{ a.PrimaryField }}"><i class="bi bi-star"></i></button><a href="{{ PathBase }}/{{ a.RoutePath }}"><div class="im"><img src="{{ p.image.Value | attachment_redirect_url }}" alt="" loading="lazy"></div><span class="when">{% if dy == "fri" %}Fri{% elsif dy == "sat" %}Sat{% else %}Sun{% endif %} {{ p.time_label | split: " to " | first }}</span><div class="bd"><h3>{{ a.PrimaryField }}</h3><p class="mut" style="margin:0;font-size:.9rem;line-height:1.45">{{ p.tagline }}</p><div class="meta"><span class="pill"><span class="dot" style="background:{{ p.stage.PublishedContent.color }}"></span>{{ p.stage.PublishedContent.short }}</span></div></div></a></article>{% endfor %}</div>
+</div></section>

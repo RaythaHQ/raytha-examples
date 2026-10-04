@@ -1,0 +1,20 @@
+{%- assign s = widget.settings -%}
+<section class="section" id="passes"><div class="wrap">
+  <div class="shead"><div><span class="eyebrow">{{ s.kicker }}</span><h2>{{ s.headline }} <span class="hl">{{ s.accent }}</span></h2></div>{% if s.subtitle %}<p>{{ s.subtitle }}</p>{% endif %}</div>
+  <div class="passes">{% for t in s.items %}{% assign bl = t.perks | newline_to_br | split: "<br />" %}
+    <div class="pass reveal{% if t.highlight == 'yes' %} hi{% endif %}">{% if t.highlight == "yes" %}<span class="flag">Best value</span>{% endif %}
+      <h3>{{ t.name }}</h3><div class="pr">{{ t.price }}</div><p class="mut" style="margin:0 0 18px;font-size:.9rem">{{ t.sub }}</p>
+      <ul>{% for b in bl %}{% assign bs = b | strip %}{% if bs != "" %}<li><i class="bi bi-check2"></i> {{ bs }}</li>{% endif %}{% endfor %}</ul>
+      <a class="btn {% if t.highlight == 'yes' %}btn-coral{% else %}btn-line{% endif %} ext" href="{{ s.ticket_url }}?pass={{ t.code }}" rel="noopener" style="justify-content:center;margin-top:auto">Buy on our ticketing partner</a>
+    </div>{% endfor %}</div>
+  {% if s.note %}<p class="mut" style="margin-top:22px;font-size:.88rem"><i class="bi bi-info-circle"></i> {{ s.note }}</p>{% endif %}
+</div></section>
+<style>
+  .passes{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  .pass{position:relative;display:flex;flex-direction:column;background:var(--night2);border:1px solid var(--line);border-radius:24px;padding:28px 24px}
+  .pass.hi{background:linear-gradient(170deg,#3b1f5c,var(--night2) 75%);border-color:var(--coral);box-shadow:0 30px 60px rgba(255,107,74,.15)}
+  .pass .flag{position:absolute;top:-12px;left:24px;background:var(--coral);color:var(--night);font:700 .72rem/1 var(--disp);letter-spacing:.1em;text-transform:uppercase;padding:.45rem .7rem;border-radius:999px}
+  .pass h3{font-size:1.35rem}.pass .pr{font:700 2.8rem/1 var(--disp);letter-spacing:-.04em;margin:12px 0 6px}
+  .pass ul{list-style:none;padding:0;margin:0 0 24px;display:grid;gap:9px;font-size:.93rem;color:#d3dbe4}.pass li i{color:var(--sea);margin-right:4px}
+  @media(max-width:1020px){.passes{grid-template-columns:1fr 1fr}}@media(max-width:600px){.passes{grid-template-columns:1fr}}
+</style>

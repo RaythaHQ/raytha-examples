@@ -1,0 +1,5 @@
+{%- assign s = widget.settings -%}
+<section class="section"><div class="wrap" style="display:grid;grid-template-columns:1.4fr 1fr;gap:60px;align-items:start" id="txg">
+  <div><span class="eyebrow">{{ s.kicker }}</span><h2 style="font-size:clamp(2rem,4vw,3.2rem);margin:12px 0 22px">{{ s.headline }} <span class="hl">{{ s.accent }}</span></h2><div class="prose">{{ s.body }}</div></div>
+  {% if s.side_title %}<aside class="card reveal" style="position:sticky;top:100px"><h3 style="margin-bottom:16px">{{ s.side_title }}</h3>{% for f in s.facts %}<div style="display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-top:1px solid var(--line)"><span class="mut">{{ f.label }}</span><b style="text-align:right;font-weight:600">{{ f.value }}</b></div>{% endfor %}</aside>{% endif %}
+</div></section><style>@media(max-width:860px){#txg{grid-template-columns:1fr!important;gap:24px!important}#txg aside{position:static!important}}</style>

@@ -1,0 +1,16 @@
+{%- assign s = widget.settings -%}
+{%- assign st = get_content_items(ContentType="stages", OrderBy="sort_order asc", PageSize=10) -%}
+{%- assign all = get_content_items(ContentType="artists", PageSize=100) -%}
+<section class="section"><div class="wrap">
+  <div class="shead"><div><span class="eyebrow">{{ s.kicker }}</span><h2>{{ s.headline }} <span class="hl">{{ s.accent }}</span></h2></div>{% if s.subtitle %}<p>{{ s.subtitle }}</p>{% endif %}</div>
+  <div class="grid4">{% for x in st.Items %}{% assign p = x.PublishedContent %}{% assign n = 0 %}{% for a in all.Items %}{% if a.PublishedContent.stage.PrimaryField == x.PrimaryField %}{% assign n = n | plus: 1 %}{% endif %}{% endfor %}
+    <a class="stc reveal" href="{{ PathBase }}/{{ x.RoutePath }}" style="--c:{{ p.color }}"><span class="num">0{{ forloop.index }}</span><h3>{{ x.PrimaryField }}</h3><p>{{ p.vibe }}</p><div class="ft"><span>{{ n }} sets</span><span>{{ p.capacity }} cap.</span></div></a>{% endfor %}</div>
+  <div style="margin-top:28px"><a class="btn btn-line" href="{{ PathBase }}/venue"><i class="bi bi-map"></i> Open the venue map</a></div>
+</div></section>
+<style>
+  .stc{position:relative;display:flex;flex-direction:column;min-height:300px;padding:26px;border-radius:24px;background:linear-gradient(170deg,color-mix(in srgb,var(--c) 30%,var(--night2)),var(--night2) 70%);border:1px solid var(--line);overflow:hidden;transition:transform .2s}
+  .stc:hover{transform:translateY(-4px)}.stc::after{content:"";position:absolute;right:-50px;top:-50px;width:160px;height:160px;border-radius:50%;background:var(--c);opacity:.85}
+  .stc .num{font:700 .8rem/1 var(--disp);letter-spacing:.14em;color:var(--c);position:relative;z-index:1}
+  .stc h3{font-size:1.7rem;margin:auto 0 8px;position:relative}.stc p{margin:0;color:#c6d1dc}
+  .stc .ft{display:flex;justify-content:space-between;margin-top:22px;padding-top:14px;border-top:1px solid var(--line);font-size:.84rem;color:var(--mut);font-weight:600}
+</style>
