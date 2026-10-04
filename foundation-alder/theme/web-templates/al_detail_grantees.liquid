@@ -1,0 +1,22 @@
+{%- assign p = Target.PublishedContent -%}{% capture yr %}{{ p.year }}{% endcapture %}{% capture rg %}{{ p.region }}{% endcapture %}{%- assign regions = "upper_valley:Upper Valley,lowlands:Lowlands,coast:The Coast,marlow:City of Marlow,regionwide:Region-wide" | split: "," -%}{% for d in regions %}{% assign kv = d | split: ":" %}{% if kv[0] == rg %}{% assign rl = kv[1] %}{% endif %}{% endfor %}{% assign ws = Target.PrimaryField | split: " " %}{% assign pc = p.program.PublishedContent.color %}
+{%- assign ss = get_content_items(ContentType="stories", PageSize=50) -%}{%- assign gs = get_content_items(ContentType="grantees", OrderBy="amount desc", PageSize=500) -%}
+<section class="phead"><div class="wrap">
+  <div class="crumbs"><a href="{{ PathBase }}/grantees">Grantees</a><span>/</span><a href="{{ PathBase }}/grantees?program={{ p.program.RoutePath | split: '/' | last }}">{{ p.program.PrimaryField }}</a><span>/</span><span>{{ Target.PrimaryField }}</span></div>
+  <div style="display:flex;gap:26px;align-items:center;margin-top:26px;flex-wrap:wrap"><span class="mono" style="background:{{ pc }};width:92px;height:92px;font-size:2rem">{{ ws[0] | slice: 0 }}{{ ws[1] | slice: 0 }}</span><h1 style="margin:0;font-size:clamp(2.6rem,5.4vw,4.6rem)">{{ Target.PrimaryField }}</h1></div>
+</div></section>
+<section class="section tight"><div class="wrap" style="display:grid;grid-template-columns:1.5fr 1fr;gap:70px" id="gd">
+  <div><span class="eyebrow">The grant</span><p class="prose" style="font-size:1.6rem;line-height:1.4;margin:16px 0 34px">{{ p.purpose }}</p><span class="eyebrow">About the organization</span><p style="font-size:1.1rem;color:#454d47;margin:14px 0 0">{{ p.about }}</p>
+    {%- for s in ss.Items %}{% if s.PublishedContent.grantee.PrimaryField == Target.PrimaryField %}<a class="card reveal" href="{{ PathBase }}/{{ s.RoutePath }}" style="display:grid;grid-template-columns:200px 1fr;padding:0;overflow:hidden;margin-top:40px"><img src="{{ s.PublishedContent.image.Value | attachment_redirect_url }}" alt="" style="height:100%;object-fit:cover"><div style="padding:24px"><span class="eyebrow">Impact story</span><h3 style="margin-top:10px">{{ s.PrimaryField }}</h3><p>{{ s.PublishedContent.dek | truncatewords: 20 }}</p></div></a>{% endif %}{% endfor %}
+  </div>
+  <aside><div class="card" style="border-top:4px solid {{ pc }}">
+    <div class="num" style="color:var(--forest)">{{ p.amount | append: "" | plus: 0 | format_number: "N0" | prepend: "$" }}</div><p class="mut" style="margin:6px 0 18px">awarded in {{ yr | remove: "y" }}</p>
+    <div class="fx"><span>Program</span><b><a href="{{ PathBase }}/{{ p.program.RoutePath }}" style="display:inline-flex;gap:8px;align-items:center"><span class="dot" style="background:{{ pc }}"></span>{{ p.program.PrimaryField }}</a></b></div>
+    <div class="fx"><span>Region</span><b><a href="{{ PathBase }}/grantees?region={{ rg }}">{{ rl }}</a></b></div><div class="fx"><span>Grant length</span><b>{{ p.term }}</b></div>
+    <a class="btn btn-line ext" href="{{ p.website }}" rel="noopener" style="width:100%;justify-content:center;margin-top:16px">Visit their website</a>
+  </div></aside>
+</div></section>
+<section class="section alt"><div class="wrap"><div class="shead"><div><span class="eyebrow">Also in {{ p.program.PrimaryField }}</span><h2>More <em>grantees</em></h2></div></div>
+  {%- assign k = 0 %}{% for g in gs.Items %}{% assign q = g.PublishedContent %}{% if q.program.PrimaryField == p.program.PrimaryField and g.Id != Target.Id and k < 4 %}{% assign k = k | plus: 1 %}{% assign w2 = g.PrimaryField | split: " " %}{% capture y2 %}{{ q.year }}{% endcapture %}
+  <a class="gt" href="{{ PathBase }}/{{ g.RoutePath }}"><span class="mono" style="background:{{ pc }}">{{ w2[0] | slice: 0 }}{{ w2[1] | slice: 0 }}</span><span><b style="font:500 1.22rem/1.2 var(--serif)">{{ g.PrimaryField }}</b><span class="mut" style="display:block;font-size:.94rem;margin-top:3px">{{ q.purpose | truncatewords: 16 }}</span></span><span class="amt">{{ q.amount | append: "" | plus: 0 | format_number: "N0" | prepend: "$" }}</span></a>{% endif %}{% endfor %}
+</div></section>
+<style>.fx{display:flex;justify-content:space-between;gap:16px;padding:11px 0;border-top:1px solid var(--line);font-size:.95rem}.fx span{color:var(--mut)}.fx b{font-weight:600;text-align:right}@media(max-width:900px){#gd{grid-template-columns:1fr!important;gap:30px!important}#gd .card[style*="grid"]{grid-template-columns:1fr!important}}</style>

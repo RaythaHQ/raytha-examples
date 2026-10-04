@@ -1,0 +1,32 @@
+{%- assign p = Target.PublishedContent -%}{% capture st %}{{ p.status }}{% endcapture %}
+{%- assign gs = get_content_items(ContentType="grantees", OrderBy="amount desc", PageSize=500) -%}{%- assign ss = get_content_items(ContentType="stories", OrderBy="published_on desc", PageSize=50) -%}
+{%- assign n = 0 %}{% assign tot = 0 %}{% for g in gs.Items %}{% if g.PublishedContent.program.PrimaryField == Target.PrimaryField %}{% assign n = n | plus: 1 %}{% assign a = g.PublishedContent.amount | append: "" | plus: 0 %}{% assign tot = tot | plus: a %}{% endif %}{% endfor -%}
+<section class="phead" style="background:linear-gradient(180deg,color-mix(in srgb,{{ p.color }} 12%,var(--paper)),var(--paper))"><div class="wrap">
+  <div class="crumbs"><a href="{{ PathBase }}/programs">Grant programs</a><span>/</span><span>{{ Target.PrimaryField }}</span></div>
+  <div style="display:grid;grid-template-columns:1.5fr 1fr;gap:60px;align-items:end;margin-top:20px" class="pdh">
+    <div><div class="ic" style="background:{{ p.color }};width:64px;height:64px;font-size:1.7rem"><i class="bi bi-{{ p.icon }}"></i></div><h1 style="margin-top:0">{{ Target.PrimaryField }}</h1><p class="lead">{{ p.tagline }}</p></div>
+    <div class="card" style="padding:26px 28px;border-top:4px solid {{ p.color }}">
+      <span class="pill st-{{ st }}" style="margin-bottom:14px">{% if st == "open" %}Open for applications{% elsif st == "rolling" %}Rolling, apply any time{% elsif st == "invite" %}By invitation{% else %}Closed this cycle{% endif %}</span>
+      {%- assign facts = "Next deadline,Grant size,Grant length,Annual budget,Funded so far" | split: "," %}
+      <div class="fx"><span>Next deadline</span><b>{{ p.deadline.Value | date: "%B %-d, %Y" }}</b></div><div class="fx"><span>Grant size</span><b>{{ p.grant_range }}</b></div><div class="fx"><span>Grant length</span><b>{{ p.term }}</b></div><div class="fx"><span>Annual budget</span><b>{{ p.annual_budget | append: "" | plus: 0 | format_number: "N0" | prepend: "$" }}</b></div><div class="fx"><span>Funded so far</span><b>{{ tot | format_number: "N0" | prepend: "$" }} to {{ n }} groups</b></div>
+      <a class="btn btn-rust" href="{{ PathBase }}/apply" style="width:100%;justify-content:center;margin-top:18px">{% if st == "invite" %}How invitations work{% else %}How to apply{% endif %}</a>
+    </div>
+  </div>
+</div></section>
+<section class="section tight"><div class="wrap"><div class="grid3">
+  <div class="card"><div class="ic" style="background:var(--moss)"><i class="bi bi-people"></i></div><h3>Who can apply</h3><p>{{ p.who }}</p></div>
+  <div class="card"><div class="ic" style="background:{{ p.color }}"><i class="bi bi-check2-circle"></i></div><h3>What we fund</h3><p>{{ p.what }}</p></div>
+  <div class="card"><div class="ic" style="background:#8a8f88"><i class="bi bi-slash-circle"></i></div><h3>What we don't fund</h3><p>{{ p.not_fund }}</p></div>
+</div>
+<div class="prose narrow" style="margin:70px auto 0">{{ p.description }}</div></div></section>
+<section class="section alt"><div class="wrap">
+  <div class="shead"><div><span class="eyebrow">Grantees</span><h2>Who we fund in <em>{{ Target.PrimaryField }}</em></h2></div><a class="btn btn-line" href="{{ PathBase }}/grantees?program={{ Target.RoutePath | split: "/" | last }}">Filter all grantees <i class="bi bi-arrow-right"></i></a></div>
+  {%- for g in gs.Items %}{% assign q = g.PublishedContent %}{% if q.program.PrimaryField == Target.PrimaryField %}{% assign ws = g.PrimaryField | split: " " %}{% capture yr %}{{ q.year }}{% endcapture %}
+  <a class="gt" href="{{ PathBase }}/{{ g.RoutePath }}"><span class="mono" style="background:{{ p.color }}">{{ ws[0] | slice: 0 }}{{ ws[1] | slice: 0 }}</span><span><b style="font:500 1.25rem/1.2 var(--serif)">{{ g.PrimaryField }}</b><span class="mut" style="display:block;font-size:.95rem;margin-top:3px">{{ q.purpose }}</span></span><span style="text-align:right"><span class="amt">{{ q.amount | append: "" | plus: 0 | format_number: "N0" | prepend: "$" }}</span><small class="mut" style="display:block;margin-top:4px">{{ yr | remove: "y" }}</small></span></a>{% endif %}{% endfor %}
+</div></section>
+{%- assign k = 0 %}{% for s in ss.Items %}{% if s.PublishedContent.program.PrimaryField == Target.PrimaryField %}{% assign k = k | plus: 1 %}{% endif %}{% endfor %}
+{%- if k > 0 %}<section class="section"><div class="wrap"><div class="shead"><div><span class="eyebrow">Impact</span><h2>Stories from <em>the work</em></h2></div></div><div class="grid3">{% for s in ss.Items %}{% assign q = s.PublishedContent %}{% if q.program.PrimaryField == Target.PrimaryField %}
+  <a class="card reveal" href="{{ PathBase }}/{{ s.RoutePath }}" style="padding:0;overflow:hidden"><img src="{{ q.image.Value | attachment_redirect_url }}" alt="" style="aspect-ratio:16/10;object-fit:cover;width:100%"><div style="padding:24px"><h3>{{ s.PrimaryField }}</h3><p>{{ q.dek | truncatewords: 22 }}</p></div></a>{% endif %}{% endfor %}</div></div></section>{% endif %}
+<style>.fx{display:flex;justify-content:space-between;gap:16px;padding:11px 0;border-top:1px solid var(--line);font-size:.95rem}.fx span{color:var(--mut)}.fx b{font-weight:600;text-align:right}
+.st-open{background:#dfe9d6;color:#2f4d22}.st-rolling{background:#d9e8ef;color:#1d4a5e}.st-invite{background:#ece0f2;color:#4f3470}.st-closed{background:#eadcd6;color:#7a2f22}
+@media(max-width:900px){.pdh{grid-template-columns:1fr!important;gap:28px!important}}</style>

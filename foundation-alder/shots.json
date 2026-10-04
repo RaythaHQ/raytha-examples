@@ -1,0 +1,19 @@
+[
+  {"name": "01-home-hero-1440.png", "path": "/", "device": "desktop"},
+  {"name": "02-home-full-1440.png", "path": "/", "device": "desktop", "full_page": true},
+  {"name": "03-programs-1440.png", "path": "/programs", "device": "desktop", "full_page": true},
+  {"name": "04-program-1440.png", "path": "/programs/open-water", "device": "desktop", "full_page": true},
+  {"name": "05-grantees-1440.png", "path": "/grantees", "device": "desktop", "full_page": true},
+  {"name": "06-grantees-filtered-1440.png", "path": "/grantees?program=open-water&year=2025", "device": "desktop", "full_page": true},
+  {"name": "07-grantee-1440.png", "path": "/grantees/alder-river-keepers", "device": "desktop", "full_page": true},
+  {"name": "08-stories-1440.png", "path": "/stories", "device": "desktop", "full_page": true},
+  {"name": "09-story-1440.png", "path": "/stories/four-days-after-the-flood", "device": "desktop", "full_page": true},
+  {"name": "10-reports-1440.png", "path": "/reports", "device": "desktop", "full_page": true},
+  {"name": "11-report-1440.png", "path": "/reports/annual-report-2025", "device": "desktop", "full_page": true},
+  {"name": "12-apply-1440.png", "path": "/apply", "device": "desktop", "full_page": true},
+  {"name": "13-about-1440.png", "path": "/about", "device": "desktop", "full_page": true},
+  {"name": "14-home-mobile-390.png", "path": "/", "device": "mobile"},
+  {"name": "15-grantees-mobile-390.png", "path": "/grantees", "device": "mobile", "scroll": 380},
+  {"name": "16-story-mobile-390.png", "path": "/stories/four-days-after-the-flood", "device": "mobile", "scroll": 300},
+  {"name": "17-report-mobile-390.png", "path": "/reports/annual-report-2025", "device": "mobile", "scroll": 200}
+]
