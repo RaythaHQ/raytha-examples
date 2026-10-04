@@ -1,0 +1,14 @@
+<section class="phead"><div class="wrap"><svg class="leaf" viewBox="0 0 200 300" aria-hidden="true"><path d="M100 10c60 50 80 120 0 280C20 130 40 60 100 10z" fill="#16302a"/><path d="M100 40v250M100 90l-40-30M100 130l45-35M100 170l-40-32M100 210l38-30" stroke="#f6f1e7" stroke-width="5" stroke-linecap="round"/></svg><span class="eyebrow">Impact stories</span><h1>What the money <em>made possible.</em></h1><p class="lead">Stories from grantees across the region, told with them and checked by them before we publish.</p></div></section>
+<section style="padding:60px 0 100px"><div class="wrap">
+{%- for s in Target.Items %}{% assign q = s.PublishedContent %}{% if forloop.first %}
+  <a class="sfeat reveal" href="{{ PathBase }}/{{ s.RoutePath }}"><img src="{{ q.image.Value | attachment_redirect_url }}" alt=""><div><span class="pill"><span class="dot" style="background:{{ q.program.PublishedContent.color }}"></span>{{ q.program.PrimaryField }}</span><h2>{{ s.PrimaryField }}</h2><p>{{ q.dek }}</p><div class="sst"><b>{{ q.stat_value }}</b><span>{{ q.stat_label }}</span></div><span class="mut" style="font-size:.9rem">{{ q.author }} &middot; {{ q.published_on.Value | date: "%B %-d, %Y" }}</span></div></a>
+  <div class="grid3" style="margin-top:50px">{% else %}
+  <a class="card reveal" href="{{ PathBase }}/{{ s.RoutePath }}" style="padding:0;overflow:hidden;display:flex;flex-direction:column"><img src="{{ q.image.Value | attachment_redirect_url }}" alt="" loading="lazy" style="aspect-ratio:16/10;object-fit:cover;width:100%"><div style="padding:26px;display:flex;flex-direction:column;flex:1"><span class="pill" style="align-self:flex-start;margin-bottom:14px"><span class="dot" style="background:{{ q.program.PublishedContent.color }}"></span>{{ q.program.PrimaryField }}</span><h3>{{ s.PrimaryField }}</h3><p>{{ q.dek | truncatewords: 24 }}</p><div class="sst" style="margin-top:auto;padding-top:18px"><b style="font-size:2rem">{{ q.stat_value }}</b><span>{{ q.stat_label }}</span></div></div></a>{% endif %}{% endfor %}
+  </div>
+</div></section>
+<style>
+  .sfeat{display:grid;grid-template-columns:1.25fr 1fr;gap:56px;align-items:center}.sfeat img{border-radius:18px;aspect-ratio:16/10;object-fit:cover;width:100%;box-shadow:0 30px 60px rgba(22,48,42,.15)}
+  .sfeat h2{font-size:clamp(2.4rem,4.4vw,3.8rem);margin:16px 0 14px}.sfeat:hover h2{color:var(--rust2)}.sfeat p{font:400 1.25rem/1.55 var(--serif);color:#454d47;margin:0 0 22px}
+  .sst{display:flex;gap:12px;align-items:baseline;margin-bottom:16px}.sst b{font:500 2.8rem/1 var(--serif);color:var(--rust)}.sst span{color:var(--mut);font-size:.95rem}
+  @media(max-width:900px){.sfeat{grid-template-columns:1fr;gap:26px}}
+</style>

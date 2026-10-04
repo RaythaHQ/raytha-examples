@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if Target.PrimaryField %}{{ Target.PrimaryField }} | {% elsif Target.Label %}{{ Target.Label }} | {% elsif Target.Title %}{{ Target.Title }} | {% endif %}The Alder Foundation</title>
+  <meta name="description" content="The Alder Foundation funds community-led work across the Alder River region: neighborhoods, rivers, early reading and paid job training.">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2316302a'/%3E%3Cpath d='M32 12c10 8 14 18 0 40C18 30 22 20 32 12z' fill='%23c8662b'/%3E%3Cpath d='M32 18v34' stroke='%23f6f1e7' stroke-width='2.5'/%3E%3C/svg%3E">
+  <style>
+    :root{--forest:#16302a;--forest2:#21423a;--paper:#f6f1e7;--paper2:#ede5d5;--paper3:#e3d8c3;--ink:#1b1f1c;--rust:#c8662b;--rust2:#a9521f;--moss:#5f7d4e;--river:#2f6f8f;--mut:#5f675f;--line:rgba(27,31,28,.13);--serif:"Newsreader",Georgia,serif;--sans:"Inter Tight",system-ui,sans-serif}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}
+    body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
+    h1,h2,h3,h4{font-family:var(--serif);font-weight:500;letter-spacing:-.015em;line-height:1.05;margin:0}
+    h1 em,h2 em,h3 em{font-style:italic;color:var(--rust)}
+    .wrap{max-width:1240px;margin:0 auto;padding:0 32px}.narrow{max-width:760px}
+    .topbar{background:var(--forest);color:#cfdcd3;font-size:.82rem}
+    .topbar .wrap{display:flex;justify-content:space-between;gap:20px;padding-top:8px;padding-bottom:8px}.topbar a{color:#fff;text-decoration:underline;text-underline-offset:3px}
+    .nav{position:sticky;top:0;z-index:40;background:rgba(246,241,231,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+    .nav-in{display:flex;align-items:center;gap:28px;height:78px}
+    .brand{display:flex;align-items:center;gap:12px}.brand b{display:block;font:500 1.42rem/1 var(--serif);letter-spacing:-.02em}.brand small{display:block;font:600 .66rem/1.3 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--mut);margin-top:4px}
+    .nav ul{display:flex;gap:2px;list-style:none;margin:0 0 0 auto;padding:0}
+    .nav ul a{display:block;padding:.55rem .8rem;font-weight:500;font-size:.95rem;color:#38403a;border-radius:8px}
+    .nav ul a:hover{background:var(--paper2)}.nav ul a.on{color:var(--rust2);box-shadow:inset 0 -2px 0 var(--rust)}
+    .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 1.35rem;border-radius:10px;font:600 .95rem/1 var(--sans);border:1.5px solid transparent;cursor:pointer;transition:transform .15s,background .15s}
+    .btn:hover{transform:translateY(-2px)}
+    .btn-rust{background:var(--rust);color:#fff}.btn-rust:hover{background:var(--rust2)}
+    .btn-forest{background:var(--forest);color:var(--paper)}.btn-line{border-color:rgba(27,31,28,.35)}.btn-line:hover{border-color:var(--ink)}
+    .btn-paper{background:var(--paper);color:var(--forest)}.btn-ghost{border-color:rgba(246,241,231,.45);color:var(--paper)}
+    .ext::after{content:"\F1C5";font-family:bootstrap-icons;font-size:.8em;margin-left:.1rem}
+    .tog{display:none;margin-left:auto;background:none;border:0;font-size:1.7rem;color:var(--ink)}
+    main{min-height:60vh}
+    .section{padding:100px 0}.section.tight{padding:70px 0}
+    .dark{background:var(--forest);color:var(--paper)}.dark .mut{color:#a9bcb0}.alt{background:var(--paper2)}
+    .mut{color:var(--mut)}
+    .eyebrow{display:inline-flex;align-items:center;gap:.6rem;font:600 .76rem/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--rust2)}
+    .eyebrow::before{content:"";width:26px;height:1.5px;background:currentColor}
+    .dark .eyebrow{color:#e9a676}
+    .shead{display:flex;justify-content:space-between;align-items:end;gap:32px;margin-bottom:46px;flex-wrap:wrap}
+    .shead h2{font-size:clamp(2.3rem,4.4vw,3.7rem);margin-top:14px;max-width:760px}.shead p{max-width:440px;margin:0;color:var(--mut)}.dark .shead p{color:#a9bcb0}
+    .pill{display:inline-flex;align-items:center;gap:.4rem;padding:.32rem .7rem;border-radius:999px;font:600 .74rem/1.2 var(--sans);background:var(--paper2);color:#38403a;white-space:nowrap}
+    .dot{width:9px;height:9px;border-radius:50%;display:inline-block;flex:none}
+    .chips{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:12px}
+    .chips .lbl{font:600 .7rem/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--mut);width:78px}
+    .chips a{padding:.5rem .9rem;border-radius:999px;border:1px solid var(--line);font:500 .88rem/1 var(--sans);color:#38403a;background:#fff;display:inline-flex;gap:.45rem;align-items:center}
+    .chips a:hover{border-color:var(--ink)}.chips a.on{background:var(--forest);color:var(--paper);border-color:var(--forest)}
+    .grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:26px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+    .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:30px;transition:transform .2s,box-shadow .2s}
+    a.card:hover{transform:translateY(-3px);box-shadow:0 18px 40px rgba(22,48,42,.1)}
+    .card h3{font-size:1.55rem;margin-bottom:8px}.card p{margin:0;color:var(--mut)}
+    .ic{width:50px;height:50px;border-radius:12px;display:grid;place-items:center;font-size:1.35rem;color:#fff;margin-bottom:18px}
+    .phead{padding:84px 0 56px;border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+    .phead h1{font-size:clamp(3rem,6.4vw,5.6rem);margin:18px 0 18px;max-width:1000px}.phead p.lead{font-size:1.22rem;color:#454d47;max-width:680px;margin:0}
+    .phead .leaf{position:absolute;right:-40px;top:20px;width:380px;opacity:.12;pointer-events:none}
+    .crumbs{display:flex;gap:8px;font-size:.86rem;color:var(--mut)}.crumbs a:hover{color:var(--rust2)}
+    .num{font:500 clamp(2.6rem,5vw,4.2rem)/1 var(--serif);letter-spacing:-.03em}
+    .rule{border:0;border-top:1px solid var(--line);margin:0}
+    .faq details{border-top:1px solid var(--line);padding:22px 0}.faq details:last-child{border-bottom:1px solid var(--line)}
+    .faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px;font:500 1.3rem/1.3 var(--serif)}
+    .faq summary::-webkit-details-marker{display:none}.faq summary::after{content:"+";font:400 1.6rem/1 var(--sans);color:var(--rust);transition:transform .2s}
+    .faq details[open] summary::after{transform:rotate(45deg)}.faq details p{margin:12px 0 0;color:#454d47;max-width:760px}
+    .prose{font:400 1.24rem/1.7 var(--serif);color:#2a302b}.prose p{margin:0 0 1.15em}.prose h3{font-size:1.9rem;margin:1.6em 0 .6em}
+    .prose a{color:var(--rust2);text-decoration:underline}
+    .gt{display:grid;grid-template-columns:52px 1fr auto;gap:16px;align-items:center;padding:18px 0;border-top:1px solid var(--line)}
+    .mono{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;font:600 1.05rem/1 var(--serif);color:#fff}
+    .amt{font:500 1.35rem/1 var(--serif);white-space:nowrap}
+    .foot{background:var(--forest);color:#cfdcd3;padding:80px 0 34px}
+    .foot .cols{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:44px}
+    .foot h4{font:600 .74rem/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:#e9a676;margin-bottom:18px}
+    .foot ul{list-style:none;margin:0;padding:0;display:grid;gap:10px;font-size:.95rem}.foot ul a:hover{color:#fff}
+    .foot .big{font:400 clamp(2.4rem,5vw,4rem)/1.05 var(--serif);color:var(--paper);margin:0 0 18px;letter-spacing:-.02em}.foot .big em{color:#e9a676}
+    .foot .bottom{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:.84rem;color:#94a99c;border-top:1px solid rgba(246,241,231,.14);padding-top:24px;margin-top:60px}
+    .reveal{opacity:0;transform:translateY(16px);transition:opacity .7s,transform .7s}.reveal.in{opacity:1;transform:none}
+    @media(max-width:1060px){.grid4{grid-template-columns:repeat(2,1fr)}.grid3{grid-template-columns:repeat(2,1fr)}.foot .cols{grid-template-columns:1fr 1fr}.nav ul a{padding:.5rem .55rem;font-size:.9rem}}
+    @media(max-width:900px){.nav ul,.nav .acts{display:none}.tog{display:block}.nav.open ul{display:flex;flex-direction:column;position:absolute;top:78px;left:0;right:0;background:var(--paper);padding:14px 22px 22px;border-bottom:1px solid var(--line)}
+      .section{padding:68px 0}.grid2,.grid3{grid-template-columns:1fr}.wrap{padding:0 20px}.chips .lbl{width:100%}.topbar .hide-sm{display:none}}
+    @media(max-width:600px){.grid4{grid-template-columns:1fr}.foot .cols{grid-template-columns:1fr}.gt{grid-template-columns:44px 1fr}.gt .amt{grid-column:2}.mono{width:44px;height:44px}}
+    @media print{.topbar,.nav,.foot,.noprint{display:none!important}body{background:#fff}.section{padding:30px 0}.reveal{opacity:1;transform:none}}
+  </style>
+</head>
+<body>
+<div class="topbar noprint"><div class="wrap"><span><i class="bi bi-circle-fill" style="color:#e9a676;font-size:.5rem;vertical-align:middle;margin-right:6px"></i>Open Water letters of inquiry are due March 31, 2027.</span><span class="hide-sm"><a href="{{ PathBase }}/apply">How to apply</a></span></div></div>
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="{{ PathBase }}/"><svg width="40" height="40" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#16302a"/><path d="M32 10c11 9 15 20 0 44C17 30 21 19 32 10z" fill="#c8662b"/><path d="M32 18v36M32 30l-7-6M32 38l8-7M32 46l-6-5" stroke="#f6f1e7" stroke-width="2.4" stroke-linecap="round"/></svg><span><b>The Alder Foundation</b><small>Alder River region since 1993</small></span></a>
+    {%- assign menu = get_main_menu() %}{% assign seg = Target.RoutePath | split: "/" | first %}
+    <ul>
+      {%- for mi in menu.MenuItems %}{% assign u = mi.Url | remove: PathBase | remove_first: "/" %}
+      <li><a href="{{ mi.Url }}" class="{% if u != '' and u == seg %}on{% endif %}">{{ mi.Label }}</a></li>
+      {%- endfor %}
+    </ul>
+    <div class="acts"><a class="btn btn-forest" href="{{ PathBase }}/apply" style="padding:.7rem 1.1rem">How to apply</a></div>
+    <button class="tog" aria-label="Menu" onclick="document.getElementById('nav').classList.toggle('open')"><i class="bi bi-list"></i></button>
+  </div>
+</header>
+<main>{% renderbody %}</main>
+<footer class="foot">
+  <div class="wrap">
+    <div class="cols">
+      <div><p class="big">Trust the people <em>closest to the work.</em></p><p style="margin:0;max-width:360px;font-size:.95rem">The Alder Foundation is fictional, built as a demo with Raytha. Grant applications link to a placeholder portal.</p></div>
+      {%- assign fm = get_menu("footer") %}
+      <div><h4>Foundation</h4><ul>{% for mi in fm.MenuItems %}<li><a href="{{ mi.Url }}">{{ mi.Label }}</a></li>{% endfor %}</ul></div>
+      <div><h4>Programs</h4><ul>{% assign fp = get_content_items(ContentType="programs", OrderBy="sort_order asc", PageSize=8) %}{% for x in fp.Items %}<li><a href="{{ PathBase }}/{{ x.RoutePath }}" style="display:inline-flex;gap:9px;align-items:center"><span class="dot" style="background:{{ x.PublishedContent.color }}"></span>{{ x.PrimaryField }}</a></li>{% endfor %}</ul></div>
+      <div><h4>Contact</h4><ul><li><a href="mailto:grants@alder.example">grants@alder.example</a></li><li>(555) 014-1993</li><li>210 River Street, Marlow</li><li>Office hours: Tue and Thu, 10 am to 2 pm</li></ul></div>
+    </div>
+    <div class="bottom"><span>&copy; 2026 The Alder Foundation (fictional). A private foundation, EIN 00-0000000.</span><span>Built with <a href="https://raytha.com" style="color:#fff">Raytha</a></span></div>
+  </div>
+</footer>
+<script>
+(function(){
+  var io='IntersectionObserver' in window?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.06}):null;
+  document.querySelectorAll('.reveal').forEach(function(el){io?io.observe(el):el.classList.add('in')});
+  document.querySelectorAll('[data-count]').forEach(function(el){var to=parseFloat(el.dataset.count),pre=el.dataset.pre||'',suf=el.dataset.suf||'',dec=+(el.dataset.dec||0),done=false;
+    function run(){if(done)return;done=true;var t0=performance.now();(function f(t){var k=Math.min(1,(t-t0)/1400),e=1-Math.pow(1-k,3),v=to*e;el.textContent=pre+(dec?v.toFixed(dec):Math.round(v).toLocaleString('en-US'))+suf;if(k<1)requestAnimationFrame(f)})(t0)}
+    if(io){new IntersectionObserver(function(es,o){if(es[0].isIntersecting){run();o.disconnect()}}).observe(el)}else run()});
+})();
+</script>
+</body>
+</html>
