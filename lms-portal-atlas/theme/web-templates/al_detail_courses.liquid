@@ -1,0 +1,84 @@
+{%- comment -%} Course page: overview, outcomes, curriculum grouped by module, instructor. Locked lessons are marked for visitors who are not in the "students" group. {%- endcomment -%}
+{%- assign is_member = false -%}
+{%- for g in CurrentUser.UserGroups -%}{%- if g == "students" -%}{%- assign is_member = true -%}{%- endif -%}{%- endfor -%}
+{%- if CurrentUser.IsAdmin -%}{%- assign is_member = true -%}{%- endif -%}
+{%- assign c = Target.PublishedContent -%}
+{%- capture cat %}{{ c.category }}{% endcapture -%}{%- capture lvl %}{{ c.level }}{% endcapture -%}
+{%- assign catname = cat | replace: "data", "Data and analytics" | replace: "design", "Design" | replace: "product", "Product" | replace: "leadership", "Leadership" -%}
+{%- capture lf %}course eq '{{ Target.Id | append: "" }}'{% endcapture -%}
+{%- assign ls = get_content_items(ContentType="lessons", Filter=lf, OrderBy="lesson_number asc", PageSize=100) -%}
+{%- assign mins = 0 -%}{%- assign previews = 0 -%}{%- assign routes = "" -%}{%- assign first_url = "" -%}{%- assign first_preview = "" -%}
+{%- for l in ls.Items -%}
+  {%- assign m = l.PublishedContent.minutes | append: "" | plus: 0 -%}{%- assign mins = mins | plus: m -%}
+  {%- assign routes = routes | append: "/" | append: l.RoutePath | append: "," -%}
+  {%- if forloop.first -%}{%- assign first_url = l.RoutePath -%}{%- endif -%}
+  {%- capture pv %}{{ l.PublishedContent.is_preview | downcase }}{% endcapture -%}
+  {%- if pv == "true" -%}{%- assign previews = previews | plus: 1 -%}{%- if first_preview == "" -%}{%- assign first_preview = l.RoutePath -%}{%- endif -%}{%- endif -%}
+{%- endfor -%}
+{%- assign routes = routes | replace: "//", "/" -%}
+<section class="chero" style="--c:{{ c.accent }}">
+  <div class="wrap">
+    <div class="crumbs"><a href="{{ PathBase }}/">Home</a><span>/</span><a href="{{ PathBase }}/courses">Courses</a><span>/</span><a href="{{ PathBase }}/courses?category={{ cat }}">{{ catname }}</a></div>
+    <div class="chero-grid">
+      <div>
+        <h1>{{ Target.PrimaryField }}</h1>
+        <p class="tag">{{ c.tagline }} {{ c.summary }}</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap"><span class="chip sun">{{ catname }}</span><span class="chip">{{ lvl | capitalize }}</span>{% if previews > 0 %}<span class="chip free"><i class="bi bi-unlock"></i> {{ previews }} free preview{% if previews != 1 %}s{% endif %}</span>{% endif %}</div>
+        <div class="facts">
+          <div><b>{{ ls.TotalCount }}</b><span>lessons</span></div>
+          <div><b>{{ c.hours | append: "" }} h</b><span>of learning</span></div>
+          <div><b><i class="bi bi-star-fill star" style="font-size:1.05rem"></i> {{ c.rating | append: "" }}</b><span>average rating</span></div>
+          <div><b>{{ c.learners | append: "" | plus: 0 | divided_by: 100 | divided_by: 10.0 }}k</b><span>learners</span></div>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          {% if is_member %}<a class="btn btn-ink" href="{{ PathBase }}/{{ first_url }}">Start the course <i class="bi bi-arrow-right"></i></a>
+          {% elsif first_preview != "" %}<a class="btn btn-ink" href="{{ PathBase }}/{{ first_preview }}"><i class="bi bi-play-fill"></i> Watch the free preview</a><a class="btn btn-line" href="{{ PathBase }}/account/login?returnUrl={{ PathBase }}/{{ Target.RoutePath }}">Sign in for every lesson</a>{% endif %}
+        </div>
+      </div>
+      <div class="cvbig"><img src="{{ c.cover.Value | attachment_redirect_url }}" alt="Cover artwork for {{ Target.PrimaryField }}"></div>
+    </div>
+  </div>
+</section>
+<section class="section" style="padding-top:64px">
+  <div class="wrap cgrid">
+    <div>
+      <span class="label dot">What you will learn</span>
+      <div class="card outcomes" style="margin-top:16px">{% assign outs = c.outcomes | newline_to_br | split: "<br />" %}{% for o in outs %}{% assign ot = o | strip %}{% if ot != "" %}<div><i class="bi bi-check2-circle"></i><span>{{ ot }}</span></div>{% endif %}{% endfor %}</div>
+      <div class="prose" style="margin-bottom:48px">{{ c.description }}</div>
+      <div class="shead" style="margin-bottom:20px"><div><span class="label dot">Curriculum</span><h2 style="font-size:2.2rem">{{ ls.TotalCount }} lessons · {{ mins }} minutes</h2></div>{% unless is_member %}<span class="chip lock"><i class="bi bi-lock-fill"></i> Locked lessons are for members</span>{% endunless %}</div>
+      {%- assign curmod = "" -%}
+      {%- for l in ls.Items -%}
+        {%- assign lp = l.PublishedContent -%}{%- capture pv %}{{ lp.is_preview | downcase }}{% endcapture -%}{%- capture kind %}{{ lp.kind }}{% endcapture -%}
+        {%- capture lmod %}{{ lp.module }}{% endcapture -%}
+        {%- if lmod != curmod -%}
+          {%- unless forloop.first %}</div>{% endunless -%}
+          {%- assign curmod = lmod -%}
+          {%- assign modmins = 0 -%}{%- assign modn = 0 -%}{%- for x in ls.Items -%}{%- capture xmod %}{{ x.PublishedContent.module }}{% endcapture -%}{%- if xmod == curmod -%}{%- assign xm = x.PublishedContent.minutes | append: "" | plus: 0 -%}{%- assign modn = modn | plus: 1 -%}{%- assign modmins = modmins | plus: xm -%}{%- endif -%}{%- endfor -%}
+          <div class="card module reveal"><header><h3><span class="muted" style="font-weight:600">Module {{ lp.module_number | append: "" }} ·</span> {{ curmod }}</h3><span>{{ modn }} lessons · {{ modmins }} min</span></header>
+        {%- endif -%}
+        <a class="lrow" href="{{ PathBase }}/{{ l.RoutePath }}" data-lesson="/{{ l.RoutePath }}">
+          <span class="n">{{ lp.lesson_number | append: "" }}</span>
+          <span class="t"><b>{{ l.PrimaryField }}</b><small>{{ lp.summary }}</small></span>
+          <span class="r">{{ kind | capitalize }} · {{ lp.minutes | append: "" }} min {% if pv == "true" %}<span class="chip free">Free</span>{% elsif is_member %}<i class="bi bi-play-circle"></i>{% else %}<i class="bi bi-lock-fill"></i>{% endif %}</span>
+        </a>
+        {%- if forloop.last %}</div>{% endif -%}
+      {%- endfor -%}
+    </div>
+    <aside class="card side-card" data-progress="{{ routes }}">
+      {% if is_member %}
+        <span class="label">Your progress</span>
+        <div class="pbar"><i></i></div><small class="muted" data-pct>Not started yet</small>
+        <a class="btn btn-ink" style="width:100%;justify-content:center;margin-top:18px" href="{{ PathBase }}/{{ first_url }}">Go to lesson 1 <i class="bi bi-arrow-right"></i></a>
+        <p class="muted" style="font-size:.82rem;margin:12px 0 0">Progress is saved in this browser as you mark lessons complete.</p>
+      {% else %}
+        <span class="label">Included with membership</span>
+        <h3 style="font-size:1.6rem;margin:12px 0 8px">Unlock all {{ ls.TotalCount }} lessons</h3>
+        <p class="muted" style="font-size:.95rem;margin:0 0 18px">{% if previews > 0 %}Start with {{ previews }} free preview lesson{% if previews != 1 %}s{% endif %}. {% endif %}Members get every lesson in every course and track their progress.</p>
+        <a class="btn btn-ink" style="width:100%;justify-content:center" href="{{ PathBase }}/account/login?returnUrl={{ PathBase }}/{{ Target.RoutePath }}">Sign in</a>
+        <a class="btn btn-line" style="width:100%;justify-content:center;margin-top:10px" href="{{ PathBase }}/membership">How membership works</a>
+      {% endif %}
+      {%- assign ins = c.instructor -%}
+      <a class="tutor" href="{{ PathBase }}/{{ ins.RoutePath }}"><img src="{{ ins.PublishedContent.photo.Value | attachment_redirect_url }}" alt=""><div><span class="label" style="font-size:.66rem">Your instructor</span><b style="display:block;font:700 1.1rem var(--display);letter-spacing:-.02em">{{ ins.PrimaryField }}</b><small class="muted">{{ ins.PublishedContent.role }}</small></div></a>
+    </aside>
+  </div>
+</section>

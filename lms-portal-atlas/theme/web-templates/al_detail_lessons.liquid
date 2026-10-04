@@ -1,0 +1,63 @@
+{%- comment -%} Lesson page. The lesson body is only rendered for free previews or for members of the "students" group, so locked content is never sent to other visitors. {%- endcomment -%}
+{%- assign is_member = false -%}
+{%- for g in CurrentUser.UserGroups -%}{%- if g == "students" -%}{%- assign is_member = true -%}{%- endif -%}{%- endfor -%}
+{%- if CurrentUser.IsAdmin -%}{%- assign is_member = true -%}{%- endif -%}
+{%- assign L = Target.PublishedContent -%}{%- assign course = L.course -%}{%- assign cp = course.PublishedContent -%}
+{%- capture pv %}{{ L.is_preview | downcase }}{% endcapture -%}{%- capture kind %}{{ L.kind }}{% endcapture -%}
+{%- assign can_view = false -%}{%- if pv == "true" or is_member -%}{%- assign can_view = true -%}{%- endif -%}
+{%- capture lf %}course eq '{{ course.Id | append: "" }}'{% endcapture -%}
+{%- assign ls = get_content_items(ContentType="lessons", Filter=lf, OrderBy="lesson_number asc", PageSize=100) -%}
+{%- assign me = Target.Id | append: "" -%}{%- assign idx = -1 -%}
+{%- for l in ls.Items -%}{%- assign lid = l.Id | append: "" -%}{%- if lid == me -%}{%- assign idx = forloop.index0 -%}{%- endif -%}{%- endfor -%}
+{%- assign pi = idx | minus: 1 -%}{%- assign ni = idx | plus: 1 -%}
+<div class="wrap lesson-grid" style="--c:{{ cp.accent }}">
+  <aside class="card lside">
+    <a href="{{ PathBase }}/{{ course.RoutePath }}" style="padding:4px 6px 10px;display:block"><span class="label" style="font-size:.66rem">Course</span><b style="display:block;font:700 1.15rem/1.2 var(--display);letter-spacing:-.02em;margin-top:4px;color:var(--ink)">{{ course.PrimaryField }}</b></a>
+    {%- assign curmod = "" -%}
+    {%- for l in ls.Items -%}{%- assign lp = l.PublishedContent -%}{%- capture lmod %}{{ lp.module }}{% endcapture -%}{%- capture lpv %}{{ lp.is_preview | downcase }}{% endcapture -%}{%- assign lid = l.Id | append: "" -%}
+      {%- if lmod != curmod %}{% assign curmod = lmod %}<h4>Module {{ lp.module_number | append: "" }} · {{ lmod }}</h4>{% endif -%}
+      <a href="{{ PathBase }}/{{ l.RoutePath }}" class="{% if lid == me %}on{% endif %}" data-lesson="/{{ l.RoutePath }}">
+        {% if lpv == "true" or is_member %}<i class="bi bi-circle state"></i>{% else %}<i class="bi bi-lock-fill" style="opacity:.6"></i>{% endif %}
+        <span style="flex:1">{{ l.PrimaryField }}<small style="display:block;opacity:.65;font-size:.78rem;margin-top:2px">{{ lp.minutes | append: "" }} min{% if lpv == "true" %} · Free preview{% endif %}</small></span>
+      </a>
+    {%- endfor -%}
+  </aside>
+  <article data-current="{{ Target.PrimaryField }}">
+    <div class="crumbs"><a href="{{ PathBase }}/courses">Courses</a><span>/</span><a href="{{ PathBase }}/{{ course.RoutePath }}">{{ course.PrimaryField }}</a><span>/</span><span>Lesson {{ L.lesson_number | append: "" }}</span></div>
+    <h1 style="font-size:clamp(2.2rem,4.4vw,3.6rem);margin:16px 0 12px;letter-spacing:-.04em">{{ Target.PrimaryField }}</h1>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+      <span class="chip">Module {{ L.module_number | append: "" }} · {{ L.module }}</span><span class="chip">{{ kind | capitalize }} · {{ L.minutes | append: "" }} min</span>
+      {% if pv == "true" %}<span class="chip free"><i class="bi bi-unlock"></i> Free preview</span>{% elsif is_member %}<span class="chip sun"><i class="bi bi-person-check"></i> Members</span>{% else %}<span class="chip lock"><i class="bi bi-lock-fill"></i> Members only</span>{% endif %}
+    </div>
+    <p style="font-size:1.15rem;color:var(--ink2);margin:16px 0 0;max-width:720px">{{ L.summary }}</p>
+    {% if can_view %}
+      {% if kind == "video" %}
+        <div class="player"><img src="{{ cp.cover.Value | attachment_redirect_url }}" alt=""><span class="play"><i class="bi bi-play-fill"></i></span><div class="bar"><span>0:00</span><span class="track"><i></i></span><span>{{ L.minutes | append: "" }}:00</span></div></div>
+      {% else %}
+        <div class="readhead"><span class="ico"><i class="bi bi-{% if kind == 'exercise' %}pencil-square{% elsif kind == 'quiz' %}patch-question{% else %}book{% endif %}"></i></span><div><b style="font:700 1.15rem var(--display);letter-spacing:-.02em">{% if kind == "exercise" %}Hands-on exercise{% elsif kind == "quiz" %}Check your understanding{% else %}Reading{% endif %}</b><div class="muted" style="font-size:.92rem">About {{ L.minutes | append: "" }} minutes. Work through it at your own pace.</div></div></div>
+      {% endif %}
+      <div class="prose">{{ L.body }}</div>
+      {% if is_member %}<button class="btn btn-line donebtn" data-mark="/{{ Target.RoutePath }}" style="margin-top:12px"><i class="bi bi-circle"></i> Mark as complete</button>
+      {% else %}<div class="card" style="padding:20px 24px;margin-top:24px;display:flex;gap:16px;align-items:center;flex-wrap:wrap"><i class="bi bi-stars" style="font-size:1.6rem;color:var(--saffron)"></i><div style="flex:1;min-width:220px"><b>Enjoying the preview?</b><div class="muted" style="font-size:.92rem">The other {{ ls.TotalCount | minus: 1 }} lessons in this course are open to members.</div></div><a class="btn btn-ink" href="{{ PathBase }}/account/login?returnUrl={{ PathBase }}/{{ Target.RoutePath }}">Sign in</a></div>{% endif %}
+    {% else %}
+      <div class="locked">
+        <div class="ghost" aria-hidden="true">{{ L.summary }} {{ L.summary }} {{ L.summary }} {{ L.summary }} {{ L.summary }} {{ L.summary }}</div>
+        <div class="in">
+          <div class="lk"><i class="bi bi-lock-fill"></i></div>
+          <h2>This lesson is for members.</h2>
+          <p>Sign in with your Atlas membership to watch this lesson, track your progress and unlock every course in the catalog.</p>
+          <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+            <a class="btn btn-sun" href="{{ PathBase }}/account/login?returnUrl={{ PathBase }}/{{ Target.RoutePath }}">Sign in to continue <i class="bi bi-arrow-right"></i></a>
+            <a class="btn btn-ghost" href="{{ PathBase }}/membership">How membership works</a>
+          </div>
+          {% if CurrentUser.IsAuthenticated %}<p style="font-size:.82rem;margin-top:18px">You are signed in as {{ CurrentUser.EmailAddress }}, but this account does not have a membership yet.</p>{% endif %}
+        </div>
+      </div>
+    {% endif %}
+    <nav class="pn">
+      {% if pi >= 0 %}{% assign pl = ls.Items[pi] %}<a href="{{ PathBase }}/{{ pl.RoutePath }}"><span><i class="bi bi-arrow-left"></i> Previous</span><b>{{ pl.PrimaryField }}</b></a>{% endif %}
+      {% if ni < ls.Items.size %}{% assign nl = ls.Items[ni] %}<a class="next" href="{{ PathBase }}/{{ nl.RoutePath }}"><span>Next <i class="bi bi-arrow-right"></i></span><b>{{ nl.PrimaryField }}</b></a>{% else %}<a class="next" href="{{ PathBase }}/{{ course.RoutePath }}"><span>Finished <i class="bi bi-flag"></i></span><b>Back to the course</b></a>{% endif %}
+    </nav>
+  </article>
+</div>
+<style>.lside a.done .state::before{content:"\F26B";color:var(--forest)}.lside a.on.done .state::before{color:var(--saffron)}</style>
