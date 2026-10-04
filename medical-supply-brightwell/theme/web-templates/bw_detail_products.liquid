@@ -1,0 +1,55 @@
+{%- comment -%} Product page: overview, specifications, what is included, coverage and how to order. Ordering is by phone or email only. {%- endcomment -%}
+{%- assign p = Target.PublishedContent -%}
+{%- capture acq %}{{ p.acquire }}{% endcapture -%}{%- capture cov %}{{ p.coverage }}{% endcapture -%}{%- capture rx %}{{ p.prescription | downcase }}{% endcapture -%}
+{%- assign cat = p.category -%}
+{%- capture cf %}category eq '{{ cat.Id | append: "" }}'{% endcapture -%}
+{%- assign rel = get_content_items(ContentType="products", Filter=cf, OrderBy="sort_order asc", PageSize=5) -%}
+{%- assign guides = get_content_items(ContentType="resources", Filter=cf, OrderBy="sort_order asc", PageSize=3) -%}
+<section style="padding:30px 0 0"><div class="wrap"><div class="crumbs"><a href="{{ PathBase }}/">Home</a><span>/</span><a href="{{ PathBase }}/equipment">Equipment</a><span>/</span><a href="{{ PathBase }}/{{ cat.RoutePath }}">{{ cat.PrimaryField }}</a><span>/</span><span>{{ Target.PrimaryField }}</span></div></div></section>
+<section style="padding:22px 0 0"><div class="wrap pd">
+  <div class="gal reveal"><img src="{{ p.image.Value | attachment_redirect_url }}" alt="Illustration of the {{ Target.PrimaryField | downcase }}"></div>
+  <div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap"><span class="pill navy code">HCPCS {{ p.hcpcs }}</span>{% if acq == "rent" %}<span class="pill">Rental</span>{% elsif acq == "buy" %}<span class="pill">Purchase</span>{% else %}<span class="pill">Rental or purchase</span>{% endif %}{% if rx == "true" %}<span class="pill amber"><i class="bi bi-file-earmark-medical"></i> Prescription required</span>{% endif %}</div>
+    <h1>{{ Target.PrimaryField }}</h1>
+    <p class="sum">{{ p.summary }}</p>
+    <div class="facts">
+      <div><span>Coverage</span><b>{% if cov == "medicare" %}Medicare Part B and most plans{% elsif cov == "insurance" %}Most private insurance{% else %}Self-pay, HSA and FSA eligible{% endif %}</b></div>
+      <div><span>Delivery</span><b>Setup and training included</b></div>
+      {% capture pn %}{{ p.price_note | strip }}{% endcapture %}{% if pn != "" %}<div style="grid-column:1/-1"><span>Self-pay</span><b>{{ pn }}</b></div>{% endif %}
+    </div>
+    <div class="order">
+      <h3>Order by phone</h3>
+      <p>{% if rx == "true" %}Have your doctor send us an order, or call and we will contact them for you. We check your coverage and call you with your cost before delivery.{% else %}Call us to order, or visit a showroom to try it first. We never take payment on this website.{% endif %}</p>
+      <div class="row"><a class="btn btn-teal" href="tel:+18005550134"><i class="bi bi-telephone-fill"></i> (800) 555-0134</a><a class="btn btn-ghost" href="mailto:orders@example.com?subject={{ 'Question about ' | append: Target.PrimaryField | append: ' (' | append: p.hcpcs | append: ')' | url_encode }}"><i class="bi bi-envelope"></i> Email the order desk</a></div>
+      <p style="margin:14px 0 0;font-size:.84rem">Prescribers: fax orders to (800) 555-0139.</p>
+    </div>
+  </div>
+</div></section>
+<section style="padding-bottom:40px"><div class="wrap">
+  <nav class="tabs"><a href="#overview" class="on">Overview</a><a href="#specs">Specifications</a><a href="#coverage">Coverage</a><a href="#related">Related</a></nav>
+  <div style="display:grid;grid-template-columns:1.4fr 1fr;gap:48px" id="pdgrid">
+    <div>
+      <div id="overview" class="prose" style="scroll-margin-top:110px">{{ p.description }}</div>
+      <h2 id="specs" style="font-size:1.5rem;margin:38px 0 14px;scroll-margin-top:110px">Specifications</h2>
+      <table class="spec">{% assign lines = p.specs | newline_to_br | split: "<br />" %}{% for l in lines %}{% assign lt = l | strip %}{% if lt != "" %}{% assign kv = lt | split: ": " %}<tr><td>{{ kv[0] }}</td><td>{{ kv[1] }}</td></tr>{% endif %}{% endfor %}</table>
+      <h2 id="coverage" style="font-size:1.5rem;margin:38px 0 14px;scroll-margin-top:110px">Coverage and cost</h2>
+      <div class="prose">{% if cov == "medicare" %}<p>Medicare Part B covers this equipment when your doctor documents that you need it at home. After your yearly deductible you usually pay 20 percent of the approved amount, and a supplemental plan may cover that. {% if acq == "rent" or acq == "rent_or_buy" %}Rentals are billed monthly.{% endif %}</p>{% elsif cov == "insurance" %}<p>Many private plans cover this item with a prescription. Medicare coverage is limited, so we check your benefits and tell you your cost before delivery.</p>{% else %}<p>Insurance usually does not cover this item, but it is eligible for HSA and FSA accounts. We provide an itemized receipt.</p>{% endif %}<p>Read <a href="{{ PathBase }}/resources/medicare-and-your-equipment" style="color:var(--teal);font-weight:700">Medicare and your equipment</a> or call us with your plan details.</p></div>
+    </div>
+    <aside>
+      <div class="card" style="padding:24px"><h3 style="font-size:1.1rem;margin-bottom:14px">In the box</h3><div class="checks">{% assign box = p.whats_included | newline_to_br | split: "<br />" %}{% for b in box %}{% assign bt = b | strip %}{% if bt != "" %}<div><i class="bi bi-check-circle-fill"></i><span>{{ bt }}</span></div>{% endif %}{% endfor %}</div></div>
+      {% if guides.TotalCount > 0 %}<div class="card" style="padding:24px;margin-top:16px"><h3 style="font-size:1.1rem;margin-bottom:10px">Helpful guides</h3>{% for g in guides.Items %}<a href="{{ PathBase }}/{{ g.RoutePath }}" style="display:flex;justify-content:space-between;gap:10px;padding:10px 0;border-top:1px solid var(--line);font-weight:600">{{ g.PrimaryField }}<i class="bi bi-arrow-right" style="color:var(--teal)"></i></a>{% endfor %}</div>{% endif %}
+      <div class="card" style="padding:24px;margin-top:16px;background:var(--sky);border-color:#cfe0ef"><h3 style="font-size:1.1rem;margin-bottom:6px">About HCPCS codes</h3><p style="margin:0;font-size:.92rem;color:var(--ink2)">HCPCS codes are how equipment is billed to Medicare and insurers. The code shown is typical for this item; we confirm the exact code when we check your coverage.</p></div>
+    </aside>
+  </div>
+  <style>@media(max-width:900px){#pdgrid{grid-template-columns:1fr!important;gap:28px!important}}</style>
+  <div class="shead" id="related" style="margin-top:64px;scroll-margin-top:110px"><div><span class="eyebrow">More {{ cat.PrimaryField | downcase }}</span><h2>Related equipment</h2></div><a class="btn btn-line" href="{{ PathBase }}/{{ cat.RoutePath }}">See all <i class="bi bi-arrow-right"></i></a></div>
+  <div class="grid3">{% assign shown = 0 %}{% for x in rel.Items %}{% if x.Id != Target.Id and shown < 3 %}{% assign shown = shown | plus: 1 %}
+{%- capture acq %}{{ x.PublishedContent.acquire }}{% endcapture -%}{%- capture cov %}{{ x.PublishedContent.coverage }}{% endcapture -%}
+<a class="card prod-card lift reveal" href="{{ PathBase }}/{{ x.RoutePath }}">
+  <div class="im"><img src="{{ x.PublishedContent.image.Value | attachment_redirect_url }}" alt="" loading="lazy"><span class="pill code">HCPCS {{ x.PublishedContent.hcpcs }}</span></div>
+  <div class="bd"><span class="muted" style="font-size:.8rem;font-weight:700">{{ x.PublishedContent.category.PrimaryField }}</span><h3>{{ x.PrimaryField }}</h3><p>{{ x.PublishedContent.summary | truncate: 110 }}</p>
+  <div class="ft">{% if acq == "rent" %}<span class="pill">Rental</span>{% elsif acq == "buy" %}<span class="pill">Purchase</span>{% else %}<span class="pill">Rent or buy</span>{% endif %}{% if cov == "medicare" %}<span class="pill teal"><i class="bi bi-shield-check"></i> Medicare</span>{% elsif cov == "insurance" %}<span class="pill teal"><i class="bi bi-shield-check"></i> Insurance</span>{% else %}<span class="pill amber">HSA and FSA</span>{% endif %}</div></div>
+</a>
+{% endif %}{% endfor %}</div>
+</div></section>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Product","name":{{ Target.PrimaryField | json }},"description":{{ p.summary | json }},"sku":{{ p.hcpcs | json }},"brand":{"@type":"Brand","name":"Brightwell Medical Supply"}}</script>
