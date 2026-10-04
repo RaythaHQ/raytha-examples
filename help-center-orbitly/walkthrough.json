@@ -1,0 +1,139 @@
+{
+  "slug": "orbitly-help-center",
+  "name": "Orbitly Help Center",
+  "viewport": [
+    1440,
+    810
+  ],
+  "output": [
+    1920,
+    1080
+  ],
+  "colorScheme": "light",
+  "title": {
+    "kicker": "Raytha use case",
+    "heading": "Orbitly Help Center",
+    "subheading": "A SaaS help center with instant search, a changelog and a status page, built on Raytha by an AI agent with the CLI.",
+    "hold": 1.6
+  },
+  "end": {
+    "heading": "Built with Raytha",
+    "subheading": "Open-source .NET CMS. Get the brief, screenshots and a one-command rebuild kit.",
+    "url": "raytha.com/use-cases/orbitly-help-center",
+    "hold": 2.6
+  },
+  "scenes": [
+    {
+      "url": "/",
+      "caption": "Search-as-you-type, answered by a Raytha Function",
+      "actions": [
+        {
+          "hold": 1.0,
+          "poster": true
+        },
+        {
+          "type": {
+            "selector": ".hero input[name=q]",
+            "text": "invite",
+            "cps": 9
+          },
+          "dur": 0.9
+        },
+        {
+          "hold": 1.2
+        },
+        {
+          "click": ".suggest.show a[href]",
+          "dur": 0.8
+        },
+        {
+          "hold": 0.8
+        }
+      ]
+    },
+    {
+      "url": "/help/team-and-permissions",
+      "caption": "Topics list their articles with relationship fields",
+      "actions": [
+        {
+          "hold": 0.6
+        },
+        {
+          "scroll": 180,
+          "dur": 1.2
+        },
+        {
+          "hold": 0.4
+        }
+      ]
+    },
+    {
+      "url": "/articles/set-up-task-dependencies",
+      "caption": "Articles with a table of contents and related reading",
+      "actions": [
+        {
+          "hold": 0.6
+        },
+        {
+          "scroll": 430,
+          "dur": 1.8
+        },
+        {
+          "hold": 0.4
+        }
+      ]
+    },
+    {
+      "url": "/changelog",
+      "caption": "A changelog with an RSS feed",
+      "actions": [
+        {
+          "hold": 0.5
+        },
+        {
+          "scroll": 500,
+          "dur": 1.7
+        },
+        {
+          "hold": 0.3
+        }
+      ]
+    },
+    {
+      "url": "/status",
+      "caption": "A status page managed from a site page",
+      "actions": [
+        {
+          "hold": 0.6
+        },
+        {
+          "scroll": 380,
+          "dur": 1.4
+        },
+        {
+          "hold": 0.3
+        }
+      ]
+    },
+    {
+      "url": "/",
+      "phone": true,
+      "phoneCaption": {
+        "kicker": "Responsive",
+        "text": "Find answers from a phone"
+      },
+      "actions": [
+        {
+          "hold": 0.5
+        },
+        {
+          "scroll": 900,
+          "dur": 1.9
+        },
+        {
+          "hold": 0.4
+        }
+      ]
+    }
+  ]
+}

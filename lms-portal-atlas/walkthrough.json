@@ -1,0 +1,161 @@
+{
+  "slug": "atlas-learning-portal",
+  "name": "Atlas Learning",
+  "viewport": [
+    1440,
+    810
+  ],
+  "output": [
+    1920,
+    1080
+  ],
+  "colorScheme": "light",
+  "title": {
+    "kicker": "Raytha use case",
+    "heading": "Atlas Learning",
+    "subheading": "A course portal with free previews and members-only lessons, built on Raytha by an AI agent with the CLI.",
+    "hold": 1.6
+  },
+  "end": {
+    "heading": "Built with Raytha",
+    "subheading": "Open-source .NET CMS. Get the brief, screenshots and a one-command rebuild kit.",
+    "url": "raytha.com/use-cases/atlas-learning-portal",
+    "hold": 2.6
+  },
+  "login": {
+    "path": "/account/login",
+    "emailEnv": "SITE_USER_EMAIL",
+    "passwordEnv": "SITE_USER_PASSWORD"
+  },
+  "scenes": [
+    {
+      "url": "/",
+      "caption": "A course catalog with free preview lessons",
+      "actions": [
+        {
+          "hold": 1.1,
+          "poster": true
+        },
+        {
+          "scroll": 760,
+          "dur": 1.8
+        },
+        {
+          "hold": 0.4
+        }
+      ]
+    },
+    {
+      "url": "/courses",
+      "caption": "Filter by topic and level: a list view plus Liquid",
+      "actions": [
+        {
+          "hold": 0.4
+        },
+        {
+          "click": ".filters a[href='/courses?category=design']",
+          "dur": 0.9
+        },
+        {
+          "hold": 0.5
+        },
+        {
+          "scroll": 300,
+          "dur": 1.2
+        },
+        {
+          "hold": 0.3
+        }
+      ]
+    },
+    {
+      "url": "/courses/sql-for-product-questions",
+      "caption": "Course pages build the curriculum from related lessons",
+      "actions": [
+        {
+          "hold": 0.6
+        },
+        {
+          "scroll": {
+            "selector": ".module",
+            "offset": 160
+          },
+          "dur": 2.0
+        },
+        {
+          "hold": 0.6
+        }
+      ]
+    },
+    {
+      "url": "/learn/joins-without-double-counting",
+      "caption": "Locked lessons are never sent to visitors",
+      "actions": [
+        {
+          "hold": 1.4
+        }
+      ]
+    },
+    {
+      "url": "/learn/joins-without-double-counting",
+      "signin": true,
+      "caption": "Members of the students group see every lesson",
+      "actions": [
+        {
+          "eval": "localStorage.setItem('atlas:done', JSON.stringify(['/learn/why-product-people-should-write-sql','/learn/a-tour-of-the-product-database','/learn/filtering-and-counting','/learn/what-a-design-system-is-for','/learn/running-an-interface-audit','/learn/your-first-ninety-days']))"
+        },
+        {
+          "hold": 0.6
+        },
+        {
+          "scroll": 520,
+          "dur": 1.6
+        },
+        {
+          "click": "button.donebtn",
+          "dur": 0.8,
+          "navigates": false
+        },
+        {
+          "hold": 0.6
+        }
+      ]
+    },
+    {
+      "url": "/my-learning",
+      "caption": "My learning: a members-only dashboard with progress",
+      "actions": [
+        {
+          "hold": 0.8
+        },
+        {
+          "scroll": 360,
+          "dur": 1.4
+        },
+        {
+          "hold": 0.5
+        }
+      ]
+    },
+    {
+      "url": "/",
+      "phone": true,
+      "phoneCaption": {
+        "kicker": "Responsive",
+        "text": "Learn from a phone"
+      },
+      "actions": [
+        {
+          "hold": 0.5
+        },
+        {
+          "scroll": 1100,
+          "dur": 2.0
+        },
+        {
+          "hold": 0.4
+        }
+      ]
+    }
+  ]
+}

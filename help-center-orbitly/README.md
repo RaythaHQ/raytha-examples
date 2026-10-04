@@ -7,6 +7,7 @@ and function went in through the CLI. Nobody opened the admin.
 - **Brief:** [brief.md](brief.md)
 - **Build time:** about 30 minutes of agent time, from an empty install to `raytha check` passing
 - **Write-up:** [raytha.com/use-cases/orbitly-help-center](https://raytha.com/use-cases/orbitly-help-center)
+- **Walkthrough video:** [MP4, 30 s](https://raytha.com/raytha/media-items/objectkey/e5CN46HnDkaUUrwTxrHCsQ_orbitly_help_center_walkthrough.mp4) (shot list: [walkthrough.json](walkthrough.json))
 
 ![Orbitly help center home page](https://raytha.com/raytha/media-items/objectkey/yxBjCaWwv02PaLCf2EC_gg_orbitly_help_01_home_hero.webp)
 
@@ -83,6 +84,7 @@ into content types that are still empty. Set `PRUNE_MENUS=0` to keep menu items 
 | [pages/](pages/) | Site page sections and `pages.json` (title, route, template) |
 | [menus/](menus/) | Main and footer menu items |
 | [shots.json](shots.json) | The screenshot list for `scripts/capture-screenshots.py` |
+| [walkthrough.json](walkthrough.json) | The shot list for [`scripts/make-walkthrough.py`](../scripts/make-walkthrough.md) |
 
 ## Notes
 
