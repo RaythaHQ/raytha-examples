@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "contentTypes": [
+    {
+      "developerName": "sections",
+      "labelPlural": "Sections",
+      "labelSingular": "Section",
+      "description": "Newsroom sections, each with its own front page",
+      "defaultRouteTemplate": "section/{PrimaryField}",
+      "primaryField": "name",
+      "fields": [
+        {"developerName": "name", "label": "Name", "description": "", "fieldType": "single_line_text", "isRequired": true, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "blurb", "label": "One-line description", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "color", "label": "Colour", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "icon", "label": "Bootstrap icon name", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "sort_order", "label": "Sort order", "description": "", "fieldType": "number", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []}
+      ],
+      "views": [
+        {"developerName": "sections", "label": "Sections", "description": "", "isPublished": true, "routePath": "sections", "template": "hl_list_sections", "columns": ["PrimaryField"], "sort": [{"developerName": "sort_order", "direction": "asc"}], "filter": [], "defaultNumberOfItemsPerPage": 20, "maxNumberOfItemsPerPage": 1000, "ignoreClientFilterAndSortQueryParams": false}
+      ]
+    },
+    {
+      "developerName": "authors",
+      "labelPlural": "Staff",
+      "labelSingular": "Staff member",
+      "description": "Reporters, editors and columnists",
+      "defaultRouteTemplate": "staff/{PrimaryField}",
+      "primaryField": "name",
+      "fields": [
+        {"developerName": "name", "label": "Name", "description": "", "fieldType": "single_line_text", "isRequired": true, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "role", "label": "Role", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "beat", "label": "Beat", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "bio", "label": "Short bio", "description": "", "fieldType": "long_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "email", "label": "Email", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "color", "label": "Avatar colour", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "sort_order", "label": "Sort order", "description": "", "fieldType": "number", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []}
+      ],
+      "views": [
+        {"developerName": "staff", "label": "Staff", "description": "", "isPublished": true, "routePath": "staff", "template": "hl_list_staff", "columns": ["PrimaryField"], "sort": [{"developerName": "sort_order", "direction": "asc"}], "filter": [], "defaultNumberOfItemsPerPage": 50, "maxNumberOfItemsPerPage": 1000, "ignoreClientFilterAndSortQueryParams": false}
+      ]
+    },
+    {
+      "developerName": "articles",
+      "labelPlural": "Articles",
+      "labelSingular": "Article",
+      "description": "Stories, analysis and opinion",
+      "defaultRouteTemplate": "news/{PrimaryField}",
+      "primaryField": "headline",
+      "fields": [
+        {"developerName": "headline", "label": "Headline", "description": "", "fieldType": "single_line_text", "isRequired": true, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "dek", "label": "Summary (dek)", "description": "", "fieldType": "long_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "section", "label": "Section", "description": "", "fieldType": "one_to_one_relationship", "isRequired": false, "choices": [], "relatedContentType": "sections", "subFields": []},
+        {"developerName": "author", "label": "Byline", "description": "", "fieldType": "one_to_one_relationship", "isRequired": false, "choices": [], "relatedContentType": "authors", "subFields": []},
+        {"developerName": "kind", "label": "Story type", "description": "", "fieldType": "dropdown", "isRequired": false, "choices": [{"developerName": "news", "label": "News", "disabled": false}, {"developerName": "analysis", "label": "Analysis", "disabled": false}, {"developerName": "feature", "label": "Feature", "disabled": false}, {"developerName": "opinion", "label": "Opinion", "disabled": false}, {"developerName": "explainer", "label": "Explainer", "disabled": false}], "relatedContentType": null, "subFields": []},
+        {"developerName": "published_on", "label": "Published", "description": "", "fieldType": "date", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "time_label", "label": "Time stamp, e.g. 9:42 PM", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "location", "label": "Dateline", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "image", "label": "Lead image", "description": "", "fieldType": "attachment", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "caption", "label": "Image caption", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "body", "label": "Story", "description": "", "fieldType": "wysiwyg", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "breaking", "label": "Breaking: show in the red banner", "description": "", "fieldType": "checkbox", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "is_live", "label": "Has live updates", "description": "", "fieldType": "checkbox", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "featured", "label": "Top story on the home page", "description": "", "fieldType": "checkbox", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "reads", "label": "Reads in the last 7 days", "description": "", "fieldType": "number", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "read_minutes", "label": "Minutes to read", "description": "", "fieldType": "number", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "correction", "label": "Correction note", "description": "", "fieldType": "long_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []}
+      ],
+      "views": [
+        {"developerName": "latest", "label": "Latest news", "description": "", "isPublished": true, "routePath": "news", "template": "hl_list_news", "columns": ["PrimaryField"], "sort": [{"developerName": "published_on", "direction": "desc"}, {"developerName": "reads", "direction": "desc"}], "filter": [], "defaultNumberOfItemsPerPage": 200, "maxNumberOfItemsPerPage": 1000, "ignoreClientFilterAndSortQueryParams": false},
+        {"developerName": "most_read", "label": "Most read", "description": "", "isPublished": true, "routePath": "most-read", "template": "hl_list_mostread", "columns": ["PrimaryField"], "sort": [{"developerName": "reads", "direction": "desc"}], "filter": [], "defaultNumberOfItemsPerPage": 10, "maxNumberOfItemsPerPage": 1000, "ignoreClientFilterAndSortQueryParams": false}
+      ]
+    },
+    {
+      "developerName": "live_updates",
+      "labelPlural": "Live updates",
+      "labelSingular": "Live update",
+      "description": "Short timestamped posts attached to a developing story",
+      "defaultRouteTemplate": "live/{PrimaryField}",
+      "primaryField": "title",
+      "fields": [
+        {"developerName": "title", "label": "Title", "description": "", "fieldType": "single_line_text", "isRequired": true, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "story", "label": "Story", "description": "", "fieldType": "one_to_one_relationship", "isRequired": false, "choices": [], "relatedContentType": "articles", "subFields": []},
+        {"developerName": "posted_on", "label": "Date", "description": "", "fieldType": "date", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "time_label", "label": "Time, e.g. 9:42 PM", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "sequence", "label": "Order (higher is newer)", "description": "", "fieldType": "number", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "kind", "label": "Type", "description": "", "fieldType": "dropdown", "isRequired": false, "choices": [{"developerName": "update", "label": "Update", "disabled": false}, {"developerName": "key", "label": "Key development", "disabled": false}, {"developerName": "official", "label": "Official statement", "disabled": false}, {"developerName": "correction", "label": "Correction", "disabled": false}], "relatedContentType": null, "subFields": []},
+        {"developerName": "body", "label": "Update", "description": "", "fieldType": "long_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "source", "label": "Source or credit", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []}
+      ],
+      "views": [
+        {"developerName": "live", "label": "Live updates", "description": "", "isPublished": true, "routePath": "live", "template": "hl_list_live", "columns": ["PrimaryField"], "sort": [{"developerName": "sequence", "direction": "desc"}], "filter": [], "defaultNumberOfItemsPerPage": 100, "maxNumberOfItemsPerPage": 1000, "ignoreClientFilterAndSortQueryParams": false}
+      ]
+    }
+  ]
+}
