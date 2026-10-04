@@ -1,0 +1,4 @@
+[
+ {"developerName": "feeds.rss", "name": "Latest stories RSS feed", "trigger": "http_request", "file": "latest.rss.js", "routePath": "feeds/latest.rss"},
+ {"developerName": "feeds.json", "name": "Latest stories JSON Feed", "trigger": "http_request", "file": "latest.json.js", "routePath": "feeds/latest.json"}
+]

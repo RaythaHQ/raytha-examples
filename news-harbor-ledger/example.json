@@ -1,0 +1,16 @@
+{
+ "name": "The Harbor Ledger",
+ "theme": "ledger",
+ "types": [
+  "sections",
+  "authors",
+  "articles",
+  "live_updates"
+ ],
+ "detailTemplates": {
+  "sections": "hl_detail_sections",
+  "authors": "hl_detail_authors",
+  "articles": "hl_detail_articles",
+  "live_updates": "hl_detail_live_updates"
+ }
+}
