@@ -1,0 +1,7 @@
+{
+  "name": "Orbitly Help Center",
+  "theme": "orbitly",
+  "types": ["categories", "articles", "releases"],
+  "detailTemplates": {"categories": "ob_detail_categories", "articles": "ob_detail_articles", "releases": "ob_detail_releases"},
+  "groups": []
+}

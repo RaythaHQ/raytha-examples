@@ -1,0 +1,10 @@
+{
+ "developerName": "footer",
+ "label": "Footer",
+ "items": [
+  {"label": "Getting started", "link": "/help/getting-started"},
+  {"label": "Billing and plans", "link": "/help/billing-and-plans"},
+  {"label": "Changelog", "link": "/changelog"},
+  {"label": "Changelog RSS", "link": "/feeds/changelog.rss"}
+ ]
+}

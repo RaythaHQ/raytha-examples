@@ -1,0 +1,4 @@
+[
+ {"developerName": "search", "name": "Help center search", "trigger": "http_request", "file": "search.js", "routePath": "search.json"},
+ {"developerName": "changelog.rss", "name": "Changelog RSS feed", "trigger": "http_request", "file": "changelog.rss.js", "routePath": "feeds/changelog.rss"}
+]

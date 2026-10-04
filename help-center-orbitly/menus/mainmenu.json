@@ -1,0 +1,10 @@
+{
+ "developerName": "mainmenu",
+ "label": "Main menu",
+ "items": [
+  {"label": "Topics", "link": "/help"},
+  {"label": "All articles", "link": "/articles"},
+  {"label": "Changelog", "link": "/changelog"},
+  {"label": "Status", "link": "/status"}
+ ]
+}

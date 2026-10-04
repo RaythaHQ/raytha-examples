@@ -1,0 +1,28 @@
+{
+ "hero": [
+  {"widgetType": "ob_hero", "settings": {
+   "kicker": "Orbitly Help Center",
+   "headline": "Answers for every",
+   "accent": "step of the plan.",
+   "subtitle": "Guides, how-tos and release notes for Orbitly, the project planner for small teams. Start typing and results appear instantly.",
+   "placeholder": "Try “invite”, “timeline” or “export”",
+   "popular": [
+    {"label": "Invite your team", "url": "/articles?q=invite"},
+    {"label": "Timeline view", "url": "/articles?tag=timeline"},
+    {"label": "Billing", "url": "/help/billing-and-plans"},
+    {"label": "API", "url": "/articles?tag=api"}
+   ]}}
+ ],
+ "main": [
+  {"widgetType": "ob_categories", "settings": {"kicker": "Browse by topic", "headline": "Find your way around"}},
+  {"widgetType": "ob_popular", "settings": {"kicker": "Most read", "headline": "Popular articles", "count": 6}},
+  {"widgetType": "ob_cta", "settings": {
+   "headline": "Talk to a real person",
+   "subtitle": "Can't find what you need? The support team replies within one business day, and the status page shows live service health.",
+   "options": [
+    {"icon": "envelope-paper-heart", "title": "Email support", "body": "Replies within a business day", "url": "mailto:support@example.com"},
+    {"icon": "activity", "title": "System status", "body": "All systems operational", "url": "/status"},
+    {"icon": "stars", "title": "What's new", "body": "Release notes and fixes", "url": "/changelog"}
+   ]}}
+ ]
+}

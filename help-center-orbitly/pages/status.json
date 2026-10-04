@@ -1,0 +1,22 @@
+{
+ "header": [
+  {"widgetType": "ob_page_header", "settings": {"kicker": "System status", "headline": "Orbitly system status", "subtitle": "Live health for every part of Orbitly. Day-by-day history for the last 90 days."}}
+ ],
+ "main": [
+  {"widgetType": "ob_status", "settings": {
+   "summary": "All systems operational",
+   "components": [
+    {"name": "Web app", "uptime": "99.98%", "degraded": "23"},
+    {"name": "Timeline and boards", "uptime": "99.95%", "degraded": "23, 61"},
+    {"name": "Notifications and email", "uptime": "99.91%", "degraded": "8, 9, 74"},
+    {"name": "Public API", "uptime": "99.99%", "degraded": ""},
+    {"name": "File attachments", "uptime": "99.97%", "degraded": "47"},
+    {"name": "Mobile sync", "uptime": "99.96%", "degraded": "61"}
+   ],
+   "incidents": [
+    {"date": "Sep 14, 2026", "title": "Delayed email notifications", "body": "A mail provider slowdown delayed some notification emails by up to 40 minutes. Nothing was lost; every email was delivered."},
+    {"date": "Aug 2, 2026", "title": "Slow timeline loading for large projects", "body": "Projects with more than 2,000 tasks loaded slowly for about an hour after a release. We rolled back, fixed the query and shipped again the next day."},
+    {"date": "Jul 21, 2026", "title": "Mobile sync paused", "body": "The iOS and Android apps stopped syncing for 18 minutes during database maintenance. Changes made offline synced automatically afterwards."}
+   ]}}
+ ]
+}

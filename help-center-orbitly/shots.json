@@ -1,0 +1,14 @@
+[
+  {"name": "01-home-hero-1440.png", "path": "/", "device": "desktop"},
+  {"name": "02-home-full-1440.png", "path": "/", "device": "desktop", "full_page": true},
+  {"name": "03-instant-search-1440.png", "path": "/", "device": "desktop", "type": [".hero input[name=q]", "invite"]},
+  {"name": "04-category-1440.png", "path": "/help/team-and-permissions", "device": "desktop", "full_page": true},
+  {"name": "05-article-1440.png", "path": "/articles/set-up-task-dependencies", "device": "desktop", "full_page": true},
+  {"name": "06-search-results-1440.png", "path": "/articles?q=calendar", "device": "desktop", "full_page": true},
+  {"name": "07-tag-filter-1440.png", "path": "/articles?tag=security", "device": "desktop", "full_page": true},
+  {"name": "08-topics-1440.png", "path": "/help", "device": "desktop", "full_page": true},
+  {"name": "09-changelog-1440.png", "path": "/changelog", "device": "desktop", "full_page": true},
+  {"name": "10-status-1440.png", "path": "/status", "device": "desktop", "full_page": true},
+  {"name": "11-home-mobile-390.png", "path": "/", "device": "mobile"},
+  {"name": "12-article-mobile-390.png", "path": "/articles/invite-people-to-your-workspace", "device": "mobile"}
+]
