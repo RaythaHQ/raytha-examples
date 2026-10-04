@@ -18,7 +18,8 @@ These examples go with the weekly [use cases on raytha.com](https://raytha.com/u
 
 | Example | What it shows |
 |---------|---------------|
-| [<img src="https://raytha.com/raytha/media-items/objectkey/CK4jAJJkZkK7NqGyHd0-1Q_horizon_summit_01_home_hero.webp" width="360" alt="Horizon Summit 2027">](conference-horizon-summit/) | **[Horizon Summit 2027](conference-horizon-summit/)**: a conference site with a filterable agenda, speaker and session pages, a tiered sponsor wall, `.ics` downloads from a Raytha Function, site search, and a members-only Attendee Hub. 5 content types, 14 widgets, 3 functions. |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/uzXF7ioaKU218L0jeugYbQ_horizon_summit_01_home_hero.webp" width="360" alt="Horizon Summit 2027">](conference-horizon-summit/) | **[Horizon Summit 2027](conference-horizon-summit/)**: a conference site with a filterable agenda, speaker and session pages, a tiered sponsor wall, `.ics` downloads from a Raytha Function, site search, and a members-only Attendee Hub. 5 content types, 14 widgets, 3 functions. |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/6t-jZhocvEqtk0SbE02k_A_groundwork_01_home_hero.webp" width="360" alt="Groundwork climate tech job board">](job-board-groundwork/) | **[Groundwork](job-board-groundwork/)**: a remote job board for climate tech with listings you can filter and search by category, location type, salary and skill, company profiles, an external Apply link and JobPosting JSON-LD on every job, RSS and JSON feeds from Raytha Functions, and a members-only salary hub. 2 content types, 10 widgets, 2 functions. |
 
 ## Quickstart
 
@@ -88,6 +89,7 @@ The examples were built from a short brief with no human help. To do the same fo
 ├── conference-horizon-summit/   # one folder per example
 │   ├── brief.md  README.md  build.sh  schema.json  shots.json
 │   ├── theme/  functions/  seed/  pages/  menus/  screenshots/
+├── job-board-groundwork/
 ├── skills/raytha-site-builder/  # agent skill: brief -> finished Raytha site
 ├── templates/brief-template.md  # fill-in brief
 ├── scripts/                     # new-example scaffold, screenshots, export, secret scan
