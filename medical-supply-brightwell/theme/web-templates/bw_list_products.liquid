@@ -1,0 +1,46 @@
+{%- comment -%} Product catalog. Filters come from query params (category, acquire, coverage, q); each value is checked against a known list before it goes into the filter. {%- endcomment -%}
+{%- assign base = PathBase | append: "/products" -%}
+{%- assign cats = get_content_items(ContentType="categories", OrderBy="sort_order asc", PageSize=20) -%}
+{%- assign q = QueryParams.q | strip | remove: "'" | remove: '"' | truncate: 40, "" -%}
+{%- assign qcat = "" -%}{%- assign qcatid = "" -%}{%- assign qcatname = "" -%}
+{%- for c in cats.Items -%}{%- assign s = c.RoutePath | remove: "equipment/" -%}{%- if QueryParams.category == s -%}{%- assign qcat = s -%}{%- assign qcatid = c.Id | append: "" -%}{%- assign qcatname = c.PrimaryField -%}{%- endif -%}{%- endfor -%}
+{%- assign qacq = "" -%}{%- if QueryParams.acquire == "rent" or QueryParams.acquire == "buy" -%}{%- assign qacq = QueryParams.acquire -%}{%- endif -%}
+{%- assign qcov = "" -%}{%- if QueryParams.coverage == "medicare" or QueryParams.coverage == "insurance" or QueryParams.coverage == "self_pay" -%}{%- assign qcov = QueryParams.coverage -%}{%- endif -%}
+{%- assign flt = "" -%}
+{%- if q != "" -%}{%- capture part %} and (contains(name,'{{ q }}') or contains(summary,'{{ q }}') or contains(hcpcs,'{{ q | upcase }}')){% endcapture -%}{%- assign flt = flt | append: part -%}{%- endif -%}
+{%- if qcatid != "" -%}{%- assign flt = flt | append: " and category eq '" | append: qcatid | append: "'" -%}{%- endif -%}
+{%- if qacq != "" -%}{%- capture part %} and (acquire eq '{{ qacq }}' or acquire eq 'rent_or_buy'){% endcapture -%}{%- assign flt = flt | append: part -%}{%- endif -%}
+{%- if qcov != "" -%}{%- assign flt = flt | append: " and coverage eq '" | append: qcov | append: "'" -%}{%- endif -%}
+{%- assign flt = flt | remove_first: " and " -%}
+{%- if flt != "" -%}{%- assign res = get_content_items(ContentType="products", Filter=flt, OrderBy="sort_order asc", PageSize=60) -%}{%- assign items = res.Items -%}{%- assign total = res.TotalCount -%}
+{%- else -%}{%- assign items = Target.Items -%}{%- assign total = Target.TotalCount -%}{%- endif -%}
+{%- capture kc %}{% if qcat != "" %}&category={{ qcat }}{% endif %}{% endcapture -%}{%- capture ka %}{% if qacq != "" %}&acquire={{ qacq }}{% endif %}{% endcapture -%}{%- capture kv %}{% if qcov != "" %}&coverage={{ qcov }}{% endif %}{% endcapture -%}{%- capture kq %}{% if q != "" %}&q={{ q | url_encode }}{% endif %}{% endcapture -%}
+<section class="phead"><div class="wrap"><div class="crumbs"><a href="{{ PathBase }}/">Home</a><span>/</span><a href="{{ base }}">All equipment</a>{% if qcatname != "" %}<span>/</span><span>{{ qcatname }}</span>{% endif %}</div>
+  <h1>{% if qcatname != "" %}{{ qcatname }}{% else %}All equipment{% endif %}</h1><p>Search by name or HCPCS code, then narrow by how you want to get it and how it is paid for. Call us to order. We never take payment online.</p></div></section>
+<section class="section" style="padding-top:40px"><div class="wrap side-layout">
+  <aside class="card side">
+    <form action="{{ base }}" method="get" class="filters" style="margin:0 0 14px"><div style="display:flex;width:100%;gap:6px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:4px 4px 4px 12px">{% if qcat != "" %}<input type="hidden" name="category" value="{{ qcat }}">{% endif %}<input name="q" value="{{ q }}" placeholder="Name or code" aria-label="Search equipment" style="width:100%"><button aria-label="Search" style="border:0;background:var(--teal);color:#fff;border-radius:8px;padding:.35rem .7rem"><i class="bi bi-search"></i></button></div></form>
+    <h4>Category</h4>
+    <a href="{{ base }}?x=1{{ ka }}{{ kv }}{{ kq }}" class="{% if qcat == '' %}on{% endif %}">All categories</a>
+    {% for c in cats.Items %}{% assign s = c.RoutePath | remove: "equipment/" %}<a href="{{ base }}?category={{ s }}{{ ka }}{{ kv }}{{ kq }}" class="{% if qcat == s %}on{% endif %}">{{ c.PrimaryField }}</a>{% endfor %}
+    <hr><h4>Rent or buy</h4>
+    <a href="{{ base }}?x=1{{ kc }}{{ kv }}{{ kq }}" class="{% if qacq == '' %}on{% endif %}">Either</a><a href="{{ base }}?acquire=rent{{ kc }}{{ kv }}{{ kq }}" class="{% if qacq == 'rent' %}on{% endif %}">Available to rent</a><a href="{{ base }}?acquire=buy{{ kc }}{{ kv }}{{ kq }}" class="{% if qacq == 'buy' %}on{% endif %}">Available to buy</a>
+    <hr><h4>Coverage</h4>
+    <a href="{{ base }}?x=1{{ kc }}{{ ka }}{{ kq }}" class="{% if qcov == '' %}on{% endif %}">Any</a><a href="{{ base }}?coverage=medicare{{ kc }}{{ ka }}{{ kq }}" class="{% if qcov == 'medicare' %}on{% endif %}">Medicare Part B</a><a href="{{ base }}?coverage=insurance{{ kc }}{{ ka }}{{ kq }}" class="{% if qcov == 'insurance' %}on{% endif %}">Private insurance</a><a href="{{ base }}?coverage=self_pay{{ kc }}{{ ka }}{{ kq }}" class="{% if qcov == 'self_pay' %}on{% endif %}">Self-pay, HSA and FSA</a>
+  </aside>
+  <div>
+    <div class="filters" style="justify-content:space-between"><span class="muted" style="font-weight:600">{{ total }} product{% if total != 1 %}s{% endif %}{% if q != "" %} matching “{{ q }}”{% endif %}</span>{% if flt != "" %}<a href="{{ base }}"><i class="bi bi-x-lg"></i> Clear filters</a>{% endif %}</div>
+    {% if total == 0 %}
+      <div class="card" style="padding:52px;text-align:center"><h2 style="font-size:1.7rem">Nothing matches those filters.</h2><p class="muted">Try fewer filters, or call <a href="tel:+18005550134" style="color:var(--teal);font-weight:700">(800) 555-0134</a> and we will find it for you.</p></div>
+    {% else %}
+    <div class="grid3">{% for x in items %}
+{%- capture acq %}{{ x.PublishedContent.acquire }}{% endcapture -%}{%- capture cov %}{{ x.PublishedContent.coverage }}{% endcapture -%}
+<a class="card prod-card lift reveal" href="{{ PathBase }}/{{ x.RoutePath }}">
+  <div class="im"><img src="{{ x.PublishedContent.image.Value | attachment_redirect_url }}" alt="" loading="lazy"><span class="pill code">HCPCS {{ x.PublishedContent.hcpcs }}</span></div>
+  <div class="bd"><span class="muted" style="font-size:.8rem;font-weight:700">{{ x.PublishedContent.category.PrimaryField }}</span><h3>{{ x.PrimaryField }}</h3><p>{{ x.PublishedContent.summary | truncate: 110 }}</p>
+  <div class="ft">{% if acq == "rent" %}<span class="pill">Rental</span>{% elsif acq == "buy" %}<span class="pill">Purchase</span>{% else %}<span class="pill">Rent or buy</span>{% endif %}{% if cov == "medicare" %}<span class="pill teal"><i class="bi bi-shield-check"></i> Medicare</span>{% elsif cov == "insurance" %}<span class="pill teal"><i class="bi bi-shield-check"></i> Insurance</span>{% else %}<span class="pill amber">HSA and FSA</span>{% endif %}</div></div>
+</a>
+{% endfor %}</div>
+    {% endif %}
+  </div>
+</div></section>
