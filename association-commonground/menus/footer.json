@@ -1,0 +1,30 @@
+{
+ "developerName": "footer",
+ "label": "Footer",
+ "items": [
+  {
+   "label": "Membership",
+   "link": "/membership"
+  },
+  {
+   "label": "Compare tiers",
+   "link": "/tiers"
+  },
+  {
+   "label": "Member sign in",
+   "link": "/account/login?returnUrl=/members"
+  },
+  {
+   "label": "Events",
+   "link": "/events"
+  },
+  {
+   "label": "About",
+   "link": "/about"
+  },
+  {
+   "label": "Contact",
+   "link": "/contact"
+  }
+ ]
+}

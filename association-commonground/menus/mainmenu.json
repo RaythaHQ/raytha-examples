@@ -1,0 +1,30 @@
+{
+ "developerName": "mainmenu",
+ "label": "Main menu",
+ "items": [
+  {
+   "label": "Membership",
+   "link": "/membership"
+  },
+  {
+   "label": "Events",
+   "link": "/events"
+  },
+  {
+   "label": "Chapters",
+   "link": "/chapters"
+  },
+  {
+   "label": "Resources",
+   "link": "/resources"
+  },
+  {
+   "label": "News",
+   "link": "/news"
+  },
+  {
+   "label": "About",
+   "link": "/about"
+  }
+ ]
+}

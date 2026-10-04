@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "contentTypes": [
+    {
+      "developerName": "tiers",
+      "labelPlural": "Membership tiers",
+      "labelSingular": "Membership tier",
+      "description": "Membership levels shown on the Membership page",
+      "defaultRouteTemplate": "membership/{PrimaryField}",
+      "primaryField": "name",
+      "fields": [
+        {"developerName": "name", "label": "Name", "description": "", "fieldType": "single_line_text", "isRequired": true, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "price", "label": "Price label", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "audience", "label": "Who it is for", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "benefits", "label": "Benefits (one per line)", "description": "", "fieldType": "long_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "highlight", "label": "Most popular", "description": "", "fieldType": "checkbox", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "sort_order", "label": "Sort order", "description": "", "fieldType": "number", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []}
+      ],
+      "views": [
+        {"developerName": "tiers", "label": "Tiers", "description": "", "isPublished": true, "routePath": "tiers", "template": "cg_list_tiers", "columns": ["PrimaryField"], "sort": [{"developerName": "sort_order", "direction": "asc"}], "filter": [], "defaultNumberOfItemsPerPage": 20, "maxNumberOfItemsPerPage": 1000, "ignoreClientFilterAndSortQueryParams": false}
+      ]
+    },
+    {
+      "developerName": "chapters",
+      "labelPlural": "Chapters",
+      "labelSingular": "Chapter",
+      "description": "Local chapters in the directory",
+      "defaultRouteTemplate": "chapters/{PrimaryField}",
+      "primaryField": "name",
+      "fields": [
+        {"developerName": "name", "label": "Name", "description": "", "fieldType": "single_line_text", "isRequired": true, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "region", "label": "Region", "description": "", "fieldType": "dropdown", "isRequired": false, "choices": [{"developerName": "northeast", "label": "Northeast", "disabled": false}, {"developerName": "southeast", "label": "Southeast", "disabled": false}, {"developerName": "midwest", "label": "Midwest", "disabled": false}, {"developerName": "southwest", "label": "Southwest", "disabled": false}, {"developerName": "west", "label": "West Coast", "disabled": false}, {"developerName": "mountain", "label": "Mountain", "disabled": false}], "relatedContentType": null, "subFields": []},
+        {"developerName": "city", "label": "City", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "state", "label": "State", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "founded", "label": "Founded", "description": "", "fieldType": "number", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "members", "label": "Members", "description": "", "fieldType": "number", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "gardens", "label": "Gardens", "description": "", "fieldType": "number", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "lead", "label": "Chapter lead", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "email", "label": "Contact email", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "meets", "label": "Meets", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "description", "label": "About the chapter", "description": "", "fieldType": "long_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "color", "label": "Colour", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []}
+      ],
+      "views": [
+        {"developerName": "chapters", "label": "Chapter directory", "description": "", "isPublished": true, "routePath": "chapters", "template": "cg_list_chapters", "columns": ["PrimaryField"], "sort": [{"developerName": "name", "direction": "asc"}], "filter": [], "defaultNumberOfItemsPerPage": 100, "maxNumberOfItemsPerPage": 1000, "ignoreClientFilterAndSortQueryParams": false}
+      ]
+    },
+    {
+      "developerName": "events",
+      "labelPlural": "Events",
+      "labelSingular": "Event",
+      "description": "Workshops, meetups and the annual conference",
+      "defaultRouteTemplate": "events/{PrimaryField}",
+      "primaryField": "title",
+      "fields": [
+        {"developerName": "title", "label": "Title", "description": "", "fieldType": "single_line_text", "isRequired": true, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "start", "label": "Date", "description": "", "fieldType": "date", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "time_label", "label": "Time", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "location", "label": "Location", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "chapter", "label": "Hosting chapter", "description": "", "fieldType": "one_to_one_relationship", "isRequired": false, "choices": [], "relatedContentType": "chapters", "subFields": []},
+        {"developerName": "format", "label": "Format", "description": "", "fieldType": "dropdown", "isRequired": false, "choices": [{"developerName": "in_person", "label": "In person", "disabled": false}, {"developerName": "online", "label": "Online", "disabled": false}, {"developerName": "hybrid", "label": "Hybrid", "disabled": false}], "relatedContentType": null, "subFields": []},
+        {"developerName": "audience", "label": "Who can come", "description": "", "fieldType": "dropdown", "isRequired": false, "choices": [{"developerName": "open", "label": "Open to everyone", "disabled": false}, {"developerName": "members", "label": "Members only", "disabled": false}], "relatedContentType": null, "subFields": []},
+        {"developerName": "summary", "label": "Summary", "description": "", "fieldType": "long_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "body", "label": "Details", "description": "", "fieldType": "wysiwyg", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "register_url", "label": "Registration link", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "image", "label": "Image", "description": "", "fieldType": "attachment", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []}
+      ],
+      "views": [
+        {"developerName": "events", "label": "Events", "description": "", "isPublished": true, "routePath": "events", "template": "cg_list_events", "columns": ["PrimaryField"], "sort": [{"developerName": "start", "direction": "asc"}], "filter": [], "defaultNumberOfItemsPerPage": 100, "maxNumberOfItemsPerPage": 1000, "ignoreClientFilterAndSortQueryParams": false}
+      ]
+    },
+    {
+      "developerName": "news",
+      "labelPlural": "News",
+      "labelSingular": "News story",
+      "description": "Association news",
+      "defaultRouteTemplate": "news/{PrimaryField}",
+      "primaryField": "title",
+      "fields": [
+        {"developerName": "title", "label": "Title", "description": "", "fieldType": "single_line_text", "isRequired": true, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "published_on", "label": "Published", "description": "", "fieldType": "date", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "topic", "label": "Topic", "description": "", "fieldType": "dropdown", "isRequired": false, "choices": [{"developerName": "association", "label": "Association", "disabled": false}, {"developerName": "chapters", "label": "Chapters", "disabled": false}, {"developerName": "policy", "label": "Policy", "disabled": false}, {"developerName": "growing", "label": "Growing", "disabled": false}], "relatedContentType": null, "subFields": []},
+        {"developerName": "author", "label": "Author", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "excerpt", "label": "Excerpt", "description": "", "fieldType": "long_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "body", "label": "Story", "description": "", "fieldType": "wysiwyg", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "image", "label": "Image", "description": "", "fieldType": "attachment", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []}
+      ],
+      "views": [
+        {"developerName": "news", "label": "News", "description": "", "isPublished": true, "routePath": "news", "template": "cg_list_news", "columns": ["PrimaryField"], "sort": [{"developerName": "published_on", "direction": "desc"}], "filter": [], "defaultNumberOfItemsPerPage": 30, "maxNumberOfItemsPerPage": 1000, "ignoreClientFilterAndSortQueryParams": false}
+      ]
+    },
+    {
+      "developerName": "resources",
+      "labelPlural": "Member resources",
+      "labelSingular": "Member resource",
+      "description": "Toolkits, templates and recordings for members. Bodies only render for the members group.",
+      "defaultRouteTemplate": "resources/{PrimaryField}",
+      "primaryField": "title",
+      "fields": [
+        {"developerName": "title", "label": "Title", "description": "", "fieldType": "single_line_text", "isRequired": true, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "kind", "label": "Kind", "description": "", "fieldType": "dropdown", "isRequired": false, "choices": [{"developerName": "toolkit", "label": "Toolkit", "disabled": false}, {"developerName": "template", "label": "Template", "disabled": false}, {"developerName": "recording", "label": "Recording", "disabled": false}, {"developerName": "guide", "label": "Guide", "disabled": false}], "relatedContentType": null, "subFields": []},
+        {"developerName": "summary", "label": "Summary (public)", "description": "", "fieldType": "long_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "body", "label": "Content (members only)", "description": "", "fieldType": "wysiwyg", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "meta", "label": "Length or format", "description": "", "fieldType": "single_line_text", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []},
+        {"developerName": "sort_order", "label": "Sort order", "description": "", "fieldType": "number", "isRequired": false, "choices": [], "relatedContentType": null, "subFields": []}
+      ],
+      "views": [
+        {"developerName": "resources", "label": "Member resources", "description": "", "isPublished": true, "routePath": "resources", "template": "cg_list_resources", "columns": ["PrimaryField"], "sort": [{"developerName": "sort_order", "direction": "asc"}], "filter": [], "defaultNumberOfItemsPerPage": 50, "maxNumberOfItemsPerPage": 1000, "ignoreClientFilterAndSortQueryParams": false}
+      ]
+    }
+  ]
+}

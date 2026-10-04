@@ -1,0 +1,19 @@
+[
+  {"name": "01-home-hero-1440.png", "path": "/", "device": "desktop"},
+  {"name": "02-home-full-1440.png", "path": "/", "device": "desktop", "full_page": true},
+  {"name": "03-membership-1440.png", "path": "/membership", "device": "desktop", "full_page": true},
+  {"name": "04-tier-1440.png", "path": "/membership/household", "device": "desktop", "full_page": true},
+  {"name": "05-chapters-1440.png", "path": "/chapters", "device": "desktop", "full_page": true},
+  {"name": "06-chapter-1440.png", "path": "/chapters/philadelphia-lot-gardens", "device": "desktop", "full_page": true},
+  {"name": "07-events-1440.png", "path": "/events", "device": "desktop", "full_page": true},
+  {"name": "08-event-1440.png", "path": "/events/commonground-gathering-2027", "device": "desktop", "full_page": true},
+  {"name": "09-resources-locked-1440.png", "path": "/resources", "device": "desktop", "full_page": true},
+  {"name": "10-resource-locked-1440.png", "path": "/resources/starting-a-community-garden-toolkit", "device": "desktop"},
+  {"name": "11-member-dashboard-1440.png", "path": "/members", "device": "desktop", "full_page": true, "login": true},
+  {"name": "12-resource-open-1440.png", "path": "/resources/starting-a-community-garden-toolkit", "device": "desktop", "full_page": true, "login": true},
+  {"name": "13-news-1440.png", "path": "/news", "device": "desktop", "full_page": true},
+  {"name": "14-login-1440.png", "path": "/account/login?returnUrl=/members", "device": "desktop"},
+  {"name": "15-home-mobile-390.png", "path": "/", "device": "mobile"},
+  {"name": "16-chapters-mobile-390.png", "path": "/chapters", "device": "mobile"},
+  {"name": "17-membership-mobile-390.png", "path": "/membership", "device": "mobile", "scroll": 560}
+]

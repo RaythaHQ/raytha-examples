@@ -1,0 +1,189 @@
+{
+  "slug": "commonground-association",
+  "name": "Commonground Association",
+  "viewport": [
+    1440,
+    810
+  ],
+  "output": [
+    1920,
+    1080
+  ],
+  "colorScheme": "dark",
+  "title": {
+    "kicker": "Raytha use case",
+    "heading": "Commonground Association",
+    "subheading": "A nonprofit membership association with tiers, a chapter directory, events, news and a members-only resource library, built on Raytha by an AI agent with the CLI.",
+    "hold": 1.3
+  },
+  "end": {
+    "heading": "Built with Raytha",
+    "subheading": "Open-source .NET CMS. Get the brief, screenshots and a one-command rebuild kit.",
+    "url": "raytha.com/use-cases/commonground-association",
+    "hold": 2.3
+  },
+  "scenes": [
+    {
+      "url": "/",
+      "caption": "A member association home: benefits, events and tiers",
+      "actions": [
+        {
+          "hold": 0.9,
+          "poster": true
+        },
+        {
+          "scroll": 1900,
+          "dur": 2.4
+        },
+        {
+          "hold": 0.6
+        }
+      ]
+    },
+    {
+      "url": "/membership",
+      "caption": "Four tiers. Joining goes to a clearly marked external partner",
+      "actions": [
+        {
+          "hold": 0.3
+        },
+        {
+          "scroll": 380,
+          "dur": 1.1
+        },
+        {
+          "hold": 0.7
+        },
+        {
+          "scroll": 1150,
+          "dur": 1.2
+        },
+        {
+          "hold": 0.4
+        }
+      ]
+    },
+    {
+      "url": "/chapters",
+      "caption": "A chapter directory with a map and region filters",
+      "actions": [
+        {
+          "hold": 0.8
+        },
+        {
+          "hold": 0.4
+        },
+        {
+          "scroll": {
+            "selector": ".filters",
+            "offset": 300
+          },
+          "dur": 0.8
+        },
+        {
+          "click": ".filters a[href*='region=northeast']",
+          "dur": 0.9
+        },
+        {
+          "scroll": {
+            "selector": "a.chap",
+            "offset": 260
+          },
+          "dur": 1.0
+        },
+        {
+          "hold": 0.4
+        },
+        {
+          "click": "a.chap",
+          "dur": 0.9
+        },
+        {
+          "hold": 0.6
+        },
+        {
+          "scroll": 300,
+          "dur": 1.0
+        },
+        {
+          "hold": 0.4
+        }
+      ]
+    },
+    {
+      "url": "/resources/starting-a-community-garden-toolkit",
+      "caption": "Library resources are locked for visitors",
+      "actions": [
+        {
+          "hold": 1.1
+        },
+        {
+          "scroll": 160,
+          "dur": 0.7
+        },
+        {
+          "hold": 0.4
+        }
+      ]
+    },
+    {
+      "url": "/members",
+      "signin": true,
+      "caption": "Members sign in with Raytha and get their dashboard",
+      "actions": [
+        {
+          "hold": 1.0
+        },
+        {
+          "scroll": {
+            "selector": "a.res",
+            "offset": 300
+          },
+          "dur": 1.4
+        },
+        {
+          "hold": 0.4
+        },
+        {
+          "click": "a.res",
+          "dur": 0.9
+        },
+        {
+          "hold": 0.5
+        },
+        {
+          "scroll": 300,
+          "dur": 1.0
+        },
+        {
+          "hold": 0.6
+        }
+      ]
+    },
+    {
+      "url": "/",
+      "phone": true,
+      "phoneCaption": {
+        "kicker": "Responsive",
+        "text": "Join and browse from a phone"
+      },
+      "actions": [
+        {
+          "hold": 0.5
+        },
+        {
+          "scroll": 1500,
+          "dur": 2.2
+        },
+        {
+          "hold": 0.4
+        }
+      ]
+    }
+  ],
+  "login": {
+    "path": "/account/login",
+    "emailEnv": "SITE_USER_EMAIL",
+    "passwordEnv": "SITE_USER_PASSWORD"
+  }
+}

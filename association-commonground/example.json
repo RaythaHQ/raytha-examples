@@ -1,0 +1,24 @@
+{
+ "name": "Commonground Association",
+ "theme": "commonground",
+ "types": [
+  "tiers",
+  "chapters",
+  "events",
+  "news",
+  "resources"
+ ],
+ "detailTemplates": {
+  "tiers": "cg_detail_tiers",
+  "chapters": "cg_detail_chapters",
+  "events": "cg_detail_events",
+  "news": "cg_detail_news",
+  "resources": "cg_detail_resources"
+ },
+ "groups": [
+  {
+   "developerName": "members",
+   "label": "Members"
+  }
+ ]
+}

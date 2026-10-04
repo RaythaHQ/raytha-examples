@@ -1,0 +1,23 @@
+# Brief: Commonground, a nonprofit membership association website
+
+The brief as the agent got it.
+
+> Build a website for a nonprofit membership association on a fresh Raytha instance with the `raytha` CLI. No
+> clicking around the admin.
+
+## Look and feel
+
+- Visually impressive, with a design of its own. No wide display fonts.
+- Responsive. It has to look good on a phone as well as a desktop.
+
+## Content and pages
+
+- Member benefits, membership tiers, events, news and a chapter directory.
+- No payments. Joining can be a clearly labelled external link or a contact path.
+- A members-only resource area that uses Raytha login.
+
+## Done means
+
+- `raytha check` passes with no broken routes.
+- Screenshots of the result on desktop and mobile, and a walkthrough video.
+- A kit in this repository that rebuilds the site on a fresh install.
