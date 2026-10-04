@@ -1,0 +1,25 @@
+{%- assign feat = get_content_items(ContentType="courses", Filter="featured eq 'true'", OrderBy="sort_order asc", PageSize=3) -%}
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="reveal">
+      <span class="label dot">{{ widget.settings.kicker }}</span>
+      <h1>{{ widget.settings.headline }} <em>{{ widget.settings.accent }}</em></h1>
+      <p class="lead">{{ widget.settings.subtitle }}</p>
+      <div class="ctas">
+        <a class="btn btn-ink" href="{{ widget.settings.primary_url }}">{{ widget.settings.primary_label }} <i class="bi bi-arrow-right"></i></a>
+        <a class="btn btn-line" href="{{ widget.settings.secondary_url }}"><i class="bi bi-play-circle"></i> {{ widget.settings.secondary_label }}</a>
+      </div>
+      <div class="stats">{% for s in widget.settings.stats %}<div><b>{{ s.value }}</b><span>{{ s.label }}</span></div>{% endfor %}</div>
+    </div>
+    <div class="stack" aria-hidden="true">
+      {%- for c in feat.Items %}
+      <a class="cv c{{ forloop.index }}" href="{{ PathBase }}/{{ c.RoutePath }}" tabindex="-1">
+        <img src="{{ c.PublishedContent.cover.Value | attachment_redirect_url }}" alt="">
+        <div class="cap"><b>{{ c.PrimaryField }}</b><span>{{ c.PublishedContent.instructor.PrimaryField }} · {{ c.PublishedContent.hours | append: "" }} hours</span></div>
+      </a>
+      {%- endfor %}
+      <div class="float q"><i class="bi bi-unlock"></i> Free preview lessons</div>
+      <div class="float p"><div class="label" style="color:#a79f90">Continue learning</div><b style="display:block;font:700 1.05rem/1.25 var(--display);margin-top:6px">Joins without double counting</b><div class="bar"><i></i></div><small style="color:#a79f90;font-size:.78rem">Lesson 4 of 5 · 64%</small></div>
+    </div>
+  </div>
+</section>

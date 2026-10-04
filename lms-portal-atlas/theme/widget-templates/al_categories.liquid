@@ -1,0 +1,15 @@
+{%- assign keys = "data,design,product,leadership" | split: "," -%}
+{%- assign names = "Data and analytics,Design,Product,Leadership" | split: "," -%}
+{%- assign icons = "bar-chart-line,vector-pen,signpost-split,people" | split: "," -%}
+{%- assign bgs = "#f2a20c,#3d5af1,#1f4d3a,#e8553d" | split: "," -%}
+{%- assign fgs = "#17140f,#f4efe6,#f4efe6,#17140f" | split: "," -%}
+<section class="section tight">
+  <div class="wrap">
+    <div class="shead"><div><span class="label dot">{{ widget.settings.kicker }}</span><h2>{{ widget.settings.headline }}</h2></div><a class="btn btn-line" href="{{ PathBase }}/courses">Full catalog <i class="bi bi-arrow-right"></i></a></div>
+    <div class="cats">
+      {%- for k in keys %}{% capture f %}category eq '{{ k }}'{% endcapture %}{% assign r = get_content_items(ContentType="courses", Filter=f, PageSize=1) %}
+      <a class="cat lift reveal" style="--c:{{ bgs[forloop.index0] }};--fg:{{ fgs[forloop.index0] }}" href="{{ PathBase }}/courses?category={{ k }}"><i class="bi bi-{{ icons[forloop.index0] }}"></i><h3>{{ names[forloop.index0] }}</h3><span>{{ r.TotalCount }} course{% if r.TotalCount != 1 %}s{% endif %}</span></a>
+      {%- endfor %}
+    </div>
+  </div>
+</section>

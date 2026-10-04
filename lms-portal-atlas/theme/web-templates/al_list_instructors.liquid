@@ -1,0 +1,12 @@
+<section class="phead"><div class="wrap"><div class="crumbs"><a href="{{ PathBase }}/">Home</a><span>/</span><span>Instructors</span></div><h1>Taught by people who do the work.</h1><p>Every Atlas instructor teaches what they practise every week. Pick a person, see their courses.</p></div></section>
+<section style="padding-bottom:96px"><div class="wrap">
+  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:24px" id="ingrid">
+  {%- for p in Target.Items %}{% capture pf %}instructor eq '{{ p.Id | append: "" }}'{% endcapture %}{% assign pc = get_content_items(ContentType="courses", Filter=pf, OrderBy="sort_order asc", PageSize=10) %}
+    <a class="card lift reveal" href="{{ PathBase }}/{{ p.RoutePath }}" style="display:grid;grid-template-columns:200px 1fr;overflow:hidden">
+      <img src="{{ p.PublishedContent.photo.Value | attachment_redirect_url }}" alt="Illustrated portrait of {{ p.PrimaryField }}" style="height:100%;object-fit:cover">
+      <div style="padding:26px"><span class="label">{{ pc.TotalCount }} course{% if pc.TotalCount != 1 %}s{% endif %}</span><h2 style="font-size:1.9rem;margin:10px 0 4px">{{ p.PrimaryField }}</h2><p style="margin:0 0 12px;font-weight:600;color:var(--ink2)">{{ p.PublishedContent.role }}</p><p class="muted" style="margin:0 0 16px;font-size:.95rem">{{ p.PublishedContent.bio | truncate: 150 }}</p><div style="display:flex;gap:6px;flex-wrap:wrap">{% for c in pc.Items %}<span class="chip">{{ c.PrimaryField }}</span>{% endfor %}</div></div>
+    </a>
+  {%- endfor %}
+  </div>
+  <style>@media(max-width:900px){#ingrid{grid-template-columns:1fr!important}}@media(max-width:560px){#ingrid>a{grid-template-columns:1fr!important}#ingrid img{aspect-ratio:4/3}}</style>
+</div></section>

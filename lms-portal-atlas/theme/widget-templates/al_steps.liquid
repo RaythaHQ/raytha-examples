@@ -1,0 +1,6 @@
+<section class="section" style="background:var(--card);border-block:1px solid var(--line)">
+  <div class="wrap">
+    <div class="shead"><div><span class="label dot">{{ widget.settings.kicker }}</span><h2>{{ widget.settings.headline }}</h2></div></div>
+    <div class="steps">{% for s in widget.settings.steps %}<div class="reveal"><b>0{{ forloop.index }}</b><h3>{{ s.title }}</h3><p>{{ s.body }}</p></div>{% endfor %}</div>
+  </div>
+</section>

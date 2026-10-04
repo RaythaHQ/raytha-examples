@@ -1,0 +1,9 @@
+<section class="section" style="min-height:62vh;display:flex;align-items:center">
+  <div class="wrap">
+    <span class="label dot">Error 404</span>
+    <h1 style="font-size:clamp(3rem,8vw,6.4rem);margin:18px 0 16px;letter-spacing:-.05em">This lesson is <em style="font-style:normal;background:linear-gradient(transparent 62%,var(--saffron) 62%)">off the map.</em></h1>
+    <p style="font-size:1.2rem;color:var(--ink2);max-width:560px">The page may have moved, or it never existed. The catalog is a good place to find your way again.</p>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:28px"><a class="btn btn-ink" href="{{ PathBase }}/courses">Browse courses <i class="bi bi-arrow-right"></i></a><a class="btn btn-line" href="{{ PathBase }}/">Home</a></div>
+    {% if Target.ErrorId %}<p class="muted" style="margin-top:24px;font-size:.8rem">Error id: {{ Target.ErrorId }}</p>{% endif %}
+  </div>
+</section>

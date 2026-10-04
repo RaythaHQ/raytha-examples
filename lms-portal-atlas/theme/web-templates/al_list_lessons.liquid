@@ -1,0 +1,13 @@
+{%- comment -%} Every free preview lesson across the catalog. {%- endcomment -%}
+{%- assign res = get_content_items(ContentType="lessons", Filter="is_preview eq 'true'", OrderBy="lesson_number asc", PageSize=100) -%}
+<section class="phead"><div class="wrap"><div class="crumbs"><a href="{{ PathBase }}/">Home</a><span>/</span><span>Free lessons</span></div><h1>Try before you join.</h1><p>{{ res.TotalCount }} lessons from across the catalog are open to everyone. No account needed.</p></div></section>
+<section style="padding-bottom:96px"><div class="wrap">
+  <div class="grid3">
+  {%- for l in res.Items %}{% assign lp = l.PublishedContent %}{% assign cp = lp.course.PublishedContent %}{% capture kind %}{{ lp.kind }}{% endcapture %}
+    <a class="card course lift reveal" href="{{ PathBase }}/{{ l.RoutePath }}" style="--c:{{ cp.accent }}">
+      <div class="cv" style="aspect-ratio:16/8"><img src="{{ cp.cover.Value | attachment_redirect_url }}" alt="" loading="lazy" style="opacity:.92"><span class="chip free"><i class="bi bi-unlock"></i> Free preview</span><span style="position:absolute;right:14px;bottom:14px;width:46px;height:46px;border-radius:50%;background:var(--paper);display:grid;place-items:center;font-size:1.3rem"><i class="bi bi-{% if kind == 'video' %}play-fill{% elsif kind == 'exercise' %}pencil{% else %}book{% endif %}"></i></span></div>
+      <div class="body"><span class="label" style="font-size:.66rem">{{ lp.course.PrimaryField }}</span><h3 style="font-size:1.3rem">{{ l.PrimaryField }}</h3><p>{{ lp.summary }}</p><div class="meta"><span><i class="bi bi-clock"></i> {{ lp.minutes | append: "" }} min</span><span>{{ kind | capitalize }}</span><span style="margin-left:auto">Lesson {{ lp.lesson_number | append: "" }}</span></div></div>
+    </a>
+  {%- endfor %}
+  </div>
+</div></section>

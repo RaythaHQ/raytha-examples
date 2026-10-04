@@ -1,0 +1,7 @@
+<section class="section tight">
+  <div class="wrap" style="display:grid;grid-template-columns:1fr 1.4fr;gap:56px" id="faqgrid">
+    <div><span class="label dot">{{ widget.settings.kicker }}</span><h2 style="font-size:clamp(2rem,4vw,3rem);margin-top:12px">{{ widget.settings.headline }}</h2></div>
+    <div>{% for i in widget.settings.items %}<details class="card reveal" style="padding:20px 24px;margin-bottom:12px"{% if forloop.first %} open{% endif %}><summary style="font:700 1.15rem var(--display);letter-spacing:-.02em;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:12px">{{ i.q }}<i class="bi bi-plus-lg"></i></summary><p class="muted" style="margin:12px 0 0">{{ i.a }}</p></details>{% endfor %}</div>
+  </div>
+  <style>@media(max-width:900px){#faqgrid{grid-template-columns:1fr!important;gap:24px!important}}</style>
+</section>

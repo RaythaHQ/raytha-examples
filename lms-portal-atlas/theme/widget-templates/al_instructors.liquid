@@ -1,0 +1,7 @@
+{%- assign ps = get_content_items(ContentType="instructors", OrderBy="sort_order asc", PageSize=8) -%}
+<section class="section">
+  <div class="wrap">
+    <div class="shead"><div><span class="label dot">{{ widget.settings.kicker }}</span><h2>{{ widget.settings.headline }}</h2></div><a class="btn btn-line" href="{{ PathBase }}/instructors">All instructors</a></div>
+    <div class="people">{% for p in ps.Items %}<a class="card person lift reveal" href="{{ PathBase }}/{{ p.RoutePath }}"><div style="overflow:hidden"><img src="{{ p.PublishedContent.photo.Value | attachment_redirect_url }}" alt="Illustrated portrait of {{ p.PrimaryField }}" loading="lazy"></div><div class="pi"><h3>{{ p.PrimaryField }}</h3><p>{{ p.PublishedContent.role }}</p></div></a>{% endfor %}</div>
+  </div>
+</section>
