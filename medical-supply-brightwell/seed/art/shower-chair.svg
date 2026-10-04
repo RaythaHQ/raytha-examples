@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="Illustration">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#dff2ee"/><stop offset="1" stop-color="#e8f1f8"/></linearGradient></defs>
+<rect width="800" height="600" fill="url(#bg)"/><circle cx="640" cy="120" r="150" fill="#ffffff" opacity=".55"/><circle cx="130" cy="520" r="90" fill="#0f8b8d" opacity=".08"/>
+<ellipse cx="400" cy="530" rx="300" ry="26" fill="#0b2545" opacity=".08"/>
+<rect x="280" y="300" width="240" height="40" rx="16" fill="#0f8b8d"/><path d="M300 340 L280 500 M500 340 L520 500 M330 340 L330 480 M470 340 L470 480 M300 300 L300 160 L500 160 L500 300" fill="none" stroke="#0b2545" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/><rect x="320" y="180" width="160" height="80" rx="16" fill="#ffffff" stroke="#0b2545" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="360" cy="320" r="5" fill="#ffffff"/><circle cx="400" cy="320" r="5" fill="#ffffff"/><circle cx="440" cy="320" r="5" fill="#ffffff"/><path d="M270 500 h30 M500 500 h30" stroke="#0b2545" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
