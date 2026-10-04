@@ -1,0 +1,8 @@
+{%- assign all = get_content_items(ContentType="articles", OrderBy="published_on desc", PageSize=200) -%}
+<section class="ph"><div class="wrap"><span class="kick">Masthead</span><h1>Our newsroom</h1><p>The reporters and editors of the Harbor Ledger. Every byline links to a page with that reporter's beat, contact details and recent work.</p></div></section>
+<section class="wrap" style="padding-top:30px"><div class="stg">
+{%- for a in Target.Items %}{% assign c = a.PublishedContent %}{% assign ws = a.PrimaryField | split: " " %}{% assign n = 0 %}{% for x in all.Items %}{% if x.PublishedContent.author.PrimaryField == a.PrimaryField %}{% assign n = n | plus: 1 %}{% endif %}{% endfor %}
+  <a class="st" href="{{ PathBase }}/{{ a.RoutePath }}"><span class="av" style="background:{{ c.color }};width:64px;height:64px;font-size:1.2rem">{{ ws[0] | slice: 0 }}{{ ws[1] | slice: 0 }}</span><span><h2 class="h-m hd">{{ a.PrimaryField }}</h2><span class="kick" style="color:var(--ink2);margin-top:6px">{{ c.role }}</span><span class="mut" style="display:block;font-size:.88rem;margin-top:6px">{{ c.beat }} &middot; {{ n }} {% if n == 1 %}story{% else %}stories{% endif %}</span></span></a>
+{%- endfor %}
+</div></section>
+<style>.stg{display:grid;grid-template-columns:repeat(2,1fr);gap:0 40px}.st{display:flex;gap:18px;align-items:center;padding:22px 0;border-top:1px solid var(--line)}@media(max-width:800px){.stg{grid-template-columns:1fr}}</style>

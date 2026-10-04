@@ -1,0 +1,7 @@
+{%- assign first = "" %}{% for u in Target.Items %}{% if forloop.first %}{% assign story = u.PublishedContent.story %}{% endif %}{% endfor -%}
+<section class="ph"><div class="wrap"><span class="livedot red">Live</span><h1>Live updates</h1><p>Short, timestamped posts from our reporters on developing stories, newest first. Corrections are posted in the feed, not made silently.</p>{% if story %}<p style="margin-top:14px"><a class="btn btn-dark" href="{{ PathBase }}/{{ story.RoutePath }}">Read the full story <i class="bi bi-arrow-right"></i></a></p>{% endif %}</div></section>
+<section class="wrap narrow" style="padding:20px 28px 0">
+{%- for u in Target.Items %}{% assign p = u.PublishedContent %}{% capture uk %}{{ p.kind }}{% endcapture %}
+  <a class="row" href="{{ PathBase }}/{{ u.RoutePath }}"><span class="when"><b>{{ p.time_label }}</b>{{ p.posted_on.Value | date: "%b %-d, %Y" }}</span><span>{% if uk == "key" %}<span class="pill" style="background:var(--red);color:#fff">Key development</span>{% elsif uk == "official" %}<span class="pill" style="background:var(--navy);color:#fff">Official</span>{% elsif uk == "correction" %}<span class="pill" style="background:#f3e3b5;color:#5c4400">Correction</span>{% endif %}<h2 class="h-m hd" style="margin:6px 0 4px">{{ u.PrimaryField }}</h2><span class="mut" style="font-size:.86rem">{{ p.story.PrimaryField }}</span></span></a>
+{%- endfor %}
+</section>
