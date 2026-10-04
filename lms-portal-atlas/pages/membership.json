@@ -1,0 +1,17 @@
+{
+ "header": [
+  {"widgetType": "al_page_header", "settings": {"kicker": "Membership", "headline": "Every lesson, one membership.", "subtitle": "Free preview lessons are open to everyone. Members unlock the full catalog and a personal dashboard to track progress."}}
+ ],
+ "main": [
+  {"widgetType": "al_steps", "settings": {"kicker": "What members get", "headline": "More than the previews", "steps": [
+   {"title": "Every lesson", "body": "All 35 lessons across seven courses, including exercises and quizzes, with new courses each season."},
+   {"title": "My learning", "body": "A personal dashboard with every course, your progress and a one-click way to resume your last lesson."},
+   {"title": "Practical work", "body": "Exercises built around real tasks, so you can use what you learned with your team the same week."}]}},
+  {"widgetType": "al_faq", "settings": {"kicker": "Questions", "headline": "Good to know", "items": [
+   {"q": "How do I become a member?", "a": "Most members join through their company's team plan. If your team does not have one yet, email hello@example.com and we will set you up. Atlas is a demo, so no payment is taken anywhere on this site."},
+   {"q": "What can I watch without signing in?", "a": "The first lesson of every course, and a second lesson in some courses. They are listed together on the Free lessons page."},
+   {"q": "Where is my progress stored?", "a": "When you mark a lesson complete, the progress is saved in your browser. Your dashboard reads it to show how far you are through each course."},
+   {"q": "Can I get a certificate?", "a": "Not yet. Certificates for completed courses are on the roadmap for next season."}]}},
+  {"widgetType": "al_cta", "settings": {"headline": "Ready when you are.", "subtitle": "Start with a free lesson today, and sign in whenever your membership is ready.", "primary_label": "Try a free lesson", "primary_url": "/free-lessons", "secondary_label": "Sign in", "secondary_url": "/account/login"}}
+ ]
+}

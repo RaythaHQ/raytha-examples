@@ -1,0 +1,22 @@
+{
+ "hero": [
+  {"widgetType": "al_hero", "settings": {
+   "kicker": "Online courses for working teams",
+   "headline": "Learn the skills your next role",
+   "accent": "actually needs.",
+   "subtitle": "Short, practical courses in data, design, product and leadership. Taught by people who do the work, with free preview lessons in every course.",
+   "primary_label": "Browse the catalog", "primary_url": "/courses",
+   "secondary_label": "Try a free lesson", "secondary_url": "/free-lessons",
+   "stats": [{"value": "7", "label": "courses"}, {"value": "35", "label": "lessons"}, {"value": "24k+", "label": "learners"}, {"value": "4.8", "label": "average rating"}]}}
+ ],
+ "main": [
+  {"widgetType": "al_categories", "settings": {"kicker": "Topics", "headline": "Four tracks, one membership"}},
+  {"widgetType": "al_featured", "settings": {"kicker": "Most popular", "headline": "Courses people finish", "subtitle": "Each course is a few hours long, split into short lessons you can fit into a lunch break.", "count": 6}},
+  {"widgetType": "al_steps", "settings": {"kicker": "How it works", "headline": "Start free, then go all in", "steps": [
+   {"title": "Preview any course", "body": "The first lesson of every course is free. No account, no card, just press play."},
+   {"title": "Sign in as a member", "body": "Members unlock every lesson in the catalog. Memberships come through your team or by request."},
+   {"title": "Track your progress", "body": "Mark lessons complete and pick up where you left off from your personal dashboard."}]}},
+  {"widgetType": "al_instructors", "settings": {"kicker": "Instructors", "headline": "Learn from practitioners"}},
+  {"widgetType": "al_cta", "settings": {"headline": "One membership. Every course.", "subtitle": "Unlock all 35 lessons across the catalog, with new courses added every season.", "primary_label": "How membership works", "primary_url": "/membership", "secondary_label": "Sign in", "secondary_url": "/account/login"}}
+ ]
+}

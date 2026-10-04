@@ -1,0 +1,5 @@
+[
+ {"title": "Atlas Learning", "routePath": "home", "template": "al_home", "sections": "pages/home.json", "home": true},
+ {"title": "Membership", "routePath": "membership", "template": "al_page", "sections": "pages/membership.json", "home": false},
+ {"title": "My learning", "routePath": "my-learning", "template": "al_members", "sections": "pages/my-learning.json", "home": false}
+]

@@ -1,0 +1,16 @@
+[
+  {"name": "01-home-hero-1440.png", "path": "/", "device": "desktop"},
+  {"name": "02-home-full-1440.png", "path": "/", "device": "desktop", "full_page": true},
+  {"name": "03-catalog-1440.png", "path": "/courses", "device": "desktop", "full_page": true},
+  {"name": "04-course-1440.png", "path": "/courses/sql-for-product-questions", "device": "desktop", "full_page": true},
+  {"name": "05-free-lesson-1440.png", "path": "/learn/why-product-people-should-write-sql", "device": "desktop", "full_page": true},
+  {"name": "06-locked-lesson-1440.png", "path": "/learn/joins-without-double-counting", "device": "desktop"},
+  {"name": "07-sign-in-1440.png", "path": "/account/login?returnUrl=/my-learning", "device": "desktop"},
+  {"name": "08-member-lesson-1440.png", "path": "/learn/joins-without-double-counting", "device": "desktop", "full_page": true, "login": true, "local": {"atlas:done": ["/learn/why-product-people-should-write-sql", "/learn/a-tour-of-the-product-database", "/learn/filtering-and-counting"]}},
+  {"name": "09-my-learning-1440.png", "path": "/my-learning", "device": "desktop", "full_page": true, "login": true, "local": {"atlas:done": ["/learn/why-product-people-should-write-sql", "/learn/a-tour-of-the-product-database", "/learn/filtering-and-counting", "/learn/joins-without-double-counting", "/learn/what-a-design-system-is-for", "/learn/running-an-interface-audit", "/learn/your-first-ninety-days"], "atlas:last": {"u": "/learn/joins-without-double-counting", "t": "Joins without double counting"}}},
+  {"name": "10-instructor-1440.png", "path": "/instructors/mateo-alvarez", "device": "desktop", "full_page": true},
+  {"name": "11-free-lessons-1440.png", "path": "/free-lessons", "device": "desktop", "full_page": true},
+  {"name": "12-home-mobile-390.png", "path": "/", "device": "mobile"},
+  {"name": "13-course-mobile-390.png", "path": "/courses/leading-your-first-team", "device": "mobile"},
+  {"name": "14-locked-mobile-390.png", "path": "/learn/one-to-ones-that-matter", "device": "mobile"}
+]

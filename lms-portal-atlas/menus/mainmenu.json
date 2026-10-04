@@ -1,0 +1,10 @@
+{
+ "developerName": "mainmenu",
+ "label": "Main menu",
+ "items": [
+  {"label": "Courses", "link": "/courses"},
+  {"label": "Free lessons", "link": "/free-lessons"},
+  {"label": "Instructors", "link": "/instructors"},
+  {"label": "Membership", "link": "/membership"}
+ ]
+}

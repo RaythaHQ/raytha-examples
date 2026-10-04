@@ -1,0 +1,7 @@
+{
+  "name": "Atlas Learning",
+  "theme": "atlas",
+  "types": ["instructors", "courses", "lessons"],
+  "detailTemplates": {"instructors": "al_detail_instructors", "courses": "al_detail_courses", "lessons": "al_detail_lessons"},
+  "groups": [{"developerName": "students", "label": "Students"}]
+}
