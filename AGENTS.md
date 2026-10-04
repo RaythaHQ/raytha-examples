@@ -75,6 +75,17 @@ These are from real builds on Raytha 2.0.1 with CLI 0.1.1.
     HTML at all for non-members. Hiding it with CSS or JavaScript doesn't protect anything.
 13. **CLI 0.1.1: `theme push --dry-run` can crash on a theme that doesn't exist yet** (a panic on a multi-byte
     character). Create the theme with a real push, or dry-run only against an existing theme.
+14. **Number fields need converting before maths in Liquid.** `{{ job.PublishedContent.salary_min | divided_by: 1000 }}`
+    fails with `Unable to cast ... DecimalFieldValue to IConvertible`. Turn the value into a string first:
+    `{{ job.PublishedContent.salary_min | append: "" | divided_by: 1000 | floor }}`.
+15. **Dates and the `json` filter need the raw value.** Use `{{ item.PublishedContent.posted_on.Value | date: "%b %-d" }}`
+    (without `.Value` the date prints nothing), and `{{ item.PublishedContent.content | append: "" | json }}`
+    (without `append` you get an object with `Value` and `Text` keys, which breaks JSON-LD).
+16. **Checkbox filters compare to a string.** `featured eq 'true'` matches; `featured eq true` returns nothing.
+17. **In Functions, a relationship field returns the related item.** `item.PublishedContent.Item.get("company")`
+    is the company itself: read `.PrimaryField` and `.RoutePath` from it, no second lookup needed.
+18. **Route paths can't start a segment with a dot.** A title like ".NET Engineer" gives `jobs/.NET-Engineer`;
+    changing it with `content settings` is rejected until you drop the dot.
 
 ## Content and assets
 

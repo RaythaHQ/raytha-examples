@@ -27,6 +27,9 @@ async def prep(page, path, scroll=0):
     await page.evaluate("""async () => { for (let y = 0; y < document.body.scrollHeight; y += 500) {
         window.scrollTo(0, y); await new Promise(r => setTimeout(r, 50)); } window.scrollTo(0, 0); }""")
     await page.evaluate("document.querySelectorAll('.reveal').forEach(e => e.classList.add('in'))")
+    # Load any lazy images the quick scroll skipped past.
+    await page.evaluate("document.querySelectorAll('img[loading=lazy]').forEach(i => i.loading = 'eager')")
+    await page.wait_for_load_state("networkidle")
     if scroll:
         await page.evaluate(f"window.scrollTo(0, {int(scroll)})")
     await page.wait_for_timeout(1200)
