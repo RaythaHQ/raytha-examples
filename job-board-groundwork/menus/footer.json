@@ -1,0 +1,30 @@
+{
+ "developerName": "footer",
+ "label": "Footer",
+ "items": [
+  {
+   "label": "All jobs",
+   "link": "/jobs"
+  },
+  {
+   "label": "Remote only",
+   "link": "/jobs/remote"
+  },
+  {
+   "label": "Companies",
+   "link": "/companies"
+  },
+  {
+   "label": "About",
+   "link": "/about"
+  },
+  {
+   "label": "RSS feed",
+   "link": "/feeds/jobs.rss"
+  },
+  {
+   "label": "JSON Feed",
+   "link": "/feeds/jobs.json"
+  }
+ ]
+}

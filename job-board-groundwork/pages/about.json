@@ -1,0 +1,44 @@
+{
+ "header": [
+  {
+   "widgetType": "gw_page_header",
+   "settings": {
+    "crumb": "About",
+    "headline": "Built for people who want their work to count.",
+    "lead": "Groundwork lists remote and hybrid roles at climate tech companies, with a salary range on every listing and no recruiter spam."
+   }
+  }
+ ],
+ "main": [
+  {
+   "widgetType": "gw_rich",
+   "settings": {
+    "content": "<h2>What we list</h2><p>Roles at companies whose core product cuts or removes emissions: clean power and storage, grid software, carbon removal, low-carbon materials and food, electrified buildings and transport, and the data tools that measure all of it.</p><h2>Our rules for listings</h2><ul><li><strong>A real salary range.</strong> Every listing shows a minimum and maximum, in the currency the role is paid in.</li><li><strong>An honest location.</strong> Remote, hybrid or on-site, with the countries, time zones or cities that apply.</li><li><strong>An expiry date.</strong> Listings close automatically, so you never apply to a role that was filled months ago.</li><li><strong>Apply on the company's site.</strong> We link straight to the employer's own application page. We never sit between you and the hiring team.</li></ul><h2>For developers</h2><p>Every job page includes <a href=\"https://developers.google.com/search/docs/appearance/structured-data/job-posting\">JobPosting structured data</a>, so listings can appear in Google's job search. The full board is also available as an <a href=\"/feeds/jobs.rss\">RSS feed</a> and a <a href=\"/feeds/jobs.json\">JSON Feed</a>.</p>"
+   }
+  },
+  {
+   "widgetType": "gw_faq",
+   "settings": {
+    "heading": "Questions",
+    "items": [
+     {
+      "question": "Is Groundwork free for job seekers?",
+      "answer": "<p>Yes. Browsing, searching, feeds and applying are all free, and you never need an account to apply.</p>"
+     },
+     {
+      "question": "How do filters work?",
+      "answer": "<p>Every filter is a URL parameter, such as <code>/jobs?category=data&amp;type=remote&amp;salary=130000</code>. Bookmark or share any search.</p>"
+     },
+     {
+      "question": "What is the Members' Hub?",
+      "answer": "<p>A members-only page with salary benchmarks by category and curated saved searches, calculated live from the board.</p>"
+     },
+     {
+      "question": "Are these real companies?",
+      "answer": "<p>No. Groundwork is a demo site built with Raytha CMS. Every company, job and logo is fictional.</p>"
+     }
+    ]
+   }
+  }
+ ]
+}

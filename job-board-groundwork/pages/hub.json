@@ -1,0 +1,26 @@
+{
+ "header": [
+  {
+   "widgetType": "gw_page_header",
+   "settings": {
+    "crumb": "Members' Hub",
+    "headline": "Members' Hub",
+    "lead": "Salary benchmarks and saved searches, calculated live from every open role on the board."
+   }
+  }
+ ],
+ "members": [
+  {
+   "widgetType": "gw_cta",
+   "settings": {
+    "eyebrow": "Feeds",
+    "headline": "Take the board with you.",
+    "body": "Every open role as RSS or JSON Feed. Plug it into a reader, Slack or your own scripts.",
+    "primaryText": "JSON Feed",
+    "primaryUrl": "/feeds/jobs.json",
+    "secondaryText": "RSS",
+    "secondaryUrl": "/feeds/jobs.rss"
+   }
+  }
+ ]
+}

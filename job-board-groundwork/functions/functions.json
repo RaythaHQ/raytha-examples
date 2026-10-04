@@ -1,0 +1,16 @@
+[
+ {
+  "developerName": "jobs.rss",
+  "name": "Jobs RSS feed",
+  "trigger": "http_request",
+  "file": "jobs.rss.js",
+  "routePath": "feeds/jobs.rss"
+ },
+ {
+  "developerName": "jobs.json",
+  "name": "Jobs JSON Feed",
+  "trigger": "http_request",
+  "file": "jobs.json.js",
+  "routePath": "feeds/jobs.json"
+ }
+]

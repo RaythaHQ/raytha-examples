@@ -1,0 +1,22 @@
+{
+ "developerName": "mainmenu",
+ "label": "Main menu",
+ "items": [
+  {
+   "label": "All jobs",
+   "link": "/jobs"
+  },
+  {
+   "label": "Remote",
+   "link": "/jobs/remote"
+  },
+  {
+   "label": "Companies",
+   "link": "/companies"
+  },
+  {
+   "label": "About",
+   "link": "/about"
+  }
+ ]
+}

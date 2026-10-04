@@ -1,0 +1,23 @@
+[
+ {
+  "title": "Home",
+  "routePath": "home",
+  "template": "gw_home",
+  "sections": "pages/home.json",
+  "home": true
+ },
+ {
+  "title": "About Groundwork",
+  "routePath": "about",
+  "template": "gw_page",
+  "sections": "pages/about.json",
+  "home": false
+ },
+ {
+  "title": "Members' Hub",
+  "routePath": "hub",
+  "template": "gw_hub",
+  "sections": "pages/hub.json",
+  "home": false
+ }
+]

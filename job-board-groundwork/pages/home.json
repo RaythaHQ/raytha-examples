@@ -1,0 +1,99 @@
+{
+ "hero": [
+  {
+   "widgetType": "gw_hero",
+   "settings": {
+    "eyebrow": "Remote-first jobs in climate tech",
+    "headline": "Do the best work of your career,",
+    "accent": "for the planet.",
+    "subtitle": "Groundwork is a hand-picked board of remote and hybrid roles at companies decarbonizing energy, industry, food and cities. Every listing shows a real salary range.",
+    "placeholder": "Job title, skill or company",
+    "popular": [
+     {
+      "label": "Python",
+      "url": "/jobs?tag=python"
+     },
+     {
+      "label": "Power systems",
+      "url": "/jobs?tag=power_systems"
+     },
+     {
+      "label": "Remote only",
+      "url": "/jobs/remote"
+     },
+     {
+      "label": "$160k+",
+      "url": "/jobs?salary=160000"
+     }
+    ]
+   }
+  }
+ ],
+ "main": [
+  {
+   "widgetType": "gw_stats",
+   "settings": {
+    "note": "Counted live from the listings on this site every time the page renders."
+   }
+  },
+  {
+   "widgetType": "gw_featured",
+   "settings": {
+    "eyebrow": "Featured roles",
+    "headline": "Hiring now, worth a look",
+    "count": 6
+   }
+  },
+  {
+   "widgetType": "gw_categories",
+   "settings": {
+    "eyebrow": "Browse by category",
+    "headline": "Find your corner of climate",
+    "body": "Software, hardware, science and the people who sell it. Every category links to a filtered, shareable search."
+   }
+  },
+  {
+   "widgetType": "gw_companies",
+   "settings": {
+    "eyebrow": "Companies hiring",
+    "headline": "Teams building the transition"
+   }
+  },
+  {
+   "widgetType": "gw_features",
+   "settings": {
+    "eyebrow": "Why Groundwork",
+    "headline": "A job board with standards",
+    "items": [
+     {
+      "icon": "cash-coin",
+      "title": "Salary on every listing",
+      "body": "No range, no listing. You see the band before you spend an evening on a cover letter."
+     },
+     {
+      "icon": "globe-americas",
+      "title": "Remote means remote",
+      "body": "Each role says remote, hybrid or on-site, plus the time zones or cities it actually works from."
+     },
+     {
+      "icon": "rss",
+      "title": "Feeds, not alerts",
+      "body": "Subscribe to every role with RSS or JSON Feed, or bookmark any filtered search. No account needed."
+     }
+    ]
+   }
+  },
+  {
+   "widgetType": "gw_cta",
+   "settings": {
+    "eyebrow": "Members' Hub",
+    "headline": "Salary benchmarks, live from the board.",
+    "body": "Members see average bands by category, curated saved searches with live counts, and early notice of featured roles.",
+    "primaryText": "Open the Hub",
+    "primaryUrl": "/hub",
+    "secondaryText": "Browse all jobs",
+    "secondaryUrl": "/jobs"
+   }
+  }
+ ]
+}
