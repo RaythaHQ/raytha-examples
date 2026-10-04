@@ -1,0 +1,26 @@
+{%- assign today = "now" | date: "%Y-%m-%d" -%}
+{%- assign formats = "in_person:In person,online:Online,hybrid:Hybrid" | split: "," -%}
+{%- assign qf = "" -%}{%- for pair in formats %}{% assign kv = pair | split: ":" %}{% if QueryParams.format == kv[0] %}{% assign qf = kv[0] %}{% endif %}{% endfor -%}
+{%- assign qm = "" -%}{%- if QueryParams.audience == "members" -%}{%- assign qm = "members" -%}{%- endif -%}
+<section class="phead"><div class="wrap"><div class="crumbs"><a href="{{ PathBase }}/">Home</a><span>/</span><span>Events</span></div>
+  <h1>Workshops, swaps <em>and the Gathering.</em></h1><p>Chapter events are open to everyone unless they say otherwise. Members pay less, and members-only webinars go into the resource library afterwards.</p></div></section>
+<section class="section" style="padding-top:48px"><div class="wrap">
+  <div class="filters"><span class="lbl">Format</span><a href="{{ PathBase }}/events{% if qm != '' %}?audience=members{% endif %}" class="{% if qf == '' %}on{% endif %}">All</a>{% for pair in formats %}{% assign kv = pair | split: ":" %}<a href="{{ PathBase }}/events?format={{ kv[0] }}{% if qm != '' %}&audience=members{% endif %}" class="{% if qf == kv[0] %}on{% endif %}">{{ kv[1] }}</a>{% endfor %}
+    <span class="lbl" style="margin-left:14px">Audience</span><a href="{{ PathBase }}/events{% if qf != '' %}?format={{ qf }}{% endif %}" class="{% if qm == '' %}on{% endif %}">Everyone</a><a href="{{ PathBase }}/events?audience=members{% if qf != '' %}&format={{ qf }}{% endif %}" class="{% if qm == 'members' %}on{% endif %}"><i class="bi bi-lock-fill"></i> Members only</a></div>
+  {%- assign up = 0 -%}{%- assign past = 0 -%}
+  <h2 style="font-size:1.9rem;margin:10px 0 6px">Upcoming</h2>
+  <div style="margin-bottom:60px">
+  {%- for e in Target.Items %}{% assign q = e.PublishedContent %}{% capture d %}{{ q.start.Value | date: "%Y-%m-%d" }}{% endcapture %}{% capture fm %}{{ q.format }}{% endcapture %}{% capture au %}{{ q.audience }}{% endcapture %}
+    {%- assign okf = false %}{% if qf == "" or qf == fm %}{% assign okf = true %}{% endif %}{% assign okm = false %}{% if qm == "" or qm == au %}{% assign okm = true %}{% endif %}{% if d >= today and okf and okm %}{% assign up = up | plus: 1 %}
+    <a class="ev reveal" href="{{ PathBase }}/{{ e.RoutePath }}"><div class="date"><div><b>{{ q.start.Value | date: "%-d" }}</b><span>{{ q.start.Value | date: "%b %Y" }}</span></div></div>
+      <div><div style="display:flex;gap:6px;flex-wrap:wrap"><span class="pill {% if fm == 'online' %}sky{% elsif fm == 'hybrid' %}mustard{% else %}green{% endif %}">{{ fm | replace: "in_person", "In person" | replace: "online", "Online" | replace: "hybrid", "Hybrid" }}</span>{% if au == "members" %}<span class="pill clay"><i class="bi bi-lock-fill"></i> Members only</span>{% endif %}</div>
+        <h3 style="margin-top:10px">{{ e.PrimaryField }}</h3><p class="muted" style="margin:0">{{ q.summary }}</p>
+        <div class="meta"><span><i class="bi bi-clock"></i> {{ q.time_label }}</span><span><i class="bi bi-geo-alt"></i> {{ q.location }}</span>{% if q.chapter.PrimaryField %}<span><i class="bi bi-people"></i> {{ q.chapter.PrimaryField }}</span>{% endif %}</div></div>
+      <span class="go btn btn-ghost">Details <i class="bi bi-arrow-right"></i></span></a>
+    {%- endif %}{% endfor %}
+  </div>
+  {% if up == 0 %}<p class="muted" style="margin:-40px 0 60px">No upcoming events match. <a href="{{ PathBase }}/events" style="text-decoration:underline">Show all events</a>.</p>{% endif %}
+  <h2 style="font-size:1.5rem;margin:0 0 6px;color:var(--muted)">Recently</h2>
+  <div style="opacity:.75">{% for e in Target.Items %}{% assign q = e.PublishedContent %}{% capture d %}{{ q.start.Value | date: "%Y-%m-%d" }}{% endcapture %}{% if d < today %}
+    <a class="ev" href="{{ PathBase }}/{{ e.RoutePath }}"><div class="date"><div><b>{{ q.start.Value | date: "%-d" }}</b><span>{{ q.start.Value | date: "%b %Y" }}</span></div></div><div><h3>{{ e.PrimaryField }}</h3><p class="muted" style="margin:0">{{ q.summary }}</p></div><span class="go pill">Past</span></a>{% endif %}{% endfor %}</div>
+</div></section>

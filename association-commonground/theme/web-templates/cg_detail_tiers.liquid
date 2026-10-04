@@ -1,0 +1,22 @@
+{%- assign p = Target.PublishedContent -%}{%- capture hi %}{{ p.highlight }}{% endcapture -%}{%- assign bl = p.benefits | newline_to_br | split: "<br />" -%}
+{%- assign slug = Target.PrimaryField | downcase | replace: " ", "-" -%}
+<section class="phead"><div class="wrap"><div class="crumbs"><a href="{{ PathBase }}/">Home</a><span>/</span><a href="{{ PathBase }}/membership">Membership</a><span>/</span><span>{{ Target.PrimaryField }}</span></div>
+  {% if hi == "True" %}<span class="pill mustard" style="margin-top:14px">Most popular</span>{% endif %}
+  <h1>{{ Target.PrimaryField }} <em>membership</em></h1><p>{{ p.audience }}.</p></div></section>
+<section class="section" style="padding-top:56px"><div class="wrap split">
+  <div>
+    <span class="eyebrow">What's included</span><h2 style="font-size:2.3rem;margin:12px 0 22px">Everything you get for {{ p.price }}</h2>
+    <div class="grid2">{% for b in bl %}{% assign bs = b | strip %}{% if bs != "" %}<div class="ben" style="padding:20px"><div style="display:flex;gap:12px"><i class="bi bi-check-circle-fill" style="color:var(--leaf);font-size:1.3rem"></i><span style="font-weight:500">{{ bs }}</span></div></div>{% endif %}{% endfor %}</div>
+    <div class="faq" style="margin-top:44px"><h3 style="font-size:1.6rem;margin-bottom:10px">Good to know</h3>
+      <details><summary>How do I pay?</summary><p>Joining and payment happen on our membership partner's secure site, not on this website. You will get a receipt and your member login within one business day.</p></details>
+      <details><summary>Can I switch tiers later?</summary><p>Yes. Upgrade at any time and we will credit what you already paid. Downgrades take effect at renewal.</p></details>
+      <details><summary>Is there a low-income rate?</summary><p>Every tier has a pay-what-you-can option. No paperwork, no questions. Pick it on the join form or ask the membership team.</p></details>
+    </div>
+  </div>
+  <aside class="aside"><div class="box" style="{% if hi == 'True' %}background:var(--green);color:#e8efe5;border:0{% endif %}">
+    <h3 {% if hi == 'True' %}style="color:#fff"{% endif %}>{{ Target.PrimaryField }}</h3><div style="font:600 2.2rem/1.1 var(--serif);margin:4px 0 16px">{{ p.price }}</div>
+    <a class="btn btn-clay ext" href="https://join.example.org/commonground?tier={{ slug }}" rel="noopener" style="width:100%;justify-content:center">Join on our membership partner's site</a>
+    <a class="btn btn-ghost" href="{{ PathBase }}/contact" style="width:100%;justify-content:center;margin-top:10px;color:var(--ink)">Talk to the membership team</a>
+    <p style="font-size:.8rem;margin:12px 0 0;opacity:.75">External placeholder link. No payment is taken on this site.</p></div>
+    <a class="btn btn-ghost" href="{{ PathBase }}/tiers"><i class="bi bi-layout-three-columns"></i> Compare all tiers</a></aside>
+</div></section>

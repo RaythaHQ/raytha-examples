@@ -1,0 +1,28 @@
+{%- assign regions = "northeast:Northeast,southeast:Southeast,midwest:Midwest,southwest:Southwest,mountain:Mountain,west:West Coast" | split: "," -%}
+{%- assign pins = "NY:88:29,PA:85:35,MN:60:18,GA:75:64,AZ:22:64,CA:8:40,CO:37:41,TX:47:80" | split: "," -%}
+{%- assign qr = "" -%}{%- for pair in regions %}{% assign kv = pair | split: ":" %}{% if QueryParams.region == kv[0] %}{% assign qr = kv[0] %}{% assign qrl = kv[1] %}{% endif %}{% endfor -%}
+{%- assign total_members = 0 -%}{%- assign total_gardens = 0 -%}
+{%- for c in Target.Items %}{% assign m = c.PublishedContent.members | append: "" | plus: 0 %}{% assign g = c.PublishedContent.gardens | append: "" | plus: 0 %}{% assign total_members = total_members | plus: m %}{% assign total_gardens = total_gardens | plus: g %}{% endfor -%}
+<section class="phead"><div class="wrap"><div class="crumbs"><a href="{{ PathBase }}/">Home</a><span>/</span><span>Chapters</span></div>
+  <h1>Find your <em>local chapter.</em></h1><p>{{ Target.TotalCount }} chapters with {{ total_members }} members and {{ total_gardens }} gardens between them. Chapters run their own meetings, workdays and seed swaps, and every member belongs to the one nearest them.</p></div></section>
+<section class="section" style="padding-top:56px"><div class="wrap">
+  <div class="usmap reveal" style="margin-bottom:44px">
+    <svg viewBox="0 0 1000 520" preserveAspectRatio="none" aria-hidden="true"><defs><pattern id="dots" width="14" height="14" patternUnits="userSpaceOnUse"><circle cx="7" cy="7" r="3" fill="#cfc3a8"/></pattern></defs>
+      <path d="M60 40 L210 30 L560 40 L620 70 L660 95 L700 80 L760 90 L800 70 L870 40 L930 30 L960 70 L900 130 L880 170 L860 210 L840 260 L860 320 L800 380 L790 420 L820 500 L790 505 L760 430 L700 410 L620 420 L560 430 L520 470 L480 490 L450 440 L400 400 L350 400 L300 380 L240 370 L170 350 L120 320 L80 260 L50 170 L40 100 Z" fill="url(#dots)"/></svg>
+    {%- for c in Target.Items %}{% assign p = c.PublishedContent %}{% capture st %}{{ p.state }}{% endcapture %}{% for pin in pins %}{% assign xy = pin | split: ":" %}{% if xy[0] == st %}
+    <a class="pin" href="{{ PathBase }}/{{ c.RoutePath }}" style="left:{{ xy[1] }}%;top:{{ xy[2] }}%;--c:{{ p.color }}"><span>{{ p.city }}</span><i></i></a>{% endif %}{% endfor %}{% endfor %}
+  </div>
+  <div class="filters"><span class="lbl">Region</span><a href="{{ PathBase }}/chapters" class="{% if qr == '' %}on{% endif %}">All</a>{% for pair in regions %}{% assign kv = pair | split: ":" %}<a href="{{ PathBase }}/chapters?region={{ kv[0] }}" class="{% if qr == kv[0] %}on{% endif %}">{{ kv[1] }}</a>{% endfor %}</div>
+  <div class="grid3">
+  {%- assign shown = 0 -%}
+  {%- for c in Target.Items %}{% assign p = c.PublishedContent %}{% capture rg %}{{ p.region }}{% endcapture %}{% if qr == "" or qr == rg %}{% assign shown = shown | plus: 1 %}
+    <a class="chap reveal" style="--c:{{ p.color }}" href="{{ PathBase }}/{{ c.RoutePath }}">
+      <span class="pill" style="align-self:flex-start;background:color-mix(in srgb,{{ p.color }} 18%,#fff);color:{{ p.color }}"><i class="bi bi-geo-alt-fill"></i> {% for pair in regions %}{% assign kv = pair | split: ":" %}{% if kv[0] == rg %}{{ kv[1] }}{% endif %}{% endfor %}</span>
+      <h3>{{ c.PrimaryField }}</h3><span class="loc">{{ p.city }}, {{ p.state }} · since {{ p.founded }}</span>
+      <p class="muted" style="margin:0;font-size:.92rem">{{ p.description | truncatewords: 18 }}</p>
+      <div class="nums"><div><b>{{ p.members }}</b>members</div><div><b>{{ p.gardens }}</b>gardens</div></div>
+    </a>
+  {%- endif %}{% endfor %}
+  </div>
+  {% if shown == 0 %}<div class="box" style="margin-top:10px"><h3>No chapter in {{ qrl }} yet</h3><p class="muted" style="margin:0">Want to start one? Five members are enough. <a href="{{ PathBase }}/contact" style="text-decoration:underline;color:var(--ink)">Tell us</a> and we will send the chapter starter kit.</p></div>{% endif %}
+</div></section>
