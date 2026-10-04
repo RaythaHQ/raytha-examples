@@ -1,0 +1,5 @@
+[
+ {"title": "Lantern Ramblers", "routePath": "home", "template": "lr_home", "sections": "pages/home.json", "home": true},
+ {"title": "Booking", "routePath": "booking", "template": "lr_page", "sections": "pages/booking.json", "home": false},
+ {"title": "Thanks", "routePath": "booking/thanks", "template": "lr_page", "sections": "pages/booking-thanks.json", "home": false}
+]
