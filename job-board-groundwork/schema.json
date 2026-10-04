@@ -1,0 +1,670 @@
+{
+  "schemaVersion": 1,
+  "contentTypes": [
+    {
+      "developerName": "companies",
+      "labelPlural": "Companies",
+      "labelSingular": "Company",
+      "description": "Employers hiring on Groundwork",
+      "defaultRouteTemplate": "companies/{PrimaryField}",
+      "primaryField": "name",
+      "fields": [
+        {
+          "developerName": "name",
+          "label": "Name",
+          "description": "",
+          "fieldType": "single_line_text",
+          "isRequired": true,
+          "choices": [],
+          "relatedContentType": null,
+          "subFields": []
+        },
+        {
+          "developerName": "tagline",
+          "label": "Tagline",
+          "description": "",
+          "fieldType": "single_line_text",
+          "isRequired": false,
+          "choices": [],
+          "relatedContentType": null,
+          "subFields": []
+        },
+        {
+          "developerName": "logo",
+          "label": "Logo",
+          "description": "",
+          "fieldType": "attachment",
+          "isRequired": false,
+          "choices": [],
+          "relatedContentType": null,
+          "subFields": []
+        },
+        {
+          "developerName": "content",
+          "label": "About",
+          "description": "",
+          "fieldType": "wysiwyg",
+          "isRequired": false,
+          "choices": [],
+          "relatedContentType": null,
+          "subFields": []
+        },
+        {
+          "developerName": "sector",
+          "label": "Sector",
+          "description": "",
+          "fieldType": "dropdown",
+          "isRequired": false,
+          "choices": [
+            {
+              "developerName": "solar",
+              "label": "Solar",
+              "disabled": false
+            },
+            {
+              "developerName": "storage",
+              "label": "Energy storage",
+              "disabled": false
+            },
+            {
+              "developerName": "grid",
+              "label": "Grid & utilities",
+              "disabled": false
+            },
+            {
+              "developerName": "carbon",
+              "label": "Carbon removal",
+              "disabled": false
+            },
+            {
+              "developerName": "mobility",
+              "label": "Mobility",
+              "disabled": false
+            },
+            {
+              "developerName": "food",
+              "label": "Food & agriculture",
+              "disabled": false
+            },
+            {
+              "developerName": "buildings",
+              "label": "Buildings",
+              "disabled": false
+            },
+            {
+              "developerName": "data",
+              "label": "Climate data",
+              "disabled": false
+            }
+          ],
+          "relatedContentType": null,
+          "subFields": []
+        },
+        {
+          "developerName": "hq",
+          "label": "Headquarters",
+          "description": "",
+          "fieldType": "single_line_text",
+          "isRequired": false,
+          "choices": [],
+          "relatedContentType": null,
+          "subFields": []
+        },
+        {
+          "developerName": "size",
+          "label": "Team size",
+          "description": "",
+          "fieldType": "dropdown",
+          "isRequired": false,
+          "choices": [
+            {
+              "developerName": "s_1_50",
+              "label": "1–50",
+              "disabled": false
+            },
+            {
+              "developerName": "s_51_200",
+              "label": "51–200",
+              "disabled": false
+            },
+            {
+              "developerName": "s_201_1000",
+              "label": "201–1,000",
+              "disabled": false
+            },
+            {
+              "developerName": "s_1000_plus",
+              "label": "1,000+",
+              "disabled": false
+            }
+          ],
+          "relatedContentType": null,
+          "subFields": []
+        },
+        {
+          "developerName": "founded",
+          "label": "Founded",
+          "description": "",
+          "fieldType": "number",
+          "isRequired": false,
+          "choices": [],
+          "relatedContentType": null,
+          "subFields": []
+        },
+        {
+          "developerName": "website",
+          "label": "Website",
+          "description": "",
+          "fieldType": "single_line_text",
+          "isRequired": false,
+          "choices": [],
+          "relatedContentType": null,
+          "subFields": []
+        },
+        {
+          "developerName": "brand_color",
+          "label": "Brand colour",
+          "description": "",
+          "fieldType": "color",
+          "isRequired": false,
+          "choices": [],
+          "relatedContentType": null,
+          "subFields": []
+        },
+        {
+          "developerName": "remote_policy",
+          "label": "Remote policy",
+          "description": "",
+          "fieldType": "long_text",
+          "isRequired": false,
+          "choices": [],
+          "relatedContentType": null,
+          "subFields": []
+        },
+        {
+          "developerName": "sort_order",
+          "label": "Sort order",
+          "description": "",
+          "fieldType": "number",
+          "isRequired": false,
+          "choices": [],
+          "relatedContentType": null,
+          "subFields": []
+        }
+      ],
+      "views": [
+        {
+          "developerName": "companies",
+          "label": "Companies",
+          "description": "",
+          "isPublished": true,
+          "routePath": "companies",
+          "template": "gw_list_companies",
+          "columns": [
+            "PrimaryField"
+          ],
+          "sort": [
+            {
+              "developerName": "sort_order",
+              "direction": "asc"
+            }
+          ],
+          "filter": [],
+          "defaultNumberOfItemsPerPage": 50,
+          "maxNumberOfItemsPerPage": 1000,
+          "ignoreClientFilterAndSortQueryParams": false
+        }
+      ]
+    },
+    {
+      "developerName": "jobs",
+      "labelPlural": "Jobs",
+      "labelSingular": "Job",
+      "description": "Job listings",
+      "defaultRouteTemplate": "jobs/{PrimaryField}",
+      "primaryField": "title",
+      "fields": [
+        {
+          "developerName": "title",
+          "label": "Job title",
+          "description": "",
+          "fieldType": "single_line_text",
+          "isRequired": true,
+          "choices": [],
+          "relatedContentType": null,
+          "subFields": []
+        },
+        {
+          "developerName": "company",
+          "label": "Company",
+          "description": "",
+          "fieldType": "one_to_one_relationship",
+          "isRequired": true,
+          "choices": [],
+          "relatedContentType": "companies",
+          "subFields": []
+        },
+        {
+          "developerName": "summary",
+          "label": "Summary",
+          "description": "",
+          "fieldType": "long_text",
+          "isRequired": false,
+          "choices": [],
+          "relatedContentType": null,
+          "subFields": []
+        },
+        {
+          "developerName": "content",
+          "label": "Description",
+          "description": "",
+          "fieldType": "wysiwyg",
+          "isRequired": false,
+          "choices": [],
+          "relatedContentType": null,
+          "subFields": []
+        },
+        {
+          "developerName": "category",
+          "label": "Category",
+          "description": "",
+          "fieldType": "dropdown",
+          "isRequired": false,
+          "choices": [
+            {
+              "developerName": "engineering",
+              "label": "Software engineering",
+              "disabled": false
+            },
+            {
+              "developerName": "data",
+              "label": "Data & ML",
+              "disabled": false
+            },
+            {
+              "developerName": "hardware",
+              "label": "Hardware & systems",
+              "disabled": false
+            },
+            {
+              "developerName": "product",
+              "label": "Product",
+              "disabled": false
+            },
+            {
+              "developerName": "design",
+              "label": "Design",
+              "disabled": false
+            },
+            {
+              "developerName": "science",
+              "label": "Science & research",
+              "disabled": false
+            },
+            {
+              "developerName": "operations",
+              "label": "Operations",
+              "disabled": false
+            },
+            {
+              "developerName": "sales",
+              "label": "Sales & partnerships",
+              "disabled": false
+            }
+          ],
+          "relatedContentType": null,
+          "subFields": []
+        },
+        {
+          "developerName": "location_type",
+          "label": "Location type",
+          "description": "",
+          "fieldType": "dropdown",
+          "isRequired": false,
+          "choices": [
+            {
+              "developerName": "remote",
+              "label": "Remote",
+              "disabled": false
+            },
+            {
+              "developerName": "hybrid",
+              "label": "Hybrid",
+              "disabled": false
+            },
+            {
+              "developerName": "onsite",
+              "label": "On-site",
+              "disabled": false
+            }
+          ],
+          "relatedContentType": null,
+          "subFields": []
+        },
+        {
+          "developerName": "location",
+          "label": "Location",
+          "description": "",
+          "fieldType": "single_line_text",
+          "isRequired": false,
+          "choices": [],
+          "relatedContentType": null,
+          "subFields": []
+        },
+        {
+          "developerName": "country",
+          "label": "Country code (ISO)",
+          "description": "",
+          "fieldType": "single_line_text",
+          "isRequired": false,
+          "choices": [],
+          "relatedContentType": null,
+          "subFields": []
+        },
+        {
+          "developerName": "salary_min",
+          "label": "Salary from (per year)",
+          "description": "",
+          "fieldType": "number",
+          "isRequired": false,
+          "choices": [],
+          "relatedContentType": null,
+          "subFields": []
+        },
+        {
+          "developerName": "salary_max",
+          "label": "Salary to (per year)",
+          "description": "",
+          "fieldType": "number",
+          "isRequired": false,
+          "choices": [],
+          "relatedContentType": null,
+          "subFields": []
+        },
+        {
+          "developerName": "currency",
+          "label": "Currency",
+          "description": "",
+          "fieldType": "dropdown",
+          "isRequired": false,
+          "choices": [
+            {
+              "developerName": "USD",
+              "label": "USD",
+              "disabled": false
+            },
+            {
+              "developerName": "EUR",
+              "label": "EUR",
+              "disabled": false
+            },
+            {
+              "developerName": "GBP",
+              "label": "GBP",
+              "disabled": false
+            },
+            {
+              "developerName": "CAD",
+              "label": "CAD",
+              "disabled": false
+            }
+          ],
+          "relatedContentType": null,
+          "subFields": []
+        },
+        {
+          "developerName": "employment_type",
+          "label": "Employment type",
+          "description": "",
+          "fieldType": "dropdown",
+          "isRequired": false,
+          "choices": [
+            {
+              "developerName": "full_time",
+              "label": "Full-time",
+              "disabled": false
+            },
+            {
+              "developerName": "contract",
+              "label": "Contract",
+              "disabled": false
+            },
+            {
+              "developerName": "part_time",
+              "label": "Part-time",
+              "disabled": false
+            }
+          ],
+          "relatedContentType": null,
+          "subFields": []
+        },
+        {
+          "developerName": "seniority",
+          "label": "Seniority",
+          "description": "",
+          "fieldType": "dropdown",
+          "isRequired": false,
+          "choices": [
+            {
+              "developerName": "mid",
+              "label": "Mid-level",
+              "disabled": false
+            },
+            {
+              "developerName": "senior",
+              "label": "Senior",
+              "disabled": false
+            },
+            {
+              "developerName": "staff",
+              "label": "Staff / Principal",
+              "disabled": false
+            },
+            {
+              "developerName": "lead",
+              "label": "Lead / Manager",
+              "disabled": false
+            }
+          ],
+          "relatedContentType": null,
+          "subFields": []
+        },
+        {
+          "developerName": "tags",
+          "label": "Tags",
+          "description": "",
+          "fieldType": "multiple_select",
+          "isRequired": false,
+          "choices": [
+            {
+              "developerName": "python",
+              "label": "Python",
+              "disabled": false
+            },
+            {
+              "developerName": "typescript",
+              "label": "TypeScript",
+              "disabled": false
+            },
+            {
+              "developerName": "react",
+              "label": "React",
+              "disabled": false
+            },
+            {
+              "developerName": "go",
+              "label": "Go",
+              "disabled": false
+            },
+            {
+              "developerName": "rust",
+              "label": "Rust",
+              "disabled": false
+            },
+            {
+              "developerName": "csharp",
+              "label": "C# / .NET",
+              "disabled": false
+            },
+            {
+              "developerName": "sql",
+              "label": "SQL",
+              "disabled": false
+            },
+            {
+              "developerName": "ml",
+              "label": "Machine learning",
+              "disabled": false
+            },
+            {
+              "developerName": "gis",
+              "label": "GIS",
+              "disabled": false
+            },
+            {
+              "developerName": "kubernetes",
+              "label": "Kubernetes",
+              "disabled": false
+            },
+            {
+              "developerName": "embedded",
+              "label": "Embedded",
+              "disabled": false
+            },
+            {
+              "developerName": "power_systems",
+              "label": "Power systems",
+              "disabled": false
+            },
+            {
+              "developerName": "batteries",
+              "label": "Batteries",
+              "disabled": false
+            },
+            {
+              "developerName": "lca",
+              "label": "Life-cycle analysis",
+              "disabled": false
+            },
+            {
+              "developerName": "energy_markets",
+              "label": "Energy markets",
+              "disabled": false
+            },
+            {
+              "developerName": "figma",
+              "label": "Figma",
+              "disabled": false
+            },
+            {
+              "developerName": "b2b_saas",
+              "label": "B2B SaaS",
+              "disabled": false
+            },
+            {
+              "developerName": "policy",
+              "label": "Policy",
+              "disabled": false
+            }
+          ],
+          "relatedContentType": null,
+          "subFields": []
+        },
+        {
+          "developerName": "posted_on",
+          "label": "Posted on",
+          "description": "",
+          "fieldType": "date",
+          "isRequired": false,
+          "choices": [],
+          "relatedContentType": null,
+          "subFields": []
+        },
+        {
+          "developerName": "valid_through",
+          "label": "Open until",
+          "description": "",
+          "fieldType": "date",
+          "isRequired": false,
+          "choices": [],
+          "relatedContentType": null,
+          "subFields": []
+        },
+        {
+          "developerName": "apply_url",
+          "label": "Apply URL",
+          "description": "",
+          "fieldType": "single_line_text",
+          "isRequired": false,
+          "choices": [],
+          "relatedContentType": null,
+          "subFields": []
+        },
+        {
+          "developerName": "featured",
+          "label": "Featured",
+          "description": "",
+          "fieldType": "checkbox",
+          "isRequired": false,
+          "choices": [],
+          "relatedContentType": null,
+          "subFields": []
+        }
+      ],
+      "views": [
+        {
+          "developerName": "jobs",
+          "label": "Jobs",
+          "description": "",
+          "isPublished": true,
+          "routePath": "jobs",
+          "template": "gw_list_jobs",
+          "columns": [
+            "PrimaryField"
+          ],
+          "sort": [
+            {
+              "developerName": "posted_on",
+              "direction": "desc"
+            }
+          ],
+          "filter": [],
+          "defaultNumberOfItemsPerPage": 100,
+          "maxNumberOfItemsPerPage": 1000,
+          "ignoreClientFilterAndSortQueryParams": false
+        },
+        {
+          "developerName": "remote",
+          "label": "Remote jobs",
+          "description": "",
+          "isPublished": true,
+          "routePath": "jobs/remote",
+          "template": "gw_list_jobs",
+          "columns": [
+            "PrimaryField"
+          ],
+          "sort": [
+            {
+              "developerName": "posted_on",
+              "direction": "desc"
+            }
+          ],
+          "filter": [
+            {
+              "id": "3b9d2f4e-6a1c-4d8e-9f20-7c5b1a2d3e4f",
+              "parentId": null,
+              "type": "filter_condition",
+              "groupOperator": "and",
+              "field": "location_type",
+              "conditionOperator": "eq",
+              "value": "remote"
+            }
+          ],
+          "defaultNumberOfItemsPerPage": 100,
+          "maxNumberOfItemsPerPage": 1000,
+          "ignoreClientFilterAndSortQueryParams": false
+        }
+      ]
+    }
+  ]
+}
