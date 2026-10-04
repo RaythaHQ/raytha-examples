@@ -1,0 +1,6 @@
+<section class="section tight">
+  <div class="wrap">
+    {% if widget.settings.headline != blank %}<div class="shead"><div><span class="eyebrow">{{ widget.settings.kicker }}</span><h2>{{ widget.settings.headline }}</h2></div></div>{% endif %}
+    <div class="grid4">{% for c in widget.settings.cards %}<a class="card contact lift reveal" href="{{ c.url }}"><span class="ic"><i class="bi bi-{{ c.icon }}"></i></span><h3>{{ c.title }}</h3><span class="big">{{ c.big }}</span><p>{{ c.text }}</p></a>{% endfor %}</div>
+  </div>
+</section>

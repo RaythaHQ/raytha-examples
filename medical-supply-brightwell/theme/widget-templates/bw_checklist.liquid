@@ -1,0 +1,8 @@
+<section class="section tight">
+  <div class="wrap" style="display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:start" id="ckgrid">
+    <div><span class="eyebrow">{{ widget.settings.kicker }}</span><h2 style="font-size:clamp(1.8rem,3.4vw,2.5rem);margin:10px 0 12px">{{ widget.settings.headline }}</h2><p class="muted" style="max-width:600px">{{ widget.settings.body }}</p>
+      <div class="checks" style="margin-top:20px">{% for i in widget.settings.items %}<div class="card reveal" style="padding:14px 18px"><i class="bi bi-check-circle-fill"></i><span>{{ i.text }}</span></div>{% endfor %}</div></div>
+    <aside class="card reveal" style="padding:28px;background:var(--sky);border-color:#cfe0ef"><i class="bi bi-file-earmark-medical" style="font-size:2rem;color:var(--navy2)"></i><h3 style="font-size:1.25rem;margin:12px 0 8px">{{ widget.settings.aside_title }}</h3><p style="margin:0;color:var(--ink2)">{{ widget.settings.aside_body }}</p></aside>
+  </div>
+  <style>@media(max-width:900px){#ckgrid{grid-template-columns:1fr!important}}</style>
+</section>

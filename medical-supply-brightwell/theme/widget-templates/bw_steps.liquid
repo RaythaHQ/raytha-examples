@@ -1,0 +1,6 @@
+<section class="section">
+  <div class="wrap">
+    <div class="shead"><div><span class="eyebrow">{{ widget.settings.kicker }}</span><h2>{{ widget.settings.headline }}</h2><p>{{ widget.settings.subtitle }}</p></div></div>
+    <div class="steps">{% for s in widget.settings.steps %}<div class="card step reveal"><h3>{{ s.title }}</h3><p>{{ s.body }}</p></div>{% endfor %}</div>
+  </div>
+</section>

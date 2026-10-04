@@ -1,0 +1,14 @@
+{%- assign locs = get_content_items(ContentType="locations", OrderBy="sort_order asc", PageSize=12) -%}
+<section class="section">
+  <div class="wrap">
+    <div class="shead"><div><span class="eyebrow">{{ widget.settings.kicker }}</span><h2>{{ widget.settings.headline }}</h2><p>{{ widget.settings.subtitle }}</p></div><a class="btn btn-line" href="{{ PathBase }}/locations">All locations <i class="bi bi-arrow-right"></i></a></div>
+    <div style="display:grid;grid-template-columns:1.3fr 1fr;gap:24px;align-items:stretch" id="locgrid">
+      <div class="map reveal">
+        <svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="900" fill="#e4efee"/><path d="M-20 640 C300 560 420 760 760 700 S1220 520 1620 600" fill="none" stroke="#bfe0f0" stroke-width="70"/><g fill="#cfe7d9"><rect x="120" y="120" width="260" height="170" rx="30"/><rect x="1180" y="160" width="220" height="200" rx="30"/><circle cx="900" cy="300" r="90"/></g><g stroke="#fff" stroke-width="22" fill="none" stroke-linecap="round"><path d="M0 420H1600M560 0V900M1060 0V900M0 180L1600 260M300 900L760 0"/></g><g stroke="#fff" stroke-width="9" fill="none" opacity=".8"><path d="M0 300H1600M0 540H1600M0 780H1600M200 0V900M820 0V900M1300 0V900"/></g></svg>
+        {% for l in locs.Items %}<a class="pin" href="{{ PathBase }}/{{ l.RoutePath }}" style="left:{{ l.PublishedContent.map_x | append: '' }}%;top:{{ l.PublishedContent.map_y | append: '' }}%"><b>{{ l.PrimaryField }}</b><i class="bi bi-geo-alt-fill"></i></a>{% endfor %}
+      </div>
+      <div style="display:grid;gap:12px">{% for l in locs.Items %}<a class="card lift reveal" href="{{ PathBase }}/{{ l.RoutePath }}" style="padding:18px 20px;display:flex;gap:14px;align-items:center"><span class="pill teal" style="width:44px;height:44px;justify-content:center;border-radius:12px;font-size:1.1rem"><i class="bi bi-geo-alt"></i></span><span style="flex:1"><b style="display:block">{{ l.PrimaryField }}</b><span class="muted" style="font-size:.88rem">{{ l.PublishedContent.kind }} · {{ l.PublishedContent.street }}, {{ l.PublishedContent.city }}</span></span><i class="bi bi-chevron-right muted"></i></a>{% endfor %}</div>
+    </div>
+    <style>@media(max-width:900px){#locgrid{grid-template-columns:1fr!important}}</style>
+  </div>
+</section>

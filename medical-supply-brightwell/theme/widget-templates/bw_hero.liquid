@@ -1,0 +1,19 @@
+{%- capture hf %}hcpcs eq '{{ widget.settings.hero_code | remove: "'" }}'{% endcapture -%}
+{%- assign hp = get_content_items(ContentType="products", Filter=hf, PageSize=1) -%}{%- assign hero = hp.Items | first -%}
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">{{ widget.settings.kicker }}</span>
+      <h1>{{ widget.settings.headline }} <span>{{ widget.settings.accent }}</span></h1>
+      <p class="lead">{{ widget.settings.subtitle }}</p>
+      <form class="search" action="{{ PathBase }}/products" method="get" role="search"><i class="bi bi-search"></i><input name="q" placeholder="Search equipment, like oxygen or walker" aria-label="Search equipment"><button class="btn btn-teal">Search</button></form>
+      <div class="quick"><span class="muted" style="font-size:.86rem;font-weight:600">Popular:</span>{% for q in widget.settings.quick %}<a href="{{ q.url }}">{{ q.label }}</a>{% endfor %}</div>
+      <div class="trust">{% for t in widget.settings.trust %}<div><i class="bi bi-{{ t.icon }}"></i>{{ t.text }}</div>{% endfor %}</div>
+    </div>
+    <div class="visual" aria-hidden="true">
+      <div class="panel"></div>
+      {% if hero %}<a class="prod" href="{{ PathBase }}/{{ hero.RoutePath }}" tabindex="-1"><img src="{{ hero.PublishedContent.image.Value | attachment_redirect_url }}" alt=""></a>{% endif %}
+      {% for c in widget.settings.cards %}<div class="fc f{{ forloop.index }}"><i class="bi bi-{{ c.icon }}"></i><div><b>{{ c.title }}</b><span>{{ c.text }}</span></div></div>{% endfor %}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,8 @@
+<section class="section tight">
+  <div class="wrap">
+    <div class="ins reveal">
+      <div style="position:relative;z-index:1"><span class="eyebrow" style="color:#7fd1cf">{{ widget.settings.kicker }}</span><h2 style="margin:12px 0 12px">{{ widget.settings.headline }}</h2><p>{{ widget.settings.body }}</p>{% if widget.settings.button_label != blank %}<a class="btn btn-white" href="{{ widget.settings.button_url }}" style="margin-top:8px">{{ widget.settings.button_label }} <i class="bi bi-arrow-right"></i></a>{% endif %}</div>
+      <div class="plans">{% for p in widget.settings.plans %}<div><i class="bi bi-check-circle-fill"></i>{{ p.name }}</div>{% endfor %}</div>
+    </div>
+  </div>
+</section>

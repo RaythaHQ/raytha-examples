@@ -1,0 +1,15 @@
+{%- assign n = widget.settings.count | default: 6 -%}
+{%- assign fp = get_content_items(ContentType="products", Filter="featured eq 'true'", OrderBy="sort_order asc", PageSize=n) -%}
+<section class="section white">
+  <div class="wrap">
+    <div class="shead"><div><span class="eyebrow">{{ widget.settings.kicker }}</span><h2>{{ widget.settings.headline }}</h2><p>{{ widget.settings.subtitle }}</p></div><a class="btn btn-line" href="{{ PathBase }}/products">Browse the catalog <i class="bi bi-arrow-right"></i></a></div>
+    <div class="grid3">{% for x in fp.Items %}
+{%- capture acq %}{{ x.PublishedContent.acquire }}{% endcapture -%}{%- capture cov %}{{ x.PublishedContent.coverage }}{% endcapture -%}
+<a class="card prod-card lift reveal" href="{{ PathBase }}/{{ x.RoutePath }}">
+  <div class="im"><img src="{{ x.PublishedContent.image.Value | attachment_redirect_url }}" alt="" loading="lazy"><span class="pill code">HCPCS {{ x.PublishedContent.hcpcs }}</span></div>
+  <div class="bd"><span class="muted" style="font-size:.8rem;font-weight:700">{{ x.PublishedContent.category.PrimaryField }}</span><h3>{{ x.PrimaryField }}</h3><p>{{ x.PublishedContent.summary | truncate: 110 }}</p>
+  <div class="ft">{% if acq == "rent" %}<span class="pill">Rental</span>{% elsif acq == "buy" %}<span class="pill">Purchase</span>{% else %}<span class="pill">Rent or buy</span>{% endif %}{% if cov == "medicare" %}<span class="pill teal"><i class="bi bi-shield-check"></i> Medicare</span>{% elsif cov == "insurance" %}<span class="pill teal"><i class="bi bi-shield-check"></i> Insurance</span>{% else %}<span class="pill amber">HSA and FSA</span>{% endif %}</div></div>
+</a>
+{% endfor %}</div>
+  </div>
+</section>

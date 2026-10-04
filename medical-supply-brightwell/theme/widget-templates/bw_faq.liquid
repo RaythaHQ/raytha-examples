@@ -1,0 +1,11 @@
+{%- assign n = widget.settings.count | default: 6 -%}
+{%- assign t = widget.settings.topic | strip | remove: "'" -%}
+{%- if t != "" -%}{%- capture f %}topic eq '{{ t }}'{% endcapture -%}{%- assign qs = get_content_items(ContentType="faqs", Filter=f, OrderBy="sort_order asc", PageSize=n) -%}
+{%- else -%}{%- assign qs = get_content_items(ContentType="faqs", OrderBy="sort_order asc", PageSize=n) -%}{%- endif -%}
+<section class="section tight">
+  <div class="wrap" style="display:grid;grid-template-columns:1fr 1.5fr;gap:56px" id="faqgrid">
+    <div><span class="eyebrow">{{ widget.settings.kicker }}</span><h2 style="font-size:clamp(1.8rem,3.4vw,2.5rem);margin:10px 0 14px">{{ widget.settings.headline }}</h2><a class="btn btn-line" href="{{ PathBase }}/faq">All questions <i class="bi bi-arrow-right"></i></a></div>
+    <div>{% for q in qs.Items %}<details class="card q reveal"{% if forloop.first %} open{% endif %}><summary>{{ q.PrimaryField }}<i class="bi bi-plus-lg"></i></summary><p>{{ q.PublishedContent.answer }}</p></details>{% endfor %}</div>
+  </div>
+  <style>@media(max-width:900px){#faqgrid{grid-template-columns:1fr!important;gap:22px!important}}</style>
+</section>

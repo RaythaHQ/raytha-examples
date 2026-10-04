@@ -1,0 +1,11 @@
+{%- assign cats = get_content_items(ContentType="categories", OrderBy="sort_order asc", PageSize=12) -%}
+<section class="section">
+  <div class="wrap">
+    <div class="shead"><div><span class="eyebrow">{{ widget.settings.kicker }}</span><h2>{{ widget.settings.headline }}</h2><p>{{ widget.settings.subtitle }}</p></div><a class="btn btn-line" href="{{ PathBase }}/products">All equipment <i class="bi bi-arrow-right"></i></a></div>
+    <div class="grid3">
+      {%- for c in cats.Items %}{% capture f %}category eq '{{ c.Id | append: "" }}'{% endcapture %}{% assign r = get_content_items(ContentType="products", Filter=f, PageSize=1) %}
+      <a class="card cat lift reveal" style="--c:{{ c.PublishedContent.color }}" href="{{ PathBase }}/{{ c.RoutePath }}"><span class="ic"><i class="bi bi-{{ c.PublishedContent.icon }}"></i></span><h3>{{ c.PrimaryField }}</h3><p>{{ c.PublishedContent.tagline }}</p><span class="n">{{ r.TotalCount }} product{% if r.TotalCount != 1 %}s{% endif %}<i class="bi bi-arrow-right"></i></span></a>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
