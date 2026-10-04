@@ -1,0 +1,20 @@
+{%- assign s = widget.settings -%}
+<section class="section alt" id="inquiry"><div class="wrap fgrid">
+  <form class="form" method="post" action="/forms/booking" novalidate>
+    <span class="kick">{{ s.kicker }}</span><h2 style="font-size:clamp(2.2rem,4vw,3.2rem);margin:12px 0 10px">{{ s.headline }}</h2><p style="color:var(--cream2);margin-bottom:26px">{{ s.intro }}</p>
+    <div class="alert" role="alert"></div>
+    <div class="hp" aria-hidden="true"><label>Website<input name="website" tabindex="-1" autocomplete="off"></label></div>
+    <div class="two"><div><label for="bn">Your name *</label><input id="bn" name="contact_name" required maxlength="120" autocomplete="name"></div><div><label for="be">Email *</label><input id="be" name="email" type="email" required maxlength="160" autocomplete="email"></div></div>
+    <div class="two"><div><label for="bo">Venue or organisation</label><input id="bo" name="organization" maxlength="160"></div><div><label for="bp">Phone</label><input id="bp" name="phone" maxlength="40" autocomplete="tel"></div></div>
+    <div class="two"><div><label for="bt">Kind of event *</label><select id="bt" name="event_type" required><option value="">Choose one</option><option value="club">Club or theatre show</option><option value="festival">Festival</option><option value="private">Private party</option><option value="benefit">Benefit or fundraiser</option><option value="college">College or university</option><option value="other">Something else</option></select></div>
+      <div><label for="bd">Date you have in mind</label><input id="bd" name="event_date" type="date"></div></div>
+    <div class="two"><div><label for="bc">City</label><input id="bc" name="city" maxlength="120"></div><div><label for="bx">Expected crowd</label><input id="bx" name="capacity" type="number" min="1" max="99999" placeholder="e.g. 400"></div></div>
+    <label for="bs">How much music?</label><select id="bs" name="sets"><option>Two sets (about 3 hours)</option><option>One long set (about 90 minutes)</option><option>Three sets (New Year's style)</option><option>Not sure yet</option></select>
+    <label for="bm">Tell us about it *</label><textarea id="bm" name="message" required maxlength="2000" placeholder="The room, the crowd, the songs you'd love to hear..."></textarea>
+    <button class="btn btn-g" type="submit">Send the inquiry <i class="bi bi-send"></i></button>
+  </form>
+  <aside style="display:grid;gap:20px">
+    <div class="card"><span class="kick">What happens next</span><ol style="margin:16px 0 0;padding-left:1.2rem;color:var(--cream2)">{% for st in s.steps %}<li style="padding:6px 0"><b style="color:var(--cream)">{{ st.title }}.</b> {{ st.text }}</li>{% endfor %}</ol></div>
+    <div class="card"><span class="kick">Rather email?</span><p style="margin:12px 0 0;color:var(--cream2)">{{ s.aside }}</p></div>
+  </aside>
+</div></section>

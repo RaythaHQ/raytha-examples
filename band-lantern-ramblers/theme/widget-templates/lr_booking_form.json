@@ -1,0 +1,7 @@
+{"label": "Ramblers: booking inquiry form", "fields": [
+  {"developerName": "kicker", "label": "Kicker", "fieldType": "single_line_text"},
+  {"developerName": "headline", "label": "Headline", "fieldType": "single_line_text"},
+  {"developerName": "intro", "label": "Intro", "fieldType": "long_text"},
+  {"developerName": "aside", "label": "Email box text", "fieldType": "long_text"},
+  {"developerName": "steps", "label": "What happens next", "fieldType": "repeater", "subFields": [{"developerName": "title", "label": "Title", "fieldType": "single_line_text"}, {"developerName": "text", "label": "Text", "fieldType": "long_text"}]}
+]}

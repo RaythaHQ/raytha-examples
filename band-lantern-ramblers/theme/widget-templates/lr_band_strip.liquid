@@ -1,0 +1,7 @@
+{%- assign s = widget.settings -%}{%- assign ms = get_content_items(ContentType="members", OrderBy="sort_order asc", PageSize=12) -%}
+<section class="section"><div class="wrap">
+  <div class="shead"><div><span class="kick">{{ s.kicker }}</span><h2>{{ s.headline }} <em>{{ s.accent }}</em></h2><p>{{ s.subtitle }}</p></div><a class="btn btn-line" href="/band">Meet the band <i class="bi bi-arrow-right"></i></a></div>
+  <div class="grid3" style="grid-template-columns:repeat(6,1fr);gap:16px">{% for m in ms.Items %}{% assign p = m.PublishedContent %}
+    <a class="member reveal" href="/{{ m.RoutePath }}"><div class="ph"><img src="{{ p.portrait | attachment_redirect_url }}" alt="{{ m.PrimaryField }}" loading="lazy"></div><div class="tx" style="padding:14px 16px 18px"><h3 style="font-size:1.12rem">{{ m.PrimaryField }}</h3><div class="role" style="color:{{ p.color }};font-size:.68rem">{{ p.role | split: "," | first }}</div></div></a>{% endfor %}</div>
+</div></section>
+<style>@media(max-width:980px){.section .grid3[style*="repeat(6"]{grid-template-columns:repeat(3,1fr)!important}}@media(max-width:520px){.section .grid3[style*="repeat(6"]{grid-template-columns:repeat(2,1fr)!important}}</style>

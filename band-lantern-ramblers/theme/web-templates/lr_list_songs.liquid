@@ -1,0 +1,55 @@
+{%- comment -%}
+  Song stats, worked out in Liquid from the setlists every time the page renders. Each song becomes a "|Song|" token in one long string,
+  so counting a song is just splitting the string on its token. Drums and Space are left out of the counts.
+{%- endcomment -%}
+{%- assign all = "^" -%}{%- assign ops = "^" -%}{%- assign encs = "^" -%}{%- assign nshows = 0 -%}{%- assign total = 0 -%}{%- assign longest = 0 -%}{%- assign longest_show = "" -%}
+{%- for s in Target.Items -%}{%- assign p = s.PublishedContent -%}{%- assign nshows = nshows | plus: 1 -%}{%- assign n = 0 -%}
+  {%- capture blk %}{{ p.set1 }}
+{{ p.set2 }}{% endcapture -%}{%- capture enc %}{{ p.encore }}{% endcapture -%}
+  {%- assign ls = blk | newline_to_br | split: "<br />" -%}
+  {%- for l in ls -%}{%- assign t = l | remove: ">" | strip -%}{%- if t != "" and t != "Drums" and t != "Space" -%}{%- assign all = all | append: "|" | append: t | append: "|" -%}{%- assign n = n | plus: 1 -%}{%- endif -%}{%- endfor -%}
+  {%- assign ls = enc | newline_to_br | split: "<br />" -%}
+  {%- for l in ls -%}{%- assign t = l | remove: ">" | strip -%}{%- if t != "" -%}{%- assign all = all | append: "|" | append: t | append: "|" -%}{%- assign encs = encs | append: "|" | append: t | append: "|" -%}{%- assign n = n | plus: 1 -%}{%- endif -%}{%- endfor -%}
+  {%- capture s1 %}{{ p.set1 }}{% endcapture -%}{%- assign f1 = s1 | newline_to_br | split: "<br />" | first | remove: ">" | strip -%}{%- assign ops = ops | append: "|" | append: f1 | append: "|" -%}
+  {%- assign total = total | plus: n -%}{%- if n > longest %}{% assign longest = n %}{% capture longest_show %}{{ p.date.Value | date: "%b %-d, %Y" }}{% endcapture %}{% endif -%}
+{%- endfor -%}
+{%- assign all = all | append: "$" -%}{%- assign ops = ops | append: "$" -%}{%- assign encs = encs | append: "$" -%}
+{%- assign uniq = all | remove: "^" | remove: "$" | split: "|" | uniq -%}
+{%- assign keyed = "" -%}{%- assign distinct = 0 -%}
+{%- for u in uniq -%}{%- if u != "" -%}{%- assign distinct = distinct | plus: 1 -%}{%- assign tok = "|" | append: u | append: "|" -%}{%- assign c = all | split: tok | size | minus: 1 -%}{%- assign k = c | plus: 1000 -%}{%- assign keyed = keyed | append: k | append: "~" | append: u | append: "^^" -%}{%- endif -%}{%- endfor -%}
+{%- assign ranked = keyed | split: "^^" | sort | reverse -%}
+{%- assign top = ranked | first | split: "~" | first | minus: 1000 -%}
+{%- assign oku = ops | remove: "^" | remove: "$" | split: "|" | uniq -%}{%- assign okeyed = "" -%}
+{%- for u in oku %}{% if u != "" %}{% assign tok = "|" | append: u | append: "|" %}{% assign c = ops | split: tok | size | minus: 1 | plus: 1000 %}{% assign okeyed = okeyed | append: c | append: "~" | append: u | append: "^^" %}{% endif %}{% endfor -%}
+{%- assign oranked = okeyed | split: "^^" | sort | reverse -%}
+{%- assign eku = encs | remove: "^" | remove: "$" | split: "|" | uniq -%}{%- assign ekeyed = "" -%}
+{%- for u in eku %}{% if u != "" %}{% assign tok = "|" | append: u | append: "|" %}{% assign c = encs | split: tok | size | minus: 1 | plus: 1000 %}{% assign ekeyed = ekeyed | append: c | append: "~" | append: u | append: "^^" %}{% endif %}{% endfor -%}
+{%- assign eranked = ekeyed | split: "^^" | sort | reverse -%}
+<section class="phead"><div class="blobs" aria-hidden="true"><span></span><span></span><span></span><span></span></div><div class="grain"></div><div class="wrap"><div class="crumbs"><a href="{{ PathBase }}/">Home</a><span>/</span><span>Song stats</span></div>
+  <h1>The <em>numbers</em></h1><p>Counted straight from the setlist archive, so they update the moment a new setlist goes in. Want the raw data? It's at <a href="{{ PathBase }}/songs.json" style="color:var(--sun)">/songs.json</a>.</p></div></section>
+<section class="section" style="padding-top:20px"><div class="wrap">
+  <div class="grid4 st">
+    <div class="stat reveal"><b>{{ nshows }}</b><span>Shows in the archive</span></div>
+    <div class="stat reveal"><b>{{ distinct }}</b><span>Different songs</span></div>
+    <div class="stat reveal"><b>{{ total }}</b><span>Songs played</span></div>
+    <div class="stat reveal"><b>{{ longest }}</b><span>Most in one night · {{ longest_show }}</span></div>
+  </div>
+</div></section>
+<section class="section alt"><div class="wrap">
+  <div class="split">
+    <div><div class="shead" style="margin-bottom:30px"><div><span class="kick">Most played</span><h2>Our <em>top ten</em></h2></div></div>
+      <div class="bars">{% for r in ranked limit: 10 %}{% assign parts = r | split: "~" %}{% assign c = parts[0] | minus: 1000 %}{% assign w = c | times: 100 | divided_by: top %}
+        <div class="bar reveal"><a href="{{ PathBase }}/setlists?song={{ parts[1] | url_encode }}">{{ parts[1] }}</a><div class="t"><i style="width:{{ w }}%;animation-delay:{{ forloop.index0 | times: 70 }}ms"></i></div><span class="n">{{ c }}×</span></div>{% endfor %}</div></div>
+    <div style="display:grid;gap:22px">
+      <div class="card reveal"><span class="kick">Show openers</span><ol style="margin:18px 0 0;padding-left:1.2rem">{% for r in oranked limit: 5 %}{% assign parts = r | split: "~" %}<li style="padding:5px 0"><a href="{{ PathBase }}/setlists?song={{ parts[1] | url_encode }}">{{ parts[1] }}</a> <span class="muted mono" style="font-size:.85rem">· {{ parts[0] | minus: 1000 }}</span></li>{% endfor %}</ol></div>
+      <div class="card reveal"><span class="kick">Encores</span><ol style="margin:18px 0 0;padding-left:1.2rem">{% for r in eranked limit: 5 %}{% assign parts = r | split: "~" %}<li style="padding:5px 0"><a href="{{ PathBase }}/setlists?song={{ parts[1] | url_encode }}">{{ parts[1] }}</a> <span class="muted mono" style="font-size:.85rem">· {{ parts[0] | minus: 1000 }}</span></li>{% endfor %}</ol></div>
+    </div>
+  </div>
+</div></section>
+<section class="section"><div class="wrap">
+  <div class="shead"><div><span class="kick">Every song</span><h2>The whole <em>songbook</em></h2><p>Showing <span data-songcount>{{ distinct }}</span> songs. Type to filter, click a song to see the nights we played it.</p></div><input class="search" type="search" placeholder="Search songs" aria-label="Search songs" data-songsearch></div>
+  <table class="songs"><thead><tr><th>Song</th><th style="text-align:right">Played</th><th style="text-align:right">Of shows</th></tr></thead><tbody>
+  {%- for r in ranked %}{% if r != "" %}{% assign parts = r | split: "~" %}{% assign c = parts[0] | minus: 1000 %}{% assign pc = c | times: 100 | divided_by: nshows %}{% assign w = c | times: 90 | divided_by: top %}
+    <tr data-song="{{ parts[1] | downcase | escape }}"><td><a href="{{ PathBase }}/setlists?song={{ parts[1] | url_encode }}">{{ parts[1] }}</a></td><td class="n">{{ c }}<span class="mini" style="width:{{ w }}px"></span></td><td class="n">{{ pc }}%</td></tr>{% endif %}{% endfor %}
+  </tbody></table>
+</div></section>

@@ -1,0 +1,33 @@
+{%- comment -%} One list view, two lists: shows dated today or later are "upcoming", everything else is "past". Nothing to move by hand after a gig. {%- endcomment -%}
+{%- assign today = "now" | date: "%Y-%m-%d" -%}
+<section class="phead"><div class="blobs" aria-hidden="true"><span></span><span></span><span></span><span></span></div><div class="grain"></div><div class="wrap"><div class="crumbs"><a href="{{ PathBase }}/">Home</a><span>/</span><span>Tour</span></div>
+  <h1>On the <em>road</em></h1><p>Two sets a night, a different setlist every time. Tickets are sold by each venue; the buttons below take you straight there.</p></div></section>
+<section class="section" style="padding-top:30px"><div class="wrap">
+  {%- assign nup = 0 %}{% for e in Target.Items %}{% capture d %}{{ e.PublishedContent.date.Value | date: "%Y-%m-%d" }}{% endcapture %}{% if d >= today %}{% assign nup = nup | plus: 1 %}{% endif %}{% endfor %}
+  <div class="shead"><div><span class="kick">Upcoming</span><h2>{{ nup }} shows <em>coming up</em></h2></div><a class="btn btn-line" href="{{ PathBase }}/booking"><i class="bi bi-envelope-paper"></i> Bring us to your town</a></div>
+  <div class="shows">
+  {%- for e in Target.Items %}{% assign p = e.PublishedContent %}{% capture d %}{{ p.date.Value | date: "%Y-%m-%d" }}{% endcapture %}
+    {%- if d >= today %}{% capture st %}{{ p.status }}{% endcapture %}{% capture bill %}{{ p.billing }}{% endcapture %}
+    <article class="show reveal{% if bill != 'Two sets' and bill != '' %} special{% endif %}">
+      <div class="date"><span class="m">{{ p.date.Value | date: "%b" }}</span><span class="d">{{ p.date.Value | date: "%-d" }}</span><span class="w">{{ p.date.Value | date: "%a %Y" }}</span></div>
+      <div><h3><a href="{{ PathBase }}/{{ e.RoutePath }}">{{ p.venue }}</a></h3>
+        <div class="meta"><span><i class="bi bi-geo-alt"></i> {{ p.city }}, {{ p.region }}</span><span><i class="bi bi-clock"></i> {{ p.doors }}</span><span>{{ p.ages }}</span>{% if bill != "Two sets" %}<span style="color:var(--sun)"><i class="bi bi-stars"></i> {{ bill }}</span>{% endif %}</div></div>
+      <div class="acts"><span class="pill {{ st }}">{{ st | replace: "on_sale", "On sale" | replace: "few_left", "Few left" | replace: "sold_out", "Sold out" | replace: "free", "Free show" | replace: "announced", "Tickets soon" }}</span>
+        {%- if st == "on_sale" or st == "few_left" %}<a class="btn btn-g btn-sm" href="{{ p.ticket_url }}" target="_blank" rel="noopener">Tickets <i class="bi bi-box-arrow-up-right"></i></a>{% endif %}
+        <a class="btn btn-line btn-sm" href="{{ PathBase }}/{{ e.RoutePath }}">Details</a></div>
+    </article>
+    {%- endif %}
+  {%- endfor %}
+  </div>
+</div></section>
+<section class="section alt" id="past"><div class="wrap">
+  <div class="shead"><div><span class="kick">Past shows</span><h2>Where we've <em>been</em></h2><p>Every past show links to its setlist. Shows land here by themselves the morning after.</p></div><a class="btn btn-line" href="{{ PathBase }}/songs">Song stats <i class="bi bi-bar-chart"></i></a></div>
+  <div class="past">
+  {%- assign past = Target.Items | reverse %}
+  {%- for e in past %}{% assign p = e.PublishedContent %}{% capture d %}{{ p.date.Value | date: "%Y-%m-%d" }}{% endcapture %}
+    {%- if d < today %}{% assign slug = e.RoutePath | remove_first: "shows/" %}
+    <a href="{{ PathBase }}/setlists/{{ slug }}" class="reveal"><img src="{{ p.poster | attachment_redirect_url }}" alt="" loading="lazy"><span><small>{{ p.date.Value | date: "%b %-d, %Y" }}</small><b>{{ p.venue }}</b><span class="muted" style="font-size:.88rem">{{ p.city }}, {{ p.region }} · Setlist <i class="bi bi-arrow-right"></i></span></span></a>
+    {%- endif %}
+  {%- endfor %}
+  </div>
+</div></section>
