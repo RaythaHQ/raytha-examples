@@ -1,0 +1,46 @@
+{
+ "developerName": "mainmenu",
+ "label": "Main menu",
+ "items": [
+  {
+   "label": "Home",
+   "link": "/"
+  },
+  {
+   "label": "News",
+   "link": "/news"
+  },
+  {
+   "label": "Events",
+   "link": "/events"
+  },
+  {
+   "label": "People",
+   "link": "/people"
+  },
+  {
+   "label": "Departments",
+   "link": "/departments"
+  },
+  {
+   "label": "Handbook",
+   "link": "/handbook"
+  },
+  {
+   "label": "Resources",
+   "link": "/resources"
+  },
+  {
+   "label": "IT help",
+   "link": "/it-help"
+  },
+  {
+   "label": "System status",
+   "link": "/status"
+  },
+  {
+   "label": "About Meridian",
+   "link": "/company"
+  }
+ ]
+}

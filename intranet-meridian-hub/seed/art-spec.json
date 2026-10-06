@@ -1,0 +1,292 @@
+{
+ "people": [
+  {
+   "name": "Dana Whitaker",
+   "slug": "dana-whitaker"
+  },
+  {
+   "name": "Marcus Oyelaran",
+   "slug": "marcus-oyelaran"
+  },
+  {
+   "name": "Lena Fischer",
+   "slug": "lena-fischer"
+  },
+  {
+   "name": "Priya Natarajan",
+   "slug": "priya-natarajan"
+  },
+  {
+   "name": "Tomás Herrera",
+   "slug": "tomas-herrera"
+  },
+  {
+   "name": "Grace Liu",
+   "slug": "grace-liu"
+  },
+  {
+   "name": "Samuel Okafor",
+   "slug": "samuel-okafor"
+  },
+  {
+   "name": "Hannah Kowalski",
+   "slug": "hannah-kowalski"
+  },
+  {
+   "name": "Ravi Menon",
+   "slug": "ravi-menon"
+  },
+  {
+   "name": "Luis Ramírez",
+   "slug": "luis-ramirez"
+  },
+  {
+   "name": "Bethany Cole",
+   "slug": "bethany-cole"
+  },
+  {
+   "name": "Kwame Asante",
+   "slug": "kwame-asante"
+  },
+  {
+   "name": "Olivia Brandt",
+   "slug": "olivia-brandt"
+  },
+  {
+   "name": "Jun Park",
+   "slug": "jun-park"
+  },
+  {
+   "name": "Sofia van Dijk",
+   "slug": "sofia-van-dijk"
+  },
+  {
+   "name": "Michael Torres",
+   "slug": "michael-torres"
+  },
+  {
+   "name": "Aisha Rahman",
+   "slug": "aisha-rahman"
+  },
+  {
+   "name": "Ben Adler",
+   "slug": "ben-adler"
+  },
+  {
+   "name": "Nora Lindqvist",
+   "slug": "nora-lindqvist"
+  },
+  {
+   "name": "Dev Patel",
+   "slug": "dev-patel"
+  },
+  {
+   "name": "Chloe Martin",
+   "slug": "chloe-martin"
+  },
+  {
+   "name": "Isabel Moreno",
+   "slug": "isabel-moreno"
+  },
+  {
+   "name": "Ethan Brooks",
+   "slug": "ethan-brooks"
+  },
+  {
+   "name": "Mei Tanaka",
+   "slug": "mei-tanaka"
+  }
+ ],
+ "covers": [
+  {
+   "slug": "open-enrollment-for-2027-benefits-runs-october-1",
+   "title": "Open enrollment for 2027 benefits runs October 12 to 30",
+   "kind": "waves"
+  },
+  {
+   "slug": "q3-results-tidemark-shipments-up-18-and-what-com",
+   "title": "Q3 results: Tidemark shipments up 18%, and what comes next",
+   "kind": "bars"
+  },
+  {
+   "slug": "tulsa-plant-reaches-500-days-without-a-lost-time",
+   "title": "Tulsa plant reaches 500 days without a lost-time injury",
+   "kind": "rings"
+  },
+  {
+   "slug": "action-needed-turn-on-a-passkey-for-your-meridia",
+   "title": "Action needed: turn on a passkey for your Meridian account by October 31",
+   "kind": "grid"
+  },
+  {
+   "slug": "welcome-to-our-september-and-october-starters",
+   "title": "Welcome to our September and October starters",
+   "kind": "dots"
+  },
+  {
+   "slug": "austin-hq-4th-floor-refresh-starts-october-19",
+   "title": "Austin HQ: 4th floor refresh starts October 19",
+   "kind": "grid"
+  },
+  {
+   "slug": "tidemark-4-enters-field-trials-with-three-utilit",
+   "title": "Tidemark 4 enters field trials with three utilities",
+   "kind": "waves"
+  },
+  {
+   "slug": "new-expense-tool-goes-live-november-2",
+   "title": "New expense tool goes live November 2",
+   "kind": "bars"
+  },
+  {
+   "slug": "volunteer-day-recap-41-of-us-cleaned-up-shoal-cr",
+   "title": "Volunteer day recap: 41 of us cleaned up Shoal Creek",
+   "kind": "dots"
+  },
+  {
+   "slug": "rotterdam-office-moves-to-the-lloyd-quarter-in-j",
+   "title": "Rotterdam office moves to the Lloyd Quarter in January",
+   "kind": "rings"
+  },
+  {
+   "slug": "september-phishing-test-what-we-learned-and-thre",
+   "title": "September phishing test: what we learned and three habits that work",
+   "kind": "grid"
+  },
+  {
+   "slug": "2026-holiday-schedule-and-year-end-shutdown",
+   "title": "2026 holiday schedule and year-end shutdown",
+   "kind": "dots"
+  }
+ ],
+ "docs": [
+  {
+   "slug": "brand-guidelines",
+   "title": "Brand guidelines",
+   "lines": [
+    "# Logo",
+    "Use the full Meridian logo on white or deep teal. Keep clear space equal to the height of the M.",
+    "# Colors",
+    "Deep teal #0E3B4F, Meridian teal #18A594, coral #F06B4F for highlights only.",
+    "# Type",
+    "Geist for everything. Bold for headings, regular for text.",
+    "# Tone",
+    "Plain words, short sentences, no jargon."
+   ]
+  },
+  {
+   "slug": "presentation-template",
+   "title": "Presentation template",
+   "lines": [
+    "# Layouts",
+    "Title, section divider, one big number, chart, quote and team slides.",
+    "# Tips",
+    "One idea per slide. Use the chart colors in order. Put sources in the footer."
+   ]
+  },
+  {
+   "slug": "expense-report-template",
+   "title": "Expense report template",
+   "lines": [
+    "# Before November 2",
+    "Use this template, attach receipts and send it to your manager.",
+    "# From November 2",
+    "Use the new expense app instead. Photograph your receipt and submit."
+   ]
+  },
+  {
+   "slug": "new-starter-checklist",
+   "title": "New starter checklist",
+   "lines": [
+    "# Day 1",
+    "Collect your laptop, set up a passkey, meet your buddy.",
+    "# Week 1",
+    "Read the handbook, acknowledge the code of conduct, book your plant visit.",
+    "# Month 1",
+    "Agree your 30-60-90 day plan with your manager."
+   ]
+  },
+  {
+   "slug": "organization-chart",
+   "title": "Organization chart",
+   "lines": [
+    "# Leadership team",
+    "Dana Whitaker (CEO), Marcus Oyelaran (COO), Michael Torres (CFO), Priya Natarajan (People), Samuel Okafor (Engineering), Luis Ramirez (Plant).",
+    "# Departments",
+    "Eight departments across Austin, Tulsa, Denver, Rotterdam and remote."
+   ]
+  },
+  {
+   "slug": "2027-benefits-guide",
+   "title": "2027 benefits guide",
+   "lines": [
+    "# Plans",
+    "Meridian Base and the new Meridian Plus, with a $750 deductible.",
+    "# Enrollment",
+    "October 12 to 30 in the benefits portal.",
+    "# Help",
+    "Office hours on October 14, or email the People team."
+   ]
+  },
+  {
+   "slug": "it-equipment-request-form",
+   "title": "IT equipment request form",
+   "lines": [
+    "# What you can request",
+    "Monitors, headsets, keyboards, mice, docks and chargers.",
+    "# How",
+    "Fill in the form and send it to the service desk. Standard items ship in 3 days."
+   ]
+  },
+  {
+   "slug": "legal-review-request",
+   "title": "Legal review request",
+   "lines": [
+    "# When to use it",
+    "Any customer, supplier or partner contract, and any NDA that is not on our standard template.",
+    "# Turnaround",
+    "Five working days for standard reviews."
+   ]
+  },
+  {
+   "slug": "press-boilerplate-and-fact-sheet",
+   "title": "Press boilerplate and fact sheet",
+   "lines": [
+    "# About Meridian Waterworks",
+    "Meridian designs and builds smart water meters and filtration controls for cities and utilities.",
+    "# Media questions",
+    "Send every press inquiry to the communications team."
+   ]
+  },
+  {
+   "slug": "travel-booking-guide",
+   "title": "Travel booking guide",
+   "lines": [
+    "# Flights",
+    "Economy for flights under six hours. Book at least 14 days ahead.",
+    "# Hotels",
+    "Use the preferred hotels near each office."
+   ]
+  },
+  {
+   "slug": "performance-review-template",
+   "title": "Performance review template",
+   "lines": [
+    "# For managers only",
+    "Use this form for the year-end review. Write evidence, not adjectives.",
+    "# Ratings",
+    "Exceeds, meets, developing. Calibrate with your VP."
+   ]
+  },
+  {
+   "slug": "quarterly-business-review-deck",
+   "title": "Quarterly business review deck",
+   "lines": [
+    "# For managers only",
+    "Q3 results by department and Q4 targets.",
+    "# Do not forward",
+    "Confidential. Share the headlines with your team, not the deck."
+   ]
+  }
+ ]
+}

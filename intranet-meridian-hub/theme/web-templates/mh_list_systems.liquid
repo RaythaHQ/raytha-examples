@@ -1,0 +1,13 @@
+{%- assign stat = "operational:Operational,degraded:Degraded,maintenance:Planned maintenance,outage:Outage" | split: "," -%}
+{%- assign issues = 0 -%}{%- for s in Target.Items %}{% capture st %}{{ s.PublishedContent.status }}{% endcapture %}{% if st != "operational" %}{% assign issues = issues | plus: 1 %}{% endif %}{% endfor -%}
+<div class="ph"><div><span class="kick">System status</span><h1>Is it just me?</h1><p>The current state of the systems we all rely on, kept up to date by IT. Updated {{ "now" | date: "%b %-d at %-I:%M %p" }}.</p></div></div>
+<div class="card sb {% if issues > 0 %}warn{% endif %} reveal"><span class="big"><i class="bi bi-{% if issues > 0 %}exclamation-triangle{% else %}check2-circle{% endif %}"></i></span><div><h2>{% if issues > 0 %}{{ issues }} system{% if issues != 1 %}s{% endif %} need attention{% else %}All systems operational{% endif %}</h2><p class="mut" style="margin:4px 0 0">Everything else is working normally. Report a problem on extension 4357.</p></div></div>
+<div class="g2" style="margin-top:18px">
+{%- for x in Target.Items %}{% assign s = x.PublishedContent %}{%- capture sv %}{{ s.status }}{% endcapture -%}{%- assign sl = sv -%}{%- for kv in stat %}{% assign pr = kv | split: ":" %}{% if pr[0] == sv %}{% assign sl = pr[1] %}{% endif %}{% endfor -%}
+  <div class="card sy reveal"><span class="si"><i class="bi bi-{{ s.icon }}"></i></span><div style="flex:1;min-width:0"><b>{{ x.PrimaryField }}</b><small>{{ s.description }}</small>{% capture nt %}{{ s.note | strip }}{% endcapture %}{% if nt != "" %}<p class="nt">{{ s.note }}</p>{% endif %}</div><span class="st {{ sv }}"><span class="dot {{ sv }}"></span>{{ sl }}</span></div>
+{%- endfor %}
+</div>
+<style>.sb{display:flex;gap:18px;align-items:center;padding:22px 24px;border-left:5px solid var(--teal)}.sb.warn{border-left-color:var(--amber)}.sb .big{width:54px;height:54px;border-radius:16px;display:grid;place-items:center;font-size:1.6rem;background:var(--mint);color:var(--teal2);flex:none}.sb.warn .big{background:var(--amber2);color:#9a6700}.sb h2{font-size:1.35rem}
+.sy{display:flex;gap:14px;align-items:flex-start;padding:16px 18px}.sy .si{width:42px;height:42px;border-radius:12px;background:var(--line2);display:grid;place-items:center;font-size:1.15rem;color:var(--ink2);flex:none}.sy b{font-weight:600}.sy small{display:block;color:var(--mut);font-size:.84rem}
+.sy .nt{margin:8px 0 0;font-size:.84rem;background:var(--bg);border-radius:10px;padding:8px 10px;color:var(--ink2)}
+.st{display:inline-flex;align-items:center;gap:8px;font-size:.8rem;font-weight:600;white-space:nowrap;color:#0b6b60}.st.degraded{color:#8a5a00}.st.maintenance{color:#1d4ed8}.st.outage{color:#a63a22}</style>

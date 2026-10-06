@@ -1,0 +1,8 @@
+{"name": "Email and calendar", "description": "Mail, calendar and contacts", "status": "operational", "note": "", "icon": "envelope", "sort_order": 1}
+{"name": "Meridian Hub", "description": "This intranet", "status": "operational", "note": "", "icon": "house-heart", "sort_order": 2}
+{"name": "VPN", "description": "Remote access to internal systems", "status": "degraded", "note": "Slow connections from Rotterdam since 8:40 AM. We are working with our provider.", "icon": "shield-check", "sort_order": 3}
+{"name": "ERP", "description": "Orders, purchasing and inventory", "status": "maintenance", "note": "Planned upgrade Saturday, October 10, 6 to 10 AM CT.", "icon": "boxes", "sort_order": 4}
+{"name": "Payroll and HR", "description": "Payslips, time off and benefits", "status": "operational", "note": "", "icon": "wallet2", "sort_order": 5}
+{"name": "Plant MES", "description": "Tulsa production line systems", "status": "operational", "note": "", "icon": "gear-wide-connected", "sort_order": 6}
+{"name": "Office Wi-Fi", "description": "Austin, Denver, Rotterdam and Tulsa", "status": "operational", "note": "", "icon": "wifi", "sort_order": 7}
+{"name": "Service desk", "description": "Tickets and phone line, extension 4357", "status": "operational", "note": "", "icon": "headset", "sort_order": 8}

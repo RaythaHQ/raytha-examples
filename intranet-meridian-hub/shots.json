@@ -1,0 +1,21 @@
+[
+  {"name": "01-sign-in-gate-1440.png", "path": "/", "device": "desktop"},
+  {"name": "02-home-hero-1440.png", "path": "/", "device": "desktop", "login": true},
+  {"name": "03-home-full-1440.png", "path": "/", "device": "desktop", "full_page": true, "login": true},
+  {"name": "04-news-1440.png", "path": "/news", "device": "desktop", "full_page": true, "login": true},
+  {"name": "05-announcement-1440.png", "path": "/news/open-enrollment-for-2027-benefits-runs-october-12-to-30", "device": "desktop", "full_page": true, "login": true},
+  {"name": "06-people-directory-1440.png", "path": "/people", "device": "desktop", "full_page": true, "login": true},
+  {"name": "07-person-profile-1440.png", "path": "/people/hannah-kowalski", "device": "desktop", "full_page": true, "login": true},
+  {"name": "08-department-1440.png", "path": "/departments/engineering", "device": "desktop", "full_page": true, "login": true},
+  {"name": "09-handbook-1440.png", "path": "/handbook", "device": "desktop", "full_page": true, "login": true},
+  {"name": "10-policy-1440.png", "path": "/handbook/code-of-conduct", "device": "desktop", "full_page": true, "login": true},
+  {"name": "11-managers-only-1440.png", "path": "/handbook/compensation-review-process", "device": "desktop", "login": true},
+  {"name": "12-events-1440.png", "path": "/events", "device": "desktop", "full_page": true, "login": true},
+  {"name": "13-resources-1440.png", "path": "/resources", "device": "desktop", "full_page": true, "login": true},
+  {"name": "14-it-help-1440.png", "path": "/it-help", "device": "desktop", "full_page": true, "login": true},
+  {"name": "15-system-status-1440.png", "path": "/status", "device": "desktop", "full_page": true, "login": true},
+  {"name": "16-search-1440.png", "path": "/search?q=leave", "device": "desktop", "full_page": true, "login": true},
+  {"name": "17-home-mobile-390.png", "path": "/", "device": "mobile", "login": true},
+  {"name": "18-people-mobile-390.png", "path": "/people", "device": "mobile", "login": true},
+  {"name": "19-gate-mobile-390.png", "path": "/", "device": "mobile"}
+]

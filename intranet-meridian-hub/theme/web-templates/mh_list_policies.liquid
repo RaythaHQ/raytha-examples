@@ -1,0 +1,35 @@
+{%- assign secs = "working:Working here,time_off:Time off and leave,benefits:Pay and benefits,conduct:Conduct and safety,security:Security and data,travel:Travel and expenses" | split: "," -%}
+{%- assign hidden = 0 -%}{%- assign ackn = 0 -%}
+{%- for x in Target.Items %}{% capture ak %}{{ x.PublishedContent.acknowledge }}{% endcapture %}{% if ak == "True" %}{% assign ackn = ackn | plus: 1 %}{% endif %}{% endfor -%}
+<div class="ph"><div><span class="kick">Employee handbook</span><h1>Handbook and policies</h1><p>How we work, time off, pay and benefits, conduct, security and travel. Each page shows its owner, version and next review date.</p></div>
+  <span class="chip"><i class="bi bi-check2-circle" style="color:var(--teal)"></i> <span data-ackc>0</span> of {{ ackn }} acknowledged</span></div>
+<div class="hb">
+  <nav class="card toc">{% for kv in secs %}{% assign pr = kv | split: ":" %}<a href="#{{ pr[0] }}">{{ pr[1] }}</a>{% endfor %}<div class="tip"><i class="bi bi-info-circle"></i> Pages marked <b>Acknowledge</b> need a one-click confirmation that you've read them.</div></nav>
+  <div>
+  {%- for kv in secs %}{% assign pr = kv | split: ":" %}
+    <section id="{{ pr[0] }}" class="hbs reveal"><h2>{{ pr[1] }}</h2><div class="card">
+    {%- for x in Target.Items %}{% assign p = x.PublishedContent %}{% capture sv %}{{ p.section }}{% endcapture %}{% if sv == pr[0] %}{% capture mo %}{{ p.managers_only }}{% endcapture %}{% capture ak %}{{ p.acknowledge }}{% endcapture %}
+      {%- if mo == "True" and is_mgr == false %}{% assign hidden = hidden | plus: 1 %}
+      {%- else %}
+      <a class="pr" href="{{ PathBase }}/{{ x.RoutePath }}" {% if ak == "True" %}data-ack="{{ x.RoutePath }}"{% endif %}>
+        <i class="bi bi-file-earmark-text fi"></i>
+        <div><b>{{ x.PrimaryField }}</b>{% if ak == "True" %} <span class="bdg amber ackb">Acknowledge</span><span class="bdg teal okb"><i class="bi bi-check2"></i> Acknowledged</span>{% endif %}{% if mo == "True" %} <span class="bdg vio"><i class="bi bi-person-badge"></i> Managers</span>{% endif %}<small>{{ p.summary }}</small></div>
+        <span class="v mono">v{{ p.version }}<br><span class="mut">{{ p.owner.PrimaryField }}</span></span>
+      </a>
+      {%- endif %}
+    {%- endif %}{% endfor %}
+    </div></section>
+  {%- endfor %}
+  {% if hidden > 0 %}<div class="lock"><i class="bi bi-lock"></i><div><b>{{ hidden }} more page{% if hidden != 1 %}s{% endif %} for people managers.</b> They're only sent to members of the People managers group.</div></div>{% endif %}
+  </div>
+</div>
+<style>.hb{display:grid;grid-template-columns:240px minmax(0,1fr);gap:24px;align-items:start}
+.toc{position:sticky;top:86px;padding:10px;display:flex;flex-direction:column}.toc a{padding:8px 12px;border-radius:9px;font-size:.88rem;font-weight:520;color:var(--ink2)}.toc a:hover{background:var(--line2);color:var(--ink)}
+.toc .tip{font-size:.78rem;color:var(--mut);padding:12px;margin-top:8px;border-top:1px solid var(--line2);line-height:1.45}
+.hbs{margin-bottom:22px;scroll-margin-top:86px}.hbs h2{font-size:.78rem;font-family:var(--mono);text-transform:uppercase;letter-spacing:.12em;color:var(--mut);font-weight:600;margin:0 0 10px}
+.pr{display:grid;grid-template-columns:40px minmax(0,1fr) auto;gap:14px;align-items:center;padding:14px 18px;border-top:1px solid var(--line2)}.pr:first-child{border-top:0}.pr:hover{background:#fafcfb}
+.pr .fi{width:40px;height:40px;border-radius:11px;background:var(--line2);display:grid;place-items:center;color:var(--ink2);font-size:1.1rem}
+.pr b{font-weight:600}.pr small{display:block;color:var(--mut);font-size:.84rem;line-height:1.4;margin-top:2px}.pr .v{font-size:.72rem;text-align:right;line-height:1.5}
+.okb{display:none}.acked .okb{display:inline-flex}.acked .ackb{display:none}
+@media(max-width:900px){.hb{grid-template-columns:1fr}.toc{position:static;flex-direction:row;overflow-x:auto}.toc .tip{display:none}.toc a{white-space:nowrap}.pr{grid-template-columns:36px minmax(0,1fr)}.pr .v{display:none}}</style>
+<script>(function(){var a=[];try{a=JSON.parse(localStorage.getItem('mh:ack')||'[]')}catch(e){}var n=0;document.querySelectorAll('[data-ack]').forEach(function(el){if(a.indexOf(el.getAttribute('data-ack'))>-1)n++});var c=document.querySelector('[data-ackc]');if(c)c.textContent=n})();</script>

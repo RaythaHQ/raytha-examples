@@ -1,0 +1,35 @@
+{%- assign secs = "working:Working here,time_off:Time off and leave,benefits:Pay and benefits,conduct:Conduct and safety,security:Security and data,travel:Travel and expenses" | split: "," -%}
+{%- assign p = Target.PublishedContent -%}{%- capture sv %}{{ p.section }}{% endcapture -%}{%- assign sl = sv -%}{%- for kv in secs %}{% assign pr = kv | split: ":" %}{% if pr[0] == sv %}{% assign sl = pr[1] %}{% endif %}{% endfor -%}{% capture mo %}{{ p.managers_only }}{% endcapture %}{% capture ak %}{{ p.acknowledge }}{% endcapture %}
+<nav class="crumbs"><a href="{{ PathBase }}/">Home</a><i class="bi bi-chevron-right"></i><a href="{{ PathBase }}/handbook">Handbook</a><i class="bi bi-chevron-right"></i><span>{{ Target.PrimaryField | truncate: 48 }}</span></nav>
+{%- if mo == "True" and is_mgr == false %}
+<div class="card" style="padding:56px 28px;text-align:center;max-width:720px;margin:10px auto"><span style="width:64px;height:64px;border-radius:18px;background:#efe7ff;color:#6d28d9;display:inline-grid;place-items:center;font-size:1.8rem"><i class="bi bi-person-badge"></i></span>
+  <h1 style="font-size:1.8rem;margin:16px 0 8px">This page is for people managers</h1><p class="mut" style="max-width:460px;margin:0 auto 20px">It is only sent to members of the People managers group. If you manage people and can't see it, ask People & Culture to add you.</p><a class="btn" href="{{ PathBase }}/handbook">Back to the handbook</a></div>
+{%- else %}
+{%- assign all = get_content_items(ContentType="policies", OrderBy="sort_order asc", PageSize=100) -%}
+<div class="dg" style="grid-template-columns:240px minmax(0,1fr) 300px">
+  <nav class="card toc2"><span class="kick" style="padding:8px 12px 6px;display:block">{{ sl }}</span>{% for x in all.Items %}{% capture s2 %}{{ x.PublishedContent.section }}{% endcapture %}{% capture m2 %}{{ x.PublishedContent.managers_only }}{% endcapture %}{% if s2 == sv %}{% if m2 != "True" or is_mgr %}<a href="{{ PathBase }}/{{ x.RoutePath }}" class="{% if x.RoutePath == Target.RoutePath %}on{% endif %}">{{ x.PrimaryField }}</a>{% endif %}{% endif %}{% endfor %}<a href="{{ PathBase }}/handbook" style="margin-top:8px;border-top:1px solid var(--line2);border-radius:0;padding-top:12px;color:var(--teal2)"><i class="bi bi-arrow-left"></i> Whole handbook</a></nav>
+  <article class="card" style="padding:30px 34px 34px">
+    <div class="chips" style="gap:6px"><span class="bdg">{{ sl }}</span>{% if ak == "True" %}<span class="bdg amber">Acknowledgement required</span>{% endif %}{% if mo == "True" %}<span class="bdg vio"><i class="bi bi-person-badge"></i> Managers only</span>{% endif %}</div>
+    <h1 style="font-size:clamp(1.7rem,3vw,2.3rem);letter-spacing:-.04em;margin:14px 0 10px">{{ Target.PrimaryField }}</h1>
+    <p style="font-size:1.1rem;color:var(--ink2);padding-bottom:20px;border-bottom:1px solid var(--line2);margin-bottom:22px">{{ p.summary }}</p>
+    <div class="prose">{{ p.body }}</div>
+    {% if ak == "True" %}<div class="ackbox" data-ack="{{ Target.RoutePath }}" id="ackbox"><i class="bi bi-pen"></i><div style="flex:1;min-width:240px"><b class="t1">Please confirm you've read this page.</b><b class="t2">Thanks, you acknowledged this page.</b><small>Version {{ p.version }}, effective {{ p.effective.Value | date: "%B %-d, %Y" }}. In this demo the acknowledgement is kept in your browser.</small></div><button class="btn pri" type="button" onclick="var a=[];try{a=JSON.parse(localStorage.getItem('mh:ack')||'[]')}catch(e){};var r=this.parentNode.getAttribute('data-ack');if(a.indexOf(r)<0)a.push(r);localStorage.setItem('mh:ack',JSON.stringify(a));this.parentNode.classList.add('acked')"><i class="bi bi-check2"></i> I've read it</button></div>{% endif %}
+  </article>
+  <aside>
+    <div class="card" style="padding:18px 20px"><span class="kick">Document details</span><div class="mi" style="margin-top:8px">
+      <div><span>Owner</span><span><a href="{{ PathBase }}/{{ p.owner.RoutePath }}" style="color:var(--teal2)">{{ p.owner.PrimaryField }}</a></span></div>
+      <div><span>Version</span><span class="mono">{{ p.version }}</span></div>
+      <div><span>Effective</span><span>{{ p.effective.Value | date: "%b %-d, %Y" }}</span></div>
+      <div><span>Next review</span><span>{{ p.review_due.Value | date: "%b %-d, %Y" }}</span></div></div></div>
+    <div class="card" style="padding:18px 20px"><span class="kick">Questions?</span><p class="mut" style="font-size:.88rem;margin:8px 0 12px">Ask the policy owner, or your people partner.</p><a class="btn" style="width:100%" href="mailto:{{ p.owner.PublishedContent.email }}"><i class="bi bi-envelope"></i> {{ p.owner.PublishedContent.email }}</a></div>
+  </aside>
+</div>
+{%- endif %}
+<style>.toc2{position:sticky;top:86px;padding:8px;display:flex;flex-direction:column}.toc2 a{padding:8px 12px;border-radius:9px;font-size:.86rem;color:var(--ink2);line-height:1.35}.toc2 a:hover{background:var(--line2)}.toc2 a.on{background:var(--mint);color:#0b6b60;font-weight:600}
+.ackbox{display:flex;gap:14px;align-items:center;margin-top:28px;padding:18px;border-radius:16px;background:var(--amber2);flex-wrap:wrap}.ackbox>i{font-size:1.4rem;color:#9a6700}.ackbox small{display:block;color:#7a5a17;font-size:.8rem;margin-top:2px}.ackbox .t2{display:none}
+.ackbox.acked{background:var(--mint)}.ackbox.acked .t1,.ackbox.acked button{display:none}.ackbox.acked .t2{display:block}.ackbox.acked>i::before{content:"\F26B";color:var(--teal2)}
+@media(max-width:1200px){.dg[style]{grid-template-columns:minmax(0,1fr) 300px!important}.toc2{display:none}}@media(max-width:1020px){.dg[style]{grid-template-columns:1fr!important}article.card{padding:22px!important}}</style>
+<style>.dg{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:22px;align-items:start}.dg>aside{display:flex;flex-direction:column;gap:18px;position:sticky;top:86px}
+.mi{display:flex;flex-direction:column;gap:0}.mi div{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-top:1px solid var(--line2);font-size:.86rem}.mi div:first-child{border-top:0}.mi div span:first-child{color:var(--mut)}.mi div span:last-child{text-align:right;font-weight:550}
+.li{display:flex;gap:12px;align-items:center;padding:10px 0;border-top:1px solid var(--line2);font-size:.9rem}.li:first-of-type{border-top:0}.li img{width:36px;height:36px;border-radius:50%}.li b{font-weight:600;display:block;line-height:1.25}.li small{color:var(--mut);font-size:.78rem;display:block;line-height:1.3}
+@media(max-width:1020px){.dg{grid-template-columns:1fr}.dg>aside{position:static}}</style>

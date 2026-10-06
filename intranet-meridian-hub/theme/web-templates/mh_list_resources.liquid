@@ -1,0 +1,26 @@
+{%- assign rkinds = "template:Template,guide:Guide,form:Form,brand:Brand asset,deck:Slide deck" | split: "," -%}
+{%- assign qk = "" -%}{%- for kv in rkinds %}{% assign pr = kv | split: ":" %}{% if QueryParams.kind == pr[0] %}{% assign qk = pr[0] %}{% endif %}{% endfor -%}
+{%- assign hidden = 0 -%}
+<div class="ph"><div><span class="kick">Resource library</span><h1>Templates, guides and forms</h1><p>The current version of every shared document, with its owner and when it was last updated. Download it here instead of hunting through email.</p></div></div>
+<div class="chips" style="margin-bottom:20px"><a href="{{ PathBase }}/resources" class="{% if qk == '' %}on{% endif %}">All</a>{% for kv in rkinds %}{% assign pr = kv | split: ":" %}<a href="{{ PathBase }}/resources?kind={{ pr[0] }}" class="{% if qk == pr[0] %}on{% endif %}">{{ pr[1] }}s</a>{% endfor %}</div>
+<div class="card rl">
+  <div class="rh"><span>Document</span><span>Owner</span><span>Updated</span><span></span></div>
+{%- for x in Target.Items %}{% assign r = x.PublishedContent %}{%- capture kv2 %}{{ r.kind }}{% endcapture -%}{%- assign kl = kv2 -%}{%- for kv in rkinds %}{% assign pr = kv | split: ":" %}{% if pr[0] == kv2 %}{% assign kl = pr[1] %}{% endif %}{% endfor -%}{% capture mo %}{{ r.managers_only }}{% endcapture %}
+  {%- if qk == "" or qk == kv2 %}{% if mo == "True" and is_mgr == false %}{% assign hidden = hidden | plus: 1 %}{% else %}
+  <div class="rr">
+    <a href="{{ PathBase }}/{{ x.RoutePath }}" class="rt"><span class="fi k-{{ kv2 }}"><i class="bi bi-{% if kv2 == 'deck' %}easel2{% elsif kv2 == 'form' %}ui-checks{% elsif kv2 == 'brand' %}palette{% elsif kv2 == 'template' %}file-earmark-ruled{% else %}book{% endif %}"></i></span><span><b>{{ x.PrimaryField }}</b>{% if mo == "True" %} <span class="bdg vio">Managers</span>{% endif %}<small>{{ kl }} · {{ r.file_format }} · {{ r.summary }}</small></span></a>
+    <span class="ro"><i style="background:{{ r.department.PublishedContent.color }}"></i>{{ r.department.PrimaryField }}</span>
+    <span class="ru mono">{{ r.updated_on.Value | date: "%b %-d, %Y" }}</span>
+    <a class="btn sm" href="{{ r.file.Value | attachment_redirect_url }}" download><i class="bi bi-download"></i><span class="dl">Download</span></a>
+  </div>
+  {%- endif %}{% endif %}{% endfor %}
+</div>
+{% if hidden > 0 %}<div class="lock" style="margin-top:14px"><i class="bi bi-lock"></i><div><b>{{ hidden }} document{% if hidden != 1 %}s{% endif %} for people managers.</b> Only members of the People managers group can see or download them.</div></div>{% endif %}
+<style>.rl{overflow:hidden}.rh,.rr{display:grid;grid-template-columns:minmax(0,1fr) 220px 120px 120px;gap:16px;align-items:center;padding:12px 18px}
+.rh{font:600 .66rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--mut);background:#fafcfb;border-bottom:1px solid var(--line)}
+.rr{border-top:1px solid var(--line2)}.rr:nth-child(2){border-top:0}.rr:hover{background:#fafcfb}
+.rt{display:flex;gap:14px;align-items:center;min-width:0}.rt b{font-weight:600}.rt small{display:block;color:var(--mut);font-size:.8rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.rt>span:last-child{min-width:0}
+.fi{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;font-size:1.15rem;flex:none;background:var(--line2);color:var(--ink2)}
+.k-brand{background:#fde7f1;color:#be185d}.k-deck{background:#efe7ff;color:#6d28d9}.k-form{background:var(--sky2);color:#1d4ed8}.k-template{background:var(--amber2);color:#8a5a00}.k-guide{background:var(--mint);color:#0b6b60}
+.ro{display:flex;align-items:center;gap:8px;font-size:.84rem;color:var(--ink2)}.ro i{width:8px;height:8px;border-radius:3px;flex:none}.ru{font-size:.78rem;color:var(--mut)}
+@media(max-width:900px){.rh{display:none}.rr{grid-template-columns:minmax(0,1fr) auto}.ro,.ru{display:none}.rr .dl{display:none}}</style>

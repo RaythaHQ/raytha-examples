@@ -1,0 +1,8 @@
+{%- assign an = get_content_items(ContentType="announcements", Filter="requires_action eq 'true'", OrderBy="posted_on desc", PageSize=5) -%}
+{%- assign po = get_content_items(ContentType="policies", Filter="acknowledge eq 'true'", OrderBy="sort_order asc", PageSize=10) -%}
+<section class="card reveal todo" style="padding:18px 20px"><div class="sh"><h2><i class="bi bi-check2-square"></i> {{ widget.settings.headline | default: "Your to-dos" }}</h2><span class="bdg amber"><span data-todo-count>0</span> open</span></div>
+{% for x in an.Items %}<a class="td" data-todo href="/{{ x.RoutePath }}"><i class="bi bi-exclamation-circle"></i><span><b>{{ x.PrimaryField | truncate: 70 }}</b><small>{{ x.PublishedContent.department.PrimaryField }}</small></span></a>{% endfor %}
+{% for x in po.Items %}<a class="td" data-todo data-ack="{{ x.RoutePath }}" href="/{{ x.RoutePath }}"><i class="bi bi-pen"></i><span><b>Acknowledge: {{ x.PrimaryField }}</b><small>Handbook · v{{ x.PublishedContent.version }}</small></span></a>{% endfor %}
+</section>
+<style>.td{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-top:1px solid var(--line2);font-size:.88rem}.td:first-of-type{border-top:0}.td>i{width:30px;height:30px;border-radius:9px;display:grid;place-items:center;background:var(--amber2);color:#9a6700;flex:none}.td b{font-weight:600;display:block;line-height:1.3}.td small{color:var(--mut);font-size:.76rem}
+.td.acked{opacity:.55}.td.acked>i{background:var(--mint);color:var(--teal2)}.td.acked>i::before{content:"\F26B"}.td.acked b{text-decoration:line-through}</style>

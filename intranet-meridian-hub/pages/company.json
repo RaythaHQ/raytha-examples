@@ -1,0 +1,92 @@
+{
+ "main": [
+  {
+   "widgetType": "mh_page_head",
+   "settings": {
+    "kicker": "About Meridian Waterworks",
+    "headline": "We build the meters and controls that help cities waste less water.",
+    "subtitle": "Meridian was founded in Austin in 2014. Today about 550 of us design, build and support Tidemark smart meters, ClearLine filtration controls and Meridian Cloud for more than 140 utilities in North America and Europe."
+   }
+  },
+  {
+   "widgetType": "mh_values",
+   "settings": {
+    "headline": "How we work",
+    "items": [
+     {
+      "icon": "shield-check",
+      "title": "Safety first, always",
+      "text": "Anyone can stop the line, pause a rollout or say no to a deadline that isn't safe."
+     },
+     {
+      "icon": "droplet-half",
+      "title": "Every drop counts",
+      "text": "Our customers run public utilities. We treat their water, data and budgets as if they were ours."
+     },
+     {
+      "icon": "chat-square-text",
+      "title": "Say it plainly",
+      "text": "Short sentences, real numbers and no jargon, with customers and with each other."
+     },
+     {
+      "icon": "people",
+      "title": "One team",
+      "text": "Plant, office and remote are one company. We share the wins and fix problems together."
+     }
+    ]
+   }
+  },
+  {
+   "widgetType": "mh_leaders",
+   "settings": {
+    "headline": "Leadership team"
+   }
+  },
+  {
+   "widgetType": "mh_offices",
+   "settings": {
+    "headline": "Where we work",
+    "items": [
+     {
+      "key": "austin",
+      "name": "Austin HQ",
+      "address": "South Lamar, Austin, Texas",
+      "note": "Headquarters for leadership, sales, finance, people, IT and marketing. The 4th floor is being refreshed until the end of November."
+     },
+     {
+      "key": "tulsa",
+      "name": "Tulsa plant",
+      "address": "Port of Catoosa, Tulsa, Oklahoma",
+      "note": "Where every Tidemark meter and ClearLine skid is built and tested. Two shifts, 232 people."
+     },
+     {
+      "key": "denver",
+      "name": "Denver",
+      "address": "RiNo, Denver, Colorado",
+      "note": "Home of Engineering and the hardware lab, plus customer success for the Mountain West."
+     },
+     {
+      "key": "rotterdam",
+      "name": "Rotterdam",
+      "address": "Lloyd Quarter, Rotterdam, Netherlands (from January)",
+      "note": "Sales, customer success and supply chain for our European customers."
+     },
+     {
+      "key": "remote",
+      "name": "Remote",
+      "address": "Across the US",
+      "note": "About 60 of us work from home full time, with a trip to an office every quarter."
+     }
+    ]
+   }
+  },
+  {
+   "widgetType": "mh_text",
+   "settings": {
+    "kicker": "About this demo",
+    "headline": "A fictional company",
+    "body": "<p>Meridian Waterworks, its people and its products are invented for a Raytha example. Portraits and images are generated, and every email address uses <code>meridian.example</code>.</p>"
+   }
+  }
+ ]
+}

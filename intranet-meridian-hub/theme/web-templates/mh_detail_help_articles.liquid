@@ -1,0 +1,25 @@
+{%- assign topics = "accounts:Accounts and sign-in,devices:Laptops and phones,software:Software,network:Network and VPN,security:Security" | split: "," -%}
+{%- assign h = Target.PublishedContent -%}{%- capture tv %}{{ h.topic }}{% endcapture -%}{%- assign tl = tv -%}{%- for kv in topics %}{% assign pr = kv | split: ":" %}{% if pr[0] == tv %}{% assign tl = pr[1] %}{% endif %}{% endfor -%}
+<nav class="crumbs"><a href="{{ PathBase }}/">Home</a><i class="bi bi-chevron-right"></i><a href="{{ PathBase }}/it-help">IT help</a><i class="bi bi-chevron-right"></i><span>{{ Target.PrimaryField | truncate: 48 }}</span></nav>
+<div class="dg">
+  <article class="card" style="padding:30px 34px 34px">
+    <div class="chips" style="gap:6px"><a class="bdg teal" href="{{ PathBase }}/it-help?topic={{ tv }}">{{ tl }}</a><span class="bdg"><i class="bi bi-stopwatch"></i> About {{ h.minutes }} min</span></div>
+    <h1 style="font-size:clamp(1.7rem,3vw,2.3rem);letter-spacing:-.04em;margin:14px 0 10px">{{ Target.PrimaryField }}</h1>
+    <p style="font-size:1.1rem;color:var(--ink2);padding-bottom:20px;border-bottom:1px solid var(--line2);margin-bottom:22px">{{ h.summary }}</p>
+    <div class="prose steps">{{ h.body }}</div>
+    <div class="fb"><span>Did this solve it?</span><button class="btn sm" type="button" onclick="this.parentNode.innerHTML='<span><i class=\'bi bi-heart-fill\' style=\'color:var(--coral)\'></i> Thanks for letting us know.</span>'"><i class="bi bi-hand-thumbs-up"></i> Yes</button><a class="btn sm" href="#desk"><i class="bi bi-headset"></i> No, I need help</a></div>
+  </article>
+  <aside>
+    <div class="card" style="padding:18px 20px" id="desk"><span class="kick">Service desk</span><h3 style="margin:8px 0 6px;font-size:1.1rem">Extension 4357</h3><p class="mut" style="font-size:.88rem;margin:0">7 AM to 7 PM CT on weekdays. On-call after hours for anything urgent.</p></div>
+    <div class="card" style="padding:18px 20px"><span class="kick">Last reviewed</span><p style="margin:6px 0 0;font-weight:550">{{ h.updated_on.Value | date: "%B %-d, %Y" }}</p></div>
+    {%- assign more = get_content_items(ContentType="help_articles", Filter="popular eq 'true'", OrderBy="title asc", PageSize=6) %}
+    <div class="card" style="padding:18px 20px"><span class="kick">Popular</span>{% assign k = 0 %}{% for x in more.Items %}{% if x.RoutePath != Target.RoutePath %}{% assign k = k | plus: 1 %}<a class="li" href="{{ PathBase }}/{{ x.RoutePath }}" style="{% if k == 1 %}border-top:0;margin-top:8px{% endif %}"><i class="bi bi-life-preserver" style="color:var(--teal)"></i><span><b>{{ x.PrimaryField }}</b></span></a>{% endif %}{% endfor %}</div>
+  </aside>
+</div>
+<style>.steps ol{counter-reset:s;list-style:none;padding:0}.steps ol li{counter-increment:s;position:relative;padding:10px 0 10px 48px;margin:0;border-top:1px solid var(--line2)}.steps ol li:first-child{border-top:0}
+.steps ol li::before{content:counter(s);position:absolute;left:0;top:9px;width:32px;height:32px;border-radius:10px;background:var(--mint);color:#0b6b60;display:grid;place-items:center;font-weight:650;font-size:.9rem}
+.fb{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:26px;padding:16px 18px;border-radius:14px;background:var(--bg);font-weight:550;font-size:.9rem}.fb>span:first-child{margin-right:auto}</style>
+<style>.dg{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:22px;align-items:start}.dg>aside{display:flex;flex-direction:column;gap:18px;position:sticky;top:86px}
+.mi{display:flex;flex-direction:column;gap:0}.mi div{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-top:1px solid var(--line2);font-size:.86rem}.mi div:first-child{border-top:0}.mi div span:first-child{color:var(--mut)}.mi div span:last-child{text-align:right;font-weight:550}
+.li{display:flex;gap:12px;align-items:center;padding:10px 0;border-top:1px solid var(--line2);font-size:.9rem}.li:first-of-type{border-top:0}.li img{width:36px;height:36px;border-radius:50%}.li b{font-weight:600;display:block;line-height:1.25}.li small{color:var(--mut);font-size:.78rem;display:block;line-height:1.3}
+@media(max-width:1020px){.dg{grid-template-columns:1fr}.dg>aside{position:static}}</style>

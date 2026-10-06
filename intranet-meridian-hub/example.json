@@ -1,0 +1,34 @@
+{
+ "name": "Meridian Hub",
+ "theme": "meridian",
+ "types": [
+  "departments",
+  "people",
+  "announcements",
+  "policies",
+  "events",
+  "resources",
+  "help_articles",
+  "systems"
+ ],
+ "detailTemplates": {
+  "departments": "mh_detail_departments",
+  "people": "mh_detail_people",
+  "announcements": "mh_detail_announcements",
+  "policies": "mh_detail_policies",
+  "events": "mh_detail_events",
+  "resources": "mh_detail_resources",
+  "help_articles": "mh_detail_help_articles",
+  "systems": "mh_detail_systems"
+ },
+ "groups": [
+  {
+   "developerName": "employees",
+   "label": "Employees"
+  },
+  {
+   "developerName": "managers",
+   "label": "People managers"
+  }
+ ]
+}

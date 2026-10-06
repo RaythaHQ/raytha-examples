@@ -1,0 +1,23 @@
+{%- assign ekinds = "all_hands:All hands,learning:Learning,social:Social,wellbeing:Wellbeing,volunteering:Volunteering" | split: "," -%}{%- assign formats = "in_person:In person,online:Online,hybrid:Hybrid" | split: "," -%}{%- assign today = "now" | date: "%Y%m%d" | plus: 0 -%}
+{%- assign qk = "" -%}{%- for kv in ekinds %}{% assign pr = kv | split: ":" %}{% if QueryParams.kind == pr[0] %}{% assign qk = pr[0] %}{% endif %}{% endfor -%}
+<div class="ph"><div><span class="kick">Calendar</span><h1>Events</h1><p>Town halls, training, socials and volunteering across every office. Times are local to the event.</p></div></div>
+<div class="chips" style="margin-bottom:22px"><a href="{{ PathBase }}/events" class="{% if qk == '' %}on{% endif %}">Everything</a>{% for kv in ekinds %}{% assign pr = kv | split: ":" %}<a href="{{ PathBase }}/events?kind={{ pr[0] }}" class="{% if qk == pr[0] %}on{% endif %}">{{ pr[1] }}</a>{% endfor %}</div>
+{%- assign lastm = "" -%}{%- assign n = 0 -%}
+<div class="evl">
+{%- for x in Target.Items %}{% assign e = x.PublishedContent %}{%- capture kv2 %}{{ e.kind }}{% endcapture -%}{%- assign kl = kv2 -%}{%- for kv in ekinds %}{% assign pr = kv | split: ":" %}{% if pr[0] == kv2 %}{% assign kl = pr[1] %}{% endif %}{% endfor -%}{%- capture fv %}{{ e.format }}{% endcapture -%}{%- assign fl = fv -%}{%- for kv in formats %}{% assign pr = kv | split: ":" %}{% if pr[0] == fv %}{% assign fl = pr[1] %}{% endif %}{% endfor -%}{% assign ed = e.start.Value | date: "%Y%m%d" | plus: 0 %}
+  {%- if ed >= today %}{% if qk == "" or qk == kv2 %}{% assign n = n | plus: 1 %}{% assign mo = e.start.Value | date: "%B %Y" %}
+    {%- if mo != lastm %}<h2 class="mh">{{ mo }}</h2>{% assign lastm = mo %}{% endif %}
+    <a class="card lift ev reveal" href="{{ PathBase }}/{{ x.RoutePath }}">
+      <div class="dt"><span>{{ e.start.Value | date: "%b" }}</span><b>{{ e.start.Value | date: "%-d" }}</b><small>{{ e.start.Value | date: "%a" }}</small></div>
+      <div class="eb"><div style="display:flex;gap:6px;flex-wrap:wrap"><span class="bdg {% if kv2 == 'all_hands' %}coral{% elsif kv2 == 'learning' %}sky{% elsif kv2 == 'social' %}vio{% elsif kv2 == 'wellbeing' %}teal{% else %}amber{% endif %}">{{ kl }}</span><span class="bdg">{% if fv == "online" %}<i class="bi bi-camera-video"></i>{% elsif fv == "hybrid" %}<i class="bi bi-broadcast"></i>{% else %}<i class="bi bi-geo-alt"></i>{% endif %} {{ fl }}</span></div>
+        <h3>{{ x.PrimaryField }}</h3><p>{{ e.summary }}</p>
+        <span class="em"><span><i class="bi bi-clock"></i> {{ e.time_label }}</span><span><i class="bi bi-pin-map"></i> {{ e.location }}</span><span><i class="bi bi-people"></i> {{ e.host.PrimaryField }}</span></span></div>
+      <i class="bi bi-chevron-right go"></i>
+    </a>
+  {%- endif %}{% endif %}{% endfor %}
+</div>
+{% if n == 0 %}<div class="card empty">No upcoming events of this kind. <a href="{{ PathBase }}/events" style="text-decoration:underline">See everything</a></div>{% endif %}
+<style>.evl{display:flex;flex-direction:column;gap:12px;max-width:980px}.mh{font:600 .74rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--mut);margin:14px 0 2px}.mh:first-child{margin-top:0}
+.ev{display:flex;gap:18px;padding:16px 18px;align-items:flex-start}.ev .eb{flex:1;min-width:0;display:flex;flex-direction:column;gap:6px}.ev h3{font-size:1.08rem;letter-spacing:-.02em}.ev p{margin:0;font-size:.88rem;color:var(--ink2)}
+.em{display:flex;gap:16px;flex-wrap:wrap;font-size:.78rem;color:var(--mut)}.em i{margin-right:3px}.ev .go{color:var(--mut);align-self:center}
+@media(max-width:600px){.ev{gap:12px;padding:14px}.ev .go{display:none}}</style>

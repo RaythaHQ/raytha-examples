@@ -1,0 +1,43 @@
+{%- assign offices = "austin:Austin HQ,tulsa:Tulsa plant,denver:Denver,rotterdam:Rotterdam,remote:Remote" | split: "," -%}
+{%- assign p = Target.PublishedContent -%}{%- capture ov %}{{ p.office }}{% endcapture -%}{%- assign ol = ov -%}{%- for kv in offices %}{% assign pr = kv | split: ":" %}{% if pr[0] == ov %}{% assign ol = pr[1] %}{% endif %}{% endfor -%}{% assign sd = p.start_date.Value | date: "%Y%m%d" | plus: 0 %}{% assign c = p.department.PublishedContent.color %}
+<nav class="crumbs"><a href="{{ PathBase }}/">Home</a><i class="bi bi-chevron-right"></i><a href="{{ PathBase }}/people">People</a><i class="bi bi-chevron-right"></i><span>{{ Target.PrimaryField | truncate: 48 }}</span></nav>
+<div class="dg">
+  <div style="display:flex;flex-direction:column;gap:18px;min-width:0">
+  <section class="card prof">
+    <div class="cov" style="background:linear-gradient(120deg,{{ c }},#0a2a36)"></div>
+    <div class="pin">
+      <img class="ph0" src="{{ p.photo.Value | attachment_redirect_url }}" alt="Portrait of {{ Target.PrimaryField }}">
+      <div style="flex:1;min-width:0"><h1>{{ Target.PrimaryField }} {% capture pro %}{{ p.pronouns | strip }}{% endcapture %}{% if pro != "" %}<small>({{ p.pronouns }})</small>{% endif %}</h1>
+        <p class="jt">{{ p.job_title }} · <a href="{{ PathBase }}/{{ p.department.RoutePath }}" style="color:var(--teal2);font-weight:600">{{ p.department.PrimaryField }}</a></p>
+        <div class="chips" style="gap:6px">{% capture ld %}{{ p.is_leadership }}{% endcapture %}{% if ld == "True" %}<span class="bdg ink"><i class="bi bi-star-fill"></i> Leadership team</span>{% endif %}{% if sd >= 20260901 %}<span class="bdg teal"><i class="bi bi-stars"></i> New starter</span>{% endif %}<span class="bdg"><i class="bi bi-geo-alt"></i> {{ ol }}</span></div></div>
+      <div class="acts"><a class="btn pri" href="mailto:{{ p.email }}"><i class="bi bi-envelope"></i> Email</a><a class="btn" href="#" onclick="navigator.clipboard&&navigator.clipboard.writeText('{{ p.email }}');this.innerHTML='<i class=\'bi bi-check2\'></i> Copied';return false"><i class="bi bi-clipboard"></i> Copy email</a></div>
+    </div>
+  </section>
+  <section class="card" style="padding:24px 26px"><span class="kick">About</span><p style="font-size:1.04rem;margin:10px 0 0">{{ p.bio }}</p>
+    {% capture sk %}{{ p.skills | strip }}{% endcapture %}{% if sk != "" %}<span class="kick" style="display:block;margin-top:22px">Ask me about</span><div class="chips" style="margin-top:10px">{% assign sks = p.skills | split: "," %}{% for s in sks %}<span class="chip">{{ s | strip }}</span>{% endfor %}</div>{% endif %}
+  </section>
+  {%- capture df %}department eq '{{ p.department.Id | append: "" }}'{% endcapture %}{% assign team = get_content_items(ContentType="people", Filter=df, OrderBy="sort_order asc", PageSize=20) %}
+  <section><div class="sh"><h2><i class="bi bi-people"></i> Works with</h2><a href="{{ PathBase }}/people?dept={{ p.department.RoutePath | split: '/' | last }}">Whole team <i class="bi bi-arrow-right"></i></a></div>
+    <div class="g3">{% for x in team.Items %}{% if x.RoutePath != Target.RoutePath %}<a class="card lift" href="{{ PathBase }}/{{ x.RoutePath }}" style="display:flex;gap:12px;align-items:center;padding:12px"><img src="{{ x.PublishedContent.photo.Value | attachment_redirect_url }}" alt="" style="width:46px;height:46px;border-radius:12px"><span style="min-width:0"><b style="display:block;font-weight:600;line-height:1.25">{{ x.PrimaryField }}</b><small class="mut" style="font-size:.8rem;line-height:1.3;display:block">{{ x.PublishedContent.job_title }}</small></span></a>{% endif %}{% endfor %}</div></section>
+  </div>
+  <aside>
+    <div class="card" style="padding:18px 20px"><span class="kick">Contact</span><div class="mi" style="margin-top:8px">
+      <div><span>Email</span><span><a href="mailto:{{ p.email }}" style="color:var(--teal2)">{{ p.email }}</a></span></div>
+      <div><span>Extension</span><span class="mono">{{ p.phone }}</span></div>
+      <div><span>Office</span><span>{{ ol }}</span></div>
+      <div><span>Team chat</span><span class="mono">{{ p.department.PublishedContent.channel }}</span></div>
+      {% capture mg %}{{ p.manager | strip }}{% endcapture %}{% if mg != "" %}<div><span>Reports to</span><span>{{ p.manager }}</span></div>{% endif %}
+      <div><span>Joined</span><span>{{ p.start_date.Value | date: "%B %Y" }}</span></div></div></div>
+    {%- capture af %}author eq '{{ Target.Id | append: "" }}'{% endcapture %}{% assign posts = get_content_items(ContentType="announcements", Filter=af, OrderBy="posted_on desc", PageSize=5) %}
+    {% if posts.TotalCount > 0 %}<div class="card" style="padding:18px 20px"><span class="kick">Posts by {{ Target.PrimaryField | split: " " | first }}</span>{% for x in posts.Items %}<a class="li" href="{{ PathBase }}/{{ x.RoutePath }}" style="{% if forloop.first %}border-top:0;margin-top:8px{% endif %}"><span><b>{{ x.PrimaryField }}</b><small>{{ x.PublishedContent.posted_on.Value | date: "%b %-d, %Y" }}</small></span></a>{% endfor %}</div>{% endif %}
+  </aside>
+</div>
+<style>.prof{overflow:hidden}.prof .cov{height:130px;position:relative}.prof .cov::after{content:"";position:absolute;inset:0;background:repeating-radial-gradient(circle at 85% 20%,rgba(255,255,255,.08) 0 2px,transparent 2px 26px)}
+.pin{display:flex;gap:22px;align-items:flex-start;padding:0 26px 24px;margin-top:-56px;position:relative;flex-wrap:wrap}.pin>div{padding-top:68px}
+.ph0{width:132px;height:132px;border-radius:28px;border:5px solid #fff;box-shadow:0 18px 30px -18px rgba(0,0,0,.5);background:#fff}
+.prof h1{font-size:clamp(1.6rem,2.6vw,2.1rem);letter-spacing:-.035em}.prof h1 small{font-size:.9rem;color:var(--mut);font-weight:500;letter-spacing:0}.prof .jt{margin:4px 0 10px;color:var(--ink2)}
+.prof .acts{display:flex;gap:8px;flex-wrap:wrap}@media(max-width:760px){.pin>div{padding-top:0}.pin>div.acts{width:100%}}@media(max-width:600px){.pin{padding:0 18px 20px;gap:14px}.ph0{width:104px;height:104px;border-radius:22px}}</style>
+<style>.dg{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:22px;align-items:start}.dg>aside{display:flex;flex-direction:column;gap:18px;position:sticky;top:86px}
+.mi{display:flex;flex-direction:column;gap:0}.mi div{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-top:1px solid var(--line2);font-size:.86rem}.mi div:first-child{border-top:0}.mi div span:first-child{color:var(--mut)}.mi div span:last-child{text-align:right;font-weight:550}
+.li{display:flex;gap:12px;align-items:center;padding:10px 0;border-top:1px solid var(--line2);font-size:.9rem}.li:first-of-type{border-top:0}.li img{width:36px;height:36px;border-radius:50%}.li b{font-weight:600;display:block;line-height:1.25}.li small{color:var(--mut);font-size:.78rem;display:block;line-height:1.3}
+@media(max-width:1020px){.dg{grid-template-columns:1fr}.dg>aside{position:static}}</style>

@@ -1,0 +1,32 @@
+{
+  "label": "Meridian: values",
+  "fields": [
+    {
+      "developerName": "headline",
+      "label": "Heading",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "items",
+      "label": "Values",
+      "fieldType": "repeater",
+      "subFields": [
+        {
+          "developerName": "icon",
+          "label": "Bootstrap icon name",
+          "fieldType": "single_line_text"
+        },
+        {
+          "developerName": "title",
+          "label": "Title",
+          "fieldType": "single_line_text"
+        },
+        {
+          "developerName": "text",
+          "label": "Text",
+          "fieldType": "long_text"
+        }
+      ]
+    }
+  ]
+}

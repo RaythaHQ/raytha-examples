@@ -1,0 +1,22 @@
+{%- assign cats = "company:Company,people:People,product:Product,operations:Operations,it:IT and security,facilities:Facilities" | split: "," -%}
+{%- assign qc = "" -%}{%- for kv in cats %}{% assign pr = kv | split: ":" %}{% if QueryParams.cat == pr[0] %}{% assign qc = pr[0] %}{% assign qcn = pr[1] %}{% endif %}{% endfor -%}
+<div class="ph"><div><span class="kick">Newsroom</span><h1>{% if qcn %}{{ qcn }} news{% else %}News and announcements{% endif %}</h1><p>Company updates from every department, newest first. Pinned posts and anything that needs you to act are flagged.</p></div></div>
+<div class="chips" style="margin-bottom:22px"><a href="{{ PathBase }}/news" class="{% if qc == '' %}on{% endif %}">All</a>{% for kv in cats %}{% assign pr = kv | split: ":" %}<a href="{{ PathBase }}/news?cat={{ pr[0] }}" class="{% if qc == pr[0] %}on{% endif %}">{{ pr[1] }}</a>{% endfor %}</div>
+<div class="nwg">
+{%- assign n = 0 -%}
+{%- for x in Target.Items %}{% assign q = x.PublishedContent %}{%- capture cv %}{{ q.category }}{% endcapture -%}{%- assign cl = cv -%}{%- for kv in cats %}{% assign pr = kv | split: ":" %}{% if pr[0] == cv %}{% assign cl = pr[1] %}{% endif %}{% endfor -%}{% if qc == "" or qc == cv %}{% assign n = n | plus: 1 %}{% capture ra %}{{ q.requires_action }}{% endcapture %}{% capture pn %}{{ q.pinned }}{% endcapture %}
+  <a class="card lift nw{% if n == 1 %} big{% endif %} reveal" href="{{ PathBase }}/{{ x.RoutePath }}">
+    <div class="im"><img src="{{ q.image.Value | attachment_redirect_url }}" alt="" loading="lazy"><span class="bdg" style="position:absolute;left:14px;top:14px;background:rgba(255,255,255,.92)">{{ cl }}</span></div>
+    <div class="bd"><div style="display:flex;gap:6px;flex-wrap:wrap">{% if pn == "True" %}<span class="bdg coral"><i class="bi bi-pin-angle-fill"></i> Pinned</span>{% endif %}{% if ra == "True" %}<span class="bdg amber"><i class="bi bi-exclamation-circle"></i> Action needed</span>{% endif %}</div>
+      <h2>{{ x.PrimaryField }}</h2><p>{{ q.summary }}</p>
+      <div class="by"><img src="{{ q.author.PublishedContent.photo.Value | attachment_redirect_url }}" alt=""><span><b>{{ q.author.PrimaryField }}</b>{{ q.department.PrimaryField }} · {{ q.posted_on.Value | date: "%b %-d" }}</span></div></div>
+  </a>
+{%- endif %}{% endfor %}
+</div>
+{% if n == 0 %}<div class="card empty">No news in this category yet. <a href="{{ PathBase }}/news" style="text-decoration:underline">Show all</a></div>{% endif %}
+<style>.nwg{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.nw{overflow:hidden;display:flex;flex-direction:column}.nw .im{position:relative;aspect-ratio:16/8;overflow:hidden;background:var(--line2)}.nw .im img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}.nw:hover .im img{transform:scale(1.04)}
+.nw .bd{padding:16px 18px 18px;display:flex;flex-direction:column;gap:8px;flex:1}.nw h2{font-size:1.06rem;letter-spacing:-.02em;line-height:1.3}.nw p{font-size:.88rem;color:var(--ink2);margin:0;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.nw.big{grid-column:span 2;flex-direction:row}.nw.big .im{aspect-ratio:auto;flex:1.1}.nw.big .bd{flex:1;padding:24px}.nw.big h2{font-size:1.5rem;letter-spacing:-.03em}.nw.big p{-webkit-line-clamp:4;font-size:.96rem}
+.by{display:flex;gap:10px;align-items:center;margin-top:auto;padding-top:8px;font-size:.78rem;color:var(--mut);line-height:1.3}.by img{width:30px;height:30px;border-radius:50%}.by b{display:block;color:var(--ink);font-weight:600}
+@media(max-width:1100px){.nwg{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:640px){.nwg{grid-template-columns:1fr}.nw.big{grid-column:auto;flex-direction:column}.nw.big .im{aspect-ratio:16/8}.nw.big .bd{padding:16px 18px}.nw.big h2{font-size:1.2rem}}</style>

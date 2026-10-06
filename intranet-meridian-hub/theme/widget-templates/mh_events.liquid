@@ -1,0 +1,7 @@
+{%- assign today = "now" | date: "%Y%m%d" | plus: 0 -%}{%- assign s = widget.settings -%}{% assign c = s.count | append: "" | plus: 0 %}{% if c == 0 %}{% assign c = 4 %}{% endif %}
+{%- assign xs = get_content_items(ContentType="events", OrderBy="start asc", PageSize=50) -%}
+<section class="card reveal" style="padding:18px 20px"><div class="sh"><h2><i class="bi bi-calendar-event"></i> {{ s.headline | default: "Coming up" }}</h2><a href="/events">Calendar <i class="bi bi-arrow-right"></i></a></div>
+<div class="g2" style="gap:12px">{% assign k = 0 %}{% for x in xs.Items %}{% assign e = x.PublishedContent %}{% assign ed = e.start.Value | date: "%Y%m%d" | plus: 0 %}{% if ed >= today and k < c %}{% assign k = k | plus: 1 %}
+  <a class="we" href="/{{ x.RoutePath }}"><div class="dt"><span>{{ e.start.Value | date: "%b" }}</span><b>{{ e.start.Value | date: "%-d" }}</b><small>{{ e.start.Value | date: "%a" }}</small></div><span><b>{{ x.PrimaryField }}</b><small>{{ e.time_label }}</small><small>{{ e.location }}</small></span></a>
+{% endif %}{% endfor %}</div></section>
+<style>.we{display:flex;gap:14px;align-items:flex-start;padding:12px;border-radius:14px;border:1px solid var(--line2);transition:.2s}.we:hover{border-color:var(--line);background:#fafcfb}.we b{display:block;font-weight:600;line-height:1.3;margin-bottom:3px}.we small{display:block;color:var(--mut);font-size:.78rem;line-height:1.35}</style>

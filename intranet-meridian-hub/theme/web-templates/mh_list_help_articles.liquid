@@ -1,0 +1,33 @@
+{%- assign topics = "accounts:Accounts and sign-in,devices:Laptops and phones,software:Software,network:Network and VPN,security:Security" | split: "," -%}
+{%- assign q = QueryParams.q | strip | downcase | truncate: 40, "" -%}
+{%- assign qt = "" -%}{%- for kv in topics %}{% assign pr = kv | split: ":" %}{% if QueryParams.topic == pr[0] %}{% assign qt = pr[0] %}{% assign qtn = pr[1] %}{% endif %}{% endfor -%}
+<section class="ith reveal">
+  <span class="kick" style="color:#7fd9cb">IT service desk</span>
+  <h1>How can we help?</h1>
+  <form action="{{ PathBase }}/it-help" method="get" class="srch"><i class="bi bi-search"></i><input type="search" name="q" value="{{ QueryParams.q | escape }}" placeholder="Describe the problem, e.g. “VPN slow” or “reset password”" aria-label="Search IT help"></form>
+  <div class="chips" style="margin-top:14px"><a href="{{ PathBase }}/it-help" class="{% if qt == '' %}on{% endif %}">All topics</a>{% for kv in topics %}{% assign pr = kv | split: ":" %}<a href="{{ PathBase }}/it-help?topic={{ pr[0] }}" class="{% if qt == pr[0] %}on{% endif %}">{{ pr[1] }}</a>{% endfor %}</div>
+</section>
+<div class="itg">
+  <div class="card">
+  {%- assign n = 0 -%}
+  {%- for x in Target.Items %}{% assign h = x.PublishedContent %}{%- capture tv %}{{ h.topic }}{% endcapture -%}{%- assign tl = tv -%}{%- for kv in topics %}{% assign pr = kv | split: ":" %}{% if pr[0] == tv %}{% assign tl = pr[1] %}{% endif %}{% endfor -%}{% capture hay %}{{ x.PrimaryField }} {{ h.summary }} {{ tl }}{% endcapture %}{% assign hay = hay | downcase %}{% capture pop %}{{ h.popular }}{% endcapture %}
+    {%- assign ok = true %}{% if qt != "" and qt != tv %}{% assign ok = false %}{% endif %}{% if q != "" %}{% unless hay contains q %}{% assign ok = false %}{% endunless %}{% endif %}
+    {%- if ok %}{% assign n = n | plus: 1 %}
+    <a class="ha" href="{{ PathBase }}/{{ x.RoutePath }}"><span class="fi k-guide"><i class="bi bi-{% if tv == 'accounts' %}key{% elsif tv == 'devices' %}laptop{% elsif tv == 'network' %}router{% elsif tv == 'security' %}shield-check{% else %}window-stack{% endif %}"></i></span>
+      <span><b>{{ x.PrimaryField }}</b>{% if pop == "True" %} <span class="bdg coral">Popular</span>{% endif %}<small>{{ h.summary }}</small></span><span class="mono mut" style="font-size:.74rem;white-space:nowrap">{{ h.minutes }} min</span></a>
+    {%- endif %}{% endfor %}
+    {% if n == 0 %}<div class="empty">No articles match. Call the service desk on <b>x4357</b>.</div>{% endif %}
+  </div>
+  <aside style="display:flex;flex-direction:column;gap:18px">
+    <div class="card" style="padding:20px"><span class="kick">Still stuck?</span><h3 style="margin:8px 0 6px;font-size:1.15rem">Call the service desk</h3><p class="mut" style="font-size:.9rem">Extension <b style="color:var(--ink)">4357</b> (HELP), 7 AM to 7 PM CT on weekdays. Out of hours, the on-call engineer picks up for anything urgent.</p><a class="btn pri" href="{{ PathBase }}/status" style="width:100%"><i class="bi bi-activity"></i> Check system status first</a></div>
+    {%- assign sys = get_content_items(ContentType="systems", OrderBy="sort_order asc", PageSize=20) %}
+    <div class="card" style="padding:18px 20px"><span class="kick">Right now</span>{% for s in sys.Items %}{% capture st %}{{ s.PublishedContent.status }}{% endcapture %}{% if st != "operational" %}<a href="{{ PathBase }}/status" style="display:flex;gap:10px;align-items:flex-start;margin-top:12px;font-size:.88rem"><span class="dot {{ st }}" style="margin-top:7px"></span><span><b>{{ s.PrimaryField }}</b><br><span class="mut">{{ s.PublishedContent.note }}</span></span></a>{% endif %}{% endfor %}</div>
+  </aside>
+</div>
+<style>.ith{border-radius:22px;padding:34px 32px 26px;margin-bottom:22px;color:#cfe3e6;background:radial-gradient(70% 120% at 100% 0%,#1a6d7d 0%,transparent 60%),var(--deep)}
+.ith h1{color:#fff;font-size:clamp(1.8rem,3.2vw,2.5rem);letter-spacing:-.04em;margin:10px 0 18px}.ith .srch{max-width:640px}.ith .srch input{height:50px;font-size:1rem;border:0}
+.ith .chips a{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.14);color:#d7e8eb}.ith .chips a.on{background:#fff;color:var(--ink)}
+.itg{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:18px;align-items:start}
+.ha{display:grid;grid-template-columns:42px minmax(0,1fr) auto;gap:14px;align-items:center;padding:14px 18px;border-top:1px solid var(--line2)}.ha:first-child{border-top:0}.ha:hover{background:#fafcfb}.ha b{font-weight:600}.ha small{display:block;color:var(--mut);font-size:.84rem;line-height:1.4}
+.fi{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;font-size:1.15rem;flex:none;background:var(--mint);color:#0b6b60}
+@media(max-width:1000px){.itg{grid-template-columns:1fr}}@media(max-width:600px){.ith{padding:26px 20px}}</style>

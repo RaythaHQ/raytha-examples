@@ -1,0 +1,37 @@
+{%- comment -%} Employee home. The greeting uses CurrentUser; everything below comes from widgets in the hero, main and side sections. {%- endcomment -%}
+{%- assign pin = get_content_items(ContentType="announcements", Filter="pinned eq 'true'", OrderBy="posted_on desc", PageSize=1) -%}
+<section class="hello reveal">
+  <div class="hello-l">
+    <span class="kick" style="color:#7fd9cb">{{ "now" | date: "%A, %B %-d" }}</span>
+    <h1><span data-greet>Welcome back</span>, {{ CurrentUser.FirstName }}.</h1>
+    <p>Here is what's happening at Meridian today. You have <b data-todo-count>a few</b> things waiting for you.</p>
+    {{ render_section("hero", wrap=false) }}
+  </div>
+  {%- for a in pin.Items %}{% assign q = a.PublishedContent %}
+  <a class="hello-r lift" href="{{ PathBase }}/{{ a.RoutePath }}">
+    <img src="{{ q.image.Value | attachment_redirect_url }}" alt="">
+    <div class="in"><div style="display:flex;gap:6px;flex-wrap:wrap"><span class="bdg coral"><i class="bi bi-pin-angle-fill"></i> Pinned</span>{% capture ra %}{{ q.requires_action }}{% endcapture %}{% if ra == "True" %}<span class="bdg amber"><i class="bi bi-exclamation-circle"></i> Action needed</span>{% endif %}</div>
+      <h2>{{ a.PrimaryField }}</h2><p>{{ q.summary }}</p><span class="more">Read more <i class="bi bi-arrow-right"></i></span></div>
+  </a>
+  {%- endfor %}
+</section>
+<div class="dash">
+  <div class="dash-main">{{ render_section("main", wrap=false) }}</div>
+  <aside class="dash-side">{{ render_section("side", wrap=false) }}</aside>
+</div>
+<style>
+.hello{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:18px;margin-bottom:22px}
+.hello-l{border-radius:22px;padding:30px 32px;color:#cfe3e6;background:radial-gradient(80% 90% at 100% 0%,#1a6d7d 0%,transparent 60%),radial-gradient(60% 80% at 0% 100%,#0f6f63 0%,transparent 60%),var(--deep);position:relative;overflow:hidden}
+.hello-l::after{content:"";position:absolute;right:-120px;top:-120px;width:360px;height:360px;border-radius:50%;border:1px solid rgba(95,240,216,.18);box-shadow:0 0 0 40px rgba(95,240,216,.04),0 0 0 80px rgba(95,240,216,.03)}
+.hello-l h1{color:#fff;font-size:clamp(1.8rem,3.2vw,2.6rem);letter-spacing:-.04em;margin:12px 0 8px;position:relative;z-index:1}
+.hello-l p{color:#b5cfd5;position:relative;z-index:1}.hello-l p b{color:#fff}
+.hello-r{border-radius:22px;overflow:hidden;background:#fff;border:1px solid var(--line);display:flex;flex-direction:column;box-shadow:var(--sh)}
+.hello-r img{height:150px;object-fit:cover;width:100%}
+.hello-r .in{padding:18px 22px 22px;display:flex;flex-direction:column;gap:8px;flex:1}
+.hello-r h2{font-size:1.25rem;letter-spacing:-.025em}.hello-r p{color:var(--ink2);font-size:.93rem;margin:0}
+.hello-r .more{margin-top:auto;font-weight:600;font-size:.86rem;color:var(--teal2)}
+.dash{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:18px;align-items:start}
+.dash-main,.dash-side{display:flex;flex-direction:column;gap:18px;min-width:0}
+@media(max-width:1180px){.dash{grid-template-columns:1fr}.hello{grid-template-columns:1fr}}
+@media(max-width:600px){.hello-l{padding:24px 20px}}
+</style>

@@ -1,0 +1,27 @@
+{
+  "label": "Meridian: quick links",
+  "fields": [
+    {
+      "developerName": "links",
+      "label": "Links",
+      "fieldType": "repeater",
+      "subFields": [
+        {
+          "developerName": "label",
+          "label": "Label",
+          "fieldType": "single_line_text"
+        },
+        {
+          "developerName": "icon",
+          "label": "Bootstrap icon name",
+          "fieldType": "single_line_text"
+        },
+        {
+          "developerName": "url",
+          "label": "Link",
+          "fieldType": "single_line_text"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{%- assign s = widget.settings -%}{% assign c = s.count | append: "" | plus: 0 %}{% if c == 0 %}{% assign c = 4 %}{% endif %}
+{%- assign xs = get_content_items(ContentType="announcements", OrderBy="posted_on desc", PageSize=12) -%}
+<section class="card wn reveal"><div class="sh" style="padding:18px 20px 0"><h2><i class="bi bi-megaphone"></i> {{ s.headline | default: "Latest news" }}</h2><a href="/news">All news <i class="bi bi-arrow-right"></i></a></div>
+<div class="wng">{% assign k = 0 %}{% for x in xs.Items %}{% assign q = x.PublishedContent %}{% capture pn %}{{ q.pinned }}{% endcapture %}{% if pn != "True" and k < c %}{% assign k = k | plus: 1 %}
+  <a class="wni{% if k == 1 %} lead{% endif %}" href="/{{ x.RoutePath }}">{% if k == 1 %}<img src="{{ q.image.Value | attachment_redirect_url }}" alt="">{% endif %}<span><small>{{ q.department.PrimaryField }} · {{ q.posted_on.Value | date: "%b %-d" }}</small><b>{{ x.PrimaryField }}</b>{% if k == 1 %}<em>{{ q.summary }}</em>{% endif %}</span></a>
+{% endif %}{% endfor %}</div></section>
+<style>.wng{display:grid;grid-template-columns:1.2fr 1fr;gap:0 22px;padding:12px 20px 18px}.wni{display:block;padding:12px 0;border-top:1px solid var(--line2)}.wni.lead{grid-row:span 3;border-top:0}
+.wni:nth-child(2){border-top:0}.wni img{border-radius:14px;aspect-ratio:16/8;object-fit:cover;width:100%;margin-bottom:12px}.wni small{display:block;font:500 .72rem var(--mono);color:var(--mut)}.wni b{display:block;font-weight:600;line-height:1.35;margin-top:3px}.wni.lead b{font-size:1.18rem;letter-spacing:-.02em}
+.wni em{display:block;font-style:normal;color:var(--ink2);font-size:.88rem;margin-top:6px}.wni:hover b{color:var(--teal2)}@media(max-width:700px){.wng{grid-template-columns:1fr}.wni.lead{grid-row:auto}.wni:nth-child(2){border-top:1px solid var(--line2)}}</style>

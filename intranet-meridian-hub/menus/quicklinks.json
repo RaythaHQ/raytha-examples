@@ -1,0 +1,18 @@
+{
+ "developerName": "quicklinks",
+ "label": "Quick links",
+ "items": [
+  {
+   "label": "Benefits enrollment",
+   "link": "/news/open-enrollment-for-2027-benefits-runs-october-12-to-30"
+  },
+  {
+   "label": "Expenses and travel",
+   "link": "/handbook/travel-and-expenses"
+  },
+  {
+   "label": "Brand guidelines",
+   "link": "/resources/brand-guidelines"
+  }
+ ]
+}

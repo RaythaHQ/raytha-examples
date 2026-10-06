@@ -1,0 +1,37 @@
+{%- assign offices = "austin:Austin HQ,tulsa:Tulsa plant,denver:Denver,rotterdam:Rotterdam,remote:Remote" | split: "," -%}
+{%- assign q = QueryParams.q | strip | downcase | remove: "<" | remove: ">" | truncate: 40, "" -%}
+{%- assign deps = get_content_items(ContentType="departments", OrderBy="sort_order asc", PageSize=30) -%}
+{%- assign qd = "" -%}{%- for d in deps.Items %}{% assign sl = d.RoutePath | split: "/" | last %}{% if QueryParams.dept == sl %}{% assign qd = sl %}{% assign qdn = d.PrimaryField %}{% endif %}{% endfor -%}
+{%- assign qo = "" -%}{%- for kv in offices %}{% assign pr = kv | split: ":" %}{% if QueryParams.office == pr[0] %}{% assign qo = pr[0] %}{% endif %}{% endfor -%}
+<div class="ph"><div><span class="kick">People directory</span><h1>{% if qdn %}{{ qdn }}{% else %}Find a colleague{% endif %}</h1><p>Everyone at Meridian, with their team, office, extension and what to ask them about.</p></div>
+  <a class="btn" href="{{ PathBase }}/departments"><i class="bi bi-diagram-3"></i> Browse departments</a></div>
+<form class="card pf" method="get" action="{{ PathBase }}/people">
+  <div class="srch" style="max-width:none;flex:1;min-width:220px"><i class="bi bi-search"></i><input type="search" name="q" value="{{ QueryParams.q | escape }}" placeholder="Name, role or skill" aria-label="Search people"></div>
+  <select name="dept" aria-label="Department"><option value="">All departments</option>{% for d in deps.Items %}{% assign sl = d.RoutePath | split: "/" | last %}<option value="{{ sl }}" {% if qd == sl %}selected{% endif %}>{{ d.PrimaryField }}</option>{% endfor %}</select>
+  <select name="office" aria-label="Office"><option value="">All offices</option>{% for kv in offices %}{% assign pr = kv | split: ":" %}<option value="{{ pr[0] }}" {% if qo == pr[0] %}selected{% endif %}>{{ pr[1] }}</option>{% endfor %}</select>
+  <button class="btn dark" type="submit">Filter</button>
+</form>
+{%- capture cards -%}
+{%- assign n = 0 -%}
+{%- for x in Target.Items %}{% assign p = x.PublishedContent %}{% assign dsl = p.department.RoutePath | split: "/" | last %}{%- capture ov %}{{ p.office }}{% endcapture -%}{%- assign ol = ov -%}{%- for kv in offices %}{% assign pr = kv | split: ":" %}{% if pr[0] == ov %}{% assign ol = pr[1] %}{% endif %}{% endfor -%}
+  {%- capture hay %}{{ x.PrimaryField }} {{ p.job_title }} {{ p.skills }} {{ p.department.PrimaryField }}{% endcapture %}{% assign hay = hay | downcase %}
+  {%- assign ok = true %}{% if qd != "" and qd != dsl %}{% assign ok = false %}{% endif %}{% if qo != "" and qo != ov %}{% assign ok = false %}{% endif %}{% if q != "" %}{% unless hay contains q %}{% assign ok = false %}{% endunless %}{% endif %}
+  {%- if ok %}{% assign n = n | plus: 1 %}{% assign sd = p.start_date.Value | date: "%Y%m%d" | plus: 0 %}
+  <a class="card lift pc reveal" href="{{ PathBase }}/{{ x.RoutePath }}" style="--c:{{ p.department.PublishedContent.color }}">
+    <div class="pt"><img src="{{ p.photo.Value | attachment_redirect_url }}" alt="" loading="lazy">{% if sd >= 20260901 %}<span class="bdg teal nb">New</span>{% endif %}</div>
+    <div class="pb"><b>{{ x.PrimaryField }}</b><span class="jt">{{ p.job_title }}</span>
+      <span class="dp"><i style="background:{{ p.department.PublishedContent.color }}"></i>{{ p.department.PrimaryField }}</span>
+      <span class="meta"><span><i class="bi bi-geo-alt"></i>{{ ol }}</span><span><i class="bi bi-telephone"></i>{{ p.phone }}</span></span></div>
+  </a>
+  {%- endif %}{% endfor -%}
+{%- endcapture -%}
+<p class="kick" style="margin:20px 0 14px">{{ n }} {% if n == 1 %}person{% else %}people{% endif %}{% if q != "" %} matching “{{ QueryParams.q | escape }}”{% endif %}</p>
+<div class="g4">{{ cards }}</div>
+{% if n == 0 %}<div class="card empty">Nobody matches those filters. <a href="{{ PathBase }}/people" style="text-decoration:underline">Clear filters</a></div>{% endif %}
+<style>.pf{display:flex;gap:10px;padding:10px;flex-wrap:wrap;align-items:center}.pf select{height:42px;border-radius:12px;border:1px solid var(--line);padding:0 12px;font:inherit;font-size:.9rem;background:#fff;color:var(--ink);min-width:170px}
+.pc{overflow:hidden;display:flex;flex-direction:column}.pc .pt{position:relative;aspect-ratio:1/0.8;overflow:hidden;background:var(--line2)}.pc .pt img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}.pc:hover .pt img{transform:scale(1.05)}
+.pc .nb{position:absolute;right:12px;top:12px}
+.pc .pb{padding:14px 16px 16px;display:flex;flex-direction:column;gap:3px;border-top:3px solid var(--c)}.pc b{font-weight:650;font-size:1.02rem;letter-spacing:-.015em}.pc .jt{color:var(--ink2);font-size:.86rem;line-height:1.35}
+.pc .dp{display:flex;align-items:center;gap:7px;font-size:.78rem;color:var(--mut);margin-top:6px}.pc .dp i{width:8px;height:8px;border-radius:3px}
+.pc .meta{display:flex;gap:12px;font-size:.76rem;color:var(--mut);margin-top:4px;font-family:var(--mono)}.pc .meta i{margin-right:4px}
+@media(max-width:600px){.pc{flex-direction:row}.pc .pt{width:108px;aspect-ratio:auto;flex:none}.pc .pb{border-top:0;border-left:3px solid var(--c)}.pf .srch{flex:1 1 100%!important}.pf select{flex:1 1 40%;min-width:0}.pf .btn{flex:1 1 100%;justify-content:center}}</style>

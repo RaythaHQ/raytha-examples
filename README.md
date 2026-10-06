@@ -31,6 +31,7 @@ These examples go with the weekly [use cases on raytha.com](https://raytha.com/u
 | [<img src="https://raytha.com/raytha/media-items/objectkey/C0SAAyOVg0WlEbppl3brpQ_maren_ezra_wedding_01_home_hero.webp" width="360" alt="Maren & Ezra">](wedding-maren-ezra/) | **[Maren & Ezra](wedding-maren-ezra/)**: a wedding website with a weekend schedule and add-to-calendar links, hotel room blocks with cut-off countdowns, an RSVP form that saves private drafts through a Raytha Function, and a guest page only signed-in guests can see. 8 content types, 12 widgets. |
 | [<img src="https://raytha.com/raytha/media-items/objectkey/gk6fvObkGECGJo67ivubyg_lantern_ramblers_01_home_hero.webp" width="360" alt="Lantern Ramblers">](band-lantern-ramblers/) | **[Lantern Ramblers](band-lantern-ramblers/)**: a tribute band site with upcoming and past tour dates, a setlist archive you filter by song, song stats counted live from every setlist in Liquid, and a booking form that saves private drafts. 5 content types. |
 | [<img src="https://raytha.com/raytha/media-items/objectkey/sJNessfzGUO96Rpjk_RQ2w_postmark_trips_01_home_hero.webp" width="360" alt="Postmark Trips">](travel-postmark/) | **[Postmark Trips](travel-postmark/)**: a surprise travel agency site with trip tiers shown as stamps, past reveals as postcards with a region filter, reviews with a rating breakdown worked out in Liquid, a clue envelope fed by a JSON function, and a trip planner that saves private drafts. 5 content types, 10 widgets. |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/5ivXGVtPpEGX7wD-c3mrlg_meridian_02_home_hero.webp" width="360" alt="Meridian Hub">](intranet-meridian-hub/) | **[Meridian Hub](intranet-meridian-hub/)**: a self-hosted company intranet and employee portal: a personal dashboard, news and announcements, an employee directory with filters, departments, a policy handbook with acknowledgements and managers-only pages, events, a resource library, IT help and system status, all behind Raytha login and user groups. 8 content types, 13 widgets. |
 
 ## Quickstart
 
@@ -112,6 +113,7 @@ The examples were built from a short brief with no human help. To do the same fo
 ├── wedding-maren-ezra/
 ├── band-lantern-ramblers/
 ├── travel-postmark/
+├── intranet-meridian-hub/
 ├── skills/raytha-site-builder/  # agent skill: brief -> finished Raytha site
 ├── templates/brief-template.md  # fill-in brief
 ├── scripts/                     # shared build script, scaffold, screenshots, walkthroughs, export, secret scan

@@ -1,0 +1,7 @@
+{
+  "label": "Meridian Hub: home dashboard",
+  "isBaseLayout": false,
+  "parent": "raytha_html_base_layout",
+  "allowAccessForNewContentTypes": false,
+  "contentTypes": []
+}

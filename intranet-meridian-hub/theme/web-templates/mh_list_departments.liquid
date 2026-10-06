@@ -1,0 +1,18 @@
+{%- assign ppl = get_content_items(ContentType="people", OrderBy="sort_order asc", PageSize=200) -%}
+<div class="ph"><div><span class="kick">Organization</span><h1>Departments</h1><p>Eight teams across Austin, Tulsa, Denver, Rotterdam and remote. Open one to see who is in it, what they own and how to reach them.</p></div>
+  <a class="btn" href="{{ PathBase }}/people"><i class="bi bi-person-vcard"></i> People directory</a></div>
+<div class="g4">
+{%- for x in Target.Items %}{% assign d = x.PublishedContent %}
+  <a class="card lift dc reveal" href="{{ PathBase }}/{{ x.RoutePath }}" style="--c:{{ d.color }}">
+    <div class="ic"><i class="bi bi-{{ d.icon }}"></i></div>
+    <h2>{{ x.PrimaryField }}</h2><p>{{ d.summary }}</p>
+    <div class="ft"><span class="stack">{% assign k = 0 %}{% for p in ppl.Items %}{% if p.PublishedContent.department.PrimaryField == x.PrimaryField and k < 4 %}{% assign k = k | plus: 1 %}<img src="{{ p.PublishedContent.photo.Value | attachment_redirect_url }}" alt="{{ p.PrimaryField }}" title="{{ p.PrimaryField }}">{% endif %}{% endfor %}</span>
+      <span class="mono" style="font-size:.76rem;color:var(--mut)">{{ d.headcount }} people · {{ d.location }}</span></div>
+  </a>
+{%- endfor %}
+</div>
+<style>.dc{padding:20px;display:flex;flex-direction:column;gap:8px;position:relative;overflow:hidden}.dc::before{content:"";position:absolute;inset:0 0 auto 0;height:4px;background:var(--c)}
+.dc .ic{width:46px;height:46px;border-radius:13px;display:grid;place-items:center;font-size:1.3rem;color:#fff;background:var(--c);box-shadow:0 10px 20px -10px var(--c);margin-bottom:6px}
+.dc h2{font-size:1.1rem;letter-spacing:-.02em}.dc p{font-size:.87rem;color:var(--ink2);margin:0}
+.dc .ft{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:auto;padding-top:12px;flex-wrap:wrap}
+.stack{display:flex}.stack img{width:30px;height:30px;border-radius:50%;border:2px solid #fff;margin-left:-8px}.stack img:first-child{margin-left:0}</style>

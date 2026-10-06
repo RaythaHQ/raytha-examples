@@ -1,0 +1,24 @@
+{%- assign ekinds = "all_hands:All hands,learning:Learning,social:Social,wellbeing:Wellbeing,volunteering:Volunteering" | split: "," -%}{%- assign formats = "in_person:In person,online:Online,hybrid:Hybrid" | split: "," -%}
+{%- assign e = Target.PublishedContent -%}{%- capture kv2 %}{{ e.kind }}{% endcapture -%}{%- assign kl = kv2 -%}{%- for kv in ekinds %}{% assign pr = kv | split: ":" %}{% if pr[0] == kv2 %}{% assign kl = pr[1] %}{% endif %}{% endfor -%}{%- capture fv %}{{ e.format }}{% endcapture -%}{%- assign fl = fv -%}{%- for kv in formats %}{% assign pr = kv | split: ":" %}{% if pr[0] == fv %}{% assign fl = pr[1] %}{% endif %}{% endfor -%}
+<nav class="crumbs"><a href="{{ PathBase }}/">Home</a><i class="bi bi-chevron-right"></i><a href="{{ PathBase }}/events">Events</a><i class="bi bi-chevron-right"></i><span>{{ Target.PrimaryField | truncate: 48 }}</span></nav>
+<div class="dg">
+  <article class="card" style="overflow:hidden">
+    <div class="eh"><div class="dt" style="width:76px"><span>{{ e.start.Value | date: "%b" }}</span><b style="font-size:1.9rem">{{ e.start.Value | date: "%-d" }}</b><small>{{ e.start.Value | date: "%A" }}</small></div>
+      <div><div class="chips" style="gap:6px"><span class="bdg" style="background:rgba(255,255,255,.16);color:#fff">{{ kl }}</span><span class="bdg" style="background:rgba(255,255,255,.16);color:#fff">{{ fl }}</span></div><h1>{{ Target.PrimaryField }}</h1><p>{{ e.summary }}</p></div></div>
+    <div style="padding:26px 32px 32px"><div class="prose">{{ e.body }}</div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:24px"><button class="btn pri" type="button" id="ics"><i class="bi bi-calendar-plus"></i> Add to my calendar</button><a class="btn" href="{{ PathBase }}/events"><i class="bi bi-calendar3"></i> All events</a></div></div>
+  </article>
+  <aside>
+    <div class="card" style="padding:18px 20px"><span class="kick">When and where</span><div class="mi" style="margin-top:8px">
+      <div><span>Date</span><span>{{ e.start.Value | date: "%a, %b %-d, %Y" }}</span></div><div><span>Time</span><span>{{ e.time_label }}</span></div><div><span>Where</span><span>{{ e.location }}</span></div><div><span>Format</span><span>{{ fl }}</span></div>
+      <div><span>Hosted by</span><span><a href="{{ PathBase }}/{{ e.host.RoutePath }}" style="color:var(--teal2)">{{ e.host.PrimaryField }}</a></span></div></div></div>
+    <div class="card" style="padding:18px 20px;font-size:.86rem" class="mut"><i class="bi bi-info-circle" style="color:var(--teal)"></i> No sign-up needed. Add it to your calendar and come along.</div>
+  </aside>
+</div>
+<script>document.getElementById('ics').addEventListener('click',function(){var d='{{ e.start.Value | date: "%Y%m%d" }}';var t={{ Target.PrimaryField | json }};var ics=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Meridian Hub//EN','BEGIN:VEVENT','UID:'+d+'-{{ Target.RoutePath | split: "/" | last }}@meridian.example','DTSTAMP:'+d+'T000000Z','DTSTART;VALUE=DATE:'+d,'SUMMARY:'+t,'LOCATION:'+{{ e.location | json }},'DESCRIPTION:'+{{ e.time_label | json }}+' - '+location.href,'END:VEVENT','END:VCALENDAR'].join('\r\n');var a=document.createElement('a');a.href='data:text/calendar;charset=utf-8,'+encodeURIComponent(ics);a.download='{{ Target.RoutePath | split: "/" | last }}.ics';a.click()});</script>
+<style>.eh{display:flex;gap:22px;align-items:center;padding:28px 32px;color:#fff;background:radial-gradient(80% 140% at 100% 0%,rgba(239,106,78,.5),transparent 60%),var(--deep)}.eh .dt{border:0}.eh h1{font-size:clamp(1.6rem,2.8vw,2.2rem);letter-spacing:-.04em;margin:10px 0 6px}.eh p{margin:0;color:#c0d6db}
+@media(max-width:600px){.eh{flex-direction:column;align-items:flex-start;padding:22px}}</style>
+<style>.dg{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:22px;align-items:start}.dg>aside{display:flex;flex-direction:column;gap:18px;position:sticky;top:86px}
+.mi{display:flex;flex-direction:column;gap:0}.mi div{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-top:1px solid var(--line2);font-size:.86rem}.mi div:first-child{border-top:0}.mi div span:first-child{color:var(--mut)}.mi div span:last-child{text-align:right;font-weight:550}
+.li{display:flex;gap:12px;align-items:center;padding:10px 0;border-top:1px solid var(--line2);font-size:.9rem}.li:first-of-type{border-top:0}.li img{width:36px;height:36px;border-radius:50%}.li b{font-weight:600;display:block;line-height:1.25}.li small{color:var(--mut);font-size:.78rem;display:block;line-height:1.3}
+@media(max-width:1020px){.dg{grid-template-columns:1fr}.dg>aside{position:static}}</style>

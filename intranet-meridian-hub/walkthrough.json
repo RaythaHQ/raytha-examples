@@ -1,0 +1,170 @@
+{
+  "slug": "meridian-hub",
+  "name": "Meridian Hub",
+  "viewport": [
+    1440,
+    810
+  ],
+  "output": [
+    1920,
+    1080
+  ],
+  "colorScheme": "light",
+  "title": {
+    "kicker": "Raytha use case",
+    "heading": "Meridian Hub",
+    "subheading": "A self-hosted company intranet and employee portal, built on Raytha by an AI agent with the CLI.",
+    "hold": 1.6
+  },
+  "end": {
+    "heading": "Built with Raytha",
+    "subheading": "Open-source .NET CMS. Get the brief, screenshots and a one-command rebuild kit.",
+    "url": "raytha.com/use-cases/meridian-hub-intranet",
+    "hold": 2.6
+  },
+  "login": {
+    "path": "/account/login",
+    "emailEnv": "SITE_USER_EMAIL",
+    "passwordEnv": "SITE_USER_PASSWORD"
+  },
+  "scenes": [
+    {
+      "url": "/",
+      "caption": "The whole intranet sits behind Raytha's sign-in",
+      "actions": [
+        {
+          "hold": 1.4
+        }
+      ]
+    },
+    {
+      "url": "/",
+      "signin": true,
+      "caption": "Employees land on a personal dashboard",
+      "actions": [
+        {
+          "hold": 1.1,
+          "poster": true
+        },
+        {
+          "scroll": 640,
+          "dur": 1.8
+        },
+        {
+          "hold": 0.4
+        }
+      ]
+    },
+    {
+      "url": "/people",
+      "caption": "An employee directory with search and filters",
+      "actions": [
+        {
+          "hold": 0.4
+        },
+        {
+          "type": {
+            "selector": ".pf input[name=q]",
+            "text": "design",
+            "cps": 12
+          },
+          "dur": 0.8,
+          "press": "Enter"
+        },
+        {
+          "hold": 0.9
+        }
+      ]
+    },
+    {
+      "url": "/handbook/code-of-conduct",
+      "caption": "Handbook policies employees can acknowledge",
+      "actions": [
+        {
+          "hold": 0.4
+        },
+        {
+          "scroll": {
+            "selector": "[data-ack]",
+            "offset": 260
+          },
+          "dur": 1.6
+        },
+        {
+          "click": "[data-ack] button",
+          "dur": 0.8,
+          "navigates": false
+        },
+        {
+          "hold": 0.7
+        }
+      ]
+    },
+    {
+      "url": "/handbook/compensation-review-process",
+      "caption": "Managers-only pages are locked by user group",
+      "actions": [
+        {
+          "hold": 1.4
+        }
+      ]
+    },
+    {
+      "url": "/it-help",
+      "caption": "IT help articles and live system status",
+      "actions": [
+        {
+          "hold": 0.4
+        },
+        {
+          "scroll": 420,
+          "dur": 1.4
+        },
+        {
+          "hold": 0.4
+        }
+      ]
+    },
+    {
+      "url": "/",
+      "caption": "One search box across news, people, policies and help",
+      "actions": [
+        {
+          "hold": 0.3
+        },
+        {
+          "type": {
+            "selector": "form.srch[role=search] input",
+            "text": "passkey",
+            "cps": 12
+          },
+          "dur": 0.8,
+          "press": "Enter"
+        },
+        {
+          "hold": 1.0
+        }
+      ]
+    },
+    {
+      "url": "/",
+      "phone": true,
+      "phoneCaption": {
+        "kicker": "Responsive",
+        "text": "The intranet on a phone"
+      },
+      "actions": [
+        {
+          "hold": 0.5
+        },
+        {
+          "scroll": 900,
+          "dur": 1.8
+        },
+        {
+          "hold": 0.4
+        }
+      ]
+    }
+  ]
+}

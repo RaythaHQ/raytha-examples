@@ -1,0 +1,30 @@
+{%- assign offices = "austin:Austin HQ,tulsa:Tulsa plant,denver:Denver,rotterdam:Rotterdam,remote:Remote" | split: "," -%}
+{%- assign q = QueryParams.q | strip | remove: "'" | remove: '"' | truncate: 50, "" -%}
+<div class="ph"><div><span class="kick">Search</span><h1>{% if q != "" %}Results for “{{ q | escape }}”{% else %}Search Meridian Hub{% endif %}</h1><p>People, news, handbook pages, documents and IT help, all in one search.</p></div></div>
+<form class="srch card" action="{{ PathBase }}/search" method="get" style="max-width:none;padding:8px;display:flex;gap:8px;margin-bottom:26px;border-radius:16px"><i class="bi bi-search" style="left:24px"></i><input type="search" name="q" value="{{ q | escape }}" placeholder="Try “passkey”, “parental leave” or a colleague's name" style="border:0;box-shadow:none;padding-left:44px" autofocus><button class="btn pri" type="submit">Search</button></form>
+{%- if q != "" %}
+  {%- capture fp %}contains(name,'{{ q }}') or contains(job_title,'{{ q }}') or contains(skills,'{{ q }}'){% endcapture -%}
+  {%- capture fa %}contains(title,'{{ q }}') or contains(summary,'{{ q }}'){% endcapture -%}
+  {%- assign rp = get_content_items(ContentType="people", Filter=fp, OrderBy="sort_order asc", PageSize=12) -%}
+  {%- assign ra = get_content_items(ContentType="announcements", Filter=fa, OrderBy="posted_on desc", PageSize=10) -%}
+  {%- assign rh = get_content_items(ContentType="policies", Filter=fa, OrderBy="sort_order asc", PageSize=10) -%}
+  {%- assign rr = get_content_items(ContentType="resources", Filter=fa, OrderBy="updated_on desc", PageSize=10) -%}
+  {%- assign ri = get_content_items(ContentType="help_articles", Filter=fa, OrderBy="title asc", PageSize=10) -%}
+  {%- assign total = rp.TotalCount | plus: ra.TotalCount | plus: rh.TotalCount | plus: rr.TotalCount | plus: ri.TotalCount -%}
+  <p class="kick" style="margin-bottom:18px">{{ total }} result{% if total != 1 %}s{% endif %}</p>
+  {%- if rp.TotalCount > 0 %}<div class="sh"><h2><i class="bi bi-person-vcard"></i> People</h2><a href="{{ PathBase }}/people?q={{ q | url_encode }}">Open in directory <i class="bi bi-arrow-right"></i></a></div>
+  <div class="g4" style="margin-bottom:28px">{% for x in rp.Items %}{% assign p = x.PublishedContent %}<a class="card lift srp" href="{{ PathBase }}/{{ x.RoutePath }}"><img src="{{ p.photo.Value | attachment_redirect_url }}" alt=""><div><b>{{ x.PrimaryField }}</b><small>{{ p.job_title }}</small></div></a>{% endfor %}</div>{% endif %}
+  {%- assign groups = "announcements|News|megaphone,policies|Handbook|journal-text,resources|Resources|folder2-open,help_articles|IT help|life-preserver" | split: "," -%}
+  {%- for gname in groups %}{% assign gp = gname | split: "|" %}
+    {%- if gp[0] == "announcements" %}{% assign rs = ra %}{% elsif gp[0] == "policies" %}{% assign rs = rh %}{% elsif gp[0] == "resources" %}{% assign rs = rr %}{% else %}{% assign rs = ri %}{% endif -%}
+    {%- if rs.TotalCount > 0 %}<div class="sh"><h2><i class="bi bi-{{ gp[2] }}"></i> {{ gp[1] }}</h2></div>
+    <div class="card" style="margin-bottom:28px">{% for x in rs.Items %}{% assign it = x.PublishedContent %}{% capture mo %}{{ it.managers_only }}{% endcapture %}{% if mo == "True" and is_mgr == false %}<div class="srr"><i class="bi bi-lock"></i><div><b>A page for people managers</b><small>Only visible to the People managers group.</small></div></div>{% else %}<a class="srr" href="{{ PathBase }}/{{ x.RoutePath }}"><i class="bi bi-{{ gp[2] }}"></i><div><b>{{ x.PrimaryField }}</b><small>{{ it.summary }}</small></div><i class="bi bi-chevron-right" style="margin-left:auto;font-size:.8rem"></i></a>{% endif %}{% endfor %}</div>{% endif %}
+  {%- endfor %}
+  {%- if total == 0 %}<div class="card empty"><i class="bi bi-search" style="font-size:2rem"></i><h3 style="margin:10px 0 6px;color:var(--ink)">Nothing found</h3><p>Try a different word, or ask the service desk on x4357.</p></div>{% endif %}
+{%- else %}
+  <div class="sh"><h2>Popular searches</h2></div>
+  <div class="chips">{% assign pop = "passkey,parental leave,VPN,benefits,expenses,hybrid,Tidemark,phishing" | split: "," %}{% for t in pop %}<a href="{{ PathBase }}/search?q={{ t | url_encode }}"><i class="bi bi-search" style="font-size:.75rem"></i>{{ t }}</a>{% endfor %}</div>
+{%- endif %}
+<style>.srp{display:flex;gap:12px;align-items:center;padding:12px}.srp img{width:48px;height:48px;border-radius:12px}.srp b{display:block;font-weight:600;line-height:1.25}.srp small{color:var(--mut);font-size:.8rem;line-height:1.3;display:block}
+.srr{display:flex;gap:14px;align-items:center;padding:14px 18px;border-top:1px solid var(--line2)}.srr:first-child{border-top:0}.srr>i:first-child{width:36px;height:36px;border-radius:10px;background:var(--mint);color:var(--teal2);display:grid;place-items:center;flex:none}
+a.srr:hover{background:#fafcfb}.srr b{display:block;font-weight:600}.srr small{display:block;color:var(--mut);font-size:.84rem;line-height:1.4}</style>

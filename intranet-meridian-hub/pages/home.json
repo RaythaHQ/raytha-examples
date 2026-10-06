@@ -1,0 +1,84 @@
+{
+ "hero": [
+  {
+   "widgetType": "mh_quicklinks",
+   "settings": {
+    "links": [
+     {
+      "label": "2027 benefits",
+      "icon": "heart-pulse",
+      "url": "/news/open-enrollment-for-2027-benefits-runs-october-12-to-30"
+     },
+     {
+      "label": "Set up a passkey",
+      "icon": "key",
+      "url": "/it-help/set-up-a-passkey-for-your-meridian-account"
+     },
+     {
+      "label": "Time off policy",
+      "icon": "sun",
+      "url": "/handbook/paid-time-off"
+     },
+     {
+      "label": "Org chart",
+      "icon": "diagram-3",
+      "url": "/resources/organization-chart"
+     },
+     {
+      "label": "Slide template",
+      "icon": "easel2",
+      "url": "/resources/presentation-template"
+     },
+     {
+      "label": "Book a room",
+      "icon": "door-open",
+      "url": "/it-help/book-a-meeting-room"
+     }
+    ]
+   }
+  }
+ ],
+ "main": [
+  {
+   "widgetType": "mh_news",
+   "settings": {
+    "headline": "Latest news",
+    "count": 4
+   }
+  },
+  {
+   "widgetType": "mh_events",
+   "settings": {
+    "headline": "Coming up",
+    "count": 4
+   }
+  },
+  {
+   "widgetType": "mh_people_new",
+   "settings": {
+    "headline": "New faces",
+    "count": 4
+   }
+  }
+ ],
+ "side": [
+  {
+   "widgetType": "mh_todo",
+   "settings": {
+    "headline": "Your to-dos"
+   }
+  },
+  {
+   "widgetType": "mh_status",
+   "settings": {
+    "headline": "System status"
+   }
+  },
+  {
+   "widgetType": "mh_help",
+   "settings": {
+    "headline": "Popular IT help"
+   }
+  }
+ ]
+}

@@ -1,0 +1,27 @@
+{%- assign cats = "company:Company,people:People,product:Product,operations:Operations,it:IT and security,facilities:Facilities" | split: "," -%}
+{%- assign q = Target.PublishedContent -%}{%- capture cv %}{{ q.category }}{% endcapture -%}{%- assign cl = cv -%}{%- for kv in cats %}{% assign pr = kv | split: ":" %}{% if pr[0] == cv %}{% assign cl = pr[1] %}{% endif %}{% endfor -%}{% capture ra %}{{ q.requires_action }}{% endcapture %}{% capture pn %}{{ q.pinned }}{% endcapture %}
+<nav class="crumbs"><a href="{{ PathBase }}/">Home</a><i class="bi bi-chevron-right"></i><a href="{{ PathBase }}/news">News</a><i class="bi bi-chevron-right"></i><span>{{ Target.PrimaryField | truncate: 48 }}</span></nav>
+<div class="dg">
+  <article class="card" style="overflow:hidden">
+    <img src="{{ q.image.Value | attachment_redirect_url }}" alt="" style="width:100%;aspect-ratio:16/6;object-fit:cover">
+    <div style="padding:28px 34px 34px" class="art">
+      <div class="chips" style="gap:6px"><a class="bdg" href="{{ PathBase }}/news?cat={{ cv }}" style="border:0;padding:3px 10px">{{ cl }}</a>{% if pn == "True" %}<span class="bdg coral"><i class="bi bi-pin-angle-fill"></i> Pinned</span>{% endif %}{% if ra == "True" %}<span class="bdg amber"><i class="bi bi-exclamation-circle"></i> Action needed</span>{% endif %}</div>
+      <h1 style="font-size:clamp(1.7rem,3vw,2.4rem);letter-spacing:-.04em;margin:14px 0 10px">{{ Target.PrimaryField }}</h1>
+      <p style="font-size:1.12rem;color:var(--ink2)">{{ q.summary }}</p>
+      <div class="by" style="display:flex;gap:12px;align-items:center;padding:16px 0;border-top:1px solid var(--line2);border-bottom:1px solid var(--line2);margin:18px 0 24px;font-size:.86rem;color:var(--mut)"><img src="{{ q.author.PublishedContent.photo.Value | attachment_redirect_url }}" alt="" style="width:42px;height:42px;border-radius:50%"><span><a href="{{ PathBase }}/{{ q.author.RoutePath }}" style="font-weight:600;color:var(--ink)">{{ q.author.PrimaryField }}</a><br>{{ q.author.PublishedContent.job_title }} · {{ q.posted_on.Value | date: "%A, %B %-d, %Y" }}</span></div>
+      {% if ra == "True" %}<div class="act"><i class="bi bi-exclamation-circle"></i><div><b>This needs you to do something.</b> Read on for what and by when.</div></div>{% endif %}
+      <div class="prose">{{ q.body }}</div>
+    </div>
+  </article>
+  <aside>
+    <div class="card" style="padding:18px 20px"><span class="kick">Posted by</span>
+      <a href="{{ PathBase }}/{{ q.department.RoutePath }}" style="display:flex;gap:12px;align-items:center;margin-top:12px"><span style="width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:{{ q.department.PublishedContent.color }};color:#fff;font-size:1.15rem"><i class="bi bi-{{ q.department.PublishedContent.icon }}"></i></span><span><b>{{ q.department.PrimaryField }}</b><br><small class="mut">{{ q.department.PublishedContent.channel }}</small></span></a></div>
+    {%- assign more = get_content_items(ContentType="announcements", OrderBy="posted_on desc", PageSize=6) %}
+    <div class="card" style="padding:18px 20px"><span class="kick">More news</span>{% assign k = 0 %}{% for x in more.Items %}{% if x.RoutePath != Target.RoutePath and k < 4 %}{% assign k = k | plus: 1 %}<a class="li" href="{{ PathBase }}/{{ x.RoutePath }}" style="{% if k == 1 %}border-top:0;{% endif %}margin-top:{% if k == 1 %}8px{% else %}0{% endif %}"><span><b>{{ x.PrimaryField }}</b><small>{{ x.PublishedContent.posted_on.Value | date: "%b %-d" }}</small></span></a>{% endif %}{% endfor %}</div>
+  </aside>
+</div>
+<style>.act{display:flex;gap:12px;align-items:flex-start;padding:14px 16px;border-radius:14px;background:var(--amber2);color:#6b4700;margin-bottom:22px;font-size:.92rem}.act i{font-size:1.2rem}@media(max-width:600px){.art{padding:20px!important}}</style>
+<style>.dg{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:22px;align-items:start}.dg>aside{display:flex;flex-direction:column;gap:18px;position:sticky;top:86px}
+.mi{display:flex;flex-direction:column;gap:0}.mi div{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-top:1px solid var(--line2);font-size:.86rem}.mi div:first-child{border-top:0}.mi div span:first-child{color:var(--mut)}.mi div span:last-child{text-align:right;font-weight:550}
+.li{display:flex;gap:12px;align-items:center;padding:10px 0;border-top:1px solid var(--line2);font-size:.9rem}.li:first-of-type{border-top:0}.li img{width:36px;height:36px;border-radius:50%}.li b{font-weight:600;display:block;line-height:1.25}.li small{color:var(--mut);font-size:.78rem;display:block;line-height:1.3}
+@media(max-width:1020px){.dg{grid-template-columns:1fr}.dg>aside{position:static}}</style>
