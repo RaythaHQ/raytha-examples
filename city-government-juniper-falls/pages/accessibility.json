@@ -1,0 +1,21 @@
+{
+ "main": [
+  {
+   "widgetType": "jf_page_head",
+   "settings": {
+    "kicker": "Accessibility",
+    "headline": "Accessibility statement",
+    "subtitle": "The City of Juniper Falls wants everyone to be able to use this website, including people who use screen readers, keyboards, magnification or captions."
+   }
+  },
+  {
+   "widgetType": "jf_text",
+   "settings": {
+    "headline": "Our commitment",
+    "body": "<p>We design and test this website against the <strong>Web Content Accessibility Guidelines (WCAG) 2.1, level AA</strong>. That is the standard the U.S. Department of Justice adopted in 2024 for state and local government websites under Title II of the Americans with Disabilities Act. For a city of our size (more than 50,000 residents), the compliance date is <strong>April 26, 2027</strong>, after the Department's April 2026 extension.</p><h2>What we do</h2><ul><li>Every page has a skip link, landmarks, a logical heading order and a visible keyboard focus.</li><li>Text and buttons meet WCAG contrast ratios. Pages work when zoomed to 200 percent and on small screens.</li><li>Images have text alternatives, or are marked as decorative.</li><li>Forms and filters have visible labels.</li><li>New agendas and notices are published as tagged PDFs, and meeting videos are captioned.</li></ul><h2>What we are still working on</h2><ul><li>Some older documents in the meeting archive, from before 2022, are scanned images. Ask us and we will provide an accessible copy within five working days.</li><li>Some linked third-party systems, such as the payment portal, are run by vendors. We ask each vendor for a conformance report and track their fixes.</li></ul><p>An independent audit of the whole site is out for proposals now. See the <a href=\"/notices/request-for-proposals-website-accessibility-audit\">request for proposals</a>.</p>",
+    "side_title": "Report a problem",
+    "side": "<p>If something on this site does not work for you, tell us and we will fix it or give you the information another way.</p><p><strong>ADA coordinator</strong><br>Maria Esparza, City Secretary<br><a href=\"mailto:ada@juniperfalls.example\" style=\"color:#fff\">ada@juniperfalls.example</a><br>(555) 010-4010, or Relay Texas 711</p><p>We answer within two working days.</p>"
+   }
+  }
+ ]
+}

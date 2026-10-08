@@ -1,0 +1,34 @@
+{
+ "developerName": "mainmenu",
+ "label": "Main menu",
+ "items": [
+  {
+   "label": "Services",
+   "link": "/services"
+  },
+  {
+   "label": "Departments",
+   "link": "/departments"
+  },
+  {
+   "label": "Council",
+   "link": "/council"
+  },
+  {
+   "label": "Meetings",
+   "link": "/meetings"
+  },
+  {
+   "label": "News",
+   "link": "/news"
+  },
+  {
+   "label": "Events",
+   "link": "/events"
+  },
+  {
+   "label": "Notices",
+   "link": "/notices"
+  }
+ ]
+}

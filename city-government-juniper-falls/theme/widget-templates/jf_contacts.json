@@ -1,0 +1,42 @@
+{
+  "label": "Juniper: phone directory",
+  "fields": [
+    {
+      "developerName": "kicker",
+      "label": "Kicker",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "headline",
+      "label": "Headline",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "items",
+      "label": "Contacts",
+      "fieldType": "repeater",
+      "subFields": [
+        {
+          "developerName": "icon",
+          "label": "Icon",
+          "fieldType": "single_line_text"
+        },
+        {
+          "developerName": "name",
+          "label": "Name",
+          "fieldType": "single_line_text"
+        },
+        {
+          "developerName": "phone",
+          "label": "Phone",
+          "fieldType": "single_line_text"
+        },
+        {
+          "developerName": "note",
+          "label": "Note",
+          "fieldType": "single_line_text"
+        }
+      ]
+    }
+  ]
+}

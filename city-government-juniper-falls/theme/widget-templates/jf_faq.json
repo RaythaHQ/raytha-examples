@@ -1,0 +1,27 @@
+{
+  "label": "Juniper: questions",
+  "fields": [
+    {
+      "developerName": "headline",
+      "label": "Headline",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "items",
+      "label": "Questions",
+      "fieldType": "repeater",
+      "subFields": [
+        {
+          "developerName": "q",
+          "label": "Question",
+          "fieldType": "single_line_text"
+        },
+        {
+          "developerName": "a",
+          "label": "Answer",
+          "fieldType": "single_line_text"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+ "name": "City of Juniper Falls",
+ "theme": "juniper",
+ "types": [
+  "departments",
+  "boards",
+  "officials",
+  "services",
+  "meetings",
+  "news",
+  "notices",
+  "alerts",
+  "events"
+ ],
+ "detailTemplates": {
+  "departments": "jf_detail_departments",
+  "boards": "jf_detail_boards",
+  "officials": "jf_detail_officials",
+  "services": "jf_detail_services",
+  "meetings": "jf_detail_meetings",
+  "news": "jf_detail_news",
+  "notices": "jf_detail_notices",
+  "alerts": "jf_detail_alerts",
+  "events": "jf_detail_events"
+ },
+ "groups": []
+}

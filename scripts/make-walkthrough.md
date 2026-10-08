@@ -61,6 +61,7 @@ fields), and link the raytha.com copy from the example's README.
 | Lantern Ramblers | [walkthrough.json](../band-lantern-ramblers/walkthrough.json) | [use case page](https://raytha.com/use-cases/lantern-ramblers#walkthrough) · [MP4, 38 s](https://raytha.com/raytha/media-items/objectkey/wKhcWTQbC0OPJaPvBSbscw_lantern_ramblers_walkthrough.mp4) |
 | Postmark Trips | [walkthrough.json](../travel-postmark/walkthrough.json) | [use case page](https://raytha.com/use-cases/postmark-trips#walkthrough) · [MP4, 40 s](https://raytha.com/raytha/media-items/objectkey/4hPyDoV7ekOOo_YWwd3Ekg_postmark_trips_walkthrough.mp4) |
 | Meridian Hub | [walkthrough.json](../intranet-meridian-hub/walkthrough.json) | [use case page](https://raytha.com/use-cases/meridian-hub-intranet#walkthrough) · [MP4, 35 s](https://raytha.com/raytha/media-items/objectkey/u-mtvWpRi0yFKzFIb7eJiw_meridian_hub_walkthrough.mp4) |
+| City of Juniper Falls | [walkthrough.json](../city-government-juniper-falls/walkthrough.json) | [use case page](https://raytha.com/use-cases/juniper-falls-city-government#walkthrough) · [MP4, 36 s](https://raytha.com/raytha/media-items/objectkey/da3ClwgR3UioVMR0WYZitA_juniper_falls_walkthrough.mp4) |
 
 ## Shot list
 

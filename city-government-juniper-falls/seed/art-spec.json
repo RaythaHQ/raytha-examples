@@ -1,0 +1,286 @@
+{
+ "people": [
+  {
+   "name": "Carmen Alvarez",
+   "slug": "carmen-alvarez"
+  },
+  {
+   "name": "Darnell Hayes",
+   "slug": "darnell-hayes"
+  },
+  {
+   "name": "Priscilla Nguyen",
+   "slug": "priscilla-nguyen"
+  },
+  {
+   "name": "Robert Klein",
+   "slug": "robert-klein"
+  },
+  {
+   "name": "Aisha Thompson",
+   "slug": "aisha-thompson"
+  },
+  {
+   "name": "Miguel Santos",
+   "slug": "miguel-santos"
+  },
+  {
+   "name": "Hannah Brooks",
+   "slug": "hannah-brooks"
+  }
+ ],
+ "covers": [
+  {
+   "slug": "council-adopts-fiscal-2027-budget-with-no-tax-ra",
+   "kind": "waves"
+  },
+  {
+   "slug": "cedar-street-closed-between-4th-and-6th-for-wate",
+   "kind": "grid"
+  },
+  {
+   "slug": "juniper-creek-trail-extension-goes-to-a-public-h",
+   "kind": "rings"
+  },
+  {
+   "slug": "fall-leaf-and-limb-collection-starts-november-2",
+   "kind": "bars"
+  },
+  {
+   "slug": "national-night-out-draws-2-800-residents-to-61-b",
+   "kind": "dots"
+  },
+  {
+   "slug": "voter-registration-deadline-for-the-november-3-e",
+   "kind": "waves"
+  },
+  {
+   "slug": "new-permit-portal-cuts-average-review-time-to-ei",
+   "kind": "grid"
+  },
+  {
+   "slug": "library-launches-free-laptop-and-hotspot-lending",
+   "kind": "rings"
+  },
+  {
+   "slug": "falls-fest-2026",
+   "kind": "dots"
+  },
+  {
+   "slug": "story-time-in-the-park",
+   "kind": "waves"
+  },
+  {
+   "slug": "household-hazardous-waste-collection-day",
+   "kind": "grid"
+  },
+  {
+   "slug": "trunk-or-treat-at-the-recreation-center",
+   "kind": "rings"
+  },
+  {
+   "slug": "citizens-academy-how-your-city-works",
+   "kind": "bars"
+  },
+  {
+   "slug": "veterans-day-ceremony",
+   "kind": "waves"
+  },
+  {
+   "slug": "holiday-lights-on-main-street",
+   "kind": "dots"
+  },
+  {
+   "slug": "senior-fitness-chair-yoga",
+   "kind": "rings"
+  },
+  {
+   "slug": "author-talk-the-history-of-juniper-falls",
+   "kind": "bars"
+  },
+  {
+   "slug": "fall-native-plant-sale",
+   "kind": "grid"
+  }
+ ],
+ "docs": [
+  {
+   "slug": "agenda-city-council-regular-meeting-2026-10-13",
+   "title": "Agenda: City Council regular meeting",
+   "sub": "2026-10-13 \u00b7 6:00 pm \u00b7 Council Chambers, City Hall",
+   "lines": [
+    "Public comment",
+    "Public hearing: Juniper Creek trail extension, phase 2",
+    "Ordinance adopting the fiscal 2027 fee schedule (second reading)",
+    "Contract award: Main Street repaving, 1st to 9th Street",
+    "Appointments to the Library Advisory Board"
+   ]
+  },
+  {
+   "slug": "agenda-planning-and-zoning-commission-2026-10-15",
+   "title": "Agenda: Planning and Zoning Commission",
+   "sub": "2026-10-15 \u00b7 6:00 pm \u00b7 Council Chambers, City Hall",
+   "lines": [
+    "Public hearing: zoning change from agricultural to mixed residential, 14 acres at Ridge Road and FM 1960",
+    "Preliminary plat: Cedar Hollow, phase 3"
+   ]
+  },
+  {
+   "slug": "agenda-parks-and-recreation-board-2026-10-20",
+   "title": "Agenda: Parks and Recreation Board",
+   "sub": "2026-10-20 \u00b7 5:30 pm \u00b7 Falls Park Recreation Center",
+   "lines": [
+    "Eastside Park splash pad update",
+    "2027 youth sports fees"
+   ]
+  },
+  {
+   "slug": "agenda-city-council-regular-meeting-2026-09-22",
+   "title": "Agenda: City Council regular meeting",
+   "sub": "2026-09-22 \u00b7 6:00 pm \u00b7 Council Chambers, City Hall",
+   "lines": [
+    "Adopted the fiscal 2027 budget (6 to 1)",
+    "Adopted the 2026 tax rate of $0.4875 per $100 valuation",
+    "Approved the downtown parking study"
+   ]
+  },
+  {
+   "slug": "agenda-library-advisory-board-2026-10-01",
+   "title": "Agenda: Library Advisory Board",
+   "sub": "2026-10-01 \u00b7 5:00 pm \u00b7 Main Library, Room B",
+   "lines": [
+    "Laptop and hotspot lending policy",
+    "Eastside branch Sunday hours pilot"
+   ]
+  },
+  {
+   "slug": "agenda-planning-and-zoning-commission-2026-09-17",
+   "title": "Agenda: Planning and Zoning Commission",
+   "sub": "2026-09-17 \u00b7 6:00 pm \u00b7 Council Chambers, City Hall",
+   "lines": [
+    "Old Mill district design standards: recommended for approval (5 to 2)"
+   ]
+  },
+  {
+   "slug": "agenda-city-council-regular-meeting-2026-09-08",
+   "title": "Agenda: City Council regular meeting",
+   "sub": "2026-09-08 \u00b7 6:00 pm \u00b7 Council Chambers, City Hall",
+   "lines": [
+    "Public hearing: proposed fiscal 2027 budget",
+    "Public hearing: proposed 2026 tax rate"
+   ]
+  },
+  {
+   "slug": "minutes-city-council-regular-meeting-2026-09-22",
+   "title": "Minutes: City Council regular meeting",
+   "sub": "2026-09-22 \u00b7 Council Chambers, City Hall",
+   "lines": [
+    "Call to order and roll call",
+    "Public comment",
+    "Adopted the fiscal 2027 budget (6 to 1)",
+    "Adopted the 2026 tax rate of $0.4875 per $100 valuation",
+    "Approved the downtown parking study",
+    "Adjourned"
+   ]
+  },
+  {
+   "slug": "minutes-library-advisory-board-2026-10-01",
+   "title": "Minutes: Library Advisory Board",
+   "sub": "2026-10-01 \u00b7 Main Library, Room B",
+   "lines": [
+    "Call to order and roll call",
+    "Public comment",
+    "Laptop and hotspot lending policy",
+    "Eastside branch Sunday hours pilot",
+    "Adjourned"
+   ]
+  },
+  {
+   "slug": "minutes-planning-and-zoning-commission-2026-09-17",
+   "title": "Minutes: Planning and Zoning Commission",
+   "sub": "2026-09-17 \u00b7 Council Chambers, City Hall",
+   "lines": [
+    "Call to order and roll call",
+    "Public comment",
+    "Old Mill district design standards: recommended for approval (5 to 2)",
+    "Adjourned"
+   ]
+  },
+  {
+   "slug": "minutes-city-council-regular-meeting-2026-09-08",
+   "title": "Minutes: City Council regular meeting",
+   "sub": "2026-09-08 \u00b7 Council Chambers, City Hall",
+   "lines": [
+    "Call to order and roll call",
+    "Public comment",
+    "Public hearing: proposed fiscal 2027 budget",
+    "Public hearing: proposed 2026 tax rate",
+    "Adjourned"
+   ]
+  },
+  {
+   "slug": "notice-notice-of-public-hearing-juniper-creek-trail-exten",
+   "title": "Notice of public hearing: Juniper Creek trail extension, phase 2",
+   "sub": "Posted 2026-09-28",
+   "lines": [
+    "The City Council will hold a public hearing on October 13 at 6 pm on the proposed trail extension and its use of parkland."
+   ]
+  },
+  {
+   "slug": "notice-notice-of-public-hearing-zoning-change-at-ridge-ro",
+   "title": "Notice of public hearing: zoning change at Ridge Road and FM 1960",
+   "sub": "Posted 2026-09-30",
+   "lines": [
+    "The Planning and Zoning Commission will hear a request to rezone 14 acres from agricultural to mixed residential."
+   ]
+  },
+  {
+   "slug": "notice-invitation-to-bid-main-street-repaving-1st-to-9th-",
+   "title": "Invitation to bid: Main Street repaving, 1st to 9th Street",
+   "sub": "Posted 2026-09-14",
+   "lines": [
+    "Sealed bids are due by 2 pm on October 8 to the Purchasing office. Plans and specifications are available online."
+   ]
+  },
+  {
+   "slug": "notice-request-for-proposals-website-accessibility-audit",
+   "title": "Request for proposals: website accessibility audit",
+   "sub": "Posted 2026-10-01",
+   "lines": [
+    "The city seeks proposals for a WCAG 2.1 AA audit of its website, documents and online forms."
+   ]
+  },
+  {
+   "slug": "notice-ordinance-2026-41-fiscal-2027-fee-schedule",
+   "title": "Ordinance 2026-41: fiscal 2027 fee schedule",
+   "sub": "Posted 2026-09-24",
+   "lines": [
+    "Caption of an ordinance adopting fees for city services for fiscal 2027, set for second reading on October 13."
+   ]
+  },
+  {
+   "slug": "notice-notice-of-general-and-special-election-november-3-",
+   "title": "Notice of general and special election, November 3, 2026",
+   "sub": "Posted 2026-08-17",
+   "lines": [
+    "A special election on Proposition A, a $48 million bond for streets and drainage, will be held with the general election."
+   ]
+  },
+  {
+   "slug": "notice-lane-closures-falls-parkway-at-mill-street-october",
+   "title": "Lane closures: Falls Parkway at Mill Street, October 12 to 23",
+   "sub": "Posted 2026-10-05",
+   "lines": [
+    "One westbound lane will be closed overnight from 8 pm to 5 am for signal upgrades."
+   ]
+  },
+  {
+   "slug": "notice-notice-of-public-hearing-old-mill-district-design-",
+   "title": "Notice of public hearing: Old Mill district design standards",
+   "sub": "Posted 2026-08-28",
+   "lines": [
+    "Hearing held September 17. The Commission recommended approval."
+   ]
+  }
+ ]
+}

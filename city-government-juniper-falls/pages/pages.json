@@ -1,0 +1,37 @@
+[
+ {
+  "title": "City of Juniper Falls",
+  "routePath": "home",
+  "template": "jf_home",
+  "sections": "pages/home.json",
+  "home": true
+ },
+ {
+  "title": "Trash and recycling",
+  "routePath": "trash-recycling",
+  "template": "jf_page",
+  "sections": "pages/trash-recycling.json",
+  "home": false
+ },
+ {
+  "title": "Accessibility statement",
+  "routePath": "accessibility",
+  "template": "jf_page",
+  "sections": "pages/accessibility.json",
+  "home": false
+ },
+ {
+  "title": "Contact us",
+  "routePath": "contact",
+  "template": "jf_page",
+  "sections": "pages/contact.json",
+  "home": false
+ },
+ {
+  "title": "Search",
+  "routePath": "search",
+  "template": "jf_search",
+  "sections": "pages/search.json",
+  "home": false
+ }
+]

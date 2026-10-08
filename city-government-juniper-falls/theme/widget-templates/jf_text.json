@@ -1,0 +1,25 @@
+{
+  "label": "Juniper: text with side box",
+  "fields": [
+    {
+      "developerName": "headline",
+      "label": "Headline",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "body",
+      "label": "Body",
+      "fieldType": "wysiwyg"
+    },
+    {
+      "developerName": "side_title",
+      "label": "Side box title",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "side",
+      "label": "Side box text",
+      "fieldType": "wysiwyg"
+    }
+  ]
+}

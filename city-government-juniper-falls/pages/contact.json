@@ -1,0 +1,84 @@
+{
+ "main": [
+  {
+   "widgetType": "jf_page_head",
+   "settings": {
+    "kicker": "Contact us",
+    "headline": "Contact the City of Juniper Falls",
+    "subtitle": "City Hall is at 300 W Main St and is open Monday to Friday, 8 am to 5 pm. For police, fire or medical emergencies, always call 911."
+   }
+  },
+  {
+   "widgetType": "jf_contacts",
+   "settings": {
+    "kicker": "Phone directory",
+    "headline": "Who to call",
+    "items": [
+     {
+      "icon": "telephone",
+      "name": "City Hall main line",
+      "phone": "(555) 010-4000",
+      "note": "Monday to Friday, 8 am to 5 pm"
+     },
+     {
+      "icon": "droplet",
+      "name": "Water leaks and main breaks",
+      "phone": "(555) 010-4111",
+      "note": "Answered 24 hours a day"
+     },
+     {
+      "icon": "receipt",
+      "name": "Utility billing",
+      "phone": "(555) 010-4600",
+      "note": "Bills, autopay and payment plans"
+     },
+     {
+      "icon": "cone-striped",
+      "name": "Public Works and 311",
+      "phone": "(555) 010-4200",
+      "note": "Streets, trash and drainage"
+     },
+     {
+      "icon": "building-gear",
+      "name": "Development Services",
+      "phone": "(555) 010-4400",
+      "note": "Permits and inspections"
+     },
+     {
+      "icon": "shield",
+      "name": "Police non-emergency",
+      "phone": "(555) 010-4900",
+      "note": "Answered 24 hours a day"
+     },
+     {
+      "icon": "journal-text",
+      "name": "City Secretary",
+      "phone": "(555) 010-4010",
+      "note": "Open records, elections and agendas"
+     },
+     {
+      "icon": "tree",
+      "name": "Parks and Recreation",
+      "phone": "(555) 010-4500",
+      "note": "Pavilions, pools and programs"
+     },
+     {
+      "icon": "book",
+      "name": "Public Library",
+      "phone": "(555) 010-4700",
+      "note": "Monday to Saturday, 9 am to 8 pm"
+     }
+    ]
+   }
+  },
+  {
+   "widgetType": "jf_text",
+   "settings": {
+    "headline": "Visit City Hall",
+    "body": "<p>City Hall is at <strong>300 W Main St, Juniper Falls, TX 78600</strong>, on the corner of Main and 3rd Street. Free parking is behind the building, with accessible spaces by the north entrance.</p><p>Utility billing and the City Secretary are on the first floor. Development Services is in the annex next door, at 310 W Main St.</p><h2>Write to us</h2><p>Email <a href=\"mailto:cityhall@juniperfalls.example\">cityhall@juniperfalls.example</a> and we will route your question to the right department, usually within one working day.</p>",
+    "side_title": "Media inquiries",
+    "side": "<p>Reporters can reach the Communications Office at <a href=\"mailto:news@juniperfalls.example\" style=\"color:#fff\">news@juniperfalls.example</a> or (555) 010-4020.</p>"
+   }
+  }
+ ]
+}

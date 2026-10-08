@@ -1,0 +1,42 @@
+{
+  "label": "Juniper: schedule table",
+  "fields": [
+    {
+      "developerName": "kicker",
+      "label": "Kicker",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "headline",
+      "label": "Headline",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "intro",
+      "label": "Intro",
+      "fieldType": "long_text"
+    },
+    {
+      "developerName": "rows",
+      "label": "Rows",
+      "fieldType": "repeater",
+      "subFields": [
+        {
+          "developerName": "when",
+          "label": "Date",
+          "fieldType": "single_line_text"
+        },
+        {
+          "developerName": "what",
+          "label": "What",
+          "fieldType": "single_line_text"
+        },
+        {
+          "developerName": "change",
+          "label": "Change",
+          "fieldType": "single_line_text"
+        }
+      ]
+    }
+  ]
+}

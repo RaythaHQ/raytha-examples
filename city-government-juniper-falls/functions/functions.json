@@ -1,0 +1,4 @@
+[
+ {"developerName": "feeds.meetings", "name": "Public meetings calendar (iCal)", "trigger": "http_request", "file": "meetings.ics.js", "routePath": "feeds/meetings.ics"},
+ {"developerName": "feeds.notices", "name": "Public notices RSS feed", "trigger": "http_request", "file": "notices.rss.js", "routePath": "feeds/notices.rss"}
+]

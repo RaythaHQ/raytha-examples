@@ -1,0 +1,130 @@
+{
+ "main": [
+  {
+   "widgetType": "jf_page_head",
+   "settings": {
+    "kicker": "Public Works",
+    "headline": "Trash and recycling",
+    "subtitle": "Trash goes out once a week and recycling every other week, on the same day. Put carts at the curb by 7 am, handles facing the house and three feet apart."
+   }
+  },
+  {
+   "widgetType": "jf_zones",
+   "settings": {
+    "kicker": "Collection days",
+    "headline": "Find your pickup day",
+    "intro": "Your zone is printed on your utility bill. Not sure? Call Public Works at (555) 010-4200.",
+    "items": [
+     {
+      "zone": "Zone A",
+      "day": "Monday",
+      "recycling": "1st and 3rd week",
+      "areas": "Old Mill, Downtown, Riverside, Mill Creek",
+      "color": "#1d5fa8"
+     },
+     {
+      "zone": "Zone B",
+      "day": "Tuesday",
+      "recycling": "2nd and 4th week",
+      "areas": "Cedar Hollow, Ridgeview, Falls Crossing",
+      "color": "#2f6f4f"
+     },
+     {
+      "zone": "Zone C",
+      "day": "Thursday",
+      "recycling": "1st and 3rd week",
+      "areas": "Juniper Heights, Oak Bend, Pecan Grove",
+      "color": "#7a4a12"
+     },
+     {
+      "zone": "Zone D",
+      "day": "Friday",
+      "recycling": "2nd and 4th week",
+      "areas": "Ridge Road, Sunset Meadows, Hill Country Estates",
+      "color": "#5b3f8c"
+     }
+    ]
+   }
+  },
+  {
+   "widgetType": "jf_sorting",
+   "settings": {
+    "kicker": "Sorting",
+    "headline": "What goes in which cart",
+    "items": [
+     {
+      "title": "Blue cart: recycling",
+      "icon": "recycle",
+      "color": "#1d5fa8",
+      "yes": "Cardboard, flattened\nPaper, mail and magazines\nPlastic bottles and tubs, 1 to 5\nCans and clean foil\nGlass bottles and jars",
+      "no": "Plastic bags and film\nFood-soiled paper\nHoses, cords and string lights\nFoam containers"
+     },
+     {
+      "title": "Green cart: trash",
+      "icon": "trash3",
+      "color": "#2f6f4f",
+      "yes": "Bagged household trash\nFood scraps\nPlastic bags and film\nPet waste, bagged",
+      "no": "Paint, oil and chemicals\nBatteries and electronics\nHot ashes\nYard waste over 4 feet"
+     },
+     {
+      "title": "Brush and bulk",
+      "icon": "tree",
+      "color": "#7a4a12",
+      "yes": "Branches under 6 feet, bundled\nFurniture and mattresses\nAppliances, doors removed\nUp to 4 bulk items a month",
+      "no": "Construction debris\nTires\nHazardous waste: bring it to the October 24 collection day"
+     }
+    ]
+   }
+  },
+  {
+   "widgetType": "jf_table",
+   "settings": {
+    "kicker": "Holidays",
+    "headline": "Holiday schedule changes",
+    "intro": "Collection moves back one day for the rest of the week after a holiday that falls on a weekday.",
+    "rows": [
+     {
+      "when": "Thursday, November 26",
+      "what": "Thanksgiving",
+      "change": "Thursday and Friday routes move to Friday and Saturday"
+     },
+     {
+      "when": "Friday, December 25",
+      "what": "Christmas Day",
+      "change": "Friday routes move to Saturday"
+     },
+     {
+      "when": "Friday, January 1",
+      "what": "New Year's Day",
+      "change": "Friday routes move to Saturday"
+     },
+     {
+      "when": "Monday, January 18",
+      "what": "Martin Luther King Jr. Day",
+      "change": "No change. Collection runs as normal"
+     }
+    ]
+   }
+  },
+  {
+   "widgetType": "jf_faq",
+   "settings": {
+    "headline": "Trash and recycling questions",
+    "items": [
+     {
+      "q": "My cart was missed. What do I do?",
+      "a": "Report it by 5 pm the next working day through the 311 service, and a truck will come back. Check first that the cart was out by 7 am."
+     },
+     {
+      "q": "How do I get a new or bigger cart?",
+      "a": "Call Public Works at (555) 010-4200. A second trash cart is $6.50 a month; recycling carts are free."
+     },
+     {
+      "q": "Where do I take paint, oil and batteries?",
+      "a": "Bring them to the household hazardous waste collection day on Saturday, October 24, at the Public Works yard, 900 Industrial Blvd."
+     }
+    ]
+   }
+  }
+ ]
+}

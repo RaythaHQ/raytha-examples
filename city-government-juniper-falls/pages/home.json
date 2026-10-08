@@ -1,0 +1,69 @@
+{
+ "hero": [
+  {
+   "widgetType": "jf_hero",
+   "settings": {
+    "kicker": "City of Juniper Falls, Texas",
+    "headline": "How can we help you today?",
+    "subtitle": "Pay a bill, report a problem, find a meeting agenda or see what is happening around town. City Hall is open Monday to Friday, 8 am to 5 pm.",
+    "placeholder": "Search for a service, department or document",
+    "popular": [
+     {
+      "label": "Trash day",
+      "url": "/trash-recycling"
+     },
+     {
+      "label": "Pay water bill",
+      "url": "/services/pay-your-water-bill"
+     },
+     {
+      "label": "Building permits",
+      "url": "/services/apply-for-a-building-permit"
+     },
+     {
+      "label": "Council agendas",
+      "url": "/meetings"
+     },
+     {
+      "label": "Jobs",
+      "url": "/services/apply-for-a-job-with-the-city"
+     }
+    ]
+   }
+  }
+ ],
+ "main": [
+  {
+   "widgetType": "jf_stats",
+   "settings": {
+    "kicker": "Juniper Falls at a glance",
+    "headline": "A growing Hill Country city",
+    "items": [
+     {
+      "value": "84,200",
+      "label": "residents, up 31% since 2016"
+     },
+     {
+      "value": "38",
+      "label": "parks and 22 miles of trail"
+     },
+     {
+      "value": "11.4M",
+      "label": "gallons of drinking water a day"
+     },
+     {
+      "value": "6",
+      "label": "council districts and a mayor elected citywide"
+     }
+    ]
+   }
+  },
+  {
+   "widgetType": "jf_subscribe",
+   "settings": {
+    "headline": "Stay informed",
+    "subtitle": "Subscribe to the meetings calendar, follow public notices in your feed reader, or sign up for emergency texts and email."
+   }
+  }
+ ]
+}

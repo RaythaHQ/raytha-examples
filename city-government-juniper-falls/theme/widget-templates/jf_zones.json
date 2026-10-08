@@ -1,0 +1,52 @@
+{
+  "label": "Juniper: collection zones",
+  "fields": [
+    {
+      "developerName": "kicker",
+      "label": "Kicker",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "headline",
+      "label": "Headline",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "intro",
+      "label": "Intro",
+      "fieldType": "long_text"
+    },
+    {
+      "developerName": "items",
+      "label": "Zones",
+      "fieldType": "repeater",
+      "subFields": [
+        {
+          "developerName": "zone",
+          "label": "Zone",
+          "fieldType": "single_line_text"
+        },
+        {
+          "developerName": "day",
+          "label": "Pickup day",
+          "fieldType": "single_line_text"
+        },
+        {
+          "developerName": "areas",
+          "label": "Neighborhoods",
+          "fieldType": "single_line_text"
+        },
+        {
+          "developerName": "recycling",
+          "label": "Recycling week",
+          "fieldType": "single_line_text"
+        },
+        {
+          "developerName": "color",
+          "label": "Colour",
+          "fieldType": "single_line_text"
+        }
+      ]
+    }
+  ]
+}

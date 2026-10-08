@@ -1,0 +1,158 @@
+{
+  "slug": "juniper-falls",
+  "name": "City of Juniper Falls",
+  "viewport": [
+    1440,
+    810
+  ],
+  "output": [
+    1920,
+    1080
+  ],
+  "colorScheme": "light",
+  "title": {
+    "kicker": "Raytha use case",
+    "heading": "City of Juniper Falls",
+    "subheading": "A local city government website with services, meetings and agendas, council, departments, public notices, news and calendar and RSS feeds, built on Raytha by an AI agent with the CLI.",
+    "hold": 1.3
+  },
+  "end": {
+    "heading": "Built with Raytha",
+    "subheading": "Open-source .NET CMS. Get the brief, screenshots and a one-command rebuild kit.",
+    "url": "raytha.com/use-cases/juniper-falls-city-government",
+    "hold": 2.3
+  },
+  "scenes": [
+    {
+      "url": "/",
+      "caption": "A home page built around what residents come to do",
+      "actions": [
+        {
+          "hold": 1.0,
+          "poster": true
+        },
+        {
+          "scroll": 1350,
+          "dur": 2.4
+        },
+        {
+          "hold": 0.5
+        }
+      ]
+    },
+    {
+      "url": "/services",
+      "caption": "How do I... services, filtered by what you need to do",
+      "actions": [
+        {
+          "hold": 0.6
+        },
+        {
+          "click": ".chips a[href*='action=report']",
+          "dur": 0.9
+        },
+        {
+          "hold": 0.4
+        },
+        {
+          "click": "a[href='/services/report-a-pothole-or-street-problem']",
+          "dur": 0.9
+        },
+        {
+          "hold": 0.9
+        }
+      ]
+    },
+    {
+      "url": "/meetings",
+      "caption": "Public meetings with agendas, minutes and a calendar feed",
+      "actions": [
+        {
+          "hold": 0.6
+        },
+        {
+          "click": "a[href='/meetings/city-council-regular-meeting-october-13-2026']",
+          "dur": 0.9
+        },
+        {
+          "hold": 0.6
+        },
+        {
+          "scroll": 420,
+          "dur": 1.2
+        },
+        {
+          "hold": 0.6
+        }
+      ]
+    },
+    {
+      "url": "/council",
+      "caption": "The mayor and council, by district",
+      "actions": [
+        {
+          "hold": 0.6
+        },
+        {
+          "scroll": 360,
+          "dur": 1.4
+        },
+        {
+          "hold": 0.6
+        }
+      ]
+    },
+    {
+      "url": "/notices",
+      "caption": "Public notices for hearings, bids and ordinances, with an RSS feed",
+      "actions": [
+        {
+          "hold": 0.6
+        },
+        {
+          "scroll": 300,
+          "dur": 1.2
+        },
+        {
+          "hold": 0.6
+        }
+      ]
+    },
+    {
+      "url": "/trash-recycling",
+      "caption": "Trash and recycling days by zone, with holiday changes",
+      "actions": [
+        {
+          "hold": 0.5
+        },
+        {
+          "scroll": 700,
+          "dur": 1.8
+        },
+        {
+          "hold": 0.6
+        }
+      ]
+    },
+    {
+      "url": "/",
+      "phone": true,
+      "phoneCaption": {
+        "kicker": "Responsive",
+        "text": "Every page works on a phone"
+      },
+      "actions": [
+        {
+          "hold": 0.5
+        },
+        {
+          "scroll": 1300,
+          "dur": 2.2
+        },
+        {
+          "hold": 0.4
+        }
+      ]
+    }
+  ]
+}

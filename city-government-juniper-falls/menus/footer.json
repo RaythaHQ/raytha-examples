@@ -1,0 +1,30 @@
+{
+ "developerName": "footer",
+ "label": "Footer",
+ "items": [
+  {
+   "label": "Trash and recycling",
+   "link": "/trash-recycling"
+  },
+  {
+   "label": "Pay your water bill",
+   "link": "/services/pay-your-water-bill"
+  },
+  {
+   "label": "Building permits",
+   "link": "/services/apply-for-a-building-permit"
+  },
+  {
+   "label": "Public records",
+   "link": "/services/request-public-records"
+  },
+  {
+   "label": "Boards and commissions",
+   "link": "/boards"
+  },
+  {
+   "label": "Contact us",
+   "link": "/contact"
+  }
+ ]
+}
