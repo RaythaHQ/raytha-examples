@@ -61,9 +61,13 @@ More in [screenshots/](screenshots/). Recapture them from your own build with [s
 
 ## Rebuild it
 
+[![Deploy on Railway](https://railway.com/button.svg)](https://raytha.com/go/railway?from=examples-job-board-groundwork)
+
+Deploy Raytha first, then import this kit. The button deploys a fresh Raytha with PostgreSQL on Railway; finish the setup wizard, create an API key, and run `build.sh` below against the new site.
+
 You need a Raytha 2.x site you can wipe (a fresh install is best), an admin API key, the `raytha` CLI, and `jq`.
 
-1. **Run Raytha.** One-click on [Railway](https://railway.com/deploy/raytha-cms?referralCode=RU52It&utm_medium=integration&utm_source=template&utm_campaign=generic),
+1. **Run Raytha.** One-click on [Railway](https://raytha.com/go/railway?from=examples-job-board-groundwork),
    or locally with Docker:
 
    ```bash
@@ -74,7 +78,7 @@ You need a Raytha 2.x site you can wipe (a fresh install is best), an admin API 
    Open the site, finish the setup wizard, and set the **website URL** to the address you'll browse it at.
    The feeds and the JobPosting data build absolute links from it.
 
-2. **Create an API key.** In the admin: Settings > Administrators > your account > API keys.
+2. **Create an API key.** In the admin: People > Admins > your account > Create API key.
 
 3. **Install the CLI** and check the connection:
 

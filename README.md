@@ -40,7 +40,9 @@ These examples go with the weekly [use cases on raytha.com](https://raytha.com/u
 
 The fastest way is the one-click Railway template:
 
-[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/deploy/raytha-cms?referralCode=RU52It&utm_medium=integration&utm_source=template&utm_campaign=generic)
+[![Deploy on Railway](https://railway.com/button.svg)](https://raytha.com/go/railway?from=examples-readme)
+
+The button deploys a fresh Raytha with PostgreSQL into your Railway account. It doesn't include an example: once Raytha is running, you import any kit below into it with `build.sh`.
 
 Or run it locally with Docker:
 
@@ -51,7 +53,7 @@ docker compose --env-file .env up      # then open http://localhost:5001 and fin
 ```
 
 In the setup wizard, set the **website URL** to the address you'll actually browse. Functions and feeds build
-absolute links from it. Then create an API key: Settings > Administrators > your account > API keys.
+absolute links from it. Then create an API key: People > Admins > your account > Create API key.
 
 ### 2. Install the CLI
 

@@ -79,6 +79,10 @@ set by editing its `start_min` and `time_label`; the lineup, schedule, stage pag
 
 ## Rebuild it
 
+[![Deploy on Railway](https://railway.com/button.svg)](https://raytha.com/go/railway?from=examples-music-festival-lowtide)
+
+Deploy Raytha first, then import this kit. The button deploys a fresh Raytha with PostgreSQL on Railway; finish the setup wizard, create an API key, and run `build.sh` below against the new site.
+
 You need a Raytha 2.x site you can wipe (a fresh install is best), an admin API key, the `raytha` CLI, `jq` and
 `python3` (to draw the artwork).
 Follow steps 1 to 3 of the [Quickstart](../README.md#quickstart) to run Raytha, create a key and install the CLI, then:

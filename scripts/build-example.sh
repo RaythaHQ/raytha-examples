@@ -20,7 +20,7 @@ set -euo pipefail
 DIR="${1:?Usage: build-example.sh <example-folder>}"
 cd "$DIR"
 : "${RAYTHA_URL:?Set RAYTHA_URL to your Raytha site, e.g. https://example.com}"
-: "${RAYTHA_API_KEY:?Set RAYTHA_API_KEY to an admin API key (Settings > Administrators > API keys)}"
+: "${RAYTHA_API_KEY:?Set RAYTHA_API_KEY to an admin API key (People > Admins > your account > Create API key)}"
 export RAYTHA_URL RAYTHA_API_KEY
 RAYTHA="${RAYTHA:-raytha}"
 command -v "$RAYTHA" >/dev/null || { echo "raytha CLI not found. Install: https://github.com/RaythaHQ/raytha-cli" >&2; exit 2; }
