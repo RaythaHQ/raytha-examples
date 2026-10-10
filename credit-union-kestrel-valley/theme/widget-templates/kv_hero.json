@@ -1,0 +1,57 @@
+{
+  "label": "Kestrel: home hero",
+  "fields": [
+    {
+      "developerName": "kicker",
+      "label": "Kicker",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "headline",
+      "label": "Headline",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "subtitle",
+      "label": "Subtitle",
+      "fieldType": "long_text"
+    },
+    {
+      "developerName": "primary_label",
+      "label": "Primary button",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "primary_url",
+      "label": "Primary link",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "secondary_label",
+      "label": "Secondary button",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "secondary_url",
+      "label": "Secondary link",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "assurances",
+      "label": "Assurances",
+      "fieldType": "repeater",
+      "subFields": [
+        {
+          "developerName": "icon",
+          "label": "Icon",
+          "fieldType": "single_line_text"
+        },
+        {
+          "developerName": "text",
+          "label": "Text",
+          "fieldType": "single_line_text"
+        }
+      ]
+    }
+  ]
+}

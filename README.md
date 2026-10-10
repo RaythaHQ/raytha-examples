@@ -33,6 +33,7 @@ These examples go with the weekly [use cases on raytha.com](https://raytha.com/u
 | [<img src="https://raytha.com/raytha/media-items/objectkey/sJNessfzGUO96Rpjk_RQ2w_postmark_trips_01_home_hero.webp" width="360" alt="Postmark Trips">](travel-postmark/) | **[Postmark Trips](travel-postmark/)**: a surprise travel agency site with trip tiers shown as stamps, past reveals as postcards with a region filter, reviews with a rating breakdown worked out in Liquid, a clue envelope fed by a JSON function, and a trip planner that saves private drafts. 5 content types, 10 widgets. |
 | [<img src="https://raytha.com/raytha/media-items/objectkey/5ivXGVtPpEGX7wD-c3mrlg_meridian_02_home_hero.webp" width="360" alt="Meridian Hub">](intranet-meridian-hub/) | **[Meridian Hub](intranet-meridian-hub/)**: a self-hosted company intranet and employee portal: a personal dashboard, news and announcements, an employee directory with filters, departments, a policy handbook with acknowledgements and managers-only pages, events, a resource library, IT help and system status, all behind Raytha login and user groups. 8 content types, 13 widgets. |
 | [<img src="https://raytha.com/raytha/media-items/objectkey/RnTXIBV2f0uVVgQNzicnDg_juniper_01_home.webp" width="360" alt="City of Juniper Falls">](city-government-juniper-falls/) | **[City of Juniper Falls](city-government-juniper-falls/)**: a self-hosted local city government website: "how do I..." services by task, public meetings with agendas and minutes, the mayor and council, boards and commissions, departments, public notices, news releases, a community calendar, a site-wide alert banner switched on by a checkbox, and an iCal meetings feed and an RSS notices feed served by Raytha Functions. 9 content types, 10 widgets. |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/TNQPQmxioUSa_RRpZShlyQ_kestrel_01_home.webp" width="360" alt="Kestrel Valley Credit Union">](credit-union-kestrel-valley/) | **[Kestrel Valley Credit Union](credit-union-kestrel-valley/)**: a self-hosted credit union website: rates in five tables with an effective date, accounts and loans, branches and ATMs on a drawn map, financial education, a security center with fraud alerts and a site-wide scam warning switched on by a checkbox, the board and reports, a loan calculator, a members-only area for annual meeting documents behind a user group, and a rates JSON feed and a security RSS feed served by Raytha Functions. 8 content types, 10 widgets. |
 
 ## Quickstart
 
@@ -118,6 +119,7 @@ The examples were built from a short brief with no human help. To do the same fo
 ├── travel-postmark/
 ├── intranet-meridian-hub/
 ├── city-government-juniper-falls/
+├── credit-union-kestrel-valley/
 ├── skills/raytha-site-builder/  # agent skill: brief -> finished Raytha site
 ├── templates/brief-template.md  # fill-in brief
 ├── scripts/                     # shared build script, scaffold, screenshots, walkthroughs, export, secret scan

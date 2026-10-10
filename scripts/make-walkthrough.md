@@ -62,6 +62,7 @@ fields), and link the raytha.com copy from the example's README.
 | Postmark Trips | [walkthrough.json](../travel-postmark/walkthrough.json) | [use case page](https://raytha.com/use-cases/postmark-trips#walkthrough) · [MP4, 40 s](https://raytha.com/raytha/media-items/objectkey/4hPyDoV7ekOOo_YWwd3Ekg_postmark_trips_walkthrough.mp4) |
 | Meridian Hub | [walkthrough.json](../intranet-meridian-hub/walkthrough.json) | [use case page](https://raytha.com/use-cases/meridian-hub-intranet#walkthrough) · [MP4, 35 s](https://raytha.com/raytha/media-items/objectkey/u-mtvWpRi0yFKzFIb7eJiw_meridian_hub_walkthrough.mp4) |
 | City of Juniper Falls | [walkthrough.json](../city-government-juniper-falls/walkthrough.json) | [use case page](https://raytha.com/use-cases/juniper-falls-city-government#walkthrough) · [MP4, 36 s](https://raytha.com/raytha/media-items/objectkey/da3ClwgR3UioVMR0WYZitA_juniper_falls_walkthrough.mp4) |
+| Kestrel Valley Credit Union | [walkthrough.json](../credit-union-kestrel-valley/walkthrough.json) | [use case page](https://raytha.com/use-cases/kestrel-valley-credit-union#walkthrough) · [MP4, 37 s](https://raytha.com/raytha/media-items/objectkey/FDJGdH327UmgR7DKsRJCzg_kestrel_valley_walkthrough.mp4) |
 
 ## Shot list
 

@@ -1,0 +1,32 @@
+{
+  "label": "Kestrel: numbers",
+  "fields": [
+    {
+      "developerName": "kicker",
+      "label": "Kicker",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "headline",
+      "label": "Headline",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "items",
+      "label": "Numbers",
+      "fieldType": "repeater",
+      "subFields": [
+        {
+          "developerName": "value",
+          "label": "Value",
+          "fieldType": "single_line_text"
+        },
+        {
+          "developerName": "label",
+          "label": "Label",
+          "fieldType": "single_line_text"
+        }
+      ]
+    }
+  ]
+}

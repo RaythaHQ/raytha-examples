@@ -1,0 +1,38 @@
+{
+ "main": [
+  {
+   "widgetType": "kv_page_head",
+   "settings": {
+    "kicker": "Tools",
+    "headline": "Loan payment calculator",
+    "subtitle": "Estimate the monthly payment on an auto loan, a personal loan or a mortgage. Nothing you type here is sent anywhere."
+   }
+  },
+  {
+   "widgetType": "kv_calc",
+   "settings": {
+    "headline": "Estimate a monthly payment",
+    "intro": "Change the amount, rate and term. The payment updates as you type.",
+    "default_amount": "32000",
+    "default_rate": "5.49",
+    "default_months": "60"
+   }
+  },
+  {
+   "widgetType": "kv_faq",
+   "settings": {
+    "headline": "About the estimate",
+    "items": [
+     {
+      "q": "Why might my real payment be different?",
+      "a": "Your rate depends on your credit, the term and the collateral. A mortgage payment usually also includes property taxes and insurance."
+     },
+     {
+      "q": "Where do the default numbers come from?",
+      "a": "They match the fictional 60-month new auto loan rate on our rates page."
+     }
+    ]
+   }
+  }
+ ]
+}

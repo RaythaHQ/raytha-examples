@@ -1,0 +1,30 @@
+{
+ "name": "Kestrel Valley Credit Union",
+ "theme": "kestrel",
+ "types": [
+  "branches",
+  "products",
+  "rates",
+  "articles",
+  "news",
+  "alerts",
+  "board",
+  "documents"
+ ],
+ "detailTemplates": {
+  "branches": "kv_detail_branches",
+  "products": "kv_detail_products",
+  "rates": "kv_detail_rates",
+  "articles": "kv_detail_articles",
+  "news": "kv_detail_news",
+  "alerts": "kv_detail_alerts",
+  "board": "kv_detail_board",
+  "documents": "kv_detail_documents"
+ },
+ "groups": [
+  {
+   "developerName": "members",
+   "label": "Members"
+  }
+ ]
+}

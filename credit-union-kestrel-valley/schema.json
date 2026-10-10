@@ -1,0 +1,1218 @@
+{
+ "schemaVersion": 1,
+ "contentTypes": [
+  {
+   "developerName": "branches",
+   "labelPlural": "Branches and ATMs",
+   "labelSingular": "Location",
+   "description": "Branches, drive-thrus and ATMs",
+   "defaultRouteTemplate": "locations/{PrimaryField}",
+   "primaryField": "name",
+   "fields": [
+    {
+     "developerName": "name",
+     "label": "Name",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": true,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "kind",
+     "label": "Kind",
+     "description": "",
+     "fieldType": "dropdown",
+     "isRequired": false,
+     "choices": [
+      {
+       "developerName": "branch",
+       "label": "Branch",
+       "disabled": false
+      },
+      {
+       "developerName": "atm",
+       "label": "ATM only",
+       "disabled": false
+      },
+      {
+       "developerName": "partner",
+       "label": "Shared branch partner",
+       "disabled": false
+      }
+     ],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "summary",
+     "label": "Summary",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "about",
+     "label": "About",
+     "description": "",
+     "fieldType": "wysiwyg",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "address",
+     "label": "Address",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "town",
+     "label": "Town",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "phone",
+     "label": "Phone",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "lobby_hours",
+     "label": "Lobby hours",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "drive_hours",
+     "label": "Drive-thru hours",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "services",
+     "label": "Services (comma separated)",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "manager",
+     "label": "Branch manager",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "map_x",
+     "label": "Map position, x (0 to 100)",
+     "description": "",
+     "fieldType": "number",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "map_y",
+     "label": "Map position, y (0 to 100)",
+     "description": "",
+     "fieldType": "number",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "image",
+     "label": "Photo",
+     "description": "",
+     "fieldType": "attachment",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "sort_order",
+     "label": "Sort order",
+     "description": "",
+     "fieldType": "number",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    }
+   ],
+   "views": [
+    {
+     "developerName": "branches",
+     "label": "Locations",
+     "description": "",
+     "isPublished": true,
+     "routePath": "locations",
+     "template": "kv_list_branches",
+     "columns": [
+      "PrimaryField"
+     ],
+     "sort": [
+      {
+       "developerName": "sort_order",
+       "direction": "asc"
+      }
+     ],
+     "filter": [],
+     "defaultNumberOfItemsPerPage": 100,
+     "maxNumberOfItemsPerPage": 1000,
+     "ignoreClientFilterAndSortQueryParams": false
+    }
+   ]
+  },
+  {
+   "developerName": "products",
+   "labelPlural": "Products",
+   "labelSingular": "Product",
+   "description": "Accounts, loans and cards",
+   "defaultRouteTemplate": "products/{PrimaryField}",
+   "primaryField": "name",
+   "fields": [
+    {
+     "developerName": "name",
+     "label": "Name",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": true,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "category",
+     "label": "Category",
+     "description": "",
+     "fieldType": "dropdown",
+     "isRequired": false,
+     "choices": [
+      {
+       "developerName": "checking",
+       "label": "Checking",
+       "disabled": false
+      },
+      {
+       "developerName": "savings",
+       "label": "Savings",
+       "disabled": false
+      },
+      {
+       "developerName": "certificates",
+       "label": "Certificates",
+       "disabled": false
+      },
+      {
+       "developerName": "auto",
+       "label": "Auto loans",
+       "disabled": false
+      },
+      {
+       "developerName": "home",
+       "label": "Home loans",
+       "disabled": false
+      },
+      {
+       "developerName": "personal",
+       "label": "Personal loans and cards",
+       "disabled": false
+      },
+      {
+       "developerName": "business",
+       "label": "Business",
+       "disabled": false
+      }
+     ],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "tagline",
+     "label": "Tagline",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "summary",
+     "label": "Summary",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "body",
+     "label": "Details",
+     "description": "",
+     "fieldType": "wysiwyg",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "highlights",
+     "label": "Highlights (one per line)",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "rate_note",
+     "label": "Rate line",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "icon",
+     "label": "Icon (Bootstrap Icons name)",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "featured",
+     "label": "Feature on the home page",
+     "description": "",
+     "fieldType": "checkbox",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "sort_order",
+     "label": "Sort order",
+     "description": "",
+     "fieldType": "number",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    }
+   ],
+   "views": [
+    {
+     "developerName": "products",
+     "label": "Accounts and loans",
+     "description": "",
+     "isPublished": true,
+     "routePath": "products",
+     "template": "kv_list_products",
+     "columns": [
+      "PrimaryField"
+     ],
+     "sort": [
+      {
+       "developerName": "sort_order",
+       "direction": "asc"
+      }
+     ],
+     "filter": [],
+     "defaultNumberOfItemsPerPage": 100,
+     "maxNumberOfItemsPerPage": 1000,
+     "ignoreClientFilterAndSortQueryParams": false
+    }
+   ]
+  },
+  {
+   "developerName": "rates",
+   "labelPlural": "Rates",
+   "labelSingular": "Rate",
+   "description": "Dividend and loan rates",
+   "defaultRouteTemplate": "rates/{PrimaryField}",
+   "primaryField": "label",
+   "fields": [
+    {
+     "developerName": "label",
+     "label": "Label",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": true,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "table",
+     "label": "Rate table",
+     "description": "",
+     "fieldType": "dropdown",
+     "isRequired": false,
+     "choices": [
+      {
+       "developerName": "savings",
+       "label": "Savings and checking",
+       "disabled": false
+      },
+      {
+       "developerName": "certificates",
+       "label": "Certificates",
+       "disabled": false
+      },
+      {
+       "developerName": "auto",
+       "label": "Auto loans",
+       "disabled": false
+      },
+      {
+       "developerName": "home",
+       "label": "Home loans",
+       "disabled": false
+      },
+      {
+       "developerName": "personal",
+       "label": "Personal loans and cards",
+       "disabled": false
+      }
+     ],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "product",
+     "label": "Product",
+     "description": "",
+     "fieldType": "one_to_one_relationship",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": "products",
+     "subFields": []
+    },
+    {
+     "developerName": "term",
+     "label": "Term",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "rate",
+     "label": "Rate (percent)",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "rate_type",
+     "label": "Rate type",
+     "description": "",
+     "fieldType": "dropdown",
+     "isRequired": false,
+     "choices": [
+      {
+       "developerName": "apy",
+       "label": "APY",
+       "disabled": false
+      },
+      {
+       "developerName": "apr",
+       "label": "APR",
+       "disabled": false
+      }
+     ],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "as_low_as",
+     "label": "Show as \"as low as\"",
+     "description": "",
+     "fieldType": "checkbox",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "minimum",
+     "label": "Minimum",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "note",
+     "label": "Note",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "featured",
+     "label": "Show in the home page rate board",
+     "description": "",
+     "fieldType": "checkbox",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "effective",
+     "label": "Effective date",
+     "description": "",
+     "fieldType": "date",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "sort_order",
+     "label": "Sort order",
+     "description": "",
+     "fieldType": "number",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    }
+   ],
+   "views": [
+    {
+     "developerName": "rates",
+     "label": "Rates",
+     "description": "",
+     "isPublished": true,
+     "routePath": "rates",
+     "template": "kv_list_rates",
+     "columns": [
+      "PrimaryField"
+     ],
+     "sort": [
+      {
+       "developerName": "sort_order",
+       "direction": "asc"
+      }
+     ],
+     "filter": [],
+     "defaultNumberOfItemsPerPage": 100,
+     "maxNumberOfItemsPerPage": 1000,
+     "ignoreClientFilterAndSortQueryParams": false
+    }
+   ]
+  },
+  {
+   "developerName": "articles",
+   "labelPlural": "Learning center",
+   "labelSingular": "Article",
+   "description": "Financial education articles",
+   "defaultRouteTemplate": "learn/{PrimaryField}",
+   "primaryField": "title",
+   "fields": [
+    {
+     "developerName": "title",
+     "label": "Title",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": true,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "topic",
+     "label": "Topic",
+     "description": "",
+     "fieldType": "dropdown",
+     "isRequired": false,
+     "choices": [
+      {
+       "developerName": "budgeting",
+       "label": "Budgeting",
+       "disabled": false
+      },
+      {
+       "developerName": "credit",
+       "label": "Credit and borrowing",
+       "disabled": false
+      },
+      {
+       "developerName": "home",
+       "label": "Buying a home",
+       "disabled": false
+      },
+      {
+       "developerName": "fraud",
+       "label": "Fraud and scams",
+       "disabled": false
+      },
+      {
+       "developerName": "saving",
+       "label": "Saving and retirement",
+       "disabled": false
+      },
+      {
+       "developerName": "youth",
+       "label": "Kids and students",
+       "disabled": false
+      }
+     ],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "summary",
+     "label": "Summary",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "body",
+     "label": "Body",
+     "description": "",
+     "fieldType": "wysiwyg",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "minutes",
+     "label": "Reading time (minutes)",
+     "description": "",
+     "fieldType": "number",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "author",
+     "label": "Author",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "posted_on",
+     "label": "Posted on",
+     "description": "",
+     "fieldType": "date",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "image",
+     "label": "Image",
+     "description": "",
+     "fieldType": "attachment",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "featured",
+     "label": "Featured",
+     "description": "",
+     "fieldType": "checkbox",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    }
+   ],
+   "views": [
+    {
+     "developerName": "articles",
+     "label": "Learning center",
+     "description": "",
+     "isPublished": true,
+     "routePath": "learn",
+     "template": "kv_list_articles",
+     "columns": [
+      "PrimaryField"
+     ],
+     "sort": [
+      {
+       "developerName": "posted_on",
+       "direction": "desc"
+      }
+     ],
+     "filter": [],
+     "defaultNumberOfItemsPerPage": 100,
+     "maxNumberOfItemsPerPage": 1000,
+     "ignoreClientFilterAndSortQueryParams": false
+    }
+   ]
+  },
+  {
+   "developerName": "news",
+   "labelPlural": "News",
+   "labelSingular": "News story",
+   "description": "Credit union news",
+   "defaultRouteTemplate": "news/{PrimaryField}",
+   "primaryField": "title",
+   "fields": [
+    {
+     "developerName": "title",
+     "label": "Title",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": true,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "category",
+     "label": "Category",
+     "description": "",
+     "fieldType": "dropdown",
+     "isRequired": false,
+     "choices": [
+      {
+       "developerName": "members",
+       "label": "Member news",
+       "disabled": false
+      },
+      {
+       "developerName": "community",
+       "label": "Community",
+       "disabled": false
+      },
+      {
+       "developerName": "rates",
+       "label": "Rates and products",
+       "disabled": false
+      },
+      {
+       "developerName": "branches",
+       "label": "Branches and service",
+       "disabled": false
+      },
+      {
+       "developerName": "governance",
+       "label": "Governance",
+       "disabled": false
+      }
+     ],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "summary",
+     "label": "Summary",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "body",
+     "label": "Body",
+     "description": "",
+     "fieldType": "wysiwyg",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "posted_on",
+     "label": "Posted on",
+     "description": "",
+     "fieldType": "date",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "image",
+     "label": "Image",
+     "description": "",
+     "fieldType": "attachment",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "featured",
+     "label": "Featured",
+     "description": "",
+     "fieldType": "checkbox",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    }
+   ],
+   "views": [
+    {
+     "developerName": "news",
+     "label": "News",
+     "description": "",
+     "isPublished": true,
+     "routePath": "news",
+     "template": "kv_list_news",
+     "columns": [
+      "PrimaryField"
+     ],
+     "sort": [
+      {
+       "developerName": "posted_on",
+       "direction": "desc"
+      }
+     ],
+     "filter": [],
+     "defaultNumberOfItemsPerPage": 100,
+     "maxNumberOfItemsPerPage": 1000,
+     "ignoreClientFilterAndSortQueryParams": false
+    }
+   ]
+  },
+  {
+   "developerName": "alerts",
+   "labelPlural": "Security alerts",
+   "labelSingular": "Security alert",
+   "description": "Scam warnings and service notices",
+   "defaultRouteTemplate": "security/{PrimaryField}",
+   "primaryField": "title",
+   "fields": [
+    {
+     "developerName": "title",
+     "label": "Title",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": true,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "level",
+     "label": "Level",
+     "description": "",
+     "fieldType": "dropdown",
+     "isRequired": false,
+     "choices": [
+      {
+       "developerName": "scam",
+       "label": "Scam warning",
+       "disabled": false
+      },
+      {
+       "developerName": "service",
+       "label": "Service notice",
+       "disabled": false
+      },
+      {
+       "developerName": "info",
+       "label": "Good to know",
+       "disabled": false
+      }
+     ],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "message",
+     "label": "Short message",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "body",
+     "label": "Details",
+     "description": "",
+     "fieldType": "wysiwyg",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "active",
+     "label": "Show the banner",
+     "description": "",
+     "fieldType": "checkbox",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "posted_on",
+     "label": "Posted on",
+     "description": "",
+     "fieldType": "date",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    }
+   ],
+   "views": [
+    {
+     "developerName": "alerts",
+     "label": "Security center",
+     "description": "",
+     "isPublished": true,
+     "routePath": "security",
+     "template": "kv_list_alerts",
+     "columns": [
+      "PrimaryField"
+     ],
+     "sort": [
+      {
+       "developerName": "posted_on",
+       "direction": "desc"
+      }
+     ],
+     "filter": [],
+     "defaultNumberOfItemsPerPage": 100,
+     "maxNumberOfItemsPerPage": 1000,
+     "ignoreClientFilterAndSortQueryParams": false
+    }
+   ]
+  },
+  {
+   "developerName": "board",
+   "labelPlural": "Board and committees",
+   "labelSingular": "Volunteer",
+   "description": "Volunteer board of directors and supervisory committee",
+   "defaultRouteTemplate": "board/{PrimaryField}",
+   "primaryField": "name",
+   "fields": [
+    {
+     "developerName": "name",
+     "label": "Name",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": true,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "role",
+     "label": "Role",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "body_group",
+     "label": "Serves on",
+     "description": "",
+     "fieldType": "dropdown",
+     "isRequired": false,
+     "choices": [
+      {
+       "developerName": "board",
+       "label": "Board of directors",
+       "disabled": false
+      },
+      {
+       "developerName": "supervisory",
+       "label": "Supervisory committee",
+       "disabled": false
+      }
+     ],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "term_ends",
+     "label": "Term ends",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "member_since",
+     "label": "Member since",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "bio",
+     "label": "Biography",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "photo",
+     "label": "Portrait",
+     "description": "",
+     "fieldType": "attachment",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "sort_order",
+     "label": "Sort order",
+     "description": "",
+     "fieldType": "number",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    }
+   ],
+   "views": [
+    {
+     "developerName": "board",
+     "label": "Board and committees",
+     "description": "",
+     "isPublished": true,
+     "routePath": "board",
+     "template": "kv_list_board",
+     "columns": [
+      "PrimaryField"
+     ],
+     "sort": [
+      {
+       "developerName": "sort_order",
+       "direction": "asc"
+      }
+     ],
+     "filter": [],
+     "defaultNumberOfItemsPerPage": 100,
+     "maxNumberOfItemsPerPage": 1000,
+     "ignoreClientFilterAndSortQueryParams": false
+    }
+   ]
+  },
+  {
+   "developerName": "documents",
+   "labelPlural": "Member documents",
+   "labelSingular": "Document",
+   "description": "Annual meeting materials, reports and disclosures",
+   "defaultRouteTemplate": "documents/{PrimaryField}",
+   "primaryField": "title",
+   "fields": [
+    {
+     "developerName": "title",
+     "label": "Title",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": true,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "kind",
+     "label": "Kind",
+     "description": "",
+     "fieldType": "dropdown",
+     "isRequired": false,
+     "choices": [
+      {
+       "developerName": "annual_meeting",
+       "label": "Annual meeting",
+       "disabled": false
+      },
+      {
+       "developerName": "minutes",
+       "label": "Minutes",
+       "disabled": false
+      },
+      {
+       "developerName": "report",
+       "label": "Report",
+       "disabled": false
+      },
+      {
+       "developerName": "election",
+       "label": "Board election",
+       "disabled": false
+      },
+      {
+       "developerName": "disclosure",
+       "label": "Disclosure",
+       "disabled": false
+      }
+     ],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "summary",
+     "label": "Summary",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "body",
+     "label": "Body",
+     "description": "",
+     "fieldType": "wysiwyg",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "file",
+     "label": "File (PDF)",
+     "description": "",
+     "fieldType": "attachment",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "members_only",
+     "label": "Members only",
+     "description": "",
+     "fieldType": "checkbox",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "year",
+     "label": "Year",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "posted_on",
+     "label": "Posted on",
+     "description": "",
+     "fieldType": "date",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    }
+   ],
+   "views": [
+    {
+     "developerName": "documents",
+     "label": "Documents",
+     "description": "",
+     "isPublished": true,
+     "routePath": "documents",
+     "template": "kv_list_documents",
+     "columns": [
+      "PrimaryField"
+     ],
+     "sort": [
+      {
+       "developerName": "posted_on",
+       "direction": "desc"
+      }
+     ],
+     "filter": [],
+     "defaultNumberOfItemsPerPage": 100,
+     "maxNumberOfItemsPerPage": 1000,
+     "ignoreClientFilterAndSortQueryParams": false
+    }
+   ]
+  }
+ ]
+}

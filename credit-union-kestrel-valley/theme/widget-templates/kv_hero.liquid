@@ -1,0 +1,3 @@
+{%- assign s = widget.settings -%}<span class="kicker">{{ s.kicker }}</span><h1 id="hh" style="margin-top:10px">{{ s.headline }}</h1><p class="lead">{{ s.subtitle }}</p>
+<div class="btns"><a class="btn btn-g" href="{{ s.primary_url }}">{{ s.primary_label }}</a><a class="btn btn-w" href="{{ s.secondary_url }}">{{ s.secondary_label }}</a></div>
+<div class="assure">{% for a in s.assurances %}<span><i class="bi bi-{{ a.icon }}" aria-hidden="true"></i>{{ a.text }}</span>{% endfor %}</div>

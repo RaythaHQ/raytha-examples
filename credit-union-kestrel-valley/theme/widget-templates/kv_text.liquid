@@ -1,0 +1,2 @@
+{%- assign s = widget.settings -%}<section class="body" style="padding-bottom:10px"{% if s.anchor %} id="{{ s.anchor }}"{% endif %}><div class="wrap art"><div class="card pad prose" style="padding:32px">{% if s.headline %}<h2 style="margin-top:0">{{ s.headline }}</h2>{% endif %}{{ s.body }}</div>
+{% if s.side_title %}<aside class="cta"><h2 style="font-size:1.25rem;margin-bottom:10px">{{ s.side_title }}</h2><div style="font-size:.95rem">{{ s.side }}</div></aside>{% endif %}</div></section>

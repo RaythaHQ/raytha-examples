@@ -1,0 +1,1 @@
+{%- assign s = widget.settings -%}<section class="sec" style="padding-top:20px"><div class="wrap" style="max-width:900px"><div class="card pad faq" style="padding:28px"><h2 style="margin-bottom:10px">{{ s.headline }}</h2>{% for f in s.items %}<details{% if forloop.first %} open{% endif %}><summary>{{ f.q }}</summary><p>{{ f.a }}</p></details>{% endfor %}</div></div></section>

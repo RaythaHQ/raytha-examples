@@ -1,0 +1,32 @@
+{
+  "label": "Kestrel: quick links",
+  "fields": [
+    {
+      "developerName": "items",
+      "label": "Links",
+      "fieldType": "repeater",
+      "subFields": [
+        {
+          "developerName": "icon",
+          "label": "Icon",
+          "fieldType": "single_line_text"
+        },
+        {
+          "developerName": "title",
+          "label": "Title",
+          "fieldType": "single_line_text"
+        },
+        {
+          "developerName": "text",
+          "label": "Text",
+          "fieldType": "single_line_text"
+        },
+        {
+          "developerName": "url",
+          "label": "Link",
+          "fieldType": "single_line_text"
+        }
+      ]
+    }
+  ]
+}

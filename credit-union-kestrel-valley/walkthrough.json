@@ -1,0 +1,170 @@
+{
+  "slug": "kestrel-valley",
+  "name": "Kestrel Valley Credit Union",
+  "viewport": [
+    1440,
+    810
+  ],
+  "output": [
+    1920,
+    1080
+  ],
+  "colorScheme": "light",
+  "title": {
+    "kicker": "Raytha use case",
+    "heading": "Kestrel Valley Credit Union",
+    "subheading": "A fictional credit union website with a rate board, rate tables, accounts and loans, a branch and ATM map, a security center and a members-only annual meeting area.",
+    "hold": 1.3
+  },
+  "end": {
+    "heading": "Built with Raytha",
+    "subheading": "Open-source .NET CMS. Get the brief, screenshots and a one-command rebuild kit.",
+    "url": "raytha.com/use-cases/kestrel-valley-credit-union",
+    "hold": 2.3
+  },
+  "scenes": [
+    {
+      "url": "/",
+      "caption": "A home page with today's rates and a scam alert banner",
+      "actions": [
+        {
+          "hold": 1.1,
+          "poster": true
+        },
+        {
+          "scroll": 1150,
+          "dur": 2.4
+        },
+        {
+          "hold": 0.5
+        }
+      ]
+    },
+    {
+      "url": "/rates",
+      "caption": "Rate tables from one content type, with a JSON feed",
+      "actions": [
+        {
+          "hold": 0.6
+        },
+        {
+          "scroll": 620,
+          "dur": 1.6
+        },
+        {
+          "hold": 0.5
+        }
+      ]
+    },
+    {
+      "url": "/products",
+      "caption": "Accounts and loans, filtered by category",
+      "actions": [
+        {
+          "hold": 0.5
+        },
+        {
+          "click": ".chips a[href*='category=certificates']",
+          "dur": 0.9
+        },
+        {
+          "hold": 0.3
+        },
+        {
+          "scroll": 330,
+          "dur": 0.8
+        },
+        {
+          "click": "a.prod[href='/products/certificates']",
+          "dur": 0.9
+        },
+        {
+          "hold": 0.9
+        }
+      ]
+    },
+    {
+      "url": "/locations",
+      "caption": "Branches and ATMs on a map, with lobby and drive-thru hours",
+      "actions": [
+        {
+          "hold": 0.7
+        },
+        {
+          "scroll": 420,
+          "dur": 1.4
+        },
+        {
+          "hold": 0.5
+        }
+      ]
+    },
+    {
+      "url": "/security",
+      "caption": "A security center for scam warnings and service notices",
+      "actions": [
+        {
+          "hold": 0.8
+        },
+        {
+          "scroll": 260,
+          "dur": 1.0
+        },
+        {
+          "hold": 0.5
+        }
+      ]
+    },
+    {
+      "url": "/members",
+      "caption": "Signed out, the member area asks you to sign in",
+      "actions": [
+        {
+          "hold": 1.2
+        }
+      ]
+    },
+    {
+      "url": "/members",
+      "signin": true,
+      "caption": "Members sign in for annual meeting materials and minutes",
+      "actions": [
+        {
+          "hold": 0.8
+        },
+        {
+          "scroll": 520,
+          "dur": 1.6
+        },
+        {
+          "hold": 0.6
+        }
+      ]
+    },
+    {
+      "url": "/",
+      "phone": true,
+      "phoneCaption": {
+        "kicker": "Responsive",
+        "text": "Every page works on a phone"
+      },
+      "actions": [
+        {
+          "hold": 0.5
+        },
+        {
+          "scroll": 1300,
+          "dur": 2.2
+        },
+        {
+          "hold": 0.4
+        }
+      ]
+    }
+  ],
+  "login": {
+    "path": "/account/login",
+    "emailEnv": "SITE_USER_EMAIL",
+    "passwordEnv": "SITE_USER_PASSWORD"
+  }
+}

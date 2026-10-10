@@ -1,0 +1,42 @@
+{
+  "label": "Kestrel: steps",
+  "fields": [
+    {
+      "developerName": "anchor",
+      "label": "Anchor id",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "kicker",
+      "label": "Kicker",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "headline",
+      "label": "Headline",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "intro",
+      "label": "Intro",
+      "fieldType": "long_text"
+    },
+    {
+      "developerName": "items",
+      "label": "Steps",
+      "fieldType": "repeater",
+      "subFields": [
+        {
+          "developerName": "title",
+          "label": "Title",
+          "fieldType": "single_line_text"
+        },
+        {
+          "developerName": "text",
+          "label": "Text",
+          "fieldType": "long_text"
+        }
+      ]
+    }
+  ]
+}

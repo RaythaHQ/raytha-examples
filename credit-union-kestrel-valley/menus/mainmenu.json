@@ -1,0 +1,30 @@
+{
+ "developerName": "mainmenu",
+ "label": "Main menu",
+ "items": [
+  {
+   "label": "Accounts and loans",
+   "link": "/products"
+  },
+  {
+   "label": "Rates",
+   "link": "/rates"
+  },
+  {
+   "label": "Locations",
+   "link": "/locations"
+  },
+  {
+   "label": "Learn",
+   "link": "/learn"
+  },
+  {
+   "label": "Security",
+   "link": "/security"
+  },
+  {
+   "label": "About",
+   "link": "/about"
+  }
+ ]
+}

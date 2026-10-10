@@ -1,0 +1,13 @@
+{
+ "main": [
+  {
+   "widgetType": "kv_text",
+   "settings": {
+    "headline": "2027 annual meeting",
+    "body": "<p>The 69th annual meeting is on <strong>Thursday, March 18, 2027, at 6 pm</strong> at the Harlow Civic Center, 50 Civic Plaza. Members can also join online; the link is emailed to members two weeks ahead.</p><h2>What happens</h2><ul><li>The chair, CEO, treasurer and supervisory committee report on 2026</li><li>Results of the election for three board seats</li><li>Members ask questions of the board and management</li></ul><h2>Board election</h2><p>Three director seats are open. Applications are due <strong>December 1, 2026</strong>; the nomination packet is below. If there are more candidates than seats, ballots go out by mail and email in February.</p>",
+    "side_title": "Key dates",
+    "side": "<p><strong>December 1, 2026</strong><br>Board applications due</p><p><strong>February 2027</strong><br>Ballots sent, if contested</p><p><strong>March 11, 2027</strong><br>Questions for the board due</p><p><strong>March 18, 2027, 6 pm</strong><br>Annual meeting</p>"
+   }
+  }
+ ]
+}

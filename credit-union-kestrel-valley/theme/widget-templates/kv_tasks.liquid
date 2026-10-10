@@ -1,0 +1,1 @@
+{%- assign s = widget.settings -%}<section class="tasks" aria-label="Quick links"><div class="wrap"><div class="tgrid">{% for t in s.items %}<a class="task" href="{{ t.url }}"><span class="ic" aria-hidden="true"><i class="bi bi-{{ t.icon }}"></i></span><span><b>{{ t.title }}</b><span>{{ t.text }}</span></span></a>{% endfor %}</div></div></section>

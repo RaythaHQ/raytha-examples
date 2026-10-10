@@ -1,0 +1,58 @@
+[
+ {
+  "title": "Kestrel Valley Credit Union",
+  "routePath": "home",
+  "template": "kv_home",
+  "sections": "pages/home.json",
+  "home": true
+ },
+ {
+  "title": "About us",
+  "routePath": "about",
+  "template": "kv_page",
+  "sections": "pages/about.json",
+  "home": false
+ },
+ {
+  "title": "Member area",
+  "routePath": "members",
+  "template": "kv_members",
+  "sections": "pages/members.json",
+  "home": false
+ },
+ {
+  "title": "Contact us",
+  "routePath": "contact",
+  "template": "kv_page",
+  "sections": "pages/contact.json",
+  "home": false
+ },
+ {
+  "title": "Accessibility statement",
+  "routePath": "accessibility",
+  "template": "kv_page",
+  "sections": "pages/accessibility.json",
+  "home": false
+ },
+ {
+  "title": "Disclosures",
+  "routePath": "disclosures",
+  "template": "kv_page",
+  "sections": "pages/disclosures.json",
+  "home": false
+ },
+ {
+  "title": "Loan payment calculator",
+  "routePath": "loan-calculator",
+  "template": "kv_page",
+  "sections": "pages/loan-calculator.json",
+  "home": false
+ },
+ {
+  "title": "Search",
+  "routePath": "search",
+  "template": "kv_search",
+  "sections": "pages/search.json",
+  "home": false
+ }
+]

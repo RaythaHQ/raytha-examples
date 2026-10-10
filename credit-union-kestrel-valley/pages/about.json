@@ -1,0 +1,81 @@
+{
+ "main": [
+  {
+   "widgetType": "kv_page_head",
+   "settings": {
+    "kicker": "About us",
+    "headline": "About Kestrel Valley Credit Union",
+    "subtitle": "Started in 1958 by twelve teachers and a grain elevator manager with $340 in a cigar box. Today 48,600 members own it, and it still answers to them."
+   }
+  },
+  {
+   "widgetType": "kv_own",
+   "settings": {
+    "kicker": "Who we are",
+    "headline": "A not-for-profit financial cooperative",
+    "body": "<p>Credit unions are owned by their members. Each member has one vote in board elections, whether they have $5 or $500,000 on deposit. The board is made up of volunteers elected by members.</p><p>We serve anyone who lives, works, worships or goes to school in Kestrel, Ashby or Wren counties, and their families.</p><p><a href=\"/board\">Meet the board</a> &middot; <a href=\"/documents\">Reports and documents</a> &middot; <a href=\"/news\">News</a></p>",
+    "items": [
+     {
+      "value": "1958",
+      "label": "founded in Harlow"
+     },
+     {
+      "value": "4",
+      "label": "branches and 3 of our own ATMs"
+     },
+     {
+      "value": "212",
+      "label": "employees, all in the valley"
+     },
+     {
+      "value": "11.2%",
+      "label": "net worth ratio at the end of 2025"
+     }
+    ]
+   }
+  },
+  {
+   "widgetType": "kv_steps",
+   "settings": {
+    "anchor": "join",
+    "kicker": "Membership",
+    "headline": "How to join",
+    "intro": "Joining takes about 20 minutes at any branch.",
+    "items": [
+     {
+      "title": "Check that you can join",
+      "text": "You can join if you live, work, worship or go to school in Kestrel, Ashby or Wren counties, or if a family member is already a member."
+     },
+     {
+      "title": "Bring a photo ID",
+      "text": "A driver's license, state ID or passport, plus your Social Security number. Bring a parent or guardian if you are under 18."
+     },
+     {
+      "title": "Deposit $5",
+      "text": "Your $5 opens a Share Savings account. It is your share of ownership, and it stays yours for as long as you are a member."
+     }
+    ]
+   }
+  },
+  {
+   "widgetType": "kv_faq",
+   "settings": {
+    "headline": "Questions about membership",
+    "items": [
+     {
+      "q": "Is a credit union the same as a bank?",
+      "a": "You can do the same things: checking, savings, loans and cards. The difference is ownership. A bank is owned by shareholders; a credit union is owned by its members and run by a volunteer board they elect."
+     },
+     {
+      "q": "Can I stay a member if I move away?",
+      "a": "Yes. Once a member, always a member, as long as you keep your Share Savings account open."
+     },
+     {
+      "q": "Is this a real credit union?",
+      "a": "No. Kestrel Valley Credit Union is fictional. It was made up to show what a credit union website built with Raytha can look like. The rates, people and places are invented."
+     }
+    ]
+   }
+  }
+ ]
+}

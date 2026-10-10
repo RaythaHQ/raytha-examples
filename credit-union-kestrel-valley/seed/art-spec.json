@@ -1,0 +1,223 @@
+{
+ "people": [
+  {
+   "name": "Margaret Lindqvist",
+   "slug": "margaret-lindqvist"
+  },
+  {
+   "name": "Samuel Okonkwo",
+   "slug": "samuel-okonkwo"
+  },
+  {
+   "name": "Teresa Vance",
+   "slug": "teresa-vance"
+  },
+  {
+   "name": "Hector Ruiz",
+   "slug": "hector-ruiz"
+  },
+  {
+   "name": "Grace Whitaker",
+   "slug": "grace-whitaker"
+  },
+  {
+   "name": "Wei Chen",
+   "slug": "wei-chen"
+  },
+  {
+   "name": "Ruth Abernathy",
+   "slug": "ruth-abernathy"
+  },
+  {
+   "name": "Jonah Feld",
+   "slug": "jonah-feld"
+  },
+  {
+   "name": "Alicia Moreno",
+   "slug": "alicia-moreno"
+  }
+ ],
+ "covers": [
+  {
+   "slug": "harlow-main-office",
+   "kind": "branch"
+  },
+  {
+   "slug": "millbrook-springs",
+   "kind": "branch"
+  },
+  {
+   "slug": "copper-flats",
+   "kind": "branch"
+  },
+  {
+   "slug": "wren-lake",
+   "kind": "branch"
+  },
+  {
+   "slug": "ashby-grocery-atm",
+   "kind": "branch"
+  },
+  {
+   "slug": "valley-medical-center-atm",
+   "kind": "branch"
+  },
+  {
+   "slug": "kestrel-community-college-atm",
+   "kind": "branch"
+  },
+  {
+   "slug": "five-signs-a-text-from-your-bank-is-a-scam",
+   "kind": "waves"
+  },
+  {
+   "slug": "how-to-build-credit-from-scratch",
+   "kind": "grid"
+  },
+  {
+   "slug": "your-first-home-what-to-do-in-the-six-months-bef",
+   "kind": "rings"
+  },
+  {
+   "slug": "a-budget-you-will-actually-keep",
+   "kind": "bars"
+  },
+  {
+   "slug": "certificate-ladders-explained",
+   "kind": "dots"
+  },
+  {
+   "slug": "teaching-kids-about-money-by-age",
+   "kind": "waves"
+  },
+  {
+   "slug": "grandparent-scams-what-to-tell-older-relatives",
+   "kind": "grid"
+  },
+  {
+   "slug": "should-you-refinance-your-car-loan",
+   "kind": "rings"
+  },
+  {
+   "slug": "board-approves-a-year-end-bonus-dividend-for-mem",
+   "kind": "rings"
+  },
+  {
+   "slug": "nominations-open-for-three-board-seats",
+   "kind": "dots"
+  },
+  {
+   "slug": "wren-lake-branch-adds-saturday-drive-thru-hours",
+   "kind": "bars"
+  },
+  {
+   "slug": "kestrel-valley-gives-85-000-to-local-schools-and",
+   "kind": "waves"
+  },
+  {
+   "slug": "certificate-special-on-the-12-month-add-on",
+   "kind": "grid"
+  },
+  {
+   "slug": "mobile-app-update-brings-card-controls-and-trave",
+   "kind": "rings"
+  }
+ ],
+ "docs": [
+  {
+   "slug": "2027-annual-meeting-notice-and-agenda",
+   "title": "2027 annual meeting notice and agenda",
+   "sub": "Members only \u00b7 Posted 2026-10-01",
+   "lines": [
+    "#Agenda",
+    "Call to order and confirmation of quorum",
+    "Approval of the minutes of the 2026 annual meeting",
+    "Report of the chair",
+    "Report of the president and CEO",
+    "Treasurer's report",
+    "Supervisory committee report",
+    "Board election results",
+    "New business and member questions",
+    "Adjournment"
+   ]
+  },
+  {
+   "slug": "minutes-of-the-2026-annual-meeting",
+   "title": "Minutes of the 2026 annual meeting",
+   "sub": "Members only \u00b7 Posted 2026-04-20",
+   "lines": [
+    "Called to order at 6:02 pm by the chair",
+    "312 members in person and 188 online; quorum confirmed",
+    "Minutes of the 2025 annual meeting approved",
+    "Chair's report: Wren Lake branch opened",
+    "CEO's report: membership up 6%",
+    "Treasurer's report: net worth ratio 11.2%",
+    "Two directors elected by acclamation",
+    "Adjourned at 7:14 pm"
+   ]
+  },
+  {
+   "slug": "2025-annual-report",
+   "title": "2025 annual report",
+   "sub": "Posted 2026-03-19",
+   "lines": [
+    "#2025 at a glance",
+    "48,600 members, up 6%",
+    "4,100 loans made in the valley",
+    "$3.4 million returned in dividends",
+    "$85,000 given to schools and pantries",
+    "#Treasurer's statement",
+    "Net worth ratio of 11.2%"
+   ]
+  },
+  {
+   "slug": "board-nomination-packet-2027-election",
+   "title": "Board nomination packet, 2027 election",
+   "sub": "Members only \u00b7 Posted 2026-10-01",
+   "lines": [
+    "#Who can apply",
+    "Members 18 or older in good standing",
+    "#Time commitment",
+    "Monthly board meeting plus one committee",
+    "#Deadline",
+    "Applications due December 1, 2026"
+   ]
+  },
+  {
+   "slug": "supervisory-committee-audit-letter-2025",
+   "title": "Supervisory committee audit letter, 2025",
+   "sub": "Members only \u00b7 Posted 2026-03-02",
+   "lines": [
+    "#Summary",
+    "Independent audit of 2025 financial statements",
+    "Unmodified opinion issued",
+    "No material weaknesses reported"
+   ]
+  },
+  {
+   "slug": "fee-schedule",
+   "title": "Fee schedule",
+   "sub": "Posted 2026-07-01",
+   "lines": [
+    "#Checking",
+    "Everyday Checking monthly fee: none",
+    "Overdraft transfer from savings: none",
+    "#Other",
+    "Stop payment: $15",
+    "Cashier's check: $3",
+    "Wire transfer, outgoing domestic: $20"
+   ]
+  },
+  {
+   "slug": "privacy-notice",
+   "title": "Privacy notice",
+   "sub": "Posted 2026-01-15",
+   "lines": [
+    "#What we collect",
+    "Name, address, account and transaction information",
+    "#We never",
+    "Sell member information"
+   ]
+  }
+ ]
+}

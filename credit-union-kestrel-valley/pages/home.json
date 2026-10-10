@@ -1,0 +1,91 @@
+{
+ "hero": [
+  {
+   "widgetType": "kv_hero",
+   "settings": {
+    "kicker": "Member owned since 1958",
+    "headline": "Banking that belongs to the valley",
+    "subtitle": "Kestrel Valley Credit Union is owned by the 48,600 people who bank here. Fair rates, plain fees, and decisions made by neighbors in Harlow, not a head office far away.",
+    "primary_label": "See today's rates",
+    "primary_url": "/rates",
+    "secondary_label": "Find a branch",
+    "secondary_url": "/locations",
+    "assurances": [
+     {
+      "icon": "people",
+      "text": "One member, one vote"
+     },
+     {
+      "icon": "cash-stack",
+      "text": "Free checking"
+     },
+     {
+      "icon": "geo-alt",
+      "text": "Loans decided locally"
+     }
+    ]
+   }
+  }
+ ],
+ "tasks": [
+  {
+   "widgetType": "kv_tasks",
+   "settings": {
+    "items": [
+     {
+      "icon": "geo-alt",
+      "title": "Branches and ATMs",
+      "text": "Hours, drive-thrus and 30,000 surcharge-free ATMs",
+      "url": "/locations"
+     },
+     {
+      "icon": "calculator",
+      "title": "Loan calculator",
+      "text": "Estimate a monthly payment",
+      "url": "/loan-calculator"
+     },
+     {
+      "icon": "shield-lock",
+      "title": "Lost or stolen card",
+      "text": "Call (555) 014-2911, 24 hours a day",
+      "url": "/security"
+     },
+     {
+      "icon": "person-plus",
+      "title": "Become a member",
+      "text": "Who can join and what to bring",
+      "url": "/about#join"
+     }
+    ]
+   }
+  }
+ ],
+ "main": [
+  {
+   "widgetType": "kv_own",
+   "settings": {
+    "kicker": "Not-for-profit, member owned",
+    "headline": "When we do well, members get it back",
+    "body": "<p>A credit union has no outside shareholders. After paying the bills and keeping a safe cushion, earnings go back to members as better rates, fewer fees and a year-end bonus dividend.</p><p>This year the board approved a <a href=\"/news/board-approves-a-year-end-bonus-dividend-for-members\">$1.2 million bonus dividend</a>, paid in December.</p>",
+    "items": [
+     {
+      "value": "48,600",
+      "label": "members who own the credit union"
+     },
+     {
+      "value": "$1.2M",
+      "label": "bonus dividend this December"
+     },
+     {
+      "value": "4,100",
+      "label": "loans made in the valley last year"
+     },
+     {
+      "value": "$0",
+      "label": "monthly fee on Everyday Checking"
+     }
+    ]
+   }
+  }
+ ]
+}

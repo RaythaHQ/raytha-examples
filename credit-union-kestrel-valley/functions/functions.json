@@ -1,0 +1,4 @@
+[
+ {"developerName": "feeds.rates", "name": "Rates feed (JSON)", "trigger": "http_request", "file": "rates.json.js", "routePath": "feeds/rates.json"},
+ {"developerName": "feeds.security", "name": "Security alerts RSS feed", "trigger": "http_request", "file": "security.rss.js", "routePath": "feeds/security.rss"}
+]

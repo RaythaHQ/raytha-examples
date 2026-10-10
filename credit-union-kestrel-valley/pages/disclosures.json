@@ -1,0 +1,21 @@
+{
+ "main": [
+  {
+   "widgetType": "kv_page_head",
+   "settings": {
+    "kicker": "Disclosures",
+    "headline": "Disclosures and important notices",
+    "subtitle": "Kestrel Valley Credit Union is fictional. This page shows where a real credit union would put its required notices."
+   }
+  },
+  {
+   "widgetType": "kv_text",
+   "settings": {
+    "headline": "This is a demo site",
+    "body": "<p><strong>Kestrel Valley Credit Union does not exist.</strong> It is a fictional credit union made to show what a credit union or community bank website built with the open-source Raytha CMS can look like. No one can open an account or apply for a loan here, and no deposits are insured.</p><h2>On a real credit union website</h2><ul><li>The federal share insurance statement and logo would appear here and in the footer.</li><li>The Equal Housing Opportunity (or Equal Housing Lender) notice would appear on home loan pages.</li><li>Truth in Savings and Truth in Lending disclosures would be linked from every rate table.</li><li>The privacy notice and fee schedule would be linked from the footer, as they are on the <a href=\"/documents\">documents page</a>.</li></ul><p>Rates shown on this site are invented and are not offers of credit.</p>",
+    "side_title": "Documents",
+    "side": "<p>The fictional fee schedule and privacy notice are on the <a href=\"/documents\" style=\"color:#fff\">documents page</a>.</p>"
+   }
+  }
+ ]
+}

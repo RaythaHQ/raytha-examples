@@ -1,0 +1,34 @@
+{
+ "developerName": "footer",
+ "label": "Footer",
+ "items": [
+  {
+   "label": "About us",
+   "link": "/about"
+  },
+  {
+   "label": "Become a member",
+   "link": "/about#join"
+  },
+  {
+   "label": "Board and committees",
+   "link": "/board"
+  },
+  {
+   "label": "Reports and documents",
+   "link": "/documents"
+  },
+  {
+   "label": "News",
+   "link": "/news"
+  },
+  {
+   "label": "Member area",
+   "link": "/members"
+  },
+  {
+   "label": "Contact us",
+   "link": "/contact"
+  }
+ ]
+}

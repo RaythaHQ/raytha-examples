@@ -1,0 +1,30 @@
+{
+  "label": "Kestrel: loan payment calculator",
+  "fields": [
+    {
+      "developerName": "headline",
+      "label": "Headline",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "intro",
+      "label": "Intro",
+      "fieldType": "long_text"
+    },
+    {
+      "developerName": "default_amount",
+      "label": "Default amount",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "default_rate",
+      "label": "Default rate",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "default_months",
+      "label": "Default months",
+      "fieldType": "single_line_text"
+    }
+  ]
+}

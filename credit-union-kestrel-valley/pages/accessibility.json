@@ -1,0 +1,21 @@
+{
+ "main": [
+  {
+   "widgetType": "kv_page_head",
+   "settings": {
+    "kicker": "Accessibility",
+    "headline": "Accessibility statement",
+    "subtitle": "We want every member to be able to use this website, including people who use screen readers, keyboards, magnification or captions."
+   }
+  },
+  {
+   "widgetType": "kv_text",
+   "settings": {
+    "headline": "Our commitment",
+    "body": "<p>We design and test this website against the <strong>Web Content Accessibility Guidelines (WCAG) 2.2, level AA</strong>.</p><h2>What we do</h2><ul><li>Every page has a skip link, landmarks, a logical heading order and a visible keyboard focus.</li><li>Rate tables use real table markup with headers, so screen readers can read them row by row.</li><li>Text and buttons meet AA contrast, and nothing depends on color alone.</li><li>Documents are available in large print at any branch.</li></ul><h2>Known issues</h2><p>Some older PDF disclosures are not fully tagged. Call us and we will read them to you or send an accessible copy.</p>",
+    "side_title": "Report a problem",
+    "side": "<p>If something on this site does not work for you, call (555) 014-2000 or email <a href=\"mailto:access@kestrelvalley.example\" style=\"color:#fff\">access@kestrelvalley.example</a>. We answer within two business days.</p>"
+   }
+  }
+ ]
+}

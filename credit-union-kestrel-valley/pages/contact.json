@@ -1,0 +1,66 @@
+{
+ "main": [
+  {
+   "widgetType": "kv_page_head",
+   "settings": {
+    "kicker": "Contact us",
+    "headline": "Contact member service",
+    "subtitle": "Call, email or visit a branch. Member service answers the phone Monday to Friday, 8 am to 7 pm, and Saturday, 9 am to 1 pm."
+   }
+  },
+  {
+   "widgetType": "kv_contacts",
+   "settings": {
+    "kicker": "Phone directory",
+    "headline": "Who to call",
+    "items": [
+     {
+      "icon": "telephone",
+      "name": "Member service",
+      "phone": "(555) 014-2000",
+      "note": "Accounts, transfers and general questions"
+     },
+     {
+      "icon": "shield-lock",
+      "name": "Lost or stolen card",
+      "phone": "(555) 014-2911",
+      "note": "Answered 24 hours a day"
+     },
+     {
+      "icon": "house-door",
+      "name": "Home loans",
+      "phone": "(555) 014-2140",
+      "note": "Mortgages and home equity"
+     },
+     {
+      "icon": "car-front",
+      "name": "Consumer loans",
+      "phone": "(555) 014-2160",
+      "note": "Auto and personal loans, cards"
+     },
+     {
+      "icon": "shop",
+      "name": "Business services",
+      "phone": "(555) 014-2300",
+      "note": "Business accounts and loans"
+     },
+     {
+      "icon": "translate",
+      "name": "Servicio en español",
+      "phone": "(555) 014-2001",
+      "note": "Lunes a viernes, 8 am a 5 pm"
+     }
+    ]
+   }
+  },
+  {
+   "widgetType": "kv_text",
+   "settings": {
+    "headline": "Write to us",
+    "body": "<p>Email <a href=\"mailto:hello@kestrelvalley.example\">hello@kestrelvalley.example</a> with general questions. Please do not email account numbers or your Social Security number. For anything about your account, call us or send a secure message from online banking.</p><h2>Mailing address</h2><p>Kestrel Valley Credit Union<br>PO Box 1958<br>Harlow</p>",
+    "side_title": "Media",
+    "side": "<p>Reporters can reach marketing and communications at <a href=\"mailto:news@kestrelvalley.example\" style=\"color:#fff\">news@kestrelvalley.example</a> or (555) 014-2050.</p>"
+   }
+  }
+ ]
+}
