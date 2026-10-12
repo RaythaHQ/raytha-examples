@@ -1,0 +1,58 @@
+{
+ "main": [
+  {
+   "widgetType": "hc_page_head",
+   "settings": {
+    "kicker": "About us",
+    "headline": "About Harlow Creek Health System",
+    "subtitle": "A fictional not-for-profit regional health system built to show what a hospital website looks like on Raytha."
+   }
+  },
+  {
+   "widgetType": "hc_own",
+   "settings": {
+    "kicker": "Who we are",
+    "headline": "Hospital, clinics and specialty care under one system",
+    "body": "<p>In this story, Harlow Creek Medical Center opened in 1974. Today the system includes a Level II trauma center, a birth center, specialty pavilions for heart and cancer care, an orthopedic institute, urgent care in Millhaven and primary care in Ashford Crossing.</p><p><a href=\"/locations\">See locations</a> &middot; <a href=\"/services\">Services</a> &middot; <a href=\"/news\">News</a> &middot; <a href=\"/careers\">Careers</a></p>",
+    "items": [
+     {
+      "value": "1974",
+      "label": "medical center founded (story)"
+     },
+     {
+      "value": "Level II",
+      "label": "trauma designation (story)"
+     },
+     {
+      "value": "3",
+      "label": "towns served"
+     },
+     {
+      "value": "24/7",
+      "label": "emergency department"
+     }
+    ]
+   }
+  },
+  {
+   "widgetType": "hc_faq",
+   "settings": {
+    "headline": "Questions about this example",
+    "items": [
+     {
+      "q": "Is this a real hospital?",
+      "a": "No. Harlow Creek Health System is fictional. It was made up to show what a health system website built with Raytha can look like."
+     },
+     {
+      "q": "Can I book an appointment here?",
+      "a": "No. There are no registration or payment forms on this demo. On a real site you would call a clinic or use a patient portal."
+     },
+     {
+      "q": "Is Raytha HIPAA certified?",
+      "a": "No claim like that is made here. Self-hosting lets an organization keep the public website in its own environment under its own controls; compliance work is still the organization's responsibility."
+     }
+    ]
+   }
+  }
+ ]
+}

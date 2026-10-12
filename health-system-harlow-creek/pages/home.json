@@ -1,0 +1,38 @@
+{
+ "hero": [
+  {
+   "widgetType": "hc_hero",
+   "settings": {
+    "note": ""
+   }
+  }
+ ],
+ "main": [
+  {
+   "widgetType": "hc_own",
+   "settings": {
+    "kicker": "About the system",
+    "headline": "A fictional regional health system",
+    "body": "<p>Harlow Creek Health System was invented for a Raytha use-case example. In the story, it is a not-for-profit regional system with a 312-bed hospital, urgent care, primary care and specialty centers serving Harlow Creek, Millhaven and Ashford Crossing.</p><p>Nothing on this site is medical advice, and no real patients appear here.</p>",
+    "items": [
+     {
+      "value": "312",
+      "label": "beds at the medical center"
+     },
+     {
+      "value": "6",
+      "label": "locations across the valley"
+     },
+     {
+      "value": "48k",
+      "label": "emergency visits a year (story)"
+     },
+     {
+      "value": "1,100+",
+      "label": "nurses in the story"
+     }
+    ]
+   }
+  }
+ ]
+}

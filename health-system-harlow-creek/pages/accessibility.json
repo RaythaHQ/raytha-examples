@@ -1,0 +1,21 @@
+{
+ "main": [
+  {
+   "widgetType": "hc_page_head",
+   "settings": {
+    "kicker": "Accessibility",
+    "headline": "Accessibility statement",
+    "subtitle": "We want everyone to be able to use this fictional website."
+   }
+  },
+  {
+   "widgetType": "hc_text",
+   "settings": {
+    "headline": "Our commitment",
+    "body": "<p>This example site uses landmarks, a skip link, visible focus styles, labelled form controls and alt text on meaningful images. Templates are Liquid files you can edit, which makes accessibility fixes faster on a real deployment.</p><p>Conformance still has to be tested on your own site. If you find a barrier on this demo, it is part of the example, not a live patient service.</p>",
+    "side_title": "On campus",
+    "side": "<p>Every Harlow Creek location in this story has step-free access. Ask any information desk for a wheelchair or a quiet waiting area.</p>"
+   }
+  }
+ ]
+}

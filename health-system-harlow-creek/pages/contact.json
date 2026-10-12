@@ -1,0 +1,57 @@
+{
+ "main": [
+  {
+   "widgetType": "hc_page_head",
+   "settings": {
+    "kicker": "Contact us",
+    "headline": "Contact Harlow Creek",
+    "subtitle": "Call the main number, a clinic, or the emergency department. This is a fictional health system; the numbers do not reach a real hospital."
+   }
+  },
+  {
+   "widgetType": "hc_contacts",
+   "settings": {
+    "kicker": "Phone directory",
+    "headline": "Who to call",
+    "items": [
+     {
+      "icon": "telephone",
+      "name": "Main number",
+      "phone": "(555) 018-1000",
+      "note": "Operator and general questions"
+     },
+     {
+      "icon": "ambulance",
+      "name": "Emergency department",
+      "phone": "(555) 018-1911",
+      "note": "Or call 911 for emergencies"
+     },
+     {
+      "icon": "person-badge",
+      "name": "Find a doctor help line",
+      "phone": "(555) 018-1200",
+      "note": "Help choosing a primary care clinic"
+     },
+     {
+      "icon": "receipt",
+      "name": "Billing",
+      "phone": "(555) 018-1300",
+      "note": "Hospital bills and financial assistance"
+     },
+     {
+      "icon": "briefcase",
+      "name": "Careers",
+      "phone": "(555) 018-1500",
+      "note": "Fictional recruiting line"
+     },
+     {
+      "icon": "building",
+      "name": "Ashford Family Clinic",
+      "phone": "(555) 018-3100",
+      "note": "Primary care scheduling"
+     }
+    ]
+   }
+  }
+ ]
+}

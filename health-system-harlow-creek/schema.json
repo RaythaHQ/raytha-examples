@@ -1,0 +1,1188 @@
+{
+ "schemaVersion": 1,
+ "contentTypes": [
+  {
+   "developerName": "locations",
+   "labelPlural": "Locations",
+   "labelSingular": "Location",
+   "description": "Hospitals, urgent care, clinics and specialty centers",
+   "defaultRouteTemplate": "locations/{PrimaryField}",
+   "primaryField": "name",
+   "fields": [
+    {
+     "developerName": "name",
+     "label": "Name",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": true,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "kind",
+     "label": "Kind",
+     "description": "",
+     "fieldType": "dropdown",
+     "isRequired": false,
+     "choices": [
+      {
+       "developerName": "hospital",
+       "label": "Hospital",
+       "disabled": false
+      },
+      {
+       "developerName": "urgent",
+       "label": "Urgent care",
+       "disabled": false
+      },
+      {
+       "developerName": "clinic",
+       "label": "Clinic",
+       "disabled": false
+      },
+      {
+       "developerName": "specialty",
+       "label": "Specialty center",
+       "disabled": false
+      }
+     ],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "summary",
+     "label": "Summary",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "about",
+     "label": "About",
+     "description": "",
+     "fieldType": "wysiwyg",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "address",
+     "label": "Address",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "town",
+     "label": "Town",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "phone",
+     "label": "Phone",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "hours",
+     "label": "Hours",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "services",
+     "label": "Services (comma separated)",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "er",
+     "label": "Has emergency department",
+     "description": "",
+     "fieldType": "checkbox",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "parking",
+     "label": "Parking note",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "image",
+     "label": "Photo",
+     "description": "",
+     "fieldType": "attachment",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "sort_order",
+     "label": "Sort order",
+     "description": "",
+     "fieldType": "number",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    }
+   ],
+   "views": [
+    {
+     "developerName": "locations",
+     "label": "Locations",
+     "description": "",
+     "isPublished": true,
+     "routePath": "locations",
+     "template": "hc_list_locations",
+     "columns": [
+      "PrimaryField"
+     ],
+     "sort": [
+      {
+       "developerName": "sort_order",
+       "direction": "asc"
+      }
+     ],
+     "filter": [],
+     "defaultNumberOfItemsPerPage": 100,
+     "maxNumberOfItemsPerPage": 1000,
+     "ignoreClientFilterAndSortQueryParams": false
+    }
+   ]
+  },
+  {
+   "developerName": "departments",
+   "labelPlural": "Departments and services",
+   "labelSingular": "Department",
+   "description": "Clinical departments and service lines",
+   "defaultRouteTemplate": "services/{PrimaryField}",
+   "primaryField": "name",
+   "fields": [
+    {
+     "developerName": "name",
+     "label": "Name",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": true,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "category",
+     "label": "Category",
+     "description": "",
+     "fieldType": "dropdown",
+     "isRequired": false,
+     "choices": [
+      {
+       "developerName": "emergency",
+       "label": "Emergency and trauma",
+       "disabled": false
+      },
+      {
+       "developerName": "heart",
+       "label": "Heart and vascular",
+       "disabled": false
+      },
+      {
+       "developerName": "cancer",
+       "label": "Cancer care",
+       "disabled": false
+      },
+      {
+       "developerName": "orthopedics",
+       "label": "Orthopedics",
+       "disabled": false
+      },
+      {
+       "developerName": "womens",
+       "label": "Women's health",
+       "disabled": false
+      },
+      {
+       "developerName": "pediatrics",
+       "label": "Pediatrics",
+       "disabled": false
+      },
+      {
+       "developerName": "primary",
+       "label": "Primary care",
+       "disabled": false
+      },
+      {
+       "developerName": "imaging",
+       "label": "Imaging and labs",
+       "disabled": false
+      },
+      {
+       "developerName": "surgery",
+       "label": "Surgery",
+       "disabled": false
+      },
+      {
+       "developerName": "behavioral",
+       "label": "Behavioral health",
+       "disabled": false
+      }
+     ],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "tagline",
+     "label": "Tagline",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "summary",
+     "label": "Summary",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "body",
+     "label": "Details",
+     "description": "",
+     "fieldType": "wysiwyg",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "highlights",
+     "label": "Highlights (one per line)",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "icon",
+     "label": "Icon (Bootstrap Icons name)",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "phone",
+     "label": "Phone",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "location",
+     "label": "Primary location",
+     "description": "",
+     "fieldType": "one_to_one_relationship",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": "locations",
+     "subFields": []
+    },
+    {
+     "developerName": "featured",
+     "label": "Feature on the home page",
+     "description": "",
+     "fieldType": "checkbox",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "sort_order",
+     "label": "Sort order",
+     "description": "",
+     "fieldType": "number",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    }
+   ],
+   "views": [
+    {
+     "developerName": "departments",
+     "label": "Services",
+     "description": "",
+     "isPublished": true,
+     "routePath": "services",
+     "template": "hc_list_departments",
+     "columns": [
+      "PrimaryField"
+     ],
+     "sort": [
+      {
+       "developerName": "sort_order",
+       "direction": "asc"
+      }
+     ],
+     "filter": [],
+     "defaultNumberOfItemsPerPage": 100,
+     "maxNumberOfItemsPerPage": 1000,
+     "ignoreClientFilterAndSortQueryParams": false
+    }
+   ]
+  },
+  {
+   "developerName": "providers",
+   "labelPlural": "Providers",
+   "labelSingular": "Provider",
+   "description": "Physicians and advanced practice providers",
+   "defaultRouteTemplate": "providers/{PrimaryField}",
+   "primaryField": "name",
+   "fields": [
+    {
+     "developerName": "name",
+     "label": "Name",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": true,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "credentials",
+     "label": "Credentials",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "specialty",
+     "label": "Specialty",
+     "description": "",
+     "fieldType": "dropdown",
+     "isRequired": false,
+     "choices": [
+      {
+       "developerName": "family",
+       "label": "Family medicine",
+       "disabled": false
+      },
+      {
+       "developerName": "internal",
+       "label": "Internal medicine",
+       "disabled": false
+      },
+      {
+       "developerName": "cardiology",
+       "label": "Cardiology",
+       "disabled": false
+      },
+      {
+       "developerName": "oncology",
+       "label": "Oncology",
+       "disabled": false
+      },
+      {
+       "developerName": "orthopedics",
+       "label": "Orthopedic surgery",
+       "disabled": false
+      },
+      {
+       "developerName": "obgyn",
+       "label": "Obstetrics and gynecology",
+       "disabled": false
+      },
+      {
+       "developerName": "pediatrics",
+       "label": "Pediatrics",
+       "disabled": false
+      },
+      {
+       "developerName": "emergency",
+       "label": "Emergency medicine",
+       "disabled": false
+      },
+      {
+       "developerName": "radiology",
+       "label": "Radiology",
+       "disabled": false
+      },
+      {
+       "developerName": "psychiatry",
+       "label": "Psychiatry",
+       "disabled": false
+      },
+      {
+       "developerName": "surgery",
+       "label": "General surgery",
+       "disabled": false
+      }
+     ],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "title",
+     "label": "Title",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "bio",
+     "label": "Biography",
+     "description": "",
+     "fieldType": "wysiwyg",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "languages",
+     "label": "Languages",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "accepting",
+     "label": "Accepting new patients",
+     "description": "",
+     "fieldType": "checkbox",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "telehealth",
+     "label": "Offers telehealth",
+     "description": "",
+     "fieldType": "checkbox",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "location",
+     "label": "Primary location",
+     "description": "",
+     "fieldType": "one_to_one_relationship",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": "locations",
+     "subFields": []
+    },
+    {
+     "developerName": "department",
+     "label": "Department",
+     "description": "",
+     "fieldType": "one_to_one_relationship",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": "departments",
+     "subFields": []
+    },
+    {
+     "developerName": "photo",
+     "label": "Portrait",
+     "description": "",
+     "fieldType": "attachment",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "sort_order",
+     "label": "Sort order",
+     "description": "",
+     "fieldType": "number",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    }
+   ],
+   "views": [
+    {
+     "developerName": "providers",
+     "label": "Find a doctor",
+     "description": "",
+     "isPublished": true,
+     "routePath": "providers",
+     "template": "hc_list_providers",
+     "columns": [
+      "PrimaryField"
+     ],
+     "sort": [
+      {
+       "developerName": "sort_order",
+       "direction": "asc"
+      }
+     ],
+     "filter": [],
+     "defaultNumberOfItemsPerPage": 100,
+     "maxNumberOfItemsPerPage": 1000,
+     "ignoreClientFilterAndSortQueryParams": false
+    }
+   ]
+  },
+  {
+   "developerName": "news",
+   "labelPlural": "News",
+   "labelSingular": "News story",
+   "description": "Health system news",
+   "defaultRouteTemplate": "news/{PrimaryField}",
+   "primaryField": "title",
+   "fields": [
+    {
+     "developerName": "title",
+     "label": "Title",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": true,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "category",
+     "label": "Category",
+     "description": "",
+     "fieldType": "dropdown",
+     "isRequired": false,
+     "choices": [
+      {
+       "developerName": "community",
+       "label": "Community",
+       "disabled": false
+      },
+      {
+       "developerName": "clinical",
+       "label": "Clinical programs",
+       "disabled": false
+      },
+      {
+       "developerName": "research",
+       "label": "Research and quality",
+       "disabled": false
+      },
+      {
+       "developerName": "people",
+       "label": "People",
+       "disabled": false
+      },
+      {
+       "developerName": "notice",
+       "label": "Notices",
+       "disabled": false
+      }
+     ],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "summary",
+     "label": "Summary",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "body",
+     "label": "Body",
+     "description": "",
+     "fieldType": "wysiwyg",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "posted_on",
+     "label": "Posted on",
+     "description": "",
+     "fieldType": "date",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "image",
+     "label": "Image",
+     "description": "",
+     "fieldType": "attachment",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "featured",
+     "label": "Featured",
+     "description": "",
+     "fieldType": "checkbox",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "author",
+     "label": "Author",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    }
+   ],
+   "views": [
+    {
+     "developerName": "news",
+     "label": "News",
+     "description": "",
+     "isPublished": true,
+     "routePath": "news",
+     "template": "hc_list_news",
+     "columns": [
+      "PrimaryField"
+     ],
+     "sort": [
+      {
+       "developerName": "posted_on",
+       "direction": "desc"
+      }
+     ],
+     "filter": [],
+     "defaultNumberOfItemsPerPage": 100,
+     "maxNumberOfItemsPerPage": 1000,
+     "ignoreClientFilterAndSortQueryParams": false
+    }
+   ]
+  },
+  {
+   "developerName": "events",
+   "labelPlural": "Events and classes",
+   "labelSingular": "Event",
+   "description": "Health classes, screenings and community events",
+   "defaultRouteTemplate": "events/{PrimaryField}",
+   "primaryField": "title",
+   "fields": [
+    {
+     "developerName": "title",
+     "label": "Title",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": true,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "kind",
+     "label": "Kind",
+     "description": "",
+     "fieldType": "dropdown",
+     "isRequired": false,
+     "choices": [
+      {
+       "developerName": "class",
+       "label": "Health class",
+       "disabled": false
+      },
+      {
+       "developerName": "support",
+       "label": "Support group",
+       "disabled": false
+      },
+      {
+       "developerName": "screening",
+       "label": "Screening event",
+       "disabled": false
+      },
+      {
+       "developerName": "community",
+       "label": "Community event",
+       "disabled": false
+      }
+     ],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "summary",
+     "label": "Summary",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "body",
+     "label": "Details",
+     "description": "",
+     "fieldType": "wysiwyg",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "starts_on",
+     "label": "Starts on",
+     "description": "",
+     "fieldType": "date",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "time",
+     "label": "Time",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "place",
+     "label": "Place",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "location",
+     "label": "Campus",
+     "description": "",
+     "fieldType": "one_to_one_relationship",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": "locations",
+     "subFields": []
+    },
+    {
+     "developerName": "cost",
+     "label": "Cost",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "registration",
+     "label": "How to register",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "featured",
+     "label": "Featured",
+     "description": "",
+     "fieldType": "checkbox",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    }
+   ],
+   "views": [
+    {
+     "developerName": "events",
+     "label": "Events and classes",
+     "description": "",
+     "isPublished": true,
+     "routePath": "events",
+     "template": "hc_list_events",
+     "columns": [
+      "PrimaryField"
+     ],
+     "sort": [
+      {
+       "developerName": "starts_on",
+       "direction": "asc"
+      }
+     ],
+     "filter": [],
+     "defaultNumberOfItemsPerPage": 100,
+     "maxNumberOfItemsPerPage": 1000,
+     "ignoreClientFilterAndSortQueryParams": false
+    }
+   ]
+  },
+  {
+   "developerName": "careers",
+   "labelPlural": "Careers",
+   "labelSingular": "Job opening",
+   "description": "Open positions at Harlow Creek",
+   "defaultRouteTemplate": "careers/{PrimaryField}",
+   "primaryField": "title",
+   "fields": [
+    {
+     "developerName": "title",
+     "label": "Title",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": true,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "category",
+     "label": "Category",
+     "description": "",
+     "fieldType": "dropdown",
+     "isRequired": false,
+     "choices": [
+      {
+       "developerName": "nursing",
+       "label": "Nursing",
+       "disabled": false
+      },
+      {
+       "developerName": "clinical",
+       "label": "Clinical support",
+       "disabled": false
+      },
+      {
+       "developerName": "physicians",
+       "label": "Physicians and APPs",
+       "disabled": false
+      },
+      {
+       "developerName": "admin",
+       "label": "Administrative",
+       "disabled": false
+      },
+      {
+       "developerName": "it",
+       "label": "Information technology",
+       "disabled": false
+      },
+      {
+       "developerName": "facilities",
+       "label": "Facilities and support",
+       "disabled": false
+      }
+     ],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "summary",
+     "label": "Summary",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "body",
+     "label": "Description",
+     "description": "",
+     "fieldType": "wysiwyg",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "location",
+     "label": "Location",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "schedule",
+     "label": "Schedule",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "posted_on",
+     "label": "Posted on",
+     "description": "",
+     "fieldType": "date",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "howto",
+     "label": "How to apply",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "featured",
+     "label": "Featured",
+     "description": "",
+     "fieldType": "checkbox",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    }
+   ],
+   "views": [
+    {
+     "developerName": "careers",
+     "label": "Careers",
+     "description": "",
+     "isPublished": true,
+     "routePath": "careers",
+     "template": "hc_list_careers",
+     "columns": [
+      "PrimaryField"
+     ],
+     "sort": [
+      {
+       "developerName": "posted_on",
+       "direction": "desc"
+      }
+     ],
+     "filter": [],
+     "defaultNumberOfItemsPerPage": 100,
+     "maxNumberOfItemsPerPage": 1000,
+     "ignoreClientFilterAndSortQueryParams": false
+    }
+   ]
+  },
+  {
+   "developerName": "resources",
+   "labelPlural": "Patient and staff resources",
+   "labelSingular": "Resource",
+   "description": "Patient and visitor guides, plus staff resources",
+   "defaultRouteTemplate": "resources/{PrimaryField}",
+   "primaryField": "title",
+   "fields": [
+    {
+     "developerName": "title",
+     "label": "Title",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": true,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "kind",
+     "label": "Kind",
+     "description": "",
+     "fieldType": "dropdown",
+     "isRequired": false,
+     "choices": [
+      {
+       "developerName": "visitor",
+       "label": "Visitor information",
+       "disabled": false
+      },
+      {
+       "developerName": "patient",
+       "label": "Patient guide",
+       "disabled": false
+      },
+      {
+       "developerName": "billing",
+       "label": "Billing and insurance",
+       "disabled": false
+      },
+      {
+       "developerName": "prep",
+       "label": "Preparing for your visit",
+       "disabled": false
+      },
+      {
+       "developerName": "staff",
+       "label": "Staff resource",
+       "disabled": false
+      }
+     ],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "summary",
+     "label": "Summary",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "body",
+     "label": "Body",
+     "description": "",
+     "fieldType": "wysiwyg",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "file",
+     "label": "File (PDF)",
+     "description": "",
+     "fieldType": "attachment",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "staff_only",
+     "label": "Staff only",
+     "description": "",
+     "fieldType": "checkbox",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "posted_on",
+     "label": "Posted on",
+     "description": "",
+     "fieldType": "date",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "sort_order",
+     "label": "Sort order",
+     "description": "",
+     "fieldType": "number",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    }
+   ],
+   "views": [
+    {
+     "developerName": "resources",
+     "label": "Patient and visitor info",
+     "description": "",
+     "isPublished": true,
+     "routePath": "resources",
+     "template": "hc_list_resources",
+     "columns": [
+      "PrimaryField"
+     ],
+     "sort": [
+      {
+       "developerName": "sort_order",
+       "direction": "asc"
+      }
+     ],
+     "filter": [],
+     "defaultNumberOfItemsPerPage": 100,
+     "maxNumberOfItemsPerPage": 1000,
+     "ignoreClientFilterAndSortQueryParams": false
+    }
+   ]
+  }
+ ]
+}

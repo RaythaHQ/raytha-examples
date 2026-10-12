@@ -1,0 +1,26 @@
+{
+ "developerName": "footer",
+ "label": "Footer",
+ "items": [
+  {
+   "label": "Patient and visitor info",
+   "link": "/resources"
+  },
+  {
+   "label": "Patients overview",
+   "link": "/patients"
+  },
+  {
+   "label": "News",
+   "link": "/news"
+  },
+  {
+   "label": "Accessibility",
+   "link": "/accessibility"
+  },
+  {
+   "label": "Contact",
+   "link": "/contact"
+  }
+ ]
+}

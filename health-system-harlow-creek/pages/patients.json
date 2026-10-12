@@ -1,0 +1,34 @@
+{
+ "main": [
+  {
+   "widgetType": "hc_page_head",
+   "settings": {
+    "kicker": "Patients and visitors",
+    "headline": "Patients and visitors",
+    "subtitle": "Hours, parking, what to bring, billing questions and how to prepare for a visit."
+   }
+  },
+  {
+   "widgetType": "hc_steps",
+   "settings": {
+    "kicker": "Before you arrive",
+    "headline": "Three things that help",
+    "intro": "Most visits go more smoothly when you have these ready.",
+    "items": [
+     {
+      "title": "Photo ID and insurance card",
+      "text": "Bring both to registration. If you are uninsured, ask about financial assistance at the cashier desk."
+     },
+     {
+      "title": "A list of medications",
+      "text": "Include doses and allergies. Your phone's photo of bottles is fine."
+     },
+     {
+      "title": "A support person if you need one",
+      "text": "Visitor guidelines vary by unit. Check the visitor guide before you come."
+     }
+    ]
+   }
+  }
+ ]
+}

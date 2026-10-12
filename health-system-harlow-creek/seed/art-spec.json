@@ -1,0 +1,246 @@
+{
+ "people": [
+  {
+   "name": "Elena Marsh",
+   "slug": "elena-marsh"
+  },
+  {
+   "name": "Daniel Okonkwo",
+   "slug": "daniel-okonkwo"
+  },
+  {
+   "name": "Priya Natarajan",
+   "slug": "priya-natarajan"
+  },
+  {
+   "name": "James Whitaker",
+   "slug": "james-whitaker"
+  },
+  {
+   "name": "Sofia Alvarez",
+   "slug": "sofia-alvarez"
+  },
+  {
+   "name": "Marcus Chen",
+   "slug": "marcus-chen"
+  },
+  {
+   "name": "Aisha Rahman",
+   "slug": "aisha-rahman"
+  },
+  {
+   "name": "Thomas Brennan",
+   "slug": "thomas-brennan"
+  },
+  {
+   "name": "Grace Lindqvist",
+   "slug": "grace-lindqvist"
+  },
+  {
+   "name": "Wei Zhang",
+   "slug": "wei-zhang"
+  },
+  {
+   "name": "Rachel Okada",
+   "slug": "rachel-okada"
+  },
+  {
+   "name": "Samuel Ortiz",
+   "slug": "samuel-ortiz"
+  }
+ ],
+ "covers": [
+  {
+   "slug": "harlow-creek-medical-center",
+   "title": "Harlow Creek Medical Center",
+   "kind": "waves"
+  },
+  {
+   "slug": "millhaven-urgent-care",
+   "title": "Millhaven Urgent Care",
+   "kind": "grid"
+  },
+  {
+   "slug": "ashford-family-clinic",
+   "title": "Ashford Family Clinic",
+   "kind": "rings"
+  },
+  {
+   "slug": "creekway-heart-and-vascular-center",
+   "title": "Creekway Heart and Vascular Center",
+   "kind": "bars"
+  },
+  {
+   "slug": "northridge-cancer-pavilion",
+   "title": "Northridge Cancer Pavilion",
+   "kind": "branch"
+  },
+  {
+   "slug": "harlow-creek-orthopedic-institute",
+   "title": "Harlow Creek Orthopedic Institute",
+   "kind": "dots"
+  },
+  {
+   "slug": "new-level-ii-trauma-designation-expands-regional",
+   "title": "New Level II trauma designation expands regional emergency care",
+   "kind": "waves"
+  },
+  {
+   "slug": "northridge-cancer-pavilion-opens-private-infusio",
+   "title": "Northridge Cancer Pavilion opens private infusion suite",
+   "kind": "grid"
+  },
+  {
+   "slug": "free-community-flu-clinics-start-in-october",
+   "title": "Free community flu clinics start in October",
+   "kind": "rings"
+  },
+  {
+   "slug": "harlow-creek-named-a-top-workplace-for-nurses-in",
+   "title": "Harlow Creek named a top workplace for nurses in the region",
+   "kind": "bars"
+  },
+  {
+   "slug": "patient-portal-adds-video-visit-scheduling-for-p",
+   "title": "Patient portal adds video visit scheduling for primary care",
+   "kind": "branch"
+  },
+  {
+   "slug": "joint-replacement-pathway-shortens-typical-hospi",
+   "title": "Joint replacement pathway shortens typical hospital stay",
+   "kind": "dots"
+  },
+  {
+   "slug": "creekway-heart-center-expands-evening-clinic-hou",
+   "title": "Creekway Heart Center expands evening clinic hours",
+   "kind": "waves"
+  },
+  {
+   "slug": "volunteer-chaplain-program-welcomes-new-cohort",
+   "title": "Volunteer chaplain program welcomes new cohort",
+   "kind": "grid"
+  }
+ ],
+ "docs": [
+  {
+   "slug": "visitor-guidelines",
+   "title": "Visitor guidelines",
+   "sub": "Hours, quiet time, children, flowers and how to find patient rooms.",
+   "lines": [
+    "# Visitor guidelines",
+    "Hours, quiet time, children, flowers and how to find patient rooms.",
+    "",
+    "This is a fictional Harlow Creek Health System document for a Raytha demo.",
+    "Do not treat it as medical advice or a real policy."
+   ]
+  },
+  {
+   "slug": "what-to-bring-for-a-hospital-stay",
+   "title": "What to bring for a hospital stay",
+   "sub": "A short packing list for planned admissions and surgery.",
+   "lines": [
+    "# What to bring for a hospital stay",
+    "A short packing list for planned admissions and surgery.",
+    "",
+    "This is a fictional Harlow Creek Health System document for a Raytha demo.",
+    "Do not treat it as medical advice or a real policy."
+   ]
+  },
+  {
+   "slug": "billing-and-insurance-faq",
+   "title": "Billing and insurance FAQ",
+   "sub": "How charges work, financial assistance and who to call with a bill question.",
+   "lines": [
+    "# Billing and insurance FAQ",
+    "How charges work, financial assistance and who to call with a bill question.",
+    "",
+    "This is a fictional Harlow Creek Health System document for a Raytha demo.",
+    "Do not treat it as medical advice or a real policy."
+   ]
+  },
+  {
+   "slug": "preparing-for-imaging",
+   "title": "Preparing for imaging",
+   "sub": "What to eat, wear and expect before MRI, CT and ultrasound.",
+   "lines": [
+    "# Preparing for imaging",
+    "What to eat, wear and expect before MRI, CT and ultrasound.",
+    "",
+    "This is a fictional Harlow Creek Health System document for a Raytha demo.",
+    "Do not treat it as medical advice or a real policy."
+   ]
+  },
+  {
+   "slug": "birth-center-tour-information",
+   "title": "Birth center tour information",
+   "sub": "How to schedule a walking tour of labor and delivery.",
+   "lines": [
+    "# Birth center tour information",
+    "How to schedule a walking tour of labor and delivery.",
+    "",
+    "This is a fictional Harlow Creek Health System document for a Raytha demo.",
+    "Do not treat it as medical advice or a real policy."
+   ]
+  },
+  {
+   "slug": "campus-map-and-parking",
+   "title": "Campus map and parking",
+   "sub": "Where to park for Emergency, Birth Center, Outpatient Surgery and clinics.",
+   "lines": [
+    "# Campus map and parking",
+    "Where to park for Emergency, Birth Center, Outpatient Surgery and clinics.",
+    "",
+    "This is a fictional Harlow Creek Health System document for a Raytha demo.",
+    "Do not treat it as medical advice or a real policy."
+   ]
+  },
+  {
+   "slug": "clinical-policy-digest-staff",
+   "title": "Clinical policy digest (staff)",
+   "sub": "Monthly digest of updated clinical policies for credentialed staff.",
+   "lines": [
+    "# Clinical policy digest (staff)",
+    "Monthly digest of updated clinical policies for credentialed staff.",
+    "",
+    "This is a fictional Harlow Creek Health System document for a Raytha demo.",
+    "Do not treat it as medical advice or a real policy."
+   ]
+  },
+  {
+   "slug": "new-hire-clinical-onboarding-checklist-staff",
+   "title": "New hire clinical onboarding checklist (staff)",
+   "sub": "Badge, EHR access, mandatory modules and unit orientation milestones.",
+   "lines": [
+    "# New hire clinical onboarding checklist (staff)",
+    "Badge, EHR access, mandatory modules and unit orientation milestones.",
+    "",
+    "This is a fictional Harlow Creek Health System document for a Raytha demo.",
+    "Do not treat it as medical advice or a real policy."
+   ]
+  },
+  {
+   "slug": "formulary-update-notes-staff",
+   "title": "Formulary update notes (staff)",
+   "sub": "Recent additions, restrictions and shortage workarounds for the inpatient formul",
+   "lines": [
+    "# Formulary update notes (staff)",
+    "Recent additions, restrictions and shortage workarounds for the inpatient formulary.",
+    "",
+    "This is a fictional Harlow Creek Health System document for a Raytha demo.",
+    "Do not treat it as medical advice or a real policy."
+   ]
+  },
+  {
+   "slug": "rapid-response-team-quick-reference-staff",
+   "title": "Rapid response team quick reference (staff)",
+   "sub": "When to call, what to say and roles at the bedside.",
+   "lines": [
+    "# Rapid response team quick reference (staff)",
+    "When to call, what to say and roles at the bedside.",
+    "",
+    "This is a fictional Harlow Creek Health System document for a Raytha demo.",
+    "Do not treat it as medical advice or a real policy."
+   ]
+  }
+ ]
+}

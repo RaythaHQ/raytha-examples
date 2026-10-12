@@ -1,0 +1,34 @@
+{
+ "developerName": "mainmenu",
+ "label": "Main menu",
+ "items": [
+  {
+   "label": "Find a doctor",
+   "link": "/providers"
+  },
+  {
+   "label": "Services",
+   "link": "/services"
+  },
+  {
+   "label": "Locations",
+   "link": "/locations"
+  },
+  {
+   "label": "Patients",
+   "link": "/patients"
+  },
+  {
+   "label": "Events",
+   "link": "/events"
+  },
+  {
+   "label": "Careers",
+   "link": "/careers"
+  },
+  {
+   "label": "About",
+   "link": "/about"
+  }
+ ]
+}

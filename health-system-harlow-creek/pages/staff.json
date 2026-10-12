@@ -1,0 +1,13 @@
+{
+ "main": [
+  {
+   "widgetType": "hc_text",
+   "settings": {
+    "headline": "Welcome to the staff portal",
+    "body": "<p>This area is for credentialed staff of the fictional Harlow Creek Health System. Use it for policy digests, onboarding checklists and quick clinical references.</p><p>It is a website account only. It is not the electronic health record, email or badge system.</p>",
+    "side_title": "Need EHR help?",
+    "side": "<p>For electronic health record access, call the IT service desk at <strong>(555) 018-1400</strong> (fictional).</p>"
+   }
+  }
+ ]
+}

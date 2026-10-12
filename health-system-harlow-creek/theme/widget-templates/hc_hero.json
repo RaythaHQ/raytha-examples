@@ -1,0 +1,10 @@
+{
+  "label": "Harlow: spacer",
+  "fields": [
+    {
+      "developerName": "note",
+      "label": "Note",
+      "fieldType": "single_line_text"
+    }
+  ]
+}

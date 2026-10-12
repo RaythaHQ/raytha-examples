@@ -1,0 +1,28 @@
+{
+ "name": "Harlow Creek Health System",
+ "theme": "harlow",
+ "types": [
+  "locations",
+  "departments",
+  "providers",
+  "news",
+  "events",
+  "careers",
+  "resources"
+ ],
+ "detailTemplates": {
+  "locations": "hc_detail_locations",
+  "departments": "hc_detail_departments",
+  "providers": "hc_detail_providers",
+  "news": "hc_detail_news",
+  "events": "hc_detail_events",
+  "careers": "hc_detail_careers",
+  "resources": "hc_detail_resources"
+ },
+ "groups": [
+  {
+   "developerName": "staff",
+   "label": "Staff"
+  }
+ ]
+}

@@ -1,0 +1,14 @@
+{"slug":"harlow-creek","name":"Harlow Creek Health System","base":"http://localhost:5371","viewport":[1440,810],"output":[1920,1080],"colorScheme":"light",
+ "title":{"kicker":"Raytha use case","heading":"Harlow Creek Health System","subheading":"A fictional hospital and health system website with find a doctor, locations, services, patient resources, events, careers and a staff portal.","hold":1.3},
+ "end":{"heading":"Built with Raytha","subheading":"Open-source .NET CMS. Get the brief, screenshots and a one-command rebuild kit.","url":"raytha.com/use-cases/harlow-creek-health-system","hold":2.3},
+ "scenes":[
+  {"url":"/","caption":"A calm health system home page with find-a-doctor search","actions":[{"hold":1.1,"poster":true},{"scroll":1100,"dur":2.4},{"hold":0.5}]},
+  {"url":"/providers","caption":"Find a doctor, with specialty filters and accepting-patient flags","actions":[{"hold":0.7},{"scroll":500,"dur":1.6},{"hold":0.4},{"click":"a.pcard","dur":0.9},{"hold":0.9}]},
+  {"url":"/locations","caption":"Hospital, urgent care, clinics and specialty centers","actions":[{"hold":0.7},{"scroll":420,"dur":1.4},{"hold":0.5}]},
+  {"url":"/services","caption":"Departments and specialty service lines","actions":[{"hold":0.7},{"scroll":360,"dur":1.2},{"hold":0.4}]},
+  {"url":"/events","caption":"Health classes, screenings and support groups","actions":[{"hold":0.7},{"scroll":300,"dur":1.0},{"hold":0.4}]},
+  {"url":"/staff","caption":"Signed out, the staff portal asks you to sign in","actions":[{"hold":1.2}]},
+  {"url":"/staff","signin":true,"caption":"Staff sign in for clinical policy digests and onboarding","actions":[{"hold":0.8},{"scroll":520,"dur":1.6},{"hold":0.6}]},
+  {"url":"/","phone":true,"phoneCaption":{"kicker":"Responsive","text":"Every page works on a phone"},"actions":[{"hold":0.5},{"scroll":1300,"dur":2.2},{"hold":0.4}]}
+ ],
+ "login":{"path":"/account/login","emailEnv":"SITE_USER_EMAIL","passwordEnv":"SITE_USER_PASSWORD"}}

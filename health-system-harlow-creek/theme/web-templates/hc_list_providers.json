@@ -1,0 +1,9 @@
+{
+  "label": "Harlow list: find a doctor",
+  "isBaseLayout": false,
+  "parent": "raytha_html_base_layout",
+  "allowAccessForNewContentTypes": false,
+  "contentTypes": [
+    "providers"
+  ]
+}
