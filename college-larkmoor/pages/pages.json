@@ -1,0 +1,51 @@
+[
+ {
+  "title": "Larkmoor College",
+  "routePath": "home",
+  "template": "lm_home",
+  "sections": "pages/home.json",
+  "home": true
+ },
+ {
+  "title": "Admissions",
+  "routePath": "admissions",
+  "template": "lm_page",
+  "sections": "pages/admissions.json",
+  "home": false
+ },
+ {
+  "title": "About",
+  "routePath": "about",
+  "template": "lm_page",
+  "sections": "pages/about.json",
+  "home": false
+ },
+ {
+  "title": "Student and faculty portal",
+  "routePath": "portal",
+  "template": "lm_portal",
+  "sections": "pages/portal.json",
+  "home": false
+ },
+ {
+  "title": "Contact",
+  "routePath": "contact",
+  "template": "lm_page",
+  "sections": "pages/contact.json",
+  "home": false
+ },
+ {
+  "title": "Accessibility",
+  "routePath": "accessibility",
+  "template": "lm_page",
+  "sections": "pages/accessibility.json",
+  "home": false
+ },
+ {
+  "title": "Search",
+  "routePath": "search",
+  "template": "lm_search",
+  "sections": "pages/search.json",
+  "home": false
+ }
+]

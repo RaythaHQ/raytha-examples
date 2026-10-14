@@ -1,0 +1,13 @@
+{
+ "main": [
+  {
+   "widgetType": "lm_text",
+   "settings": {
+    "headline": "Welcome to the portal",
+    "body": "<p>This area is for students, faculty and staff of the fictional Larkmoor College. Students see advising, tutoring, technology and wellbeing resources. Faculty and staff also see teaching and policy materials.</p><p>It is a website account only. It is not the student records system, the learning management system or email.</p>",
+    "side_title": "Need IT help?",
+    "side": "<p>Call the IT help desk at <strong>(555) 014-2600</strong> (fictional), or stop by Hollis Library, first floor.</p>"
+   }
+  }
+ ]
+}

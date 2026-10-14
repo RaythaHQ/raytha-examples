@@ -1,0 +1,21 @@
+{
+ "main": [
+  {
+   "widgetType": "lm_page_head",
+   "settings": {
+    "kicker": "Accessibility",
+    "headline": "Accessibility statement",
+    "subtitle": "We want everyone to be able to use this fictional website."
+   }
+  },
+  {
+   "widgetType": "lm_text",
+   "settings": {
+    "headline": "Our commitment",
+    "body": "<p>This example site uses landmarks, a skip link, visible focus styles, labelled form controls and alt text on meaningful images. Pages are rendered on the server, so they work without JavaScript. Templates are Liquid files you can edit, which makes accessibility fixes faster on a real deployment.</p><p>Conformance still has to be tested on your own site.</p>",
+    "side_title": "Accommodations",
+    "side": "<p>In this story, students request academic accommodations through Accessibility Services in the Okafor Center for Wellbeing.</p>"
+   }
+  }
+ ]
+}

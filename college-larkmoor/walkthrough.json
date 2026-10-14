@@ -1,0 +1,14 @@
+{"slug":"larkmoor-college","name":"Larkmoor College","base":"http://localhost:5381","viewport":[1440,810],"output":[1920,1080],"colorScheme":"light",
+ "title":{"kicker":"Raytha use case","heading":"Larkmoor College","subheading":"A fictional college website with a program finder, faculty directory, admissions, campus map, athletics, news, events and a student and faculty portal.","hold":1.3},
+ "end":{"heading":"Built with Raytha","subheading":"Open-source .NET CMS. Get the brief, screenshots and a one-command rebuild kit.","url":"raytha.com/use-cases/larkmoor-college","hold":2.3},
+ "scenes":[
+  {"url":"/","caption":"A college home page with a program finder up front","actions":[{"hold":1.1,"poster":true},{"scroll":1100,"dur":2.4},{"hold":0.5}]},
+  {"url":"/programs","caption":"Programs across six schools, filtered by school and degree","actions":[{"hold":0.7},{"scroll":420,"dur":1.4},{"hold":0.4},{"click":"a.prog","dur":0.9},{"hold":0.9}]},
+  {"url":"/faculty","caption":"A faculty directory searchable by name, school and interest","actions":[{"hold":0.7},{"scroll":360,"dur":1.2},{"hold":0.4}]},
+  {"url":"/campus","caption":"An illustrated campus map with every building","actions":[{"hold":0.9},{"scroll":700,"dur":1.8},{"hold":0.4}]},
+  {"url":"/athletics/womens-soccer","caption":"Teams with schedules and results","actions":[{"hold":0.8},{"scroll":200,"dur":0.8},{"hold":0.4}]},
+  {"url":"/portal","caption":"Signed out, the portal asks students and faculty to sign in","actions":[{"hold":1.2}]},
+  {"url":"/portal","signin":true,"caption":"Signed in, faculty see teaching and policy materials","actions":[{"hold":0.8},{"scroll":520,"dur":1.6},{"hold":0.6}]},
+  {"url":"/","phone":true,"phoneCaption":{"kicker":"Responsive","text":"Every page works on a phone"},"actions":[{"hold":0.5},{"scroll":1300,"dur":2.2},{"hold":0.4}]}
+ ],
+ "login":{"path":"/account/login","emailEnv":"SITE_USER_EMAIL","passwordEnv":"SITE_USER_PASSWORD"}}

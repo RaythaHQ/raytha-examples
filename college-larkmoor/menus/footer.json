@@ -1,0 +1,26 @@
+{
+ "developerName": "footer",
+ "label": "Footer",
+ "items": [
+  {
+   "label": "About",
+   "link": "/about"
+  },
+  {
+   "label": "Admissions",
+   "link": "/admissions"
+  },
+  {
+   "label": "Student and faculty portal",
+   "link": "/portal"
+  },
+  {
+   "label": "Contact",
+   "link": "/contact"
+  },
+  {
+   "label": "Accessibility",
+   "link": "/accessibility"
+  }
+ ]
+}

@@ -1,0 +1,30 @@
+{
+  "label": "Larkmoor: text with side",
+  "fields": [
+    {
+      "developerName": "anchor",
+      "label": "Anchor id",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "headline",
+      "label": "Headline",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "body",
+      "label": "Body",
+      "fieldType": "wysiwyg"
+    },
+    {
+      "developerName": "side_title",
+      "label": "Side title",
+      "fieldType": "single_line_text"
+    },
+    {
+      "developerName": "side",
+      "label": "Side",
+      "fieldType": "wysiwyg"
+    }
+  ]
+}

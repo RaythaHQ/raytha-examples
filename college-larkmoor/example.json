@@ -1,0 +1,32 @@
+{
+ "name": "Larkmoor College",
+ "theme": "larkmoor",
+ "types": [
+  "places",
+  "programs",
+  "faculty",
+  "news",
+  "events",
+  "teams",
+  "resources"
+ ],
+ "detailTemplates": {
+  "places": "lm_detail_places",
+  "programs": "lm_detail_programs",
+  "faculty": "lm_detail_faculty",
+  "news": "lm_detail_news",
+  "events": "lm_detail_events",
+  "teams": "lm_detail_teams",
+  "resources": "lm_detail_resources"
+ },
+ "groups": [
+  {
+   "developerName": "students",
+   "label": "Students"
+  },
+  {
+   "developerName": "faculty",
+   "label": "Faculty and staff"
+  }
+ ]
+}

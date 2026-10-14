@@ -1,0 +1,1280 @@
+{
+ "schemaVersion": 1,
+ "contentTypes": [
+  {
+   "developerName": "places",
+   "labelPlural": "Campus places",
+   "labelSingular": "Place",
+   "description": "Buildings, halls, venues and fields on the Larkmoor campus",
+   "defaultRouteTemplate": "campus/{PrimaryField}",
+   "primaryField": "name",
+   "fields": [
+    {
+     "developerName": "name",
+     "label": "Name",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": true,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "kind",
+     "label": "Kind",
+     "description": "",
+     "fieldType": "dropdown",
+     "isRequired": false,
+     "choices": [
+      {
+       "developerName": "academic",
+       "label": "Academic building",
+       "disabled": false
+      },
+      {
+       "developerName": "library",
+       "label": "Library",
+       "disabled": false
+      },
+      {
+       "developerName": "residence",
+       "label": "Residence hall",
+       "disabled": false
+      },
+      {
+       "developerName": "dining",
+       "label": "Dining",
+       "disabled": false
+      },
+      {
+       "developerName": "arts",
+       "label": "Arts venue",
+       "disabled": false
+      },
+      {
+       "developerName": "athletics",
+       "label": "Athletics",
+       "disabled": false
+      },
+      {
+       "developerName": "student",
+       "label": "Student life",
+       "disabled": false
+      }
+     ],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "summary",
+     "label": "Summary",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "body",
+     "label": "About",
+     "description": "",
+     "fieldType": "wysiwyg",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "hours",
+     "label": "Hours",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "built",
+     "label": "Opened",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "features",
+     "label": "Inside (comma separated)",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "map_x",
+     "label": "Map position X (0-100)",
+     "description": "",
+     "fieldType": "number",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "map_y",
+     "label": "Map position Y (0-100)",
+     "description": "",
+     "fieldType": "number",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "image",
+     "label": "Photo",
+     "description": "",
+     "fieldType": "attachment",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "featured",
+     "label": "Feature on the home page",
+     "description": "",
+     "fieldType": "checkbox",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "sort_order",
+     "label": "Sort order",
+     "description": "",
+     "fieldType": "number",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    }
+   ],
+   "views": [
+    {
+     "developerName": "places",
+     "label": "Campus life",
+     "description": "",
+     "isPublished": true,
+     "routePath": "campus",
+     "template": "lm_list_places",
+     "columns": [
+      "PrimaryField"
+     ],
+     "sort": [
+      {
+       "developerName": "sort_order",
+       "direction": "asc"
+      }
+     ],
+     "filter": [],
+     "defaultNumberOfItemsPerPage": 100,
+     "maxNumberOfItemsPerPage": 1000,
+     "ignoreClientFilterAndSortQueryParams": false
+    }
+   ]
+  },
+  {
+   "developerName": "programs",
+   "labelPlural": "Academic programs",
+   "labelSingular": "Program",
+   "description": "Majors, minors, graduate degrees and certificates",
+   "defaultRouteTemplate": "programs/{PrimaryField}",
+   "primaryField": "name",
+   "fields": [
+    {
+     "developerName": "name",
+     "label": "Name",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": true,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "school",
+     "label": "School",
+     "description": "",
+     "fieldType": "dropdown",
+     "isRequired": false,
+     "choices": [
+      {
+       "developerName": "arts",
+       "label": "Arts and Humanities",
+       "disabled": false
+      },
+      {
+       "developerName": "sciences",
+       "label": "Natural Sciences",
+       "disabled": false
+      },
+      {
+       "developerName": "social",
+       "label": "Social Sciences",
+       "disabled": false
+      },
+      {
+       "developerName": "business",
+       "label": "Business and Economics",
+       "disabled": false
+      },
+      {
+       "developerName": "computing",
+       "label": "Engineering and Computing",
+       "disabled": false
+      },
+      {
+       "developerName": "health",
+       "label": "Health and Education",
+       "disabled": false
+      }
+     ],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "degree",
+     "label": "Degree",
+     "description": "",
+     "fieldType": "dropdown",
+     "isRequired": false,
+     "choices": [
+      {
+       "developerName": "ba",
+       "label": "B.A.",
+       "disabled": false
+      },
+      {
+       "developerName": "bs",
+       "label": "B.S.",
+       "disabled": false
+      },
+      {
+       "developerName": "bfa",
+       "label": "B.F.A.",
+       "disabled": false
+      },
+      {
+       "developerName": "ms",
+       "label": "M.S.",
+       "disabled": false
+      },
+      {
+       "developerName": "minor",
+       "label": "Minor",
+       "disabled": false
+      },
+      {
+       "developerName": "cert",
+       "label": "Certificate",
+       "disabled": false
+      }
+     ],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "tagline",
+     "label": "Tagline",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "summary",
+     "label": "Summary",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "body",
+     "label": "Overview",
+     "description": "",
+     "fieldType": "wysiwyg",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "highlights",
+     "label": "Highlights (one per line)",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "courses",
+     "label": "Sample courses (one per line)",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "outcomes",
+     "label": "Where graduates go (one per line)",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "credits",
+     "label": "Credits",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "format",
+     "label": "Format",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "icon",
+     "label": "Icon (Bootstrap Icons name)",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "home",
+     "label": "Home building",
+     "description": "",
+     "fieldType": "one_to_one_relationship",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": "places",
+     "subFields": []
+    },
+    {
+     "developerName": "featured",
+     "label": "Feature on the home page",
+     "description": "",
+     "fieldType": "checkbox",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "sort_order",
+     "label": "Sort order",
+     "description": "",
+     "fieldType": "number",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    }
+   ],
+   "views": [
+    {
+     "developerName": "programs",
+     "label": "Academics",
+     "description": "",
+     "isPublished": true,
+     "routePath": "programs",
+     "template": "lm_list_programs",
+     "columns": [
+      "PrimaryField"
+     ],
+     "sort": [
+      {
+       "developerName": "sort_order",
+       "direction": "asc"
+      }
+     ],
+     "filter": [],
+     "defaultNumberOfItemsPerPage": 100,
+     "maxNumberOfItemsPerPage": 1000,
+     "ignoreClientFilterAndSortQueryParams": false
+    }
+   ]
+  },
+  {
+   "developerName": "faculty",
+   "labelPlural": "Faculty",
+   "labelSingular": "Faculty member",
+   "description": "Faculty and academic staff directory",
+   "defaultRouteTemplate": "faculty/{PrimaryField}",
+   "primaryField": "name",
+   "fields": [
+    {
+     "developerName": "name",
+     "label": "Name",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": true,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "title",
+     "label": "Title",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "school",
+     "label": "School",
+     "description": "",
+     "fieldType": "dropdown",
+     "isRequired": false,
+     "choices": [
+      {
+       "developerName": "arts",
+       "label": "Arts and Humanities",
+       "disabled": false
+      },
+      {
+       "developerName": "sciences",
+       "label": "Natural Sciences",
+       "disabled": false
+      },
+      {
+       "developerName": "social",
+       "label": "Social Sciences",
+       "disabled": false
+      },
+      {
+       "developerName": "business",
+       "label": "Business and Economics",
+       "disabled": false
+      },
+      {
+       "developerName": "computing",
+       "label": "Engineering and Computing",
+       "disabled": false
+      },
+      {
+       "developerName": "health",
+       "label": "Health and Education",
+       "disabled": false
+      }
+     ],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "program",
+     "label": "Program",
+     "description": "",
+     "fieldType": "one_to_one_relationship",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": "programs",
+     "subFields": []
+    },
+    {
+     "developerName": "research",
+     "label": "Teaching and research interests",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "bio",
+     "label": "Biography",
+     "description": "",
+     "fieldType": "wysiwyg",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "office",
+     "label": "Office",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "office_hours",
+     "label": "Office hours",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "email",
+     "label": "Email",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "phone",
+     "label": "Phone",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "photo",
+     "label": "Portrait",
+     "description": "",
+     "fieldType": "attachment",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "sort_order",
+     "label": "Sort order",
+     "description": "",
+     "fieldType": "number",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    }
+   ],
+   "views": [
+    {
+     "developerName": "faculty",
+     "label": "Faculty directory",
+     "description": "",
+     "isPublished": true,
+     "routePath": "faculty",
+     "template": "lm_list_faculty",
+     "columns": [
+      "PrimaryField"
+     ],
+     "sort": [
+      {
+       "developerName": "sort_order",
+       "direction": "asc"
+      }
+     ],
+     "filter": [],
+     "defaultNumberOfItemsPerPage": 100,
+     "maxNumberOfItemsPerPage": 1000,
+     "ignoreClientFilterAndSortQueryParams": false
+    }
+   ]
+  },
+  {
+   "developerName": "news",
+   "labelPlural": "News",
+   "labelSingular": "News story",
+   "description": "College news",
+   "defaultRouteTemplate": "news/{PrimaryField}",
+   "primaryField": "title",
+   "fields": [
+    {
+     "developerName": "title",
+     "label": "Title",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": true,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "category",
+     "label": "Category",
+     "description": "",
+     "fieldType": "dropdown",
+     "isRequired": false,
+     "choices": [
+      {
+       "developerName": "campus",
+       "label": "Campus",
+       "disabled": false
+      },
+      {
+       "developerName": "research",
+       "label": "Research",
+       "disabled": false
+      },
+      {
+       "developerName": "students",
+       "label": "Student life",
+       "disabled": false
+      },
+      {
+       "developerName": "arts",
+       "label": "Arts",
+       "disabled": false
+      },
+      {
+       "developerName": "athletics",
+       "label": "Athletics",
+       "disabled": false
+      },
+      {
+       "developerName": "alumni",
+       "label": "Alumni",
+       "disabled": false
+      }
+     ],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "summary",
+     "label": "Summary",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "body",
+     "label": "Body",
+     "description": "",
+     "fieldType": "wysiwyg",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "posted_on",
+     "label": "Posted on",
+     "description": "",
+     "fieldType": "date",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "image",
+     "label": "Image",
+     "description": "",
+     "fieldType": "attachment",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "featured",
+     "label": "Featured",
+     "description": "",
+     "fieldType": "checkbox",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "author",
+     "label": "Author",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    }
+   ],
+   "views": [
+    {
+     "developerName": "news",
+     "label": "News",
+     "description": "",
+     "isPublished": true,
+     "routePath": "news",
+     "template": "lm_list_news",
+     "columns": [
+      "PrimaryField"
+     ],
+     "sort": [
+      {
+       "developerName": "posted_on",
+       "direction": "desc"
+      }
+     ],
+     "filter": [],
+     "defaultNumberOfItemsPerPage": 100,
+     "maxNumberOfItemsPerPage": 1000,
+     "ignoreClientFilterAndSortQueryParams": false
+    }
+   ]
+  },
+  {
+   "developerName": "events",
+   "labelPlural": "Events",
+   "labelSingular": "Event",
+   "description": "Lectures, performances, visit days and games",
+   "defaultRouteTemplate": "events/{PrimaryField}",
+   "primaryField": "title",
+   "fields": [
+    {
+     "developerName": "title",
+     "label": "Title",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": true,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "kind",
+     "label": "Kind",
+     "description": "",
+     "fieldType": "dropdown",
+     "isRequired": false,
+     "choices": [
+      {
+       "developerName": "lecture",
+       "label": "Lecture",
+       "disabled": false
+      },
+      {
+       "developerName": "arts",
+       "label": "Arts and performance",
+       "disabled": false
+      },
+      {
+       "developerName": "admissions",
+       "label": "Admissions visit",
+       "disabled": false
+      },
+      {
+       "developerName": "athletics",
+       "label": "Athletics",
+       "disabled": false
+      },
+      {
+       "developerName": "campus",
+       "label": "Campus life",
+       "disabled": false
+      },
+      {
+       "developerName": "alumni",
+       "label": "Alumni",
+       "disabled": false
+      }
+     ],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "summary",
+     "label": "Summary",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "body",
+     "label": "Details",
+     "description": "",
+     "fieldType": "wysiwyg",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "starts_on",
+     "label": "Starts on",
+     "description": "",
+     "fieldType": "date",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "time",
+     "label": "Time",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "venue",
+     "label": "Venue",
+     "description": "",
+     "fieldType": "one_to_one_relationship",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": "places",
+     "subFields": []
+    },
+    {
+     "developerName": "room",
+     "label": "Room or area",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "cost",
+     "label": "Cost",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "attend",
+     "label": "How to attend",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "featured",
+     "label": "Featured",
+     "description": "",
+     "fieldType": "checkbox",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    }
+   ],
+   "views": [
+    {
+     "developerName": "events",
+     "label": "Events",
+     "description": "",
+     "isPublished": true,
+     "routePath": "events",
+     "template": "lm_list_events",
+     "columns": [
+      "PrimaryField"
+     ],
+     "sort": [
+      {
+       "developerName": "starts_on",
+       "direction": "asc"
+      }
+     ],
+     "filter": [],
+     "defaultNumberOfItemsPerPage": 100,
+     "maxNumberOfItemsPerPage": 1000,
+     "ignoreClientFilterAndSortQueryParams": false
+    }
+   ]
+  },
+  {
+   "developerName": "teams",
+   "labelPlural": "Athletics teams",
+   "labelSingular": "Team",
+   "description": "Varsity teams of the Larkmoor Larks",
+   "defaultRouteTemplate": "athletics/{PrimaryField}",
+   "primaryField": "name",
+   "fields": [
+    {
+     "developerName": "name",
+     "label": "Name",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": true,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "season",
+     "label": "Season",
+     "description": "",
+     "fieldType": "dropdown",
+     "isRequired": false,
+     "choices": [
+      {
+       "developerName": "fall",
+       "label": "Fall",
+       "disabled": false
+      },
+      {
+       "developerName": "winter",
+       "label": "Winter",
+       "disabled": false
+      },
+      {
+       "developerName": "spring",
+       "label": "Spring",
+       "disabled": false
+      }
+     ],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "summary",
+     "label": "Summary",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "body",
+     "label": "About the team",
+     "description": "",
+     "fieldType": "wysiwyg",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "coach",
+     "label": "Head coach",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "record",
+     "label": "Record",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "venue",
+     "label": "Home venue",
+     "description": "",
+     "fieldType": "one_to_one_relationship",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": "places",
+     "subFields": []
+    },
+    {
+     "developerName": "schedule",
+     "label": "Schedule (date|opponent|home or away|time or result, one per line)",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "icon",
+     "label": "Icon (Bootstrap Icons name)",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "image",
+     "label": "Photo",
+     "description": "",
+     "fieldType": "attachment",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "featured",
+     "label": "Featured",
+     "description": "",
+     "fieldType": "checkbox",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "sort_order",
+     "label": "Sort order",
+     "description": "",
+     "fieldType": "number",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    }
+   ],
+   "views": [
+    {
+     "developerName": "teams",
+     "label": "Athletics",
+     "description": "",
+     "isPublished": true,
+     "routePath": "athletics",
+     "template": "lm_list_teams",
+     "columns": [
+      "PrimaryField"
+     ],
+     "sort": [
+      {
+       "developerName": "sort_order",
+       "direction": "asc"
+      }
+     ],
+     "filter": [],
+     "defaultNumberOfItemsPerPage": 100,
+     "maxNumberOfItemsPerPage": 1000,
+     "ignoreClientFilterAndSortQueryParams": false
+    }
+   ]
+  },
+  {
+   "developerName": "resources",
+   "labelPlural": "Resources",
+   "labelSingular": "Resource",
+   "description": "Public campus resources plus the student and faculty portal",
+   "defaultRouteTemplate": "resources/{PrimaryField}",
+   "primaryField": "title",
+   "fields": [
+    {
+     "developerName": "title",
+     "label": "Title",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": true,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "audience",
+     "label": "Who can see it",
+     "description": "",
+     "fieldType": "dropdown",
+     "isRequired": false,
+     "choices": [
+      {
+       "developerName": "public",
+       "label": "Everyone",
+       "disabled": false
+      },
+      {
+       "developerName": "students",
+       "label": "Students and faculty",
+       "disabled": false
+      },
+      {
+       "developerName": "faculty",
+       "label": "Faculty and staff only",
+       "disabled": false
+      }
+     ],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "kind",
+     "label": "Kind",
+     "description": "",
+     "fieldType": "dropdown",
+     "isRequired": false,
+     "choices": [
+      {
+       "developerName": "calendar",
+       "label": "Calendar",
+       "disabled": false
+      },
+      {
+       "developerName": "advising",
+       "label": "Advising",
+       "disabled": false
+      },
+      {
+       "developerName": "technology",
+       "label": "Technology",
+       "disabled": false
+      },
+      {
+       "developerName": "wellbeing",
+       "label": "Health and wellbeing",
+       "disabled": false
+      },
+      {
+       "developerName": "policy",
+       "label": "Policy",
+       "disabled": false
+      },
+      {
+       "developerName": "library",
+       "label": "Library",
+       "disabled": false
+      },
+      {
+       "developerName": "teaching",
+       "label": "Teaching",
+       "disabled": false
+      },
+      {
+       "developerName": "safety",
+       "label": "Safety",
+       "disabled": false
+      }
+     ],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "summary",
+     "label": "Summary",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "body",
+     "label": "Body",
+     "description": "",
+     "fieldType": "wysiwyg",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "file",
+     "label": "File (PDF)",
+     "description": "",
+     "fieldType": "attachment",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "posted_on",
+     "label": "Posted on",
+     "description": "",
+     "fieldType": "date",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "sort_order",
+     "label": "Sort order",
+     "description": "",
+     "fieldType": "number",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    }
+   ],
+   "views": [
+    {
+     "developerName": "resources",
+     "label": "Resources",
+     "description": "",
+     "isPublished": true,
+     "routePath": "resources",
+     "template": "lm_list_resources",
+     "columns": [
+      "PrimaryField"
+     ],
+     "sort": [
+      {
+       "developerName": "sort_order",
+       "direction": "asc"
+      }
+     ],
+     "filter": [],
+     "defaultNumberOfItemsPerPage": 100,
+     "maxNumberOfItemsPerPage": 1000,
+     "ignoreClientFilterAndSortQueryParams": false
+    }
+   ]
+  }
+ ]
+}

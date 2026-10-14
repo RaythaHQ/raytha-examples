@@ -1,0 +1,257 @@
+{
+ "people": [
+  {
+   "name": "Ines Calloway",
+   "slug": "ines-calloway"
+  },
+  {
+   "name": "Theo Marchetti",
+   "slug": "theo-marchetti"
+  },
+  {
+   "name": "Ruth Adeyemi",
+   "slug": "ruth-adeyemi"
+  },
+  {
+   "name": "Samuel Ortega-Reyes",
+   "slug": "samuel-ortega-reyes"
+  },
+  {
+   "name": "Hannah Lindqvist",
+   "slug": "hannah-lindqvist"
+  },
+  {
+   "name": "Kwame Asante",
+   "slug": "kwame-asante"
+  },
+  {
+   "name": "Mira Patel",
+   "slug": "mira-patel"
+  },
+  {
+   "name": "Daniel Brightwater",
+   "slug": "daniel-brightwater"
+  },
+  {
+   "name": "Lucia Ferrante",
+   "slug": "lucia-ferrante"
+  },
+  {
+   "name": "Owen Tremblay",
+   "slug": "owen-tremblay"
+  },
+  {
+   "name": "Grace Nakamura",
+   "slug": "grace-nakamura"
+  },
+  {
+   "name": "Elijah Brooks",
+   "slug": "elijah-brooks"
+  },
+  {
+   "name": "Amara Okafor-Lane",
+   "slug": "amara-okafor-lane"
+  },
+  {
+   "name": "Victor Haldane",
+   "slug": "victor-haldane"
+  }
+ ],
+ "covers": [
+  {
+   "slug": "pl-thornbury-hall",
+   "kind": "hall",
+   "title": "Thornbury Hall"
+  },
+  {
+   "slug": "pl-calder-science-center",
+   "kind": "science",
+   "title": "Calder Science Center"
+  },
+  {
+   "slug": "pl-hollis-library",
+   "kind": "library",
+   "title": "Hollis Library"
+  },
+  {
+   "slug": "pl-ashby-commons",
+   "kind": "commons",
+   "title": "Ashby Commons"
+  },
+  {
+   "slug": "pl-wren-house",
+   "kind": "dorm",
+   "title": "Wren House"
+  },
+  {
+   "slug": "pl-fenwick-hall",
+   "kind": "dorm",
+   "title": "Fenwick Hall"
+  },
+  {
+   "slug": "pl-marlowe-arts-center",
+   "kind": "arts",
+   "title": "Marlowe Arts Center"
+  },
+  {
+   "slug": "pl-kessler-fieldhouse",
+   "kind": "fieldhouse",
+   "title": "Kessler Fieldhouse"
+  },
+  {
+   "slug": "pl-riverside-field",
+   "kind": "field",
+   "title": "Riverside Field"
+  },
+  {
+   "slug": "pl-okafor-center-for-wellbeing",
+   "kind": "wellbeing",
+   "title": "Okafor Center for Wellbeing"
+  },
+  {
+   "slug": "n-calder-river-field-station-opens-with-new-water-lab",
+   "kind": "rings",
+   "title": "Calder River field station opens with new water lab"
+  },
+  {
+   "slug": "n-larkmoor-welcomes-its-largest-first-year-class",
+   "kind": "grid",
+   "title": "Larkmoor welcomes its largest first-year class"
+  },
+  {
+   "slug": "n-larks-womens-soccer-clinches-conference-home-field-advantage",
+   "kind": "field",
+   "title": "Larks women's soccer clinches conference home-field advantage"
+  },
+  {
+   "slug": "n-marlowe-gallery-opens-paper-and-pressure-printmaking-show",
+   "kind": "bars",
+   "title": "Marlowe Gallery opens 'Paper and Pressure' printmaking show"
+  },
+  {
+   "slug": "n-computer-science-studio-ships-a-bus-tracker-for-the-county",
+   "kind": "dots",
+   "title": "Computer science studio ships a bus tracker for the county"
+  },
+  {
+   "slug": "n-nursing-graduates-post-a-97-percent-licensure-pass-rate",
+   "kind": "waves",
+   "title": "Nursing graduates post a 97 percent licensure pass rate"
+  },
+  {
+   "slug": "n-homecoming-and-family-weekend-returns-october-23-to-25",
+   "kind": "grid",
+   "title": "Homecoming and family weekend returns October 23 to 25"
+  },
+  {
+   "slug": "n-hollis-library-extends-late-night-hours-for-midterms",
+   "kind": "library",
+   "title": "Hollis Library extends late-night hours for midterms"
+  },
+  {
+   "slug": "t-womens-soccer",
+   "kind": "field",
+   "title": "Women's soccer"
+  },
+  {
+   "slug": "t-mens-soccer",
+   "kind": "field",
+   "title": "Men's soccer"
+  },
+  {
+   "slug": "t-football",
+   "kind": "field",
+   "title": "Football"
+  },
+  {
+   "slug": "t-womens-volleyball",
+   "kind": "field",
+   "title": "Women's volleyball"
+  },
+  {
+   "slug": "t-cross-country",
+   "kind": "field",
+   "title": "Cross country"
+  },
+  {
+   "slug": "t-mens-basketball",
+   "kind": "field",
+   "title": "Men's basketball"
+  },
+  {
+   "slug": "t-womens-basketball",
+   "kind": "field",
+   "title": "Women's basketball"
+  },
+  {
+   "slug": "t-womens-lacrosse",
+   "kind": "field",
+   "title": "Women's lacrosse"
+  }
+ ],
+ "docs": [
+  {
+   "slug": "academic-calendar-2026-27",
+   "title": "Academic calendar 2026-27",
+   "sub": "Semester start and end dates, breaks, final exams and commencement.",
+   "lines": [
+    "# Fall 2026",
+    "Classes begin: August 31",
+    "Fall break: October 12 to 13",
+    "Thanksgiving break: November 25 to 29",
+    "Final exams: December 14 to 18",
+    "# Spring 2027",
+    "Classes begin: January 19",
+    "Spring break: March 15 to 19",
+    "Final exams: May 10 to 14",
+    "Commencement: May 22"
+   ]
+  },
+  {
+   "slug": "spring-2027-advising-checklist",
+   "title": "Spring 2027 advising checklist",
+   "sub": "What to finish before you meet your advisor about spring classes.",
+   "lines": [
+    "# Before your advising meeting",
+    "Review your degree audit in the student records system",
+    "List five to seven courses you want, plus backups",
+    "Check prerequisites and holds on your account",
+    "# At the meeting",
+    "Confirm your plan for the major and any minor",
+    "Ask about research, internships or study away",
+    "# After",
+    "Watch your email for your enrollment time"
+   ]
+  },
+  {
+   "slug": "faculty-handbook-digest-2026-27",
+   "title": "Faculty handbook digest 2026-27",
+   "sub": "The short version of policies on teaching load, office hours, grading and leave.",
+   "lines": [
+    "# Teaching",
+    "Standard load is three courses per semester",
+    "Hold at least four office hours each week",
+    "Post syllabi in the LMS by the first day",
+    "# Grading",
+    "Midterm grades due: October 23",
+    "Final grades due 72 hours after each exam",
+    "# Leave",
+    "Sabbatical applications due February 1"
+   ]
+  },
+  {
+   "slug": "grade-submission-and-academic-integrity-steps",
+   "title": "Grade submission and academic integrity steps",
+   "sub": "Deadlines for midterm and final grades and how to report an integrity concern.",
+   "lines": [
+    "# Deadlines",
+    "Midterm grades: October 23 by 5:00 pm",
+    "Final grades: 72 hours after the exam",
+    "# Integrity concerns",
+    "Talk with the student first",
+    "Submit a short report to the Dean of Students within ten days",
+    "Keep copies of the work in question"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,27 @@
+{
+ "story": [
+  {
+   "widgetType": "lm_quote",
+   "settings": {
+    "quote": "I came for biology and stayed for the river. By sophomore year I was running my own water samples with Professor Calloway, and nobody treated me like I was too new to help.",
+    "name": "Maya Lindgren, class of 2027",
+    "role": "biology major (fictional)",
+    "initials": "ML"
+   }
+  }
+ ],
+ "main": [
+  {
+   "widgetType": "lm_cta",
+   "settings": {
+    "kicker": "Admissions",
+    "headline": "Come see Larkmoor for yourself",
+    "text": "Visit on a weekday for a student-led tour and a class, or come to the Fall Open House on October 17. There are no application or sign-up forms on this demo site.",
+    "button": "How to apply",
+    "link": "/admissions",
+    "button2": "Plan a visit",
+    "link2": "/admissions#visit"
+   }
+  }
+ ]
+}

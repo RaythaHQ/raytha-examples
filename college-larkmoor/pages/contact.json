@@ -1,0 +1,72 @@
+{
+ "main": [
+  {
+   "widgetType": "lm_page_head",
+   "settings": {
+    "kicker": "Contact",
+    "headline": "Contact Larkmoor College",
+    "subtitle": "Offices, phone numbers and email for the fictional college. The numbers and .example addresses do not reach anyone."
+   }
+  },
+  {
+   "widgetType": "lm_contacts",
+   "settings": {
+    "kicker": "Offices",
+    "headline": "Who to contact",
+    "items": [
+     {
+      "icon": "telephone",
+      "name": "Main switchboard",
+      "phone": "(555) 014-2000",
+      "email": "hello@larkmoor.example",
+      "note": "General questions"
+     },
+     {
+      "icon": "envelope-open",
+      "name": "Admissions",
+      "phone": "(555) 014-2100",
+      "email": "admissions@larkmoor.example",
+      "note": "Visits and applications"
+     },
+     {
+      "icon": "cash-coin",
+      "name": "Financial aid",
+      "phone": "(555) 014-2150",
+      "email": "aid@larkmoor.example",
+      "note": "Grants, scholarships and loans"
+     },
+     {
+      "icon": "journal-text",
+      "name": "Registrar",
+      "phone": "(555) 014-2300",
+      "email": "registrar@larkmoor.example",
+      "note": "Transcripts and records"
+     },
+     {
+      "icon": "shield-check",
+      "name": "Campus safety",
+      "phone": "(555) 014-2911",
+      "email": "safety@larkmoor.example",
+      "note": "24 hours a day"
+     },
+     {
+      "icon": "trophy",
+      "name": "Athletics",
+      "phone": "(555) 014-2400",
+      "email": "larks@larkmoor.example",
+      "note": "Tickets and schedules"
+     }
+    ]
+   }
+  },
+  {
+   "widgetType": "lm_text",
+   "settings": {
+    "headline": "Visiting the college",
+    "body": "<p>Larkmoor College is at 1 Thornbury Quad in the fictional town of Larkmoor. Visitor parking is in Lot C off College Avenue, a short walk to Ashby Commons, where most visits start.</p><p>For directions to a building, use the <a href=\"/campus\">campus map</a>.</p>",
+    "side_title": "Office hours",
+    "side": "<p>Most offices are open Monday to Friday, 8:30 am to 5:00 pm. Campus safety is open around the clock.</p>"
+   }
+  }
+ ]
+}

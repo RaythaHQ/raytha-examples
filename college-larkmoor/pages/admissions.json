@@ -1,0 +1,126 @@
+{
+ "main": [
+  {
+   "widgetType": "lm_page_head",
+   "settings": {
+    "kicker": "Admissions",
+    "headline": "Admissions at Larkmoor",
+    "subtitle": "How to apply, deadlines, what it costs, financial aid and how to visit. Larkmoor College is fictional, and this site does not take applications or payments."
+   }
+  },
+  {
+   "widgetType": "lm_steps",
+   "settings": {
+    "kicker": "How to apply",
+    "headline": "Three steps, no surprises",
+    "intro": "Most first-year applicants finish in a few weeks. Transfer students follow the same steps with college transcripts.",
+    "items": [
+     {
+      "title": "Visit or meet us online",
+      "text": "Tour campus, sit in on a class, or meet an admissions counselor by video. It is optional, but it helps."
+     },
+     {
+      "title": "Send your application",
+      "text": "On a real college site this links to the application portal. On this demo there is no application form."
+     },
+     {
+      "title": "Share transcripts and one recommendation",
+      "text": "Test scores are optional. A teacher or counselor recommendation is required."
+     }
+    ]
+   }
+  },
+  {
+   "widgetType": "lm_table",
+   "settings": {
+    "anchor": "deadlines",
+    "kicker": "Deadlines",
+    "headline": "Application deadlines for fall 2027",
+    "intro": "Dates are part of the fictional story.",
+    "items": [
+     {
+      "label": "Early decision",
+      "date": "November 15",
+      "note": "Binding. Decisions by mid-December."
+     },
+     {
+      "label": "Early action",
+      "date": "December 1",
+      "note": "Non-binding. Decisions by late January."
+     },
+     {
+      "label": "Regular decision",
+      "date": "January 15",
+      "note": "Decisions by late March."
+     },
+     {
+      "label": "Transfer",
+      "date": "March 1",
+      "note": "Rolling review after the deadline if space remains."
+     },
+     {
+      "label": "Financial aid forms",
+      "date": "February 15",
+      "note": "For need-based aid. Merit scholarships need no extra form."
+     }
+    ]
+   }
+  },
+  {
+   "widgetType": "lm_stats",
+   "settings": {
+    "kicker": "Cost and aid",
+    "headline": "What Larkmoor costs, and who helps pay",
+    "body": "<p>In this story, nine in ten Larkmoor students receive grants or scholarships, and the average first-year aid package covers more than half of tuition. A net price calculator would live here on a real site.</p><p>Every admitted student is reviewed for merit scholarships automatically.</p>",
+    "items": [
+     {
+      "value": "91%",
+      "label": "of students receive aid (story)"
+     },
+     {
+      "value": "$31k",
+      "label": "average first-year grant (story)"
+     },
+     {
+      "value": "11:1",
+      "label": "student to faculty ratio"
+     },
+     {
+      "value": "4 yrs",
+      "label": "graduation guarantee with a plan"
+     }
+    ]
+   }
+  },
+  {
+   "widgetType": "lm_text",
+   "settings": {
+    "anchor": "visit",
+    "headline": "Plan a visit",
+    "body": "<p>Student-led tours leave Ashby Commons on weekdays at 10:00 am and 2:00 pm, and on most Saturday mornings during the school year. Each tour takes about an hour and ends at the Calder River overlook.</p><p>You can add a class visit or a meeting with a professor in your field. Visitor parking is free in Lot C. See the <a href=\"/campus\">campus map</a> and the <a href=\"/events?kind=admissions\">admissions events</a>.</p><p>There are no sign-up forms on this demo site. On a real site this section would link to the visit scheduler.</p>",
+    "side_title": "Admissions office",
+    "side": "<p>Ashby Commons, second floor<br>Mon to Fri, 8:30 am to 5:00 pm<br>(555) 014-2100<br><a href=\"mailto:admissions@larkmoor.example\" style=\"color:#fff\">admissions@larkmoor.example</a></p>"
+   }
+  },
+  {
+   "widgetType": "lm_faq",
+   "settings": {
+    "headline": "Admissions questions",
+    "items": [
+     {
+      "q": "Is Larkmoor College real?",
+      "a": "No. Larkmoor College is fictional. It was made up to show what a college website built with Raytha can look like."
+     },
+     {
+      "q": "Can I apply on this site?",
+      "a": "No. There are no application, registration or payment forms on this demo. A real college would link to its application portal."
+     },
+     {
+      "q": "Are test scores required?",
+      "a": "In this story, test scores are optional for first-year and transfer applicants."
+     }
+    ]
+   }
+  }
+ ]
+}

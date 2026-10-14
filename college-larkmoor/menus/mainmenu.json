@@ -1,0 +1,34 @@
+{
+ "developerName": "mainmenu",
+ "label": "Main menu",
+ "items": [
+  {
+   "label": "Academics",
+   "link": "/programs"
+  },
+  {
+   "label": "Admissions",
+   "link": "/admissions"
+  },
+  {
+   "label": "Campus life",
+   "link": "/campus"
+  },
+  {
+   "label": "Athletics",
+   "link": "/athletics"
+  },
+  {
+   "label": "News",
+   "link": "/news"
+  },
+  {
+   "label": "Events",
+   "link": "/events"
+  },
+  {
+   "label": "About",
+   "link": "/about"
+  }
+ ]
+}
