@@ -1,0 +1,21 @@
+{
+ "main": [
+  {
+   "widgetType": "hv_page_head",
+   "settings": {
+    "kicker": "Accessibility",
+    "headline": "Accessibility statement",
+    "subtitle": "We want everyone to be able to use this fictional website."
+   }
+  },
+  {
+   "widgetType": "hv_text",
+   "settings": {
+    "headline": "Our commitment",
+    "body": "<p>This example site uses landmarks, a skip link, visible focus styles, labelled form controls and alt text on meaningful images. Pages are rendered on the server, so they work without JavaScript. Templates are Liquid files you can edit, which makes fixes fast on a real deployment.</p><p>Conformance still has to be tested on your own site.</p>",
+    "side_title": "Report a problem",
+    "side": "<p>Email access@halverline.example (fictional) with the page and what went wrong.</p>"
+   }
+  }
+ ]
+}

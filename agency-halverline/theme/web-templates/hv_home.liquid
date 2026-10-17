@@ -1,0 +1,33 @@
+{%- assign inds = "retail:Retail and ecommerce,food:Food and drink,saas:Software and SaaS,culture:Arts and culture,public:Public sector,health:Healthcare,legal:Professional services,industry:Manufacturing and robotics" | split: "," -%}{%- assign discs = "strategy:Strategy,design:Design,engineering:Engineering,content:Content,production:Production" | split: "," -%}{%- assign icats = "design:Design:o,engineering:Engineering:l,content:Content:g,accessibility:Accessibility:l,studio:Studio notes:d" | split: "," -%}{%- assign rks = "fulltime:Full-time,contract:Contract" | split: "," -%}{%- assign sts = "discovery:Discovery,design:Design,build:Build,launch:Launch,care:Care plan" | split: "," -%}{%- assign dks = "brand:Brand assets:palette,design:Design files:vector-pen,report:Report:file-earmark-text,checklist:Checklist:list-check,notes:Meeting notes:chat-left-text" | split: "," -%}{%- assign cgs = "client_tidewell:Tidewell Outfitters,client_corvane:Corvane Robotics" | split: "," -%}
+{%- assign fw = get_content_items(ContentType="work", Filter="featured eq 'true'", OrderBy="sort_order asc", PageSize=3) -%}
+{%- assign allw = get_content_items(ContentType="work", OrderBy="sort_order asc", PageSize=3) -%}
+{%- assign lg = get_content_items(ContentType="clients", Filter="featured eq 'true'", OrderBy="sort_order asc", PageSize=10) -%}
+{%- assign sv = get_content_items(ContentType="services", OrderBy="sort_order asc", PageSize=10) -%}
+{%- assign ins = get_content_items(ContentType="insights", OrderBy="posted_on desc", PageSize=3) -%}
+<section class="hero"><div class="wrap">
+ <div class="hgrid">
+  <div><span class="kicker">Independent web studio &middot; Portland, Maine &middot; fictional</span>
+   <h1>Websites your team can <span class="s">actually</span> run.</h1>
+   <p class="lead">Halverline designs and builds websites for museums, libraries, clinics, retailers and product companies, on an open-source stack the client owns. We can host and care for it, or hand you the keys.</p>
+   <div class="acts"><a class="btn btn-p" href="{{ PathBase }}/work">See our work <i class="bi bi-arrow-right" aria-hidden="true"></i></a><a class="btn btn-ghost" href="{{ PathBase }}/services">What we do</a></div></div>
+  <div class="stack" aria-label="Featured case studies">{% for w in allw.Items %}<a href="{{ PathBase }}/{{ w.RoutePath }}"><img src="{{ w.PublishedContent.cover.Value | attachment_redirect_url }}" alt="{{ w.PrimaryField }} case study"><span>{{ w.PrimaryField }}</span></a>{% endfor %}</div>
+ </div>
+ <div class="hstats"><div><b>10 yrs</b>since 2016</div><div><b>60+</b>sites launched</div><div><b>8</b>people, one studio</div><div><b>0</b>per-seat license fees</div><div><span style="font-size:.8rem">Figures are part of the fictional story.</span></div></div>
+</div></section>
+<section class="logos" aria-label="Clients"><div class="wrap"><p>Some of the (fictional) teams we work with</p>{% for c in lg.Items %}<a href="{{ PathBase }}/{{ c.RoutePath }}" title="{{ c.PrimaryField }}"><img src="{{ c.PublishedContent.logo.Value | attachment_redirect_url }}" alt="{{ c.PrimaryField }}"></a>{% endfor %}</div></section>
+<section class="sec"><div class="wrap">
+ <div class="shead"><div><span class="kicker">Selected work</span><h2>Recent projects, and what changed <span class="s">after</span> launch</h2></div><a class="more" href="{{ PathBase }}/work">All case studies <i class="bi bi-arrow-right" aria-hidden="true"></i></a></div>
+ <div class="wgrid">{% for w in fw.Items %}{%- assign x = w.PublishedContent -%}{%- capture ik -%}{{ x.industry }}{%- endcapture -%}{%- for pair in inds -%}{%- assign kv = pair | split: ":" -%}{%- if kv[0] == ik -%}{%- assign il = kv[1] -%}{%- endif -%}{%- endfor -%}<a class="wcard" href="{{ PathBase }}/{{ w.RoutePath }}"><div class="img"><img src="{{ x.cover.Value | attachment_redirect_url }}" alt="" loading="lazy"></div><div class="meta"><span>{{ w.PrimaryField }}</span><span>{{ il }} &middot; {{ x.year }}</span></div><h3>{{ x.headline }}</h3><div class="tags">{% assign svl = x.services | split: ", " %}{% for s in svl limit: 3 %}<span class="tag">{{ s }}</span>{% endfor %}</div></a>{% endfor %}</div>
+</div></section>
+<section class="sec dark"><div class="wrap">
+ <div class="shead"><div><span class="kicker" style="color:#bdb7ae">Services</span><h2>From the first workshop to the hundredth update</h2><p class="muted">Six things we do well, priced per project. Never per seat, never per site.</p></div><a class="more" href="{{ PathBase }}/services" style="color:#fff">All services <i class="bi bi-arrow-right" aria-hidden="true"></i></a></div>
+ <div class="svcs">{% for s in sv.Items %}{%- assign x = s.PublishedContent -%}<a class="svc" href="{{ PathBase }}/{{ s.RoutePath }}"><span class="n">0{{ forloop.index }}</span><h3>{{ s.PrimaryField }}</h3><p>{{ x.tagline }}. {{ x.timeline }}.</p><i class="bi bi-arrow-up-right go" aria-hidden="true"></i></a>{% endfor %}</div>
+</div></section>
+{{ render_section("intro", wrap=false) }}
+{{ render_section("process", wrap=false) }}
+{{ render_section("story", wrap=false) }}
+<section class="sec"><div class="wrap">
+ <div class="shead"><div><span class="kicker">Insights</span><h2>Notes from the studio</h2></div><a class="more" href="{{ PathBase }}/insights">All insights <i class="bi bi-arrow-right" aria-hidden="true"></i></a></div>
+ <div class="grid g3">{% for a in ins.Items %}{%- assign x = a.PublishedContent -%}{%- capture ck -%}{{ x.category }}{%- endcapture -%}{%- for pair in icats -%}{%- assign kv = pair | split: ":" -%}{%- if kv[0] == ck -%}{%- assign cl = kv[1] -%}{%- assign cc = kv[2] -%}{%- endif -%}{%- endfor -%}<a class="icard" href="{{ PathBase }}/{{ a.RoutePath }}"><div class="img"><img src="{{ x.image.Value | attachment_redirect_url }}" alt="" loading="lazy"></div><div class="meta"><span class="tag {{ cc }}">{{ cl }}</span> &nbsp;{{ x.posted_on.Value | date: "%b %-d, %Y" }} &middot; {{ x.read_time }}</div><h3>{{ a.PrimaryField }}</h3></a>{% endfor %}</div>
+</div></section>
+{{ render_section("main", wrap=false) }}

@@ -1,0 +1,13 @@
+{
+ "main": [
+  {
+   "widgetType": "hv_text",
+   "settings": {
+    "headline": "Welcome to your project rooms",
+    "body": "<p>Each project has a room with its phase, progress, the next milestone, every Friday update and the files we have shared. Brand assets and deliverables keep their version numbers, so the final logo is always one click away.</p><p>This is a website account for the portal only. Invoices and contracts live elsewhere.</p>",
+    "side_title": "Your producer",
+    "side": "<p>Callum Byrne writes the Friday updates. Reply to any update or email callum@halverline.example (fictional).</p>"
+   }
+  }
+ ]
+}

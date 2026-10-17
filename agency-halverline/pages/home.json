@@ -1,0 +1,82 @@
+{
+ "intro": [
+  {
+   "widgetType": "hv_stats",
+   "settings": {
+    "kicker": "The studio",
+    "headline": "Small on purpose",
+    "body": "<p>Halverline is eight people in Portland, Maine and a few time zones east. We take on a handful of projects at a time, and the people in the first workshop are the ones who launch the site.</p><p>Every site is built on an open-source stack the client owns, with no per-seat or per-site license fees as they grow. <a href=\"/studio\">More about the studio</a>.</p>",
+    "items": [
+     {
+      "value": "2016",
+      "label": "founded (story)"
+     },
+     {
+      "value": "60+",
+      "label": "sites launched"
+     },
+     {
+      "value": "93%",
+      "label": "of clients stay on a care plan"
+     },
+     {
+      "value": "AA",
+      "label": "WCAG 2.2 target on every build"
+     }
+    ]
+   }
+  }
+ ],
+ "process": [
+  {
+   "widgetType": "hv_steps",
+   "settings": {
+    "kicker": "How we work",
+    "headline": "Four phases, one team",
+    "intro": "A fixed price, a weekly update in the client portal, and the same people from start to finish.",
+    "items": [
+     {
+      "title": "Discover",
+      "text": "Workshops, a content audit and a written scope. Two to three weeks."
+     },
+     {
+      "title": "Design",
+      "text": "Sitemap, wireframes and visual design, reviewed with you every week."
+     },
+     {
+      "title": "Build",
+      "text": "Content types, templates and migration on staging, with your editors involved early."
+     },
+     {
+      "title": "Care",
+      "text": "Launch, then hosting and improvements on a care plan, or a full handover."
+     }
+    ]
+   }
+  }
+ ],
+ "story": [
+  {
+   "widgetType": "hv_quote",
+   "settings": {
+    "quote": "Halverline gave us a site our curators can run themselves, and the code is ours. When we moved hosting in-house, it was an afternoon, not a project.",
+    "name": "Dr. Amara Quist",
+    "role": "Director of collections, Hollowmere Museum of Craft (fictional)",
+    "initials": "AQ"
+   }
+  }
+ ],
+ "main": [
+  {
+   "widgetType": "hv_cta",
+   "settings": {
+    "headline": "Planning a new site?",
+    "text": "Tell us what you are working on. We reply within two working days with questions, not a sales deck. This demo has no forms; the button goes to the contact page.",
+    "button": "Start a project",
+    "link": "/contact",
+    "button2": "See the work",
+    "link2": "/work"
+   }
+  }
+ ]
+}

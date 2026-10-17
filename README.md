@@ -36,6 +36,7 @@ These examples go with the weekly [use cases on raytha.com](https://raytha.com/u
 | [<img src="https://raytha.com/raytha/media-items/objectkey/TNQPQmxioUSa_RRpZShlyQ_kestrel_01_home.webp" width="360" alt="Kestrel Valley Credit Union">](credit-union-kestrel-valley/) | **[Kestrel Valley Credit Union](credit-union-kestrel-valley/)**: a self-hosted credit union website: rates in five tables with an effective date, accounts and loans, branches and ATMs on a drawn map, financial education, a security center with fraud alerts and a site-wide scam warning switched on by a checkbox, the board and reports, a loan calculator, a members-only area for annual meeting documents behind a user group, and a rates JSON feed and a security RSS feed served by Raytha Functions. 8 content types, 10 widgets. |
 | [<img src="https://raytha.com/raytha/media-items/objectkey/_djXRHTtwkmAnyYZ0iLF6w_harlow_01_home.webp" width="360" alt="Harlow Creek Health System">](health-system-harlow-creek/) | **[Harlow Creek Health System](health-system-harlow-creek/)**: a self-hosted hospital and health system website: find a doctor with specialty filters, locations and facilities, departments and services, patient and visitor information, health news, careers, events and classes, and a staff-only portal behind a user group. 7 content types, provider/location/department relationships, 7 widget templates. |
 | [<img src="https://raytha.com/raytha/media-items/objectkey/u4M9p7zqK0aVyP9h0FPlxA_larkmoor_01_home.webp" width="360" alt="Larkmoor College">](college-larkmoor/) | **[Larkmoor College](college-larkmoor/)**: a self-hosted college website: a program finder across six schools, a faculty directory, admissions with deadlines and visits, an illustrated campus map, news, events, athletics schedules, and a student and faculty portal behind two user groups. 7 content types, program/faculty/building relationships, 10 widget templates. |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/JuspflfzjEO9Wrr5VSdVpQ_halverline_01_home.webp" width="360" alt="Halverline Studio">](agency-halverline/) | **[Halverline Studio](agency-halverline/)**: a web design agency site: case studies filterable by industry, clients, services, a team page, insights, careers, and a members-only client portal with project rooms, weekly updates, deliverables and brand assets, where each client sees only their own work. 8 content types, client/project/team relationships, 9 widget templates. |
 
 ## Quickstart
 
@@ -124,6 +125,7 @@ The examples were built from a short brief with no human help. To do the same fo
 ├── credit-union-kestrel-valley/
 ├── health-system-harlow-creek/
 ├── college-larkmoor/
+├── agency-halverline/
 ├── skills/raytha-site-builder/  # agent skill: brief -> finished Raytha site
 ├── templates/brief-template.md  # fill-in brief
 ├── scripts/                     # shared build script, scaffold, screenshots, walkthroughs, export, secret scan

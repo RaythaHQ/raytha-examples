@@ -1,0 +1,311 @@
+{
+ "people": [
+  {
+   "name": "Mara Halverson",
+   "slug": "mara-halverson"
+  },
+  {
+   "name": "Desmond Lyle",
+   "slug": "desmond-lyle"
+  },
+  {
+   "name": "Priya Natarajan",
+   "slug": "priya-natarajan"
+  },
+  {
+   "name": "Tomás Ferreira",
+   "slug": "tom-s-ferreira"
+  },
+  {
+   "name": "June Okonkwo",
+   "slug": "june-okonkwo"
+  },
+  {
+   "name": "Sam Ritter",
+   "slug": "sam-ritter"
+  },
+  {
+   "name": "Hana Sato",
+   "slug": "hana-sato"
+  },
+  {
+   "name": "Callum Byrne",
+   "slug": "callum-byrne"
+  }
+ ],
+ "logos": [
+  {
+   "slug": "tidewell-outfitters",
+   "name": "Tidewell Outfitters",
+   "glyph": "wave",
+   "c1": "#0f4c5c",
+   "c2": "#f2a65a",
+   "font": "serif"
+  },
+  {
+   "slug": "corvane-robotics",
+   "name": "Corvane Robotics",
+   "glyph": "hex",
+   "c1": "#1b1f3b",
+   "c2": "#4cc9f0",
+   "font": "sans"
+  },
+  {
+   "slug": "hollowmere-museum-of-craft",
+   "name": "Hollowmere Museum of Craft",
+   "glyph": "arch",
+   "c1": "#5a2a27",
+   "c2": "#e9c46a",
+   "font": "serif"
+  },
+  {
+   "slug": "mosswick-public-library",
+   "name": "Mosswick Public Library",
+   "glyph": "book",
+   "c1": "#2d6a4f",
+   "c2": "#b7e4c7",
+   "font": "sans"
+  },
+  {
+   "slug": "kettlerun-coffee-roasters",
+   "name": "Kettlerun Coffee Roasters",
+   "glyph": "drop",
+   "c1": "#3d2c2e",
+   "c2": "#d4a373",
+   "font": "slab"
+  },
+  {
+   "slug": "sablewood-law",
+   "name": "Sablewood Law",
+   "glyph": "pillar",
+   "c1": "#1d3557",
+   "c2": "#a8dadc",
+   "font": "serif"
+  },
+  {
+   "slug": "tallyhook",
+   "name": "Tallyhook",
+   "glyph": "hook",
+   "c1": "#3a0ca3",
+   "c2": "#f72585",
+   "font": "sans"
+  },
+  {
+   "slug": "wrenfield-family-clinic",
+   "name": "Wrenfield Family Clinic",
+   "glyph": "leaf",
+   "c1": "#006d77",
+   "c2": "#83c5be",
+   "font": "sans"
+  },
+  {
+   "slug": "brindle-valley-food-co-op",
+   "name": "Brindle Valley Food Co-op",
+   "glyph": "sprout",
+   "c1": "#606c38",
+   "c2": "#dda15e",
+   "font": "slab"
+  },
+  {
+   "slug": "ostrander-trust",
+   "name": "Ostrander Trust",
+   "glyph": "ring",
+   "c1": "#283618",
+   "c2": "#fefae0",
+   "font": "serif"
+  }
+ ],
+ "shots": [
+  {
+   "slug": "tidewell-outfitters",
+   "name": "Tidewell Outfitters",
+   "c1": "#0f4c5c",
+   "c2": "#f2a65a",
+   "glyph": "wave",
+   "font": "serif",
+   "headline": "A coastal outfitter's site, rebuilt around its field guide"
+  },
+  {
+   "slug": "corvane-robotics",
+   "name": "Corvane Robotics",
+   "c1": "#1b1f3b",
+   "c2": "#4cc9f0",
+   "glyph": "hex",
+   "font": "sans",
+   "headline": "Explaining a warehouse robot in under a minute"
+  },
+  {
+   "slug": "hollowmere-museum-of-craft",
+   "name": "Hollowmere Museum of Craft",
+   "c1": "#5a2a27",
+   "c2": "#e9c46a",
+   "glyph": "arch",
+   "font": "serif",
+   "headline": "Collections online, exhibitions in step"
+  },
+  {
+   "slug": "mosswick-public-library",
+   "name": "Mosswick Public Library",
+   "c1": "#2d6a4f",
+   "c2": "#b7e4c7",
+   "glyph": "book",
+   "font": "sans",
+   "headline": "A library site the whole staff can edit"
+  },
+  {
+   "slug": "kettlerun-coffee-roasters",
+   "name": "Kettlerun Coffee Roasters",
+   "c1": "#3d2c2e",
+   "c2": "#d4a373",
+   "glyph": "drop",
+   "font": "slab",
+   "headline": "A wholesale portal for 140 cafés"
+  },
+  {
+   "slug": "sablewood-law",
+   "name": "Sablewood Law",
+   "c1": "#1d3557",
+   "c2": "#a8dadc",
+   "glyph": "pillar",
+   "font": "serif",
+   "headline": "A calm site for a careful firm"
+  },
+  {
+   "slug": "tallyhook",
+   "name": "Tallyhook",
+   "c1": "#3a0ca3",
+   "c2": "#f72585",
+   "glyph": "hook",
+   "font": "sans",
+   "headline": "Docs, changelog and pricing from one content model"
+  },
+  {
+   "slug": "wrenfield-family-clinic",
+   "name": "Wrenfield Family Clinic",
+   "c1": "#006d77",
+   "c2": "#83c5be",
+   "glyph": "leaf",
+   "font": "sans",
+   "headline": "Appointments explained, not hidden"
+  }
+ ],
+ "covers": [
+  {
+   "slug": "i-designing-content-models-you-can-reuse-across-client-sites",
+   "kind": "rings",
+   "cat": "engineering"
+  },
+  {
+   "slug": "i-the-accessibility-checklist-we-run-before-every-launch",
+   "kind": "grid",
+   "cat": "accessibility"
+  },
+  {
+   "slug": "i-migrating-400-articles-without-losing-a-single-url",
+   "kind": "bars",
+   "cat": "content"
+  },
+  {
+   "slug": "i-why-we-price-care-plans-without-per-seat-fees",
+   "kind": "dots",
+   "cat": "studio"
+  },
+  {
+   "slug": "i-server-rendered-by-default",
+   "kind": "waves",
+   "cat": "engineering"
+  },
+  {
+   "slug": "i-what-a-good-client-portal-does-and-what-it-should-not",
+   "kind": "rings",
+   "cat": "studio"
+  },
+  {
+   "slug": "i-type-that-works-on-a-phone-first",
+   "kind": "grid",
+   "cat": "design"
+  },
+  {
+   "slug": "i-writing-alt-text-that-actually-helps",
+   "kind": "dots",
+   "cat": "accessibility"
+  }
+ ],
+ "docs": [
+  {
+   "slug": "tidewell-brand-guidelines-2026",
+   "title": "Tidewell brand guidelines 2026",
+   "sub": "Logo use, color, type and photography rules for web and stores.",
+   "lines": [
+    "# Logo",
+    "Use the full wordmark at 120 px wide or larger",
+    "Keep clear space equal to the height of the T",
+    "# Color",
+    "Tide teal #0F4C5C for headers",
+    "Buoy orange #F2A65A for calls to action only",
+    "# Type",
+    "Headings: Instrument Sans Semibold",
+    "Body: Instrument Sans Regular"
+   ]
+  },
+  {
+   "slug": "spring-catalog-staging-review-notes",
+   "title": "Spring catalog staging review notes",
+   "sub": "What to check on staging, and how to leave comments.",
+   "lines": [
+    "# Pages to review",
+    "Paddling lookbook",
+    "Trail running collection",
+    "Portland store clinics",
+    "# How to comment",
+    "Reply to this week's update, or email callum@halverline.example",
+    "# Due",
+    "Wednesday, October 21"
+   ]
+  },
+  {
+   "slug": "spring-catalog-launch-checklist",
+   "title": "Spring catalog launch checklist",
+   "sub": "Everything that has to be true before the spring catalog goes live.",
+   "lines": [
+    "# Content",
+    "All lookbook copy approved",
+    "Alt text on every image",
+    "# Technical",
+    "Redirects for retired collections",
+    "Performance budget under 400 KB",
+    "# Launch day",
+    "Staff walkthrough at 9:00 am ET",
+    "Go live at 10:00 am ET"
+   ]
+  },
+  {
+   "slug": "corvane-discovery-report",
+   "title": "Corvane discovery report",
+   "sub": "Findings from integrator interviews and recommendations for the partner portal.",
+   "lines": [
+    "# What integrators told us",
+    "They need firmware notes before customers do",
+    "Spec sheets are emailed around as old versions",
+    "# Recommendations",
+    "One library with versioned documents",
+    "A user group per partner tier",
+    "Email digest when a document changes"
+   ]
+  },
+  {
+   "slug": "corvane-integrator-dashboard-wireframes",
+   "title": "Corvane integrator dashboard wireframes",
+   "sub": "Wireframes for the dashboard, document library and install guide pages.",
+   "lines": [
+    "# Screens",
+    "Partner dashboard",
+    "Document library with filters",
+    "Install guide detail",
+    "# Open questions",
+    "Should firmware notes be per cart model",
+    "Who approves new partners"
+   ]
+  }
+ ]
+}

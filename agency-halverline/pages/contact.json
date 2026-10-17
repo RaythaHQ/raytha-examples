@@ -1,0 +1,66 @@
+{
+ "main": [
+  {
+   "widgetType": "hv_page_head",
+   "settings": {
+    "kicker": "Contact",
+    "headline": "Tell us about your project",
+    "subtitle": "Email is the fastest way to reach the (fictional) studio. The .example addresses do not reach anyone, and this demo has no contact or payment forms."
+   }
+  },
+  {
+   "widgetType": "hv_contacts",
+   "settings": {
+    "kicker": "Who to email",
+    "headline": "Pick the right inbox",
+    "items": [
+     {
+      "icon": "rocket-takeoff",
+      "name": "New projects",
+      "email": "hello@halverline.example",
+      "note": "Websites, redesigns, migrations and audits. Mara replies within two working days."
+     },
+     {
+      "icon": "life-preserver",
+      "name": "Existing clients",
+      "email": "support@halverline.example",
+      "note": "Care plan requests and anything urgent. Or use your client portal."
+     },
+     {
+      "icon": "briefcase",
+      "name": "Careers",
+      "email": "jobs@halverline.example",
+      "note": "See the open roles first. There is no application form."
+     },
+     {
+      "icon": "mic",
+      "name": "Talks and press",
+      "email": "press@halverline.example",
+      "note": "Conference talks, podcasts and interviews."
+     },
+     {
+      "icon": "universal-access",
+      "name": "Accessibility",
+      "email": "access@halverline.example",
+      "note": "Problems using this site, or questions about an audit."
+     },
+     {
+      "icon": "building",
+      "name": "The studio",
+      "email": "studio@halverline.example",
+      "note": "14 Wharf Street, Studio 3, Portland, Maine (fictional)."
+     }
+    ]
+   }
+  },
+  {
+   "widgetType": "hv_text",
+   "settings": {
+    "headline": "What helps us reply quickly",
+    "body": "<ul><li>What the organization does and who the site is for</li><li>What is not working today</li><li>Any deadline we should know about</li><li>Whether you want to host it yourself or have us run it</li></ul><p>We send back a few questions and, if it looks like a fit, a short call and a written scope with a fixed price.</p>",
+    "side_title": "Studio hours",
+    "side": "<p>Monday to Thursday, 9:00 am to 5:30 pm ET. Fridays are meeting-free, so expect replies on Monday.</p>"
+   }
+  }
+ ]
+}

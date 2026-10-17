@@ -1,0 +1,38 @@
+{
+ "name": "Halverline Studio",
+ "theme": "halverline",
+ "types": [
+  "clients",
+  "team",
+  "services",
+  "work",
+  "insights",
+  "roles",
+  "projects",
+  "deliverables"
+ ],
+ "detailTemplates": {
+  "clients": "hv_detail_clients",
+  "team": "hv_detail_team",
+  "services": "hv_detail_services",
+  "work": "hv_detail_work",
+  "insights": "hv_detail_insights",
+  "roles": "hv_detail_roles",
+  "projects": "hv_detail_projects",
+  "deliverables": "hv_detail_deliverables"
+ },
+ "groups": [
+  {
+   "developerName": "studio",
+   "label": "Halverline studio team"
+  },
+  {
+   "developerName": "client_tidewell",
+   "label": "Client: Tidewell Outfitters"
+  },
+  {
+   "developerName": "client_corvane",
+   "label": "Client: Corvane Robotics"
+  }
+ ]
+}

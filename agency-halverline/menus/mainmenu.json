@@ -1,0 +1,30 @@
+{
+ "developerName": "mainmenu",
+ "label": "Main menu",
+ "items": [
+  {
+   "label": "Work",
+   "link": "/work"
+  },
+  {
+   "label": "Services",
+   "link": "/services"
+  },
+  {
+   "label": "Studio",
+   "link": "/studio"
+  },
+  {
+   "label": "Insights",
+   "link": "/insights"
+  },
+  {
+   "label": "Careers",
+   "link": "/careers"
+  },
+  {
+   "label": "Contact",
+   "link": "/contact"
+  }
+ ]
+}

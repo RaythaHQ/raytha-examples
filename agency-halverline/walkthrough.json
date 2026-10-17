@@ -1,0 +1,13 @@
+{"slug":"halverline-studio","name":"Halverline Studio","base":"http://localhost:5391","viewport":[1440,810],"output":[1920,1080],"colorScheme":"light",
+ "title":{"kicker":"Raytha use case","heading":"Halverline Studio","subheading":"A fictional web design agency site with case studies, services, team, insights, careers and a members-only client portal.","hold":1.3},
+ "end":{"heading":"Built with Raytha","subheading":"Open-source .NET CMS. Get the brief, screenshots and a one-command rebuild kit.","url":"raytha.com/use-cases/halverline-studio","hold":2.3},
+ "scenes":[
+  {"url":"/","caption":"An agency home page that leads with the work","actions":[{"hold":1.1,"poster":true},{"scroll":1100,"dur":2.4},{"hold":0.5}]},
+  {"url":"/work","caption":"Case studies, filterable by industry","actions":[{"hold":0.7},{"scroll":420,"dur":1.4},{"hold":0.4},{"click":"a.wcard","dur":0.9},{"hold":0.9}]},
+  {"url":"/services","caption":"Six services, each with related case studies","actions":[{"hold":0.7},{"scroll":500,"dur":1.4},{"hold":0.4}]},
+  {"url":"/team","caption":"The team, with roles, bios and their writing","actions":[{"hold":0.7},{"scroll":380,"dur":1.2},{"hold":0.4}]},
+  {"url":"/portal","caption":"Signed out, the client portal asks clients to sign in","actions":[{"hold":1.2}]},
+  {"url":"/portal","signin":true,"caption":"Signed in, a client sees only their own projects and files","actions":[{"hold":0.8},{"scroll":620,"dur":1.6},{"hold":0.4},{"click":"a.pj","dur":0.9},{"hold":1.0}]},
+  {"url":"/","phone":true,"phoneCaption":{"kicker":"Responsive","text":"Every page works on a phone"},"actions":[{"hold":0.5},{"scroll":1300,"dur":2.2},{"hold":0.4}]}
+ ],
+ "login":{"path":"/account/login","emailEnv":"SITE_USER_EMAIL","passwordEnv":"SITE_USER_PASSWORD"}}

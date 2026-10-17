@@ -65,6 +65,7 @@ fields), and link the raytha.com copy from the example's README.
 | Kestrel Valley Credit Union | [walkthrough.json](../credit-union-kestrel-valley/walkthrough.json) | [use case page](https://raytha.com/use-cases/kestrel-valley-credit-union#walkthrough) · [MP4, 37 s](https://raytha.com/raytha/media-items/objectkey/FDJGdH327UmgR7DKsRJCzg_kestrel_valley_walkthrough.mp4) |
 | Harlow Creek Health System | [walkthrough.json](../health-system-harlow-creek/walkthrough.json) | [use case page](https://raytha.com/use-cases/harlow-creek-health-system#walkthrough) · [MP4, 36 s](https://raytha.com/raytha/media-items/objectkey/gTYZJX9CrkuvB6OMbkb7bw_harlow_creek_walkthrough.mp4) |
 | Larkmoor College | [walkthrough.json](../college-larkmoor/walkthrough.json) | [use case page](https://raytha.com/use-cases/larkmoor-college#walkthrough) · [MP4, 36 s](https://raytha.com/raytha/media-items/objectkey/yIb_ZLmDpECs1zmTO4Y9Cw_larkmoor_college_walkthrough.mp4) |
+| Halverline Studio | [walkthrough.json](../agency-halverline/walkthrough.json) | [use case page](https://raytha.com/use-cases/halverline-studio#walkthrough) · [MP4, 35 s](https://raytha.com/raytha/media-items/objectkey/b2S7qqlYiU2DbotjkCS1pw_halverline_studio_walkthrough.mp4) |
 
 ## Shot list
 

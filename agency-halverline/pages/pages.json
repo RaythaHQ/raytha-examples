@@ -1,0 +1,44 @@
+[
+ {
+  "title": "Halverline Studio",
+  "routePath": "home",
+  "template": "hv_home",
+  "sections": "pages/home.json",
+  "home": true
+ },
+ {
+  "title": "About the studio",
+  "routePath": "studio",
+  "template": "hv_page",
+  "sections": "pages/studio.json",
+  "home": false
+ },
+ {
+  "title": "Contact",
+  "routePath": "contact",
+  "template": "hv_page",
+  "sections": "pages/contact.json",
+  "home": false
+ },
+ {
+  "title": "Client portal",
+  "routePath": "portal",
+  "template": "hv_portal",
+  "sections": "pages/portal.json",
+  "home": false
+ },
+ {
+  "title": "Accessibility",
+  "routePath": "accessibility",
+  "template": "hv_page",
+  "sections": "pages/accessibility.json",
+  "home": false
+ },
+ {
+  "title": "Search",
+  "routePath": "search",
+  "template": "hv_search",
+  "sections": "pages/search.json",
+  "home": false
+ }
+]
