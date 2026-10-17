@@ -1,0 +1,45 @@
+[
+ {
+  "title": "Calloway Marfa",
+  "routePath": "home",
+  "template": "jc_home",
+  "sections": "pages/home.json",
+  "home": true
+ },
+ {
+  "title": "Currently",
+  "routePath": "currently",
+  "template": "jc_page",
+  "sections": "pages/currently.json"
+ },
+ {
+  "title": "Process and fees",
+  "routePath": "process",
+  "template": "jc_page",
+  "sections": "pages/process.json"
+ },
+ {
+  "title": "About June Calloway",
+  "routePath": "about",
+  "template": "jc_page",
+  "sections": "pages/about.json"
+ },
+ {
+  "title": "Start a project",
+  "routePath": "start",
+  "template": "jc_page",
+  "sections": "pages/start.json"
+ },
+ {
+  "title": "Accessibility",
+  "routePath": "accessibility",
+  "template": "jc_page",
+  "sections": "pages/accessibility.json"
+ },
+ {
+  "title": "Search",
+  "routePath": "search",
+  "template": "jc_search",
+  "sections": "pages/search.json"
+ }
+]

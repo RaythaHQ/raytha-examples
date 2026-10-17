@@ -1,0 +1,34 @@
+{
+ "developerName": "mainmenu",
+ "label": "Main menu",
+ "items": [
+  {
+   "label": "Index",
+   "link": "/work"
+  },
+  {
+   "label": "Field notes",
+   "link": "/notes"
+  },
+  {
+   "label": "Currently",
+   "link": "/currently"
+  },
+  {
+   "label": "Process & fees",
+   "link": "/process"
+  },
+  {
+   "label": "FAQ",
+   "link": "/faq"
+  },
+  {
+   "label": "About",
+   "link": "/about"
+  },
+  {
+   "label": "Start →",
+   "link": "/start"
+  }
+ ]
+}

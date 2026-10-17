@@ -1,0 +1,39 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{% if Target.PrimaryField %}{{ Target.PrimaryField }} | {% elsif Target.Title and Target.Title != "Calloway Marfa" %}{{ Target.Title }} | {% endif %}June Calloway — Architect, Marfa TX</title>
+<meta name="description" content="{% if Target.PublishedContent.summary %}{{ Target.PublishedContent.summary | strip_html | escape }}{% else %}June Calloway, AIA (fictional): solo architect in Marfa, Texas building rammed-earth and desert-modern houses. One or two houses at a time.{% endif %}">
+<style>
+:root{--blue:#0f2da8;--blue2:#0a1f7a;--ink:#111;--paper:#f4f4ef;--orange:#ff4d00;--line:#111}
+*{box-sizing:border-box}body{margin:0;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Courier New",monospace;font-size:16px;line-height:1.55;color:var(--ink);background:var(--paper);background-image:linear-gradient(rgba(15,45,168,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(15,45,168,.07) 1px,transparent 1px);background-size:28px 28px}
+a{color:inherit}img{max-width:100%;display:block}h1,h2,h3{margin:0;line-height:1.05;text-transform:uppercase;letter-spacing:-.02em}h1{font-size:clamp(2.2rem,6vw,4.8rem)}h2{font-size:clamp(1.5rem,3vw,2.4rem)}p{margin:0 0 1em}.wrap{max-width:1280px;margin:0 auto;padding:0 20px}
+.skip{position:absolute;left:-999px}.skip:focus{left:8px;top:8px;background:#fff;padding:8px;z-index:99}
+:focus-visible{outline:3px solid var(--orange);outline-offset:2px}
+.top{background:var(--ink);color:#fff;font-size:.78rem}.top .wrap{display:flex;justify-content:space-between;padding-top:7px;padding-bottom:7px;flex-wrap:wrap;gap:8px}.fict{background:var(--orange);color:#fff;padding:1px 6px;font-weight:700}
+.hdr{background:#fff;border-bottom:3px solid var(--ink);position:sticky;top:0;z-index:50}.hdr .wrap{display:flex;align-items:center;gap:18px;min-height:64px;flex-wrap:wrap;padding-top:8px;padding-bottom:8px}
+.brand{text-decoration:none;font-weight:900;font-size:1.2rem;text-transform:uppercase}.brand span{color:var(--blue)}.brand small{display:block;font-size:.65rem;font-weight:400;letter-spacing:.14em}
+.nav{display:flex;gap:0;list-style:none;margin:0 0 0 auto;padding:0;flex-wrap:wrap}.nav a{display:block;padding:8px 10px;text-decoration:none;font-size:.85rem;text-transform:uppercase;border:1px solid transparent}.nav a:hover{border-color:var(--ink);background:var(--paper)}
+.btn{display:inline-block;background:var(--blue);color:#fff;padding:12px 16px;text-decoration:none;text-transform:uppercase;font-weight:700;border:2px solid var(--ink);box-shadow:4px 4px 0 var(--ink);font-size:.85rem}.btn.o{background:#fff;color:var(--ink)}.btn.orange{background:var(--orange)}
+.hero{background:var(--blue);color:#fff;padding:56px 0 0;border-bottom:3px solid var(--ink);background-image:linear-gradient(rgba(255,255,255,.14) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.14) 1px,transparent 1px);background-size:36px 36px}
+.hero .coords{font-size:.8rem;letter-spacing:.12em}.hero p.lead{font-size:1.15rem;max-width:720px}
+.avail{display:inline-block;background:#fff;color:var(--ink);border:2px solid var(--ink);padding:8px 12px;margin:18px 0}.dot{display:inline-block;width:10px;height:10px;background:var(--orange);border-radius:50%}
+.tbl{width:100%;border-collapse:collapse;background:#fff;border:3px solid var(--ink)} .tbl th,.tbl td{border:1px solid var(--ink);padding:12px;text-align:left;vertical-align:top}.tbl a{font-weight:700}
+.sec{padding:56px 0}.sec.white{background:#fff;border-top:3px solid var(--ink);border-bottom:3px solid var(--ink)}
+.kick{font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);font-weight:700}
+.row{display:grid;grid-template-columns:90px 1fr 180px 160px;gap:0;border:2px solid var(--ink);background:#fff;margin-bottom:-2px;text-decoration:none}.row>div{padding:14px;border-right:1px solid #ccc}.row:hover{background:#eef1ff}.row img{width:100%;height:100%;object-fit:cover}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:#fff;border:2px solid var(--ink);padding:18px;box-shadow:5px 5px 0 rgba(17,17,17,.9)}.card img{border:2px solid var(--ink);margin-bottom:12px}
+.grid2{display:grid;grid-template-columns:1fr 360px;gap:28px;align-items:start}.prose{font-size:1rem}.prose h2{margin:1.2em 0 .5em;font-size:1.3rem}
+.meta{font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;color:#444}
+.phead{padding:48px 0 28px;border-bottom:3px solid var(--ink);background:#fff}
+.crumbs{list-style:none;display:flex;gap:8px;padding:0;margin:0 0 14px;font-size:.8rem;text-transform:uppercase}
+details{border:2px solid var(--ink);background:#fff;padding:14px;margin-bottom:10px}summary{font-weight:700;cursor:pointer}
+input,select,textarea{font:inherit;padding:10px;border:2px solid var(--ink);width:100%;background:#fff}
+.fees td:first-child{font-weight:700}
+.foot{background:var(--ink);color:#ddd;padding:48px 0 24px}.foot a{color:#fff}.fcols{display:grid;grid-template-columns:2fr 1fr 1fr;gap:24px}
+@media(max-width:900px){.cards,.grid2,.fcols{grid-template-columns:1fr}.row{grid-template-columns:70px 1fr}.row>div:nth-child(3),.row>div:nth-child(4){display:none}}
+</style></head><body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="top"><div class="wrap"><span><span class="fict">FICTIONAL EXAMPLE</span> June Calloway is not a real architect.</span><span>30.3148° N, 104.0147° W · MARFA, TX</span></div></div>
+<header class="hdr"><div class="wrap"><a class="brand" href="{{ PathBase }}/">JUNE <span>CALLOWAY</span><small>ARCHITECT · MARFA · EST. 2019 (STORY)</small></a>
+<nav aria-label="Main"><ul class="nav">{%- assign menu=get_main_menu() -%}{% for mi in menu.MenuItems %}<li><a href="{{ mi.Url }}">{{ mi.Label }}</a></li>{% endfor %}</ul></nav></div></header>
+<main id="main"><div class='wrap' style='max-width:560px;padding:48px 20px'><h1>Sign in</h1>{% renderbody %}</div></main>
+<footer class="foot"><div class="wrap"><h2 style="color:#fff">I build one or two<br>houses at a time.</h2><p style="margin:16px 0">June Calloway, AIA (fictional) · Marfa, Texas · june@calloway.example (does not reach anyone)</p><div class="fcols"><div>Drawings, field notes and fees are on this site. No portal, no newsletter funnel — if we work together, you get my cell number and a shared folder.</div><div><b>INDEX</b><br><a href="{{ PathBase }}/work">Drawing sets</a><br><a href="{{ PathBase }}/notes">Field notes</a><br><a href="{{ PathBase }}/currently">Currently</a></div><div><b>START</b><br><a href="{{ PathBase }}/process">Process &amp; fees</a><br><a href="{{ PathBase }}/faq">Permits / costs</a><br><a href="{{ PathBase }}/start">Start a project</a></div></div><p style="margin-top:28px;font-size:.8rem">Fictional Raytha example. Server-rendered; works without JavaScript. <a href="{{ PathBase }}/accessibility">Accessibility</a> · <a href="{{ PathBase }}/search">Search</a></p></div></footer>
+<script>/* no client app; nav is plain links */</script></body></html>

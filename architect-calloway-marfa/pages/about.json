@@ -1,0 +1,21 @@
+{
+ "main": [
+  {
+   "widgetType": "jc_head",
+   "settings": {
+    "kicker": "About · first person",
+    "headline": "I'm June. I draw every line.",
+    "subtitle": "June Calloway, AIA (fictional) — solo architect in Marfa, Texas. Rammed earth, deep shade, small houses that hold their temperature."
+   }
+  },
+  {
+   "widgetType": "jc_text",
+   "settings": {
+    "headline": "Why Marfa, why earth",
+    "body": "<p>I came to west Texas to build a house for my sister and stayed because the material was already here: caliche and clay that, rammed in lifts, make a wall that is cool at 4 pm and quiet in a windstorm. I apprenticed with an earth builder in New Mexico (in this story), got licensed, and started taking one or two houses at a time.</p><p>I live in a 1,100 sq ft rammed-earth house I drew in 2019. Its west wall is 18 inches thick and has no window. That decision teaches clients more than any rendering.</p><p>I work with two builders and one structural engineer, repeatedly, on purpose. You will meet them before you sign anything.</p>",
+    "side_title": "Credentials (story)",
+    "side": "<p>Licensed architect, Texas #00-0000 (fictional).<br>12 years building in the desert (story).<br>1 architect. 0 employees. 2 trusted builders.</p><p>Studio: a converted adobe on West San Antonio St, Marfa — by appointment.</p>"
+   }
+  }
+ ]
+}

@@ -1,0 +1,50 @@
+{
+ "main": [
+  {
+   "widgetType": "jc_head",
+   "settings": {
+    "kicker": "Process & fees · no mystery",
+    "headline": "Four phases. Fixed fees.",
+    "subtitle": "You pay for drawings by phase. You can stop after any phase and keep what we made."
+   }
+  },
+  {
+   "widgetType": "jc_rows",
+   "settings": {
+    "headline": "Phases and what they cost (story figures)",
+    "intro": "Figures below are the fictional example's story numbers for a typical 1,400 sq ft rammed-earth house. Your quote is fixed after we walk your land.",
+    "items": [
+     {
+      "a": "01 · Walk & test",
+      "b": "I walk the land, check water, septic and county rules, and test whether rammed earth suits your soil. Written summary with a sketch and a rough build-cost range.",
+      "c": "$2,500 fixed · 2–3 weeks"
+     },
+     {
+      "a": "02 · Design",
+      "b": "Plans, sections, and a clay or foam model. We move walls on paper while it is cheap. Two revision rounds included.",
+      "c": "$18k–$28k · 6–10 weeks"
+     },
+     {
+      "a": "03 · Drawings & permit",
+      "b": "Construction drawings a builder can price: structure, septic, electrical, details for thick walls and deep shade. County submittal and responses.",
+      "c": "$22k–$34k · 8–12 weeks"
+     },
+     {
+      "a": "04 · Building",
+      "b": "I visit at footing, wall lifts, roof, and finishes. Phone photos from the builder between visits; I answer for the drawings.",
+      "c": "$9k–$14k · through build"
+     }
+    ]
+   }
+  },
+  {
+   "widgetType": "jc_text",
+   "settings": {
+    "headline": "What I don't charge for",
+    "body": "<p>First 30-minute call. Telling you not to hire me. Recommending a builder or engineer. Saying 'that idea will cost more than it's worth' in phase 01 instead of phase 04.</p>",
+    "side_title": "Build cost honesty",
+    "side": "<p>In this story, recent houses built at $385–$520 per sq ft depending on water/septic distance. If your budget is below that, we design smaller — not cheaper walls.</p>"
+   }
+  }
+ ]
+}

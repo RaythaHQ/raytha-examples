@@ -1,0 +1,55 @@
+{
+ "main": [
+  {
+   "widgetType": "jc_head",
+   "settings": {
+    "kicker": "Start · qualify honestly",
+    "headline": "Tell me about the land",
+    "subtitle": "This demo has no form that sends anywhere. In a real inquiry I ask for the five things below — copy them into an email to june@calloway.example (fictional, does not reach anyone)."
+   }
+  },
+  {
+   "widgetType": "jc_rows",
+   "settings": {
+    "headline": "The five things I need to know",
+    "intro": "If you don't know an answer yet, write 'don't know' — that is useful too.",
+    "items": [
+     {
+      "a": "1 · Land",
+      "b": "Address or coordinates, and whether you own it. A photo facing west at sunset helps more than a drone video.",
+      "c": "Required"
+     },
+     {
+      "a": "2 · Budget",
+      "b": "Your all-in number, including septic/water/power if the land is raw. I will tell you if the brief fits it.",
+      "c": "Required"
+     },
+     {
+      "a": "3 · Size",
+      "b": "Who lives there, and the smallest house that would work. Smaller is not settling here; it is the strategy.",
+      "c": "Required"
+     },
+     {
+      "a": "4 · Timeline",
+      "b": "When you want to sleep there, and what is driving that date.",
+      "c": "Required"
+     },
+     {
+      "a": "5 · Why earth / why me",
+      "b": "What you have seen of mine that fits how you want to live.",
+      "c": "Helps"
+     }
+    ]
+   }
+  },
+  {
+   "widgetType": "jc_text",
+   "settings": {
+    "headline": "What happens next",
+    "body": "<p>I reply myself within three working days. If it fits, we schedule a land walk (phase 01). If it doesn't, I reply with why, and who might fit better. No newsletter, no sequence of follow-ups.</p>",
+    "side_title": "Current status",
+    "side": "<p><b>Booking spring 2027 · 2 slots.</b></p><p>See <a href='/currently'>currently</a> for what is on the boards.</p>"
+   }
+  }
+ ]
+}

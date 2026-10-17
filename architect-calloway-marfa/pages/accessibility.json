@@ -1,0 +1,21 @@
+{
+ "main": [
+  {
+   "widgetType": "jc_head",
+   "settings": {
+    "kicker": "Accessibility",
+    "headline": "Accessibility",
+    "subtitle": "Plain, server-rendered pages that work without JavaScript."
+   }
+  },
+  {
+   "widgetType": "jc_text",
+   "settings": {
+    "headline": "Commitment",
+    "body": "<p>Landmarks, skip link, visible focus, labelled controls and alt text. Conformance must still be tested on your own site.</p>",
+    "side_title": "Problem?",
+    "side": "<p>Email june@calloway.example (fictional).</p>"
+   }
+  }
+ ]
+}

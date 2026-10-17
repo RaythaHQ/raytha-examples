@@ -1,0 +1,16 @@
+[
+ {"name":"01-home-1440.png","path":"/","device":"desktop"},
+ {"name":"02-home-full-1440.png","path":"/","device":"desktop","full_page":true},
+ {"name":"03-work-1440.png","path":"/work","device":"desktop","full_page":true},
+ {"name":"04-project-1440.png","path":"/work/antelope-wells-house","device":"desktop","full_page":true},
+ {"name":"05-currently-1440.png","path":"/currently","device":"desktop","full_page":true},
+ {"name":"06-process-1440.png","path":"/process","device":"desktop","full_page":true},
+ {"name":"07-notes-1440.png","path":"/notes","device":"desktop","full_page":true},
+ {"name":"08-note-1440.png","path":"/notes/the-day-we-tested-soil-at-antelope-wells","device":"desktop","full_page":true},
+ {"name":"09-faq-1440.png","path":"/faq","device":"desktop","full_page":true},
+ {"name":"10-start-1440.png","path":"/start","device":"desktop","full_page":true},
+ {"name":"11-about-1440.png","path":"/about","device":"desktop","full_page":true},
+ {"name":"12-search-1440.png","path":"/search?q=rammed","device":"desktop"},
+ {"name":"13-home-mobile-390.png","path":"/","device":"mobile"},
+ {"name":"14-project-mobile-390.png","path":"/work/my-own-house-on-san-antonio-st","device":"mobile"}
+]

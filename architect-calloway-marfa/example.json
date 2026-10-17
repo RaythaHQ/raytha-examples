@@ -1,0 +1,15 @@
+{
+ "name": "Calloway Marfa",
+ "theme": "calloway",
+ "types": [
+  "projects",
+  "fieldnotes",
+  "faqs"
+ ],
+ "detailTemplates": {
+  "projects": "jc_detail_projects",
+  "fieldnotes": "jc_detail_fieldnotes",
+  "faqs": "jc_detail_faqs"
+ },
+ "groups": []
+}

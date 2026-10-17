@@ -1,0 +1,133 @@
+{
+ "slug": "june-calloway-architect",
+ "name": "Calloway Marfa",
+ "base": "http://localhost:5395",
+ "viewport": [
+  1440,
+  810
+ ],
+ "output": [
+  1920,
+  1080
+ ],
+ "colorScheme": "light",
+ "title": {
+  "kicker": "Raytha use case",
+  "heading": "June Calloway \u2014 Marfa",
+  "subheading": "A solo rammed-earth architect: drawing sets, field notes, fees on the page.",
+  "hold": 1.3
+ },
+ "end": {
+  "heading": "Built with Raytha",
+  "subheading": "Open-source .NET CMS. Get the brief, screenshots and a one-command rebuild kit.",
+  "url": "raytha.com/use-cases/june-calloway-architect",
+  "hold": 2.3
+ },
+ "scenes": [
+  {
+   "url": "/",
+   "caption": "Thick walls. Deep shade. A solo architect in Marfa",
+   "actions": [
+    {
+     "hold": 1.1,
+     "poster": true
+    },
+    {
+     "scroll": 1100,
+     "dur": 2.4
+    },
+    {
+     "hold": 0.5
+    }
+   ]
+  },
+  {
+   "url": "/work",
+   "caption": "Every house as a dated drawing set \u2014 built, on the boards, or unbuilt",
+   "actions": [
+    {
+     "hold": 0.8
+    },
+    {
+     "scroll": 300,
+     "dur": 1.2
+    },
+    {
+     "click": ".row",
+     "dur": 0.9
+    },
+    {
+     "hold": 0.9
+    }
+   ]
+  },
+  {
+   "url": "/currently",
+   "caption": "Currently: what's on the boards, booking spring 2027 \u2014 2 slots",
+   "actions": [
+    {
+     "hold": 0.8
+    },
+    {
+     "scroll": 500,
+     "dur": 1.4
+    },
+    {
+     "hold": 0.4
+    }
+   ]
+  },
+  {
+   "url": "/process",
+   "caption": "Process and fixed fees, published on the page",
+   "actions": [
+    {
+     "hold": 0.8
+    },
+    {
+     "scroll": 600,
+     "dur": 1.4
+    },
+    {
+     "hold": 0.4
+    }
+   ]
+  },
+  {
+   "url": "/notes",
+   "caption": "Field notes: a dated job log, including mistakes",
+   "actions": [
+    {
+     "hold": 0.8
+    },
+    {
+     "scroll": 400,
+     "dur": 1.2
+    },
+    {
+     "hold": 0.4
+    }
+   ]
+  },
+  {
+   "url": "/",
+   "phone": true,
+   "phoneCaption": {
+    "kicker": "Responsive",
+    "text": "The drawing index works on a phone"
+   },
+   "actions": [
+    {
+     "hold": 0.5
+    },
+    {
+     "scroll": 1200,
+     "dur": 2.0
+    },
+    {
+     "hold": 0.4
+    }
+   ]
+  }
+ ]
+}

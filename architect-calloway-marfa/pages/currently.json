@@ -1,0 +1,30 @@
+{
+ "main": [
+  {
+   "widgetType": "jc_head",
+   "settings": {
+    "kicker": "Currently · updated Oct 2026 (story)",
+    "headline": "On the boards now",
+    "subtitle": "I take one house into construction at a time. Here is exactly where things stand, and when I can start yours."
+   }
+  },
+  {
+   "widgetType": "jc_text",
+   "settings": {
+    "headline": "Right now",
+    "body": "<p><b>JC-07 — Antelope Wells House</b> is in construction outside Marfa: rammed-earth walls up, roof next. I am on site Tuesdays and Fridays.</p><p><b>JC-08 — a 900 sq ft cabin near Fort Davis</b> is in drawings. Permit set goes in this winter.</p><p>That is the whole practice. No other jobs are hidden behind these.</p>",
+    "side_title": "Availability",
+    "side": "<p><b>Booking spring 2027 — 2 slots.</b></p><p>Slot 1: a house under 2,000 sq ft on land you already own.</p><p>Slot 2: a cabin, studio, or major rework of a small house.</p><p>If you need to start sooner, I will say so and suggest who to call.</p>"
+   }
+  },
+  {
+   "widgetType": "jc_text",
+   "settings": {
+    "headline": "What 'slot' means",
+    "body": "<p>A slot is my drawing time, not a sales quota. When both are taken, the next start is fall 2027 and I keep a short waitlist — three names, no deposit.</p>",
+    "side_title": "Waitlist",
+    "side": "<p>Three names max. I email the list myself when a slot opens. No drip campaign.</p>"
+   }
+  }
+ ]
+}
