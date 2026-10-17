@@ -1,0 +1,18 @@
+{
+ "developerName": "footer",
+ "label": "Footer",
+ "items": [
+  {
+   "label": "Contact",
+   "link": "/contact"
+  },
+  {
+   "label": "Client portal",
+   "link": "/portal"
+  },
+  {
+   "label": "Accessibility",
+   "link": "/accessibility"
+  }
+ ]
+}

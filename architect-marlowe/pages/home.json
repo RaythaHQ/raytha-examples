@@ -1,0 +1,82 @@
+{
+ "intro": [
+  {
+   "widgetType": "ma_stats",
+   "settings": {
+    "kicker": "One architect",
+    "headline": "You hire me. You get me.",
+    "body": "<p>I am Elena Marlowe, a licensed architect in Austin. I take four to six houses, ADUs and remodels a year, and I am the person at every meeting, on every site visit, and behind every drawing.</p><p>No hand-offs to a junior team. No wondering who designed your kitchen. <a href=\"/about/elena-marlowe\">More about me</a>.</p>",
+    "items": [
+     {
+      "value": "18 yrs",
+      "label": "of practice"
+     },
+     {
+      "value": "4–6",
+      "label": "projects a year, on purpose"
+     },
+     {
+      "value": "1",
+      "label": "architect, start to finish"
+     },
+     {
+      "value": "Austin",
+      "label": "and the Hill Country"
+     }
+    ]
+   }
+  }
+ ],
+ "process": [
+  {
+   "widgetType": "ma_steps",
+   "settings": {
+    "kicker": "How we work",
+    "headline": "Four phases, one architect",
+    "intro": "A written scope, drawings in stages, and a client portal where every decision lives.",
+    "items": [
+     {
+      "title": "Walk and talk",
+      "text": "We walk your land or house together. I listen, measure the light, and tell you honestly what I would do."
+     },
+     {
+      "title": "Design",
+      "text": "Sketches, models and plans in stages. You comment in your portal; nothing moves on undecided."
+     },
+     {
+      "title": "Permits and builder",
+      "text": "Construction drawings, city and county permits, and help choosing a builder whose work I know."
+     },
+     {
+      "title": "Build and after",
+      "text": "Site visits at the moments that matter, weekly written updates, and a walk together at move-in."
+     }
+    ]
+   }
+  }
+ ],
+ "story": [
+  {
+   "widgetType": "ma_quote",
+   "settings": {
+    "quote": "Elena walked the land four times before she drew a line. The house sits exactly where she stood, and it stays cool at six in August.",
+    "name": "Karen Andersen",
+    "role": "Homeowner, Live Oak Ridge House, Dripping Springs (fictional)",
+    "initials": "KA"
+   }
+  }
+ ],
+ "main": [
+  {
+   "widgetType": "ma_cta",
+   "settings": {
+    "headline": "Have a lot, a house, or just an idea?",
+    "text": "Start with a free 30-minute conversation. I will tell you what I would do next — even if the answer is not to hire me. This demo has no forms; the button goes to the contact page.",
+    "button": "Book a consultation",
+    "link": "/contact",
+    "button2": "See the houses",
+    "link2": "/work"
+   }
+  }
+ ]
+}

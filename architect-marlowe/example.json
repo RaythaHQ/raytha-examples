@@ -1,0 +1,38 @@
+{
+ "name": "Marlowe Architecture",
+ "theme": "marlowe",
+ "types": [
+  "clients",
+  "team",
+  "services",
+  "work",
+  "insights",
+  "roles",
+  "projects",
+  "deliverables"
+ ],
+ "detailTemplates": {
+  "clients": "ma_detail_clients",
+  "team": "ma_detail_team",
+  "services": "ma_detail_services",
+  "work": "ma_detail_work",
+  "insights": "ma_detail_insights",
+  "roles": "ma_detail_roles",
+  "projects": "ma_detail_projects",
+  "deliverables": "ma_detail_deliverables"
+ },
+ "groups": [
+  {
+   "developerName": "studio",
+   "label": "Marlowe Architecture (the architect)"
+  },
+  {
+   "developerName": "client_andersen",
+   "label": "Client: Andersen house"
+  },
+  {
+   "developerName": "client_okafor",
+   "label": "Client: Okafor ADU"
+  }
+ ]
+}

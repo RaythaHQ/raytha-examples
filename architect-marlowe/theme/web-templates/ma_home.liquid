@@ -1,0 +1,33 @@
+{%- assign inds = "new_home:New homes,adu:ADUs and guest houses,remodel:Remodels and additions,courtyard:Courtyard houses" | split: "," -%}{%- assign discs = "architecture:Architecture,design:Design,process:Process" | split: "," -%}{%- assign icats = "houses:Houses:o,adu:ADUs:l,remodel:Remodels:g,process:Process:l,notes:Notes from site:d" | split: "," -%}{%- assign rks = "consult:Consultation,feasibility:Feasibility" | split: "," -%}{%- assign sts = "discovery:Discovery,design:Design development,build:Permits and build,launch:Move-in,care:Aftercare" | split: "," -%}{%- assign dks = "brand:Drawings:rulers,design:Design files:vector-pen,report:Report:file-earmark-text,checklist:Checklist:list-check,notes:Meeting notes:chat-left-text" | split: "," -%}{%- assign cgs = "client_andersen:Andersen house,client_okafor:Okafor ADU" | split: "," -%}
+{%- assign fw = get_content_items(ContentType="work", Filter="featured eq 'true'", OrderBy="sort_order asc", PageSize=3) -%}
+{%- assign allw = get_content_items(ContentType="work", OrderBy="sort_order asc", PageSize=3) -%}
+{%- assign lg = get_content_items(ContentType="clients", Filter="featured eq 'true'", OrderBy="sort_order asc", PageSize=10) -%}
+{%- assign sv = get_content_items(ContentType="services", OrderBy="sort_order asc", PageSize=10) -%}
+{%- assign ins = get_content_items(ContentType="insights", OrderBy="posted_on desc", PageSize=3) -%}
+<section class="hero"><div class="wrap">
+ <div class="hgrid">
+  <div><span class="kicker">Solo architect &middot; Austin, Texas &middot; fictional</span>
+   <h1>Houses that know their <span class="s">land.</span></h1>
+   <p class="lead">I design modern houses, ADUs and remodels in Austin and the Hill Country — shaped by shade, limestone and live oaks, and drawn by one architect from first walk to move-in.</p>
+   <div class="acts"><a class="btn btn-p" href="{{ PathBase }}/work">See the houses <i class="bi bi-arrow-right" aria-hidden="true"></i></a><a class="btn btn-ghost" href="{{ PathBase }}/services">What I do</a></div></div>
+  <div class="stack" aria-label="Featured case studies">{% for w in allw.Items %}<a href="{{ PathBase }}/{{ w.RoutePath }}"><img src="{{ w.PublishedContent.cover.Value | attachment_redirect_url }}" alt="{{ w.PrimaryField }} case study"><span>{{ w.PrimaryField }}</span></a>{% endfor %}</div>
+ </div>
+ <div class="hstats"><div><b>18 yrs</b>of practice</div><div><b>42</b>houses & ADUs (story)</div><div><b>1</b>architect, start to finish</div><div><b>4–6</b>projects a year</div><div><span style="font-size:.8rem">Figures are part of the fictional story.</span></div></div>
+</div></section>
+<section class="logos" aria-label="Clients"><div class="wrap"><p>Recent (fictional) clients and their houses</p>{% for c in lg.Items %}<a href="{{ PathBase }}/{{ c.RoutePath }}" title="{{ c.PrimaryField }}"><img src="{{ c.PublishedContent.logo.Value | attachment_redirect_url }}" alt="{{ c.PrimaryField }}"></a>{% endfor %}</div></section>
+<section class="sec"><div class="wrap">
+ <div class="shead"><div><span class="kicker">Selected houses</span><h2>Houses, casitas and a ranch that met its garden</h2></div><a class="more" href="{{ PathBase }}/work">All projects <i class="bi bi-arrow-right" aria-hidden="true"></i></a></div>
+ <div class="wgrid">{% for w in fw.Items %}{%- assign x = w.PublishedContent -%}{%- capture ik -%}{{ x.industry }}{%- endcapture -%}{%- for pair in inds -%}{%- assign kv = pair | split: ":" -%}{%- if kv[0] == ik -%}{%- assign il = kv[1] -%}{%- endif -%}{%- endfor -%}<a class="wcard" href="{{ PathBase }}/{{ w.RoutePath }}"><div class="img"><img src="{{ x.cover.Value | attachment_redirect_url }}" alt="" loading="lazy"></div><div class="meta"><span>{{ w.PrimaryField }}</span><span>{{ il }} &middot; {{ x.year }}</span></div><h3>{{ x.headline }}</h3><div class="tags">{% assign svl = x.services | split: ", " %}{% for s in svl limit: 3 %}<span class="tag">{{ s }}</span>{% endfor %}</div></a>{% endfor %}</div>
+</div></section>
+<section class="sec dark"><div class="wrap">
+ <div class="shead"><div><span class="kicker" style="color:#bdb7ae">Services</span><h2>From the first walk to move-in</h2><p class="muted">Four ways we can work together, with one architect throughout.</p></div><a class="more" href="{{ PathBase }}/services" style="color:#fff">All services <i class="bi bi-arrow-right" aria-hidden="true"></i></a></div>
+ <div class="svcs">{% for s in sv.Items %}{%- assign x = s.PublishedContent -%}<a class="svc" href="{{ PathBase }}/{{ s.RoutePath }}"><span class="n">0{{ forloop.index }}</span><h3>{{ s.PrimaryField }}</h3><p>{{ x.tagline }}. {{ x.timeline }}.</p><i class="bi bi-arrow-up-right go" aria-hidden="true"></i></a>{% endfor %}</div>
+</div></section>
+{{ render_section("intro", wrap=false) }}
+{{ render_section("process", wrap=false) }}
+{{ render_section("story", wrap=false) }}
+<section class="sec"><div class="wrap">
+ <div class="shead"><div><span class="kicker">Journal</span><h2>Notes on houses, light and building</h2></div><a class="more" href="{{ PathBase }}/journal">All journal <i class="bi bi-arrow-right" aria-hidden="true"></i></a></div>
+ <div class="grid g3">{% for a in ins.Items %}{%- assign x = a.PublishedContent -%}{%- capture ck -%}{{ x.category }}{%- endcapture -%}{%- for pair in icats -%}{%- assign kv = pair | split: ":" -%}{%- if kv[0] == ck -%}{%- assign cl = kv[1] -%}{%- assign cc = kv[2] -%}{%- endif -%}{%- endfor -%}<a class="icard" href="{{ PathBase }}/{{ a.RoutePath }}"><div class="img"><img src="{{ x.image.Value | attachment_redirect_url }}" alt="" loading="lazy"></div><div class="meta"><span class="tag {{ cc }}">{{ cl }}</span> &nbsp;{{ x.posted_on.Value | date: "%b %-d, %Y" }} &middot; {{ x.read_time }}</div><h3>{{ a.PrimaryField }}</h3></a>{% endfor %}</div>
+</div></section>
+{{ render_section("main", wrap=false) }}

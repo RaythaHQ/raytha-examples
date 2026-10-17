@@ -1,0 +1,197 @@
+{
+ "people": [
+  {
+   "name": "Elena Marlowe",
+   "slug": "elena-marlowe"
+  }
+ ],
+ "logos": [
+  {
+   "slug": "the-andersens",
+   "name": "The Andersens",
+   "glyph": "arch",
+   "c1": "#3b2f2a",
+   "c2": "#e9c46a",
+   "font": "serif"
+  },
+  {
+   "slug": "the-okafor-family",
+   "name": "The Okafor Family",
+   "glyph": "leaf",
+   "c1": "#20403a",
+   "c2": "#9ee0c7",
+   "font": "sans"
+  },
+  {
+   "slug": "marta-and-luis-herrera",
+   "name": "Marta and Luis Herrera",
+   "glyph": "wave",
+   "c1": "#1a1a1a",
+   "c2": "#f2a65a",
+   "font": "serif"
+  },
+  {
+   "slug": "june-park",
+   "name": "June Park",
+   "glyph": "ring",
+   "c1": "#283618",
+   "c2": "#fefae0",
+   "font": "serif"
+  },
+  {
+   "slug": "the-delgados",
+   "name": "The Delgados",
+   "glyph": "hex",
+   "c1": "#1b1f3b",
+   "c2": "#f0b27a",
+   "font": "sans"
+  },
+  {
+   "slug": "samira-khan",
+   "name": "Samira Khan",
+   "glyph": "book",
+   "c1": "#5a2a27",
+   "c2": "#e9c46a",
+   "font": "serif"
+  }
+ ],
+ "shots": [
+  {
+   "slug": "the-andersens",
+   "name": "The Andersens",
+   "c1": "#3b2f2a",
+   "c2": "#e9c46a",
+   "glyph": "arch",
+   "font": "serif",
+   "headline": "Live Oak Ridge House: a courtyard in limestone and shade"
+  },
+  {
+   "slug": "the-okafor-family",
+   "name": "The Okafor Family",
+   "c1": "#20403a",
+   "c2": "#9ee0c7",
+   "glyph": "leaf",
+   "font": "sans",
+   "headline": "Casita Verde: a garden ADU that earns its keep"
+  },
+  {
+   "slug": "marta-and-luis-herrera",
+   "name": "Marta and Luis Herrera",
+   "c1": "#1a1a1a",
+   "c2": "#f2a65a",
+   "glyph": "wave",
+   "font": "serif",
+   "headline": "Barton Hills Ranch, opened to the garden"
+  },
+  {
+   "slug": "june-park",
+   "name": "June Park",
+   "c1": "#283618",
+   "c2": "#fefae0",
+   "glyph": "ring",
+   "font": "serif",
+   "headline": "Wimberley Courtyard House for the next chapter"
+  },
+  {
+   "slug": "the-delgados",
+   "name": "The Delgados",
+   "c1": "#1b1f3b",
+   "c2": "#f0b27a",
+   "glyph": "hex",
+   "font": "sans",
+   "headline": "Fredericksburg House of deep shade"
+  },
+  {
+   "slug": "samira-khan",
+   "name": "Samira Khan",
+   "c1": "#5a2a27",
+   "c2": "#e9c46a",
+   "glyph": "book",
+   "font": "serif",
+   "headline": "A writer's casita in Zilker"
+  }
+ ],
+ "covers": [
+  {
+   "slug": "i-what-i-look-for-on-a-first-site-walk",
+   "kind": "rings",
+   "cat": "process"
+  },
+  {
+   "slug": "i-adus-in-austin-what-fits-what-the-city-asks-what-it-costs",
+   "kind": "grid",
+   "cat": "adu"
+  },
+  {
+   "slug": "i-remodel-or-rebuild-a-honest-way-to-decide",
+   "kind": "bars",
+   "cat": "remodel"
+  },
+  {
+   "slug": "i-designing-for-august-shade-breeze-and-limestone",
+   "kind": "dots",
+   "cat": "houses"
+  },
+  {
+   "slug": "i-how-working-with-a-solo-architect-actually-works",
+   "kind": "waves",
+   "cat": "process"
+  },
+  {
+   "slug": "i-notes-from-site-a-limestone-wall-laid-by-hand",
+   "kind": "rings",
+   "cat": "notes"
+  }
+ ],
+ "docs": [
+  {
+   "slug": "andersen-courtyard-permit-drawings",
+   "title": "Andersen courtyard — permit drawings",
+   "sub": "Floor plans, elevations, sections and details as submitted to the county.",
+   "lines": [
+    "# Sheets",
+    "A1 Floor plan and courtyard",
+    "A2 Elevations in limestone and metal",
+    "A3 Wall sections and shade details",
+    "# Notes",
+    "West wall: one high window, as tested on site"
+   ]
+  },
+  {
+   "slug": "andersen-material-palette",
+   "title": "Andersen material palette",
+   "sub": "Limestone, cypress, polished concrete and the standing-seam color, photographed on site.",
+   "lines": [
+    "# Materials",
+    "Local limestone, as laid",
+    "Cypress windows, natural finish",
+    "Polished concrete floors",
+    "Roof: weathered galvalume"
+   ]
+  },
+  {
+   "slug": "okafor-adu-60-permit-set",
+   "title": "Okafor ADU — 60% permit set",
+   "sub": "Plans and elevations for your review. Kitchen options A and B are both drawn.",
+   "lines": [
+    "# Please review",
+    "Kitchen option A (recommended)",
+    "Kitchen option B",
+    "Porch and oak protection",
+    "# Due",
+    "Comments by Monday, please"
+   ]
+  },
+  {
+   "slug": "okafor-tree-protection-plan",
+   "title": "Okafor tree protection plan",
+   "sub": "The arborist's protection plan for the heritage oak, as approved.",
+   "lines": [
+    "# Protection",
+    "Fencing at the drip line",
+    "Piers outside critical roots",
+    "No grade change under the canopy"
+   ]
+  }
+ ]
+}
