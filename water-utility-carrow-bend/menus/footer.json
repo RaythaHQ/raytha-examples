@@ -1,0 +1,14 @@
+{
+ "developerName": "footer",
+ "label": "Footer",
+ "items": [
+  {
+   "label": "Accessibility",
+   "link": "/accessibility"
+  },
+  {
+   "label": "Report a problem",
+   "link": "/report-a-problem"
+  }
+ ]
+}

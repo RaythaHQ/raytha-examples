@@ -1,0 +1,57 @@
+[
+ {
+  "title": "Carrow Bend Water",
+  "routePath": "home",
+  "template": "cb_home",
+  "sections": "pages/home.json",
+  "home": true
+ },
+ {
+  "title": "Pay a bill",
+  "routePath": "pay-bill",
+  "template": "cb_page",
+  "sections": "pages/pay.json"
+ },
+ {
+  "title": "Start, stop, or transfer service",
+  "routePath": "start-stop-service",
+  "template": "cb_page",
+  "sections": "pages/startstop.json"
+ },
+ {
+  "title": "Rates and fees",
+  "routePath": "rates-and-fees",
+  "template": "cb_page",
+  "sections": "pages/rates.json"
+ },
+ {
+  "title": "Report a problem",
+  "routePath": "report-a-problem",
+  "template": "cb_page",
+  "sections": "pages/report.json"
+ },
+ {
+  "title": "About the board",
+  "routePath": "board",
+  "template": "cb_page",
+  "sections": "pages/board.json"
+ },
+ {
+  "title": "About Carrow Bend Water",
+  "routePath": "about",
+  "template": "cb_page",
+  "sections": "pages/about.json"
+ },
+ {
+  "title": "Accessibility",
+  "routePath": "accessibility",
+  "template": "cb_page",
+  "sections": "pages/accessibility.json"
+ },
+ {
+  "title": "Search",
+  "routePath": "search",
+  "template": "cb_search",
+  "sections": "pages/search.json"
+ }
+]

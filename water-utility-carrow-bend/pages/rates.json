@@ -1,0 +1,60 @@
+{
+ "main": [
+  {
+   "widgetType": "cb_head",
+   "settings": {
+    "kicker": "District \u00b7 rates &amp; fees",
+    "headline": "Rates and fees",
+    "subtitle": "Adopted for the story year 2026 by the fictional board. Water and sewer are billed together; the table is the whole story, not a summary of a PDF."
+   }
+  },
+  {
+   "widgetType": "cb_rows",
+   "settings": {
+    "headline": "Monthly charges (story)",
+    "intro": "Per account, plus use. 1 unit = 1,000 gallons.",
+    "items": [
+     {
+      "a": "Base charge \u2014 water",
+      "b": "Covers meter, billing and mains, story",
+      "c": "$18.50 / month"
+     },
+     {
+      "a": "Water use, tier 1 (0\u20135 units)",
+      "b": "First 5,000 gallons",
+      "c": "$6.40 / unit"
+     },
+     {
+      "a": "Water use, tier 2 (6\u201315 units)",
+      "b": "Summer-heavy use",
+      "c": "$8.90 / unit"
+     },
+     {
+      "a": "Water use, over 15 units",
+      "b": "Conservation tier",
+      "c": "$12.75 / unit"
+     },
+     {
+      "a": "Sewer base + use",
+      "b": "Sewer billed on winter-average water use",
+      "c": "$21.00 + $5.10 / unit"
+     },
+     {
+      "a": "Tap fee, new 3/4-in service",
+      "b": "Story schedule, by meter size",
+      "c": "$1,850"
+     }
+    ]
+   }
+  },
+  {
+   "widgetType": "cb_text",
+   "settings": {
+    "headline": "Why tiers?",
+    "body": "<p>The first block is priced for indoor essentials. Higher summer use pays more because peak pumping and storage are sized for the hottest week, not the average day \u2014 the board minutes for the 2025 rate vote (story) walk through that math.</p>",
+    "side_title": "Hardship &amp; leaks",
+    "side": "<p>Story policies: a once-a-year leak adjustment with a plumber's note, and a payment-plan option before shutoff, never after a same-day notice. Call the office in the story \u2014 in real life, use the number on your own bill.</p>"
+   }
+  }
+ ]
+}

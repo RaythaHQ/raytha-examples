@@ -1,0 +1,21 @@
+{
+ "main": [
+  {
+   "widgetType": "cb_head",
+   "settings": {
+    "kicker": "District \u00b7 governance",
+    "headline": "About the board",
+    "subtitle": "Five elected directors (story), public meetings on the second Tuesday, and a budget that fits on two pages. Agendas and minutes live under Board meetings."
+   }
+  },
+  {
+   "widgetType": "cb_text",
+   "settings": {
+    "headline": "Who runs Carrow Bend Water",
+    "body": "<p>The fictional district serves about 4,800 connections (story) from the Ossel River treatment plant and two wells. Directors serve staggered four-year terms; the general manager and licensed operators are staff, not board members.</p><p>Rate changes require a posted hearing \u2014 the 2025 hearing story is summarized in the December 2025 minutes.</p>",
+    "side_title": "Records",
+    "side": "<p>Budgets, audits and the annual quality report are public records in the story. This demo publishes meetings and quality reports as structured content so they are searchable, not scanned sideways PDFs.</p>"
+   }
+  }
+ ]
+}

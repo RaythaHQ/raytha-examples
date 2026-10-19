@@ -46,6 +46,8 @@ To rebuild an example: run Raytha (Railway template or `docker compose`), create
 - [Brief for Halverline Studio](https://github.com/RaythaHQ/raytha-examples/blob/main/agency-halverline/brief.md): the only input the agent had
 - [June Calloway, Marfa (architect-calloway-marfa)](https://github.com/RaythaHQ/raytha-examples/tree/main/architect-calloway-marfa): solo architect website with 3 content types (drawing sets with drawing number, year, status, location, kind, budget, materials and a written regret; field notes as a dated job log; FAQs on permits, costs and timeline), site pages for Currently, Process & fees, About and Start, blueprint monospace design, server-rendered Liquid only
 - [Brief for June Calloway, Marfa](https://github.com/RaythaHQ/raytha-examples/blob/main/architect-calloway-marfa/brief.md): the input for this example
+- [Carrow Bend Water (water-utility-carrow-bend)](https://github.com/RaythaHQ/raytha-examples/tree/main/water-utility-carrow-bend): local water utility website with 4 content types (service alerts with status/area/what-to-do; water quality reports with key results; board meetings with agendas/minutes; conservation guides), site pages for Pay a bill, Start/stop service, Rates & fees and Report a problem, municipal operations-hub design, server-rendered Liquid only
+- [Brief for Carrow Bend Water](https://github.com/RaythaHQ/raytha-examples/blob/main/water-utility-carrow-bend/brief.md): the input for this example
 
 ## For agents building Raytha sites
 

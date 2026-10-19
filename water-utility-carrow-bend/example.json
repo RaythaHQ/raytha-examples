@@ -1,0 +1,17 @@
+{
+ "name": "Carrow Bend Water",
+ "theme": "carrowbend",
+ "types": [
+  "alerts",
+  "quality",
+  "meetings",
+  "guides"
+ ],
+ "detailTemplates": {
+  "alerts": "cb_detail_alerts",
+  "quality": "cb_detail_quality",
+  "meetings": "cb_detail_meetings",
+  "guides": "cb_detail_guides"
+ },
+ "groups": []
+}

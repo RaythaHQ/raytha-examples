@@ -1,0 +1,15 @@
+[
+ {"name":"01-home-1440.png","path":"/","device":"desktop"},
+ {"name":"02-home-full-1440.png","path":"/","device":"desktop","full_page":true},
+ {"name":"03-alerts-1440.png","path":"/alerts","device":"desktop","full_page":true},
+ {"name":"04-alert-1440.png","path":"/alerts/boil-water-notice-main-street-400-700-blocks","device":"desktop","full_page":true},
+ {"name":"05-pay-1440.png","path":"/pay-bill","device":"desktop","full_page":true},
+ {"name":"06-rates-1440.png","path":"/rates-and-fees","device":"desktop","full_page":true},
+ {"name":"07-quality-1440.png","path":"/quality","device":"desktop","full_page":true},
+ {"name":"08-quality-report-1440.png","path":"/quality/annual-water-quality-report-2025","device":"desktop","full_page":true},
+ {"name":"09-board-1440.png","path":"/board-meetings","device":"desktop","full_page":true},
+ {"name":"10-save-water-1440.png","path":"/save-water","device":"desktop","full_page":true},
+ {"name":"11-start-1440.png","path":"/start-stop-service","device":"desktop","full_page":true},
+ {"name":"12-search-1440.png","path":"/search?q=leak","device":"desktop"},
+ {"name":"13-home-mobile-390.png","path":"/","device":"mobile"}
+]

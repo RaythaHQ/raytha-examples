@@ -1,0 +1,21 @@
+{
+ "main": [
+  {
+   "widgetType": "cb_head",
+   "settings": {
+    "kicker": "Customers \u00b7 emergencies",
+    "headline": "Report a problem",
+    "subtitle": "No water, low pressure, discolored water, sewage backup, or water running in the street \u2014 what to check first, and what the crew will ask."
+   }
+  },
+  {
+   "widgetType": "cb_text",
+   "settings": {
+    "headline": "Before you report",
+    "body": "<p><b>Check the alerts page first</b> \u2014 if your street is listed, the crew already knows. Then check one cold tap: if only hot water is discolored, it is usually your water heater, not the main.</p><p><b>Sewage backup:</b> stop running water, keep people and pets clear, and treat it as urgent (story guidance).</p>",
+    "side_title": "What helps the crew",
+    "side": "<p>Address, when it started, whether neighbors see it too, and a photo of discolored water in a clear glass against white paper. This demo has no reporting form; a real district would route this to its work-order system.</p>"
+   }
+  }
+ ]
+}

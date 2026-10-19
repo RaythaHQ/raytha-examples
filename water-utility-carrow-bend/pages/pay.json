@@ -1,0 +1,45 @@
+{
+ "main": [
+  {
+   "widgetType": "cb_head",
+   "settings": {
+    "kicker": "Customers \u00b7 billing (demo)",
+    "headline": "Pay a bill",
+    "subtitle": "Every way to pay in the story district, what happens if you are late, and what to do if a bill looks wrong. This demo collects no payment and no account number."
+   }
+  },
+  {
+   "widgetType": "cb_text",
+   "settings": {
+    "headline": "Ways to pay (story)",
+    "body": "<p><b>By card or bank draft</b> through the customer portal link on a real district site \u2014 here, that button would go to the district's payment provider. This fictional site deliberately has no payment form.</p><p><b>By phone, mail, or in person</b> at 1 Reservoir Lane, Mon\u2013Fri 8\u20135 (story hours). Drop box by the front door for checks after hours.</p><p><b>Auto-draft</b> on the 15th, with a paper bill still mailed unless you opt out.</p>",
+    "side_title": "If a bill looks wrong",
+    "side": "<p>Check the read dates first \u2014 a 45-day read after a meter swap is the most common story cause. Then compare last year, not last month: summer watering doubles many Carrow Bend bills.</p><p>Still off? Request a re-read before the due date; late fees pause while a re-read is open (story policy).</p>"
+   }
+  },
+  {
+   "widgetType": "cb_rows",
+   "settings": {
+    "headline": "Fees around billing",
+    "intro": "Plain amounts, published before you need them.",
+    "items": [
+     {
+      "a": "Late fee",
+      "b": "5% after 10 days past due, story policy",
+      "c": "$ example on $80 bill: $4"
+     },
+     {
+      "a": "Returned payment",
+      "b": "Per returned check / draft",
+      "c": "$25 (story)"
+     },
+     {
+      "a": "Re-read request",
+      "b": "Free if the read was wrong; fee if it was right",
+      "c": "$0 / $15 (story)"
+     }
+    ]
+   }
+  }
+ ]
+}

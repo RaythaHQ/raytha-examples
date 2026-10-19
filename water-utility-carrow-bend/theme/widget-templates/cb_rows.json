@@ -1,0 +1,62 @@
+{
+ "label": "Carrow: table rows",
+ "fields": [
+  {
+   "developerName": "headline",
+   "label": "Headline",
+   "description": "",
+   "fieldType": "single_line_text",
+   "isRequired": false,
+   "choices": [],
+   "relatedContentType": null,
+   "subFields": []
+  },
+  {
+   "developerName": "intro",
+   "label": "Intro",
+   "description": "",
+   "fieldType": "long_text",
+   "isRequired": false,
+   "choices": [],
+   "relatedContentType": null,
+   "subFields": []
+  },
+  {
+   "developerName": "items",
+   "label": "Rows",
+   "fieldType": "repeater",
+   "subFields": [
+    {
+     "developerName": "a",
+     "label": "Col A",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "b",
+     "label": "Col B",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "c",
+     "label": "Col C",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    }
+   ]
+  }
+ ]
+}

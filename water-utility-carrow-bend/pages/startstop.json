@@ -1,0 +1,45 @@
+{
+ "main": [
+  {
+   "widgetType": "cb_head",
+   "settings": {
+    "kicker": "Customers \u00b7 moving",
+    "headline": "Start, stop, or transfer service",
+    "subtitle": "Moving into Carrow Bend, moving out, or putting a rental in a tenant's name \u2014 what the district needs, and how far ahead to ask."
+   }
+  },
+  {
+   "widgetType": "cb_text",
+   "settings": {
+    "headline": "Start service",
+    "body": "<p>Ask <b>two business days ahead</b> (story). The district needs the service address, move-in date, a name for the account, and whether the meter can be reached without a gate code.</p><p>Deposits, if any, are in the table below \u2014 no surprise amount at the door. First bill is prorated and shows the read the account started from.</p>",
+    "side_title": "Stop or transfer",
+    "side": "<p>Give a forwarding address and a stop date; the final read happens that morning in the story workflow. For rentals, landlords can hold a revert-to-owner agreement so water is not shut off between tenants.</p>"
+   }
+  },
+  {
+   "widgetType": "cb_rows",
+   "settings": {
+    "headline": "Deposits &amp; connection (story)",
+    "intro": "Story amounts for this fictional district.",
+    "items": [
+     {
+      "a": "Residential deposit",
+      "b": "Waived with a letter of credit from a prior utility, story rule",
+      "c": "$75 otherwise"
+     },
+     {
+      "a": "Connection",
+      "b": "Same-day if asked before noon, story",
+      "c": "$30"
+     },
+     {
+      "a": "Transfer to tenant",
+      "b": "No new deposit if owner agreement is on file",
+      "c": "$15"
+     }
+    ]
+   }
+  }
+ ]
+}

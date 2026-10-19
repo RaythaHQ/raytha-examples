@@ -1,0 +1,34 @@
+{
+ "developerName": "mainmenu",
+ "label": "Main menu",
+ "items": [
+  {
+   "label": "Alerts",
+   "link": "/alerts"
+  },
+  {
+   "label": "Pay bill",
+   "link": "/pay-bill"
+  },
+  {
+   "label": "Start / stop",
+   "link": "/start-stop-service"
+  },
+  {
+   "label": "Rates",
+   "link": "/rates-and-fees"
+  },
+  {
+   "label": "Quality",
+   "link": "/quality"
+  },
+  {
+   "label": "Board",
+   "link": "/board-meetings"
+  },
+  {
+   "label": "Save water",
+   "link": "/save-water"
+  }
+ ]
+}

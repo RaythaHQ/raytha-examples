@@ -1,0 +1,18 @@
+{
+ "slug": "carrow-bend-water",
+ "name": "Carrow Bend Water",
+ "base": "http://localhost:5397",
+ "viewport": [1440, 810],
+ "output": [1920, 1080],
+ "colorScheme": "light",
+ "title": {"kicker": "Raytha use case", "heading": "Carrow Bend Water", "subheading": "A local water utility: alerts, quality, rates, board — and paying a bill.", "hold": 1.3},
+ "end": {"heading": "Built with Raytha", "subheading": "Open-source .NET CMS. Get the brief, screenshots and a one-command rebuild kit.", "url": "raytha.com/use-cases/carrow-bend-water", "hold": 2.3},
+ "scenes": [
+  {"url": "/", "caption": "Check the water before you call — status, alerts and actions up front", "actions": [{"hold": 1.1, "poster": true}, {"scroll": 900, "dur": 2.2}, {"hold": 0.5}]},
+  {"url": "/alerts", "caption": "Service alerts: active, scheduled and resolved — with what to do", "actions": [{"hold": 0.8}, {"scroll": 500, "dur": 1.4}, {"hold": 0.4}]},
+  {"url": "/quality", "caption": "Water quality reports, summarized before the lab table", "actions": [{"hold": 0.8}, {"scroll": 400, "dur": 1.2}, {"hold": 0.4}]},
+  {"url": "/rates-and-fees", "caption": "Rates and fees as a table — every tier and tap fee", "actions": [{"hold": 0.8}, {"scroll": 600, "dur": 1.4}, {"hold": 0.4}]},
+  {"url": "/board-meetings", "caption": "Board meetings: agendas before, minutes after", "actions": [{"hold": 0.8}, {"scroll": 400, "dur": 1.2}, {"hold": 0.4}]},
+  {"url": "/", "phone": true, "phoneCaption": {"kicker": "Responsive", "text": "Alerts and bill actions work on a phone"}, "actions": [{"hold": 0.5}, {"scroll": 1000, "dur": 2.0}, {"hold": 0.4}]}
+ ]
+}

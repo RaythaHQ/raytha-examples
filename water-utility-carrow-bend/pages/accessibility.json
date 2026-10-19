@@ -1,0 +1,21 @@
+{
+ "main": [
+  {
+   "widgetType": "cb_head",
+   "settings": {
+    "kicker": "District \u00b7 access",
+    "headline": "Accessibility",
+    "subtitle": "Plain HTML first: every page on this demo works without JavaScript, uses real headings and tables, and keeps alert text as text \u2014 never only a color or a map pin."
+   }
+  },
+  {
+   "widgetType": "cb_text",
+   "settings": {
+    "headline": "What we aim for",
+    "body": "<p>WCAG 2.2 AA as the working target (story statement): keyboard-visible focus, contrast-checked status colors with text labels, and quality tables that read in order on a screen reader.</p>",
+    "side_title": "Tell us (story)",
+    "side": "<p>In a real district this page would name an accessibility coordinator. Here it names the standard the templates were built to.</p>"
+   }
+  }
+ ]
+}

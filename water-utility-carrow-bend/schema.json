@@ -1,0 +1,503 @@
+{
+ "schemaVersion": 1,
+ "contentTypes": [
+  {
+   "developerName": "alerts",
+   "labelPlural": "Service alerts",
+   "labelSingular": "Service alert",
+   "description": "Outages, boil notices and planned work",
+   "defaultRouteTemplate": "alerts/{PrimaryField}",
+   "primaryField": "title",
+   "fields": [
+    {
+     "developerName": "title",
+     "label": "Title",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": true,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "status",
+     "label": "Status",
+     "description": "",
+     "fieldType": "dropdown",
+     "isRequired": false,
+     "choices": [
+      {
+       "developerName": "active",
+       "label": "Active",
+       "disabled": false
+      },
+      {
+       "developerName": "scheduled",
+       "label": "Scheduled",
+       "disabled": false
+      },
+      {
+       "developerName": "resolved",
+       "label": "Resolved",
+       "disabled": false
+      }
+     ],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "alert_type",
+     "label": "Alert type",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "area",
+     "label": "Area affected",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "timing_label",
+     "label": "Timing",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "summary",
+     "label": "Summary",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "body",
+     "label": "What happened",
+     "description": "",
+     "fieldType": "wysiwyg",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "what_to_do",
+     "label": "What to do",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "image",
+     "label": "Image",
+     "description": "",
+     "fieldType": "attachment",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "sort_order",
+     "label": "Sort order",
+     "description": "",
+     "fieldType": "number",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    }
+   ],
+   "views": [
+    {
+     "developerName": "alerts",
+     "label": "Service alerts",
+     "description": "",
+     "isPublished": true,
+     "routePath": "alerts",
+     "template": "cb_list_alerts",
+     "columns": [
+      "PrimaryField"
+     ],
+     "sort": [
+      {
+       "developerName": "sort_order",
+       "direction": "asc"
+      }
+     ],
+     "filter": [],
+     "defaultNumberOfItemsPerPage": 100,
+     "maxNumberOfItemsPerPage": 1000,
+     "ignoreClientFilterAndSortQueryParams": false
+    }
+   ]
+  },
+  {
+   "developerName": "quality",
+   "labelPlural": "Water quality reports",
+   "labelSingular": "Water quality report",
+   "description": "Annual and quarterly quality reporting",
+   "defaultRouteTemplate": "quality/{PrimaryField}",
+   "primaryField": "title",
+   "fields": [
+    {
+     "developerName": "title",
+     "label": "Title",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": true,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "report_year",
+     "label": "Report year",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "period",
+     "label": "Period",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "source",
+     "label": "Source",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "summary",
+     "label": "Summary",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "body",
+     "label": "Body",
+     "description": "",
+     "fieldType": "wysiwyg",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "key_results",
+     "label": "Key results",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "image",
+     "label": "Image",
+     "description": "",
+     "fieldType": "attachment",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "sort_order",
+     "label": "Sort order",
+     "description": "",
+     "fieldType": "number",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    }
+   ],
+   "views": [
+    {
+     "developerName": "quality",
+     "label": "Water quality",
+     "description": "",
+     "isPublished": true,
+     "routePath": "quality",
+     "template": "cb_list_quality",
+     "columns": [
+      "PrimaryField"
+     ],
+     "sort": [
+      {
+       "developerName": "sort_order",
+       "direction": "asc"
+      }
+     ],
+     "filter": [],
+     "defaultNumberOfItemsPerPage": 100,
+     "maxNumberOfItemsPerPage": 1000,
+     "ignoreClientFilterAndSortQueryParams": false
+    }
+   ]
+  },
+  {
+   "developerName": "meetings",
+   "labelPlural": "Board meetings",
+   "labelSingular": "Board meeting",
+   "description": "Board meetings, agendas and minutes",
+   "defaultRouteTemplate": "board-meetings/{PrimaryField}",
+   "primaryField": "title",
+   "fields": [
+    {
+     "developerName": "title",
+     "label": "Title",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": true,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "meeting_date",
+     "label": "Meeting date",
+     "description": "",
+     "fieldType": "date",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "date_label",
+     "label": "Date label",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "location",
+     "label": "Location",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "summary",
+     "label": "Summary",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "agenda",
+     "label": "Agenda / minutes",
+     "description": "",
+     "fieldType": "wysiwyg",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "status_note",
+     "label": "Status note",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "sort_order",
+     "label": "Sort order",
+     "description": "",
+     "fieldType": "number",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    }
+   ],
+   "views": [
+    {
+     "developerName": "meetings",
+     "label": "Board meetings",
+     "description": "",
+     "isPublished": true,
+     "routePath": "board-meetings",
+     "template": "cb_list_meetings",
+     "columns": [
+      "PrimaryField"
+     ],
+     "sort": [
+      {
+       "developerName": "meeting_date",
+       "direction": "desc"
+      }
+     ],
+     "filter": [],
+     "defaultNumberOfItemsPerPage": 100,
+     "maxNumberOfItemsPerPage": 1000,
+     "ignoreClientFilterAndSortQueryParams": false
+    }
+   ]
+  },
+  {
+   "developerName": "guides",
+   "labelPlural": "Conservation guides",
+   "labelSingular": "Conservation guide",
+   "description": "Ways to save water at home and in the yard",
+   "defaultRouteTemplate": "save-water/{PrimaryField}",
+   "primaryField": "title",
+   "fields": [
+    {
+     "developerName": "title",
+     "label": "Title",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": true,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "topic",
+     "label": "Topic",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "summary",
+     "label": "Summary",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "body",
+     "label": "Body",
+     "description": "",
+     "fieldType": "wysiwyg",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "savings_label",
+     "label": "Typical saving",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "difficulty",
+     "label": "Difficulty",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "image",
+     "label": "Image",
+     "description": "",
+     "fieldType": "attachment",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "sort_order",
+     "label": "Sort order",
+     "description": "",
+     "fieldType": "number",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    }
+   ],
+   "views": [
+    {
+     "developerName": "guides",
+     "label": "Save water",
+     "description": "",
+     "isPublished": true,
+     "routePath": "save-water",
+     "template": "cb_list_guides",
+     "columns": [
+      "PrimaryField"
+     ],
+     "sort": [
+      {
+       "developerName": "sort_order",
+       "direction": "asc"
+      }
+     ],
+     "filter": [],
+     "defaultNumberOfItemsPerPage": 100,
+     "maxNumberOfItemsPerPage": 1000,
+     "ignoreClientFilterAndSortQueryParams": false
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,45 @@
+{
+ "label": "Carrow: text + side",
+ "fields": [
+  {
+   "developerName": "headline",
+   "label": "Headline",
+   "description": "",
+   "fieldType": "single_line_text",
+   "isRequired": false,
+   "choices": [],
+   "relatedContentType": null,
+   "subFields": []
+  },
+  {
+   "developerName": "body",
+   "label": "Body",
+   "description": "",
+   "fieldType": "wysiwyg",
+   "isRequired": false,
+   "choices": [],
+   "relatedContentType": null,
+   "subFields": []
+  },
+  {
+   "developerName": "side_title",
+   "label": "Side title",
+   "description": "",
+   "fieldType": "single_line_text",
+   "isRequired": false,
+   "choices": [],
+   "relatedContentType": null,
+   "subFields": []
+  },
+  {
+   "developerName": "side",
+   "label": "Side",
+   "description": "",
+   "fieldType": "wysiwyg",
+   "isRequired": false,
+   "choices": [],
+   "relatedContentType": null,
+   "subFields": []
+  }
+ ]
+}

@@ -38,6 +38,7 @@ These examples go with the weekly [use cases on raytha.com](https://raytha.com/u
 | [<img src="https://raytha.com/raytha/media-items/objectkey/u4M9p7zqK0aVyP9h0FPlxA_larkmoor_01_home.webp" width="360" alt="Larkmoor College">](college-larkmoor/) | **[Larkmoor College](college-larkmoor/)**: a self-hosted college website: a program finder across six schools, a faculty directory, admissions with deadlines and visits, an illustrated campus map, news, events, athletics schedules, and a student and faculty portal behind two user groups. 7 content types, program/faculty/building relationships, 10 widget templates. |
 | [<img src="https://raytha.com/raytha/media-items/objectkey/JuspflfzjEO9Wrr5VSdVpQ_halverline_01_home.webp" width="360" alt="Halverline Studio">](agency-halverline/) | **[Halverline Studio](agency-halverline/)**: a web design agency site: case studies filterable by industry, clients, services, a team page, insights, careers, and a members-only client portal with project rooms, weekly updates, deliverables and brand assets, where each client sees only their own work. 8 content types, client/project/team relationships, 9 widget templates. |
 | [<img src="https://raytha.com/raytha/media-items/objectkey/6CzdPrnpmUCK5rnmenZegw_calloway_01_home.webp" width="360" alt="June Calloway Marfa">](architect-calloway-marfa/) | **[June Calloway, Marfa](architect-calloway-marfa/)**: a website for a solo architect in Marfa, Texas: rammed-earth houses as dated drawing sets, field notes, process and fixed fees, currently/availability (booking spring 2027, 2 slots) and a qualifying start page. Blueprint-styled, first-person, no client portal. 3 content types. |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/akDuphNnTEOQYU3KDCP0kw_carrowbend_01_home.webp" width="360" alt="Carrow Bend Water">](water-utility-carrow-bend/) | **[Carrow Bend Water](water-utility-carrow-bend/)**: a local water utility website for a fictional water and sewer district: pay-a-bill and start/stop service, service alerts, water quality reports, rates as a table, board agendas and minutes, and conservation guides. 4 content types. |
 
 ## Quickstart
 
@@ -128,6 +129,7 @@ The examples were built from a short brief with no human help. To do the same fo
 ├── college-larkmoor/
 ├── agency-halverline/
 ├── architect-calloway-marfa/
+├── water-utility-carrow-bend/
 ├── skills/raytha-site-builder/  # agent skill: brief -> finished Raytha site
 ├── templates/brief-template.md  # fill-in brief
 ├── scripts/                     # shared build script, scaffold, screenshots, walkthroughs, export, secret scan

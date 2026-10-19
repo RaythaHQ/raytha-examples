@@ -1,0 +1,21 @@
+{
+ "main": [
+  {
+   "widgetType": "cb_head",
+   "settings": {
+    "kicker": "District \u00b7 about",
+    "headline": "About Carrow Bend Water",
+    "subtitle": "A fictional special district on the fictional Ossel River, created to show what a local water utility website needs to do well."
+   }
+  },
+  {
+   "widgetType": "cb_text",
+   "settings": {
+    "headline": "The system in the story",
+    "body": "<p>One river intake, a 2.1 MGD treatment plant (story), two wells for peak days, three elevated tanks, and 112 miles of main. The oldest cast-iron segment downtown dates to 1962 in the story \u2014 which is why planned-work alerts cluster there.</p>",
+    "side_title": "Contact (story)",
+    "side": "<p>Office: 1 Reservoir Lane, Carrow Bend \u00b7 Mon\u2013Fri 8\u20135 \u00b7 office@carrowbend.example \u2014 that address does not reach anyone. Nothing on this site collects real customer data.</p>"
+   }
+  }
+ ]
+}
