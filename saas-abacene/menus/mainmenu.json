@@ -1,0 +1,30 @@
+{
+ "developerName": "mainmenu",
+ "label": "Main menu",
+ "items": [
+  {
+   "label": "Product",
+   "link": "/product"
+  },
+  {
+   "label": "Pricing",
+   "link": "/pricing"
+  },
+  {
+   "label": "Docs",
+   "link": "/docs"
+  },
+  {
+   "label": "Changelog",
+   "link": "/changelog"
+  },
+  {
+   "label": "Customers",
+   "link": "/customers"
+  },
+  {
+   "label": "Integrations",
+   "link": "/integrations"
+  }
+ ]
+}

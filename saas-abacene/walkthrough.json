@@ -1,0 +1,19 @@
+{
+ "slug": "abacene-usage-metering",
+ "name": "Abacene",
+ "base": "http://localhost:5399",
+ "viewport": [1440, 810],
+ "output": [1920, 1080],
+ "colorScheme": "light",
+ "login": {"path": "/account/login", "emailEnv": "SITE_USER_EMAIL", "passwordEnv": "SITE_USER_PASSWORD"},
+ "title": {"kicker": "Raytha use case", "heading": "Abacene", "subheading": "A SaaS product marketing site: features, pricing, docs, changelog — and a members-only beta hub.", "hold": 1.3},
+ "end": {"heading": "Built with Raytha", "subheading": "Open-source .NET CMS. Get the brief, screenshots and a one-command rebuild kit.", "url": "raytha.com/use-cases/abacene-usage-metering", "hold": 2.3},
+ "scenes": [
+  {"url": "/", "caption": "A product story told with real content: features, explain tree, stories", "actions": [{"hold": 1.1, "poster": true}, {"scroll": 1500, "dur": 3.0}, {"hold": 0.5}]},
+  {"url": "/pricing", "caption": "Pricing tiers are content items, not hard-coded HTML", "actions": [{"hold": 0.8}, {"scroll": 300, "dur": 1.2}, {"hold": 0.5}]},
+  {"url": "/changelog", "caption": "Changelog entries — beta notes stay locked for the public", "actions": [{"hold": 0.8}, {"scroll": 500, "dur": 1.5}, {"hold": 0.4}]},
+  {"url": "/docs", "caption": "Docs grouped by section, marked Public, Customers or Beta", "actions": [{"hold": 0.8}, {"scroll": 400, "dur": 1.3}, {"hold": 0.4}]},
+  {"url": "/beta", "signin": true, "caption": "Signed in: the customer and beta hub, gated on the server", "actions": [{"hold": 1.0}, {"scroll": 500, "dur": 1.5}, {"hold": 0.5}]},
+  {"url": "/", "phone": true, "phoneCaption": {"kicker": "Responsive", "text": "The same pages on a phone"}, "actions": [{"hold": 0.5}, {"scroll": 1100, "dur": 2.0}, {"hold": 0.4}]}
+ ]
+}

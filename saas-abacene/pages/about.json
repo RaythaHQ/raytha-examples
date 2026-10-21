@@ -1,0 +1,54 @@
+{
+ "main": [
+  {
+   "widgetType": "ab_head",
+   "settings": {
+    "kicker": "About",
+    "headline": "Abacene Labs builds the usage ledger for API companies.",
+    "subtitle": "Founded (in the story) by two engineers who spent too many month-ends reconciling usage exports by hand. Abacene Labs, its people and customers are fictional."
+   }
+  },
+  {
+   "widgetType": "ab_text",
+   "settings": {
+    "headline": "Why we built it",
+    "body": "<p>Usage-based pricing is fair to customers and hard on finance. Most teams build metering once, then spend years answering \u201cwhy is this line this number?\u201d</p><p>Abacene is built around that question: every quantity on every invoice can be walked back to the events behind it.</p>",
+    "side_title": "Company (story)",
+    "side": "<p><b>Founded:</b> 2022<br><b>Team:</b> 38 people, remote-first<br><b>HQ:</b> a fictional office in a fictional city</p>"
+   }
+  },
+  {
+   "widgetType": "ab_facts",
+   "settings": {
+    "headline": "",
+    "items": [
+     {
+      "value": "48.2B",
+      "label": "events metered last month (story)"
+     },
+     {
+      "value": "41 ms",
+      "label": "p99 ingest latency (story)"
+     },
+     {
+      "value": "14",
+      "label": "integrations, open standards first"
+     },
+     {
+      "value": "0",
+      "label": "per-seat fees on any plan"
+     }
+    ]
+   }
+  },
+  {
+   "widgetType": "ab_text",
+   "settings": {
+    "headline": "Talk to us",
+    "body": "<p id=\"talk\">Sales and partnerships: <b>hello@abacene.example</b>. Security questions: <b>security@abacene.example</b>. Both addresses are fictional and reach no one.</p><p>There is no contact form or trial sign-up on this site on purpose \u2014 it is a Raytha example.</p>",
+    "side_title": "Before you write",
+    "side": "<p>Most questions are answered in the <a href=\"/docs\">docs</a> and on the <a href=\"/pricing\">pricing</a> page.</p>"
+   }
+  }
+ ]
+}

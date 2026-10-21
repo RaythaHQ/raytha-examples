@@ -1,0 +1,66 @@
+{
+ "label": "Abacene: spec table",
+ "fields": [
+  {
+   "developerName": "headline",
+   "label": "Headline",
+   "description": "",
+   "fieldType": "single_line_text",
+   "isRequired": false,
+   "choices": [],
+   "relatedContentType": null,
+   "subFields": []
+  },
+  {
+   "developerName": "intro",
+   "label": "Intro",
+   "description": "",
+   "fieldType": "long_text",
+   "isRequired": false,
+   "choices": [],
+   "relatedContentType": null,
+   "subFields": []
+  },
+  {
+   "developerName": "items",
+   "label": "Rows",
+   "description": "",
+   "fieldType": "repeater",
+   "isRequired": false,
+   "choices": [],
+   "relatedContentType": null,
+   "subFields": [
+    {
+     "developerName": "a",
+     "label": "Control",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "b",
+     "label": "Detail",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "c",
+     "label": "Status",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    }
+   ]
+  }
+ ]
+}

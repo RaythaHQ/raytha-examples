@@ -1,0 +1,60 @@
+{
+ "main": [
+  {
+   "widgetType": "ab_head",
+   "settings": {
+    "kicker": "Security (story)",
+    "headline": "Usage data is billing data. We treat it that way.",
+    "subtitle": "How Abacene stores, isolates and retains your events, and what you can verify yourself. Abacene is fictional; these are illustrative controls, not certifications."
+   }
+  },
+  {
+   "widgetType": "ab_rows",
+   "settings": {
+    "headline": "Controls",
+    "intro": "The short version. Each control is described in the customer security pack (story).",
+    "items": [
+     {
+      "a": "Encryption",
+      "b": "TLS 1.2+ in transit; AES-256 at rest for events, aggregates and invoices.",
+      "c": "In place"
+     },
+     {
+      "a": "Tenant isolation",
+      "b": "Per-account encryption keys; single-tenant deployments on Enterprise.",
+      "c": "In place"
+     },
+     {
+      "a": "Immutability",
+      "b": "Closed invoices and rate card versions cannot be edited, only adjusted forward.",
+      "c": "By design"
+     },
+     {
+      "a": "Audit log",
+      "b": "Every change to meters, rate cards, credits and invoices, with actor and time.",
+      "c": "In place"
+     },
+     {
+      "a": "SSO",
+      "b": "SAML 2.0 and OpenID Connect, with SSO-required mode.",
+      "c": "Scale +"
+     },
+     {
+      "a": "Retention",
+      "b": "Raw events 13 months; aggregates and invoices for the life of the account; export any time.",
+      "c": "Configurable"
+     }
+    ]
+   }
+  },
+  {
+   "widgetType": "ab_text",
+   "settings": {
+    "headline": "Where your usage data lives",
+    "body": "<p>Events are stored in the region you choose at sign-up (story regions: us-east, eu-west). Daily exports go to your own S3-compatible bucket, so you always hold a full copy.</p><p>Leaving is a documented process: export everything, verify counts against the reconciliation report, close the account.</p>",
+    "side_title": "Subprocessors (story)",
+    "side": "<p>Cloud hosting, transactional email, and error monitoring. The list and its change notices are in the customer hub.</p>"
+   }
+  }
+ ]
+}

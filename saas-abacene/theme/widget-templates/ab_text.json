@@ -1,0 +1,45 @@
+{
+ "label": "Abacene: text + aside",
+ "fields": [
+  {
+   "developerName": "headline",
+   "label": "Headline",
+   "description": "",
+   "fieldType": "single_line_text",
+   "isRequired": false,
+   "choices": [],
+   "relatedContentType": null,
+   "subFields": []
+  },
+  {
+   "developerName": "body",
+   "label": "Body",
+   "description": "",
+   "fieldType": "wysiwyg",
+   "isRequired": false,
+   "choices": [],
+   "relatedContentType": null,
+   "subFields": []
+  },
+  {
+   "developerName": "side_title",
+   "label": "Aside title",
+   "description": "",
+   "fieldType": "single_line_text",
+   "isRequired": false,
+   "choices": [],
+   "relatedContentType": null,
+   "subFields": []
+  },
+  {
+   "developerName": "side",
+   "label": "Aside",
+   "description": "",
+   "fieldType": "wysiwyg",
+   "isRequired": false,
+   "choices": [],
+   "relatedContentType": null,
+   "subFields": []
+  }
+ ]
+}

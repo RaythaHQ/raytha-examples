@@ -68,6 +68,7 @@ fields), and link the raytha.com copy from the example's README.
 | Halverline Studio | [walkthrough.json](../agency-halverline/walkthrough.json) | [use case page](https://raytha.com/use-cases/halverline-studio#walkthrough) · [MP4, 35 s](https://raytha.com/raytha/media-items/objectkey/b2S7qqlYiU2DbotjkCS1pw_halverline_studio_walkthrough.mp4) |
 | June Calloway, Marfa | [walkthrough.json](../architect-calloway-marfa/walkthrough.json) | [use case page](https://raytha.com/use-cases/june-calloway-architect#walkthrough) · [MP4](https://raytha.com/raytha/media-items/objectkey/YTOMhb8HTUO7WD6hH8Vi0Q_june_calloway_architect_walkthrough.mp4) |
 | Carrow Bend Water | [walkthrough.json](../water-utility-carrow-bend/walkthrough.json) | [use case page](https://raytha.com/use-cases/carrow-bend-water#walkthrough) · [MP4](https://raytha.com/raytha/media-items/objectkey/X5217q-SC0eGXwkWTGrF_w_carrow_bend_water_walkthrough.mp4) |
+| Abacene | [walkthrough.json](../saas-abacene/walkthrough.json) | [use case page](https://raytha.com/use-cases/abacene-usage-metering#walkthrough) · [MP4](https://raytha.com/raytha/media-items/objectkey/Mk4acj_-50yZS5GLe0vznQ_abacene_usage_metering_walkthrough.mp4) |
 
 ## Shot list
 

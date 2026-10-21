@@ -1,0 +1,30 @@
+{
+ "name": "Abacene",
+ "theme": "abacene",
+ "types": [
+  "features",
+  "plans",
+  "releases",
+  "docs",
+  "stories",
+  "integrations"
+ ],
+ "detailTemplates": {
+  "features": "ab_detail_features",
+  "plans": "ab_detail_plans",
+  "releases": "ab_detail_releases",
+  "docs": "ab_detail_docs",
+  "stories": "ab_detail_stories",
+  "integrations": "ab_detail_integrations"
+ },
+ "groups": [
+  {
+   "developerName": "customers",
+   "label": "Abacene customers"
+  },
+  {
+   "developerName": "beta",
+   "label": "Abacene beta program"
+  }
+ ]
+}

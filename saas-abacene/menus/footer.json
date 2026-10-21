@@ -1,0 +1,22 @@
+{
+ "developerName": "footer",
+ "label": "Footer",
+ "items": [
+  {
+   "label": "Security",
+   "link": "/security"
+  },
+  {
+   "label": "About",
+   "link": "/about"
+  },
+  {
+   "label": "Customer hub",
+   "link": "/beta"
+  },
+  {
+   "label": "Search",
+   "link": "/search"
+  }
+ ]
+}

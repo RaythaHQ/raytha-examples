@@ -1,0 +1,20 @@
+[
+ {"name":"01-home-1440.png","path":"/","device":"desktop"},
+ {"name":"02-home-full-1440.png","path":"/","device":"desktop","full_page":true},
+ {"name":"03-product-1440.png","path":"/product","device":"desktop","full_page":true},
+ {"name":"04-feature-1440.png","path":"/product/invoice-explain","device":"desktop","full_page":true},
+ {"name":"05-pricing-1440.png","path":"/pricing","device":"desktop","full_page":true},
+ {"name":"06-changelog-1440.png","path":"/changelog","device":"desktop","full_page":true},
+ {"name":"07-docs-1440.png","path":"/docs","device":"desktop","full_page":true},
+ {"name":"08-doc-locked-1440.png","path":"/docs/month-end-reconciliation-runbook","device":"desktop"},
+ {"name":"09-customers-1440.png","path":"/customers","device":"desktop","full_page":true},
+ {"name":"10-story-1440.png","path":"/customers/quillon-geocode","device":"desktop","full_page":true},
+ {"name":"11-integrations-1440.png","path":"/integrations","device":"desktop","full_page":true},
+ {"name":"12-search-1440.png","path":"/search?q=late","device":"desktop"},
+ {"name":"13-login-1440.png","path":"/account/login?returnUrl=/beta","device":"desktop"},
+ {"name":"14-hub-member-1440.png","path":"/beta","device":"desktop","full_page":true,"login":true},
+ {"name":"15-doc-member-1440.png","path":"/docs/month-end-reconciliation-runbook","device":"desktop","full_page":true,"login":true},
+ {"name":"16-beta-release-1440.png","path":"/changelog/contract-aware-rating","device":"desktop","full_page":true,"login":true},
+ {"name":"17-home-mobile-390.png","path":"/","device":"mobile"},
+ {"name":"18-pricing-mobile-390.png","path":"/pricing","device":"mobile"}
+]
