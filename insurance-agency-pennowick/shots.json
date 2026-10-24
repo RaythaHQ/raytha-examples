@@ -1,0 +1,23 @@
+[
+ {"name":"01-home-1440.png","path":"/","device":"desktop"},
+ {"name":"02-home-full-1440.png","path":"/","device":"desktop","full_page":true},
+ {"name":"03-coverage-1440.png","path":"/coverage","device":"desktop","full_page":true},
+ {"name":"04-coverage-home-1440.png","path":"/coverage/homeowners-insurance","device":"desktop","full_page":true},
+ {"name":"05-carriers-1440.png","path":"/carriers","device":"desktop","full_page":true},
+ {"name":"06-claims-1440.png","path":"/claims","device":"desktop","full_page":true},
+ {"name":"07-claim-guide-1440.png","path":"/claims/storm-wind-or-hail-damage","device":"desktop","full_page":true},
+ {"name":"08-agents-1440.png","path":"/agents","device":"desktop","full_page":true},
+ {"name":"09-office-1440.png","path":"/offices/main-street-office","device":"desktop","full_page":true},
+ {"name":"10-glossary-1440.png","path":"/glossary","device":"desktop","full_page":true},
+ {"name":"11-glossary-term-1440.png","path":"/glossary/actual-cash-value","device":"desktop"},
+ {"name":"12-resources-1440.png","path":"/resources","device":"desktop","full_page":true},
+ {"name":"13-resource-locked-1440.png","path":"/resources/workers-comp-payroll-audit-prep","device":"desktop"},
+ {"name":"14-binder-locked-1440.png","path":"/binder","device":"desktop"},
+ {"name":"15-login-1440.png","path":"/account/login?returnUrl=/binder","device":"desktop"},
+ {"name":"16-binder-business-1440.png","path":"/binder","device":"desktop","full_page":true,"login":true},
+ {"name":"17-resource-member-1440.png","path":"/resources/workers-comp-payroll-audit-prep","device":"desktop","full_page":true,"login":true},
+ {"name":"18-search-1440.png","path":"/search?q=flood","device":"desktop"},
+ {"name":"19-about-1440.png","path":"/about","device":"desktop","full_page":true},
+ {"name":"20-home-mobile-390.png","path":"/","device":"mobile"},
+ {"name":"21-claim-mobile-390.png","path":"/claims/water-leak-or-burst-pipe-at-home","device":"mobile"}
+]

@@ -1,0 +1,26 @@
+{
+ "developerName": "footer",
+ "label": "Footer",
+ "items": [
+  {
+   "label": "About",
+   "link": "/about"
+  },
+  {
+   "label": "Client resources",
+   "link": "/resources"
+  },
+  {
+   "label": "Client binder",
+   "link": "/binder"
+  },
+  {
+   "label": "Disclosures",
+   "link": "/disclosures"
+  },
+  {
+   "label": "Search",
+   "link": "/search"
+  }
+ ]
+}

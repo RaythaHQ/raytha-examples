@@ -1,0 +1,45 @@
+{
+ "label": "Pennowick: text + margin note",
+ "fields": [
+  {
+   "developerName": "headline",
+   "label": "Headline",
+   "description": "",
+   "fieldType": "single_line_text",
+   "isRequired": false,
+   "choices": [],
+   "relatedContentType": null,
+   "subFields": []
+  },
+  {
+   "developerName": "body",
+   "label": "Body",
+   "description": "",
+   "fieldType": "wysiwyg",
+   "isRequired": false,
+   "choices": [],
+   "relatedContentType": null,
+   "subFields": []
+  },
+  {
+   "developerName": "note_title",
+   "label": "Margin note title",
+   "description": "",
+   "fieldType": "single_line_text",
+   "isRequired": false,
+   "choices": [],
+   "relatedContentType": null,
+   "subFields": []
+  },
+  {
+   "developerName": "note",
+   "label": "Margin note",
+   "description": "",
+   "fieldType": "wysiwyg",
+   "isRequired": false,
+   "choices": [],
+   "relatedContentType": null,
+   "subFields": []
+  }
+ ]
+}

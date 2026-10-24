@@ -1,0 +1,76 @@
+{
+ "main": [
+  {
+   "widgetType": "pw_head",
+   "settings": {
+    "tab": "About the agency",
+    "headline": "An independent agency on Main Street since 1952.",
+    "subtitle": "Pennowick Insurance Agency is fictional, and so are its people, carriers, offices and figures. This is a Raytha example site."
+   }
+  },
+  {
+   "widgetType": "pw_text",
+   "settings": {
+    "headline": "Three generations, one storefront",
+    "body": "<p>The agency opened in 1952 (story) above the hardware store, writing fire insurance for farms along the Ossel River. Today it has three offices and six people, and places home, auto, business and life coverage with ten carriers.</p><p>We are paid by commission from whichever carrier writes your policy. Because we are appointed with several, our job is to find the one that fits, and to move you if a carrier stops fitting.</p>",
+    "note_title": "Agency facts (story)",
+    "note": "<p><b>Founded:</b> 1952<br><b>Offices:</b> 3<br><b>People:</b> 6 licensed staff<br><b>Carriers:</b> 10 appointments<br><b>Clients:</b> about 3,400 households and 410 businesses</p>"
+   }
+  },
+  {
+   "widgetType": "pw_compare",
+   "settings": {
+    "headline": "Independent agency or captive agent?",
+    "intro": "Both are licensed and both can serve you well. The difference is how many companies they can place you with.",
+    "left": "Captive agent",
+    "right": "Independent agency",
+    "items": [
+     {
+      "topic": "Carriers",
+      "a": "One company's policies",
+      "b": "Several companies, compared for each client"
+     },
+     {
+      "topic": "At renewal",
+      "a": "Adjust within the same company",
+      "b": "Re-shop if price or service changes"
+     },
+     {
+      "topic": "Who they represent",
+      "a": "The company",
+      "b": "The client, when choosing a carrier"
+     },
+     {
+      "topic": "Paid by",
+      "a": "Salary or commission from the company",
+      "b": "Commission from the carrier that writes the policy"
+     }
+    ]
+   }
+  },
+  {
+   "widgetType": "pw_facts",
+   "settings": {
+    "headline": "",
+    "items": [
+     {
+      "value": "1952",
+      "label": "year the Main Street office opened (story)"
+     },
+     {
+      "value": "10",
+      "label": "carrier appointments, all fictional"
+     },
+     {
+      "value": "2 days",
+      "label": "longest a claim sits without a call back"
+     },
+     {
+      "value": "0",
+      "label": "online quote forms on this site, on purpose"
+     }
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,33 @@
+[
+ {
+  "title": "Pennowick Insurance Agency",
+  "routePath": "home",
+  "template": "pw_home",
+  "sections": "pages/home.json",
+  "home": true
+ },
+ {
+  "title": "About the agency",
+  "routePath": "about",
+  "template": "pw_page",
+  "sections": "pages/about.json"
+ },
+ {
+  "title": "Licenses and disclosures",
+  "routePath": "disclosures",
+  "template": "pw_page",
+  "sections": "pages/disclosures.json"
+ },
+ {
+  "title": "Client binder",
+  "routePath": "binder",
+  "template": "pw_binder",
+  "sections": "pages/binder.json"
+ },
+ {
+  "title": "Search",
+  "routePath": "search",
+  "template": "pw_search",
+  "sections": "pages/search.json"
+ }
+]

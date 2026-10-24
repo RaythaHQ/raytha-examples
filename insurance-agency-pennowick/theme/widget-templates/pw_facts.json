@@ -1,0 +1,46 @@
+{
+ "label": "Pennowick: figures strip",
+ "fields": [
+  {
+   "developerName": "headline",
+   "label": "Headline",
+   "description": "",
+   "fieldType": "single_line_text",
+   "isRequired": false,
+   "choices": [],
+   "relatedContentType": null,
+   "subFields": []
+  },
+  {
+   "developerName": "items",
+   "label": "Figures",
+   "description": "",
+   "fieldType": "repeater",
+   "isRequired": false,
+   "choices": [],
+   "relatedContentType": null,
+   "subFields": [
+    {
+     "developerName": "value",
+     "label": "Value",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "label",
+     "label": "Label",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    }
+   ]
+  }
+ ]
+}

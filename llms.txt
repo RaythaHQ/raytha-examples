@@ -50,6 +50,8 @@ To rebuild an example: run Raytha (Railway template or `docker compose`), create
 - [Brief for Carrow Bend Water](https://github.com/RaythaHQ/raytha-examples/blob/main/water-utility-carrow-bend/brief.md): the input for this example
 - [Abacene (saas-abacene)](https://github.com/RaythaHQ/raytha-examples/tree/main/saas-abacene): SaaS product marketing site with 6 content types (features with spec rows and code samples; pricing plans as content; release notes with a beta audience; docs with public/customers/beta access; customer stories; integrations), user groups customers and beta gated in server-rendered Liquid via CurrentUser.UserGroups, a members-only customer and beta hub, ledger-tape design
 - [Brief for Abacene](https://github.com/RaythaHQ/raytha-examples/blob/main/saas-abacene/brief.md): the input for this example
+- [Pennowick Insurance Agency (insurance-agency-pennowick)](https://github.com/RaythaHQ/raytha-examples/tree/main/insurance-agency-pennowick): independent insurance agency website with 7 content types (coverage lines with covered/not-covered lists and Q&A; appointed carriers linked to coverage codes for a carrier matrix; agents; offices; claims guides split into first hour/day/week; A–Z glossary; client resources with public/policyholders/business audience), user groups policyholders and business gated in server-rendered Liquid via CurrentUser.UserGroups, a members-only client binder, policy-folder design with an SVG street-block coverage map
+- [Brief for Pennowick Insurance Agency](https://github.com/RaythaHQ/raytha-examples/blob/main/insurance-agency-pennowick/brief.md): the input for this example
 
 ## For agents building Raytha sites
 

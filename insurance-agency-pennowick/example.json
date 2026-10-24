@@ -1,0 +1,32 @@
+{
+ "name": "Pennowick Insurance Agency",
+ "theme": "pennowick",
+ "types": [
+  "coverage",
+  "carriers",
+  "agents",
+  "offices",
+  "claims",
+  "glossary",
+  "resources"
+ ],
+ "detailTemplates": {
+  "coverage": "pw_detail_coverage",
+  "carriers": "pw_detail_carriers",
+  "agents": "pw_detail_agents",
+  "offices": "pw_detail_offices",
+  "claims": "pw_detail_claims",
+  "glossary": "pw_detail_glossary",
+  "resources": "pw_detail_resources"
+ },
+ "groups": [
+  {
+   "developerName": "policyholders",
+   "label": "Pennowick policyholders"
+  },
+  {
+   "developerName": "business",
+   "label": "Pennowick business clients"
+  }
+ ]
+}

@@ -1,0 +1,16 @@
+# Screenshots
+
+Captured at 1440px and 390px from a site built with `../build.sh`. Signed-in shots use a demo user in the `policyholders` and `business` groups. Hosted in raytha.com media.
+
+| Screenshot | Shows |
+|---|---|
+| [<img src="https://raytha.com/raytha/media-items/objectkey/vnuYd1jeBU-3PK_cSRnjyw_pennowick_01_home.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/vnuYd1jeBU-3PK_cSRnjyw_pennowick_01_home.webp) | Home: a street-block map where every numbered pin is a coverage line |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/84lwaIx1A0SF0wNMmX1Ikg_pennowick_02_home_full.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/84lwaIx1A0SF0wNMmX1Ikg_pennowick_02_home_full.webp) | The full home page: captive vs independent, the carrier appointment matrix, life events, the claims desk, agents, offices and the glossary |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/a581dQ5KHEqRpJ46Hxclxw_pennowick_04_coverage_home.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/a581dQ5KHEqRpJ46Hxclxw_pennowick_04_coverage_home.webp) | A coverage page: usually covered, usually not covered, questions, and the carriers and agents for that line |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/o3r2TqdqjESoWZOqaVgHhw_pennowick_05_carriers.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/o3r2TqdqjESoWZOqaVgHhw_pennowick_05_carriers.webp) | Appointed carriers (all fictional), with the lines each writes and its claims line |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/HPJqLrP4FE6eKV1lLKYW8g_pennowick_07_claim_guide.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/HPJqLrP4FE6eKV1lLKYW8g_pennowick_07_claim_guide.webp) | A claims guide split into the first hour, the first day and the first week |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/3-8hiG_eckeUYu_ktAx9wg_pennowick_12_resources.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/3-8hiG_eckeUYu_ktAx9wg_pennowick_12_resources.webp) | Client resources, each marked Everyone, Policyholders or Business clients |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/7pAsbuJZIkO3hFSSg4fgGg_pennowick_13_resource_locked.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/7pAsbuJZIkO3hFSSg4fgGg_pennowick_13_resource_locked.webp) | A business-client guide, signed out: the body is never sent, only a lock panel |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/t7hothRN3EaRdC0AGNtefQ_pennowick_16_binder_business.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/t7hothRN3EaRdC0AGNtefQ_pennowick_16_binder_business.webp) | Signed in as a business client: the client binder with policies, renewals and guides |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/fFk8DyHHkEe4LgOKQKguFg_pennowick_10_glossary.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/fFk8DyHHkEe4LgOKQKguFg_pennowick_10_glossary.webp) | An A–Z glossary of insurance terms, each with a short definition |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/yU1PNsWP-EGyQ8eynBSB2A_pennowick_20_home_mobile.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/yU1PNsWP-EGyQ8eynBSB2A_pennowick_20_home_mobile.webp) | Home on a phone |

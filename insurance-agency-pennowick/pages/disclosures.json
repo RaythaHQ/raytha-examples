@@ -1,0 +1,41 @@
+{
+ "main": [
+  {
+   "widgetType": "pw_head",
+   "settings": {
+    "tab": "Licenses and disclosures",
+    "headline": "Licensing, compensation and how this example site works.",
+    "subtitle": "Every license number, carrier and person on this site is fictional."
+   }
+  },
+  {
+   "widgetType": "pw_list",
+   "settings": {
+    "headline": "Disclosures (story)",
+    "intro": "Insurance agencies publish these on their sites. These are illustrative, not legal text.",
+    "items": [
+     {
+      "title": "Agency license",
+      "text": "Pennowick Insurance Agency, resident producer agency license PIA-0001 (fictional)."
+     },
+     {
+      "title": "Compensation",
+      "text": "We are paid commissions by the carriers that write your policies, and in some cases contingent bonuses based on overall results. Ask and we will tell you what we earn on your account."
+     },
+     {
+      "title": "No coverage is bound on this site",
+      "text": "Coverage is never bound, changed or cancelled by email or through a website. Only a licensed agent can bind coverage, in writing."
+     },
+     {
+      "title": "Policy terms control",
+      "text": "Descriptions on this site are summaries. The policy itself, including its endorsements and exclusions, decides what is covered."
+     },
+     {
+      "title": "This is a demo",
+      "text": "Pennowick, the Ossel River, Larch Ferry and Owlbrook Junction are invented places. Phone numbers use the 555 range. There are no quote, contact or payment forms on purpose."
+     }
+    ]
+   }
+  }
+ ]
+}

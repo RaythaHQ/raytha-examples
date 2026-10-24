@@ -69,6 +69,7 @@ fields), and link the raytha.com copy from the example's README.
 | June Calloway, Marfa | [walkthrough.json](../architect-calloway-marfa/walkthrough.json) | [use case page](https://raytha.com/use-cases/june-calloway-architect#walkthrough) · [MP4](https://raytha.com/raytha/media-items/objectkey/YTOMhb8HTUO7WD6hH8Vi0Q_june_calloway_architect_walkthrough.mp4) |
 | Carrow Bend Water | [walkthrough.json](../water-utility-carrow-bend/walkthrough.json) | [use case page](https://raytha.com/use-cases/carrow-bend-water#walkthrough) · [MP4](https://raytha.com/raytha/media-items/objectkey/X5217q-SC0eGXwkWTGrF_w_carrow_bend_water_walkthrough.mp4) |
 | Abacene | [walkthrough.json](../saas-abacene/walkthrough.json) | [use case page](https://raytha.com/use-cases/abacene-usage-metering#walkthrough) · [MP4](https://raytha.com/raytha/media-items/objectkey/Mk4acj_-50yZS5GLe0vznQ_abacene_usage_metering_walkthrough.mp4) |
+| Pennowick Insurance Agency | [walkthrough.json](../insurance-agency-pennowick/walkthrough.json) | [use case page](https://raytha.com/use-cases/pennowick-insurance-agency#walkthrough) · [MP4](https://raytha.com/raytha/media-items/objectkey/QGtaDIP5i0eiMNG2gAf0lg_pennowick_insurance_agency_walkthrough.mp4) |
 
 ## Shot list
 

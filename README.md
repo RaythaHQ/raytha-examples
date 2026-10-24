@@ -40,6 +40,7 @@ These examples go with the weekly [use cases on raytha.com](https://raytha.com/u
 | [<img src="https://raytha.com/raytha/media-items/objectkey/6CzdPrnpmUCK5rnmenZegw_calloway_01_home.webp" width="360" alt="June Calloway Marfa">](architect-calloway-marfa/) | **[June Calloway, Marfa](architect-calloway-marfa/)**: a website for a solo architect in Marfa, Texas: rammed-earth houses as dated drawing sets, field notes, process and fixed fees, currently/availability (booking spring 2027, 2 slots) and a qualifying start page. Blueprint-styled, first-person, no client portal. 3 content types. |
 | [<img src="https://raytha.com/raytha/media-items/objectkey/akDuphNnTEOQYU3KDCP0kw_carrowbend_01_home.webp" width="360" alt="Carrow Bend Water">](water-utility-carrow-bend/) | **[Carrow Bend Water](water-utility-carrow-bend/)**: a local water utility website for a fictional water and sewer district: pay-a-bill and start/stop service, service alerts, water quality reports, rates as a table, board agendas and minutes, and conservation guides. 4 content types. |
 | [<img src="https://raytha.com/raytha/media-items/objectkey/tlqCarQGG0alB_0HkvG4sg_abacene_01_home.webp" width="360" alt="Abacene">](saas-abacene/) | **[Abacene](saas-abacene/)**: a SaaS product marketing site for a fictional usage-metering product: features, pricing tiers as content, docs with public/customer/beta access, changelog, customer stories, integrations, and a members-only customer and beta hub. 6 content types, 2 user groups. |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/vnuYd1jeBU-3PK_cSRnjyw_pennowick_01_home.webp" width="360" alt="Pennowick Insurance Agency">](insurance-agency-pennowick/) | **[Pennowick Insurance Agency](insurance-agency-pennowick/)**: an independent insurance agency website: coverage lines with what is and is not covered, a carrier appointment matrix built from content, claims guides, agents, offices, an A–Z glossary, and a members-only client binder. 7 content types, 2 user groups. |
 
 ## Quickstart
 
@@ -132,6 +133,7 @@ The examples were built from a short brief with no human help. To do the same fo
 ├── architect-calloway-marfa/
 ├── water-utility-carrow-bend/
 ├── saas-abacene/
+├── insurance-agency-pennowick/
 ├── skills/raytha-site-builder/  # agent skill: brief -> finished Raytha site
 ├── templates/brief-template.md  # fill-in brief
 ├── scripts/                     # shared build script, scaffold, screenshots, walkthroughs, export, secret scan

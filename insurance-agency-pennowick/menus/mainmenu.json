@@ -1,0 +1,30 @@
+{
+ "developerName": "mainmenu",
+ "label": "Main menu",
+ "items": [
+  {
+   "label": "Coverage",
+   "link": "/coverage"
+  },
+  {
+   "label": "Claims",
+   "link": "/claims"
+  },
+  {
+   "label": "Carriers",
+   "link": "/carriers"
+  },
+  {
+   "label": "Agents",
+   "link": "/agents"
+  },
+  {
+   "label": "Offices",
+   "link": "/offices"
+  },
+  {
+   "label": "Glossary",
+   "link": "/glossary"
+  }
+ ]
+}

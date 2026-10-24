@@ -1,0 +1,86 @@
+{
+ "label": "Pennowick: two-column comparison",
+ "fields": [
+  {
+   "developerName": "headline",
+   "label": "Headline",
+   "description": "",
+   "fieldType": "single_line_text",
+   "isRequired": false,
+   "choices": [],
+   "relatedContentType": null,
+   "subFields": []
+  },
+  {
+   "developerName": "intro",
+   "label": "Intro",
+   "description": "",
+   "fieldType": "long_text",
+   "isRequired": false,
+   "choices": [],
+   "relatedContentType": null,
+   "subFields": []
+  },
+  {
+   "developerName": "left",
+   "label": "Left heading",
+   "description": "",
+   "fieldType": "single_line_text",
+   "isRequired": false,
+   "choices": [],
+   "relatedContentType": null,
+   "subFields": []
+  },
+  {
+   "developerName": "right",
+   "label": "Right heading",
+   "description": "",
+   "fieldType": "single_line_text",
+   "isRequired": false,
+   "choices": [],
+   "relatedContentType": null,
+   "subFields": []
+  },
+  {
+   "developerName": "items",
+   "label": "Rows",
+   "description": "",
+   "fieldType": "repeater",
+   "isRequired": false,
+   "choices": [],
+   "relatedContentType": null,
+   "subFields": [
+    {
+     "developerName": "topic",
+     "label": "Topic",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "a",
+     "label": "Left",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "b",
+     "label": "Right",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    }
+   ]
+  }
+ ]
+}

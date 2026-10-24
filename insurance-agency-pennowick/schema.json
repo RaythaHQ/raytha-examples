@@ -1,0 +1,981 @@
+{
+ "schemaVersion": 1,
+ "contentTypes": [
+  {
+   "developerName": "coverage",
+   "labelPlural": "Coverage lines",
+   "labelSingular": "Coverage line",
+   "description": "Each line of insurance the agency places, with what it covers, what it does not, and questions clients ask",
+   "defaultRouteTemplate": "coverage/{PrimaryField}",
+   "primaryField": "title",
+   "fields": [
+    {
+     "developerName": "title",
+     "label": "Title",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": true,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "code",
+     "label": "Short code (used by carriers and claims)",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "family",
+     "label": "Family",
+     "description": "",
+     "fieldType": "dropdown",
+     "isRequired": false,
+     "choices": [
+      {
+       "developerName": "personal",
+       "label": "Home and family",
+       "disabled": false
+      },
+      {
+       "developerName": "business",
+       "label": "Business",
+       "disabled": false
+      },
+      {
+       "developerName": "life",
+       "label": "Life and income",
+       "disabled": false
+      }
+     ],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "tagline",
+     "label": "Tagline",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "summary",
+     "label": "Summary",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "body",
+     "label": "Body",
+     "description": "",
+     "fieldType": "wysiwyg",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "covered",
+     "label": "Usually covered (separate with |)",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "not_covered",
+     "label": "Usually not covered (separate with |)",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "who",
+     "label": "Who usually needs it",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "questions",
+     "label": "Questions (Q :: A, separated by ||)",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "pin_x",
+     "label": "Map pin X (percent)",
+     "description": "",
+     "fieldType": "number",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "pin_y",
+     "label": "Map pin Y (percent)",
+     "description": "",
+     "fieldType": "number",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "sort_order",
+     "label": "Sort order",
+     "description": "",
+     "fieldType": "number",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    }
+   ],
+   "views": [
+    {
+     "developerName": "coverage",
+     "label": "Coverage lines",
+     "description": "",
+     "isPublished": true,
+     "routePath": "coverage",
+     "template": "pw_list_coverage",
+     "columns": [
+      "PrimaryField"
+     ],
+     "sort": [
+      {
+       "developerName": "sort_order",
+       "direction": "asc"
+      }
+     ],
+     "filter": [],
+     "defaultNumberOfItemsPerPage": 100,
+     "maxNumberOfItemsPerPage": 1000,
+     "ignoreClientFilterAndSortQueryParams": false
+    }
+   ]
+  },
+  {
+   "developerName": "carriers",
+   "labelPlural": "Carriers",
+   "labelSingular": "Carrier",
+   "description": "Insurance companies the agency is appointed with (all fictional)",
+   "defaultRouteTemplate": "carriers/{PrimaryField}",
+   "primaryField": "name",
+   "fields": [
+    {
+     "developerName": "name",
+     "label": "Name",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": true,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "kind",
+     "label": "Kind",
+     "description": "",
+     "fieldType": "dropdown",
+     "isRequired": false,
+     "choices": [
+      {
+       "developerName": "national",
+       "label": "National",
+       "disabled": false
+      },
+      {
+       "developerName": "regional",
+       "label": "Regional",
+       "disabled": false
+      },
+      {
+       "developerName": "specialty",
+       "label": "Specialty",
+       "disabled": false
+      }
+     ],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "lines",
+     "label": "Coverage codes written (separate with |)",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "appointed_since",
+     "label": "Appointed since",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "claims_phone",
+     "label": "Claims line (fictional)",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "summary",
+     "label": "Summary",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "body",
+     "label": "Body",
+     "description": "",
+     "fieldType": "wysiwyg",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "monogram",
+     "label": "Monogram",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "sort_order",
+     "label": "Sort order",
+     "description": "",
+     "fieldType": "number",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    }
+   ],
+   "views": [
+    {
+     "developerName": "carriers",
+     "label": "Carriers",
+     "description": "",
+     "isPublished": true,
+     "routePath": "carriers",
+     "template": "pw_list_carriers",
+     "columns": [
+      "PrimaryField"
+     ],
+     "sort": [
+      {
+       "developerName": "sort_order",
+       "direction": "asc"
+      }
+     ],
+     "filter": [],
+     "defaultNumberOfItemsPerPage": 100,
+     "maxNumberOfItemsPerPage": 1000,
+     "ignoreClientFilterAndSortQueryParams": false
+    }
+   ]
+  },
+  {
+   "developerName": "agents",
+   "labelPlural": "Agents",
+   "labelSingular": "Agent",
+   "description": "Licensed agents and account managers (fictional people)",
+   "defaultRouteTemplate": "agents/{PrimaryField}",
+   "primaryField": "name",
+   "fields": [
+    {
+     "developerName": "name",
+     "label": "Name",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": true,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "role",
+     "label": "Role",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "office",
+     "label": "Office",
+     "description": "",
+     "fieldType": "dropdown",
+     "isRequired": false,
+     "choices": [
+      {
+       "developerName": "main-street",
+       "label": "Main Street office",
+       "disabled": false
+      },
+      {
+       "developerName": "larch-ferry",
+       "label": "Larch Ferry office",
+       "disabled": false
+      },
+      {
+       "developerName": "owlbrook",
+       "label": "Owlbrook Junction office",
+       "disabled": false
+      }
+     ],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "lines",
+     "label": "Coverage codes (separate with |)",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "languages",
+     "label": "Languages",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "license",
+     "label": "License (fictional)",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "years",
+     "label": "Years at the agency",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "summary",
+     "label": "Summary",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "body",
+     "label": "Body",
+     "description": "",
+     "fieldType": "wysiwyg",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "photo",
+     "label": "Portrait",
+     "description": "",
+     "fieldType": "attachment",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "sort_order",
+     "label": "Sort order",
+     "description": "",
+     "fieldType": "number",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    }
+   ],
+   "views": [
+    {
+     "developerName": "agents",
+     "label": "Agents",
+     "description": "",
+     "isPublished": true,
+     "routePath": "agents",
+     "template": "pw_list_agents",
+     "columns": [
+      "PrimaryField"
+     ],
+     "sort": [
+      {
+       "developerName": "sort_order",
+       "direction": "asc"
+      }
+     ],
+     "filter": [],
+     "defaultNumberOfItemsPerPage": 100,
+     "maxNumberOfItemsPerPage": 1000,
+     "ignoreClientFilterAndSortQueryParams": false
+    }
+   ]
+  },
+  {
+   "developerName": "offices",
+   "labelPlural": "Offices",
+   "labelSingular": "Office",
+   "description": "Walk-in offices with hours",
+   "defaultRouteTemplate": "offices/{PrimaryField}",
+   "primaryField": "name",
+   "fields": [
+    {
+     "developerName": "name",
+     "label": "Name",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": true,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "key",
+     "label": "Office key",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "address",
+     "label": "Address",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "phone",
+     "label": "Phone (fictional)",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "hours",
+     "label": "Hours (separate with |)",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "parking",
+     "label": "Parking and access",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "summary",
+     "label": "Summary",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "body",
+     "label": "Body",
+     "description": "",
+     "fieldType": "wysiwyg",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "map_x",
+     "label": "Map X (percent)",
+     "description": "",
+     "fieldType": "number",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "map_y",
+     "label": "Map Y (percent)",
+     "description": "",
+     "fieldType": "number",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "sort_order",
+     "label": "Sort order",
+     "description": "",
+     "fieldType": "number",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    }
+   ],
+   "views": [
+    {
+     "developerName": "offices",
+     "label": "Offices",
+     "description": "",
+     "isPublished": true,
+     "routePath": "offices",
+     "template": "pw_list_offices",
+     "columns": [
+      "PrimaryField"
+     ],
+     "sort": [
+      {
+       "developerName": "sort_order",
+       "direction": "asc"
+      }
+     ],
+     "filter": [],
+     "defaultNumberOfItemsPerPage": 100,
+     "maxNumberOfItemsPerPage": 1000,
+     "ignoreClientFilterAndSortQueryParams": false
+    }
+   ]
+  },
+  {
+   "developerName": "claims",
+   "labelPlural": "Claims guides",
+   "labelSingular": "Claims guide",
+   "description": "What to do after a loss, hour by hour",
+   "defaultRouteTemplate": "claims/{PrimaryField}",
+   "primaryField": "title",
+   "fields": [
+    {
+     "developerName": "title",
+     "label": "Title",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": true,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "code",
+     "label": "Coverage code",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "summary",
+     "label": "Summary",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "first_hour",
+     "label": "First hour (separate with |)",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "first_day",
+     "label": "First day (separate with |)",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "first_week",
+     "label": "First week (separate with |)",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "keep",
+     "label": "Keep these (separate with |)",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "body",
+     "label": "Body",
+     "description": "",
+     "fieldType": "wysiwyg",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "sort_order",
+     "label": "Sort order",
+     "description": "",
+     "fieldType": "number",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    }
+   ],
+   "views": [
+    {
+     "developerName": "claims",
+     "label": "Claims guides",
+     "description": "",
+     "isPublished": true,
+     "routePath": "claims",
+     "template": "pw_list_claims",
+     "columns": [
+      "PrimaryField"
+     ],
+     "sort": [
+      {
+       "developerName": "sort_order",
+       "direction": "asc"
+      }
+     ],
+     "filter": [],
+     "defaultNumberOfItemsPerPage": 100,
+     "maxNumberOfItemsPerPage": 1000,
+     "ignoreClientFilterAndSortQueryParams": false
+    }
+   ]
+  },
+  {
+   "developerName": "glossary",
+   "labelPlural": "Glossary",
+   "labelSingular": "Glossary term",
+   "description": "Insurance words in plain English",
+   "defaultRouteTemplate": "glossary/{PrimaryField}",
+   "primaryField": "term",
+   "fields": [
+    {
+     "developerName": "term",
+     "label": "Term",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": true,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "letter",
+     "label": "Letter",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "short",
+     "label": "Short definition",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "body",
+     "label": "Body",
+     "description": "",
+     "fieldType": "wysiwyg",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "example",
+     "label": "Worked example",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "related",
+     "label": "Related terms (separate with |)",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    }
+   ],
+   "views": [
+    {
+     "developerName": "glossary",
+     "label": "Glossary",
+     "description": "",
+     "isPublished": true,
+     "routePath": "glossary",
+     "template": "pw_list_glossary",
+     "columns": [
+      "PrimaryField"
+     ],
+     "sort": [
+      {
+       "developerName": "term",
+       "direction": "asc"
+      }
+     ],
+     "filter": [],
+     "defaultNumberOfItemsPerPage": 100,
+     "maxNumberOfItemsPerPage": 1000,
+     "ignoreClientFilterAndSortQueryParams": false
+    }
+   ]
+  },
+  {
+   "developerName": "resources",
+   "labelPlural": "Client resources",
+   "labelSingular": "Client resource",
+   "description": "Checklists and guides; some are for clients only",
+   "defaultRouteTemplate": "resources/{PrimaryField}",
+   "primaryField": "title",
+   "fields": [
+    {
+     "developerName": "title",
+     "label": "Title",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": true,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "audience",
+     "label": "Audience",
+     "description": "",
+     "fieldType": "dropdown",
+     "isRequired": false,
+     "choices": [
+      {
+       "developerName": "public",
+       "label": "Everyone",
+       "disabled": false
+      },
+      {
+       "developerName": "policyholders",
+       "label": "Policyholders",
+       "disabled": false
+      },
+      {
+       "developerName": "business",
+       "label": "Business clients",
+       "disabled": false
+      }
+     ],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "kind",
+     "label": "Kind",
+     "description": "",
+     "fieldType": "dropdown",
+     "isRequired": false,
+     "choices": [
+      {
+       "developerName": "checklist",
+       "label": "Checklist",
+       "disabled": false
+      },
+      {
+       "developerName": "guide",
+       "label": "Guide",
+       "disabled": false
+      },
+      {
+       "developerName": "calendar",
+       "label": "Calendar",
+       "disabled": false
+      },
+      {
+       "developerName": "reference",
+       "label": "Reference",
+       "disabled": false
+      }
+     ],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "summary",
+     "label": "Summary",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "body",
+     "label": "Body",
+     "description": "",
+     "fieldType": "wysiwyg",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "updated_label",
+     "label": "Updated",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "sort_order",
+     "label": "Sort order",
+     "description": "",
+     "fieldType": "number",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    }
+   ],
+   "views": [
+    {
+     "developerName": "resources",
+     "label": "Client resources",
+     "description": "",
+     "isPublished": true,
+     "routePath": "resources",
+     "template": "pw_list_resources",
+     "columns": [
+      "PrimaryField"
+     ],
+     "sort": [
+      {
+       "developerName": "sort_order",
+       "direction": "asc"
+      }
+     ],
+     "filter": [],
+     "defaultNumberOfItemsPerPage": 100,
+     "maxNumberOfItemsPerPage": 1000,
+     "ignoreClientFilterAndSortQueryParams": false
+    }
+   ]
+  }
+ ]
+}
