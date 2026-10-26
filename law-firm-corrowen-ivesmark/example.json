@@ -1,0 +1,30 @@
+{
+ "name": "Corrowen & Ivesmark LLP",
+ "theme": "corrowen",
+ "types": [
+  "practice",
+  "attorneys",
+  "matters",
+  "insights",
+  "offices",
+  "library"
+ ],
+ "detailTemplates": {
+  "practice": "ci_detail_practice",
+  "attorneys": "ci_detail_attorneys",
+  "matters": "ci_detail_matters",
+  "insights": "ci_detail_insights",
+  "offices": "ci_detail_offices",
+  "library": "ci_detail_library"
+ },
+ "groups": [
+  {
+   "developerName": "clients",
+   "label": "Corrowen & Ivesmark clients"
+  },
+  {
+   "developerName": "counsel",
+   "label": "In-house counsel program"
+  }
+ ]
+}

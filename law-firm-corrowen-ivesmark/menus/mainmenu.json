@@ -1,0 +1,30 @@
+{
+ "developerName": "mainmenu",
+ "label": "Main menu",
+ "items": [
+  {
+   "label": "Practice",
+   "link": "/practice"
+  },
+  {
+   "label": "Attorneys",
+   "link": "/attorneys"
+  },
+  {
+   "label": "Matters",
+   "link": "/matters"
+  },
+  {
+   "label": "Insights",
+   "link": "/insights"
+  },
+  {
+   "label": "Offices",
+   "link": "/offices"
+  },
+  {
+   "label": "The firm",
+   "link": "/firm"
+  }
+ ]
+}

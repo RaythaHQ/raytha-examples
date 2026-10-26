@@ -1,0 +1,23 @@
+[
+ {"name":"01-home-1440.png","path":"/","device":"desktop"},
+ {"name":"02-home-full-1440.png","path":"/","device":"desktop","full_page":true},
+ {"name":"03-practice-1440.png","path":"/practice","device":"desktop","full_page":true},
+ {"name":"04-practice-detail-1440.png","path":"/practice/commercial-litigation","device":"desktop","full_page":true},
+ {"name":"05-attorneys-1440.png","path":"/attorneys","device":"desktop","full_page":true},
+ {"name":"06-attorney-1440.png","path":"/attorneys/helena-corrowen","device":"desktop","full_page":true},
+ {"name":"07-matters-1440.png","path":"/matters","device":"desktop","full_page":true},
+ {"name":"08-matter-1440.png","path":"/matters/founding-member-v-manufacturing-llc","device":"desktop","full_page":true},
+ {"name":"09-insights-1440.png","path":"/insights","device":"desktop","full_page":true},
+ {"name":"10-insight-1440.png","path":"/insights/operating-agreements-five-clauses-that-prevent-lawsuits","device":"desktop","full_page":true},
+ {"name":"11-offices-1440.png","path":"/offices","device":"desktop","full_page":true},
+ {"name":"12-library-1440.png","path":"/library","device":"desktop","full_page":true},
+ {"name":"13-library-locked-1440.png","path":"/library/litigation-hold-notice-template","device":"desktop"},
+ {"name":"14-room-locked-1440.png","path":"/client-room","device":"desktop"},
+ {"name":"15-login-1440.png","path":"/account/login?returnUrl=/client-room","device":"desktop"},
+ {"name":"16-room-counsel-1440.png","path":"/client-room","device":"desktop","full_page":true,"login":true},
+ {"name":"17-library-member-1440.png","path":"/library/master-services-agreement-template-with-commentary","device":"desktop","full_page":true,"login":true},
+ {"name":"18-search-1440.png","path":"/search?q=lien","device":"desktop"},
+ {"name":"19-firm-1440.png","path":"/firm","device":"desktop","full_page":true},
+ {"name":"20-home-mobile-390.png","path":"/","device":"mobile"},
+ {"name":"21-matter-mobile-390.png","path":"/matters/grain-cooperative-v-regional-freight-carrier","device":"mobile"}
+]

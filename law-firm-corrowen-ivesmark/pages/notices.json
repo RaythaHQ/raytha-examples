@@ -1,0 +1,46 @@
+{
+ "main": [
+  {
+   "widgetType": "ci_head",
+   "settings": {
+    "num": "\u00a7 7",
+    "headline": "Notices",
+    "subtitle": "Attorney advertising, no attorney-client relationship, and how this example site works."
+   }
+  },
+  {
+   "widgetType": "ci_clauses",
+   "settings": {
+    "headline": "Notices (story)",
+    "intro": "Law firm sites publish notices like these. These are illustrative, not legal text.",
+    "items": [
+     {
+      "num": "7.1",
+      "title": "Attorney advertising",
+      "text": "This site may be considered attorney advertising. Corrowen & Ivesmark LLP is a fictional firm; its bar numbers are invented."
+     },
+     {
+      "num": "7.2",
+      "title": "No attorney-client relationship",
+      "text": "Reading this site or sending information to the firm does not create an attorney-client relationship. That happens only with a signed engagement letter after a conflict check."
+     },
+     {
+      "num": "7.3",
+      "title": "Prior results",
+      "text": "Representative matters describe past results. Prior results do not guarantee a similar outcome. Matters are anonymized and fictional."
+     },
+     {
+      "num": "7.4",
+      "title": "Not legal advice",
+      "text": "Insights and library documents are general information, not legal advice for your situation."
+     },
+     {
+      "num": "7.5",
+      "title": "This is a demo",
+      "text": "Wendlow, its courts and the firm's people are invented. Phone numbers use the 555 range. There are no contact, intake, payment or registration forms on purpose."
+     }
+    ]
+   }
+  }
+ ]
+}

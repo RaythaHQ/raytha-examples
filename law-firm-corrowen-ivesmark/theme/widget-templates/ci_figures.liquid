@@ -1,0 +1,1 @@
+<section class="sec tight"><div class="w" style="padding-left:96px">{%- capture hl -%}{{ widget.settings.headline }}{%- endcapture -%}{% if hl != "" %}<h2 style="margin-bottom:26px">{{ widget.settings.headline }}</h2>{% endif %}<div class="figs">{% for i in widget.settings.items %}<div><b>{{ i.value }}</b><span>{{ i.label }}</span></div>{% endfor %}</div></div></section>

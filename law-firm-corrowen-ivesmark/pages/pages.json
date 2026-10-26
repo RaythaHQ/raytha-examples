@@ -1,0 +1,33 @@
+[
+ {
+  "title": "Corrowen & Ivesmark LLP",
+  "routePath": "home",
+  "template": "ci_home",
+  "sections": "pages/home.json",
+  "home": true
+ },
+ {
+  "title": "The firm",
+  "routePath": "firm",
+  "template": "ci_page",
+  "sections": "pages/firm.json"
+ },
+ {
+  "title": "Notices",
+  "routePath": "notices",
+  "template": "ci_page",
+  "sections": "pages/notices.json"
+ },
+ {
+  "title": "Client room",
+  "routePath": "client-room",
+  "template": "ci_room",
+  "sections": "pages/room.json"
+ },
+ {
+  "title": "Search",
+  "routePath": "search",
+  "template": "ci_search",
+  "sections": "pages/search.json"
+ }
+]

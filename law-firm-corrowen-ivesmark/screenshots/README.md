@@ -1,0 +1,16 @@
+# Screenshots
+
+Captured at 1440px and 390px from a site built with `../build.sh`. Signed-in shots use a demo user in the `clients` and `counsel` groups. Hosted in raytha.com media.
+
+| Screenshot | Shows |
+|---|---|
+| [<img src="https://raytha.com/raytha/media-items/objectkey/93xTy1qAa0-tzZ3chasvKw_corrowen_01_home.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/93xTy1qAa0-tzZ3chasvKw_corrowen_01_home.webp) | Home: a redlined statement of the firm, with margin notes from three attorneys |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/_jFQnJZinkyVfZaScwbbSA_corrowen_02_home_full.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/_jFQnJZinkyVfZaScwbbSA_corrowen_02_home_full.webp) | The full home page: practice index with matter counts, the docket, how a matter moves, signature blocks, fees, memos, offices and the client room |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/GP6nKnfY1EeiUXO_jU38-Q_corrowen_04_practice_detail.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/GP6nKnfY1EeiUXO_jU38-Q_corrowen_04_practice_detail.webp) | A practice page: what the firm handles, what it refers out, how it bills, the steps, the attorneys and the matters |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/al7IlnYcgkqh2a7vT1wcfg_corrowen_08_matter.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/al7IlnYcgkqh2a7vT1wcfg_corrowen_08_matter.webp) | A representative matter with a court-style caption and a disposition stamp |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/e1ckyq54tkegusMsdjUpYQ_corrowen_07_matters.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/e1ckyq54tkegusMsdjUpYQ_corrowen_07_matters.webp) | Representative matters as a docket, all fictional |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/HfaXOqCvoUqREaRSPztyiw_corrowen_05_attorneys.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/HfaXOqCvoUqREaRSPztyiw_corrowen_05_attorneys.webp) | Attorneys as signature blocks, with position, bar admission and office |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/ZI26hkVX_U2sFW7xSVqYAQ_corrowen_12_library.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/ZI26hkVX_U2sFW7xSVqYAQ_corrowen_12_library.webp) | The client library, each document marked Everyone, Clients or In-house counsel |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/iJJg60oiMkiA1cDqKe0BHA_corrowen_13_library_locked.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/iJJg60oiMkiA1cDqKe0BHA_corrowen_13_library_locked.webp) | A client-only document, signed out: the body is never sent, only a lock panel |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/tpwb0hKMLUWAlE93kF2TDQ_corrowen_16_room_counsel.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/tpwb0hKMLUWAlE93kF2TDQ_corrowen_16_room_counsel.webp) | Signed in as in-house counsel: matter status, deadlines, budget by phase, shared documents and the counsel desk |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/p2WvBjfK-k60Vqojyy-26Q_corrowen_20_home_mobile.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/p2WvBjfK-k60Vqojyy-26Q_corrowen_20_home_mobile.webp) | Home on a phone |

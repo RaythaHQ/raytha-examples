@@ -1,0 +1,79 @@
+{
+ "main": [
+  {
+   "widgetType": "ci_head",
+   "settings": {
+    "num": "\u00a7 6",
+    "headline": "The firm",
+    "subtitle": "Two founding partners, seven lawyers, two offices in the river city of Wendlow. Corrowen & Ivesmark LLP is fictional, and so are its people, matters and figures. This is a Raytha example site."
+   }
+  },
+  {
+   "widgetType": "ci_text",
+   "settings": {
+    "headline": "A litigation firm with a business practice attached",
+    "body": "<p>Helena Corrowen and Bram Ivesmark opened the firm in 2004 (story) in two rooms across from the county courthouse. One tried cases; the other wrote the contracts that, done right, kept clients out of court. The firm still works that way: the business lawyers read the complaints, and the trial lawyers read the operating agreements.</p><p>Today the firm has seven lawyers in two offices and handles disputes, business work and estate planning for companies and families in Wendlow County.</p>",
+    "note_by": "HC",
+    "note": "We still read every new complaint on the day it arrives."
+   }
+  },
+  {
+   "widgetType": "ci_clauses",
+   "settings": {
+    "headline": "How we work with clients",
+    "intro": "These are the commitments in every engagement letter.",
+    "items": [
+     {
+      "num": "6.1",
+      "title": "Conflict check first",
+      "text": "Before we hear the details, we check that we do not represent anyone on the other side."
+     },
+     {
+      "num": "6.2",
+      "title": "A written budget",
+      "text": "Every litigation matter has a budget by phase, updated when the case changes."
+     },
+     {
+      "num": "6.3",
+      "title": "One responsible partner",
+      "text": "You always know which partner is accountable for your matter, and how to reach them."
+     },
+     {
+      "num": "6.4",
+      "title": "Plain-English invoices",
+      "text": "Monthly, by phase, with time entries a non-lawyer can read."
+     },
+     {
+      "num": "6.5",
+      "title": "Your file is yours",
+      "text": "When the matter ends, you can have the whole file."
+     }
+    ]
+   }
+  },
+  {
+   "widgetType": "ci_figures",
+   "settings": {
+    "headline": "The firm in figures (story)",
+    "items": [
+     {
+      "value": "2004",
+      "label": "founded"
+     },
+     {
+      "value": "7",
+      "label": "lawyers, all fictional"
+     },
+     {
+      "value": "2",
+      "label": "offices in Wendlow"
+     },
+     {
+      "value": "0",
+      "label": "contact or intake forms on this site, on purpose"
+     }
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,22 @@
+{
+ "developerName": "footer",
+ "label": "Footer",
+ "items": [
+  {
+   "label": "Client library",
+   "link": "/library"
+  },
+  {
+   "label": "Client room",
+   "link": "/client-room"
+  },
+  {
+   "label": "Notices",
+   "link": "/notices"
+  },
+  {
+   "label": "Search",
+   "link": "/search"
+  }
+ ]
+}

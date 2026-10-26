@@ -1,0 +1,19 @@
+{
+ "slug": "corrowen-ivesmark-law",
+ "name": "Corrowen & Ivesmark LLP",
+ "base": "http://localhost:5403",
+ "viewport": [1440, 810],
+ "output": [1920, 1080],
+ "colorScheme": "light",
+ "login": {"path": "/account/login", "emailEnv": "SITE_USER_EMAIL", "passwordEnv": "SITE_USER_PASSWORD"},
+ "title": {"kicker": "Raytha use case", "heading": "Corrowen & Ivesmark LLP", "subheading": "A law firm website: practice areas, attorneys, a docket of matters — and a members-only client room.", "hold": 1.3},
+ "end": {"heading": "Built with Raytha", "subheading": "Open-source .NET CMS. Get the brief, screenshots and a one-command rebuild kit.", "url": "raytha.com/use-cases/corrowen-ivesmark-law", "hold": 2.3},
+ "scenes": [
+  {"url": "/", "caption": "A redlined statement, with margin notes from each attorney's own record", "actions": [{"hold": 1.2, "poster": true}, {"scroll": 2300, "dur": 3.6}, {"hold": 0.5}]},
+  {"url": "/practice/commercial-litigation", "caption": "Practice pages: what the firm handles, what it refers out, and how it bills", "actions": [{"hold": 0.8}, {"scroll": 600, "dur": 1.5}, {"hold": 0.4}]},
+  {"url": "/matters/founding-member-v-manufacturing-llc", "caption": "Representative matters as a docket, each with a case caption", "actions": [{"hold": 1.6}]},
+  {"url": "/library/litigation-hold-notice-template", "caption": "A client-only document, signed out: locked on the server", "actions": [{"hold": 1.4}]},
+  {"url": "/client-room", "signin": true, "caption": "Signed in: matter status, deadlines, budget, and a counsel desk", "actions": [{"hold": 1.0}, {"scroll": 600, "dur": 1.6}, {"hold": 0.5}]},
+  {"url": "/", "phone": true, "phoneCaption": {"kicker": "Responsive", "text": "The same pages on a phone"}, "actions": [{"hold": 0.5}, {"scroll": 1300, "dur": 2.0}, {"hold": 0.4}]}
+ ]
+}
