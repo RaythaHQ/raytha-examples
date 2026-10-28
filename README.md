@@ -42,6 +42,7 @@ These examples go with the weekly [use cases on raytha.com](https://raytha.com/u
 | [<img src="https://raytha.com/raytha/media-items/objectkey/tlqCarQGG0alB_0HkvG4sg_abacene_01_home.webp" width="360" alt="Abacene">](saas-abacene/) | **[Abacene](saas-abacene/)**: a SaaS product marketing site for a fictional usage-metering product: features, pricing tiers as content, docs with public/customer/beta access, changelog, customer stories, integrations, and a members-only customer and beta hub. 6 content types, 2 user groups. |
 | [<img src="https://raytha.com/raytha/media-items/objectkey/vnuYd1jeBU-3PK_cSRnjyw_pennowick_01_home.webp" width="360" alt="Pennowick Insurance Agency">](insurance-agency-pennowick/) | **[Pennowick Insurance Agency](insurance-agency-pennowick/)**: an independent insurance agency website: coverage lines with what is and is not covered, a carrier appointment matrix built from content, claims guides, agents, offices, an A–Z glossary, and a members-only client binder. 7 content types, 2 user groups. |
 | [<img src="https://raytha.com/raytha/media-items/objectkey/93xTy1qAa0-tzZ3chasvKw_corrowen_01_home.webp" width="360" alt="Corrowen & Ivesmark LLP">](law-firm-corrowen-ivesmark/) | **[Corrowen & Ivesmark LLP](law-firm-corrowen-ivesmark/)**: a law firm website: practice areas with what the firm refers out and how it bills, attorneys as signature blocks, representative matters as a docket with court-style captions, insights as memos, offices, and a members-only client room. 6 content types, 2 user groups. |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/zogjrNBpt06rqx0LFB42aA_saskell_01_home.webp" width="360" alt="Saskell Creek Public Schools">](school-district-saskell-creek/) | **[Saskell Creek Public Schools](school-district-saskell-creek/)**: a public school district website: sixteen schools drawn as feeder lines, today's bells and status as a departure board, lunch as a week of trays, a calendar labeled in words, board meetings and policies, a staff directory, and members-only family and staff areas. 8 content types, 2 user groups. |
 
 ## Quickstart
 
@@ -136,6 +137,7 @@ The examples were built from a short brief with no human help. To do the same fo
 ├── saas-abacene/
 ├── insurance-agency-pennowick/
 ├── law-firm-corrowen-ivesmark/
+├── school-district-saskell-creek/
 ├── skills/raytha-site-builder/  # agent skill: brief -> finished Raytha site
 ├── templates/brief-template.md  # fill-in brief
 ├── scripts/                     # shared build script, scaffold, screenshots, walkthroughs, export, secret scan

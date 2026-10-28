@@ -1,0 +1,34 @@
+{
+ "developerName": "mainmenu",
+ "label": "Main menu",
+ "items": [
+  {
+   "label": "Schools",
+   "link": "/schools"
+  },
+  {
+   "label": "Calendar",
+   "link": "/calendar"
+  },
+  {
+   "label": "News",
+   "link": "/news"
+  },
+  {
+   "label": "Lunch",
+   "link": "/lunch"
+  },
+  {
+   "label": "Board",
+   "link": "/board"
+  },
+  {
+   "label": "Staff directory",
+   "link": "/staff"
+  },
+  {
+   "label": "About",
+   "link": "/about"
+  }
+ ]
+}

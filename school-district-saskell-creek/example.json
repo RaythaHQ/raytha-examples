@@ -1,0 +1,34 @@
+{
+ "name": "Saskell Creek Public Schools",
+ "theme": "saskell",
+ "types": [
+  "schools",
+  "news",
+  "events",
+  "staff",
+  "meetings",
+  "policies",
+  "menus",
+  "resources"
+ ],
+ "detailTemplates": {
+  "schools": "sc_detail_schools",
+  "news": "sc_detail_news",
+  "events": "sc_detail_events",
+  "staff": "sc_detail_staff",
+  "meetings": "sc_detail_meetings",
+  "policies": "sc_detail_policies",
+  "menus": "sc_detail_menus",
+  "resources": "sc_detail_resources"
+ },
+ "groups": [
+  {
+   "developerName": "families",
+   "label": "Saskell Creek families"
+  },
+  {
+   "developerName": "staff",
+   "label": "Saskell Creek staff"
+  }
+ ]
+}

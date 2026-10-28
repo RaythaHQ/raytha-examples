@@ -1,0 +1,50 @@
+{
+ "main": [
+  {
+   "widgetType": "sc_head",
+   "settings": {
+    "kicker": "Accessibility",
+    "headline": "Accessibility statement",
+    "subtitle": "Saskell Creek Public Schools wants every family, student and community member to be able to use this site. This is an illustrative statement for a fictional district."
+   }
+  },
+  {
+   "widgetType": "sc_steps",
+   "settings": {
+    "headline": "What we commit to",
+    "intro": "These commitments come from board Policy 1450, Website accessibility.",
+    "items": [
+     {
+      "title": "WCAG 2.1 AA",
+      "text": "Pages, documents and videos are designed to meet WCAG 2.1 level AA."
+     },
+     {
+      "title": "Text first",
+      "text": "Schedules, menus, agendas and policies are published as web pages, not scanned PDFs."
+     },
+     {
+      "title": "Status not by color alone",
+      "text": "Every status on this site is written in words as well as shown in color."
+     },
+     {
+      "title": "Captions",
+      "text": "Board meeting recordings are captioned; live meetings have live captions."
+     },
+     {
+      "title": "A named person",
+      "text": "Report a barrier to Bettina Okonkwo, accessibility and Section 504 coordinator, at (555) 014-1030. We respond within five school days."
+     }
+    ]
+   }
+  },
+  {
+   "widgetType": "sc_text",
+   "settings": {
+    "headline": "How this site is built",
+    "body": "<p>Every page is rendered on the server as plain HTML, with a skip link, real headings and visible focus outlines. Text is set in Atkinson Hyperlegible, a typeface designed for readers with low vision. The site works without JavaScript.</p>",
+    "aside_title": "Report a barrier",
+    "aside": "Call (555) 014-1030 or tell any front office. There is no web form on this example site, on purpose."
+   }
+  }
+ ]
+}

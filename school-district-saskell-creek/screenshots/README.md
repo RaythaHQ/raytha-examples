@@ -1,0 +1,16 @@
+# Screenshots
+
+Captured at 1440px and 390px from a site built with `../build.sh`. Signed-in shots use demo users in the `families` and `staff` groups. Hosted in raytha.com media.
+
+| Screenshot | Shows |
+|---|---|
+| [<img src="https://raytha.com/raytha/media-items/objectkey/zogjrNBpt06rqx0LFB42aA_saskell_01_home.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/zogjrNBpt06rqx0LFB42aA_saskell_01_home.webp) | Home: today's status strip, a today card with bell tallies and lunch, and the start of the feeder map |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/YoSlxdF0v02bLhF8qtz0rQ_saskell_03_map.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/YoSlxdF0v02bLhF8qtz0rQ_saskell_03_map.webp) | The feeder map: each high school zone is a line, drawn on the server from the school records |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/mbDobkwebE2Z_bfwRmT9KA_saskell_04_bells.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/mbDobkwebE2Z_bfwRmT9KA_saskell_04_bells.webp) | Today's bells as a departure board, with every status written in words as well as color |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/66GAFJYAjUqY-zui4YZnrQ_saskell_06_school.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/66GAFJYAjUqY-zui4YZnrQ_saskell_06_school.webp) | A school page: its stop on the line, bells, status, programs, staff and calendar |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/UBupzogVo0yXiYshB4LPAw_saskell_07_calendar.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/UBupzogVo0yXiYshB4LPAw_saskell_07_calendar.webp) | The district calendar: month grids labeled in words, plus the same dates as a list |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/LGPK8sZajkuIeLemNm1Ucg_saskell_08_lunch.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/LGPK8sZajkuIeLemNm1Ucg_saskell_08_lunch.webp) | Lunch menus as trays, with the vegetarian option, sides and allergens written out |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/jp5uXCiWPUiqrswgECZDVA_saskell_10_meeting.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/jp5uXCiWPUiqrswgECZDVA_saskell_10_meeting.webp) | A board meeting with its agenda, votes, draft minutes and the policies on the agenda |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/lQSSrhns5kWhuIhXtjxMhA_saskell_15_resource_locked.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/lQSSrhns5kWhuIhXtjxMhA_saskell_15_resource_locked.webp) | A families-only document, signed out: the body is never sent, only a lock panel |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/EPMhnK55i0atSUuI38_tcw_saskell_18_families_member.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/EPMhnK55i0atSUuI38_tcw_saskell_18_families_member.webp) | Signed in as a family: the student pass, bus stop, this week's lunch and family dates |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/B_keME5IZUKysQNcWrQuag_saskell_22_home_mobile.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/B_keME5IZUKysQNcWrQuag_saskell_22_home_mobile.webp) | Home on a phone, where the feeder map becomes stacked line strips |

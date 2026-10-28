@@ -1,0 +1,45 @@
+[
+ {
+  "title": "Saskell Creek Public Schools",
+  "routePath": "home",
+  "template": "sc_home",
+  "sections": "pages/home.json",
+  "home": true
+ },
+ {
+  "title": "About the district",
+  "routePath": "about",
+  "template": "sc_page",
+  "sections": "pages/about.json"
+ },
+ {
+  "title": "Accessibility",
+  "routePath": "accessibility",
+  "template": "sc_page",
+  "sections": "pages/accessibility.json"
+ },
+ {
+  "title": "New families",
+  "routePath": "new-families",
+  "template": "sc_page",
+  "sections": "pages/newfamilies.json"
+ },
+ {
+  "title": "Family hub",
+  "routePath": "families",
+  "template": "sc_families",
+  "sections": "pages/families.json"
+ },
+ {
+  "title": "Staff room",
+  "routePath": "staff-room",
+  "template": "sc_staffroom",
+  "sections": "pages/staffroom.json"
+ },
+ {
+  "title": "Search",
+  "routePath": "search",
+  "template": "sc_search",
+  "sections": "pages/search.json"
+ }
+]

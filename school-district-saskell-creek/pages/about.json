@@ -1,0 +1,74 @@
+{
+ "main": [
+  {
+   "widgetType": "sc_head",
+   "settings": {
+    "kicker": "About the district",
+    "headline": "One district, three feeder lines",
+    "subtitle": "Saskell Creek Public Schools serves about 9,000 students (story) in sixteen schools. Every child's path is a line: an elementary school, a middle school and a high school, with an early learning center and a career center shared by all three. The district, its schools and its people are fictional; this is a Raytha example site."
+   }
+  },
+  {
+   "widgetType": "sc_text",
+   "settings": {
+    "headline": "A message from the superintendent",
+    "body": "<p>Families told us the hardest part of our old website was finding out whether school was open, what was for lunch and when the board would vote on something that mattered to them. So the first thing on every page is today's status, and the board's agendas, votes and policies are one click from anywhere.</p><p>Our schools are organized the way our families experience them: by feeder line, from kindergarten to graduation. If you know your elementary school, you can follow the line to see where your child goes next.</p><p>\u2014 Adaeze Morland, superintendent (fictional)</p>",
+    "aside_title": "District office",
+    "aside": "100 Commons Street, Saskell Creek (fictional). Open 7:30 am to 4:30 pm on school days. (555) 014-1000."
+   }
+  },
+  {
+   "widgetType": "sc_figures",
+   "settings": {
+    "headline": "The district in figures (story)",
+    "items": [
+     {
+      "value": "16",
+      "label": "schools on three feeder lines"
+     },
+     {
+      "value": "9,060",
+      "label": "students, PreK\u201312"
+     },
+     {
+      "value": "7",
+      "label": "elected board members"
+     },
+     {
+      "value": "0",
+      "label": "payment or enrollment forms on this site, on purpose"
+     }
+    ]
+   }
+  },
+  {
+   "widgetType": "sc_steps",
+   "settings": {
+    "headline": "Following a line, kindergarten to graduation",
+    "intro": "How a student moves through the district on the Ridge line, as an example.",
+    "items": [
+     {
+      "title": "Early Learning Center",
+      "text": "PreK for three- and four-year-olds from every neighborhood."
+     },
+     {
+      "title": "Fernhall Elementary",
+      "text": "K\u20135, with a Spanish\u2013English dual-language strand."
+     },
+     {
+      "title": "Juno Park Middle",
+      "text": "Grades 6\u20138, with Spanish continuation and Algebra I in grade 8."
+     },
+     {
+      "title": "Saskell Ridge High",
+      "text": "Grades 9\u201312, AP courses and dual credit."
+     },
+     {
+      "title": "Northgate CTC",
+      "text": "Optional half days in grades 10\u201312 for career programs."
+     }
+    ]
+   }
+  }
+ ]
+}

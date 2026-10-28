@@ -1,0 +1,46 @@
+{
+ "main": [
+  {
+   "widgetType": "sc_head",
+   "settings": {
+    "kicker": "New to Saskell Creek",
+    "headline": "Starting school in Saskell Creek",
+    "subtitle": "Find your line, visit the welcome center, and bring four documents. Enrollment happens in person at the welcome center; there is no online enrollment form on this example site."
+   }
+  },
+  {
+   "widgetType": "sc_steps",
+   "settings": {
+    "headline": "Four stops to the first day",
+    "intro": "Most families finish in one visit of about forty-five minutes.",
+    "items": [
+     {
+      "title": "Find your school",
+      "text": "Your address decides your elementary school and its line. Ask the welcome center, or browse the schools by line."
+     },
+     {
+      "title": "Gather four documents",
+      "text": "Proof of address, your child's birth certificate or passport, immunization records, and the last report card if your child has been in school."
+     },
+     {
+      "title": "Visit the welcome center",
+      "text": "District office, 100 Commons Street, 7:30 am to 4:30 pm. Interpreters in Spanish, Arabic, Vietnamese and Dari."
+     },
+     {
+      "title": "Meet the school",
+      "text": "The front office calls within two school days to set a start date and a short tour."
+     }
+    ]
+   }
+  },
+  {
+   "widgetType": "sc_text",
+   "settings": {
+    "headline": "Families who are new to the country",
+    "body": "<p>Students new to the country start at the Tillet Elementary newcomer center or with newcomer support at Lantern Bridge Middle, then join their home school when ready. Interpreters attend every meeting at no cost to families.</p>",
+    "aside_title": "Welcome center",
+    "aside": "(555) 014-1100 \u00b7 District office, room 105"
+   }
+  }
+ ]
+}

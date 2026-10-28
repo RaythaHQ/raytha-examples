@@ -1,0 +1,34 @@
+{
+ "developerName": "footer",
+ "label": "Footer",
+ "items": [
+  {
+   "label": "Resources",
+   "link": "/resources"
+  },
+  {
+   "label": "Board policies",
+   "link": "/policies"
+  },
+  {
+   "label": "New families",
+   "link": "/new-families"
+  },
+  {
+   "label": "Family hub",
+   "link": "/families"
+  },
+  {
+   "label": "Staff room",
+   "link": "/staff-room"
+  },
+  {
+   "label": "Accessibility",
+   "link": "/accessibility"
+  },
+  {
+   "label": "Search",
+   "link": "/search"
+  }
+ ]
+}

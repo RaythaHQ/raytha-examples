@@ -71,6 +71,7 @@ fields), and link the raytha.com copy from the example's README.
 | Abacene | [walkthrough.json](../saas-abacene/walkthrough.json) | [use case page](https://raytha.com/use-cases/abacene-usage-metering#walkthrough) · [MP4](https://raytha.com/raytha/media-items/objectkey/Mk4acj_-50yZS5GLe0vznQ_abacene_usage_metering_walkthrough.mp4) |
 | Pennowick Insurance Agency | [walkthrough.json](../insurance-agency-pennowick/walkthrough.json) | [use case page](https://raytha.com/use-cases/pennowick-insurance-agency#walkthrough) · [MP4](https://raytha.com/raytha/media-items/objectkey/QGtaDIP5i0eiMNG2gAf0lg_pennowick_insurance_agency_walkthrough.mp4) |
 | Corrowen & Ivesmark LLP | [walkthrough.json](../law-firm-corrowen-ivesmark/walkthrough.json) | [use case page](https://raytha.com/use-cases/corrowen-ivesmark-law#walkthrough) · [MP4](https://raytha.com/raytha/media-items/objectkey/78RqpRfQtU-H9ycfnlM-TA_corrowen_ivesmark_law_walkthrough.mp4) |
+| Saskell Creek Public Schools | [walkthrough.json](../school-district-saskell-creek/walkthrough.json) | [use case page](https://raytha.com/use-cases/saskell-creek-public-schools#walkthrough) · [MP4](https://raytha.com/raytha/media-items/objectkey/K1-6WN_RAkuBvf5Fc5JwiA_saskell_creek_public_schools_walkthrough.mp4) |
 
 ## Shot list
 
