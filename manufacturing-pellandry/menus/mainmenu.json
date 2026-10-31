@@ -1,0 +1,34 @@
+{
+ "developerName": "mainmenu",
+ "label": "Main menu",
+ "items": [
+  {
+   "label": "Products",
+   "link": "/products"
+  },
+  {
+   "label": "Industries",
+   "link": "/industries"
+  },
+  {
+   "label": "Plants",
+   "link": "/plants"
+  },
+  {
+   "label": "Literature",
+   "link": "/literature"
+  },
+  {
+   "label": "Distributors",
+   "link": "/distributors"
+  },
+  {
+   "label": "Quality",
+   "link": "/quality"
+  },
+  {
+   "label": "Company",
+   "link": "/company"
+  }
+ ]
+}

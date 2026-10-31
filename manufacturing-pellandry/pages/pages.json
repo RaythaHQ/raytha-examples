@@ -1,0 +1,39 @@
+[
+ {
+  "title": "Pellandry Fluid Controls",
+  "routePath": "home",
+  "template": "pf_home",
+  "sections": "pages/home.json",
+  "home": true
+ },
+ {
+  "title": "Company",
+  "routePath": "company",
+  "template": "pf_page",
+  "sections": "pages/about.json"
+ },
+ {
+  "title": "Quality",
+  "routePath": "quality",
+  "template": "pf_page",
+  "sections": "pages/quality.json"
+ },
+ {
+  "title": "Distributor portal",
+  "routePath": "portal",
+  "template": "pf_portal",
+  "sections": "pages/portal.json"
+ },
+ {
+  "title": "Service desk",
+  "routePath": "service-desk",
+  "template": "pf_service",
+  "sections": "pages/service.json"
+ },
+ {
+  "title": "Search",
+  "routePath": "search",
+  "template": "pf_search",
+  "sections": "pages/search.json"
+ }
+]

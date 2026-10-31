@@ -1,0 +1,8 @@
+# Brief: Pellandry Fluid Controls — a manufacturing company website (fictional)
+Persona: Pellandry Fluid Controls (fictional), a family-owned maker of industrial ball, butterfly, check and control valves, actuators and pumps, with two plants (Brask Ford, Linnmoor) and a service and repair center (Hesketh), all in invented towns. Marketing and applications engineering run the site. The same build fits a manufacturer's own team, or an agency building sites for industrial clients.
+Design: "drawing sheet" — blueprint navy with a fine grid, white line work, safety-orange callouts, and a title block under each product drawing. A part-number decoder strip, and a weekly lead-time board by series next to plant cell load. IBM Plex Sans for text, IBM Plex Mono for part numbers, ratings and lead times. No wide display fonts.
+IA: home; /products (12 series by family, each with specs, part-number segments, lead time, industries, distributors and literature), /industries, /plants (cell load, lead-time board), /literature (datasheets, manuals, certificates public; price sheets and CAD for distributors; bulletins and repair procedures for service partners), /distributors (by region), /news, /quality, /company, /portal (members-only distributor portal), /service-desk (members-only), /search.
+Members: user groups `distributors` and `service`; gating is server-side in Liquid with CurrentUser.UserGroups. Gated bodies are never sent to the browser.
+No quote, order, registration, payment or contact forms. Everything is labeled fictional; phone numbers use 555.
+Buyer target: self-hosted CMS for manufacturers / open-source .NET CMS for industrial companies.
+Done: raytha check 0 failed, screenshots, walkthrough, rebuildable kit.

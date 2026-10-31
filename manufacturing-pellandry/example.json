@@ -1,0 +1,30 @@
+{
+ "name": "Pellandry Fluid Controls",
+ "theme": "pellandry",
+ "types": [
+  "products",
+  "industries",
+  "plants",
+  "literature",
+  "news",
+  "distributors"
+ ],
+ "detailTemplates": {
+  "products": "pf_detail_products",
+  "industries": "pf_detail_industries",
+  "plants": "pf_detail_plants",
+  "literature": "pf_detail_literature",
+  "news": "pf_detail_news",
+  "distributors": "pf_detail_distributors"
+ },
+ "groups": [
+  {
+   "developerName": "distributors",
+   "label": "Pellandry distributors"
+  },
+  {
+   "developerName": "service",
+   "label": "Pellandry service partners"
+  }
+ ]
+}

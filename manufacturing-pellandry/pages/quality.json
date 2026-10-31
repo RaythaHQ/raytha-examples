@@ -1,0 +1,50 @@
+{
+ "main": [
+  {
+   "widgetType": "pf_head",
+   "settings": {
+    "kicker": "Quality",
+    "headline": "Every unit tested, every test kept",
+    "subtitle": "Each valve is pressure-tested and each pump runs on a test loop before it ships. The records are tied to the serial number on the tag."
+   }
+  },
+  {
+   "widgetType": "pf_steps",
+   "settings": {
+    "headline": "From bar stock to shipping dock",
+    "intro": "What happens to a Series 140 ball valve at Brask Ford.",
+    "items": [
+     {
+      "title": "Material receipt",
+      "text": "Bar stock is checked against its mill certificate and the heat number is recorded."
+     },
+     {
+      "title": "Machining",
+      "text": "First-article inspection on every new setup; in-process gauging every 25 parts."
+     },
+     {
+      "title": "Assembly",
+      "text": "Seats, seals and stem packing installed to a torque record."
+     },
+     {
+      "title": "Shell and seat test",
+      "text": "Shell at 1.5 \u00d7 rated pressure; seat test to API 598."
+     },
+     {
+      "title": "Tag and archive",
+      "text": "Serial number on the tag links to the material and test record for 25 years."
+     }
+    ]
+   }
+  },
+  {
+   "widgetType": "pf_text",
+   "settings": {
+    "headline": "Certificates",
+    "body": "<p>All three plants are certified to ISO 9001:2015. Brask Ford and Linnmoor are also certified to ISO 14001, and Linnmoor to ISO 45001. Product approvals are listed on each product page.</p>",
+    "aside_title": "Request a test record",
+    "aside": "Call inside sales with the serial number on the tag. Records are sent by email the same day (story)."
+   }
+  }
+ ]
+}

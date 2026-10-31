@@ -1,0 +1,135 @@
+{
+ "slug": "pellandry-fluid-controls",
+ "name": "Pellandry Fluid Controls",
+ "base": "http://localhost:5000",
+ "viewport": [
+  1440,
+  810
+ ],
+ "output": [
+  1920,
+  1080
+ ],
+ "colorScheme": "light",
+ "login": {
+  "path": "/account/login",
+  "emailEnv": "SITE_USER_EMAIL",
+  "passwordEnv": "SITE_USER_PASSWORD"
+ },
+ "title": {
+  "kicker": "Raytha use case",
+  "heading": "Pellandry Fluid Controls",
+  "subheading": "A manufacturing company website: product series and specs, a weekly lead-time board, open literature \u2014 and members-only distributor and service portals.",
+  "hold": 1.3
+ },
+ "end": {
+  "heading": "Built with Raytha",
+  "subheading": "Open-source .NET CMS. Get the brief, screenshots and a one-command rebuild kit.",
+  "url": "raytha.com/use-cases/pellandry-fluid-controls",
+  "hold": 2.3
+ },
+ "scenes": [
+  {
+   "url": "/",
+   "caption": "An engineering-drawing look, with the product line up front",
+   "actions": [
+    {
+     "hold": 1.2,
+     "poster": true
+    },
+    {
+     "scroll": 620,
+     "dur": 1.6
+    },
+    {
+     "hold": 0.8
+    },
+    {
+     "scroll": 1900,
+     "dur": 1.8
+    },
+    {
+     "hold": 0.8
+    }
+   ]
+  },
+  {
+   "url": "/products/series-420-globe-control-valve",
+   "caption": "Every series: specs, part-number decoder, lead time and literature",
+   "actions": [
+    {
+     "hold": 1.3
+    },
+    {
+     "scroll": 520,
+     "dur": 1.4
+    },
+    {
+     "hold": 0.5
+    }
+   ]
+  },
+  {
+   "url": "/plants/brask-ford-works",
+   "caption": "Plants and cell load, published as content",
+   "actions": [
+    {
+     "hold": 1.0
+    },
+    {
+     "scroll": 360,
+     "dur": 1.2
+    },
+    {
+     "hold": 0.4
+    }
+   ]
+  },
+  {
+   "url": "/literature/sb-2026-04-series-420-bonnet-bolt-torque-update",
+   "caption": "A service bulletin, signed out: locked on the server",
+   "actions": [
+    {
+     "hold": 1.3
+    }
+   ]
+  },
+  {
+   "url": "/portal",
+   "signin": true,
+   "caption": "Signed in: price bands, multipliers, CAD and price sheets",
+   "actions": [
+    {
+     "hold": 1.0
+    },
+    {
+     "scroll": 500,
+     "dur": 1.5
+    },
+    {
+     "hold": 0.5
+    }
+   ]
+  },
+  {
+   "url": "/",
+   "phone": true,
+   "phoneCaption": {
+    "kicker": "Responsive",
+    "text": "The same pages on a phone"
+   },
+   "actions": [
+    {
+     "hold": 0.5
+    },
+    {
+     "scroll": 1400,
+     "dur": 2.0
+    },
+    {
+     "hold": 0.4
+    }
+   ]
+  }
+ ]
+}

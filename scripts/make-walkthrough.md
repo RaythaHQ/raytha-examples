@@ -72,6 +72,7 @@ fields), and link the raytha.com copy from the example's README.
 | Pennowick Insurance Agency | [walkthrough.json](../insurance-agency-pennowick/walkthrough.json) | [use case page](https://raytha.com/use-cases/pennowick-insurance-agency#walkthrough) · [MP4](https://raytha.com/raytha/media-items/objectkey/QGtaDIP5i0eiMNG2gAf0lg_pennowick_insurance_agency_walkthrough.mp4) |
 | Corrowen & Ivesmark LLP | [walkthrough.json](../law-firm-corrowen-ivesmark/walkthrough.json) | [use case page](https://raytha.com/use-cases/corrowen-ivesmark-law#walkthrough) · [MP4](https://raytha.com/raytha/media-items/objectkey/78RqpRfQtU-H9ycfnlM-TA_corrowen_ivesmark_law_walkthrough.mp4) |
 | Saskell Creek Public Schools | [walkthrough.json](../school-district-saskell-creek/walkthrough.json) | [use case page](https://raytha.com/use-cases/saskell-creek-public-schools#walkthrough) · [MP4](https://raytha.com/raytha/media-items/objectkey/K1-6WN_RAkuBvf5Fc5JwiA_saskell_creek_public_schools_walkthrough.mp4) |
+| Pellandry Fluid Controls | [walkthrough.json](../manufacturing-pellandry/walkthrough.json) | [use case page](https://raytha.com/use-cases/pellandry-fluid-controls#walkthrough) · [MP4](https://raytha.com/raytha/media-items/objectkey/xD4Mi5tYGE6dHXMUldcT0g_pellandry_fluid_controls_walkthrough.mp4) |
 
 ## Shot list
 

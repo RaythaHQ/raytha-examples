@@ -1,0 +1,22 @@
+{
+ "developerName": "footer",
+ "label": "Footer",
+ "items": [
+  {
+   "label": "Distributor portal",
+   "link": "/portal"
+  },
+  {
+   "label": "Service desk",
+   "link": "/service-desk"
+  },
+  {
+   "label": "News",
+   "link": "/news"
+  },
+  {
+   "label": "Search",
+   "link": "/search"
+  }
+ ]
+}

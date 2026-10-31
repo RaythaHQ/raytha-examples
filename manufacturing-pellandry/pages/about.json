@@ -1,0 +1,45 @@
+{
+ "main": [
+  {
+   "widgetType": "pf_head",
+   "settings": {
+    "kicker": "Company",
+    "headline": "Valves, actuators and pumps, made and tested in our own plants",
+    "subtitle": "Pellandry Fluid Controls (fictional) designs and builds industrial valves, actuators and pumps in two plants, and repairs them at a third. Family-owned since 1957 (story). The company, its people, products and figures are fictional; this is a Raytha example site."
+   }
+  },
+  {
+   "widgetType": "pf_text",
+   "settings": {
+    "headline": "What we believe about valves",
+    "body": "<p>A valve is usually the cheapest part of a system and the most expensive one to replace. So we design for service in line, keep spare parts for twenty years after a series is discontinued, and publish our datasheets and manuals in full, without a login.</p><p>Pricing, CAD packages and service bulletins live in the distributor portal and the service desk, where our partners sign in.</p><p>\u2014 Ilse Pellandry-Varga, president (fictional)</p>",
+    "aside_title": "Headquarters",
+    "aside": "1 Foundry Row, Brask Ford (fictional). Inside sales (555) 017-4000, 7 am to 6 pm Central."
+   }
+  },
+  {
+   "widgetType": "pf_figures",
+   "settings": {
+    "headline": "In figures (story)",
+    "items": [
+     {
+      "value": "1957",
+      "label": "first valve shipped"
+     },
+     {
+      "value": "657",
+      "label": "people in three plants"
+     },
+     {
+      "value": "41,000",
+      "label": "valves and pumps tested last year"
+     },
+     {
+      "value": "20 yrs",
+      "label": "parts availability after a series ends"
+     }
+    ]
+   }
+  }
+ ]
+}

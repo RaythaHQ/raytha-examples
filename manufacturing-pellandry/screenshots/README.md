@@ -1,0 +1,16 @@
+# Screenshots
+
+Captured at 1440px and 390px from a site built with `../build.sh`. Signed-in shots use a demo user in the `distributors` and `service` groups. Hosted in raytha.com media.
+
+| Screenshot | Shows |
+|---|---|
+| [<img src="https://raytha.com/raytha/media-items/objectkey/ETD4Tlx0xU6omxcnRT4EAw_pellandry_01_home.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/ETD4Tlx0xU6omxcnRT4EAw_pellandry_01_home.webp) | Home: the Series 140 drawn as a general-arrangement sheet, with its title block, rating, plant and lead time |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/45oHuuQTGkKXLWyrNq-u5w_pellandry_03_partnumber.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/45oHuuQTGkKXLWyrNq-u5w_pellandry_03_partnumber.webp) | A part-number decoder and the product line by family, drawn from the product records |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/KgNw54cd9EOS58jJIDpZbg_pellandry_04_leadtimes.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/KgNw54cd9EOS58jJIDpZbg_pellandry_04_leadtimes.webp) | The weekly lead-time board by series, next to each plant's cell load |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/tqx7uFXOUEyfqFxaMuQyag_pellandry_06_product.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/tqx7uFXOUEyfqFxaMuQyag_pellandry_06_product.webp) | A product series page: spec table, part-number segments, lead time, industries, distributors and literature |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/N5D0WFaXQ0q__T5CMnrQcA_pellandry_08_plant.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/N5D0WFaXQ0q__T5CMnrQcA_pellandry_08_plant.webp) | A plant page with cell load this week, certifications and the series made there |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/Tk8CgSXblEeG1EUoqw849w_pellandry_10_literature.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/Tk8CgSXblEeG1EUoqw849w_pellandry_10_literature.webp) | The literature library: open datasheets and manuals, with partner-only documents marked |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/AS4bGm2iX0qrbbIb48udYw_pellandry_11_bulletin_locked.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/AS4bGm2iX0qrbbIb48udYw_pellandry_11_bulletin_locked.webp) | A service bulletin, signed out: the body is never sent, only a lock panel |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/K8X0vvkYPkKOCuLuluECSw_pellandry_14_portal_member.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/K8X0vvkYPkKOCuLuluECSw_pellandry_14_portal_member.webp) | Signed in as a distributor: price bands, lead times, multipliers and price sheets |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/5VRxsHZxqEmFiKWxbt7vPQ_pellandry_15_service_member.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/5VRxsHZxqEmFiKWxbt7vPQ_pellandry_15_service_member.webp) | The service desk: bulletins, repair procedures and plant status for service partners |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/6igGHiHXQE-5hYJtJANCOw_pellandry_20_home_mobile.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/6igGHiHXQE-5hYJtJANCOw_pellandry_20_home_mobile.webp) | Home on a phone |
