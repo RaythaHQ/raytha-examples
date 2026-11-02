@@ -1,0 +1,30 @@
+{
+ "developerName": "mainmenu",
+ "label": "Main menu",
+ "items": [
+  {
+   "label": "Branches & hours",
+   "link": "/branches"
+  },
+  {
+   "label": "Programs",
+   "link": "/programs"
+  },
+  {
+   "label": "New arrivals",
+   "link": "/new"
+  },
+  {
+   "label": "Reading lists",
+   "link": "/lists"
+  },
+  {
+   "label": "Digital",
+   "link": "/resources"
+  },
+  {
+   "label": "Get a card",
+   "link": "/get-a-card"
+  }
+ ]
+}

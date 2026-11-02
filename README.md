@@ -44,6 +44,7 @@ These examples go with the weekly [use cases on raytha.com](https://raytha.com/u
 | [<img src="https://raytha.com/raytha/media-items/objectkey/93xTy1qAa0-tzZ3chasvKw_corrowen_01_home.webp" width="360" alt="Corrowen & Ivesmark LLP">](law-firm-corrowen-ivesmark/) | **[Corrowen & Ivesmark LLP](law-firm-corrowen-ivesmark/)**: a law firm website: practice areas with what the firm refers out and how it bills, attorneys as signature blocks, representative matters as a docket with court-style captions, insights as memos, offices, and a members-only client room. 6 content types, 2 user groups. |
 | [<img src="https://raytha.com/raytha/media-items/objectkey/zogjrNBpt06rqx0LFB42aA_saskell_01_home.webp" width="360" alt="Saskell Creek Public Schools">](school-district-saskell-creek/) | **[Saskell Creek Public Schools](school-district-saskell-creek/)**: a public school district website: sixteen schools drawn as feeder lines, today's bells and status as a departure board, lunch as a week of trays, a calendar labeled in words, board meetings and policies, a staff directory, and members-only family and staff areas. 8 content types, 2 user groups. |
 | [<img src="https://raytha.com/raytha/media-items/objectkey/ETD4Tlx0xU6omxcnRT4EAw_pellandry_01_home.webp" width="360" alt="Pellandry Fluid Controls">](manufacturing-pellandry/) | **[Pellandry Fluid Controls](manufacturing-pellandry/)**: a manufacturing company website for a maker of industrial valves, actuators and pumps: product series with spec tables and part-number decoders, a weekly lead-time board with plant cell load, industry and plant pages, an open literature library, a distributor directory, and members-only distributor and service portals. 6 content types, 2 user groups. |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/V11XbAJokkaQeFc-QObgIA_ossingford_01_home.webp" width="360" alt="Ossingford Public Library">](library-ossingford/) | **[Ossingford Public Library](library-ossingford/)**: a public library website for a county library with four branches and a Bookmobile: today's hours for every branch, a weekly program planner, new arrivals drawn as book spines with catalog-card title pages, reading lists, digital resources A to Z, library news, and members-only pages for cardholders and staff. 6 content types, 2 user groups. |
 
 ## Quickstart
 
@@ -140,6 +141,7 @@ The examples were built from a short brief with no human help. To do the same fo
 ├── law-firm-corrowen-ivesmark/
 ├── school-district-saskell-creek/
 ├── manufacturing-pellandry/
+├── library-ossingford/
 ├── skills/raytha-site-builder/  # agent skill: brief -> finished Raytha site
 ├── templates/brief-template.md  # fill-in brief
 ├── scripts/                     # shared build script, scaffold, screenshots, walkthroughs, export, secret scan

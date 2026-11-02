@@ -1,0 +1,1239 @@
+{
+ "schemaVersion": 1,
+ "contentTypes": [
+  {
+   "developerName": "programs",
+   "labelPlural": "Programs",
+   "labelSingular": "Program",
+   "description": "Weekly programs and events at every branch",
+   "defaultRouteTemplate": "programs/{PrimaryField}",
+   "primaryField": "title",
+   "fields": [
+    {
+     "developerName": "title",
+     "label": "Title",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": true,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "weekday",
+     "label": "Day",
+     "description": "",
+     "fieldType": "dropdown",
+     "isRequired": false,
+     "choices": [
+      {
+       "developerName": "mon",
+       "label": "Monday",
+       "disabled": false
+      },
+      {
+       "developerName": "tue",
+       "label": "Tuesday",
+       "disabled": false
+      },
+      {
+       "developerName": "wed",
+       "label": "Wednesday",
+       "disabled": false
+      },
+      {
+       "developerName": "thu",
+       "label": "Thursday",
+       "disabled": false
+      },
+      {
+       "developerName": "fri",
+       "label": "Friday",
+       "disabled": false
+      },
+      {
+       "developerName": "sat",
+       "label": "Saturday",
+       "disabled": false
+      },
+      {
+       "developerName": "sun",
+       "label": "Sunday",
+       "disabled": false
+      }
+     ],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "time_label",
+     "label": "Time",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "branch",
+     "label": "Branch",
+     "description": "",
+     "fieldType": "dropdown",
+     "isRequired": false,
+     "choices": [
+      {
+       "developerName": "central",
+       "label": "Central Library",
+       "disabled": false
+      },
+      {
+       "developerName": "millrace",
+       "label": "Millrace",
+       "disabled": false
+      },
+      {
+       "developerName": "quarry",
+       "label": "North Quarry",
+       "disabled": false
+      },
+      {
+       "developerName": "ferrin",
+       "label": "Ferrin Heights",
+       "disabled": false
+      },
+      {
+       "developerName": "bookmobile",
+       "label": "Bookmobile",
+       "disabled": false
+      }
+     ],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "room",
+     "label": "Room",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "audience",
+     "label": "Audience",
+     "description": "",
+     "fieldType": "dropdown",
+     "isRequired": false,
+     "choices": [
+      {
+       "developerName": "all",
+       "label": "All ages",
+       "disabled": false
+      },
+      {
+       "developerName": "kids",
+       "label": "Kids",
+       "disabled": false
+      },
+      {
+       "developerName": "teens",
+       "label": "Teens",
+       "disabled": false
+      },
+      {
+       "developerName": "adults",
+       "label": "Adults",
+       "disabled": false
+      },
+      {
+       "developerName": "seniors",
+       "label": "Older adults",
+       "disabled": false
+      }
+     ],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "kind",
+     "label": "Kind",
+     "description": "",
+     "fieldType": "dropdown",
+     "isRequired": false,
+     "choices": [
+      {
+       "developerName": "storytime",
+       "label": "Storytime",
+       "disabled": false
+      },
+      {
+       "developerName": "bookclub",
+       "label": "Book club",
+       "disabled": false
+      },
+      {
+       "developerName": "class",
+       "label": "Class",
+       "disabled": false
+      },
+      {
+       "developerName": "maker",
+       "label": "Makerspace",
+       "disabled": false
+      },
+      {
+       "developerName": "help",
+       "label": "Help desk",
+       "disabled": false
+      },
+      {
+       "developerName": "talk",
+       "label": "Talk",
+       "disabled": false
+      },
+      {
+       "developerName": "film",
+       "label": "Film",
+       "disabled": false
+      },
+      {
+       "developerName": "social",
+       "label": "Meetup",
+       "disabled": false
+      }
+     ],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "summary",
+     "label": "Summary",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "body",
+     "label": "Body",
+     "description": "",
+     "fieldType": "wysiwyg",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "host",
+     "label": "Host",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "seats",
+     "label": "Seats (drop-in)",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "sort_order",
+     "label": "Sort order",
+     "description": "",
+     "fieldType": "number",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    }
+   ],
+   "views": [
+    {
+     "developerName": "programs",
+     "label": "Programs",
+     "description": "",
+     "isPublished": true,
+     "routePath": "programs",
+     "template": "ol_list_programs",
+     "columns": [
+      "PrimaryField"
+     ],
+     "sort": [
+      {
+       "developerName": "sort_order",
+       "direction": "asc"
+      }
+     ],
+     "filter": [],
+     "defaultNumberOfItemsPerPage": 100,
+     "maxNumberOfItemsPerPage": 1000,
+     "ignoreClientFilterAndSortQueryParams": false
+    }
+   ]
+  },
+  {
+   "developerName": "branches",
+   "labelPlural": "Branches",
+   "labelSingular": "Branch",
+   "description": "Library branches with weekly hours",
+   "defaultRouteTemplate": "branches/{PrimaryField}",
+   "primaryField": "name",
+   "fields": [
+    {
+     "developerName": "name",
+     "label": "Name",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": true,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "code",
+     "label": "Code",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "neighborhood",
+     "label": "Neighborhood",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "address",
+     "label": "Address (fictional)",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "phone",
+     "label": "Phone (fictional)",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "mon",
+     "label": "Monday hours",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "tue",
+     "label": "Tuesday hours",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "wed",
+     "label": "Wednesday hours",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "thu",
+     "label": "Thursday hours",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "fri",
+     "label": "Friday hours",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "sat",
+     "label": "Saturday hours",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "sun",
+     "label": "Sunday hours",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "features",
+     "label": "Features (separate with |)",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "status",
+     "label": "Status",
+     "description": "",
+     "fieldType": "dropdown",
+     "isRequired": false,
+     "choices": [
+      {
+       "developerName": "open",
+       "label": "Open",
+       "disabled": false
+      },
+      {
+       "developerName": "limited",
+       "label": "Limited service",
+       "disabled": false
+      },
+      {
+       "developerName": "closed",
+       "label": "Temporarily closed",
+       "disabled": false
+      }
+     ],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "status_note",
+     "label": "Status note",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "summary",
+     "label": "Summary",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "body",
+     "label": "Body",
+     "description": "",
+     "fieldType": "wysiwyg",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "art",
+     "label": "Elevation drawing",
+     "description": "",
+     "fieldType": "attachment",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "sort_order",
+     "label": "Sort order",
+     "description": "",
+     "fieldType": "number",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    }
+   ],
+   "views": [
+    {
+     "developerName": "branches",
+     "label": "Branches",
+     "description": "",
+     "isPublished": true,
+     "routePath": "branches",
+     "template": "ol_list_branches",
+     "columns": [
+      "PrimaryField"
+     ],
+     "sort": [
+      {
+       "developerName": "sort_order",
+       "direction": "asc"
+      }
+     ],
+     "filter": [],
+     "defaultNumberOfItemsPerPage": 100,
+     "maxNumberOfItemsPerPage": 1000,
+     "ignoreClientFilterAndSortQueryParams": false
+    }
+   ]
+  },
+  {
+   "developerName": "titles",
+   "labelPlural": "New arrivals",
+   "labelSingular": "Title",
+   "description": "New books, audiobooks, films, records and things to borrow",
+   "defaultRouteTemplate": "new/{PrimaryField}",
+   "primaryField": "title",
+   "fields": [
+    {
+     "developerName": "title",
+     "label": "Title",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": true,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "author",
+     "label": "Author or maker",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "format",
+     "label": "Format",
+     "description": "",
+     "fieldType": "dropdown",
+     "isRequired": false,
+     "choices": [
+      {
+       "developerName": "book",
+       "label": "Book",
+       "disabled": false
+      },
+      {
+       "developerName": "large",
+       "label": "Large print",
+       "disabled": false
+      },
+      {
+       "developerName": "audio",
+       "label": "Audiobook",
+       "disabled": false
+      },
+      {
+       "developerName": "ebook",
+       "label": "E-book",
+       "disabled": false
+      },
+      {
+       "developerName": "dvd",
+       "label": "DVD",
+       "disabled": false
+      },
+      {
+       "developerName": "vinyl",
+       "label": "Vinyl",
+       "disabled": false
+      },
+      {
+       "developerName": "thing",
+       "label": "Library of Things",
+       "disabled": false
+      }
+     ],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "shelf",
+     "label": "Shelf",
+     "description": "",
+     "fieldType": "dropdown",
+     "isRequired": false,
+     "choices": [
+      {
+       "developerName": "fiction",
+       "label": "Fiction",
+       "disabled": false
+      },
+      {
+       "developerName": "mystery",
+       "label": "Mystery",
+       "disabled": false
+      },
+      {
+       "developerName": "nonfiction",
+       "label": "Nonfiction",
+       "disabled": false
+      },
+      {
+       "developerName": "local",
+       "label": "Local history",
+       "disabled": false
+      },
+      {
+       "developerName": "kids",
+       "label": "Kids",
+       "disabled": false
+      },
+      {
+       "developerName": "teen",
+       "label": "Teen",
+       "disabled": false
+      },
+      {
+       "developerName": "things",
+       "label": "Library of Things",
+       "disabled": false
+      }
+     ],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "call_number",
+     "label": "Call number",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "branches",
+     "label": "Branches holding a copy (codes, separate with |)",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "copies",
+     "label": "Copies",
+     "description": "",
+     "fieldType": "number",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "holds",
+     "label": "Holds",
+     "description": "",
+     "fieldType": "number",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "arrived",
+     "label": "Arrived",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "summary",
+     "label": "Summary",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "body",
+     "label": "Body",
+     "description": "",
+     "fieldType": "wysiwyg",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "pick_by",
+     "label": "Staff pick by",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "pick_note",
+     "label": "Staff pick note",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "spine",
+     "label": "Spine color",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "spine_h",
+     "label": "Spine height (60-100)",
+     "description": "",
+     "fieldType": "number",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "cover",
+     "label": "Cover",
+     "description": "",
+     "fieldType": "attachment",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "sort_order",
+     "label": "Sort order",
+     "description": "",
+     "fieldType": "number",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    }
+   ],
+   "views": [
+    {
+     "developerName": "titles",
+     "label": "New arrivals",
+     "description": "",
+     "isPublished": true,
+     "routePath": "new",
+     "template": "ol_list_titles",
+     "columns": [
+      "PrimaryField"
+     ],
+     "sort": [
+      {
+       "developerName": "sort_order",
+       "direction": "asc"
+      }
+     ],
+     "filter": [],
+     "defaultNumberOfItemsPerPage": 100,
+     "maxNumberOfItemsPerPage": 1000,
+     "ignoreClientFilterAndSortQueryParams": false
+    }
+   ]
+  },
+  {
+   "developerName": "lists",
+   "labelPlural": "Reading lists",
+   "labelSingular": "Reading list",
+   "description": "Reading lists by library staff",
+   "defaultRouteTemplate": "lists/{PrimaryField}",
+   "primaryField": "name",
+   "fields": [
+    {
+     "developerName": "name",
+     "label": "Name",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": true,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "curator",
+     "label": "Curator",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "branch",
+     "label": "Branch",
+     "description": "",
+     "fieldType": "dropdown",
+     "isRequired": false,
+     "choices": [
+      {
+       "developerName": "central",
+       "label": "Central Library",
+       "disabled": false
+      },
+      {
+       "developerName": "millrace",
+       "label": "Millrace",
+       "disabled": false
+      },
+      {
+       "developerName": "quarry",
+       "label": "North Quarry",
+       "disabled": false
+      },
+      {
+       "developerName": "ferrin",
+       "label": "Ferrin Heights",
+       "disabled": false
+      },
+      {
+       "developerName": "bookmobile",
+       "label": "Bookmobile",
+       "disabled": false
+      }
+     ],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "summary",
+     "label": "Summary",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "body",
+     "label": "Body",
+     "description": "",
+     "fieldType": "wysiwyg",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "picks",
+     "label": "Picks (Title :: Author :: note, separated by ||)",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "color",
+     "label": "Card color",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "sort_order",
+     "label": "Sort order",
+     "description": "",
+     "fieldType": "number",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    }
+   ],
+   "views": [
+    {
+     "developerName": "lists",
+     "label": "Reading lists",
+     "description": "",
+     "isPublished": true,
+     "routePath": "lists",
+     "template": "ol_list_lists",
+     "columns": [
+      "PrimaryField"
+     ],
+     "sort": [
+      {
+       "developerName": "sort_order",
+       "direction": "asc"
+      }
+     ],
+     "filter": [],
+     "defaultNumberOfItemsPerPage": 100,
+     "maxNumberOfItemsPerPage": 1000,
+     "ignoreClientFilterAndSortQueryParams": false
+    }
+   ]
+  },
+  {
+   "developerName": "resources",
+   "labelPlural": "Digital resources",
+   "labelSingular": "Resource",
+   "description": "E-books, research databases, learning tools and the local archive; some for cardholders or staff only",
+   "defaultRouteTemplate": "resources/{PrimaryField}",
+   "primaryField": "name",
+   "fields": [
+    {
+     "developerName": "name",
+     "label": "Name",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": true,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "letter",
+     "label": "Index letter",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "kind",
+     "label": "Kind",
+     "description": "",
+     "fieldType": "dropdown",
+     "isRequired": false,
+     "choices": [
+      {
+       "developerName": "ebooks",
+       "label": "E-books and audiobooks",
+       "disabled": false
+      },
+      {
+       "developerName": "research",
+       "label": "Research",
+       "disabled": false
+      },
+      {
+       "developerName": "learning",
+       "label": "Learning",
+       "disabled": false
+      },
+      {
+       "developerName": "streaming",
+       "label": "Streaming",
+       "disabled": false
+      },
+      {
+       "developerName": "archive",
+       "label": "Local archive",
+       "disabled": false
+      },
+      {
+       "developerName": "staff",
+       "label": "Staff tools",
+       "disabled": false
+      }
+     ],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "audience",
+     "label": "Audience",
+     "description": "",
+     "fieldType": "dropdown",
+     "isRequired": false,
+     "choices": [
+      {
+       "developerName": "public",
+       "label": "Everyone",
+       "disabled": false
+      },
+      {
+       "developerName": "cardholders",
+       "label": "Cardholders",
+       "disabled": false
+      },
+      {
+       "developerName": "staff",
+       "label": "Staff",
+       "disabled": false
+      }
+     ],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "provider",
+     "label": "Provider (fictional)",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "summary",
+     "label": "Summary",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "body",
+     "label": "Access details",
+     "description": "",
+     "fieldType": "wysiwyg",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "access_note",
+     "label": "Where it works",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "sort_order",
+     "label": "Sort order",
+     "description": "",
+     "fieldType": "number",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    }
+   ],
+   "views": [
+    {
+     "developerName": "resources",
+     "label": "Digital resources",
+     "description": "",
+     "isPublished": true,
+     "routePath": "resources",
+     "template": "ol_list_resources",
+     "columns": [
+      "PrimaryField"
+     ],
+     "sort": [
+      {
+       "developerName": "sort_order",
+       "direction": "asc"
+      }
+     ],
+     "filter": [],
+     "defaultNumberOfItemsPerPage": 100,
+     "maxNumberOfItemsPerPage": 1000,
+     "ignoreClientFilterAndSortQueryParams": false
+    }
+   ]
+  },
+  {
+   "developerName": "news",
+   "labelPlural": "News",
+   "labelSingular": "News story",
+   "description": "Library news",
+   "defaultRouteTemplate": "news/{PrimaryField}",
+   "primaryField": "title",
+   "fields": [
+    {
+     "developerName": "title",
+     "label": "Title",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": true,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "date_label",
+     "label": "Date",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "kind",
+     "label": "Kind",
+     "description": "",
+     "fieldType": "dropdown",
+     "isRequired": false,
+     "choices": [
+      {
+       "developerName": "branches",
+       "label": "Branches",
+       "disabled": false
+      },
+      {
+       "developerName": "collections",
+       "label": "Collections",
+       "disabled": false
+      },
+      {
+       "developerName": "programs",
+       "label": "Programs",
+       "disabled": false
+      },
+      {
+       "developerName": "board",
+       "label": "Library board",
+       "disabled": false
+      },
+      {
+       "developerName": "community",
+       "label": "Community",
+       "disabled": false
+      }
+     ],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "summary",
+     "label": "Summary",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "body",
+     "label": "Body",
+     "description": "",
+     "fieldType": "wysiwyg",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "image",
+     "label": "Image",
+     "description": "",
+     "fieldType": "attachment",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "sort_order",
+     "label": "Sort order",
+     "description": "",
+     "fieldType": "number",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    }
+   ],
+   "views": [
+    {
+     "developerName": "news",
+     "label": "News",
+     "description": "",
+     "isPublished": true,
+     "routePath": "news",
+     "template": "ol_list_news",
+     "columns": [
+      "PrimaryField"
+     ],
+     "sort": [
+      {
+       "developerName": "sort_order",
+       "direction": "asc"
+      }
+     ],
+     "filter": [],
+     "defaultNumberOfItemsPerPage": 100,
+     "maxNumberOfItemsPerPage": 1000,
+     "ignoreClientFilterAndSortQueryParams": false
+    }
+   ]
+  }
+ ]
+}

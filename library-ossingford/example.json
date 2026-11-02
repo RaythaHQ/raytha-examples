@@ -1,0 +1,30 @@
+{
+ "name": "Ossingford Public Library",
+ "theme": "ossingford",
+ "types": [
+  "branches",
+  "programs",
+  "titles",
+  "lists",
+  "resources",
+  "news"
+ ],
+ "detailTemplates": {
+  "branches": "ol_detail_branches",
+  "programs": "ol_detail_programs",
+  "titles": "ol_detail_titles",
+  "lists": "ol_detail_lists",
+  "resources": "ol_detail_resources",
+  "news": "ol_detail_news"
+ },
+ "groups": [
+  {
+   "developerName": "cardholders",
+   "label": "Ossingford cardholders"
+  },
+  {
+   "developerName": "staff",
+   "label": "Ossingford library staff"
+  }
+ ]
+}

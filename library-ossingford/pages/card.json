@@ -1,0 +1,46 @@
+{
+ "main": [
+  {
+   "widgetType": "ol_head",
+   "settings": {
+    "kicker": "Get a library card",
+    "headline": "A library card is free for anyone who lives, works or goes to school in Ossingford County",
+    "subtitle": "Bring a photo ID and something with your address to any desk, or to the Bookmobile. It takes about five minutes. There is no online form on this site."
+   }
+  },
+  {
+   "widgetType": "ol_steps",
+   "settings": {
+    "headline": "How it works",
+    "intro": "Cards are issued in person so we can check an address once and hand you the card the same day.",
+    "items": [
+     {
+      "title": "Come to any branch",
+      "text": "Central, Millrace, North Quarry, Ferrin Heights, or any Bookmobile stop."
+     },
+     {
+      "title": "Bring ID and an address",
+      "text": "A driver's license, a lease, a utility bill or a school ID with a letter all work."
+     },
+     {
+      "title": "Pick a PIN",
+      "text": "You will use your card number and PIN for e-books, databases and the cardholder pages on this site."
+     },
+     {
+      "title": "Borrow today",
+      "text": "Up to 50 items at a time, plus 10 e-books. No late fees on children's items."
+     }
+    ]
+   }
+  },
+  {
+   "widgetType": "ol_text",
+   "settings": {
+    "headline": "Cards for kids and teens",
+    "body": "<p>Children under 13 get a card with a parent or guardian. Teens 13 and up can get their own card with a school ID.</p><p>Every kindergartener in the county gets a card in their first month of school through the Card in Every Backpack program (story).</p>",
+    "card_title": "Signing in on this site",
+    "card": "Cardholders sign in with the account the desk creates for them. Library staff use the same sign-in for the staff room. The demo accounts are fictional."
+   }
+  }
+ ]
+}

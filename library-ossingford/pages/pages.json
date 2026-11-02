@@ -1,0 +1,39 @@
+[
+ {
+  "title": "Ossingford Public Library",
+  "routePath": "home",
+  "template": "ol_home",
+  "sections": "pages/home.json",
+  "home": true
+ },
+ {
+  "title": "About",
+  "routePath": "about",
+  "template": "ol_page",
+  "sections": "pages/about.json"
+ },
+ {
+  "title": "Get a card",
+  "routePath": "get-a-card",
+  "template": "ol_page",
+  "sections": "pages/card.json"
+ },
+ {
+  "title": "My library",
+  "routePath": "my-library",
+  "template": "ol_card",
+  "sections": "pages/my-card.json"
+ },
+ {
+  "title": "Staff room",
+  "routePath": "staff-room",
+  "template": "ol_staff",
+  "sections": "pages/staff.json"
+ },
+ {
+  "title": "Search",
+  "routePath": "search",
+  "template": "ol_search",
+  "sections": "pages/search.json"
+ }
+]

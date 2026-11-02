@@ -1,0 +1,55 @@
+{
+ "main": [
+  {
+   "widgetType": "ol_table",
+   "settings": {
+    "headline": "Desk schedule, week of November 2",
+    "intro": "Who covers which desk. Swaps go through the branch lead. Names are fictional.",
+    "columns": "Desk|Mon|Tue|Wed|Thu|Fri|Sat",
+    "rows": [
+     {
+      "cells": "Central, circulation|Dev, Rosa|Dev, Ines|Hal, Rosa|Hal, Ines|Dev, Rosa|Ines, Teo"
+     },
+     {
+      "cells": "Central, reference|Ruth|Ruth|Celia|Ruth|Hal|Ruth"
+     },
+     {
+      "cells": "Central, children's|Mira|Mira|Ava|Mira|Ava|Mira"
+     },
+     {
+      "cells": "Millrace|Dev, Lou|Lou|Lou, Sam|Sam|Lou|Sam"
+     },
+     {
+      "cells": "North Quarry (front door desk)|Pia|Pia|Kai|Kai|Pia|Kai"
+     },
+     {
+      "cells": "Ferrin Heights|Closed|Noor, Eli|Noor|Eli|Noor, Eli|Eli"
+     }
+    ]
+   }
+  },
+  {
+   "widgetType": "ol_notes",
+   "settings": {
+    "headline": "Staff notices",
+    "items": [
+     {
+      "tag": "Roof",
+      "title": "North Quarry: reading room closed",
+      "text": "Contractors on site 7 am \u2013 3 pm. Keep the east door clear. The community room is the temporary collection."
+     },
+     {
+      "tag": "Policy",
+      "title": "Replacement cards are free once a year",
+      "text": "Desk procedures handbook chapter 4 is updated. Waive the fee in the circulation system with reason code RC1."
+     },
+     {
+      "tag": "Training",
+      "title": "De-escalation refresher, Nov 12",
+      "text": "9 am in the Kettle Room. Required for anyone on a public desk this year."
+     }
+    ]
+   }
+  }
+ ]
+}

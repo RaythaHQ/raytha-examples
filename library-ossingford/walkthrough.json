@@ -1,0 +1,135 @@
+{
+ "slug": "ossingford-public-library",
+ "name": "Ossingford Public Library",
+ "base": "http://localhost:5000",
+ "viewport": [
+  1440,
+  810
+ ],
+ "output": [
+  1920,
+  1080
+ ],
+ "colorScheme": "light",
+ "login": {
+  "path": "/account/login",
+  "emailEnv": "SITE_USER_EMAIL",
+  "passwordEnv": "SITE_USER_PASSWORD"
+ },
+ "title": {
+  "kicker": "Raytha use case",
+  "heading": "Ossingford Public Library",
+  "subheading": "A public library website: branches with today's hours, a weekly program planner, new arrivals on a shelf, digital resources A\u2013Z \u2014 and members-only pages for cardholders and staff.",
+  "hold": 1.3
+ },
+ "end": {
+  "heading": "Built with Raytha",
+  "subheading": "Open-source .NET CMS. Get the brief, screenshots and a one-command rebuild kit.",
+  "url": "raytha.com/use-cases/ossingford-public-library",
+  "hold": 2.3
+ },
+ "scenes": [
+  {
+   "url": "/",
+   "caption": "A card-catalog look, with today's hours for every branch",
+   "actions": [
+    {
+     "hold": 1.2,
+     "poster": true
+    },
+    {
+     "scroll": 640,
+     "dur": 1.6
+    },
+    {
+     "hold": 0.9
+    },
+    {
+     "scroll": 1480,
+     "dur": 1.6
+    },
+    {
+     "hold": 0.8
+    }
+   ]
+  },
+  {
+   "url": "/programs",
+   "caption": "The week planner: free, drop-in programs at every branch",
+   "actions": [
+    {
+     "hold": 1.3
+    },
+    {
+     "scroll": 300,
+     "dur": 1.2
+    },
+    {
+     "hold": 0.5
+    }
+   ]
+  },
+  {
+   "url": "/new/the-weir-keeper",
+   "caption": "Every new title: catalog card, where to find it, holds",
+   "actions": [
+    {
+     "hold": 1.2
+    },
+    {
+     "scroll": 360,
+     "dur": 1.2
+    },
+    {
+     "hold": 0.4
+    }
+   ]
+  },
+  {
+   "url": "/resources/bramblebox-e-books-and-audiobooks",
+   "caption": "Signed out: access details are locked on the server",
+   "actions": [
+    {
+     "hold": 1.3
+    }
+   ]
+  },
+  {
+   "url": "/my-library",
+   "signin": true,
+   "caption": "Signed in as a cardholder: library card, e-book and database access",
+   "actions": [
+    {
+     "hold": 1.1
+    },
+    {
+     "scroll": 520,
+     "dur": 1.4
+    },
+    {
+     "hold": 0.5
+    }
+   ]
+  },
+  {
+   "url": "/",
+   "phone": true,
+   "phoneCaption": {
+    "kicker": "Responsive",
+    "text": "The same pages on a phone"
+   },
+   "actions": [
+    {
+     "hold": 0.5
+    },
+    {
+     "scroll": 1400,
+     "dur": 2.0
+    },
+    {
+     "hold": 0.4
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,49 @@
+{
+ "main": [
+  {
+   "widgetType": "ol_notes",
+   "settings": {
+    "headline": "Notices for cardholders",
+    "items": [
+     {
+      "tag": "Holds",
+      "title": "Hold shelf times",
+      "text": "Holds wait 7 days at a branch and 10 days on the Bookmobile. The North Quarry locker is open 7 am \u2013 10 pm."
+     },
+     {
+      "tag": "E-books",
+      "title": "Bramblebox limit raised",
+      "text": "You can now borrow 10 e-books at a time, up from 6."
+     },
+     {
+      "tag": "Passes",
+      "title": "Museum passes for November",
+      "text": "The Ossel Valley Museum and the Science Barn passes are back after the summer waitlist."
+     }
+    ]
+   }
+  },
+  {
+   "widgetType": "ol_table",
+   "settings": {
+    "headline": "Museum and park passes",
+    "intro": "Borrow a pass at Central for 3 days. One pass per card per month. Passes are fictional.",
+    "columns": "Pass|Admits|Copies|Next free",
+    "rows": [
+     {
+      "cells": "Ossel Valley Museum|2 adults, 3 kids|4|Today"
+     },
+     {
+      "cells": "Science Barn|Family of 5|3|Nov 5"
+     },
+     {
+      "cells": "County parks day pass|1 vehicle|6|Today"
+     },
+     {
+      "cells": "Ridge Observatory nights|4 people|2|Nov 13"
+     }
+    ]
+   }
+  }
+ ]
+}

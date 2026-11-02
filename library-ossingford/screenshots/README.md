@@ -1,0 +1,16 @@
+# Screenshots
+
+Captured at 1440px and 390px from a site built with `../build.sh`. Signed-in shots use demo users in the `cardholders` group (My library) and the `staff` group (staff room). Hosted in raytha.com media.
+
+| Screenshot | Shows |
+|---|---|
+| [<img src="https://raytha.com/raytha/media-items/objectkey/V11XbAJokkaQeFc-QObgIA_ossingford_01_home.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/V11XbAJokkaQeFc-QObgIA_ossingford_01_home.webp) | Home: today's hours for every branch on a catalog card, read from each branch's fields on the server |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/lepM4a7bU0St2yU2iadGJA_ossingford_03_shelf.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/lepM4a7bU0St2yU2iadGJA_ossingford_03_shelf.webp) | New arrivals drawn as book spines on a shelf, with staff picks |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/Az5d66EH8EWDb6SrAKpr3w_ossingford_04_datedue.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/Az5d66EH8EWDb6SrAKpr3w_ossingford_04_datedue.webp) | This week's programs on a date-due slip, next to today's programs |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/jjpq_IzX90mPMWQcELC2lw_ossingford_06_branch.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/jjpq_IzX90mPMWQcELC2lw_ossingford_06_branch.webp) | A branch page: elevation drawing, hours with today highlighted, features, programs and new titles |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/m35fAh_p6EOUXWrDZC9gLQ_ossingford_07_programs.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/m35fAh_p6EOUXWrDZC9gLQ_ossingford_07_programs.webp) | The weekly program planner, Monday to Sunday, with server-side audience filters |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/nJhLqxbES0GpiblWAG5eEg_ossingford_10_title.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/nJhLqxbES0GpiblWAG5eEg_ossingford_10_title.webp) | A new title as a catalog card, with where to find it, holds and a staff pick |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/zj3Lxk68KE-nSo2uy_42fA_ossingford_13_resource_locked.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/zj3Lxk68KE-nSo2uy_42fA_ossingford_13_resource_locked.webp) | A cardholder resource, signed out: the access details are never sent, only a lock panel |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/xFXhbcd10U6ON5xg2x09fw_ossingford_16_mylibrary_member.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/xFXhbcd10U6ON5xg2x09fw_ossingford_16_mylibrary_member.webp) | Signed in as a cardholder: library card, e-book and database access, notices and museum passes |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/68SsYVW1mkmjuSkDtqfbew_ossingford_18_staffroom_member.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/68SsYVW1mkmjuSkDtqfbew_ossingford_18_staffroom_member.webp) | The staff room: desk schedule, staff notices and procedures, for staff accounts only |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/n8bSb9qXCEyfcDPe9hnxmA_ossingford_21_home_mobile.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/n8bSb9qXCEyfcDPe9hnxmA_ossingford_21_home_mobile.webp) | Home on a phone |

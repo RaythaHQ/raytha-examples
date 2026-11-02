@@ -1,0 +1,26 @@
+{
+ "developerName": "footer",
+ "label": "Footer",
+ "items": [
+  {
+   "label": "My library (cardholders)",
+   "link": "/my-library"
+  },
+  {
+   "label": "Staff room",
+   "link": "/staff-room"
+  },
+  {
+   "label": "News",
+   "link": "/news"
+  },
+  {
+   "label": "About",
+   "link": "/about"
+  },
+  {
+   "label": "Search",
+   "link": "/search"
+  }
+ ]
+}

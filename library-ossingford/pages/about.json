@@ -1,0 +1,46 @@
+{
+ "main": [
+  {
+   "widgetType": "ol_head",
+   "settings": {
+    "kicker": "About the library",
+    "headline": "A public library since 1911, with five branches and a bus",
+    "subtitle": "Ossingford Public Library (fictional) serves about 118,000 people in Ossingford County from four buildings and a Bookmobile. The library, its people, places and figures are fictional; this is a Raytha example site."
+   }
+  },
+  {
+   "widgetType": "ol_text",
+   "settings": {
+    "headline": "What the library is for",
+    "body": "<p>Free to use, for everyone in the county: books and films, a quiet place to work, the internet, help with a form, a room for a club, the town's own history, and storytime on a Monday morning.</p><p>The library is governed by a seven-member board appointed by the county (story) and is funded by the county levy, with help from the Friends of the Library.</p><p>\u2014 Celia Marrow, library director (fictional)</p>",
+    "card_title": "Library board",
+    "card": "Meets the third Thursday of each month at 6 pm in the Kettle Room, Central Library. Agendas are posted on the news page a week before."
+   }
+  },
+  {
+   "widgetType": "ol_table",
+   "settings": {
+    "headline": "In figures (story)",
+    "intro": "From the 2025 annual report.",
+    "columns": "Measure|2025",
+    "rows": [
+     {
+      "cells": "Items borrowed|1.31 million"
+     },
+     {
+      "cells": "Cardholders|71,400"
+     },
+     {
+      "cells": "Program visits|48,900"
+     },
+     {
+      "cells": "Ledger Room questions answered|6,200"
+     },
+     {
+      "cells": "Bookmobile stops a week|9"
+     }
+    ]
+   }
+  }
+ ]
+}
