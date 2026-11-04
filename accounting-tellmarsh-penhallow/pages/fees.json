@@ -1,0 +1,69 @@
+{
+ "main": [
+  {
+   "widgetType": "tp_head",
+   "settings": {
+    "kicker": "Fees",
+    "headline": "Fixed fees, quoted before we start",
+    "subtitle": "Every engagement has a written fee before work begins. Calls and emails during the engagement are included. Figures are fictional."
+   }
+  },
+  {
+   "widgetType": "tp_table",
+   "settings": {
+    "headline": "Fee guide",
+    "intro": "Starting points. The engagement letter has the exact fee.",
+    "columns": "Engagement|From|Basis|Adds to the fee",
+    "rows": [
+     {
+      "cells": "Individual return, one state|$650|Fixed|Each extra state $150; rental $175 each"
+     },
+     {
+      "cells": "Business return (S corp or partnership)|$1,800|Fixed|Each extra state $250"
+     },
+     {
+      "cells": "Monthly bookkeeping and close|$450 a month|Monthly|Over 300 transactions a month"
+     },
+     {
+      "cells": "Payroll|$120 a month|Monthly|$6 per employee per month"
+     },
+     {
+      "cells": "Tax planning and estimates|$900 a year|Annual|Equity compensation, business sale"
+     },
+     {
+      "cells": "Nonprofit 990|$2,400|Fixed|Audit schedules $600"
+     },
+     {
+      "cells": "Notice response|$350|Per notice|Exams and appeals quoted separately"
+     },
+     {
+      "cells": "Estate or trust return|$1,500|Fixed|Each beneficiary over five $50"
+     }
+    ]
+   }
+  },
+  {
+   "widgetType": "tp_notes",
+   "settings": {
+    "headline": "What is never extra",
+    "items": [
+     {
+      "tag": "Included",
+      "title": "Questions during the year",
+      "text": "A call or an email about your return or your books is part of the engagement."
+     },
+     {
+      "tag": "Included",
+      "title": "A copy of everything",
+      "text": "You get the full return, the workpaper summary and the letter, every year."
+     },
+     {
+      "tag": "Included",
+      "title": "Moving your file",
+      "text": "If you leave, we hand your files to the next firm without a fee."
+     }
+    ]
+   }
+  }
+ ]
+}

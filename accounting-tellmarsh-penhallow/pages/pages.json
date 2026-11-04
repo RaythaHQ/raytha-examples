@@ -1,0 +1,45 @@
+[
+ {
+  "title": "Tellmarsh & Penhallow CPAs",
+  "routePath": "home",
+  "template": "tp_home",
+  "sections": "pages/home.json",
+  "home": true
+ },
+ {
+  "title": "About",
+  "routePath": "about",
+  "template": "tp_page",
+  "sections": "pages/about.json"
+ },
+ {
+  "title": "Fees",
+  "routePath": "fees",
+  "template": "tp_page",
+  "sections": "pages/fees.json"
+ },
+ {
+  "title": "New clients",
+  "routePath": "new-clients",
+  "template": "tp_page",
+  "sections": "pages/new-clients.json"
+ },
+ {
+  "title": "Client portal",
+  "routePath": "client-portal",
+  "template": "tp_portal",
+  "sections": "pages/portal.json"
+ },
+ {
+  "title": "Staff room",
+  "routePath": "staff-room",
+  "template": "tp_staff",
+  "sections": "pages/staff.json"
+ },
+ {
+  "title": "Search",
+  "routePath": "search",
+  "template": "tp_search",
+  "sections": "pages/search.json"
+ }
+]

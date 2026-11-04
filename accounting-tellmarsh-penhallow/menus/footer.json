@@ -1,0 +1,34 @@
+{
+ "developerName": "footer",
+ "label": "Footer",
+ "items": [
+  {
+   "label": "New clients",
+   "link": "/new-clients"
+  },
+  {
+   "label": "Client portal",
+   "link": "/client-portal"
+  },
+  {
+   "label": "Staff room",
+   "link": "/staff-room"
+  },
+  {
+   "label": "Records to keep",
+   "link": "/keep"
+  },
+  {
+   "label": "Documents",
+   "link": "/documents"
+  },
+  {
+   "label": "About",
+   "link": "/about"
+  },
+  {
+   "label": "Search",
+   "link": "/search"
+  }
+ ]
+}

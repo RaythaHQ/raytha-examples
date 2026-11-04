@@ -1,0 +1,12 @@
+{"name": "Tax returns", "kind": "household", "years": 99, "keep_label": "Permanently", "why": "A return is the easiest proof of income for a loan, a benefit or an estate. Keep a copy of every one.", "sort_order": 1}
+{"name": "Receipts and statements behind a return", "kind": "household", "years": 7, "keep_label": "7 years", "why": "Covers the usual three-year review window and the longer windows for some errors.", "sort_order": 2}
+{"name": "Pay stubs", "kind": "household", "years": 1, "keep_label": "Until the W-2 matches", "why": "Check them against the W-2 in January, then shred.", "sort_order": 3}
+{"name": "Retirement account statements", "kind": "household", "years": 99, "keep_label": "Until the account is closed", "why": "Keep year-end statements and records of after-tax contributions for as long as the account exists.", "sort_order": 4}
+{"name": "Home purchase and improvement records", "kind": "property", "years": 10, "keep_label": "Sale + 7 years", "why": "Improvements raise your cost basis and lower the gain when you sell.", "sort_order": 5}
+{"name": "Investment purchase records", "kind": "property", "years": 10, "keep_label": "Sale + 7 years", "why": "Needed to work out the gain or loss when you sell.", "sort_order": 6}
+{"name": "Business formation documents", "kind": "business", "years": 99, "keep_label": "Permanently", "why": "Articles, operating agreements, EIN letters and S election approvals.", "sort_order": 7}
+{"name": "Invoices, receipts and bank statements", "kind": "business", "years": 7, "keep_label": "7 years", "why": "Support every line of the business return.", "sort_order": 8}
+{"name": "Fixed asset records", "kind": "business", "years": 10, "keep_label": "Disposal + 7 years", "why": "Support depreciation for as long as the asset is on the books, and the sale afterwards.", "sort_order": 9}
+{"name": "Payroll records and W-4s", "kind": "payroll", "years": 4, "keep_label": "4 years", "why": "Employment tax records after the tax is due or paid, whichever is later.", "sort_order": 10}
+{"name": "Contractor W-9s and 1099s", "kind": "payroll", "years": 4, "keep_label": "4 years", "why": "Show why you did or did not withhold.", "sort_order": 11}
+{"name": "Board minutes and grant agreements", "kind": "business", "years": 99, "keep_label": "Permanently", "why": "Nonprofits: governance records and restricted gift terms.", "sort_order": 12}

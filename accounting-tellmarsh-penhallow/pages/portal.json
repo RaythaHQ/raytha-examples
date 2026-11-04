@@ -1,0 +1,46 @@
+{
+ "main": [
+  {
+   "widgetType": "tp_notes",
+   "settings": {
+    "headline": "Notices for clients",
+    "items": [
+     {
+      "tag": "Year-end",
+      "title": "November planning meetings are booking now",
+      "text": "Planning clients: Owen's calendar for November 9 to 24 is open in the portal."
+     },
+     {
+      "tag": "Office",
+      "title": "Closed Thanksgiving Thursday and Friday",
+      "text": "The drop box at 14 Wharf Street is checked on Saturday morning."
+     },
+     {
+      "tag": "Organizer",
+      "title": "2026 organizers open December 1",
+      "text": "Your organizer is pre-filled from last year's return."
+     }
+    ]
+   }
+  },
+  {
+   "widgetType": "tp_table",
+   "settings": {
+    "headline": "Your engagement this year",
+    "intro": "A sample engagement for the demo client (fictional).",
+    "columns": "Service|Fee|Status",
+    "rows": [
+     {
+      "cells": "Individual return, one state|$650|Organizer opens December 1"
+     },
+     {
+      "cells": "Tax planning and estimates|$900 a year|Q4 estimate set: due January 15"
+     },
+     {
+      "cells": "Rental schedule (Larkin Street)|$175|With the 2026 return"
+     }
+    ]
+   }
+  }
+ ]
+}

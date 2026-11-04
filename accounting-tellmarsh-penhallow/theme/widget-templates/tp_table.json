@@ -1,0 +1,56 @@
+{
+ "label": "Tellmarsh: figures table",
+ "fields": [
+  {
+   "developerName": "headline",
+   "label": "Headline",
+   "description": "",
+   "fieldType": "single_line_text",
+   "isRequired": false,
+   "choices": [],
+   "relatedContentType": null,
+   "subFields": []
+  },
+  {
+   "developerName": "intro",
+   "label": "Intro",
+   "description": "",
+   "fieldType": "long_text",
+   "isRequired": false,
+   "choices": [],
+   "relatedContentType": null,
+   "subFields": []
+  },
+  {
+   "developerName": "columns",
+   "label": "Column headings (separate with |)",
+   "description": "",
+   "fieldType": "single_line_text",
+   "isRequired": false,
+   "choices": [],
+   "relatedContentType": null,
+   "subFields": []
+  },
+  {
+   "developerName": "rows",
+   "label": "Rows",
+   "description": "",
+   "fieldType": "repeater",
+   "isRequired": false,
+   "choices": [],
+   "relatedContentType": null,
+   "subFields": [
+    {
+     "developerName": "cells",
+     "label": "Cells (separate with |)",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,58 @@
+{
+ "main": [
+  {
+   "widgetType": "tp_table",
+   "settings": {
+    "headline": "Season board, week of November 2",
+    "intro": "Open work by person. Names and counts are fictional.",
+    "columns": "Person|Planning meetings|Extensions open|Notices open|Books to close|Payrolls",
+    "rows": [
+     {
+      "cells": "Owen Tellmarsh|14|3|0|0|0"
+     },
+     {
+      "cells": "Nadia Penhallow|2|1|0|0|0"
+     },
+     {
+      "cells": "Marisol Ferreira|0|0|9|0|0"
+     },
+     {
+      "cells": "Desmond Achterberg|0|11|1|6|0"
+     },
+     {
+      "cells": "June Okafor-Reyes|5|0|0|4|0"
+     },
+     {
+      "cells": "Lena Hask|0|0|0|38|0"
+     },
+     {
+      "cells": "Theo Barlowe|0|0|1|0|22"
+     }
+    ]
+   }
+  },
+  {
+   "widgetType": "tp_notes",
+   "settings": {
+    "headline": "Staff notices",
+    "items": [
+     {
+      "tag": "Deadline",
+      "title": "Extended nonprofit returns due November 15",
+      "text": "Desmond's list: 11 open. Treasurer signatures needed by November 12."
+     },
+     {
+      "tag": "Training",
+      "title": "Organizer rollout, November 18",
+      "text": "One hour in the Wharf Room before the organizers open on December 1."
+     },
+     {
+      "tag": "Office",
+      "title": "Saturday hours start February 7",
+      "text": "Busy-season Saturday rota goes out on January 15."
+     }
+    ]
+   }
+  }
+ ]
+}

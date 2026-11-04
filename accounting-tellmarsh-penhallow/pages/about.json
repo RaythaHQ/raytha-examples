@@ -1,0 +1,49 @@
+{
+ "main": [
+  {
+   "widgetType": "tp_head",
+   "settings": {
+    "kicker": "About the firm",
+    "headline": "Two partners, twenty-six people, one office on Wharf Street",
+    "subtitle": "Tellmarsh & Penhallow (fictional) has prepared returns and kept books in Merrow Bend since 1987. The firm, its people, clients and figures are fictional; this is a Raytha example site."
+   }
+  },
+  {
+   "widgetType": "tp_text",
+   "settings": {
+    "headline": "How the firm works",
+    "body": "<p>Ada Tellmarsh opened the practice in 1987 above a hardware store on Wharf Street. Nadia Penhallow joined in 1998 and became a partner in 2006; Owen Tellmarsh became a partner in 2012, the year Ada retired.</p><p>Every return is prepared by one person and reviewed by another, and every business return is signed by a partner. Fees are fixed and quoted before work starts. We do not bill by the phone call or the email.</p><p>\u2014 Nadia Penhallow, managing partner (fictional)</p>",
+    "memo_title": "Office",
+    "memo": "14 Wharf Street, Merrow Bend (fictional). Main line (555) 017-4400. Weekdays 8:30 to 5; February to April also Saturdays 9 to 1."
+   }
+  },
+  {
+   "widgetType": "tp_table",
+   "settings": {
+    "headline": "In figures (story)",
+    "intro": "From the firm's 2025 year in review.",
+    "columns": "Measure|2025",
+    "rows": [
+     {
+      "cells": "Individual returns filed|1,140"
+     },
+     {
+      "cells": "Business returns filed|286"
+     },
+     {
+      "cells": "Nonprofit returns filed|41"
+     },
+     {
+      "cells": "Businesses on monthly books|92"
+     },
+     {
+      "cells": "Employers on payroll|61"
+     },
+     {
+      "cells": "Notices answered|173"
+     }
+    ]
+   }
+  }
+ ]
+}

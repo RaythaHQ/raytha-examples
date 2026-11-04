@@ -1,0 +1,46 @@
+{
+ "main": [
+  {
+   "widgetType": "tp_head",
+   "settings": {
+    "kicker": "New clients",
+    "headline": "How to start with the firm",
+    "subtitle": "There is no sign-up form. Call the front desk or stop by, and we book a free thirty-minute first meeting."
+   }
+  },
+  {
+   "widgetType": "tp_steps",
+   "settings": {
+    "headline": "Four steps",
+    "intro": "From the first call to the first return, usually two to three weeks.",
+    "items": [
+     {
+      "title": "Call or stop by",
+      "text": "(555) 017-4400, weekdays 8:30 to 5, or 14 Wharf Street (fictional). We ask a few questions and book a first meeting."
+     },
+     {
+      "title": "A free first meeting",
+      "text": "Thirty minutes with the person who would do your work. Bring last year's return and your questions."
+     },
+     {
+      "title": "An engagement letter",
+      "text": "A written scope and a fixed fee. You sign it by e-signature, and we open your client portal."
+     },
+     {
+      "title": "Your portal and organizer",
+      "text": "Upload documents against the checklist. We start when the organizer is complete."
+     }
+    ]
+   }
+  },
+  {
+   "widgetType": "tp_text",
+   "settings": {
+    "headline": "When to call",
+    "body": "<p>We take new individual clients until February 15 for the current season; after that we file an extension and finish the return after April. New business clients are welcome any month, and the best time to start monthly books is the first month of a quarter.</p>",
+    "memo_title": "Front desk",
+    "memo": "(555) 017-4400 \u00b7 Weekdays 8:30 to 5 \u00b7 14 Wharf Street, Merrow Bend (fictional)"
+   }
+  }
+ ]
+}

@@ -1,0 +1,30 @@
+{
+ "developerName": "mainmenu",
+ "label": "Main menu",
+ "items": [
+  {
+   "label": "Services",
+   "link": "/services"
+  },
+  {
+   "label": "Deadlines",
+   "link": "/deadlines"
+  },
+  {
+   "label": "Who we serve",
+   "link": "/who-we-serve"
+  },
+  {
+   "label": "People",
+   "link": "/people"
+  },
+  {
+   "label": "Fees",
+   "link": "/fees"
+  },
+  {
+   "label": "Field notes",
+   "link": "/notes"
+  }
+ ]
+}

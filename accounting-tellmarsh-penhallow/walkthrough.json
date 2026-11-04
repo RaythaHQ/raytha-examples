@@ -1,0 +1,144 @@
+{
+ "slug": "tellmarsh-penhallow-cpas",
+ "name": "Tellmarsh & Penhallow CPAs",
+ "base": "http://localhost:5000",
+ "viewport": [
+  1440,
+  810
+ ],
+ "output": [
+  1920,
+  1080
+ ],
+ "colorScheme": "light",
+ "login": {
+  "path": "/account/login",
+  "emailEnv": "SITE_USER_EMAIL",
+  "passwordEnv": "SITE_USER_PASSWORD"
+ },
+ "title": {
+  "kicker": "Raytha use case",
+  "heading": "Tellmarsh & Penhallow CPAs",
+  "subheading": "An accounting firm website: a tax-year dial with every deadline, fixed-fee services, a records chart \u2014 and members-only pages for clients and staff.",
+  "hold": 1.3
+ },
+ "end": {
+  "heading": "Built with Raytha",
+  "subheading": "Open-source .NET CMS. Get the brief, screenshots and a one-command rebuild kit.",
+  "url": "raytha.com/use-cases/tellmarsh-penhallow-cpas",
+  "hold": 2.3
+ },
+ "scenes": [
+  {
+   "url": "/",
+   "caption": "The year as a dial: every deadline placed by day of year, counted on the server",
+   "actions": [
+    {
+     "hold": 1.4,
+     "poster": true
+    },
+    {
+     "scroll": 700,
+     "dur": 1.5
+    },
+    {
+     "hold": 0.8
+    },
+    {
+     "scroll": 1250,
+     "dur": 1.3
+    },
+    {
+     "hold": 0.6
+    }
+   ]
+  },
+  {
+   "url": "/deadlines",
+   "caption": "The almanac: past dates struck through, the next one marked",
+   "actions": [
+    {
+     "hold": 1.2
+    },
+    {
+     "scroll": 420,
+     "dur": 1.3
+    },
+    {
+     "hold": 0.6
+    }
+   ]
+  },
+  {
+   "url": "/services/monthly-bookkeeping-and-close",
+   "caption": "Fixed-fee services with what is included and what to bring",
+   "actions": [
+    {
+     "hold": 1.3
+    },
+    {
+     "scroll": 260,
+     "dur": 1.0
+    },
+    {
+     "hold": 0.4
+    }
+   ]
+  },
+  {
+   "url": "/keep",
+   "caption": "How long to keep each record, as a chart built from content",
+   "actions": [
+    {
+     "hold": 1.2
+    }
+   ]
+  },
+  {
+   "url": "/client-portal",
+   "caption": "Signed out, the client portal is locked on the server",
+   "actions": [
+    {
+     "hold": 1.1
+    }
+   ]
+  },
+  {
+   "url": "/client-portal",
+   "signin": true,
+   "caption": "Signed in as a client: file card, engagement stage and checklists",
+   "actions": [
+    {
+     "hold": 1.1
+    },
+    {
+     "scroll": 420,
+     "dur": 1.3
+    },
+    {
+     "hold": 0.5
+    }
+   ]
+  },
+  {
+   "url": "/",
+   "phone": true,
+   "phoneCaption": {
+    "kicker": "Responsive",
+    "text": "The same pages on a phone"
+   },
+   "actions": [
+    {
+     "hold": 0.5
+    },
+    {
+     "scroll": 900,
+     "dur": 2.0
+    },
+    {
+     "hold": 0.4
+    }
+   ]
+  }
+ ]
+}

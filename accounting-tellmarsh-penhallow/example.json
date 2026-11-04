@@ -1,0 +1,32 @@
+{
+ "name": "Tellmarsh & Penhallow CPAs",
+ "theme": "tellmarsh",
+ "types": [
+  "people",
+  "services",
+  "deadlines",
+  "industries",
+  "notes",
+  "records",
+  "documents"
+ ],
+ "detailTemplates": {
+  "people": "tp_detail_people",
+  "services": "tp_detail_services",
+  "deadlines": "tp_detail_deadlines",
+  "industries": "tp_detail_industries",
+  "notes": "tp_detail_notes",
+  "records": "tp_detail_records",
+  "documents": "tp_detail_documents"
+ },
+ "groups": [
+  {
+   "developerName": "clients",
+   "label": "Tellmarsh & Penhallow clients"
+  },
+  {
+   "developerName": "staff",
+   "label": "Tellmarsh & Penhallow staff"
+  }
+ ]
+}

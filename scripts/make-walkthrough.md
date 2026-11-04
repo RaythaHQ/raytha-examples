@@ -74,6 +74,7 @@ fields), and link the raytha.com copy from the example's README.
 | Saskell Creek Public Schools | [walkthrough.json](../school-district-saskell-creek/walkthrough.json) | [use case page](https://raytha.com/use-cases/saskell-creek-public-schools#walkthrough) · [MP4](https://raytha.com/raytha/media-items/objectkey/K1-6WN_RAkuBvf5Fc5JwiA_saskell_creek_public_schools_walkthrough.mp4) |
 | Pellandry Fluid Controls | [walkthrough.json](../manufacturing-pellandry/walkthrough.json) | [use case page](https://raytha.com/use-cases/pellandry-fluid-controls#walkthrough) · [MP4](https://raytha.com/raytha/media-items/objectkey/xD4Mi5tYGE6dHXMUldcT0g_pellandry_fluid_controls_walkthrough.mp4) |
 | Ossingford Public Library | [walkthrough.json](../library-ossingford/walkthrough.json) | [use case page](https://raytha.com/use-cases/ossingford-public-library#walkthrough) · [MP4](https://raytha.com/raytha/media-items/objectkey/TcUQC8kiUEWJQPSUE7qFaQ_ossingford_public_library_walkthrough.mp4) |
+| Tellmarsh & Penhallow CPAs | [walkthrough.json](../accounting-tellmarsh-penhallow/walkthrough.json) | [use case page](https://raytha.com/use-cases/tellmarsh-penhallow-cpas#walkthrough) · [MP4](https://raytha.com/raytha/media-items/objectkey/OWd-4Ba4nkiVpDylwrMHYg_tellmarsh_penhallow_cpas_walkthrough.mp4) |
 
 ## Shot list
 
