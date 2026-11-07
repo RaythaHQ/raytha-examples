@@ -1,0 +1,16 @@
+# Screenshots
+
+Captured at 1440px and 390px from a site built with `../build.sh`. Signed-in shots use demo users in the `members` group (members room) and the `staff` group (staff room). Hosted in raytha.com media.
+
+| Screenshot | Shows |
+|---|---|
+| [<img src="https://raytha.com/raytha/media-items/objectkey/NgL-e1dfgEilLEP46FlKWw_helderwyn_01_home.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/NgL-e1dfgEilLEP46FlKWw_helderwyn_01_home.webp) | Home: the accession wall of featured objects with museum wall labels, rendered on the server |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/4_5kQFgXo0SWR4vBxu9zYQ_helderwyn_03_wall.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/4_5kQFgXo0SWR4vBxu9zYQ_helderwyn_03_wall.webp) | Object cards with accession numbers, maker and date — the same fields as a gallery label |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/RpHkCoJm_UW2QShEuGF0gw_helderwyn_04_plan.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/RpHkCoJm_UW2QShEuGF0gw_helderwyn_04_plan.webp) | The floor plan: every gallery is a link on the plan |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/LE9hHaB4b0O4W-uqJvr-eQ_helderwyn_06_exhibition.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/LE9hHaB4b0O4W-uqJvr-eQ_helderwyn_06_exhibition.webp) | An exhibition page with wall text and featured accession numbers |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/4dgR-TvdxkuYeJ-0-F3X2A_helderwyn_08_object.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/4dgR-TvdxkuYeJ-0-F3X2A_helderwyn_08_object.webp) | An object page: accession number, materials, credit line and gallery |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/M-srZPtIw0a6q9HSI7ltkg_helderwyn_09_galleries.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/M-srZPtIw0a6q9HSI7ltkg_helderwyn_09_galleries.webp) | Galleries on the plan, with floors and wings |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/cxNUY7Wih0qp8Kc2bzhscQ_helderwyn_13_packet_locked.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/cxNUY7Wih0qp8Kc2bzhscQ_helderwyn_13_packet_locked.webp) | A member packet, signed out: the content is never sent, only a lock panel |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/f63OSJnH9U2i_gzOf9Mj_g_helderwyn_19_members_member.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/f63OSJnH9U2i_gzOf9Mj_g_helderwyn_19_members_member.webp) | Signed in as a member: member card, programs and exhibition packets |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/xwX_RMqcJEuioVeyxFCIcQ_helderwyn_21_staffroom_member.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/xwX_RMqcJEuioVeyxFCIcQ_helderwyn_21_staffroom_member.webp) | The staff room: desk coverage, loan checklists and gallery notes, for staff only |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/ELIOTYkeo02Y56E279R_qg_helderwyn_23_home_mobile.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/ELIOTYkeo02Y56E279R_qg_helderwyn_23_home_mobile.webp) | Home on a phone |

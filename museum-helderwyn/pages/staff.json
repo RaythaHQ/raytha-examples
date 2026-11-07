@@ -1,0 +1,47 @@
+{
+ "main": [
+  {
+   "widgetType": "hm_table",
+   "settings": {
+    "headline": "Desk and demo coverage (fictional)",
+    "intro": "Week of November 3, 2026 \u2014 names are fictional.",
+    "columns": "Slot|Who|Notes",
+    "rows": [
+     {
+      "cells": "Tue briefing 9 am|Rae Colmin|Docent notes in staff room"
+     },
+     {
+      "cells": "Thu loom 1\u20133|Sera Quill|Textile Wing"
+     },
+     {
+      "cells": "Sat chalk line 2 pm|Ivo Maren|Tool Hall"
+     },
+     {
+      "cells": "School desk|Tess Branek|Entry Hall weekdays"
+     },
+     {
+      "cells": "Vault requests|Jonah Vale|Pull list by 3 pm"
+     }
+    ]
+   }
+  },
+  {
+   "widgetType": "hm_notes",
+   "settings": {
+    "headline": "Staff notices",
+    "items": [
+     {
+      "tag": "Loans",
+      "title": "Checklists",
+      "text": "Intake and return checklists are in the packets list below."
+     },
+     {
+      "tag": "Floor",
+      "title": "Gallery notes",
+      "text": "Tool Hall and Workshop Gallery notes updated this week."
+     }
+    ]
+   }
+  }
+ ]
+}

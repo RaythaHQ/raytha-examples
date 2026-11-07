@@ -1,0 +1,32 @@
+{
+ "name": "Helderwyn Museum of Making",
+ "theme": "helderwyn",
+ "types": [
+  "exhibitions",
+  "objects",
+  "galleries",
+  "events",
+  "people",
+  "journal",
+  "packets"
+ ],
+ "detailTemplates": {
+  "exhibitions": "hm_detail_exhibitions",
+  "objects": "hm_detail_objects",
+  "galleries": "hm_detail_galleries",
+  "events": "hm_detail_events",
+  "people": "hm_detail_people",
+  "journal": "hm_detail_journal",
+  "packets": "hm_detail_packets"
+ },
+ "groups": [
+  {
+   "developerName": "members",
+   "label": "Helderwyn members"
+  },
+  {
+   "developerName": "staff",
+   "label": "Helderwyn museum staff"
+  }
+ ]
+}

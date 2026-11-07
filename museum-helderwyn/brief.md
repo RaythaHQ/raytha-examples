@@ -1,0 +1,8 @@
+# Brief: Helderwyn Museum of Making — a museum website (fictional)
+Persona: Helderwyn Museum of Making (fictional), a craft, tools and industrial-design museum in the invented river town of Rookwater: exhibitions with wall text, a floor plan of galleries, collection objects with accession numbers, public programs, and members-only packets for patrons and staff. The site is built by an agency or freelancer for the museum; the same build fits a museum with its own IT staff.
+Design: "the accession wall" — warm paper, deep ink, museum red for accession numbers, brass and moss accents. Home is a gallery wall of object cards with wall labels; a floor plan links the galleries; exhibition pages carry wall text. Source Serif 4 for headings, Public Sans for text, Courier Prime for accession numbers and stamps. No wide display fonts.
+IA: home (accession wall, floor plan, exhibitions, programs, journal, members teaser); /exhibitions; /collection (objects with accession labels); /galleries (plan + rooms); /programs; /people; /journal; /packets (public, members, staff); /visit; /membership; /about; /members (members-only); /staff-room (staff-only); /search.
+Members: user groups `members` and `staff`; gating is server-side in Liquid with CurrentUser.UserGroups. Gated bodies are never sent to the browser.
+No payment, registration, upload, sign-up or contact forms. Everything is labeled fictional; phone numbers use 555.
+Buyer target: self-hosted CMS for museums / open-source .NET CMS for museum websites; agencies and freelancers building for museum clients.
+Done: raytha check 0 failed, screenshots, walkthrough, rebuildable kit.

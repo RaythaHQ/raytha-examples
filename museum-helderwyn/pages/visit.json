@@ -1,0 +1,66 @@
+{
+ "main": [
+  {
+   "widgetType": "hm_head",
+   "settings": {
+    "kicker": "Visit",
+    "headline": "Hours, admission and how to find us",
+    "subtitle": "Open Tuesday to Sunday. Tickets are sold at the Entry Hall desk. There is no online checkout on this site."
+   }
+  },
+  {
+   "widgetType": "hm_table",
+   "settings": {
+    "headline": "Hours",
+    "intro": "Fictional hours for the Rookwater building.",
+    "columns": "Day|Hours",
+    "rows": [
+     {
+      "cells": "Tuesday \u2013 Friday|10 am \u2013 5 pm"
+     },
+     {
+      "cells": "Saturday \u2013 Sunday|10 am \u2013 5 pm"
+     },
+     {
+      "cells": "Monday|Closed"
+     },
+     {
+      "cells": "School desk (weekdays)|9 am \u2013 5 pm"
+     }
+    ]
+   }
+  },
+  {
+   "widgetType": "hm_text",
+   "settings": {
+    "headline": "Getting here",
+    "body": "<p>Helderwyn Museum of Making, 12 Mill Reach, Rookwater (fictional). The River Walk ramp enters the Entry Hall. Phone (555) 014-8800.</p><p>Coat check and the school desk are inside the Entry Hall. Strollers are welcome in all public galleries.</p>",
+    "label_title": "Admission",
+    "label": "Adults and students pay at the desk. Members show a card. School groups book at the school desk."
+   }
+  },
+  {
+   "widgetType": "hm_notes",
+   "settings": {
+    "headline": "While you are here",
+    "items": [
+     {
+      "tag": "Tours",
+      "title": "Highlights tour",
+      "text": "Daily at 11 am and 2 pm from the wall of makers."
+     },
+     {
+      "tag": "Demos",
+      "title": "Saturday chalk line",
+      "text": "2 pm in Tool Hall during The Measured Hand."
+     },
+     {
+      "tag": "Families",
+      "title": "Family Sunday",
+      "text": "1\u20133 pm measuring games in Entry Hall."
+     }
+    ]
+   }
+  }
+ ]
+}

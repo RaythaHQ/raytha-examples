@@ -1,0 +1,27 @@
+{
+ "main": [
+  {
+   "widgetType": "hm_notes",
+   "settings": {
+    "headline": "For signed-in members",
+    "items": [
+     {
+      "tag": "Packets",
+      "title": "Exhibition packets",
+      "text": "Object lists and demo times for current shows."
+     },
+     {
+      "tag": "Vault",
+      "title": "Book a table",
+      "text": "Third Thursday evenings; request objects by accession number."
+     },
+     {
+      "tag": "Preview",
+      "title": "School of the Hand",
+      "text": "Member preview March 28, 2027."
+     }
+    ]
+   }
+  }
+ ]
+}

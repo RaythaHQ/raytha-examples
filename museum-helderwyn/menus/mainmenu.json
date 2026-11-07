@@ -1,0 +1,38 @@
+{
+ "developerName": "mainmenu",
+ "label": "Main menu",
+ "items": [
+  {
+   "label": "Exhibitions",
+   "link": "/exhibitions"
+  },
+  {
+   "label": "Collection",
+   "link": "/collection"
+  },
+  {
+   "label": "Galleries",
+   "link": "/galleries"
+  },
+  {
+   "label": "Programs",
+   "link": "/programs"
+  },
+  {
+   "label": "People",
+   "link": "/people"
+  },
+  {
+   "label": "Journal",
+   "link": "/journal"
+  },
+  {
+   "label": "Visit",
+   "link": "/visit"
+  },
+  {
+   "label": "Members",
+   "link": "/members"
+  }
+ ]
+}

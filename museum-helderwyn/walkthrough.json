@@ -1,0 +1,144 @@
+{
+ "slug": "helderwyn-museum-of-making",
+ "name": "Helderwyn Museum of Making",
+ "base": "http://localhost:5000",
+ "viewport": [
+  1440,
+  810
+ ],
+ "output": [
+  1920,
+  1080
+ ],
+ "colorScheme": "light",
+ "login": {
+  "path": "/account/login",
+  "emailEnv": "SITE_USER_EMAIL",
+  "passwordEnv": "SITE_USER_PASSWORD"
+ },
+ "title": {
+  "kicker": "Raytha use case",
+  "heading": "Helderwyn Museum of Making",
+  "subheading": "A museum website: an accession wall of objects, a floor plan of galleries, exhibition wall text \u2014 and members-only packets for patrons and staff.",
+  "hold": 1.3
+ },
+ "end": {
+  "heading": "Built with Raytha",
+  "subheading": "Open-source .NET CMS. Get the brief, screenshots and a one-command rebuild kit.",
+  "url": "raytha.com/use-cases/helderwyn-museum-of-making",
+  "hold": 2.3
+ },
+ "scenes": [
+  {
+   "url": "/",
+   "caption": "The accession wall: object cards with museum labels, rendered on the server",
+   "actions": [
+    {
+     "hold": 1.4,
+     "poster": true
+    },
+    {
+     "scroll": 850,
+     "dur": 1.5
+    },
+    {
+     "hold": 0.7
+    },
+    {
+     "scroll": 1550,
+     "dur": 1.3
+    },
+    {
+     "hold": 0.5
+    }
+   ]
+  },
+  {
+   "url": "/exhibitions/the-measured-hand",
+   "caption": "An exhibition page with wall text and featured accession numbers",
+   "actions": [
+    {
+     "hold": 1.2
+    },
+    {
+     "scroll": 420,
+     "dur": 1.2
+    },
+    {
+     "hold": 0.5
+    }
+   ]
+  },
+  {
+   "url": "/collection/boxwood-folding-rule",
+   "caption": "An object page: accession number, materials, credit line and gallery",
+   "actions": [
+    {
+     "hold": 1.3
+    },
+    {
+     "scroll": 200,
+     "dur": 0.9
+    },
+    {
+     "hold": 0.4
+    }
+   ]
+  },
+  {
+   "url": "/galleries",
+   "caption": "The floor plan: every gallery is a link on the plan",
+   "actions": [
+    {
+     "hold": 1.2
+    }
+   ]
+  },
+  {
+   "url": "/members",
+   "caption": "Signed out, the members room is locked on the server",
+   "actions": [
+    {
+     "hold": 1.1
+    }
+   ]
+  },
+  {
+   "url": "/members",
+   "signin": true,
+   "caption": "Signed in as a member: card, packets and member events",
+   "actions": [
+    {
+     "hold": 1.1
+    },
+    {
+     "scroll": 380,
+     "dur": 1.2
+    },
+    {
+     "hold": 0.5
+    }
+   ]
+  },
+  {
+   "url": "/",
+   "phone": true,
+   "phoneCaption": {
+    "kicker": "Responsive",
+    "text": "The same pages on a phone"
+   },
+   "actions": [
+    {
+     "hold": 0.5
+    },
+    {
+     "scroll": 900,
+     "dur": 2.0
+    },
+    {
+     "hold": 0.4
+    }
+   ]
+  }
+ ]
+}

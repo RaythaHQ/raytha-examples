@@ -1,0 +1,26 @@
+{
+ "developerName": "footer",
+ "label": "Footer",
+ "items": [
+  {
+   "label": "Visit",
+   "link": "/visit"
+  },
+  {
+   "label": "Membership",
+   "link": "/membership"
+  },
+  {
+   "label": "About",
+   "link": "/about"
+  },
+  {
+   "label": "Journal",
+   "link": "/journal"
+  },
+  {
+   "label": "Search",
+   "link": "/search"
+  }
+ ]
+}

@@ -1,0 +1,45 @@
+[
+ {
+  "title": "Helderwyn Museum of Making",
+  "routePath": "home",
+  "template": "hm_home",
+  "sections": "pages/home.json",
+  "home": true
+ },
+ {
+  "title": "About",
+  "routePath": "about",
+  "template": "hm_page",
+  "sections": "pages/about.json"
+ },
+ {
+  "title": "Visit",
+  "routePath": "visit",
+  "template": "hm_page",
+  "sections": "pages/visit.json"
+ },
+ {
+  "title": "Membership",
+  "routePath": "membership",
+  "template": "hm_page",
+  "sections": "pages/membership.json"
+ },
+ {
+  "title": "Members room",
+  "routePath": "members",
+  "template": "hm_members",
+  "sections": "pages/members.json"
+ },
+ {
+  "title": "Staff room",
+  "routePath": "staff-room",
+  "template": "hm_staff",
+  "sections": "pages/staff.json"
+ },
+ {
+  "title": "Search",
+  "routePath": "search",
+  "template": "hm_search",
+  "sections": "pages/search.json"
+ }
+]

@@ -1,0 +1,42 @@
+{
+ "main": [
+  {
+   "widgetType": "hm_head",
+   "settings": {
+    "kicker": "About the museum",
+    "headline": "A museum of making in Rookwater",
+    "subtitle": "Helderwyn Museum of Making is a fictional craft, tools and industrial-design museum on the river in Rookwater."
+   }
+  },
+  {
+   "widgetType": "hm_text",
+   "settings": {
+    "headline": "What we collect",
+    "body": "<p>Hand tools, textiles, ceramics and the jigs living makers still use. The collection is arranged by gallery on the floor plan, and every object carries an accession number on its wall label.</p><p>The museum, the town of Rookwater, the people and the figures on this site are fictional. This is a Raytha example site.</p>",
+    "label_title": "Accession practice",
+    "label": "Every object has a wall label: title, maker, date, materials, credit line and accession number (HMM.year.sequence)."
+   }
+  },
+  {
+   "widgetType": "hm_steps",
+   "settings": {
+    "headline": "How the building works",
+    "intro": "Three public wings and a members Study Vault.",
+    "items": [
+     {
+      "title": "Ground floor",
+      "text": "Entry Hall, Tool Hall, Textile Wing and Ceramic Court."
+     },
+     {
+      "title": "Upper Workshop Gallery",
+      "text": "Temporary shows with living makers and their benches."
+     },
+     {
+      "title": "Study Vault",
+      "text": "Members and researchers by appointment; not a public gallery."
+     }
+    ]
+   }
+  }
+ ]
+}

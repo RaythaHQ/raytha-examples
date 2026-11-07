@@ -1,0 +1,42 @@
+{
+ "main": [
+  {
+   "widgetType": "hm_head",
+   "settings": {
+    "kicker": "Membership",
+    "headline": "Support the museum, use the Study Vault",
+    "subtitle": "Members book Vault tables, see exhibition packets and get previews. Accounts are created at the desk; there is no registration form on this site."
+   }
+  },
+  {
+   "widgetType": "hm_steps",
+   "settings": {
+    "headline": "What members get",
+    "intro": "All of this is behind sign-in on the members room.",
+    "items": [
+     {
+      "title": "Exhibition packets",
+      "text": "Object lists, demo times and preview notes for current shows."
+     },
+     {
+      "title": "Collection favorites",
+      "text": "Short lists of objects members request most in the Vault."
+     },
+     {
+      "title": "Member events",
+      "text": "Vault evenings, pattern-book handling and exhibition previews."
+     }
+    ]
+   }
+  },
+  {
+   "widgetType": "hm_text",
+   "settings": {
+    "headline": "How to join",
+    "body": "<p>Ask at the Entry Hall desk. In the story, staff create the account when you join. This demo site has sample member and staff accounts for the Raytha example only.</p>",
+    "label_title": "Members room",
+    "label": "Sign in at /members to see packets and the winter member calendar."
+   }
+  }
+ ]
+}
