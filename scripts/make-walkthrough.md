@@ -76,6 +76,7 @@ fields), and link the raytha.com copy from the example's README.
 | Ossingford Public Library | [walkthrough.json](../library-ossingford/walkthrough.json) | [use case page](https://raytha.com/use-cases/ossingford-public-library#walkthrough) · [MP4](https://raytha.com/raytha/media-items/objectkey/TcUQC8kiUEWJQPSUE7qFaQ_ossingford_public_library_walkthrough.mp4) |
 | Tellmarsh & Penhallow CPAs | [walkthrough.json](../accounting-tellmarsh-penhallow/walkthrough.json) | [use case page](https://raytha.com/use-cases/tellmarsh-penhallow-cpas#walkthrough) · [MP4](https://raytha.com/raytha/media-items/objectkey/OWd-4Ba4nkiVpDylwrMHYg_tellmarsh_penhallow_cpas_walkthrough.mp4) |
 | Helderwyn Museum of Making | [walkthrough.json](../museum-helderwyn/walkthrough.json) | [use case page](https://raytha.com/use-cases/helderwyn-museum-of-making#walkthrough) · [MP4](https://raytha.com/raytha/media-items/objectkey/_KxUxyr7WkGZhC713Qfcpw_helderwyn_museum_of_making_walkthrough.mp4) |
+| Kellisford Family Medicine | [walkthrough.json](../doctors-office-kellisford/walkthrough.json) | [use case page](https://raytha.com/use-cases/kellisford-family-medicine#walkthrough) · [MP4](https://raytha.com/raytha/media-items/objectkey/sm0FC2M5aEqfQsUWnE39jg_kellisford_family_medicine_walkthrough.mp4) |
 
 ## Shot list
 

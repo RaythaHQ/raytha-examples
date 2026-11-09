@@ -1,0 +1,42 @@
+{
+ "main": [
+  {
+   "widgetType": "kf_head",
+   "settings": {
+    "kicker": "New patients",
+    "headline": "Starting with us",
+    "subtitle": "First visits are booked Tuesday and Wednesday mornings and are longer so we can review your records and set a plan."
+   }
+  },
+  {
+   "widgetType": "kf_steps",
+   "settings": {
+    "headline": "Before your first visit",
+    "intro": "Call the front desk to begin. There is no sign-up form on this site.",
+    "items": [
+     {
+      "title": "Call us",
+      "text": "(555) 018-2200, weekdays from 8:00 am."
+     },
+     {
+      "title": "Send records",
+      "text": "Ask your last doctor to send records, or bring a copy."
+     },
+     {
+      "title": "Gather",
+      "text": "Photo ID, insurance card, medicines and questions."
+     }
+    ]
+   }
+  },
+  {
+   "widgetType": "kf_text",
+   "settings": {
+    "headline": "Patient area",
+    "body": "<p>After your first visit, the front desk creates your patient-area account. You then see visit summaries, lab results and prep sheets after signing in. In this demo, sample patient and staff accounts exist only to show the pattern.</p>",
+    "label_title": "Insurance",
+    "label": "Call the front desk to confirm your plan. The list on this demo site is fictional."
+   }
+  }
+ ]
+}

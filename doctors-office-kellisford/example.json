@@ -1,0 +1,32 @@
+{
+ "name": "Kellisford Family Medicine",
+ "theme": "kellisford",
+ "types": [
+  "providers",
+  "visits",
+  "topics",
+  "updates",
+  "handouts",
+  "sessions",
+  "faq"
+ ],
+ "detailTemplates": {
+  "providers": "kf_detail_providers",
+  "visits": "kf_detail_visits",
+  "topics": "kf_detail_topics",
+  "updates": "kf_detail_updates",
+  "handouts": "kf_detail_handouts",
+  "sessions": "kf_detail_sessions",
+  "faq": "kf_detail_faq"
+ },
+ "groups": [
+  {
+   "developerName": "patients",
+   "label": "Kellisford patients"
+  },
+  {
+   "developerName": "staff",
+   "label": "Kellisford staff"
+  }
+ ]
+}

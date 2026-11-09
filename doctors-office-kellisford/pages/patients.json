@@ -1,0 +1,27 @@
+{
+ "main": [
+  {
+   "widgetType": "kf_notes",
+   "settings": {
+    "headline": "Behind sign-in",
+    "items": [
+     {
+      "tag": "Prep",
+      "title": "Visit prep sheets",
+      "text": "Fasting rules, what to bring and how long it takes."
+     },
+     {
+      "tag": "After",
+      "title": "After-visit notes",
+      "text": "Rest, fluids and when to call back."
+     },
+     {
+      "tag": "Portal",
+      "title": "Using the patient area",
+      "text": "Where summaries, results and handouts appear."
+     }
+    ]
+   }
+  }
+ ]
+}

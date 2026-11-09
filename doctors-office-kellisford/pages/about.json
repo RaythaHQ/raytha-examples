@@ -1,0 +1,46 @@
+{
+ "main": [
+  {
+   "widgetType": "kf_head",
+   "settings": {
+    "kicker": "About the practice",
+    "headline": "A family practice with a day board",
+    "subtitle": "Kellisford Family Medicine is a fictional independent practice in the invented town of Kellisford. Seven people, one building, and a schedule you can read."
+   }
+  },
+  {
+   "widgetType": "kf_text",
+   "settings": {
+    "headline": "How we work",
+    "body": "<p>We keep the same-day slots open each morning, book long visits for ongoing care, and put the week's schedule on the site so you know who is in before you call.</p><p>The practice, the town, the people and the figures on this site are fictional. This is a Raytha example site, not a compliance statement; no real health information belongs here.</p>",
+    "label_title": "Fictional practice",
+    "label": "Every name, phone number and visit on this site is invented. Phone numbers use the 555 range."
+   }
+  },
+  {
+   "widgetType": "kf_steps",
+   "settings": {
+    "headline": "What a visit looks like",
+    "intro": "The same four steps for most visits.",
+    "items": [
+     {
+      "title": "Before",
+      "text": "Book, read the prep sheet, gather medicines and questions."
+     },
+     {
+      "title": "Arrive",
+      "text": "Check in at the desk; the nurse takes vitals."
+     },
+     {
+      "title": "In the room",
+      "text": "Your provider reviews, examines and agrees a plan with you."
+     },
+     {
+      "title": "After",
+      "text": "A written summary appears in the patient area within two days."
+     }
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,43 @@
+{
+ "main": [
+  {
+   "widgetType": "kf_head",
+   "settings": {
+    "kicker": "Hours and directions",
+    "headline": "Hours, phone and where to find us",
+    "subtitle": "Open Monday to Saturday. Same-day sick visits are booked by phone starting at 8:00 am."
+   }
+  },
+  {
+   "widgetType": "kf_table",
+   "settings": {
+    "headline": "Office hours",
+    "intro": "Fictional hours for the Kellisford office.",
+    "columns": "Day|Hours|Notes",
+    "rows": [
+     {
+      "cells": "Monday \u2013 Thursday|8:00 am \u2013 5:00 pm|Lunch 12:30 \u2013 1:30 for phones"
+     },
+     {
+      "cells": "Friday|8:00 am \u2013 2:00 pm|Same-day slots released at 2:00"
+     },
+     {
+      "cells": "Saturday|9:00 am \u2013 12:00 pm|Walk-in vaccines and labs; sick visits by phone"
+     },
+     {
+      "cells": "Sunday|Closed|After-hours line for urgent questions"
+     }
+    ]
+   }
+  },
+  {
+   "widgetType": "kf_text",
+   "settings": {
+    "headline": "Getting here",
+    "body": "<p>Kellisford Family Medicine, 41 Tanner Row, Kellisford (fictional). Phone (555) 018-2200. Free parking behind the building; a ramp enters the front waiting room.</p><p>For an emergency, call 911. For urgent questions after hours, call the main line and follow the prompts.</p>",
+    "label_title": "Emergencies",
+    "label": "Call 911 for chest pain, trouble breathing, signs of a stroke or severe bleeding. Do not wait for a call back."
+   }
+  }
+ ]
+}

@@ -1,0 +1,57 @@
+[
+ {
+  "title": "Kellisford Family Medicine",
+  "routePath": "home",
+  "template": "kf_home",
+  "sections": "pages/home.json",
+  "home": true
+ },
+ {
+  "title": "Week board",
+  "routePath": "week",
+  "template": "kf_week",
+  "sections": "pages/week.json"
+ },
+ {
+  "title": "When to call",
+  "routePath": "when-to-call",
+  "template": "kf_ladder",
+  "sections": "pages/ladder.json"
+ },
+ {
+  "title": "About",
+  "routePath": "about",
+  "template": "kf_page",
+  "sections": "pages/about.json"
+ },
+ {
+  "title": "Hours and directions",
+  "routePath": "hours",
+  "template": "kf_page",
+  "sections": "pages/hours.json"
+ },
+ {
+  "title": "New patients",
+  "routePath": "new-patients",
+  "template": "kf_page",
+  "sections": "pages/new-patients.json"
+ },
+ {
+  "title": "Patient area",
+  "routePath": "patients",
+  "template": "kf_patients",
+  "sections": "pages/patients.json"
+ },
+ {
+  "title": "Staff room",
+  "routePath": "staff-room",
+  "template": "kf_staff",
+  "sections": "pages/staff.json"
+ },
+ {
+  "title": "Search",
+  "routePath": "search",
+  "template": "kf_search",
+  "sections": "pages/search.json"
+ }
+]

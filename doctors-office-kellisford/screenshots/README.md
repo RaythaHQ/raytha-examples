@@ -1,0 +1,16 @@
+# Screenshots
+
+Captured at 1440px and 390px from a site built with `../build.sh`. Signed-in shots use demo users in the `patients` group (patient area) and the `staff` group (staff room). Hosted in raytha.com media.
+
+| Screenshot | Shows |
+|---|---|
+| [<img src="https://raytha.com/raytha/media-items/objectkey/xtNMJAFxQ0aDGEJCpkorTg_kellisford_01_home.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/xtNMJAFxQ0aDGEJCpkorTg_kellisford_01_home.webp) | Home: the day board — today's hours and who is in, rendered on the server |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/t_JPQvpRdUq1pDpl3Nad5g_kellisford_07_week_board.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/t_JPQvpRdUq1pDpl3Nad5g_kellisford_07_week_board.webp) | The week board: every provider and the days they are in; today highlighted |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/YjoS2-gfa0-gmfkSsbMtdg_kellisford_05_visits.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/YjoS2-gfa0-gmfkSsbMtdg_kellisford_05_visits.webp) | Visit types: physical, same-day sick, follow-up, labs, vaccines, video |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/maSVrTLGk0--KVrIehUi1Q_kellisford_06_visit.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/maSVrTLGk0--KVrIehUi1Q_kellisford_06_visit.webp) | A visit page: minutes, what to do before, what to bring, what happens after |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/nVX5GCFY1EuwZSeuhACKqA_kellisford_08_when_to_call.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/nVX5GCFY1EuwZSeuhACKqA_kellisford_08_when_to_call.webp) | The four-step triage ladder: home care, call, same-day, emergency |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/n2bmsX7hPEi80VLPajKxQg_kellisford_11_providers.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/n2bmsX7hPEi80VLPajKxQg_kellisford_11_providers.webp) | Providers with roles, languages and the days they are in |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/xEkFLQIIgE6NdE50OtyOoA_kellisford_17_handout_locked.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/xEkFLQIIgE6NdE50OtyOoA_kellisford_17_handout_locked.webp) | A patient handout, signed out: the content is never sent, only a lock panel |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/px4mVKxq8UKtaVMAOpJB8Q_kellisford_20_patients.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/px4mVKxq8UKtaVMAOpJB8Q_kellisford_20_patients.webp) | Signed in as a patient: patient card, prep sheets and after-visit notes |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/GfgIvCMxGUKfqXp1aaMaaw_kellisford_22_staff_room.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/GfgIvCMxGUKfqXp1aaMaaw_kellisford_22_staff_room.webp) | The staff room: coverage notes and front-desk scripts, for staff only |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/tJqqiMbQpEuiDCEOA5vWWg_kellisford_24_home_mobile.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/tJqqiMbQpEuiDCEOA5vWWg_kellisford_24_home_mobile.webp) | Home on a phone |

@@ -1,0 +1,38 @@
+{
+ "developerName": "mainmenu",
+ "label": "Main menu",
+ "items": [
+  {
+   "label": "Visits",
+   "link": "/visits"
+  },
+  {
+   "label": "Week board",
+   "link": "/week"
+  },
+  {
+   "label": "When to call",
+   "link": "/when-to-call"
+  },
+  {
+   "label": "Care guides",
+   "link": "/care"
+  },
+  {
+   "label": "Providers",
+   "link": "/providers"
+  },
+  {
+   "label": "Notices",
+   "link": "/notices"
+  },
+  {
+   "label": "New patients",
+   "link": "/new-patients"
+  },
+  {
+   "label": "Patient area",
+   "link": "/patients"
+  }
+ ]
+}

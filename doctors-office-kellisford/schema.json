@@ -1,0 +1,1158 @@
+{
+ "schemaVersion": 1,
+ "contentTypes": [
+  {
+   "developerName": "providers",
+   "labelPlural": "Providers",
+   "labelSingular": "Provider",
+   "description": "Physicians, nurse practitioners and nurses with the days they are in the office",
+   "defaultRouteTemplate": "providers/{PrimaryField}",
+   "primaryField": "name",
+   "fields": [
+    {
+     "developerName": "name",
+     "label": "Name",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": true,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "code",
+     "label": "Code",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "role",
+     "label": "Role",
+     "description": "",
+     "fieldType": "dropdown",
+     "isRequired": false,
+     "choices": [
+      {
+       "developerName": "md",
+       "label": "Physician",
+       "disabled": false
+      },
+      {
+       "developerName": "np",
+       "label": "Nurse practitioner",
+       "disabled": false
+      },
+      {
+       "developerName": "pa",
+       "label": "Physician assistant",
+       "disabled": false
+      },
+      {
+       "developerName": "rn",
+       "label": "Nurse",
+       "disabled": false
+      },
+      {
+       "developerName": "lead",
+       "label": "Office lead",
+       "disabled": false
+      }
+     ],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "credentials",
+     "label": "Credentials",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "focus",
+     "label": "Focus",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "languages",
+     "label": "Languages",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "new_patients",
+     "label": "Accepting new patients",
+     "description": "",
+     "fieldType": "dropdown",
+     "isRequired": false,
+     "choices": [
+      {
+       "developerName": "yes",
+       "label": "Accepting new patients",
+       "disabled": false
+      },
+      {
+       "developerName": "no",
+       "label": "Not at this time",
+       "disabled": false
+      }
+     ],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "days",
+     "label": "Days in office (mon|tue|...)",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "hours",
+     "label": "Office hours",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "summary",
+     "label": "Summary",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "body",
+     "label": "Body",
+     "description": "",
+     "fieldType": "wysiwyg",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "color",
+     "label": "Color",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "portrait",
+     "label": "Portrait",
+     "description": "",
+     "fieldType": "attachment",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "sort_order",
+     "label": "Sort order",
+     "description": "",
+     "fieldType": "number",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    }
+   ],
+   "views": [
+    {
+     "developerName": "providers",
+     "label": "Providers",
+     "description": "",
+     "isPublished": true,
+     "routePath": "providers",
+     "template": "kf_list_providers",
+     "columns": [
+      "PrimaryField"
+     ],
+     "sort": [
+      {
+       "developerName": "sort_order",
+       "direction": "asc"
+      }
+     ],
+     "filter": [],
+     "defaultNumberOfItemsPerPage": 100,
+     "maxNumberOfItemsPerPage": 1000,
+     "ignoreClientFilterAndSortQueryParams": false
+    }
+   ]
+  },
+  {
+   "developerName": "visits",
+   "labelPlural": "Visit types",
+   "labelSingular": "Visit type",
+   "description": "What each kind of visit is, how long it takes and what to bring",
+   "defaultRouteTemplate": "visits/{PrimaryField}",
+   "primaryField": "title",
+   "fields": [
+    {
+     "developerName": "title",
+     "label": "Title",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": true,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "kind",
+     "label": "Kind",
+     "description": "",
+     "fieldType": "dropdown",
+     "isRequired": false,
+     "choices": [
+      {
+       "developerName": "checkup",
+       "label": "Checkup",
+       "disabled": false
+      },
+      {
+       "developerName": "sick",
+       "label": "Sick visit",
+       "disabled": false
+      },
+      {
+       "developerName": "chronic",
+       "label": "Ongoing care",
+       "disabled": false
+      },
+      {
+       "developerName": "labs",
+       "label": "Lab draw",
+       "disabled": false
+      },
+      {
+       "developerName": "vaccine",
+       "label": "Vaccine",
+       "disabled": false
+      },
+      {
+       "developerName": "virtual",
+       "label": "Video visit",
+       "disabled": false
+      }
+     ],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "minutes",
+     "label": "Minutes",
+     "description": "",
+     "fieldType": "number",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "same_day",
+     "label": "Same-day slots",
+     "description": "",
+     "fieldType": "dropdown",
+     "isRequired": false,
+     "choices": [
+      {
+       "developerName": "yes",
+       "label": "Same-day slots held",
+       "disabled": false
+      },
+      {
+       "developerName": "no",
+       "label": "Book ahead",
+       "disabled": false
+      }
+     ],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "summary",
+     "label": "Summary",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "body",
+     "label": "Body",
+     "description": "",
+     "fieldType": "wysiwyg",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "before",
+     "label": "Before you come (separate with |)",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "bring",
+     "label": "What to bring (separate with |)",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "after",
+     "label": "After the visit (separate with |)",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "color",
+     "label": "Color",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "art",
+     "label": "Art",
+     "description": "",
+     "fieldType": "attachment",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "sort_order",
+     "label": "Sort order",
+     "description": "",
+     "fieldType": "number",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    }
+   ],
+   "views": [
+    {
+     "developerName": "visits",
+     "label": "Visit types",
+     "description": "",
+     "isPublished": true,
+     "routePath": "visits",
+     "template": "kf_list_visits",
+     "columns": [
+      "PrimaryField"
+     ],
+     "sort": [
+      {
+       "developerName": "sort_order",
+       "direction": "asc"
+      }
+     ],
+     "filter": [],
+     "defaultNumberOfItemsPerPage": 100,
+     "maxNumberOfItemsPerPage": 1000,
+     "ignoreClientFilterAndSortQueryParams": false
+    }
+   ]
+  },
+  {
+   "developerName": "topics",
+   "labelPlural": "Care guides",
+   "labelSingular": "Care guide",
+   "description": "Plain-language guides with a four-step triage ladder",
+   "defaultRouteTemplate": "care/{PrimaryField}",
+   "primaryField": "title",
+   "fields": [
+    {
+     "developerName": "title",
+     "label": "Title",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": true,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "area",
+     "label": "Area",
+     "description": "",
+     "fieldType": "dropdown",
+     "isRequired": false,
+     "choices": [
+      {
+       "developerName": "colds",
+       "label": "Colds and flu",
+       "disabled": false
+      },
+      {
+       "developerName": "injury",
+       "label": "Injuries",
+       "disabled": false
+      },
+      {
+       "developerName": "skin",
+       "label": "Skin",
+       "disabled": false
+      },
+      {
+       "developerName": "chronic",
+       "label": "Ongoing conditions",
+       "disabled": false
+      },
+      {
+       "developerName": "kids",
+       "label": "Children",
+       "disabled": false
+      },
+      {
+       "developerName": "mind",
+       "label": "Sleep and mood",
+       "disabled": false
+      }
+     ],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "level",
+     "label": "Usual first step",
+     "description": "",
+     "fieldType": "dropdown",
+     "isRequired": false,
+     "choices": [
+      {
+       "developerName": "home",
+       "label": "Care at home",
+       "disabled": false
+      },
+      {
+       "developerName": "call",
+       "label": "Call the office",
+       "disabled": false
+      },
+      {
+       "developerName": "sameday",
+       "label": "Same-day visit",
+       "disabled": false
+      },
+      {
+       "developerName": "now",
+       "label": "Emergency",
+       "disabled": false
+      }
+     ],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "summary",
+     "label": "Summary",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "body",
+     "label": "Body",
+     "description": "",
+     "fieldType": "wysiwyg",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "home_signs",
+     "label": "Care at home (separate with |)",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "call_signs",
+     "label": "Call the office (separate with |)",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "sameday_signs",
+     "label": "Same-day visit (separate with |)",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "now_signs",
+     "label": "Emergency (separate with |)",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "sort_order",
+     "label": "Sort order",
+     "description": "",
+     "fieldType": "number",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    }
+   ],
+   "views": [
+    {
+     "developerName": "topics",
+     "label": "Care guides",
+     "description": "",
+     "isPublished": true,
+     "routePath": "care",
+     "template": "kf_list_topics",
+     "columns": [
+      "PrimaryField"
+     ],
+     "sort": [
+      {
+       "developerName": "sort_order",
+       "direction": "asc"
+      }
+     ],
+     "filter": [],
+     "defaultNumberOfItemsPerPage": 100,
+     "maxNumberOfItemsPerPage": 1000,
+     "ignoreClientFilterAndSortQueryParams": false
+    }
+   ]
+  },
+  {
+   "developerName": "updates",
+   "labelPlural": "Notices",
+   "labelSingular": "Notice",
+   "description": "Hours changes, clinic days and news from the office",
+   "defaultRouteTemplate": "notices/{PrimaryField}",
+   "primaryField": "title",
+   "fields": [
+    {
+     "developerName": "title",
+     "label": "Title",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": true,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "date_label",
+     "label": "Date",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "kind",
+     "label": "Kind",
+     "description": "",
+     "fieldType": "dropdown",
+     "isRequired": false,
+     "choices": [
+      {
+       "developerName": "hours",
+       "label": "Hours",
+       "disabled": false
+      },
+      {
+       "developerName": "clinic",
+       "label": "Clinic days",
+       "disabled": false
+      },
+      {
+       "developerName": "team",
+       "label": "Team",
+       "disabled": false
+      },
+      {
+       "developerName": "season",
+       "label": "Seasonal",
+       "disabled": false
+      }
+     ],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "author",
+     "label": "Author",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "summary",
+     "label": "Summary",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "body",
+     "label": "Body",
+     "description": "",
+     "fieldType": "wysiwyg",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "image",
+     "label": "Image",
+     "description": "",
+     "fieldType": "attachment",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "sort_order",
+     "label": "Sort order",
+     "description": "",
+     "fieldType": "number",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    }
+   ],
+   "views": [
+    {
+     "developerName": "updates",
+     "label": "Notices",
+     "description": "",
+     "isPublished": true,
+     "routePath": "notices",
+     "template": "kf_list_updates",
+     "columns": [
+      "PrimaryField"
+     ],
+     "sort": [
+      {
+       "developerName": "sort_order",
+       "direction": "asc"
+      }
+     ],
+     "filter": [],
+     "defaultNumberOfItemsPerPage": 100,
+     "maxNumberOfItemsPerPage": 1000,
+     "ignoreClientFilterAndSortQueryParams": false
+    }
+   ]
+  },
+  {
+   "developerName": "handouts",
+   "labelPlural": "Patient handouts",
+   "labelSingular": "Handout",
+   "description": "Prep sheets, after-visit notes and guides; some patients-only, some staff-only",
+   "defaultRouteTemplate": "handouts/{PrimaryField}",
+   "primaryField": "name",
+   "fields": [
+    {
+     "developerName": "name",
+     "label": "Name",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": true,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "kind",
+     "label": "Kind",
+     "description": "",
+     "fieldType": "dropdown",
+     "isRequired": false,
+     "choices": [
+      {
+       "developerName": "prep",
+       "label": "Visit prep",
+       "disabled": false
+      },
+      {
+       "developerName": "after",
+       "label": "After your visit",
+       "disabled": false
+      },
+      {
+       "developerName": "portal",
+       "label": "Portal guide",
+       "disabled": false
+      },
+      {
+       "developerName": "policy",
+       "label": "Policy",
+       "disabled": false
+      },
+      {
+       "developerName": "checklist",
+       "label": "Checklist",
+       "disabled": false
+      },
+      {
+       "developerName": "script",
+       "label": "Phone script",
+       "disabled": false
+      }
+     ],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "audience",
+     "label": "Audience",
+     "description": "",
+     "fieldType": "dropdown",
+     "isRequired": false,
+     "choices": [
+      {
+       "developerName": "public",
+       "label": "Everyone",
+       "disabled": false
+      },
+      {
+       "developerName": "patients",
+       "label": "Patients",
+       "disabled": false
+      },
+      {
+       "developerName": "staff",
+       "label": "Staff",
+       "disabled": false
+      }
+     ],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "summary",
+     "label": "Summary",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "body",
+     "label": "Body",
+     "description": "",
+     "fieldType": "wysiwyg",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "updated",
+     "label": "Updated",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "sort_order",
+     "label": "Sort order",
+     "description": "",
+     "fieldType": "number",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    }
+   ],
+   "views": [
+    {
+     "developerName": "handouts",
+     "label": "Patient handouts",
+     "description": "",
+     "isPublished": true,
+     "routePath": "handouts",
+     "template": "kf_list_handouts",
+     "columns": [
+      "PrimaryField"
+     ],
+     "sort": [
+      {
+       "developerName": "sort_order",
+       "direction": "asc"
+      }
+     ],
+     "filter": [],
+     "defaultNumberOfItemsPerPage": 100,
+     "maxNumberOfItemsPerPage": 1000,
+     "ignoreClientFilterAndSortQueryParams": false
+    }
+   ]
+  },
+  {
+   "developerName": "sessions",
+   "labelPlural": "Clinic sessions",
+   "labelSingular": "Session",
+   "description": "Vaccine clinics, group visits, talks and team huddles",
+   "defaultRouteTemplate": "sessions/{PrimaryField}",
+   "primaryField": "title",
+   "fields": [
+    {
+     "developerName": "title",
+     "label": "Title",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": true,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "kind",
+     "label": "Kind",
+     "description": "",
+     "fieldType": "dropdown",
+     "isRequired": false,
+     "choices": [
+      {
+       "developerName": "vaccine",
+       "label": "Vaccine clinic",
+       "disabled": false
+      },
+      {
+       "developerName": "talk",
+       "label": "Talk",
+       "disabled": false
+      },
+      {
+       "developerName": "group",
+       "label": "Group visit",
+       "disabled": false
+      },
+      {
+       "developerName": "huddle",
+       "label": "Team huddle",
+       "disabled": false
+      }
+     ],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "audience",
+     "label": "Audience",
+     "description": "",
+     "fieldType": "dropdown",
+     "isRequired": false,
+     "choices": [
+      {
+       "developerName": "public",
+       "label": "Everyone",
+       "disabled": false
+      },
+      {
+       "developerName": "patients",
+       "label": "Patients",
+       "disabled": false
+      },
+      {
+       "developerName": "staff",
+       "label": "Staff",
+       "disabled": false
+      }
+     ],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "when_label",
+     "label": "When",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "where_label",
+     "label": "Where",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "summary",
+     "label": "Summary",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "body",
+     "label": "Body",
+     "description": "",
+     "fieldType": "wysiwyg",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "host",
+     "label": "Host",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "note",
+     "label": "Note",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "sort_order",
+     "label": "Sort order",
+     "description": "",
+     "fieldType": "number",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    }
+   ],
+   "views": [
+    {
+     "developerName": "sessions",
+     "label": "Clinic sessions",
+     "description": "",
+     "isPublished": true,
+     "routePath": "sessions",
+     "template": "kf_list_sessions",
+     "columns": [
+      "PrimaryField"
+     ],
+     "sort": [
+      {
+       "developerName": "sort_order",
+       "direction": "asc"
+      }
+     ],
+     "filter": [],
+     "defaultNumberOfItemsPerPage": 100,
+     "maxNumberOfItemsPerPage": 1000,
+     "ignoreClientFilterAndSortQueryParams": false
+    }
+   ]
+  },
+  {
+   "developerName": "faq",
+   "labelPlural": "Questions",
+   "labelSingular": "Question",
+   "description": "Questions patients ask the front desk",
+   "defaultRouteTemplate": "questions/{PrimaryField}",
+   "primaryField": "question",
+   "fields": [
+    {
+     "developerName": "question",
+     "label": "Question",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": true,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "area",
+     "label": "Area",
+     "description": "",
+     "fieldType": "dropdown",
+     "isRequired": false,
+     "choices": [
+      {
+       "developerName": "new",
+       "label": "New patients",
+       "disabled": false
+      },
+      {
+       "developerName": "billing",
+       "label": "Billing",
+       "disabled": false
+      },
+      {
+       "developerName": "records",
+       "label": "Records",
+       "disabled": false
+      },
+      {
+       "developerName": "visits",
+       "label": "Visits",
+       "disabled": false
+      },
+      {
+       "developerName": "portal",
+       "label": "Patient area",
+       "disabled": false
+      }
+     ],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "answer",
+     "label": "Answer",
+     "description": "",
+     "fieldType": "wysiwyg",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "summary",
+     "label": "Summary",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "sort_order",
+     "label": "Sort order",
+     "description": "",
+     "fieldType": "number",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    }
+   ],
+   "views": [
+    {
+     "developerName": "faq",
+     "label": "Questions",
+     "description": "",
+     "isPublished": true,
+     "routePath": "questions",
+     "template": "kf_list_faq",
+     "columns": [
+      "PrimaryField"
+     ],
+     "sort": [
+      {
+       "developerName": "sort_order",
+       "direction": "asc"
+      }
+     ],
+     "filter": [],
+     "defaultNumberOfItemsPerPage": 100,
+     "maxNumberOfItemsPerPage": 1000,
+     "ignoreClientFilterAndSortQueryParams": false
+    }
+   ]
+  }
+ ]
+}

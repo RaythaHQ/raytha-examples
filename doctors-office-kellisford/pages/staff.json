@@ -1,0 +1,47 @@
+{
+ "main": [
+  {
+   "widgetType": "kf_table",
+   "settings": {
+    "headline": "Front desk and clinic coverage (fictional)",
+    "intro": "Week of November 9, 2026. Names are fictional.",
+    "columns": "Slot|Who|Notes",
+    "rows": [
+     {
+      "cells": "Mon huddle 7:45|Dess Marlowe|Break room"
+     },
+     {
+      "cells": "Same-day slots|Priya Nandakumar|Six held each morning"
+     },
+     {
+      "cells": "Thu minor procedures|Dr. Healey-Arden|Room 2"
+     },
+     {
+      "cells": "Saturday clinic|Priya + Joan|Vaccines and labs walk-in"
+     },
+     {
+      "cells": "Vaccine fridge log|Joan Whitlock|Open and close"
+     }
+    ]
+   }
+  },
+  {
+   "widgetType": "kf_notes",
+   "settings": {
+    "headline": "Staff notices",
+    "items": [
+     {
+      "tag": "Phones",
+      "title": "Opening script",
+      "text": "Use the front desk phone script handout."
+     },
+     {
+      "tag": "Stock",
+      "title": "Flu vaccine count",
+      "text": "Count Friday at 1:30 pm."
+     }
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,144 @@
+{
+ "slug": "kellisford-family-medicine",
+ "name": "Kellisford Family Medicine",
+ "base": "http://localhost:5000",
+ "viewport": [
+  1440,
+  810
+ ],
+ "output": [
+  1920,
+  1080
+ ],
+ "colorScheme": "light",
+ "login": {
+  "path": "/account/login",
+  "emailEnv": "SITE_USER_EMAIL",
+  "passwordEnv": "SITE_USER_PASSWORD"
+ },
+ "title": {
+  "kicker": "Raytha use case",
+  "heading": "Kellisford Family Medicine",
+  "subheading": "A doctor's office website: a day board of who is in, visit types with prep lists, a four-step triage ladder \u2014 and a patient area behind sign-in.",
+  "hold": 1.3
+ },
+ "end": {
+  "heading": "Built with Raytha",
+  "subheading": "Open-source .NET CMS. Get the brief, screenshots and a one-command rebuild kit.",
+  "url": "raytha.com/use-cases/kellisford-family-medicine",
+  "hold": 2.3
+ },
+ "scenes": [
+  {
+   "url": "/",
+   "caption": "Today's board: hours and who is in the office, rendered on the server",
+   "actions": [
+    {
+     "hold": 1.5,
+     "poster": true
+    },
+    {
+     "scroll": 900,
+     "dur": 1.5
+    },
+    {
+     "hold": 0.8
+    },
+    {
+     "scroll": 1650,
+     "dur": 1.4
+    },
+    {
+     "hold": 0.6
+    }
+   ]
+  },
+  {
+   "url": "/visits/annual-physical",
+   "caption": "A visit page: length, what to bring and what happens after",
+   "actions": [
+    {
+     "hold": 1.3
+    },
+    {
+     "scroll": 380,
+     "dur": 1.2
+    },
+    {
+     "hold": 0.6
+    }
+   ]
+  },
+  {
+   "url": "/care/child-with-a-fever",
+   "caption": "A care guide on the four-step ladder: home, call, same day, 911",
+   "actions": [
+    {
+     "hold": 1.4
+    },
+    {
+     "scroll": 260,
+     "dur": 1.0
+    },
+    {
+     "hold": 0.5
+    }
+   ]
+  },
+  {
+   "url": "/week",
+   "caption": "The week board: who is in, day by day",
+   "actions": [
+    {
+     "hold": 1.3
+    }
+   ]
+  },
+  {
+   "url": "/patients",
+   "caption": "Signed out, the patient area is locked on the server",
+   "actions": [
+    {
+     "hold": 1.1
+    }
+   ]
+  },
+  {
+   "url": "/patients",
+   "signin": true,
+   "caption": "Signed in as a patient: card, group visits and prep sheets",
+   "actions": [
+    {
+     "hold": 1.1
+    },
+    {
+     "scroll": 420,
+     "dur": 1.2
+    },
+    {
+     "hold": 0.5
+    }
+   ]
+  },
+  {
+   "url": "/",
+   "phone": true,
+   "phoneCaption": {
+    "kicker": "Responsive",
+    "text": "The same pages on a phone"
+   },
+   "actions": [
+    {
+     "hold": 0.5
+    },
+    {
+     "scroll": 900,
+     "dur": 2.0
+    },
+    {
+     "hold": 0.4
+    }
+   ]
+  }
+ ]
+}

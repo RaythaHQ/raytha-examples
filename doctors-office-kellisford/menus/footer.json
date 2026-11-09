@@ -1,0 +1,26 @@
+{
+ "developerName": "footer",
+ "label": "Footer",
+ "items": [
+  {
+   "label": "Hours and directions",
+   "link": "/hours"
+  },
+  {
+   "label": "New patients",
+   "link": "/new-patients"
+  },
+  {
+   "label": "Questions",
+   "link": "/questions"
+  },
+  {
+   "label": "About",
+   "link": "/about"
+  },
+  {
+   "label": "Search",
+   "link": "/search"
+  }
+ ]
+}

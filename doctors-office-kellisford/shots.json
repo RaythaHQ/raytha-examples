@@ -1,0 +1,151 @@
+[
+ {
+  "name": "01-home-1440.png",
+  "path": "/",
+  "device": "desktop"
+ },
+ {
+  "name": "02-home-full-1440.png",
+  "path": "/",
+  "device": "desktop",
+  "full_page": true
+ },
+ {
+  "name": "03-week-1440.png",
+  "path": "/",
+  "device": "desktop",
+  "scroll": 1650
+ },
+ {
+  "name": "04-ladder-1440.png",
+  "path": "/",
+  "device": "desktop",
+  "scroll": 2750
+ },
+ {
+  "name": "05-visits-1440.png",
+  "path": "/visits",
+  "device": "desktop",
+  "full_page": true
+ },
+ {
+  "name": "06-visit-1440.png",
+  "path": "/visits/annual-physical",
+  "device": "desktop",
+  "full_page": true
+ },
+ {
+  "name": "07-week-board-1440.png",
+  "path": "/week",
+  "device": "desktop",
+  "full_page": true
+ },
+ {
+  "name": "08-when-to-call-1440.png",
+  "path": "/when-to-call",
+  "device": "desktop",
+  "full_page": true
+ },
+ {
+  "name": "09-guides-1440.png",
+  "path": "/care",
+  "device": "desktop",
+  "full_page": true
+ },
+ {
+  "name": "10-guide-1440.png",
+  "path": "/care/child-with-a-fever",
+  "device": "desktop",
+  "full_page": true
+ },
+ {
+  "name": "11-providers-1440.png",
+  "path": "/providers",
+  "device": "desktop",
+  "full_page": true
+ },
+ {
+  "name": "12-provider-1440.png",
+  "path": "/providers/anneliese-corrick",
+  "device": "desktop",
+  "full_page": true
+ },
+ {
+  "name": "13-sessions-1440.png",
+  "path": "/sessions",
+  "device": "desktop",
+  "full_page": true
+ },
+ {
+  "name": "14-notices-1440.png",
+  "path": "/notices",
+  "device": "desktop",
+  "full_page": true
+ },
+ {
+  "name": "15-questions-1440.png",
+  "path": "/questions",
+  "device": "desktop",
+  "full_page": true
+ },
+ {
+  "name": "16-hours-1440.png",
+  "path": "/hours",
+  "device": "desktop",
+  "full_page": true
+ },
+ {
+  "name": "17-handout-locked-1440.png",
+  "path": "/handouts/before-your-annual-physical",
+  "device": "desktop"
+ },
+ {
+  "name": "18-patients-locked-1440.png",
+  "path": "/patients",
+  "device": "desktop"
+ },
+ {
+  "name": "19-login-1440.png",
+  "path": "/account/login?returnUrl=/patients",
+  "device": "desktop"
+ },
+ {
+  "name": "20-patients-1440.png",
+  "path": "/patients",
+  "device": "desktop",
+  "full_page": true,
+  "login": true,
+  "who": "patients"
+ },
+ {
+  "name": "21-handout-patient-1440.png",
+  "path": "/handouts/before-your-annual-physical",
+  "device": "desktop",
+  "login": true,
+  "who": "patients"
+ },
+ {
+  "name": "22-staff-room-1440.png",
+  "path": "/staff-room",
+  "device": "desktop",
+  "full_page": true,
+  "login": true,
+  "who": "staff"
+ },
+ {
+  "name": "23-search-1440.png",
+  "path": "/search?q=flu",
+  "device": "desktop"
+ },
+ {
+  "name": "24-home-mobile-390.png",
+  "path": "/",
+  "device": "mobile"
+ },
+ {
+  "name": "25-visits-mobile-390.png",
+  "path": "/visits",
+  "device": "mobile",
+  "scroll": 300
+ }
+]

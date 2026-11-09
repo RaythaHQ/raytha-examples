@@ -47,6 +47,7 @@ These examples go with the weekly [use cases on raytha.com](https://raytha.com/u
 | [<img src="https://raytha.com/raytha/media-items/objectkey/V11XbAJokkaQeFc-QObgIA_ossingford_01_home.webp" width="360" alt="Ossingford Public Library">](library-ossingford/) | **[Ossingford Public Library](library-ossingford/)**: a public library website for a county library with four branches and a Bookmobile: today's hours for every branch, a weekly program planner, new arrivals drawn as book spines with catalog-card title pages, reading lists, digital resources A to Z, library news, and members-only pages for cardholders and staff. 6 content types, 2 user groups. |
 | [<img src="https://raytha.com/raytha/media-items/objectkey/3GK3C4OyxE6jVE5Gj_6VEg_tellmarsh_01_home.webp" width="360" alt="Tellmarsh & Penhallow CPAs">](accounting-tellmarsh-penhallow/) | **[Tellmarsh & Penhallow CPAs](accounting-tellmarsh-penhallow/)**: an accounting firm website for a two-partner CPA firm: a tax-year dial with every deadline placed by day of year and a countdown to the next one, a month-by-month deadline almanac, fixed-fee services with what to bring, people, industries, a records-retention chart, field notes, and members-only pages for clients and staff. 7 content types, 2 user groups. |
 | [<img src="https://raytha.com/raytha/media-items/objectkey/NgL-e1dfgEilLEP46FlKWw_helderwyn_01_home.webp" width="360" alt="Helderwyn Museum of Making">](museum-helderwyn/) | **[Helderwyn Museum of Making](museum-helderwyn/)**: a museum website for a craft and tools museum: an accession wall of objects with museum wall labels, a floor plan of galleries, exhibitions with wall text, programs, people, journal, and members-only pages for patrons and staff. 7 content types, 2 user groups. |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/xtNMJAFxQ0aDGEJCpkorTg_kellisford_01_home.webp" width="360" alt="Kellisford Family Medicine">](doctors-office-kellisford/) | **[Kellisford Family Medicine](doctors-office-kellisford/)**: a doctors office website for an independent family practice: a day board of who is in and today's hours, visit types with what to bring, a four-step triage ladder and care guides, providers, sessions, notices, and members-only pages for patients and staff. 7 content types, 2 user groups. |
 
 ## Quickstart
 
@@ -146,6 +147,7 @@ The examples were built from a short brief with no human help. To do the same fo
 ├── library-ossingford/
 ├── accounting-tellmarsh-penhallow/
 ├── museum-helderwyn/
+├── doctors-office-kellisford/
 ├── skills/raytha-site-builder/  # agent skill: brief -> finished Raytha site
 ├── templates/brief-template.md  # fill-in brief
 ├── scripts/                     # shared build script, scaffold, screenshots, walkthroughs, export, secret scan
