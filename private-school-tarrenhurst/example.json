@@ -1,0 +1,34 @@
+{
+ "name": "Tarrenhurst School",
+ "theme": "tarrenhurst",
+ "types": [
+  "divisions",
+  "courses",
+  "faculty",
+  "houses",
+  "programs",
+  "events",
+  "stories",
+  "letters"
+ ],
+ "detailTemplates": {
+  "divisions": "th_detail_divisions",
+  "courses": "th_detail_courses",
+  "faculty": "th_detail_faculty",
+  "houses": "th_detail_houses",
+  "programs": "th_detail_programs",
+  "events": "th_detail_events",
+  "stories": "th_detail_stories",
+  "letters": "th_detail_letters"
+ },
+ "groups": [
+  {
+   "developerName": "families",
+   "label": "Tarrenhurst families"
+  },
+  {
+   "developerName": "faculty",
+   "label": "Tarrenhurst faculty"
+  }
+ ]
+}

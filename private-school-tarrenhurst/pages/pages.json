@@ -1,0 +1,51 @@
+[
+ {
+  "title": "Tarrenhurst School",
+  "routePath": "home",
+  "template": "th_home",
+  "sections": "pages/home.json",
+  "home": true
+ },
+ {
+  "title": "Admissions",
+  "routePath": "admissions",
+  "template": "th_admissions",
+  "sections": "pages/admissions.json"
+ },
+ {
+  "title": "About the school",
+  "routePath": "about",
+  "template": "th_page",
+  "sections": "pages/about.json"
+ },
+ {
+  "title": "Visit",
+  "routePath": "visit",
+  "template": "th_page",
+  "sections": "pages/visit.json"
+ },
+ {
+  "title": "The rotation",
+  "routePath": "rotation",
+  "template": "th_rotation",
+  "sections": "pages/rotation.json"
+ },
+ {
+  "title": "Families",
+  "routePath": "families",
+  "template": "th_families",
+  "sections": "pages/families.json"
+ },
+ {
+  "title": "Common room",
+  "routePath": "common-room",
+  "template": "th_common",
+  "sections": "pages/common.json"
+ },
+ {
+  "title": "Search",
+  "routePath": "search",
+  "template": "th_search",
+  "sections": "pages/search.json"
+ }
+]

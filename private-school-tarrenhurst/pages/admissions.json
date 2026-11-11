@@ -1,0 +1,87 @@
+{
+ "main": [
+  {
+   "widgetType": "th_steps",
+   "settings": {
+    "headline": "The admissions calendar",
+    "intro": "Applying for fall 2027. Every step is arranged with the admissions office by phone or email; there is no application form on this site.",
+    "items": [
+     {
+      "when": "Sep \u2013 Dec",
+      "title": "Visit",
+      "text": "Come to an open morning or book a private tour. Grade 6\u201312 applicants can shadow a class."
+     },
+     {
+      "when": "By Jan 15",
+      "title": "Apply",
+      "text": "The admissions office sends the application, teacher references and transcript request."
+     },
+     {
+      "when": "Jan \u2013 Feb",
+      "title": "Meet",
+      "text": "A conversation with a teacher, a reading and writing sample, and a playdate morning for Pre-K and K."
+     },
+     {
+      "when": "By Feb 1",
+      "title": "Financial aid",
+      "text": "Families who want aid send the aid statement; awards are need-based."
+     },
+     {
+      "when": "Mar 5",
+      "title": "Decisions",
+      "text": "Decisions and aid awards are sent together."
+     },
+     {
+      "when": "Apr 10",
+      "title": "Reply",
+      "text": "Families reply by April 10 and are welcomed at the spring family evening."
+     }
+    ]
+   }
+  },
+  {
+   "widgetType": "th_table",
+   "settings": {
+    "headline": "Tuition and fees, 2026\u201327",
+    "intro": "Fictional figures for a fictional school. Lunch, books and day trips are included.",
+    "columns": "Division|Grades|Tuition|Families on aid",
+    "rows": [
+     {
+      "cells": "Lower School|Pre-K \u2013 5|$24,800|31%"
+     },
+     {
+      "cells": "Middle School|6 \u2013 8|$31,500|34%"
+     },
+     {
+      "cells": "Upper School|9 \u2013 12|$36,900|37%"
+     }
+    ],
+    "foot": "Financial aid is need-based and covers up to full tuition. No payment is taken on this site."
+   }
+  },
+  {
+   "widgetType": "th_qa",
+   "settings": {
+    "headline": "Questions families ask",
+    "items": [
+     {
+      "q": "Is there sibling priority?",
+      "a": "Siblings of current students are considered first in each grade, as long as the application is complete by January 15."
+     },
+     {
+      "q": "Do you offer transport?",
+      "a": "Two morning and two late bus routes run from the town center and the north villages."
+     },
+     {
+      "q": "Can my child visit for a day?",
+      "a": "Yes, from Grade 6. The admissions office arranges a shadow day with a student guide."
+     },
+     {
+      "q": "How large are classes?",
+      "a": "About 14 in the Lower School, 15 in the Middle School and 13 at the Upper School oval tables."
+     }
+    ]
+   }
+  }
+ ]
+}

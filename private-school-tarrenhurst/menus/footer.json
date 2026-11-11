@@ -1,0 +1,30 @@
+{
+ "developerName": "footer",
+ "label": "Footer",
+ "items": [
+  {
+   "label": "About the school",
+   "link": "/about"
+  },
+  {
+   "label": "Visit",
+   "link": "/visit"
+  },
+  {
+   "label": "The rotation",
+   "link": "/rotation"
+  },
+  {
+   "label": "Faculty",
+   "link": "/faculty"
+  },
+  {
+   "label": "Letters",
+   "link": "/letters"
+  },
+  {
+   "label": "Search",
+   "link": "/search"
+  }
+ ]
+}

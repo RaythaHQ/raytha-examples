@@ -1,0 +1,45 @@
+{
+ "main": [
+  {
+   "widgetType": "th_head",
+   "settings": {
+    "numeral": "VII",
+    "kicker": "Visit",
+    "headline": "Come and see a morning at Tarrenhurst",
+    "subtitle": "Open mornings run in the fall, and private tours run most weekdays. Call the admissions office to arrange a visit."
+   }
+  },
+  {
+   "widgetType": "th_table",
+   "settings": {
+    "headline": "Ways to visit",
+    "intro": "Arranged by phone or email; there is no booking form on this site.",
+    "columns": "Visit|When|Who it's for",
+    "rows": [
+     {
+      "cells": "Open morning|Sat Nov 14, 9:00 \u2013 11:30|All families"
+     },
+     {
+      "cells": "Private tour|Weekdays at 9:00 and 1:30|All families"
+     },
+     {
+      "cells": "Shadow day|Nov 16 \u2013 Dec 11|Applicants for Grades 6\u201312"
+     },
+     {
+      "cells": "Playdate morning|January|Pre-K and K applicants"
+     }
+    ],
+    "foot": "Admissions office: (555) 014-1891 \u00b7 admissions@tarrenhurst.example"
+   }
+  },
+  {
+   "widgetType": "th_prose",
+   "settings": {
+    "headline": "Finding us",
+    "body": "<p>Tarrenhurst School, 1 School Hill, Tarrenhurst (fictional). Visitor parking is by the Tarren Building; the admissions office is the first door on the left.</p><p>Morning buses run from the town center and the north villages.</p>",
+    "note_title": "Office hours",
+    "note": "Admissions: weekdays 8:00 am \u2013 4:30 pm. Main office: (555) 014-1000."
+   }
+  }
+ ]
+}

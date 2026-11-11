@@ -1,0 +1,27 @@
+{
+ "main": [
+  {
+   "widgetType": "th_table",
+   "settings": {
+    "headline": "This week",
+    "intro": "Week of November 9, 2026 (fictional).",
+    "columns": "Day|What|Where",
+    "rows": [
+     {
+      "cells": "Mon|House assembly|Hollins Theatre"
+     },
+     {
+      "cells": "Wed|Early dismissal 1:00 pm|All divisions"
+     },
+     {
+      "cells": "Thu|Grade 4 museum trip|Bus at 8:30 am"
+     },
+     {
+      "cells": "Sat|Open morning; student guides needed|Tarren Building"
+     }
+    ],
+    "foot": ""
+   }
+  }
+ ]
+}

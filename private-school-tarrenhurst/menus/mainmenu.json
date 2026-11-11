@@ -1,0 +1,34 @@
+{
+ "developerName": "mainmenu",
+ "label": "Main menu",
+ "items": [
+  {
+   "label": "Divisions",
+   "link": "/divisions"
+  },
+  {
+   "label": "Course of studies",
+   "link": "/courses"
+  },
+  {
+   "label": "Houses",
+   "link": "/houses"
+  },
+  {
+   "label": "Athletics & arts",
+   "link": "/programs"
+  },
+  {
+   "label": "Calendar",
+   "link": "/calendar"
+  },
+  {
+   "label": "Stories",
+   "link": "/stories"
+  },
+  {
+   "label": "Admissions",
+   "link": "/admissions"
+  }
+ ]
+}

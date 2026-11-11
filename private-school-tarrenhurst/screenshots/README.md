@@ -1,0 +1,16 @@
+# Screenshots
+
+Captured at 1440px and 390px from a site built with `../build.sh`. Signed-in shots use demo users in the `families` group (families portal) and the `faculty` group (common room). Hosted in raytha.com media.
+
+| Screenshot | Shows |
+|---|---|
+| [<img src="https://raytha.com/raytha/media-items/objectkey/xFEYePXxQ0uf0nal8VAfSQ_tarrenhurst_01_home.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/xFEYePXxQ0uf0nal8VAfSQ_tarrenhurst_01_home.webp) | Home: the prospectus cover, with today's rotation day and blocks worked out on the server |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/rmUL99UnukCcdwkSr5PvPQ_tarrenhurst_04_studies.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/rmUL99UnukCcdwkSr5PvPQ_tarrenhurst_04_studies.webp) | Chapter III: the department index and signature courses |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/mBBxag105UWlY8EDNdWcWw_tarrenhurst_05_housecup.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/mBBxag105UWlY8EDNdWcWw_tarrenhurst_05_housecup.webp) | The House Cup: standings drawn from each house's points |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/x5FBUdro0Uy_SyZdPyVB7A_tarrenhurst_06_rotation.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/x5FBUdro0Uy_SyZdPyVB7A_tarrenhurst_06_rotation.webp) | The six-day rotation: today's column and the courses meeting today |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/U_4I9DWUak-gHlWGVpy-dQ_tarrenhurst_07_courses.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/U_4I9DWUak-gHlWGVpy-dQ_tarrenhurst_07_courses.webp) | The course of studies, filtered by department and division on the server |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/90Yp5DPlGkKhQtMJq-q1xQ_tarrenhurst_18_admissions.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/90Yp5DPlGkKhQtMJq-q1xQ_tarrenhurst_18_admissions.webp) | Admissions: dated steps, tuition and aid, and no forms |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/XF4QnihCmkG-j4co3Kx45g_tarrenhurst_20_letters_locked.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/XF4QnihCmkG-j4co3Kx45g_tarrenhurst_20_letters_locked.webp) | Letters, signed out: members-only titles are listed, contents are not sent |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/-hvw0PqBkkmTd3KJHZO4zg_tarrenhurst_23_families.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/-hvw0PqBkkmTd3KJHZO4zg_tarrenhurst_23_families.webp) | Signed in as a family: family card, family dates, this week and letters home |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/OL5c5M8aKES06ChHpAd0AQ_tarrenhurst_25_common_room.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/OL5c5M8aKES06ChHpAd0AQ_tarrenhurst_25_common_room.webp) | The faculty common room: duties, minutes and grading deadlines, for faculty only |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/OkQIsBpBw0-KA31J2Tg2MA_tarrenhurst_27_home_mobile.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/OkQIsBpBw0-KA31J2Tg2MA_tarrenhurst_27_home_mobile.webp) | Home on a phone |

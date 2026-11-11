@@ -1,0 +1,63 @@
+{
+ "main": [
+  {
+   "widgetType": "th_head",
+   "settings": {
+    "numeral": "I",
+    "kicker": "About the school",
+    "headline": "Founded 1891, on the same hill",
+    "subtitle": "Tarrenhurst School is a fictional independent coeducational day school for 628 students from Pre-K to Grade 12, in the invented town of Tarrenhurst."
+   }
+  },
+  {
+   "widgetType": "th_figures",
+   "settings": {
+    "headline": "In figures",
+    "items": [
+     {
+      "figure": "1891",
+      "label": "Founded"
+     },
+     {
+      "figure": "628",
+      "label": "Students, Pre-K \u2013 12"
+     },
+     {
+      "figure": "7:1",
+      "label": "Student to teacher"
+     },
+     {
+      "figure": "84",
+      "label": "Faculty, 61% with advanced degrees"
+     },
+     {
+      "figure": "34%",
+      "label": "Families on financial aid"
+     },
+     {
+      "figure": "46",
+      "label": "Acres, with woods and a stream"
+     }
+    ]
+   }
+  },
+  {
+   "widgetType": "th_prose",
+   "settings": {
+    "headline": "A short history",
+    "body": "<p>Josiah Ashby opened the school in 1891 with eleven pupils in a farmhouse. Agnes Thorne, the first headmistress, made it coeducational in 1902 and started the house system. The Tarren Building went up in 1928 and was rebuilt after the 1951 fire.</p><p>Today the school has three divisions on one campus, four houses and an archive that keeps every house cup ledger since 1903.</p>",
+    "note_title": "Fictional school",
+    "note": "Tarrenhurst School, its town, people, figures and history are invented for this Raytha example. Phone numbers use the 555 range."
+   }
+  },
+  {
+   "widgetType": "th_prose",
+   "settings": {
+    "headline": "What we believe",
+    "body": "<p>Children learn best when they are known. Small classes, advisors and houses exist so that every student has several adults who notice them.</p><p>We teach through conversation and making things, and we ask students to show their thinking, not just their answers.</p>",
+    "note_title": "Accreditation",
+    "note": "In the story, Tarrenhurst is accredited by a regional association of independent schools. This is a fictional statement."
+   }
+  }
+ ]
+}

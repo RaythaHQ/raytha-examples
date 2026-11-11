@@ -1,0 +1,158 @@
+{
+ "slug": "tarrenhurst-school",
+ "name": "Tarrenhurst School",
+ "base": "http://localhost:5000",
+ "viewport": [
+  1440,
+  810
+ ],
+ "output": [
+  1920,
+  1080
+ ],
+ "colorScheme": "light",
+ "login": {
+  "path": "/account/login",
+  "emailEnv": "SITE_USER_EMAIL",
+  "passwordEnv": "SITE_USER_PASSWORD"
+ },
+ "title": {
+  "kicker": "Raytha use case",
+  "heading": "Tarrenhurst School",
+  "subheading": "A private school website laid out as a prospectus: divisions, a course of studies, the House Cup, a six-day rotation, and families and faculty areas behind sign-in.",
+  "hold": 1.3
+ },
+ "end": {
+  "heading": "Built with Raytha",
+  "subheading": "Open-source .NET CMS. Get the brief, screenshots and a one-command rebuild kit.",
+  "url": "raytha.com/use-cases/tarrenhurst-school",
+  "hold": 2.3
+ },
+ "scenes": [
+  {
+   "url": "/",
+   "caption": "The prospectus: today's rotation day, worked out on the server",
+   "actions": [
+    {
+     "hold": 1.5,
+     "poster": true
+    },
+    {
+     "scroll": 940,
+     "dur": 1.5
+    },
+    {
+     "hold": 0.7
+    },
+    {
+     "scroll": 2330,
+     "dur": 1.5
+    },
+    {
+     "hold": 0.6
+    },
+    {
+     "scroll": 3090,
+     "dur": 1.2
+    },
+    {
+     "hold": 0.8
+    }
+   ]
+  },
+  {
+   "url": "/courses?dept=science&div=",
+   "caption": "The course of studies, filtered by department on the server",
+   "actions": [
+    {
+     "hold": 1.4
+    },
+    {
+     "scroll": 300,
+     "dur": 1.0
+    },
+    {
+     "hold": 0.5
+    }
+   ]
+  },
+  {
+   "url": "/rotation",
+   "caption": "The six-day rotation: today's column and the courses meeting today",
+   "actions": [
+    {
+     "hold": 1.3
+    },
+    {
+     "scroll": 420,
+     "dur": 1.2
+    },
+    {
+     "hold": 0.6
+    }
+   ]
+  },
+  {
+   "url": "/admissions",
+   "caption": "Admissions: dated steps and tuition, with no forms",
+   "actions": [
+    {
+     "hold": 1.2
+    },
+    {
+     "scroll": 480,
+     "dur": 1.2
+    },
+    {
+     "hold": 0.5
+    }
+   ]
+  },
+  {
+   "url": "/families",
+   "caption": "Signed out, the families portal is locked on the server",
+   "actions": [
+    {
+     "hold": 1.1
+    }
+   ]
+  },
+  {
+   "url": "/families",
+   "signin": true,
+   "caption": "Signed in as a family: letters, dates and this week",
+   "actions": [
+    {
+     "hold": 1.1
+    },
+    {
+     "scroll": 420,
+     "dur": 1.2
+    },
+    {
+     "hold": 0.5
+    }
+   ]
+  },
+  {
+   "url": "/",
+   "phone": true,
+   "phoneCaption": {
+    "kicker": "Responsive",
+    "text": "The same pages on a phone"
+   },
+   "actions": [
+    {
+     "hold": 0.5
+    },
+    {
+     "scroll": 900,
+     "dur": 2.0
+    },
+    {
+     "hold": 0.4
+    }
+   ]
+  }
+ ]
+}

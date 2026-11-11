@@ -1,0 +1,27 @@
+{
+ "main": [
+  {
+   "widgetType": "th_table",
+   "settings": {
+    "headline": "Cover and duties this week",
+    "intro": "Week of November 9, 2026. Names are fictional.",
+    "columns": "Slot|Who|Notes",
+    "rows": [
+     {
+      "cells": "Mon lunch duty|Rosalind Achterberg|Dining hall"
+     },
+     {
+      "cells": "Tue evening study|Hamish Okonkwo|Library until 8:00 pm"
+     },
+     {
+      "cells": "Wed cover, Block C|Mateo Viljoen|For Ines Marchetti (archive visit)"
+     },
+     {
+      "cells": "Sat open morning|Harriet Osei-Lindqvist + 6 guides|Tarren Building"
+     }
+    ],
+    "foot": "Swap a duty with the Dean of Faculty by Thursday."
+   }
+  }
+ ]
+}

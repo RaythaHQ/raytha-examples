@@ -1,0 +1,176 @@
+[
+ {
+  "name": "01-home-1440.png",
+  "path": "/",
+  "device": "desktop"
+ },
+ {
+  "name": "02-home-full-1440.png",
+  "path": "/",
+  "device": "desktop",
+  "full_page": true
+ },
+ {
+  "name": "03-divisions-day-1440.png",
+  "path": "/",
+  "device": "desktop",
+  "scroll": 940
+ },
+ {
+  "name": "04-studies-1440.png",
+  "path": "/",
+  "device": "desktop",
+  "scroll": 2330
+ },
+ {
+  "name": "05-housecup-1440.png",
+  "path": "/",
+  "device": "desktop",
+  "scroll": 3090
+ },
+ {
+  "name": "06-rotation-1440.png",
+  "path": "/rotation",
+  "device": "desktop",
+  "full_page": true
+ },
+ {
+  "name": "07-courses-1440.png",
+  "path": "/courses",
+  "device": "desktop",
+  "full_page": true
+ },
+ {
+  "name": "08-course-1440.png",
+  "path": "/courses/literature-and-law",
+  "device": "desktop",
+  "full_page": true
+ },
+ {
+  "name": "09-divisions-1440.png",
+  "path": "/divisions",
+  "device": "desktop",
+  "full_page": true
+ },
+ {
+  "name": "10-division-1440.png",
+  "path": "/divisions/upper-school",
+  "device": "desktop",
+  "full_page": true
+ },
+ {
+  "name": "11-houses-1440.png",
+  "path": "/houses",
+  "device": "desktop",
+  "full_page": true
+ },
+ {
+  "name": "12-house-1440.png",
+  "path": "/houses/merrow",
+  "device": "desktop",
+  "full_page": true
+ },
+ {
+  "name": "13-faculty-1440.png",
+  "path": "/faculty",
+  "device": "desktop",
+  "full_page": true
+ },
+ {
+  "name": "14-programs-1440.png",
+  "path": "/programs",
+  "device": "desktop",
+  "full_page": true
+ },
+ {
+  "name": "15-calendar-1440.png",
+  "path": "/calendar",
+  "device": "desktop",
+  "full_page": true
+ },
+ {
+  "name": "16-stories-1440.png",
+  "path": "/stories",
+  "device": "desktop",
+  "full_page": true
+ },
+ {
+  "name": "17-story-1440.png",
+  "path": "/stories/merrow-takes-the-lead-after-service-week",
+  "device": "desktop",
+  "full_page": true
+ },
+ {
+  "name": "18-admissions-1440.png",
+  "path": "/admissions",
+  "device": "desktop",
+  "full_page": true
+ },
+ {
+  "name": "19-about-1440.png",
+  "path": "/about",
+  "device": "desktop",
+  "full_page": true
+ },
+ {
+  "name": "20-letters-locked-1440.png",
+  "path": "/letters",
+  "device": "desktop",
+  "full_page": true
+ },
+ {
+  "name": "21-families-locked-1440.png",
+  "path": "/families",
+  "device": "desktop"
+ },
+ {
+  "name": "22-login-1440.png",
+  "path": "/account/login?returnUrl=/families",
+  "device": "desktop"
+ },
+ {
+  "name": "23-families-1440.png",
+  "path": "/families",
+  "device": "desktop",
+  "full_page": true,
+  "login": true,
+  "who": "families"
+ },
+ {
+  "name": "24-letter-family-1440.png",
+  "path": "/letters/carpool-and-pickup-rota",
+  "device": "desktop",
+  "full_page": true,
+  "login": true,
+  "who": "families"
+ },
+ {
+  "name": "25-common-room-1440.png",
+  "path": "/common-room",
+  "device": "desktop",
+  "full_page": true,
+  "login": true,
+  "who": "faculty"
+ },
+ {
+  "name": "26-search-1440.png",
+  "path": "/search?q=house",
+  "device": "desktop",
+  "full_page": true
+ },
+ {
+  "name": "27-home-mobile-390.png",
+  "path": "/",
+  "device": "mobile"
+ },
+ {
+  "name": "28-courses-mobile-390.png",
+  "path": "/courses",
+  "device": "mobile"
+ },
+ {
+  "name": "29-housecup-mobile-390.png",
+  "path": "/houses",
+  "device": "mobile"
+ }
+]
