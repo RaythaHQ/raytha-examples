@@ -1,0 +1,82 @@
+{
+ "main": [
+  {
+   "widgetType": "hr_head",
+   "settings": {
+    "kicker": "About the charity",
+    "headline": "Volunteers on the Hather since 1974",
+    "subtitle": "Hathermouth River Rescue is a fictional, independent volunteer rescue charity covering twelve miles of the River Hather, from Hather Weir to the Bar where it meets the sea."
+   }
+  },
+  {
+   "widgetType": "hr_figures",
+   "settings": {
+    "headline": "In figures",
+    "items": [
+     {
+      "figure": "1974",
+      "label": "Founded"
+     },
+     {
+      "figure": "29",
+      "label": "Boat crew"
+     },
+     {
+      "figure": "34",
+      "label": "Shore crew and searchers"
+     },
+     {
+      "figure": "41",
+      "label": "Callouts in 2025"
+     },
+     {
+      "figure": "6 min",
+      "label": "Average time to launch"
+     },
+     {
+      "figure": "$0",
+      "label": "Paid to any crew member"
+     }
+    ]
+   }
+  },
+  {
+   "widgetType": "hr_prose",
+   "settings": {
+    "headline": "How it started",
+    "body": "<p>In the winter of 1973 two boys went through the ice on the mill pond. They were pulled out by men from the boatyard with a ladder and a rope. That spring the boatyard, the fire station and the sailing club put up $1,900 for a second-hand inflatable and a shed by the slipway.</p><p>Fifty-two years later the charity has two inshore lifeboats, a flood rescue boat, a response vehicle and 63 volunteers. It is still run by the people who launch the boats.</p>",
+    "note_title": "Fictional charity",
+    "note": "Hathermouth River Rescue, the River Hather, the town and everyone named on this site are invented for a Raytha example. Phone numbers use the 555 range."
+   }
+  },
+  {
+   "widgetType": "hr_table",
+   "settings": {
+    "headline": "Trustees",
+    "intro": "The board meets four times a year. Trustees are unpaid and are elected at the annual general meeting.",
+    "columns": "Trustee|Role|Since",
+    "rows": [
+     {
+      "cells": "Imogen Ashdown|Chair|2019"
+     },
+     {
+      "cells": "Victor Mensah|Treasurer|2021"
+     },
+     {
+      "cells": "Dana Ruiz-Halloway|Crew trustee (Red Watch leader)|2022"
+     },
+     {
+      "cells": "Claire Fothergill|Safeguarding trustee|2023"
+     },
+     {
+      "cells": "Raj Sundaram|Fundraising|2024"
+     },
+     {
+      "cells": "Elsie Brannock|Community|2025"
+     }
+    ],
+    "foot": "Minutes, board papers and the risk register are published to trustees in the trustees' area."
+   }
+  }
+ ]
+}

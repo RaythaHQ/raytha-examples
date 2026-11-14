@@ -1,0 +1,45 @@
+[
+ {
+  "title": "Hathermouth River Rescue",
+  "routePath": "home",
+  "template": "hr_home",
+  "sections": "pages/home.json",
+  "home": true
+ },
+ {
+  "title": "The river",
+  "routePath": "river",
+  "template": "hr_river",
+  "sections": "pages/river.json"
+ },
+ {
+  "title": "Ways to give",
+  "routePath": "give",
+  "template": "hr_give",
+  "sections": "pages/give.json"
+ },
+ {
+  "title": "About the charity",
+  "routePath": "about",
+  "template": "hr_page",
+  "sections": "pages/about.json"
+ },
+ {
+  "title": "Crew room",
+  "routePath": "crew-room",
+  "template": "hr_crew",
+  "sections": "pages/crew.json"
+ },
+ {
+  "title": "Trustees",
+  "routePath": "trustees",
+  "template": "hr_trustees",
+  "sections": "pages/trustees.json"
+ },
+ {
+  "title": "Search",
+  "routePath": "search",
+  "template": "hr_search",
+  "sections": "pages/search.json"
+ }
+]

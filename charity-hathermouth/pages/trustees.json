@@ -1,0 +1,24 @@
+{
+ "main": [
+  {
+   "widgetType": "hr_table",
+   "settings": {
+    "headline": "Decisions due on November 25",
+    "intro": "Items for the next board meeting.",
+    "columns": "Item|Paper|Lead",
+    "rows": [
+     {
+      "cells": "Builder's deposit|Board paper: new boat procurement|Treasurer"
+     },
+     {
+      "cells": "Safeguarding policy|Safeguarding policy review|Safeguarding trustee"
+     },
+     {
+      "cells": "Reserves|Management accounts to September|Treasurer"
+     }
+    ],
+    "foot": "Papers are circulated one week before the meeting."
+   }
+  }
+ ]
+}

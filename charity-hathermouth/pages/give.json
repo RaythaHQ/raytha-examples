@@ -1,0 +1,125 @@
+{
+ "main": [
+  {
+   "widgetType": "hr_ways",
+   "settings": {
+    "headline": "Eight ways to give",
+    "intro": "There is no donation form on this site. Every way to give below is arranged by post, by bank or by talking to Sofia at the station.",
+    "items": [
+     {
+      "code": "CK",
+      "title": "By check",
+      "text": "Make it payable to Hathermouth River Rescue and post it to the station. Write the appeal on the back if you want it to go to one.",
+      "detail": "Slipway Road, Hathermouth (fictional)"
+     },
+     {
+      "code": "BT",
+      "title": "Bank transfer",
+      "text": "Call the station for our bank details. We never send them by email first.",
+      "detail": "(555) 019-0700"
+     },
+     {
+      "code": "MO",
+      "title": "Monthly gift",
+      "text": "A standing order from your bank. $10 a month keeps a crew member in drysuit seals for a year.",
+      "detail": "Set up with your bank"
+     },
+     {
+      "code": "PG",
+      "title": "Payroll giving",
+      "text": "Give from your salary before tax, if your employer runs a scheme.",
+      "detail": "Ask your payroll team"
+     },
+     {
+      "code": "EM",
+      "title": "Employer matching",
+      "text": "Many employers match gifts or volunteer hours. We can send a receipt your employer will accept.",
+      "detail": "Receipts from the treasurer"
+     },
+     {
+      "code": "GW",
+      "title": "A gift in your will",
+      "text": "Margaret Ellwood, our larger boat, was a gift in a will. A conversation with Sofia is confidential and commits you to nothing.",
+      "detail": "Legacy guide by post"
+     },
+     {
+      "code": "FR",
+      "title": "Fundraise for us",
+      "text": "Run, swim, bake or shave. We send a bucket, a T-shirt and a crew member if we can.",
+      "detail": "Talk to the fundraising team"
+     },
+     {
+      "code": "SH",
+      "title": "The station shop",
+      "text": "Every mug, chart and tea towel pays for kit. Open weekends and holidays at the slipway.",
+      "detail": "Sat\u2013Sun 10:00 \u2013 4:00"
+     }
+    ]
+   }
+  },
+  {
+   "widgetType": "hr_split",
+   "settings": {
+    "headline": "Where each dollar went in 2025",
+    "intro": "From the 2025 accounts (fictional figures). Restricted appeal money is spent only on what the appeal was for.",
+    "items": [
+     {
+      "label": "Boats, engines and fuel",
+      "pct": "34",
+      "color": "#c8441c"
+     },
+     {
+      "label": "Kit and training",
+      "pct": "27",
+      "color": "#1d5f8a"
+     },
+     {
+      "label": "Station and launch tractor",
+      "pct": "18",
+      "color": "#2f8f8a"
+     },
+     {
+      "label": "Water safety education",
+      "pct": "9",
+      "color": "#d99a1e"
+     },
+     {
+      "label": "Fundraising costs",
+      "pct": "8",
+      "color": "#3f7d5c"
+     },
+     {
+      "label": "Governance and admin",
+      "pct": "4",
+      "color": "#6b7a8c"
+     }
+    ],
+    "foot": "Every crew member, trustee and shop volunteer is unpaid. The charity employs one part-time operations manager and one part-time volunteer coordinator."
+   }
+  },
+  {
+   "widgetType": "hr_qa",
+   "settings": {
+    "headline": "Questions donors ask",
+    "items": [
+     {
+      "q": "Is my gift tax-deductible?",
+      "a": "In the story, Hathermouth River Rescue is a registered public charity, and the treasurer sends a receipt for every gift. This is a fictional example."
+     },
+     {
+      "q": "Do you get government money?",
+      "a": "No running costs come from government. The flood boat was part-funded by a county grant; everything else is given by people and local businesses."
+     },
+     {
+      "q": "Can I give to one thing?",
+      "a": "Yes. Name the appeal on your check or tell us when you call, and the gift is kept in a restricted fund."
+     },
+     {
+      "q": "How do I stop a monthly gift?",
+      "a": "Cancel the standing order with your bank. There is nothing to cancel with us."
+     }
+    ]
+   }
+  }
+ ]
+}

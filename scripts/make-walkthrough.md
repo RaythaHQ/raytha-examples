@@ -78,6 +78,7 @@ fields), and link the raytha.com copy from the example's README.
 | Helderwyn Museum of Making | [walkthrough.json](../museum-helderwyn/walkthrough.json) | [use case page](https://raytha.com/use-cases/helderwyn-museum-of-making#walkthrough) · [MP4](https://raytha.com/raytha/media-items/objectkey/_KxUxyr7WkGZhC713Qfcpw_helderwyn_museum_of_making_walkthrough.mp4) |
 | Kellisford Family Medicine | [walkthrough.json](../doctors-office-kellisford/walkthrough.json) | [use case page](https://raytha.com/use-cases/kellisford-family-medicine#walkthrough) · [MP4](https://raytha.com/raytha/media-items/objectkey/sm0FC2M5aEqfQsUWnE39jg_kellisford_family_medicine_walkthrough.mp4) |
 | Tarrenhurst School | [walkthrough.json](../private-school-tarrenhurst/walkthrough.json) | [use case page](https://raytha.com/use-cases/tarrenhurst-school#walkthrough) · [MP4](https://raytha.com/raytha/media-items/objectkey/g8GVVfRgLEWaNWOzgNY-KA_tarrenhurst_school_walkthrough.mp4) |
+| Hathermouth River Rescue | [walkthrough.json](../charity-hathermouth/walkthrough.json) | [use case page](https://raytha.com/use-cases/hathermouth-river-rescue#walkthrough) · [MP4](https://raytha.com/raytha/media-items/objectkey/zczqaZAGNUq1Uk4mUrczIw_hathermouth_river_rescue_walkthrough.mp4) |
 
 ## Shot list
 

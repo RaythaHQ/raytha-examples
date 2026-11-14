@@ -1,0 +1,16 @@
+# Screenshots
+
+Captured at 1440px and 390px from a site built with `../build.sh`. Signed-in shots use demo users in the `crew` group (crew room) and the `trustees` group (trustees' area). Hosted in raytha.com media.
+
+| Screenshot | Shows |
+|---|---|
+| [<img src="https://raytha.com/raytha/media-items/objectkey/GpecndEJdECamzAMy83zBg_hathermouth_01_home.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/GpecndEJdECamzAMy83zBg_hathermouth_01_home.webp) | Home: the station board, with this week's watch, today's tides and this year's callouts worked out on the server |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/bYTeHZc4DkO4-PLu68DQKA_hathermouth_03_river_map.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/bYTeHZc4DkO4-PLu68DQKA_hathermouth_03_river_map.webp) | The river map: every callout this year, placed by river mile from the weir |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/psmzTfKETkqAslkoiNFQSA_hathermouth_04_pager_log.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/psmzTfKETkqAslkoiNFQSA_hathermouth_04_pager_log.webp) | The pager log and callouts by kind, counted on the server |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/r_obPqLzKESwpxYd3G7CMg_hathermouth_05_appeal.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/r_obPqLzKESwpxYd3G7CMg_hathermouth_05_appeal.webp) | The new boat appeal: progress drawn from the target and amount raised, and what each gift pays for |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/2Ai6QMbxKUObzyhSOocV0A_hathermouth_08_callouts_filtered.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/2Ai6QMbxKUObzyhSOocV0A_hathermouth_08_callouts_filtered.webp) | Callouts filtered by reach on the server, with people helped |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/k_cNA9AIVEKpf-zPO3j_Wg_hathermouth_15_give.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/k_cNA9AIVEKpf-zPO3j_Wg_hathermouth_15_give.webp) | Ways to give with no donation form, and where each dollar went |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/o7MRTuHqyUaoZ3bDCm6mJw_hathermouth_21_notices_locked.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/o7MRTuHqyUaoZ3bDCm6mJw_hathermouth_21_notices_locked.webp) | Notices and papers, signed out: members-only titles are listed, contents are not sent |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/HDy7kELFwEyocMt2eHJyhQ_hathermouth_24_crew_room.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/HDy7kELFwEyocMt2eHJyhQ_hathermouth_24_crew_room.webp) | Signed in as crew: crew card, training nights, this week and procedures |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/FJezzt5AJECaZ4OU65gUCg_hathermouth_26_trustees.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/FJezzt5AJECaZ4OU65gUCg_hathermouth_26_trustees.webp) | The trustees' board pack: meetings, appeal tracker, decisions due, minutes and the risk register |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/dKhr16RNTEGenzj3spEy3Q_hathermouth_28_home_mobile.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/dKhr16RNTEGenzj3spEy3Q_hathermouth_28_home_mobile.webp) | Home on a phone |

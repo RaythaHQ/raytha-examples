@@ -49,6 +49,7 @@ These examples go with the weekly [use cases on raytha.com](https://raytha.com/u
 | [<img src="https://raytha.com/raytha/media-items/objectkey/NgL-e1dfgEilLEP46FlKWw_helderwyn_01_home.webp" width="360" alt="Helderwyn Museum of Making">](museum-helderwyn/) | **[Helderwyn Museum of Making](museum-helderwyn/)**: a museum website for a craft and tools museum: an accession wall of objects with museum wall labels, a floor plan of galleries, exhibitions with wall text, programs, people, journal, and members-only pages for patrons and staff. 7 content types, 2 user groups. |
 | [<img src="https://raytha.com/raytha/media-items/objectkey/xtNMJAFxQ0aDGEJCpkorTg_kellisford_01_home.webp" width="360" alt="Kellisford Family Medicine">](doctors-office-kellisford/) | **[Kellisford Family Medicine](doctors-office-kellisford/)**: a doctors office website for an independent family practice: a day board of who is in and today's hours, visit types with what to bring, a four-step triage ladder and care guides, providers, sessions, notices, and members-only pages for patients and staff. 7 content types, 2 user groups. |
 | [<img src="https://raytha.com/raytha/media-items/objectkey/xFEYePXxQ0uf0nal8VAfSQ_tarrenhurst_01_home.webp" width="360" alt="Tarrenhurst School">](private-school-tarrenhurst/) | **[Tarrenhurst School](private-school-tarrenhurst/)**: a private school website for an independent Pre-K to 12 day school, laid out as a printed prospectus: today's six-day rotation day and blocks worked out on the server, three divisions with a day in the life, a course of studies, a House Cup, athletics and arts, admissions with tuition, a calendar and stories, and members-only areas for families and faculty. 8 content types, 2 user groups. |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/GpecndEJdECamzAMy83zBg_hathermouth_01_home.webp" width="360" alt="Hathermouth River Rescue">](charity-hathermouth/) | **[Hathermouth River Rescue](charity-hathermouth/)**: a charity website for a volunteer river rescue charity, laid out as a station board: this week's crew watch and today's tides worked out on the server, a river map with every callout plotted by mile, a pager log, an appeal with a gift ladder, the fleet, safety advice, volunteer roles, ways to give without a form, and members-only areas for crew and trustees. 8 content types, 2 user groups. |
 
 ## Quickstart
 
@@ -150,6 +151,7 @@ The examples were built from a short brief with no human help. To do the same fo
 ├── museum-helderwyn/
 ├── doctors-office-kellisford/
 ├── private-school-tarrenhurst/
+├── charity-hathermouth/
 ├── skills/raytha-site-builder/  # agent skill: brief -> finished Raytha site
 ├── templates/brief-template.md  # fill-in brief
 ├── scripts/                     # shared build script, scaffold, screenshots, walkthroughs, export, secret scan

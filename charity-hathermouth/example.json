@@ -1,0 +1,34 @@
+{
+ "name": "Hathermouth River Rescue",
+ "theme": "hathermouth",
+ "types": [
+  "watches",
+  "callouts",
+  "fleet",
+  "roles",
+  "appeals",
+  "advice",
+  "events",
+  "notices"
+ ],
+ "detailTemplates": {
+  "watches": "hr_detail_watches",
+  "callouts": "hr_detail_callouts",
+  "fleet": "hr_detail_fleet",
+  "roles": "hr_detail_roles",
+  "appeals": "hr_detail_appeals",
+  "advice": "hr_detail_advice",
+  "events": "hr_detail_events",
+  "notices": "hr_detail_notices"
+ },
+ "groups": [
+  {
+   "developerName": "crew",
+   "label": "Hathermouth crew"
+  },
+  {
+   "developerName": "trustees",
+   "label": "Hathermouth trustees"
+  }
+ ]
+}

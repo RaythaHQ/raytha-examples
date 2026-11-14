@@ -1,0 +1,34 @@
+{
+ "developerName": "mainmenu",
+ "label": "Main menu",
+ "items": [
+  {
+   "label": "The river",
+   "link": "/river"
+  },
+  {
+   "label": "Callouts",
+   "link": "/callouts"
+  },
+  {
+   "label": "Fleet",
+   "link": "/fleet"
+  },
+  {
+   "label": "Stay safe",
+   "link": "/safety"
+  },
+  {
+   "label": "Volunteer",
+   "link": "/volunteer"
+  },
+  {
+   "label": "Appeals",
+   "link": "/appeals"
+  },
+  {
+   "label": "Ways to give",
+   "link": "/give"
+  }
+ ]
+}

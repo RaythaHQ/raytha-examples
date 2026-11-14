@@ -1,0 +1,27 @@
+{
+ "main": [
+  {
+   "widgetType": "hr_table",
+   "settings": {
+    "headline": "This week at the station",
+    "intro": "Week of November 9, 2026 (fictional).",
+    "columns": "Day|What|Who",
+    "rows": [
+     {
+      "cells": "Sun 10:00|Pager test|All crew acknowledge"
+     },
+     {
+      "cells": "Tue 19:00|Training: night navigation|Both boats"
+     },
+     {
+      "cells": "Thu|Tractor service|Station mechanic"
+     },
+     {
+      "cells": "Sat|Swiftwater refresher|Flood team"
+     }
+    ],
+    "foot": "Swap a watch week with your watch leader, not the operations manager."
+   }
+  }
+ ]
+}

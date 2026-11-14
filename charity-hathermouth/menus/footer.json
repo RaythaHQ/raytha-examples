@@ -1,0 +1,26 @@
+{
+ "developerName": "footer",
+ "label": "Footer",
+ "items": [
+  {
+   "label": "About the charity",
+   "link": "/about"
+  },
+  {
+   "label": "The watches",
+   "link": "/watches"
+  },
+  {
+   "label": "Events",
+   "link": "/events"
+  },
+  {
+   "label": "Notices and papers",
+   "link": "/notices"
+  },
+  {
+   "label": "Search",
+   "link": "/search"
+  }
+ ]
+}
