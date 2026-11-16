@@ -1,0 +1,50 @@
+{
+ "main": [
+  {
+   "widgetType": "cp_table",
+   "settings": {
+    "headline": "Fees for 2026",
+    "intro": "Set by the city each year (fictional). Paid at the park office when you book by phone or visit; nothing is paid on this website.",
+    "columns": "What|Residents|Non-residents|Notes",
+    "rows": [
+     {
+      "cells": "Linden Shelter, full day|$90|$135|120 people, electric"
+     },
+     {
+      "cells": "Elm Walk Shelter, full day|$60|$90|60 people"
+     },
+     {
+      "cells": "Ballfield, two hours|$30|$45|Lights $15 an hour"
+     },
+     {
+      "cells": "Rowboat, one hour|$14|$14|Walk-up at the boathouse"
+     },
+     {
+      "cells": "Event permit (over 150 people)|$150|$225|Apply 30 days ahead"
+     }
+    ],
+    "foot": "Unreserved shelters and fields are first come, first served. Youth leagues and non-profits pay resident rates."
+   }
+  },
+  {
+   "widgetType": "cp_qa",
+   "settings": {
+    "headline": "How reservations work",
+    "items": [
+     {
+      "q": "How do I reserve a shelter or a field?",
+      "a": "Call the Parks and Recreation office at (555) 014-2200, weekdays 8:00 am to 4:30 pm, or visit the park office at the South Gate. There is no online booking form."
+     },
+     {
+      "q": "How far ahead can I book?",
+      "a": "Residents from January 2 for the whole season; non-residents from March 1."
+     },
+     {
+      "q": "What if it rains?",
+      "a": "Shelters are covered, so bookings go ahead. Fields closed by the crew for wet ground are refunded or moved."
+     }
+    ]
+   }
+  }
+ ]
+}

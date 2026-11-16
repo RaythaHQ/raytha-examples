@@ -1,0 +1,66 @@
+{
+ "label": "Cadwallow: rules signboard",
+ "fields": [
+  {
+   "developerName": "headline",
+   "label": "Headline",
+   "description": "",
+   "fieldType": "single_line_text",
+   "isRequired": false,
+   "choices": [],
+   "relatedContentType": null,
+   "subFields": []
+  },
+  {
+   "developerName": "intro",
+   "label": "Intro",
+   "description": "",
+   "fieldType": "long_text",
+   "isRequired": false,
+   "choices": [],
+   "relatedContentType": null,
+   "subFields": []
+  },
+  {
+   "developerName": "items",
+   "label": "Rules",
+   "description": "",
+   "fieldType": "repeater",
+   "isRequired": false,
+   "choices": [],
+   "relatedContentType": null,
+   "subFields": [
+    {
+     "developerName": "code",
+     "label": "Symbol (2 letters)",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "rule",
+     "label": "Rule",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "why",
+     "label": "Why",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    }
+   ]
+  }
+ ]
+}

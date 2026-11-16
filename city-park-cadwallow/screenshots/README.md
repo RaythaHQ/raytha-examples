@@ -1,0 +1,16 @@
+# Screenshots
+
+Captured at 1440px and 390px from a site built with `../build.sh`. Signed-in shots use demo users in the `friends` group (stewards' shed) and the `staff` group (crew board). Hosted in raytha.com media.
+
+| Screenshot | Shows |
+|---|---|
+| [<img src="https://raytha.com/raytha/media-items/objectkey/JkdPuPWWMUC7Jibd-GYHnA_cadwallow_01_home.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/JkdPuPWWMUC7Jibd-GYHnA_cadwallow_01_home.webp) | Home: the trailhead kiosk, with the park map, gates, daylight and what is open now worked out on the server |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/sYLZmCJXLU2cjgWDDm5SIQ_cadwallow_03_open_now.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/sYLZmCJXLU2cjgWDDm5SIQ_cadwallow_03_open_now.webp) | Open right now: each place's status computed from its stored hours and season |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/kki5mv8Qf0mkuNUYwKAssA_cadwallow_05_trails_home.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/kki5mv8Qf0mkuNUYwKAssA_cadwallow_05_trails_home.webp) | Five blazed trails with length, climb and elevation profiles drawn on the server |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/euA_un5yZ0a_dJMSz8CIgw_cadwallow_13_trail_profile.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/euA_un5yZ0a_dJMSz8CIgw_cadwallow_13_trail_profile.webp) | A trail page: elevation profile, waypoints and the conditions posted on that trail |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/PdCd9J0D6kOeYJv3GuvP0A_cadwallow_07_map_trees.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/PdCd9J0D6kOeYJv3GuvP0A_cadwallow_07_map_trees.webp) | The park map with the tree register layer, switched on the server |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/thu76P2j3UGJJLwsy9bStw_cadwallow_16_look_for.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/thu76P2j3UGJJLwsy9bStw_cadwallow_16_look_for.webp) | Look for: this month's sightings and the whole year as a chart |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/WP5nS-iTYEyIZ5IUSg4Qmw_cadwallow_19_projects.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/WP5nS-iTYEyIZ5IUSg4Qmw_cadwallow_19_projects.webp) | Park projects with a phase tracker and funded-versus-budget bars |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/hNyFnhv9L0qMBoYPr6nn9A_cadwallow_25_bulletins_locked.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/hNyFnhv9L0qMBoYPr6nn9A_cadwallow_25_bulletins_locked.webp) | Bulletins, signed out: members-only titles are listed, contents are not sent |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/63loR1afJkCvWqwEYoWhhw_cadwallow_30_crew.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/63loR1afJkCvWqwEYoWhhw_cadwallow_30_crew.webp) | Signed in as park staff: the crew board with every place's status, work orders and closures |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/gumyM1FbuUC8ptsZayXWDA_cadwallow_32_home_mobile.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/gumyM1FbuUC8ptsZayXWDA_cadwallow_32_home_mobile.webp) | Home on a phone |

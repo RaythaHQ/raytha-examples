@@ -1,0 +1,30 @@
+{
+ "main": [
+  {
+   "widgetType": "cp_table",
+   "settings": {
+    "headline": "Assignments, week of November 16",
+    "intro": "From the crew lead (fictional).",
+    "columns": "Zone|Task|Crew|Status",
+    "rows": [
+     {
+      "cells": "The Wallow|Leaf collection, weekday mornings|South crew|In progress"
+     },
+     {
+      "cells": "Tanner's Run|Boardwalk section 3 inspection with contractor|Supervisor|Thursday"
+     },
+     {
+      "cells": "Cadwallow Woods|Brush chipping after Friends workday|North crew|Monday 23"
+     },
+     {
+      "cells": "South Commons|Ballfield drag and close for winter|South crew|Done"
+     },
+     {
+      "cells": "Elm Walk|Lighting timer change for winter|Electrician|Done"
+     }
+    ],
+    "foot": "Report a hazard by radio to the office first, then add a work order."
+   }
+  }
+ ]
+}

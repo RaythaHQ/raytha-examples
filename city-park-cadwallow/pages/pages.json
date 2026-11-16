@@ -1,0 +1,51 @@
+[
+ {
+  "title": "Cadwallow Park",
+  "routePath": "home",
+  "template": "cp_home",
+  "sections": "pages/home.json",
+  "home": true
+ },
+ {
+  "title": "Park map",
+  "routePath": "map",
+  "template": "cp_map",
+  "sections": "pages/map.json"
+ },
+ {
+  "title": "Plan a visit",
+  "routePath": "visit",
+  "template": "cp_page",
+  "sections": "pages/visit.json"
+ },
+ {
+  "title": "Shelters and fields",
+  "routePath": "shelters-and-fields",
+  "template": "cp_rentals",
+  "sections": "pages/rentals.json"
+ },
+ {
+  "title": "About the park",
+  "routePath": "about",
+  "template": "cp_page",
+  "sections": "pages/about.json"
+ },
+ {
+  "title": "Stewards' shed",
+  "routePath": "stewards",
+  "template": "cp_stewards",
+  "sections": "pages/stewards.json"
+ },
+ {
+  "title": "Crew board",
+  "routePath": "crew",
+  "template": "cp_crew",
+  "sections": "pages/crew.json"
+ },
+ {
+  "title": "Search",
+  "routePath": "search",
+  "template": "cp_search",
+  "sections": "pages/search.json"
+ }
+]

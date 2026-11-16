@@ -1,0 +1,34 @@
+{
+ "developerName": "mainmenu",
+ "label": "Main menu",
+ "items": [
+  {
+   "label": "Park map",
+   "link": "/map"
+  },
+  {
+   "label": "Trails",
+   "link": "/trails"
+  },
+  {
+   "label": "Places",
+   "link": "/places"
+  },
+  {
+   "label": "Look for",
+   "link": "/look-for"
+  },
+  {
+   "label": "Conditions",
+   "link": "/conditions"
+  },
+  {
+   "label": "Events",
+   "link": "/events"
+  },
+  {
+   "label": "Plan a visit",
+   "link": "/visit"
+  }
+ ]
+}

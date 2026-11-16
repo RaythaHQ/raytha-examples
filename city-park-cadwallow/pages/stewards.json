@@ -1,0 +1,30 @@
+{
+ "main": [
+  {
+   "widgetType": "cp_table",
+   "settings": {
+    "headline": "Adopted plots",
+    "intro": "Each plot has a lead steward and a small crew. Hours are for the 2026 season (fictional).",
+    "columns": "Plot|Where|Lead|Hours this season",
+    "rows": [
+     {
+      "cells": "W4|Slope below Hillcrest|Nora Whitcombe|212"
+     },
+     {
+      "cells": "M1\u2013M3|Native meadow plots|Arturo Bell|486"
+     },
+     {
+      "cells": "T2|Tanner's Run banks|Mei Sato|158"
+     },
+     {
+      "cells": "G1|Walled Garden east beds|Ruth Okonjo|301"
+     },
+     {
+      "cells": "S5|Wallow south shore|Ben Achterberg|94"
+     }
+    ],
+    "foot": "Log your hours on the sheet in the tool shed; the coordinator adds them up monthly."
+   }
+  }
+ ]
+}

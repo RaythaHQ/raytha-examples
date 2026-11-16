@@ -1,0 +1,44 @@
+{
+ "main": [
+  {
+   "widgetType": "cp_head",
+   "settings": {
+    "kicker": "About the park",
+    "headline": "A farm, a tannery and a wallow",
+    "subtitle": "Cadwallow Park is a fictional city park, opened in 1889 on a farm and an old tannery site around a marshy hollow the farmers called the Cad Wallow. It is run by the city's Parks and Recreation Department, with help from the Friends of Cadwallow Park."
+   }
+  },
+  {
+   "widgetType": "cp_prose",
+   "settings": {
+    "headline": "How it became a park",
+    "body": "<p>In 1887 the city bought the Harlan farm and the closed tannery on Tanner's Run for $41,000, after a campaign by the newspaper for \"a lung for the city\". The marshy hollow at the center was dug out into a lake in 1889 and kept its old name.</p><p>The Works Department built the boathouse in 1928 and the stone overlook in 1936. The Elm Walk was planted in 1898 and mostly lost by 1970; three of its elms survive. Today the park has 10.6 miles of trail and about two million visits a year.</p>",
+    "note_title": "Fictional park",
+    "note": "Cadwallow Park, its city and everyone named on this site are invented for a Raytha example. Phone numbers use the 555 range."
+   }
+  },
+  {
+   "widgetType": "cp_table",
+   "settings": {
+    "headline": "Who looks after the park",
+    "intro": "Fictional names and roles.",
+    "columns": "Who|What they do|Contact",
+    "rows": [
+     {
+      "cells": "Parks and Recreation Department|Runs the park, the crew and the reservations|(555) 014-2200"
+     },
+     {
+      "cells": "Park crew (14 full time, 22 seasonal)|Opening, locking, mowing, plowing, repairs|Park office, South Gate"
+     },
+     {
+      "cells": "City arborist|The tree register, pruning and removals|Through the park office"
+     },
+     {
+      "cells": "Friends of Cadwallow Park|Volunteer workdays, the prairie plots, fundraising|hello@cadwallow.example"
+     }
+    ],
+    "foot": "Staff and Friends sign in to their own areas of this site: the crew board and the stewards' shed."
+   }
+  }
+ ]
+}

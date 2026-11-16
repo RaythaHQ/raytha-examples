@@ -1,0 +1,34 @@
+{
+ "name": "Cadwallow Park",
+ "theme": "cadwallow",
+ "types": [
+  "places",
+  "trails",
+  "trees",
+  "sightings",
+  "conditions",
+  "projects",
+  "events",
+  "bulletins"
+ ],
+ "detailTemplates": {
+  "places": "cp_detail_places",
+  "trails": "cp_detail_trails",
+  "trees": "cp_detail_trees",
+  "sightings": "cp_detail_sightings",
+  "conditions": "cp_detail_conditions",
+  "projects": "cp_detail_projects",
+  "events": "cp_detail_events",
+  "bulletins": "cp_detail_bulletins"
+ },
+ "groups": [
+  {
+   "developerName": "friends",
+   "label": "Friends of Cadwallow Park"
+  },
+  {
+   "developerName": "staff",
+   "label": "Cadwallow Park staff"
+  }
+ ]
+}

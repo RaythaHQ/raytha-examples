@@ -1,0 +1,135 @@
+{
+ "main": [
+  {
+   "widgetType": "cp_head",
+   "settings": {
+    "kicker": "Plan a visit",
+    "headline": "Open 5:00 am to 11:00 pm, every day",
+    "subtitle": "Cadwallow Park is a fictional 410-acre city park with four gates, a lake called the Wallow, a wooded ridge and a long meadow. Entry is free. Here is how to get here, what the rules are and what to expect."
+   }
+  },
+  {
+   "widgetType": "cp_figures",
+   "settings": {
+    "headline": "The park in numbers",
+    "items": [
+     {
+      "figure": "410",
+      "label": "Acres"
+     },
+     {
+      "figure": "14",
+      "label": "Acre lake (the Wallow)"
+     },
+     {
+      "figure": "10.6 mi",
+      "label": "Of blazed trail"
+     },
+     {
+      "figure": "742 ft",
+      "label": "Hillcrest, the high point"
+     },
+     {
+      "figure": "4",
+      "label": "Gates"
+     },
+     {
+      "figure": "$0",
+      "label": "To get in"
+     }
+    ]
+   }
+  },
+  {
+   "widgetType": "cp_steps",
+   "settings": {
+    "headline": "Getting here",
+    "items": [
+     {
+      "mode": "BUS",
+      "title": "Route 14 to the South Gate",
+      "text": "Every 12 minutes on weekdays, every 20 at weekends. The stop is at the gate."
+     },
+     {
+      "mode": "BIKE",
+      "title": "City bike path to the West Gate",
+      "text": "The path joins the Perimeter Path at the Meadow Street crossing. Racks at every gate."
+     },
+     {
+      "mode": "CAR",
+      "title": "Ridge Road or the East Gate",
+      "text": "40 spaces at the North Gate, 12 accessible spaces at the East Gate. Free, no time limit."
+     },
+     {
+      "mode": "FOOT",
+      "title": "From downtown",
+      "text": "Three miles along the river greenway, ending at the South Gate."
+     }
+    ]
+   }
+  },
+  {
+   "widgetType": "cp_rules",
+   "settings": {
+    "headline": "Park rules, in plain words",
+    "intro": "From the city park ordinance (fictional). Crew and park rangers will remind you; they would rather not have to.",
+    "items": [
+     {
+      "code": "5\u201311",
+      "rule": "Gates open 5:00 am, lock 11:00 pm",
+      "why": "Woods trails close at dusk because there is no lighting under the trees."
+     },
+     {
+      "code": "DG",
+      "rule": "Dogs on a leash",
+      "why": "Off-leash only 6\u20139 am in the Long Meadow kite field. Bag it and bin it."
+     },
+     {
+      "code": "BK",
+      "rule": "Bikes on the paved paths only",
+      "why": "Not on the Ridge Trail, the boardwalk or the Meadow Path."
+     },
+     {
+      "code": "IC",
+      "rule": "Off the ice unless posted open",
+      "why": "The crew post the Wallow open at 5 inches of clear ice, and not before."
+     },
+     {
+      "code": "FL",
+      "rule": "Leave plants, fungi and stones",
+      "why": "Foraging and collecting are not allowed in city parks."
+     },
+     {
+      "code": "GR",
+      "rule": "Grills at the shelters only",
+      "why": "No open fires anywhere else. Hot coals go in the red bins."
+     }
+    ]
+   }
+  },
+  {
+   "widgetType": "cp_qa",
+   "settings": {
+    "headline": "Questions visitors ask",
+    "items": [
+     {
+      "q": "Is there a fee?",
+      "a": "No. The park, the trails, the playground and the Walled Garden are free. Rowboats and shelter reservations have fees, paid at the boathouse or the park office."
+     },
+     {
+      "q": "Can I fly a drone?",
+      "a": "Only with a permit from the Parks and Recreation office. Call (555) 014-2200."
+     },
+     {
+      "q": "Where can I swim?",
+      "a": "Not in the Wallow. The Splash Pad runs June to August, and the city pool is two blocks east of the East Gate."
+     },
+     {
+      "q": "Is the park step-free?",
+      "a": "The Wallow Loop, the Perimeter Path and the Elm Walk are step-free. Each trail page says how accessible it is."
+     }
+    ]
+   }
+  }
+ ]
+}

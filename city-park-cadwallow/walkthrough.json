@@ -1,0 +1,142 @@
+{
+  "slug": "cadwallow-park",
+  "name": "Cadwallow Park",
+  "base": "http://localhost:5000",
+  "viewport": [
+    1440,
+    810
+  ],
+  "output": [
+    1920,
+    1080
+  ],
+  "colorScheme": "light",
+  "login": {
+    "path": "/account/login",
+    "emailEnv": "SITE_USER_EMAIL",
+    "passwordEnv": "SITE_USER_PASSWORD"
+  },
+  "title": {
+    "kicker": "Raytha use case",
+    "heading": "Cadwallow Park",
+    "subheading": "A city park website: a trailhead-kiosk park map, open-now status worked out on the server, trails with elevation profiles, and Friends and staff areas behind sign-in.",
+    "hold": 1.3
+  },
+  "end": {
+    "heading": "Built with Raytha",
+    "subheading": "Open-source .NET CMS. Get the brief, screenshots and a one-command rebuild kit.",
+    "url": "raytha.com/use-cases/cadwallow-park",
+    "hold": 2.3
+  },
+  "scenes": [
+    {
+      "url": "/",
+      "caption": "The trailhead kiosk: park map, gates, daylight and what's open now, worked out on the server",
+      "actions": [
+        {
+          "hold": 1.8,
+          "poster": true
+        },
+        {
+          "scroll": 620,
+          "dur": 1.4
+        },
+        {
+          "hold": 0.9
+        },
+        {
+          "scroll": 1180,
+          "dur": 1.2
+        },
+        {
+          "hold": 0.8
+        }
+      ]
+    },
+    {
+      "url": "/trails/ridge-trail",
+      "caption": "Trail pages: an elevation profile and map line drawn from stored trail data",
+      "actions": [
+        {
+          "hold": 1.0
+        },
+        {
+          "scroll": 420,
+          "dur": 1.2
+        },
+        {
+          "hold": 0.9
+        },
+        {
+          "scroll": 860,
+          "dur": 1.0
+        },
+        {
+          "hold": 0.6
+        }
+      ]
+    },
+    {
+      "url": "/look-for",
+      "caption": "Look for: the year in the park, filtered by month on the server",
+      "actions": [
+        {
+          "hold": 0.9
+        },
+        {
+          "scroll": 900,
+          "dur": 1.4
+        },
+        {
+          "hold": 0.8
+        }
+      ]
+    },
+    {
+      "url": "/stewards",
+      "caption": "Signed out, the stewards' shed is locked on the server",
+      "actions": [
+        {
+          "hold": 1.1
+        }
+      ]
+    },
+    {
+      "url": "/stewards",
+      "signin": true,
+      "caption": "Signed in as a Friends steward: workdays, the tool shed and minutes",
+      "actions": [
+        {
+          "hold": 1.2
+        },
+        {
+          "scroll": 420,
+          "dur": 1.1
+        },
+        {
+          "hold": 0.5
+        }
+      ]
+    },
+    {
+      "url": "/",
+      "phone": true,
+      "phoneCaption": {
+        "kicker": "Responsive",
+        "text": "The same pages on a phone"
+      },
+      "actions": [
+        {
+          "hold": 0.5
+        },
+        {
+          "scroll": 900,
+          "dur": 2.0
+        },
+        {
+          "hold": 0.4
+        }
+      ]
+    }
+  ]
+}
