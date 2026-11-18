@@ -80,6 +80,7 @@ fields), and link the raytha.com copy from the example's README.
 | Tarrenhurst School | [walkthrough.json](../private-school-tarrenhurst/walkthrough.json) | [use case page](https://raytha.com/use-cases/tarrenhurst-school#walkthrough) · [MP4](https://raytha.com/raytha/media-items/objectkey/g8GVVfRgLEWaNWOzgNY-KA_tarrenhurst_school_walkthrough.mp4) |
 | Hathermouth River Rescue | [walkthrough.json](../charity-hathermouth/walkthrough.json) | [use case page](https://raytha.com/use-cases/hathermouth-river-rescue#walkthrough) · [MP4](https://raytha.com/raytha/media-items/objectkey/zczqaZAGNUq1Uk4mUrczIw_hathermouth_river_rescue_walkthrough.mp4) |
 | Cadwallow Park | [walkthrough.json](../city-park-cadwallow/walkthrough.json) | [use case page](https://raytha.com/use-cases/cadwallow-park#walkthrough) · [MP4](https://raytha.com/raytha/media-items/objectkey/iOFAtY0XQE63AEOMwptWjg_cadwallow_park_walkthrough.mp4) |
+| Gablefen Realty | [walkthrough.json](../real-estate-gablefen/walkthrough.json) | [use case page](https://raytha.com/use-cases/gablefen-realty#walkthrough) · [MP4](https://raytha.com/raytha/media-items/objectkey/YRBRJOWg8U-Mx02Uvmg29g_gablefen_realty_walkthrough.mp4) |
 
 ## Shot list
 

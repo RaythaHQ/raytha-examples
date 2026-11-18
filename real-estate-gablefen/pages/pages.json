@@ -1,0 +1,57 @@
+[
+ {
+  "title": "Gablefen Realty",
+  "routePath": "home",
+  "template": "gf_home",
+  "sections": "pages/home.json",
+  "home": true
+ },
+ {
+  "title": "Town plat",
+  "routePath": "plat",
+  "template": "gf_plat",
+  "sections": "pages/plat.json"
+ },
+ {
+  "title": "Recently sold",
+  "routePath": "sold",
+  "template": "gf_sold",
+  "sections": "pages/sold.json"
+ },
+ {
+  "title": "Buy with us",
+  "routePath": "buy",
+  "template": "gf_buy",
+  "sections": "pages/buy.json"
+ },
+ {
+  "title": "Sell with us",
+  "routePath": "sell",
+  "template": "gf_sell",
+  "sections": "pages/sell.json"
+ },
+ {
+  "title": "About the firm",
+  "routePath": "about",
+  "template": "gf_about",
+  "sections": "pages/about.json"
+ },
+ {
+  "title": "Client desk",
+  "routePath": "clients",
+  "template": "gf_clients",
+  "sections": "pages/clients.json"
+ },
+ {
+  "title": "Agent desk",
+  "routePath": "desk",
+  "template": "gf_desk",
+  "sections": "pages/desk.json"
+ },
+ {
+  "title": "Search",
+  "routePath": "search",
+  "template": "gf_search",
+  "sections": "pages/search.json"
+ }
+]

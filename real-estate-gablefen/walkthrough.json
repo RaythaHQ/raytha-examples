@@ -1,0 +1,135 @@
+{
+ "slug": "gablefen-realty",
+ "name": "Gablefen Realty",
+ "base": "http://localhost:5000",
+ "viewport": [
+  1440,
+  810
+ ],
+ "output": [
+  1920,
+  1080
+ ],
+ "colorScheme": "light",
+ "login": {
+  "path": "/account/login",
+  "emailEnv": "SITE_USER_EMAIL",
+  "passwordEnv": "SITE_USER_PASSWORD"
+ },
+ "title": {
+  "kicker": "Raytha use case",
+  "heading": "Gablefen Realty",
+  "subheading": "A real estate website: a listing window of house elevations drawn from content, a town plat, an open-house board worked out on the server, and client and agent desks behind sign-in.",
+  "hold": 1.3
+ },
+ "end": {
+  "heading": "Built with Raytha",
+  "subheading": "Open-source .NET CMS. Get the brief, screenshots and a one-command rebuild kit.",
+  "url": "raytha.com/use-cases/gablefen-realty",
+  "hold": 2.3
+ },
+ "scenes": [
+  {
+   "url": "/",
+   "caption": "The listing window: hanging cards, elevations drawn from each house's style, and an open-house board worked out on the server",
+   "actions": [
+    {
+     "hold": 1.8,
+     "poster": true
+    },
+    {
+     "scroll": 720,
+     "dur": 1.4
+    },
+    {
+     "hold": 0.9
+    },
+    {
+     "scroll": 1280,
+     "dur": 1.1
+    },
+    {
+     "hold": 0.7
+    }
+   ]
+  },
+  {
+   "url": "/listings/14-millrace-row",
+   "caption": "A listing: elevation and floor plan drawn on the server from the house's stored rooms and style",
+   "actions": [
+    {
+     "hold": 1.0
+    },
+    {
+     "scroll": 520,
+     "dur": 1.2
+    },
+    {
+     "hold": 0.8
+    },
+    {
+     "scroll": 980,
+     "dur": 1.0
+    },
+    {
+     "hold": 0.5
+    }
+   ]
+  },
+  {
+   "url": "/plat",
+   "caption": "The town plat: neighborhood washes and listing pins come from content",
+   "actions": [
+    {
+     "hold": 1.1
+    }
+   ]
+  },
+  {
+   "url": "/clients",
+   "caption": "Signed out, the client desk is locked on the server",
+   "actions": [
+    {
+     "hold": 1.0
+    }
+   ]
+  },
+  {
+   "url": "/clients",
+   "signin": true,
+   "caption": "Signed in as a buyer client: this weekend's tours and private shortlist notes",
+   "actions": [
+    {
+     "hold": 1.2
+    },
+    {
+     "scroll": 360,
+     "dur": 1.0
+    },
+    {
+     "hold": 0.5
+    }
+   ]
+  },
+  {
+   "url": "/",
+   "phone": true,
+   "phoneCaption": {
+    "kicker": "Responsive",
+    "text": "The same pages on a phone"
+   },
+   "actions": [
+    {
+     "hold": 0.5
+    },
+    {
+     "scroll": 900,
+     "dur": 2.0
+    },
+    {
+     "hold": 0.4
+    }
+   ]
+  }
+ ]
+}

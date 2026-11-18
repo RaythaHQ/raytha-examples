@@ -1,0 +1,153 @@
+[
+ {
+  "name": "01-home-1440.png",
+  "path": "/",
+  "device": "desktop"
+ },
+ {
+  "name": "02-home-full-1440.png",
+  "path": "/",
+  "device": "desktop",
+  "full_page": true
+ },
+ {
+  "name": "03-listings-1440.png",
+  "path": "/listings",
+  "device": "desktop",
+  "full_page": true
+ },
+ {
+  "name": "04-listings-active-1440.png",
+  "path": "/listings?status=active",
+  "device": "desktop"
+ },
+ {
+  "name": "05-listing-millrace-1440.png",
+  "path": "/listings/14-millrace-row",
+  "device": "desktop",
+  "full_page": true
+ },
+ {
+  "name": "06-listing-common-1440.png",
+  "path": "/listings/41-west-common",
+  "device": "desktop"
+ },
+ {
+  "name": "07-listing-loft-1440.png",
+  "path": "/listings/27-willow-steps",
+  "device": "desktop"
+ },
+ {
+  "name": "08-listing-ranch-1440.png",
+  "path": "/listings/3-pinion-court",
+  "device": "desktop"
+ },
+ {
+  "name": "09-listing-townhouse-1440.png",
+  "path": "/listings/22-casement-place",
+  "device": "desktop"
+ },
+ {
+  "name": "10-plat-1440.png",
+  "path": "/plat",
+  "device": "desktop"
+ },
+ {
+  "name": "11-openhouses-1440.png",
+  "path": "/open-houses",
+  "device": "desktop",
+  "full_page": true
+ },
+ {
+  "name": "12-sold-1440.png",
+  "path": "/sold",
+  "device": "desktop"
+ },
+ {
+  "name": "13-neighborhoods-1440.png",
+  "path": "/neighborhoods",
+  "device": "desktop",
+  "full_page": true
+ },
+ {
+  "name": "14-ferry-green-1440.png",
+  "path": "/neighborhoods/ferry-green",
+  "device": "desktop"
+ },
+ {
+  "name": "15-styles-1440.png",
+  "path": "/styles",
+  "device": "desktop"
+ },
+ {
+  "name": "16-foursquare-1440.png",
+  "path": "/styles/american-foursquare",
+  "device": "desktop"
+ },
+ {
+  "name": "17-agents-1440.png",
+  "path": "/agents",
+  "device": "desktop"
+ },
+ {
+  "name": "18-about-1440.png",
+  "path": "/about",
+  "device": "desktop",
+  "full_page": true
+ },
+ {
+  "name": "19-buy-1440.png",
+  "path": "/buy",
+  "device": "desktop"
+ },
+ {
+  "name": "20-login-1440.png",
+  "path": "/account/login?returnUrl=/clients",
+  "device": "desktop"
+ },
+ {
+  "name": "21-clients-locked-1440.png",
+  "path": "/clients",
+  "device": "desktop"
+ },
+ {
+  "name": "22-clients-1440.png",
+  "path": "/clients",
+  "device": "desktop",
+  "login": true,
+  "who": "clients",
+  "full_page": true
+ },
+ {
+  "name": "23-desk-1440.png",
+  "path": "/desk",
+  "device": "desktop",
+  "login": true,
+  "who": "agents",
+  "full_page": true
+ },
+ {
+  "name": "24-listing-private-1440.png",
+  "path": "/listings/14-millrace-row",
+  "device": "desktop",
+  "login": true,
+  "who": "agents",
+  "scroll": 800
+ },
+ {
+  "name": "25-home-mobile-390.png",
+  "path": "/",
+  "device": "mobile"
+ },
+ {
+  "name": "26-listing-mobile-390.png",
+  "path": "/listings/19-ferry-green",
+  "device": "mobile",
+  "full_page": true
+ },
+ {
+  "name": "27-plat-mobile-390.png",
+  "path": "/plat",
+  "device": "mobile"
+ }
+]

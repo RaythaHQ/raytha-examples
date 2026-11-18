@@ -1,0 +1,156 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{% if Target.PrimaryField %}{{ Target.PrimaryField }} | {% elsif Target.Label %}{{ Target.Label }} | {% elsif Target.Title and Target.Title != "Gablefen Realty" %}{{ Target.Title }} | {% endif %}Gablefen Realty</title>
+{%- capture mau -%}{{ Target.PublishedContent.audience }}{%- endcapture -%}<meta name="description" content="{% if mau == "clients" or mau == "agents" %}Members-only page at Gablefen Realty (fictional). Sign in to read.{% elsif Target.PublishedContent.summary %}{{ Target.PublishedContent.summary | strip_html | escape }}{% else %}Gablefen Realty (fictional): an independent residential brokerage in the mill town of Gablefen. The home page is built like the firm's listing window, with hanging property cards, a town plat, and an open-house board worked out on the server from weekly hours. Listings, neighborhoods, agents, sold prices and members-only desks for buyer clients and agents. Built on Raytha, a self-hosted, open-source .NET CMS for real estate agencies, and for the agencies and freelancers who build sites for them.{% endif %}">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&family=Figtree:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet"><style>
+:root{--paper:#efe8db;--putty:#e4d9c5;--card:#fbf7ef;--ink:#1c1915;--ink2:#5c564c;--brick:#8b3a32;--brick2:#6e2e28;--brass:#9a7b3c;--frame:#2c261e;--sage:#3d5c55;--river:#2f4a58;--rule:#d7ccb8;--rule2:#e6dcc8;--ok:#2f4a58}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:400 1.02rem/1.62 "Newsreader",Georgia,serif}
+img,svg{max-width:100%;display:block}a{color:var(--brick)}h1,h2,h3,h4{font-family:"Figtree",system-ui,sans-serif;font-weight:700;letter-spacing:-.015em;line-height:1.1;margin:0 0 .45em;color:var(--frame)}
+.w{width:min(1120px,calc(100% - 40px));margin-inline:auto}.skip{position:absolute;left:-999px}.skip:focus{left:16px;top:16px;background:#fff;padding:8px 12px;z-index:9}
+.muted{color:var(--ink2)}.mono,.kick,.lab{font-family:"IBM Plex Mono",monospace}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;background:var(--brick);color:#fbf7ef;border-radius:2px;font:700 .95rem "Figtree",sans-serif;text-decoration:none;border:0;cursor:pointer}
+.btn:hover{background:var(--brick2)}.btn.line{background:transparent;color:var(--brick);box-shadow:inset 0 0 0 2px var(--brick)}.btn.dark{background:var(--frame)}
+.strip{background:var(--frame);color:#d7ccb8;font:500 .72rem "IBM Plex Mono",monospace;letter-spacing:.06em}
+.strip .w{display:flex;justify-content:space-between;gap:16px;align-items:center;padding-top:7px;padding-bottom:7px;flex-wrap:wrap}
+.strip a{color:#fbf7ef;text-decoration:none;margin-left:16px}.strip a:hover{text-decoration:underline}
+.strip .f{opacity:.75}.gchip{display:inline-flex;align-items:center;gap:6px;color:#fbf7ef}.gchip i{width:8px;height:8px;border-radius:50%;background:#c5d4c8;display:inline-block}
+.gchip.off i{background:#9a7b3c}
+header.top{background:var(--card);border-bottom:1px solid var(--rule)}
+header.top .w{display:flex;align-items:center;gap:28px;padding:14px 0}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--frame);font-family:"Figtree",sans-serif}
+.brand b{display:block;font-size:1.15rem;letter-spacing:.02em}.brand small{display:block;font:500 .62rem "IBM Plex Mono",monospace;letter-spacing:.12em;color:var(--brick);text-transform:uppercase}
+header.top nav{flex:1}header.top nav ul{list-style:none;margin:0;padding:0;display:flex;gap:2px;flex-wrap:wrap}
+header.top nav a{display:block;padding:9px 11px;font:650 .95rem "Figtree",sans-serif;color:var(--frame);text-decoration:none}
+header.top nav a:hover{color:var(--brick)}
+header.top form input{border:1px solid var(--rule);background:var(--paper);padding:8px 12px;font:400 .9rem "Newsreader",serif;width:180px}
+.phead{background:var(--frame);color:#d7ccb8;padding:36px 0 40px;position:relative}
+.phead h1{color:#fbf7ef}.phead .lede{max-width:62ch;font-size:1.12rem;color:#d7ccb8;margin:0}
+.phead .kick{color:var(--brass);letter-spacing:.14em;text-transform:uppercase;font-size:.68rem;margin:0 0 8px}
+.crumbs{list-style:none;margin:0 0 16px;padding:0;display:flex;gap:8px;flex-wrap:wrap;font:500 .72rem "IBM Plex Mono",monospace}
+.crumbs a{color:#d7ccb8}.crumbs li+li:before{content:"/";margin-right:8px;color:#9a7b3c}
+.sec{padding:60px 0}.sec.tight{padding:36px 0}.sec.putty{background:var(--putty)}.sec.dark{background:var(--frame);color:#d7ccb8}.sec.dark h2,.sec.dark h3{color:#fbf7ef}
+.shead{display:flex;justify-content:space-between;align-items:start;gap:24px;margin-bottom:22px;flex-wrap:wrap}
+.shead p{margin:0;max-width:62ch;color:var(--ink2)}
+.shead a.more{font:700 .92rem "Figtree",sans-serif;white-space:nowrap}
+.filters{display:flex;flex-wrap:wrap;gap:6px;margin:18px 0 0}
+.filters a{display:inline-block;padding:6px 10px;background:transparent;color:#d7ccb8;border:1px solid #5a5348;text-decoration:none;font:600 .72rem "Figtree",sans-serif}
+.filters a.on,.filters a:hover{background:#fbf7ef;color:var(--frame);border-color:#fbf7ef}
+.phead .filters a{color:#d7ccb8}
+.card{background:var(--card);border:1px solid var(--rule);padding:20px 22px}
+.side{position:sticky;top:16px}
+.dg{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(260px,.7fr);gap:32px;align-items:start}
+.prose p{margin:0 0 1em}.prose p:last-child{margin:0}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:8px 18px;margin:0;font-size:.95rem}
+.kv dt{font:600 .68rem "IBM Plex Mono",monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--ink2);padding-top:4px}
+.kv dd{margin:0}
+.figs{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px}
+.figs div{background:var(--card);border:1px solid var(--rule);padding:14px 16px}
+.figs b{display:block;font:700 1.35rem "Figtree",sans-serif;color:var(--brick)}.figs span{font-size:.85rem;color:var(--ink2)}
+.amen{margin:0;padding:0;list-style:none}.amen li{padding:6px 0 6px 18px;position:relative;border-bottom:1px dashed var(--rule)}
+.amen li:before{content:"";position:absolute;left:0;top:14px;width:8px;height:8px;background:var(--brass);border-radius:1px}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 0}
+.searchbar{display:flex;gap:8px;margin:0}.searchbar input{flex:1;border:1px solid var(--rule);padding:10px 12px;font:400 1rem "Newsreader",serif;background:var(--card)}
+.hit{display:block;padding:14px 0;border-bottom:1px solid var(--rule);text-decoration:none;color:var(--ink)}.hit b{color:var(--frame);font-family:"Figtree",sans-serif}.hit p{margin:4px 0 0;color:var(--ink2);font-size:.95rem}
+.badge{border:2px solid var(--frame);padding:16px 18px;background:var(--card);margin-bottom:22px}
+.badge .t{font:600 .68rem "IBM Plex Mono",monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--brick)}
+.badge .who{font:700 1.4rem "Figtree",sans-serif;margin:4px 0}.badge .bc{font:500 .78rem "IBM Plex Mono",monospace;color:var(--ink2)}
+.badge.staff{background:var(--frame);color:#d7ccb8;border-color:var(--brass)}.badge.staff .who{color:#fbf7ef}.badge.staff .t{color:var(--brass)}
+.lockp{max-width:640px;background:var(--card);border:1px solid var(--rule);padding:32px 34px}
+.notice{background:#f7e4d6;border:1px solid var(--brick);padding:10px 14px;margin-bottom:16px}
+label{display:block;font:600 .72rem "IBM Plex Mono",monospace;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px}
+input[type=email],input[type=password]{width:100%;border:1px solid var(--rule);padding:10px 12px;font:400 1rem "Newsreader",serif;background:var(--card)}
+/* window + hanging cards */
+.window{background:linear-gradient(#c4b69a,#a89070);padding:18px 18px 28px;box-shadow:0 18px 40px rgba(28,25,21,.18)}
+.window .pane{background:linear-gradient(#dfe8ea,#c5d0d4);padding:22px 18px 8px;border:8px solid var(--frame);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px 18px;min-height:420px;position:relative}
+.window .rail{position:absolute;left:10px;right:10px;top:10px;height:6px;background:#9a7b3c;box-shadow:0 2px 0 #6e5730}
+.wcard{background:var(--card);border:1px solid #d7ccb8;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;position:relative;margin-top:14px;box-shadow:2px 6px 0 rgba(44,38,30,.08)}
+.wcard:before{content:"";position:absolute;left:50%;top:-16px;width:10px;height:16px;margin-left:-5px;border:2px solid #9a7b3c;border-bottom:0;border-radius:8px 8px 0 0;background:transparent}
+.wcard .elev{background:#efe8db;border-bottom:1px solid var(--rule)}
+.wcard .b{padding:10px 12px 12px;display:flex;flex-direction:column;gap:2px}
+.wcard h3{font-size:1rem;margin:0;color:var(--frame)}
+.wcard .pr{font:700 1.15rem "Figtree",sans-serif;color:var(--brick)}
+.wcard small{color:var(--ink2);font-size:.82rem}
+.wcard .st{font:600 .62rem "IBM Plex Mono",monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--river);margin-top:4px}
+.wcard .st.coming{color:var(--brass)}.wcard .st.contract{color:var(--brick)}.wcard .st.sold{color:var(--ink2)}
+/* listing cards (list pages) */
+.board{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:20px}
+.lcard{background:var(--card);border:1px solid var(--rule);text-decoration:none;color:var(--ink);display:flex;flex-direction:column}
+.lcard:hover{border-color:var(--frame)}
+.lcard .b{padding:14px 16px 16px;display:flex;flex-direction:column;gap:3px;flex:1}
+.lcard h3{margin:0;font-size:1.15rem}.lcard .pr{font:700 1.25rem "Figtree",sans-serif;color:var(--brick)}
+.lcard small{color:var(--ink2)}.lcard .st{font:600 .62rem "IBM Plex Mono",monospace;letter-spacing:.1em;text-transform:uppercase;margin-top:auto;padding-top:8px}
+.sbadge{display:inline-block;font:600 .66rem "IBM Plex Mono",monospace;letter-spacing:.1em;text-transform:uppercase;padding:5px 8px;border:1px solid}
+.sbadge.st-active{color:var(--river);border-color:var(--river)}.sbadge.st-coming{color:#6e5730;border-color:var(--brass);background:#f4ead0}
+.sbadge.st-contract{color:var(--brick);border-color:var(--brick)}.sbadge.st-sold{color:var(--ink2);border-color:var(--rule)}
+/* open house board */
+.boardcard{background:#2c261e;color:#e6dcc8;padding:22px 24px;box-shadow:inset 0 0 0 2px #9a7b3c}
+.boardcard h2,.boardcard h3{color:#fbf7ef}
+.boardcard .hd{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid #9a7b3c;padding-bottom:8px;margin-bottom:14px;gap:12px}
+.boardcard .hd b{font:700 1.05rem "Figtree",sans-serif}.boardcard .hd span{font:500 .66rem "IBM Plex Mono",monospace;letter-spacing:.1em;color:#9a7b3c}
+.oh{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.oh li{display:grid;grid-template-columns:14px 1fr auto;gap:10px;align-items:start}
+.oh a{color:#fbf7ef;text-decoration:none}.oh a:hover{text-decoration:underline}
+.oh small{display:block;color:#d7ccb8;font-size:.85rem}
+.oh em{font:600 .62rem "IBM Plex Mono",monospace;font-style:normal;color:#9a7b3c;letter-spacing:.08em;text-transform:uppercase}
+.dot{width:10px;height:10px;border-radius:50%;background:#5c564c;margin-top:6px;display:block}
+.dot.now{background:#c5d4c8;box-shadow:0 0 0 4px rgba(197,212,200,.25)}.dot.today{background:#9a7b3c}.dot.wk{background:#8b3a32}
+.mapcard{background:var(--card);border:1px solid var(--rule);padding:8px;overflow:hidden}
+svg.plat{width:100%;height:auto}svg.plat a.pin:hover circle{stroke:var(--brass);stroke-width:3}svg.plat a.pin.hl circle{stroke:#fbf7ef;stroke-width:4}
+svg.elev{width:100%;height:auto}
+.plan{display:grid;gap:12px}.fl{display:grid;gap:6px}
+.flab{font:600 .66rem "IBM Plex Mono",monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--ink2)}
+.frow{display:flex;width:100%;border:1px solid var(--frame);min-height:78px}
+.rm{border-right:1px solid var(--frame);padding:10px 8px;display:flex;flex-direction:column;justify-content:center;gap:2px;background:var(--card)}
+.rm:last-child{border-right:0}.rm b{font:650 .82rem "Figtree",sans-serif;text-transform:capitalize}.rm small{font:500 .68rem "IBM Plex Mono",monospace;color:var(--ink2)}
+.ag{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
+.ag a{background:var(--card);border:1px solid var(--rule);padding:18px 20px;text-decoration:none;color:var(--ink);display:grid;grid-template-columns:48px 1fr;gap:14px;align-items:center}
+.ag a:hover{border-color:var(--frame)}
+.ini{width:48px;height:48px;border-radius:50%;background:var(--c,var(--brick));color:#fbf7ef;display:grid;place-items:center;font:700 .9rem "Figtree",sans-serif}
+.hoods{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
+.hoods a{background:var(--card);border:1px solid var(--rule);border-top:8px solid var(--c,var(--brick));padding:16px 18px;text-decoration:none;color:var(--ink)}
+.hoods a:hover{border-color:var(--frame)}
+.q{border-bottom:1px solid var(--rule);padding:10px 0}details.q summary{cursor:pointer;font-family:"Figtree",sans-serif;font-weight:650}details.q p{margin:8px 0 4px;color:var(--ink2)}
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:16px;counter-reset:st}
+.steps li{display:grid;grid-template-columns:36px 1fr;gap:14px;align-items:start}
+.steps li:before{counter-increment:st;content:counter(st);width:36px;height:36px;border:1px solid var(--frame);display:grid;place-items:center;font:700 .9rem "Figtree",sans-serif}
+table.table{width:100%;border-collapse:collapse;background:var(--card)}
+table.table th,table.table td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--rule);vertical-align:top}
+table.table th{font:600 .68rem "IBM Plex Mono",monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--ink2)}
+.tg{font:600 .62rem "IBM Plex Mono",monospace;letter-spacing:.08em;text-transform:uppercase;border:1px solid;padding:1px 5px}
+.foot{background:var(--frame);color:#d7ccb8;padding:48px 0 24px;margin-top:0}
+.foot a{color:#fbf7ef}.foot h4{color:#fbf7ef;font-size:.95rem;margin:0 0 10px}
+.foot .fg{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:32px}
+.foot ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.disc{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;border-top:1px solid #4a4338;margin-top:32px;padding-top:16px;font:500 .7rem "IBM Plex Mono",monospace;color:#9a907c}
+@media (max-width:900px){
+ .dg,.foot .fg{grid-template-columns:1fr}
+ .window .pane{grid-template-columns:repeat(2,minmax(0,1fr));min-height:0}
+ header.top .w{display:grid;grid-template-columns:1fr;gap:10px;padding:12px 0}
+ header.top nav ul{flex-wrap:wrap}
+ header.top form,header.top form input{width:100%}
+ .side{position:static}
+}
+@media (max-width:620px){
+ .window .pane{grid-template-columns:1fr}
+ .w{width:calc(100% - 28px)}
+}
+.strip .f{margin-left:14px;padding-left:14px;border-left:1px solid #5a5348}
+.boardcard .hd span{white-space:nowrap}
+.foot .brand,.foot .brand b{color:#fbf7ef}.foot .brand small{display:block;color:#d7ccb8}
+.platleg{display:flex;flex-wrap:wrap;gap:14px 22px;margin:12px 0 0;font:500 .78rem "IBM Plex Mono",monospace;color:var(--ink2)}
+.platleg i{display:inline-block;width:10px;height:10px;margin-right:6px;vertical-align:-1px}
+.platleg i.d{background:var(--frame);transform:rotate(45deg)}
+.platleg i.p{background:var(--river);border-radius:50%;box-shadow:0 0 0 2px #fbf7ef}
+.crumbs li+li:before{color:#9a7b3c}
+</style></head><body>{%- assign mon = "now" | date: "%m" | plus: 0 -%}{%- assign mab = "now" | date: "%b" -%}{%- assign mfull = "now" | date: "%B" -%}{%- assign dom = "now" | date: "%d" | plus: 0 -%}{%- assign nowy = "now" | date: "%Y" | plus: 0 -%}{%- assign nowm = "now" | date: "%H" | plus: 0 | times: 60 -%}{%- assign nowm = "now" | date: "%M" | plus: 0 | plus: nowm -%}{%- assign tdate = "now" | date: "%A, %B %-d" -%}{%- assign tshort = "now" | date: "%-I:%M %p" -%}{%- capture dowr -%}{{ "now" | date: "%a" | downcase }}{%- endcapture -%}{%- assign today_dow = "" -%}{% case dowr %}{% when "wed" %}{%- assign today_dow = "wed" -%}{% when "fri" %}{%- assign today_dow = "fri" -%}{% when "sat" %}{%- assign today_dow = "sat" -%}{% when "sun" %}{%- assign today_dow = "sun" -%}{% when "mon" %}{%- assign today_dow = "mon" -%}{% when "tue" %}{%- assign today_dow = "tue" -%}{% when "thu" %}{%- assign today_dow = "thu" -%}{% endcase %}{%- assign is_weekend_day = false -%}{% if today_dow == "sat" or today_dow == "sun" %}{%- assign is_weekend_day = true -%}{% endif %}{%- assign in_cl=false -%}{%- assign in_ag=false -%}{%- for g in CurrentUser.UserGroups -%}{%- if g == "clients" -%}{%- assign in_cl=true -%}{%- endif -%}{%- if g == "agents" -%}{%- assign in_ag=true -%}{%- endif -%}{%- endfor -%}{%- if CurrentUser.IsAdmin -%}{%- assign in_cl=true -%}{%- assign in_ag=true -%}{%- endif -%}
+<a class="skip" href="#main">Skip to content</a>
+<div class="strip"><div class="w"><span>{%- assign ohall = get_content_items(ContentType="open_houses", OrderBy="sort_order asc", PageSize=20) -%}{%- assign now_count = 0 -%}{%- assign today_count = 0 -%}{% for o in ohall.Items %}{%- assign oy=o.PublishedContent -%}{%- capture od -%}{{ oy.dow }}{%- endcapture -%}{% if od == today_dow %}{%- assign today_count = today_count | plus: 1 -%}{%- capture _nosm -%}{{ oy.start_min }}{%- endcapture -%}{%- assign osm = _nosm | plus: 0 -%}{%- capture _noem -%}{{ oy.end_min }}{%- endcapture -%}{%- assign oem = _noem | plus: 0 -%}{% if nowm >= osm and nowm < oem %}{%- assign now_count = now_count | plus: 1 -%}{% endif %}{% endif %}{% endfor %}{% if now_count > 0 %}<span class="gchip"><i></i>Open house happening now</span>{% elsif today_count > 0 %}<span class="gchip"><i></i>Open houses today</span>{% else %}<span class="gchip off"><i></i>{{ tdate }}</span>{% endif %} <span class="f">FICTIONAL BROKERAGE · RAYTHA EXAMPLE</span></span>
+<span>{% if CurrentUser.IsAuthenticated %}<a href="{{ PathBase }}/clients">Client desk</a><a href="{{ PathBase }}/desk">Agent desk</a><a href="{{ PathBase }}/account/logout">Sign out {{ CurrentUser.FirstName }}</a>{% else %}<a href="{{ PathBase }}/account/login?returnUrl=/clients">Client sign-in</a><a href="{{ PathBase }}/account/login?returnUrl=/desk">Agents</a>{% endif %}</span></div></div>
+<header class="top"><div class="w"><a class="brand" href="{{ PathBase }}/" aria-label="Gablefen Realty home"><span class="brand-mark" aria-hidden="true"><svg width="36" height="36" viewBox="0 0 36 36"><rect width="36" height="36" fill="#8b3a32"/><polygon points="4,22 18,6 32,22" fill="#efe8db"/><rect x="10" y="20" width="16" height="12" fill="#efe8db"/><rect x="15" y="24" width="6" height="8" fill="#8b3a32"/></svg></span><span><b>Gablefen Realty</b><small>12 Courthouse Square</small></span></a>
+<nav aria-label="Main"><ul>{%- assign menu = get_main_menu() -%}{% for mi in menu.MenuItems %}<li><a href="{{ mi.Url }}">{{ mi.Label }}</a></li>{% endfor %}</ul></nav>
+<form action="{{ PathBase }}/search" role="search"><input name="q" aria-label="Search the site" placeholder="Search homes…"></form></div></header>
+<main id="main">{% renderbody %}</main>
+<footer class="foot"><div class="w"><div class="fg"><div><div class="brand"><span class="brand-mark" aria-hidden="true"><svg width="36" height="36" viewBox="0 0 36 36"><rect width="36" height="36" fill="#8b3a32"/><polygon points="4,22 18,6 32,22" fill="#efe8db"/><rect x="10" y="20" width="16" height="12" fill="#efe8db"/><rect x="15" y="24" width="6" height="8" fill="#8b3a32"/></svg></span><span><b>Gablefen Realty</b><small>12 Courthouse Square</small></span></div><p style="margin-top:16px;max-width:400px">12 Courthouse Square, Gablefen (fictional). Weekdays 9:00 am – 5:00 pm; Saturday mornings by the market table, April to October. (555) 014-1860 · hello@gablefen.example.</p></div>
+<div><h4>Look</h4><ul><li><a href="{{ PathBase }}/listings">Homes for sale</a></li><li><a href="{{ PathBase }}/open-houses">Open houses</a></li><li><a href="{{ PathBase }}/sold">Recently sold</a></li><li><a href="{{ PathBase }}/plat">Town plat</a></li></ul></div>
+<div><h4>The town</h4><ul><li><a href="{{ PathBase }}/neighborhoods">Neighborhoods</a></li><li><a href="{{ PathBase }}/styles">House styles</a></li><li><a href="{{ PathBase }}/agents">Agents</a></li><li><a href="{{ PathBase }}/about">About the firm</a></li></ul></div>
+<div><h4>Work with us</h4><ul>{%- assign fm = get_menu("footer") -%}{% for mi in fm.MenuItems %}<li><a href="{{ mi.Url }}">{{ mi.Label }}</a></li>{% endfor %}</ul></div></div>
+<div class="disc"><span>© 2026 Gablefen Realty (fictional) · 555 phone numbers · no offer, payment or sign-up forms on this site</span><span>Server-rendered with Raytha · works without JavaScript</span></div></div></footer></body></html>

@@ -1,0 +1,34 @@
+{
+ "name": "Gablefen Realty",
+ "theme": "gablefen",
+ "types": [
+  "listings",
+  "neighborhoods",
+  "agents",
+  "open_houses",
+  "styles",
+  "landmarks",
+  "bulletins",
+  "showings"
+ ],
+ "detailTemplates": {
+  "listings": "gf_detail_listings",
+  "neighborhoods": "gf_detail_neighborhoods",
+  "agents": "gf_detail_agents",
+  "open_houses": "gf_detail_open_houses",
+  "styles": "gf_detail_styles",
+  "landmarks": "gf_detail_landmarks",
+  "bulletins": "gf_detail_bulletins",
+  "showings": "gf_detail_showings"
+ },
+ "groups": [
+  {
+   "developerName": "clients",
+   "label": "Gablefen Realty buyer clients"
+  },
+  {
+   "developerName": "agents",
+   "label": "Gablefen Realty agents"
+  }
+ ]
+}

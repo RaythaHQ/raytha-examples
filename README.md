@@ -51,6 +51,7 @@ These examples go with the weekly [use cases on raytha.com](https://raytha.com/u
 | [<img src="https://raytha.com/raytha/media-items/objectkey/xFEYePXxQ0uf0nal8VAfSQ_tarrenhurst_01_home.webp" width="360" alt="Tarrenhurst School">](private-school-tarrenhurst/) | **[Tarrenhurst School](private-school-tarrenhurst/)**: a private school website for an independent Pre-K to 12 day school, laid out as a printed prospectus: today's six-day rotation day and blocks worked out on the server, three divisions with a day in the life, a course of studies, a House Cup, athletics and arts, admissions with tuition, a calendar and stories, and members-only areas for families and faculty. 8 content types, 2 user groups. |
 | [<img src="https://raytha.com/raytha/media-items/objectkey/GpecndEJdECamzAMy83zBg_hathermouth_01_home.webp" width="360" alt="Hathermouth River Rescue">](charity-hathermouth/) | **[Hathermouth River Rescue](charity-hathermouth/)**: a charity website for a volunteer river rescue charity, laid out as a station board: this week's crew watch and today's tides worked out on the server, a river map with every callout plotted by mile, a pager log, an appeal with a gift ladder, the fleet, safety advice, volunteer roles, ways to give without a form, and members-only areas for crew and trustees. 8 content types, 2 user groups. |
 | [<img src="https://raytha.com/raytha/media-items/objectkey/JkdPuPWWMUC7Jibd-GYHnA_cadwallow_01_home.webp" width="360" alt="Cadwallow Park">](city-park-cadwallow/) | **[Cadwallow Park](city-park-cadwallow/)**: a city park website for a parks and recreation department, laid out as a trailhead kiosk: a park map drawn from content, the gates, sunrise and sunset and what is open right now worked out on the server, blazed trails with elevation profiles, a tree register, what to look for this month, a conditions board, park projects with phase trackers, shelters and fields without a booking form, and members-only areas for the Friends of the park and park staff. 8 content types, 2 user groups. |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/hqYFk0tvVEyL_Qt5PgwrJQ_gablefen_01_home.webp" width="360" alt="Gablefen Realty">](real-estate-gablefen/) | **[Gablefen Realty](real-estate-gablefen/)**: a real estate website for an independent brokerage, built like the firm's listing window: hanging property cards with house elevations drawn from each listing's style and color, a town plat with pins from content, an open-house board whose lights are worked out on the server, floor plans drawn from a rooms field, recently sold prices, and members-only desks for buyer clients and agents. 8 content types, 2 user groups. |
 
 ## Quickstart
 
@@ -154,6 +155,7 @@ The examples were built from a short brief with no human help. To do the same fo
 ├── private-school-tarrenhurst/
 ├── charity-hathermouth/
 ├── city-park-cadwallow/
+├── real-estate-gablefen/
 ├── skills/raytha-site-builder/  # agent skill: brief -> finished Raytha site
 ├── templates/brief-template.md  # fill-in brief
 ├── scripts/                     # shared build script, scaffold, screenshots, walkthroughs, export, secret scan

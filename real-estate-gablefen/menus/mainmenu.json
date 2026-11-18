@@ -1,0 +1,30 @@
+{
+ "developerName": "mainmenu",
+ "label": "Main",
+ "items": [
+  {
+   "label": "Homes",
+   "link": "/listings"
+  },
+  {
+   "label": "Open houses",
+   "link": "/open-houses"
+  },
+  {
+   "label": "Neighborhoods",
+   "link": "/neighborhoods"
+  },
+  {
+   "label": "Sold",
+   "link": "/sold"
+  },
+  {
+   "label": "Agents",
+   "link": "/agents"
+  },
+  {
+   "label": "About",
+   "link": "/about"
+  }
+ ]
+}

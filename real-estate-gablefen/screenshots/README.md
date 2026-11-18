@@ -1,0 +1,16 @@
+# Screenshots
+
+Captured at 1440px and 390px from a site built with `../build.sh`. Signed-in shots use demo users in the `clients` group (client desk) and the `agents` group (agent desk). Hosted in raytha.com media.
+
+| Screenshot | Shows |
+|---|---|
+| [<img src="https://raytha.com/raytha/media-items/objectkey/hqYFk0tvVEyL_Qt5PgwrJQ_gablefen_01_home.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/hqYFk0tvVEyL_Qt5PgwrJQ_gablefen_01_home.webp) | Home: the listing window, with hanging cards, elevations drawn from each house's style, and an open-house board worked out on the server |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/y7koR2KzSEygMZpIHCwdTA_gablefen_03_listings.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/y7koR2KzSEygMZpIHCwdTA_gablefen_03_listings.webp) | All 16 homes, with elevations drawn from style, stories, siding and roof, filterable by status and neighborhood |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/qSiFPF9UIESAgpFekllxNA_gablefen_05_listing_millrace.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/qSiFPF9UIESAgpFekllxNA_gablefen_05_listing_millrace.webp) | A listing page: elevation, facts, and a floor plan drawn on the server from the rooms field |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/kjW4-L2yXUSyeha5MsebAQ_gablefen_10_plat.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/kjW4-L2yXUSyeha5MsebAQ_gablefen_10_plat.webp) | The town plat: neighborhood washes and numbered listing pins come from content |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/6BQoANOGGUGQS43wjDLEdg_gablefen_11_openhouses.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/6BQoANOGGUGQS43wjDLEdg_gablefen_11_openhouses.webp) | The open-house board: happening now, today and this weekend, computed from stored weekday hours |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/UbNMUaUkNEi9khloUEOphA_gablefen_12_sold.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/UbNMUaUkNEi9khloUEOphA_gablefen_12_sold.webp) | Recently sold, with closing prices |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/G1RjBcG7MUCxLVFIlAmdXQ_gablefen_21_clients_locked.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/G1RjBcG7MUCxLVFIlAmdXQ_gablefen_21_clients_locked.webp) | The client desk, signed out: contents stay on the server |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/WsAB72tkBkywYk83DNSwDw_gablefen_22_clients.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/WsAB72tkBkywYk83DNSwDw_gablefen_22_clients.webp) | Signed in as a buyer client: this weekend's tours and private shortlist notes |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/9FtN_FG8jUGUUC_tCHFrQg_gablefen_23_desk.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/9FtN_FG8jUGUUC_tCHFrQg_gablefen_23_desk.webp) | Signed in as an agent: the deal board with private remarks, days on the market and desk notes |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/OW9WhLgCFkeOEpBBMJQvDg_gablefen_25_home_mobile.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/OW9WhLgCFkeOEpBBMJQvDg_gablefen_25_home_mobile.webp) | Home on a phone |

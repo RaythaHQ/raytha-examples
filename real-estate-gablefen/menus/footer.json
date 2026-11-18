@@ -1,0 +1,30 @@
+{
+ "developerName": "footer",
+ "label": "Footer",
+ "items": [
+  {
+   "label": "Buy with us",
+   "link": "/buy"
+  },
+  {
+   "label": "Sell with us",
+   "link": "/sell"
+  },
+  {
+   "label": "Town plat",
+   "link": "/plat"
+  },
+  {
+   "label": "House styles",
+   "link": "/styles"
+  },
+  {
+   "label": "Client desk",
+   "link": "/clients"
+  },
+  {
+   "label": "Agent desk",
+   "link": "/desk"
+  }
+ ]
+}
