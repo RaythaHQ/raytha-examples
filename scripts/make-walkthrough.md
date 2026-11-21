@@ -81,6 +81,7 @@ fields), and link the raytha.com copy from the example's README.
 | Hathermouth River Rescue | [walkthrough.json](../charity-hathermouth/walkthrough.json) | [use case page](https://raytha.com/use-cases/hathermouth-river-rescue#walkthrough) · [MP4](https://raytha.com/raytha/media-items/objectkey/zczqaZAGNUq1Uk4mUrczIw_hathermouth_river_rescue_walkthrough.mp4) |
 | Cadwallow Park | [walkthrough.json](../city-park-cadwallow/walkthrough.json) | [use case page](https://raytha.com/use-cases/cadwallow-park#walkthrough) · [MP4](https://raytha.com/raytha/media-items/objectkey/iOFAtY0XQE63AEOMwptWjg_cadwallow_park_walkthrough.mp4) |
 | Gablefen Realty | [walkthrough.json](../real-estate-gablefen/walkthrough.json) | [use case page](https://raytha.com/use-cases/gablefen-realty#walkthrough) · [MP4](https://raytha.com/raytha/media-items/objectkey/YRBRJOWg8U-Mx02Uvmg29g_gablefen_realty_walkthrough.mp4) |
+| Noor Halvorsen for County Commission | [walkthrough.json](../political-campaign-halvorsen/walkthrough.json) | [use case page](https://raytha.com/use-cases/halvorsen-for-wrenfield#walkthrough) · [MP4](https://raytha.com/raytha/media-items/objectkey/xWLGSPq93UCeEqt7S5kOJg_halvorsen_for_wrenfield_walkthrough.mp4) |
 
 ## Shot list
 

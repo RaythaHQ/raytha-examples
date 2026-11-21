@@ -1,0 +1,16 @@
+# Screenshots
+
+Captured at 1440px and 390px from a site built with `../build.sh`. Signed-in shots use demo users in the `volunteers` group (volunteer desk) and the `staff` group (staff desk). Hosted in raytha.com media.
+
+| Screenshot | Shows |
+|---|---|
+| [<img src="https://raytha.com/raytha/media-items/objectkey/MFvgBe8Va0S0e0mdvPTCTQ_halvorsen_01_home.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/MFvgBe8Va0S0e0mdvPTCTQ_halvorsen_01_home.webp) | Home: the yard sign, a countdown to Election Day worked out on the server, and the road to April 6 |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/rjNBCUBwZUClw_AcWCqTEA_halvorsen_03_plan.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/rjNBCUBwZUClw_AcWCqTEA_halvorsen_03_plan.webp) | The plan as a sample ballot: seven items, each with a topic and a summary |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/ouuUbSvD8k2VYEuplh1Jhg_halvorsen_04_plan_bridges.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/ouuUbSvD8k2VYEuplh1Jhg_halvorsen_04_plan_bridges.webp) | A plan item: what will be done, what it costs, and how voters will know it worked |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/h0qlwdUOmEq7ss3rd9UexQ_halvorsen_05_district.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/h0qlwdUOmEq7ss3rd9UexQ_halvorsen_05_district.webp) | The district map: precinct outlines, numbers and polling places come from content |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/Dae5c1zhAU2l0fzE5vufeA_halvorsen_07_trail.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/Dae5c1zhAU2l0fzE5vufeA_halvorsen_07_trail.webp) | On the trail: today, coming up and already happened, split on the server; volunteer-only events are locked |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/rVVUXK3tMkmYzzNkAMVBXg_halvorsen_11_vote.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/rVVUXK3tMkmYzzNkAMVBXg_halvorsen_11_vote.webp) | How to vote: pick a precinct and the server highlights it and names the polling place |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/IHVgvZS5D0iPOf_DrYdpDw_halvorsen_15_volunteers_locked.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/IHVgvZS5D0iPOf_DrYdpDw_halvorsen_15_volunteers_locked.webp) | The volunteer desk, signed out: contents stay on the server |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/6dZOu9-5pEunjW1yVGcLhw_halvorsen_16_volunteers.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/6dZOu9-5pEunjW1yVGcLhw_halvorsen_16_volunteers.webp) | Signed in as a volunteer: open shifts, briefs and a turf map shaded by doors knocked |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/N21_vxGR1kqTZv40lerOFQ_halvorsen_17_staff.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/N21_vxGR1kqTZv40lerOFQ_halvorsen_17_staff.webp) | Signed in as staff: deadlines, district door totals, precincts flagged behind, and memos |
+| [<img src="https://raytha.com/raytha/media-items/objectkey/ziXPfDg3J060JsjloPB-Qg_halvorsen_19_home_mobile.webp" width="200">](https://raytha.com/raytha/media-items/objectkey/ziXPfDg3J060JsjloPB-Qg_halvorsen_19_home_mobile.webp) | Home on a phone |

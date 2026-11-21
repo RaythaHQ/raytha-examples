@@ -1,0 +1,34 @@
+{
+ "name": "Noor Halvorsen for County Commission",
+ "theme": "halvorsen",
+ "types": [
+  "issues",
+  "precincts",
+  "events",
+  "endorsements",
+  "questionnaires",
+  "milestones",
+  "notes",
+  "shifts"
+ ],
+ "detailTemplates": {
+  "issues": "hv_detail_issues",
+  "precincts": "hv_detail_precincts",
+  "events": "hv_detail_events",
+  "endorsements": "hv_detail_endorsements",
+  "questionnaires": "hv_detail_questionnaires",
+  "milestones": "hv_detail_milestones",
+  "notes": "hv_detail_notes",
+  "shifts": "hv_detail_shifts"
+ },
+ "groups": [
+  {
+   "developerName": "volunteers",
+   "label": "Halvorsen campaign volunteers"
+  },
+  {
+   "developerName": "staff",
+   "label": "Halvorsen campaign staff"
+  }
+ ]
+}

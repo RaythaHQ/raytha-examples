@@ -1,0 +1,51 @@
+[
+ {
+  "title": "Noor Halvorsen for County Commission",
+  "routePath": "home",
+  "template": "hv_home",
+  "sections": "pages/home.json",
+  "home": true
+ },
+ {
+  "title": "The district map",
+  "routePath": "district",
+  "template": "hv_district",
+  "sections": "pages/district.json"
+ },
+ {
+  "title": "How to vote",
+  "routePath": "vote",
+  "template": "hv_vote",
+  "sections": "pages/vote.json"
+ },
+ {
+  "title": "Meet Noor",
+  "routePath": "about",
+  "template": "hv_about",
+  "sections": "pages/about.json"
+ },
+ {
+  "title": "Help out",
+  "routePath": "help",
+  "template": "hv_help",
+  "sections": "pages/help.json"
+ },
+ {
+  "title": "Volunteer desk",
+  "routePath": "volunteers",
+  "template": "hv_volunteers",
+  "sections": "pages/volunteers.json"
+ },
+ {
+  "title": "Staff desk",
+  "routePath": "staff",
+  "template": "hv_staff",
+  "sections": "pages/staff.json"
+ },
+ {
+  "title": "Search",
+  "routePath": "search",
+  "template": "hv_search",
+  "sections": "pages/search.json"
+ }
+]

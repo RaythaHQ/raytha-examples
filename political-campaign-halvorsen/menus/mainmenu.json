@@ -1,0 +1,34 @@
+{
+ "developerName": "mainmenu",
+ "label": "Main",
+ "items": [
+  {
+   "label": "The plan",
+   "link": "/plan"
+  },
+  {
+   "label": "District map",
+   "link": "/district"
+  },
+  {
+   "label": "On the trail",
+   "link": "/trail"
+  },
+  {
+   "label": "Answers",
+   "link": "/answers"
+  },
+  {
+   "label": "Endorsements",
+   "link": "/endorsements"
+  },
+  {
+   "label": "Meet Noor",
+   "link": "/about"
+  },
+  {
+   "label": "How to vote",
+   "link": "/vote"
+  }
+ ]
+}

@@ -1,0 +1,135 @@
+{
+  "slug": "halvorsen-for-wrenfield",
+  "name": "Noor Halvorsen for County Commission",
+  "base": "http://localhost:5000",
+  "viewport": [
+    1440,
+    810
+  ],
+  "output": [
+    1920,
+    1080
+  ],
+  "colorScheme": "light",
+  "login": {
+    "path": "/account/login",
+    "emailEnv": "SITE_USER_EMAIL",
+    "passwordEnv": "SITE_USER_PASSWORD"
+  },
+  "title": {
+    "kicker": "Raytha use case",
+    "heading": "Noor Halvorsen for County Commission",
+    "subheading": "A political campaign website: a plan laid out like a sample ballot, a precinct map with polling places, a countdown worked out on the server, and a volunteer desk behind sign-in.",
+    "hold": 1.3
+  },
+  "end": {
+    "heading": "Built with Raytha",
+    "subheading": "Open-source .NET CMS. Get the brief, screenshots and a one-command rebuild kit.",
+    "url": "raytha.com/use-cases/halvorsen-for-wrenfield",
+    "hold": 2.3
+  },
+  "scenes": [
+    {
+      "url": "/",
+      "caption": "The yard sign, a server-side countdown, and the road to Election Day drawn from milestone content",
+      "actions": [
+        {
+          "hold": 1.8,
+          "poster": true
+        },
+        {
+          "scroll": 640,
+          "dur": 1.3
+        },
+        {
+          "hold": 1.0
+        },
+        {
+          "scroll": 1350,
+          "dur": 1.2
+        },
+        {
+          "hold": 0.8
+        }
+      ]
+    },
+    {
+      "url": "/plan/fix-the-eleven-posted-bridges-in-public-order",
+      "caption": "Each plan item: what will be done, what it costs, and how voters will know it worked",
+      "actions": [
+        {
+          "hold": 1.2
+        },
+        {
+          "scroll": 420,
+          "dur": 1.1
+        },
+        {
+          "hold": 0.8
+        }
+      ]
+    },
+    {
+      "url": "/vote?p=5",
+      "caption": "How to vote: pick a precinct and the server highlights it and names the polling place",
+      "actions": [
+        {
+          "hold": 1.3
+        },
+        {
+          "scroll": 300,
+          "dur": 1.0
+        },
+        {
+          "hold": 0.6
+        }
+      ]
+    },
+    {
+      "url": "/volunteers",
+      "caption": "Signed out, the volunteer desk is locked on the server",
+      "actions": [
+        {
+          "hold": 1.0
+        }
+      ]
+    },
+    {
+      "url": "/volunteers",
+      "signin": true,
+      "caption": "Signed in as a volunteer: open shifts and a turf map shaded by doors knocked",
+      "actions": [
+        {
+          "hold": 1.1
+        },
+        {
+          "scroll": 820,
+          "dur": 1.3
+        },
+        {
+          "hold": 0.8
+        }
+      ]
+    },
+    {
+      "url": "/",
+      "phone": true,
+      "phoneCaption": {
+        "kicker": "Responsive",
+        "text": "The same pages on a phone"
+      },
+      "actions": [
+        {
+          "hold": 0.5
+        },
+        {
+          "scroll": 1100,
+          "dur": 2.0
+        },
+        {
+          "hold": 0.4
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+ "developerName": "footer",
+ "label": "Footer",
+ "items": [
+  {
+   "label": "Help out",
+   "link": "/help"
+  },
+  {
+   "label": "Campaign notes",
+   "link": "/notes"
+  },
+  {
+   "label": "Road to April 6",
+   "link": "/road"
+  },
+  {
+   "label": "Volunteer desk",
+   "link": "/volunteers"
+  }
+ ]
+}

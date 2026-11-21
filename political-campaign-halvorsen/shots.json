@@ -1,0 +1,23 @@
+[
+ {"name": "01-home-1440.png", "path": "/", "device": "desktop"},
+ {"name": "02-home-full-1440.png", "path": "/", "device": "desktop", "full_page": true},
+ {"name": "03-plan-1440.png", "path": "/plan", "device": "desktop", "full_page": true},
+ {"name": "04-plan-bridges-1440.png", "path": "/plan/fix-the-eleven-posted-bridges-in-public-order", "device": "desktop", "full_page": true},
+ {"name": "05-district-1440.png", "path": "/district", "device": "desktop", "full_page": true},
+ {"name": "06-precinct-tannery-1440.png", "path": "/precincts/tannery-flats", "device": "desktop", "full_page": true},
+ {"name": "07-trail-1440.png", "path": "/trail", "device": "desktop", "full_page": true},
+ {"name": "08-answers-1440.png", "path": "/answers", "device": "desktop"},
+ {"name": "09-endorsements-1440.png", "path": "/endorsements", "device": "desktop"},
+ {"name": "10-road-1440.png", "path": "/road", "device": "desktop", "full_page": true},
+ {"name": "11-vote-1440.png", "path": "/vote?p=5", "device": "desktop", "full_page": true},
+ {"name": "12-about-1440.png", "path": "/about", "device": "desktop"},
+ {"name": "13-notes-1440.png", "path": "/notes", "device": "desktop"},
+ {"name": "14-login-1440.png", "path": "/account/login?returnUrl=/volunteers", "device": "desktop"},
+ {"name": "15-volunteers-locked-1440.png", "path": "/volunteers", "device": "desktop"},
+ {"name": "16-volunteers-1440.png", "path": "/volunteers", "device": "desktop", "login": true, "who": "volunteers", "full_page": true},
+ {"name": "17-staff-1440.png", "path": "/staff", "device": "desktop", "login": true, "who": "staff", "full_page": true},
+ {"name": "18-search-1440.png", "path": "/search?q=bridge", "device": "desktop"},
+ {"name": "19-home-mobile-390.png", "path": "/", "device": "mobile"},
+ {"name": "20-plan-item-mobile-390.png", "path": "/plan/keep-the-health-office-open-until-7-pm-twice-a-week", "device": "mobile", "full_page": true},
+ {"name": "21-home-rail-mobile-390.png", "path": "/", "device": "mobile", "scroll": 640}
+]
