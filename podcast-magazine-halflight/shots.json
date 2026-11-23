@@ -1,0 +1,22 @@
+[
+ {"name": "01-home-1440.png", "path": "/", "device": "desktop"},
+ {"name": "02-home-full-1440.png", "path": "/", "device": "desktop", "full_page": true},
+ {"name": "03-listen-1440.png", "path": "/listen", "device": "desktop", "full_page": true},
+ {"name": "04-episode-bridge-1440.png", "path": "/listen/the-bridge-goes-up-at-midnight", "device": "desktop", "full_page": true},
+ {"name": "05-hours-3am-1440.png", "path": "/hours?h=3", "device": "desktop", "full_page": true},
+ {"name": "06-issues-1440.png", "path": "/issues", "device": "desktop", "full_page": true},
+ {"name": "07-issue-9-1440.png", "path": "/issues/the-early-shift", "device": "desktop", "full_page": true},
+ {"name": "08-story-1440.png", "path": "/read/morrows-at-four", "device": "desktop", "full_page": true},
+ {"name": "09-mail-1440.png", "path": "/mail", "device": "desktop", "full_page": true},
+ {"name": "10-people-1440.png", "path": "/people", "device": "desktop"},
+ {"name": "11-read-1440.png", "path": "/read", "device": "desktop"},
+ {"name": "12-bonus-locked-1440.png", "path": "/listen/dellah-and-the-sourdough-argument", "device": "desktop"},
+ {"name": "13-login-1440.png", "path": "/account/login?returnUrl=/members", "device": "desktop"},
+ {"name": "14-members-1440.png", "path": "/members", "device": "desktop", "login": true, "who": "members", "full_page": true},
+ {"name": "15-bonus-1440.png", "path": "/listen/unedited-the-four-oclock-bell-all-of-it", "device": "desktop", "login": true, "who": "members", "full_page": true},
+ {"name": "16-desk-1440.png", "path": "/desk", "device": "desktop", "login": true, "who": "editors", "full_page": true},
+ {"name": "17-search-1440.png", "path": "/search?q=bridge", "device": "desktop"},
+ {"name": "18-home-mobile-390.png", "path": "/", "device": "mobile"},
+ {"name": "19-episode-mobile-390.png", "path": "/listen/ward-7b-seven-to-seven", "device": "mobile", "full_page": true},
+ {"name": "20-home-dial-mobile-390.png", "path": "/", "device": "mobile", "scroll": 900}
+]

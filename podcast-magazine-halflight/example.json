@@ -1,0 +1,30 @@
+{
+ "name": "Halflight",
+ "theme": "halflight",
+ "types": [
+  "episodes",
+  "issues",
+  "stories",
+  "contributors",
+  "letters",
+  "rundown"
+ ],
+ "detailTemplates": {
+  "episodes": "hl_detail_episodes",
+  "issues": "hl_detail_issues",
+  "stories": "hl_detail_stories",
+  "contributors": "hl_detail_contributors",
+  "letters": "hl_detail_letters",
+  "rundown": "hl_detail_rundown"
+ },
+ "groups": [
+  {
+   "developerName": "members",
+   "label": "Halflight members"
+  },
+  {
+   "developerName": "editors",
+   "label": "Halflight editors"
+  }
+ ]
+}

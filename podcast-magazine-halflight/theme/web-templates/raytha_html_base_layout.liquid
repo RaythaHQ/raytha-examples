@@ -1,0 +1,147 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{% if Target.PrimaryField %}{{ Target.PrimaryField }} | {% elsif Target.Label %}{{ Target.Label }} | {% elsif Target.Title and Target.Title != "Halflight" %}{{ Target.Title }} | {% endif %}Halflight, a podcast and quarterly about the night shift</title>
+{%- capture mau -%}{{ Target.PublishedContent.audience }}{%- endcapture -%}<meta name="description" content="{% if mau == "members" or mau == "editors" %}Members-only page on Halflight (fictional). Sign in to read or listen.{% elsif Target.PublishedContent.summary %}{{ Target.PublishedContent.summary | strip_html | escape }}{% else %}Halflight (fictional) is a podcast and a quarterly print magazine about people who work the night shift: episodes with chapters and transcripts, issues with a contents page, an hour-by-hour index, listener letters, and a members-only back room with bonus episodes and the archive. Built on Raytha, a self-hosted, open-source .NET CMS for podcasts and magazines.{% endif %}">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"><style>:root{--paper:#f3eee4;--paper2:#ebe4d6;--ink:#15171f;--night:#111827;--night2:#1a2336;--lamp:#f2b84b;--lamp2:#c98a1c;--rose:#c2583f;--muted:#646157;--line:#d6ceBE;--serif:"Newsreader",Georgia,serif;--sans:"IBM Plex Sans",system-ui,sans-serif;--mono:"JetBrains Mono",ui-monospace,monospace}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration-thickness:1px;text-underline-offset:3px}a:hover{color:var(--rose)}
+img,svg{max-width:100%}
+.w{max-width:1240px;margin:0 auto;padding:0 28px}
+.skip{position:absolute;left:-999px}.skip:focus{left:12px;top:12px;background:#fff;padding:8px 12px;z-index:9}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:500;letter-spacing:-.01em;line-height:1.12;margin:0 0 .4em}
+h1{font-size:clamp(2.3rem,4.6vw,3.9rem)}h2{font-size:clamp(1.7rem,2.8vw,2.4rem)}h3{font-size:1.4rem}
+.kick{font:600 .74rem/1.2 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--lamp2);margin:0 0 12px}
+.muted{color:var(--muted)}.mono{font-family:var(--mono)}
+.strip{background:var(--ink);color:#cfd3dc;font:500 .78rem/1 var(--mono);letter-spacing:.04em}
+.strip .w{display:flex;justify-content:space-between;gap:20px;align-items:center;padding-top:10px;padding-bottom:10px;flex-wrap:wrap}
+.strip a{color:#fff;text-decoration:none;margin-left:18px}.strip a:hover{color:var(--lamp)}.strip b{color:var(--lamp);font-weight:600}
+.strip .dotl{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--lamp);margin-right:8px;box-shadow:0 0 0 3px rgba(242,184,75,.25)}
+.top{border-bottom:1px solid var(--ink);background:var(--paper)}
+.top .w{display:flex;align-items:center;gap:28px;padding-top:18px;padding-bottom:18px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
+.brand b{display:block;font:500 1.75rem/1 var(--serif);letter-spacing:-.01em}.brand small{display:block;font:500 .72rem/1.3 var(--mono);color:var(--muted);letter-spacing:.06em;margin-top:4px}
+.top nav{margin-left:auto}.top nav ul{display:flex;gap:4px;list-style:none;margin:0;padding:0;flex-wrap:wrap}
+.top nav a{display:block;padding:8px 11px;text-decoration:none;font-weight:500;font-size:.95rem;border-radius:4px}.top nav a:hover{background:var(--paper2);color:var(--ink)}
+.sl{font:600 .8rem var(--mono);text-decoration:none;border:1px solid var(--ink);padding:8px 12px;border-radius:999px}
+main{display:block}
+.sec{padding:64px 0}.sec.tight{padding:40px 0}.sec.dark{background:var(--night);color:#e7e9ee}.sec.dark .muted{color:#9aa3b5}.sec.dark .kick{color:var(--lamp)}
+.sec.alt{background:var(--paper2)}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:#fff;border:1px solid var(--ink);padding:11px 18px;border-radius:999px;font:600 .92rem var(--sans);text-decoration:none;cursor:pointer}
+.btn:hover{background:var(--rose);border-color:var(--rose);color:#fff}.btn.line{background:transparent;color:var(--ink)}.btn.line:hover{background:var(--ink);color:#fff}
+.btn.lamp{background:var(--lamp);border-color:var(--lamp);color:var(--ink)}.dark .btn.line{color:#fff;border-color:#fff}
+.cta{display:flex;gap:10px;flex-wrap:wrap;margin:22px 0 0}
+.chip{display:inline-block;font:600 .7rem/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;border:1px solid currentColor;padding:5px 8px;border-radius:3px}
+.tg{display:inline-block;font:600 .68rem/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;background:var(--ink);color:var(--lamp);padding:4px 7px;border-radius:3px;vertical-align:middle}
+.phead{padding:56px 0 34px;border-bottom:1px solid var(--line)}
+.phead .lede{font:400 1.25rem/1.5 var(--serif);max-width:780px;color:#3a3a36;margin:6px 0 0}
+.crumbs{display:flex;gap:8px;list-style:none;padding:0;margin:0 0 20px;font:500 .78rem var(--mono);color:var(--muted)}.crumbs li+li:before{content:"/";margin-right:8px}.crumbs a{text-decoration:none}
+/* hero with the dial */
+.hero{background:var(--night);color:#e9ebf0;padding:54px 0 64px;position:relative;overflow:hidden}
+.hero .hg{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.hero h1{color:#fff;font-size:clamp(2.4rem,4.2vw,3.6rem)}.hero .lede{font:400 1.2rem/1.5 var(--serif);color:#c9cfdb;max-width:560px}
+.dialwrap{position:relative}.dial{width:100%;height:auto;display:block}
+.dial text{font-family:var(--mono)}
+.onnow{margin-top:18px;border-top:1px solid #2e3a52;padding-top:14px}
+.onnow li{display:flex;gap:10px;align-items:baseline;padding:5px 0;font-size:.95rem}.onnow ul{list-style:none;margin:0;padding:0}
+.sw{display:inline-block;width:12px;height:12px;border-radius:3px;flex:none;transform:translateY(1px)}
+.latest{background:var(--night2);border:1px solid #2e3a52;border-radius:10px;padding:26px 28px;margin-top:28px}
+.latest h2{color:#fff;font-size:1.9rem;margin:6px 0 6px}.latest a{color:#fff}
+.wave{display:block;width:100%;height:64px;margin:16px 0 10px}
+audio{width:100%;margin:10px 0 4px;height:40px}
+.meta{display:flex;gap:16px;flex-wrap:wrap;font:500 .8rem var(--mono);color:#9aa3b5;letter-spacing:.02em}
+.dark .meta,.hero .meta{color:#9aa3b5}.meta.l{color:var(--muted)}
+.next{display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap;background:var(--lamp);color:var(--ink);padding:18px 0}
+.next .w{display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap;width:100%}
+.next b{font:500 1.35rem var(--serif)}.next .n{font:600 .8rem var(--mono);letter-spacing:.1em;text-transform:uppercase}
+/* cover */
+.cover{position:relative;aspect-ratio:3/4;border-radius:4px;padding:22px 22px 20px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;text-decoration:none;box-shadow:0 18px 40px -18px rgba(0,0,0,.45),0 2px 0 rgba(0,0,0,.08)}
+.cover .mast{font:500 2.6rem/0.9 var(--serif);letter-spacing:-.02em}.cover .no{font:600 .75rem var(--mono);letter-spacing:.12em;text-transform:uppercase;display:flex;justify-content:space-between;margin-top:8px}
+.cover .ct{font:500 1.65rem/1.1 var(--serif);font-style:italic}.cover svg{position:absolute;right:-30px;top:30%;width:72%;opacity:.95}
+.cover:hover{color:inherit;transform:translateY(-2px)}
+.covers{display:grid;grid-template-columns:repeat(4,1fr);gap:30px}.covers .cap{margin-top:14px}.covers .cap b{font:500 1.15rem var(--serif);display:block}
+.issuegrid{display:grid;grid-template-columns:340px 1fr;gap:56px;align-items:start}
+/* contents page */
+.toc{list-style:none;margin:0;padding:0;border-top:2px solid var(--ink)}
+.toc li{display:grid;grid-template-columns:56px 1fr auto;gap:16px;align-items:baseline;padding:16px 0;border-bottom:1px solid var(--line)}
+.toc .pg{font:500 1.6rem/1 var(--serif);color:var(--rose)}.toc h3{font-size:1.3rem;margin:4px 0 4px}.toc h3 a{text-decoration:none}
+.toc .sx{font:600 .7rem var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}.toc p{margin:0;color:#45443f;font-size:.96rem}
+.toc .rt{font:500 .8rem var(--mono);color:var(--muted);white-space:nowrap}
+/* running order */
+.ro{width:100%;border-collapse:collapse}.ro th{font:600 .7rem var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-align:left;padding:0 12px 10px;border-bottom:2px solid var(--ink)}
+.ro td{padding:16px 12px;border-bottom:1px solid var(--line);vertical-align:middle}.ro td.n{font:500 1.5rem var(--serif);color:var(--rose);width:64px}
+.ro td b{font:500 1.18rem var(--serif);display:block}.ro td b a{text-decoration:none}.ro td small{color:var(--muted)}
+.ro .ln{font:500 .82rem var(--mono);white-space:nowrap;color:var(--muted)}
+.dark .ro th{color:#9aa3b5;border-color:#e7e9ee}.dark .ro td{border-color:#2e3a52}.dark .ro td small,.dark .ro .ln{color:#9aa3b5}
+.sbar{position:relative;height:14px;background:#e1d9c8;border-radius:3px;min-width:180px;overflow:hidden}
+.sbar i{position:absolute;top:0;bottom:0;border-radius:2px}.sbar .nt{position:absolute;top:0;bottom:0;background:rgba(17,24,39,.12)}
+.sbar .nw{position:absolute;top:-3px;bottom:-3px;width:2px;background:var(--rose)}
+.sticks{display:flex;justify-content:space-between;font:500 .64rem var(--mono);color:var(--muted);margin-top:4px;min-width:180px}
+.dark .sbar{background:#263149}.dark .sbar .nt{background:rgba(0,0,0,.25)}.dark .sticks{color:#7d879b}
+/* letters */
+.mail{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.letter{background:#fffdf8;border:1px solid var(--line);border-radius:6px;padding:22px 22px 20px;position:relative;box-shadow:0 1px 0 rgba(0,0,0,.04)}
+.letter .stamp{position:absolute;right:16px;top:16px;font:600 .78rem var(--mono);color:var(--rose);border:1.5px solid var(--rose);border-radius:4px;padding:5px 7px;transform:rotate(3deg)}
+.letter h3{font-size:1.2rem;margin:0 60px 8px 0}.letter p{margin:0 0 10px;font:400 1.04rem/1.5 var(--serif)}.letter .from{font:500 .8rem var(--mono);color:var(--muted)}
+.letter .reply{border-top:1px dashed var(--line);margin-top:12px;padding-top:10px;font-size:.93rem;color:#45443f}
+.dark .letter .from{color:#9aa3b5}.dark .letter{background:var(--night2);border-color:#2e3a52;color:#e7e9ee}.dark .letter .reply{color:#c4cad6;border-color:#3a4763}
+/* episode page */
+.epg{display:grid;grid-template-columns:1fr 340px;gap:56px;align-items:start}
+.player{background:var(--night);color:#e7e9ee;border-radius:10px;padding:24px 26px 20px}
+.chap{list-style:none;margin:0;padding:0}.chap li{display:grid;grid-template-columns:70px 1fr;gap:14px;padding:11px 0;border-bottom:1px solid var(--line)}
+.chap .t{font:500 .86rem var(--mono);color:var(--rose)}
+.pull{font:400 1.6rem/1.35 var(--serif);font-style:italic;margin:30px 0;padding:0 0 0 22px;border-left:4px solid var(--lamp)}
+.prose{font:400 1.13rem/1.7 var(--serif);max-width:720px}.prose p{margin:0 0 1em}.prose b{font-family:var(--sans);font-size:.92rem;font-weight:600}
+.side{position:sticky;top:20px}
+.card{background:#fffdf8;border:1px solid var(--line);border-radius:8px;padding:22px 24px}
+.facts{list-style:none;margin:0;padding:0}.facts li{display:flex;justify-content:space-between;gap:14px;padding:9px 0;border-bottom:1px solid var(--line);font-size:.95rem}.facts li span:first-child{color:var(--muted);font:500 .78rem var(--mono);text-transform:uppercase;letter-spacing:.06em;padding-top:3px}
+.facts li:last-child{border:0}
+.lockp{border:2px dashed var(--ink);border-radius:10px;padding:34px 36px;background:#fffdf8;max-width:820px}
+.lockp h2{font-size:1.8rem}
+.lockrow{display:flex;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line);color:var(--muted)}
+/* hour index */
+.hours{display:grid;grid-template-columns:repeat(24,1fr);gap:4px;margin:8px 0 0}
+.hours a{display:block;text-align:center;padding:10px 0 8px;font:600 .74rem var(--mono);text-decoration:none;border-radius:4px;background:var(--paper2);color:var(--ink)}
+.hours a.nt{background:#d9d2c2}.hours a.on{background:var(--ink);color:var(--lamp)}.hours a.now{outline:2px solid var(--rose);outline-offset:1px}
+.hg2{display:grid;grid-template-columns:420px 1fr;gap:50px;align-items:start}
+.hit{display:block;padding:16px 0;border-bottom:1px solid var(--line);text-decoration:none}.hit b{font:500 1.2rem var(--serif)}.hit p{margin:4px 0 0;color:#45443f}
+.grp{font:600 .74rem var(--mono);letter-spacing:.12em;text-transform:uppercase;margin:34px 0 4px;padding-bottom:8px;border-bottom:2px solid var(--ink)}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 26px}.filters a{font:600 .78rem var(--mono);text-decoration:none;border:1px solid var(--ink);padding:7px 12px;border-radius:999px}.filters a.on{background:var(--ink);color:var(--lamp)}
+/* people */
+.ppl{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.ini{display:inline-grid;place-items:center;width:58px;height:58px;border-radius:50%;background:var(--night);color:var(--lamp);font:500 1.3rem var(--serif);flex:none}
+.person{display:flex;gap:16px;align-items:flex-start}.person b{font:500 1.25rem var(--serif);display:block}
+/* desk */
+.board{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+.col{background:var(--paper2);border-radius:8px;padding:12px;min-height:220px}.col h4{font:600 .72rem var(--mono);letter-spacing:.1em;text-transform:uppercase;margin:0 0 10px;display:flex;justify-content:space-between}
+.tk{background:#fffdf8;border:1px solid var(--line);border-radius:6px;padding:11px 12px;margin-bottom:10px;font-size:.9rem;display:block;text-decoration:none}
+.tk b{display:block;font-weight:600;margin-bottom:4px;line-height:1.3}.tk small{font:500 .72rem var(--mono);color:var(--muted)}.tk.late small.d{color:var(--rose);font-weight:600}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-bottom:30px}.stat{border-top:2px solid var(--ink);padding-top:12px}.stat b{font:500 2.4rem/1 var(--serif);display:block}.stat span{font:500 .78rem var(--mono);color:var(--muted)}
+.dark .stat{border-color:var(--lamp)}.dark .stat span{color:#9aa3b5}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:48px}.three{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.searchbar{display:flex;gap:10px;max-width:640px;margin-top:20px}.searchbar input{flex:1}
+input[type=email],input[type=password],input[type=search],input[name=q]{width:100%;font:400 1rem var(--sans);padding:12px 14px;border:1px solid var(--ink);border-radius:6px;background:#fff}
+label{display:block;font:600 .78rem var(--mono);letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px}
+.notice{background:#fbe3dc;border:1px solid var(--rose);padding:12px 14px;border-radius:6px;margin-bottom:16px}
+.foot{background:var(--ink);color:#c6cad3;padding:56px 0 28px;margin-top:0}.foot a{color:#fff;text-decoration:none}.foot a:hover{color:var(--lamp)}
+.foot .fg{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:36px}.foot h4{font:600 .72rem var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--lamp);margin:0 0 12px}
+.foot ul{list-style:none;margin:0;padding:0}.foot li{padding:4px 0}.foot .brand{color:#fff}.foot .brand small{color:#9aa3b5}
+.disc{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;border-top:1px solid #2e3443;margin-top:40px;padding-top:20px;font:500 .74rem var(--mono);color:#8b92a1}
+@media (max-width:1000px){.hero .hg,.issuegrid,.epg,.hg2,.two{grid-template-columns:1fr;gap:34px}.covers{grid-template-columns:repeat(2,1fr)}.mail,.ppl,.three{grid-template-columns:1fr 1fr}.board{grid-template-columns:repeat(3,1fr)}.foot .fg{grid-template-columns:1fr 1fr}.side{position:static}.stats{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){body{font-size:16px}.w{padding:0 18px}.top .w{flex-wrap:wrap;gap:12px}.top nav{margin-left:0;width:100%;overflow-x:auto}.top nav ul{flex-wrap:nowrap}.top nav a{white-space:nowrap;padding:7px 9px}.sl{display:none}
+.mail,.ppl,.three,.covers{grid-template-columns:1fr}.board{grid-template-columns:1fr 1fr}.hours{grid-template-columns:repeat(8,1fr)}.ro td.sb,.ro th.sb{display:none}.toc li{grid-template-columns:44px 1fr}.toc .rt{grid-column:2}
+.strip .w{font-size:.7rem}.strip .f{display:none}.foot .fg{grid-template-columns:1fr}.latest{padding:20px}.hero{padding:34px 0 44px}.covers .cover{max-width:320px}}
+.foot .brand svg circle:first-of-type{fill:#2b3142}
+@media (max-width:640px){.strip .w{gap:6px;padding-top:8px;padding-bottom:8px}.strip a{margin-left:12px}}
+.hero .btn.line{color:#fff;border-color:#8e97ab}.hero .btn.line:hover{background:#fff;color:var(--ink)}
+</style></head><body>{%- assign todayn = "now" | date: "%Y%m%d" | plus: 0 -%}{%- assign todays = "now" | date: "%Y-%m-%d" -%}{%- assign nows = todays | date: "%s" | plus: 0 -%}{%- assign nowh = "now" | date: "%H" | plus: 0 -%}{%- assign nowm = "now" | date: "%M" | plus: 0 -%}{%- assign nowq = nowm | divided_by: 15 | plus: 0 -%}{%- assign nowi = nowh | times: 4 | plus: nowq -%}{%- assign tclock = "now" | date: "%-I:%M %p" | downcase -%}{%- assign tdate = "now" | date: "%A, %B %-d" -%}{%- assign in_mb=false -%}{%- assign in_ed=false -%}{%- for g in CurrentUser.UserGroups -%}{%- if g == "members" -%}{%- assign in_mb=true -%}{%- endif -%}{%- if g == "editors" -%}{%- assign in_ed=true -%}{%- assign in_mb=true -%}{%- endif -%}{%- endfor -%}{%- if CurrentUser.IsAdmin -%}{%- assign in_mb=true -%}{%- assign in_ed=true -%}{%- endif -%}{%- assign PALS = "#f2b84b,#8fb8de,#e7826a,#9fd1b0,#c9a7e8,#f0d98a,#7fc6c4,#e8a0bf,#b7c46a,#d9b38c" | split: "," -%}{%- assign oncount = 0 -%}{%- assign onnames = "" -%}{%- assign dl0 = get_content_items(ContentType="episodes", OrderBy="release asc", PageSize=60) -%}{%- assign k = -1 -%}{% for dep in dl0.Items %}{%- assign dy = dep.PublishedContent -%}{%- capture dkd -%}{{ dy.kind }}{%- endcapture -%}{%- capture dau -%}{{ dy.audience }}{%- endcapture -%}{%- capture _ndse -%}{{ dy.season }}{%- endcapture -%}{%- assign dse = _ndse | plus: 0 -%}{%- capture drn_d -%}{{ dy.release }}{%- endcapture -%}{%- assign drn = drn_d | remove: "-" | plus: 0 -%}{% if dkd == "episode" and dau == "public" and dse == 2 and drn <= todayn %}{%- assign k = k | plus: 1 -%}{%- assign col = PALS[k] -%}{%- capture _nds -%}{{ dy.shift_start }}{%- endcapture -%}{%- assign ds = _nds | plus: 0 -%}{%- capture _nde -%}{{ dy.shift_end }}{%- endcapture -%}{%- assign de = _nde | plus: 0 -%}{%- capture _ndn -%}{{ dy.number }}{%- endcapture -%}{%- assign dn = _ndn | plus: 0 -%}{%- assign on=false -%}{%- if ds < de -%}{%- if nowh >= ds and nowh < de -%}{%- assign on=true -%}{%- endif -%}{%- elsif ds > de -%}{%- if nowh >= ds or nowh < de -%}{%- assign on=true -%}{%- endif -%}{%- endif -%}{% if on %}{%- assign oncount = oncount | plus: 1 -%}{% endif %}{% endif %}{% endfor %}
+<a class="skip" href="#main">Skip to content</a>
+<div class="strip"><div class="w"><span><span class="dotl"></span><b>{{ tclock }}</b> in Corran · {% if oncount == 1 %}1 guest on shift now{% elsif oncount > 1 %}{{ oncount }} guests on shift now{% else %}no guests on shift now{% endif %} · <a href="{{ PathBase }}/hours" style="margin-left:0">see the hour</a>{% unless CurrentUser.IsAuthenticated %}<span class="f" style="margin-left:18px;color:#8b92a1">FICTIONAL · RAYTHA EXAMPLE</span>{% endunless %}</span>
+<span>{% if CurrentUser.IsAuthenticated %}<a href="{{ PathBase }}/members">Back room</a>{% if in_ed %}<a href="{{ PathBase }}/desk">Editors desk</a>{% endif %}<a href="{{ PathBase }}/account/logout">Sign out {{ CurrentUser.FirstName }}</a>{% else %}<a href="{{ PathBase }}/account/login?returnUrl=/members">Member sign-in</a>{% endif %}</span></div></div>
+<header class="top"><div class="w"><a class="brand" href="{{ PathBase }}/" aria-label="Halflight, home"><svg width="42" height="42" viewBox="0 0 42 42" aria-hidden="true"><circle cx="21" cy="21" r="19" fill="#15171f"/><path d="M21 2 A19 19 0 0 1 21 40 Z" fill="#f2b84b"/><circle cx="21" cy="21" r="19" fill="none" stroke="#15171f" stroke-width="2"/><line x1="21" y1="21" x2="21" y2="8" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/><line x1="21" y1="21" x2="30" y2="26" stroke="#15171f" stroke-width="2.4" stroke-linecap="round"/><circle cx="21" cy="21" r="2.4" fill="#fff"/></svg><span><b>Halflight</b><small>The night shift · podcast + quarterly</small></span></a>
+<nav aria-label="Main"><ul>{%- assign menu = get_main_menu() -%}{% for mi in menu.MenuItems %}<li><a href="{{ mi.Url }}">{{ mi.Label }}</a></li>{% endfor %}</ul></nav>
+<a class="sl" href="{{ PathBase }}/search">Search</a></div></header>
+<main id="main">{% renderbody %}</main>
+<footer class="foot"><div class="w"><div class="fg"><div><div class="brand"><svg width="42" height="42" viewBox="0 0 42 42" aria-hidden="true"><circle cx="21" cy="21" r="19" fill="#15171f"/><path d="M21 2 A19 19 0 0 1 21 40 Z" fill="#f2b84b"/><circle cx="21" cy="21" r="19" fill="none" stroke="#15171f" stroke-width="2"/><line x1="21" y1="21" x2="21" y2="8" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/><line x1="21" y1="21" x2="30" y2="26" stroke="#15171f" stroke-width="2.4" stroke-linecap="round"/><circle cx="21" cy="21" r="2.4" fill="#fff"/></svg><span><b>Halflight</b><small>The night shift · podcast + quarterly</small></span></div><p style="margin-top:16px;max-width:430px">A podcast every Thursday and a print quarterly every season, about the people who work while the city sleeps. Studio: 4 Lantern Yard, Corran (fictional). letters@halflight.example</p></div>
+<div><h4>Listen</h4><ul><li><a href="{{ PathBase }}/listen">All episodes</a></li><li><a href="{{ PathBase }}/hours">The hour index</a></li><li><a href="{{ PathBase }}/mail">Night mail</a></li></ul></div>
+<div><h4>Read</h4><ul><li><a href="{{ PathBase }}/issues">The magazine</a></li><li><a href="{{ PathBase }}/read">All stories</a></li><li><a href="{{ PathBase }}/people">People</a></li><li><a href="{{ PathBase }}/about">About</a></li></ul></div>
+<div><h4>Members</h4><ul>{%- assign fm = get_menu("footer") -%}{% for mi in fm.MenuItems %}<li><a href="{{ mi.Url }}">{{ mi.Label }}</a></li>{% endfor %}</ul></div></div>
+<div class="disc"><span>© 2026 Halflight (fictional) · a Raytha example site · no ads, no sign-up or payment forms</span><span>Server-rendered with Raytha · works without JavaScript</span></div></div></footer></body></html>

@@ -1,0 +1,34 @@
+{
+ "developerName": "mainmenu",
+ "label": "Main",
+ "items": [
+  {
+   "label": "Listen",
+   "link": "/listen"
+  },
+  {
+   "label": "The magazine",
+   "link": "/issues"
+  },
+  {
+   "label": "Stories",
+   "link": "/read"
+  },
+  {
+   "label": "The hour index",
+   "link": "/hours"
+  },
+  {
+   "label": "Night mail",
+   "link": "/mail"
+  },
+  {
+   "label": "People",
+   "link": "/people"
+  },
+  {
+   "label": "About",
+   "link": "/about"
+  }
+ ]
+}

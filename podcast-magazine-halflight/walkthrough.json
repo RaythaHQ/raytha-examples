@@ -1,0 +1,26 @@
+{
+ "slug": "halflight-magazine",
+ "name": "Halflight",
+ "base": "http://localhost:5425",
+ "viewport": [1440, 810],
+ "output": [1920, 1080],
+ "colorScheme": "light",
+ "login": {"path": "/account/login", "emailEnv": "SITE_USER_EMAIL", "passwordEnv": "SITE_USER_PASSWORD"},
+ "title": {"kicker": "Raytha use case", "heading": "Halflight", "subheading": "A podcast and magazine website: episodes with chapters and audio, print issues with a contents page, a 24-hour shift clock drawn on the server, and a members-only back room.", "hold": 1.3},
+ "end": {"heading": "Built with Raytha", "subheading": "Open-source .NET CMS. Get the brief, screenshots and a one-command rebuild kit.", "url": "raytha.com/use-cases/halflight-magazine", "hold": 2.3},
+ "scenes": [
+  {"url": "/", "caption": "The latest episode, and every guest's shift on a 24-hour clock with the current time, drawn on the server",
+   "actions": [{"hold": 1.8, "poster": true}, {"scroll": 760, "dur": 1.3}, {"hold": 1.0}, {"scroll": 1500, "dur": 1.2}, {"hold": 0.8}]},
+  {"url": "/listen/the-bridge-goes-up-at-midnight", "caption": "An episode: audio, chapters, show notes, the shift, and letters about it",
+   "actions": [{"hold": 1.2}, {"scroll": 420, "dur": 1.1}, {"hold": 0.8}]},
+  {"url": "/issues/the-early-shift", "caption": "A print issue: the cover, the editor's letter and a contents page built from its stories",
+   "actions": [{"hold": 1.2}, {"scroll": 360, "dur": 1.0}, {"hold": 0.6}]},
+  {"url": "/hours?h=3", "caption": "The hour index: pick 3 am and the server lists who is at work, and what was written then",
+   "actions": [{"hold": 1.3}, {"scroll": 300, "dur": 1.0}, {"hold": 0.6}]},
+  {"url": "/members", "caption": "Signed out, the back room shows titles only; the rest stays on the server", "actions": [{"hold": 1.0}]},
+  {"url": "/members", "signin": true, "caption": "Signed in as a member: bonus episodes, the archive and the next issue early",
+   "actions": [{"hold": 1.1}, {"scroll": 500, "dur": 1.2}, {"hold": 0.8}]},
+  {"url": "/", "phone": true, "phoneCaption": {"kicker": "Responsive", "text": "The same pages on a phone"},
+   "actions": [{"hold": 0.5}, {"scroll": 1200, "dur": 2.0}, {"hold": 0.4}]}
+ ]
+}

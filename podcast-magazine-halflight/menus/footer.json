@@ -1,0 +1,22 @@
+{
+ "developerName": "footer",
+ "label": "Footer",
+ "items": [
+  {
+   "label": "Members back room",
+   "link": "/members"
+  },
+  {
+   "label": "Season two",
+   "link": "/listen?season=2"
+  },
+  {
+   "label": "Editors desk",
+   "link": "/desk"
+  },
+  {
+   "label": "Search",
+   "link": "/search"
+  }
+ ]
+}

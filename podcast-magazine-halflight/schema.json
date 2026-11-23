@@ -1,0 +1,1088 @@
+{
+ "schemaVersion": 1,
+ "contentTypes": [
+  {
+   "developerName": "episodes",
+   "labelPlural": "Episodes",
+   "labelSingular": "Episode",
+   "description": "Podcast episodes: one night worker per episode, with the hours of their shift, chapters, show notes, a transcript and a members-only bonus feed",
+   "defaultRouteTemplate": "listen/{PrimaryField}",
+   "primaryField": "title",
+   "fields": [
+    {
+     "developerName": "title",
+     "label": "Title",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": true,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "number",
+     "label": "Episode number",
+     "description": "",
+     "fieldType": "number",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "season",
+     "label": "Season",
+     "description": "",
+     "fieldType": "number",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "kind",
+     "label": "Kind",
+     "description": "",
+     "fieldType": "dropdown",
+     "isRequired": false,
+     "choices": [
+      {
+       "developerName": "episode",
+       "label": "Episode",
+       "disabled": false
+      },
+      {
+       "developerName": "bonus",
+       "label": "Members bonus",
+       "disabled": false
+      },
+      {
+       "developerName": "trailer",
+       "label": "Trailer",
+       "disabled": false
+      }
+     ],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "audience",
+     "label": "Audience",
+     "description": "",
+     "fieldType": "dropdown",
+     "isRequired": false,
+     "choices": [
+      {
+       "developerName": "public",
+       "label": "Everyone",
+       "disabled": false
+      },
+      {
+       "developerName": "members",
+       "label": "Members",
+       "disabled": false
+      },
+      {
+       "developerName": "editors",
+       "label": "Editors",
+       "disabled": false
+      }
+     ],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "guest",
+     "label": "Guest",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "job",
+     "label": "Job",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "place",
+     "label": "Place",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "shift_start",
+     "label": "Shift starts (hour, 0-23)",
+     "description": "",
+     "fieldType": "number",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "shift_end",
+     "label": "Shift ends (hour, 0-23)",
+     "description": "",
+     "fieldType": "number",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "duration",
+     "label": "Length (minutes)",
+     "description": "",
+     "fieldType": "number",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "release",
+     "label": "Release date (YYYY-MM-DD)",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "issue",
+     "label": "Magazine issue number",
+     "description": "",
+     "fieldType": "number",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "host",
+     "label": "Host",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "chapters",
+     "label": "Chapters (mm:ss Title, separate with |)",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "pull",
+     "label": "Pull quote",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "wave",
+     "label": "Waveform (bar heights 1-9, separate with ,)",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "audio_url",
+     "label": "Audio file URL",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "summary",
+     "label": "Summary",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "notes",
+     "label": "Show notes",
+     "description": "",
+     "fieldType": "wysiwyg",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "transcript",
+     "label": "Transcript excerpt",
+     "description": "",
+     "fieldType": "wysiwyg",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "sort_order",
+     "label": "Sort order",
+     "description": "",
+     "fieldType": "number",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    }
+   ],
+   "views": [
+    {
+     "developerName": "episodes",
+     "label": "Episodes",
+     "description": "",
+     "isPublished": true,
+     "routePath": "listen",
+     "template": "hl_list_episodes",
+     "columns": [
+      "PrimaryField"
+     ],
+     "sort": [
+      {
+       "developerName": "release",
+       "direction": "desc"
+      }
+     ],
+     "filter": [],
+     "defaultNumberOfItemsPerPage": 100,
+     "maxNumberOfItemsPerPage": 1000,
+     "ignoreClientFilterAndSortQueryParams": false
+    }
+   ]
+  },
+  {
+   "developerName": "issues",
+   "labelPlural": "Issues",
+   "labelSingular": "Issue",
+   "description": "Quarterly print issues of the magazine, each with a cover, an editor's letter and a contents page built from the stories in it",
+   "defaultRouteTemplate": "issues/{PrimaryField}",
+   "primaryField": "title",
+   "fields": [
+    {
+     "developerName": "title",
+     "label": "Title",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": true,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "number",
+     "label": "Issue number",
+     "description": "",
+     "fieldType": "number",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "season_label",
+     "label": "Season",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "release",
+     "label": "On sale (YYYY-MM-DD)",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "cover_bg",
+     "label": "Cover color",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "cover_ink",
+     "label": "Cover ink color",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "cover_hour",
+     "label": "Cover clock hour (0-23)",
+     "description": "",
+     "fieldType": "number",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "pages",
+     "label": "Page count",
+     "description": "",
+     "fieldType": "number",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "price_note",
+     "label": "Where to find it",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "summary",
+     "label": "Summary",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "letter",
+     "label": "Editor's letter",
+     "description": "",
+     "fieldType": "wysiwyg",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "sort_order",
+     "label": "Sort order",
+     "description": "",
+     "fieldType": "number",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    }
+   ],
+   "views": [
+    {
+     "developerName": "issues",
+     "label": "Issues",
+     "description": "",
+     "isPublished": true,
+     "routePath": "issues",
+     "template": "hl_list_issues",
+     "columns": [
+      "PrimaryField"
+     ],
+     "sort": [
+      {
+       "developerName": "number",
+       "direction": "desc"
+      }
+     ],
+     "filter": [],
+     "defaultNumberOfItemsPerPage": 100,
+     "maxNumberOfItemsPerPage": 1000,
+     "ignoreClientFilterAndSortQueryParams": false
+    }
+   ]
+  },
+  {
+   "developerName": "stories",
+   "labelPlural": "Stories",
+   "labelSingular": "Story",
+   "description": "Magazine stories, filed under an issue and a section, with a page number, reading time and the hour of the night they happen. Some are for members only",
+   "defaultRouteTemplate": "read/{PrimaryField}",
+   "primaryField": "title",
+   "fields": [
+    {
+     "developerName": "title",
+     "label": "Title",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": true,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "issue",
+     "label": "Issue number",
+     "description": "",
+     "fieldType": "number",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "section",
+     "label": "Section",
+     "description": "",
+     "fieldType": "dropdown",
+     "isRequired": false,
+     "choices": [
+      {
+       "developerName": "feature",
+       "label": "Feature",
+       "disabled": false
+      },
+      {
+       "developerName": "fieldnotes",
+       "label": "Field notes",
+       "disabled": false
+      },
+      {
+       "developerName": "photo",
+       "label": "Photo essay",
+       "disabled": false
+      },
+      {
+       "developerName": "interview",
+       "label": "Interview",
+       "disabled": false
+      },
+      {
+       "developerName": "essay",
+       "label": "Essay",
+       "disabled": false
+      }
+     ],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "audience",
+     "label": "Audience",
+     "description": "",
+     "fieldType": "dropdown",
+     "isRequired": false,
+     "choices": [
+      {
+       "developerName": "public",
+       "label": "Everyone",
+       "disabled": false
+      },
+      {
+       "developerName": "members",
+       "label": "Members",
+       "disabled": false
+      },
+      {
+       "developerName": "editors",
+       "label": "Editors",
+       "disabled": false
+      }
+     ],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "author",
+     "label": "Author",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "page",
+     "label": "Page",
+     "description": "",
+     "fieldType": "number",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "read_min",
+     "label": "Reading time (minutes)",
+     "description": "",
+     "fieldType": "number",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "hour",
+     "label": "Set at hour (0-23)",
+     "description": "",
+     "fieldType": "number",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "standfirst",
+     "label": "Standfirst",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "pull",
+     "label": "Pull quote",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "summary",
+     "label": "Summary",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "body",
+     "label": "Body",
+     "description": "",
+     "fieldType": "wysiwyg",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "sort_order",
+     "label": "Sort order",
+     "description": "",
+     "fieldType": "number",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    }
+   ],
+   "views": [
+    {
+     "developerName": "stories",
+     "label": "Stories",
+     "description": "",
+     "isPublished": true,
+     "routePath": "read",
+     "template": "hl_list_stories",
+     "columns": [
+      "PrimaryField"
+     ],
+     "sort": [
+      {
+       "developerName": "issue",
+       "direction": "desc"
+      },
+      {
+       "developerName": "page",
+       "direction": "asc"
+      }
+     ],
+     "filter": [],
+     "defaultNumberOfItemsPerPage": 100,
+     "maxNumberOfItemsPerPage": 1000,
+     "ignoreClientFilterAndSortQueryParams": false
+    }
+   ]
+  },
+  {
+   "developerName": "contributors",
+   "labelPlural": "Contributors",
+   "labelSingular": "Contributor",
+   "description": "Writers, hosts, photographers and producers, each with a beat and the work they filed",
+   "defaultRouteTemplate": "people/{PrimaryField}",
+   "primaryField": "name",
+   "fields": [
+    {
+     "developerName": "name",
+     "label": "Name",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": true,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "role",
+     "label": "Role",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "beat",
+     "label": "Beat",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "initials",
+     "label": "Initials",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "city",
+     "label": "Based in",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "bio",
+     "label": "Bio",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "summary",
+     "label": "Summary",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "sort_order",
+     "label": "Sort order",
+     "description": "",
+     "fieldType": "number",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    }
+   ],
+   "views": [
+    {
+     "developerName": "contributors",
+     "label": "Contributors",
+     "description": "",
+     "isPublished": true,
+     "routePath": "people",
+     "template": "hl_list_contributors",
+     "columns": [
+      "PrimaryField"
+     ],
+     "sort": [
+      {
+       "developerName": "sort_order",
+       "direction": "asc"
+      }
+     ],
+     "filter": [],
+     "defaultNumberOfItemsPerPage": 100,
+     "maxNumberOfItemsPerPage": 1000,
+     "ignoreClientFilterAndSortQueryParams": false
+    }
+   ]
+  },
+  {
+   "developerName": "letters",
+   "labelPlural": "Night mail",
+   "labelSingular": "Letter",
+   "description": "Letters from listeners and readers, filed by the hour they were written, with a reply from the editors",
+   "defaultRouteTemplate": "mail/{PrimaryField}",
+   "primaryField": "title",
+   "fields": [
+    {
+     "developerName": "title",
+     "label": "Subject",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": true,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "from_name",
+     "label": "From",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "job",
+     "label": "Their job",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "place",
+     "label": "Place",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "hour",
+     "label": "Written at hour (0-23)",
+     "description": "",
+     "fieldType": "number",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "minute",
+     "label": "Minute",
+     "description": "",
+     "fieldType": "number",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "episode",
+     "label": "About episode number",
+     "description": "",
+     "fieldType": "number",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "body",
+     "label": "Letter",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "reply",
+     "label": "Reply",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "summary",
+     "label": "Summary",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "sort_order",
+     "label": "Sort order",
+     "description": "",
+     "fieldType": "number",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    }
+   ],
+   "views": [
+    {
+     "developerName": "letters",
+     "label": "Night mail",
+     "description": "",
+     "isPublished": true,
+     "routePath": "mail",
+     "template": "hl_list_letters",
+     "columns": [
+      "PrimaryField"
+     ],
+     "sort": [
+      {
+       "developerName": "sort_order",
+       "direction": "asc"
+      }
+     ],
+     "filter": [],
+     "defaultNumberOfItemsPerPage": 100,
+     "maxNumberOfItemsPerPage": 1000,
+     "ignoreClientFilterAndSortQueryParams": false
+    }
+   ]
+  },
+  {
+   "developerName": "rundown",
+   "labelPlural": "Rundown",
+   "labelSingular": "Rundown item",
+   "description": "The production rundown: every episode from booking to release, with a stage, an owner and a due date. Visible only to signed-in editors",
+   "defaultRouteTemplate": "rundown/{PrimaryField}",
+   "primaryField": "title",
+   "fields": [
+    {
+     "developerName": "title",
+     "label": "Title",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": true,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "episode",
+     "label": "Episode number",
+     "description": "",
+     "fieldType": "number",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "stage",
+     "label": "Stage",
+     "description": "",
+     "fieldType": "dropdown",
+     "isRequired": false,
+     "choices": [
+      {
+       "developerName": "booked",
+       "label": "Booked",
+       "disabled": false
+      },
+      {
+       "developerName": "recorded",
+       "label": "Recorded",
+       "disabled": false
+      },
+      {
+       "developerName": "edit",
+       "label": "In the edit",
+       "disabled": false
+      },
+      {
+       "developerName": "mix",
+       "label": "Mix and master",
+       "disabled": false
+      },
+      {
+       "developerName": "scheduled",
+       "label": "Scheduled",
+       "disabled": false
+      },
+      {
+       "developerName": "live",
+       "label": "Live",
+       "disabled": false
+      }
+     ],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "audience",
+     "label": "Audience",
+     "description": "",
+     "fieldType": "dropdown",
+     "isRequired": false,
+     "choices": [
+      {
+       "developerName": "public",
+       "label": "Everyone",
+       "disabled": false
+      },
+      {
+       "developerName": "members",
+       "label": "Members",
+       "disabled": false
+      },
+      {
+       "developerName": "editors",
+       "label": "Editors",
+       "disabled": false
+      }
+     ],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "owner",
+     "label": "Owner",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "due",
+     "label": "Due (YYYY-MM-DD)",
+     "description": "",
+     "fieldType": "single_line_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "minutes",
+     "label": "Runtime so far (minutes)",
+     "description": "",
+     "fieldType": "number",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "note",
+     "label": "Note",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "summary",
+     "label": "Summary",
+     "description": "",
+     "fieldType": "long_text",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    },
+    {
+     "developerName": "sort_order",
+     "label": "Sort order",
+     "description": "",
+     "fieldType": "number",
+     "isRequired": false,
+     "choices": [],
+     "relatedContentType": null,
+     "subFields": []
+    }
+   ],
+   "views": [
+    {
+     "developerName": "rundown",
+     "label": "Rundown",
+     "description": "",
+     "isPublished": true,
+     "routePath": "rundown",
+     "template": "hl_list_rundown",
+     "columns": [
+      "PrimaryField"
+     ],
+     "sort": [
+      {
+       "developerName": "due",
+       "direction": "asc"
+      }
+     ],
+     "filter": [],
+     "defaultNumberOfItemsPerPage": 100,
+     "maxNumberOfItemsPerPage": 1000,
+     "ignoreClientFilterAndSortQueryParams": false
+    }
+   ]
+  }
+ ]
+}
