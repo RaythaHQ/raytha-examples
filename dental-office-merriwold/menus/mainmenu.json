@@ -1,0 +1,34 @@
+{
+ "developerName": "mainmenu",
+ "label": "Main",
+ "items": [
+  {
+   "label": "Tooth map",
+   "link": "/chart"
+  },
+  {
+   "label": "Treatments",
+   "link": "/treatments"
+  },
+  {
+   "label": "Your first visit",
+   "link": "/visit"
+  },
+  {
+   "label": "Answers",
+   "link": "/answers"
+  },
+  {
+   "label": "The team",
+   "link": "/team"
+  },
+  {
+   "label": "Chairside notes",
+   "link": "/notes"
+  },
+  {
+   "label": "Library",
+   "link": "/library"
+  }
+ ]
+}

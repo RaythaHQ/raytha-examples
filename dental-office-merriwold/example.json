@@ -1,0 +1,30 @@
+{
+ "name": "Merriwold Dental",
+ "theme": "merriwold",
+ "types": [
+  "treatments",
+  "clinicians",
+  "guides",
+  "questions",
+  "notes",
+  "huddle"
+ ],
+ "detailTemplates": {
+  "treatments": "md_detail_treatments",
+  "clinicians": "md_detail_clinicians",
+  "guides": "md_detail_guides",
+  "questions": "md_detail_questions",
+  "notes": "md_detail_notes",
+  "huddle": "md_detail_huddle"
+ },
+ "groups": [
+  {
+   "developerName": "patients",
+   "label": "Merriwold patients"
+  },
+  {
+   "developerName": "team",
+   "label": "Merriwold team"
+  }
+ ]
+}

@@ -1,0 +1,18 @@
+{
+ "developerName": "footer",
+ "label": "Footer",
+ "items": [
+  {
+   "label": "Patient room",
+   "link": "/patients"
+  },
+  {
+   "label": "Team huddle",
+   "link": "/desk"
+  },
+  {
+   "label": "Search",
+   "link": "/search"
+  }
+ ]
+}

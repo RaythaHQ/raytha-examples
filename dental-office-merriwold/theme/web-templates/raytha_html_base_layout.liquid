@@ -1,0 +1,142 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{% if Target.PrimaryField %}{{ Target.PrimaryField }} | {% elsif Target.Label %}{{ Target.Label }} | {% elsif Target.Title and Target.Title != "Merriwold Dental" %}{{ Target.Title }} | {% endif %}Merriwold Dental, family dentist in Tansey Ford</title>
+{%- capture mau -%}{{ Target.PublishedContent.audience }}{%- endcapture -%}<meta name="description" content="{% if mau == "patients" or mau == "team" %}Page for signed-in patients of Merriwold Dental (fictional). Sign in to read.{% elsif Target.PublishedContent.summary %}{{ Target.PublishedContent.summary | strip_html | escape }}{% else %}Merriwold Dental (fictional) is a family dental practice in Tansey Ford: a tooth-by-tooth map of what we treat, fifteen treatments with visits, chair time and how they feel, aftercare guides with a recovery timeline, plain answers, and a patient room with forms and aftercare. Built on Raytha, a self-hosted, open-source .NET CMS for dental practice websites.{% endif %}">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&family=Figtree:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet"><style>:root{--bg:#f6f3ec;--paper:#fffdf8;--ink:#12302f;--ink2:#3d5654;--muted:#6b7c7a;--line:#e3ddd0;--teal:#0f5e5a;--teal2:#16807a;--mint:#cfeadf;--mint2:#e8f5ef;--coral:#e8664a;--coral2:#fde3da;--sky:#dcecf2;--gum:#f3c9c0;--enamel:#ffffff;--gold:#c99a3b;--r:18px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.6 Figtree,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--teal)}a:hover{color:var(--coral)}
+h1,h2,h3,h4{font-family:"Source Serif 4",Georgia,serif;font-weight:600;line-height:1.12;letter-spacing:-.01em;margin:0 0 .5em;color:var(--ink)}
+h1{font-size:clamp(2.2rem,4.2vw,3.5rem)}h2{font-size:clamp(1.55rem,2.4vw,2.1rem)}h3{font-size:1.22rem}
+p{margin:0 0 1em}.muted{color:var(--muted)}.mono{font-family:"IBM Plex Mono",monospace}
+.skip{position:absolute;left:-999px}.skip:focus{left:12px;top:12px;background:#fff;padding:8px 12px;z-index:9}
+.shell{display:grid;grid-template-columns:292px 1fr;min-height:100vh;background:linear-gradient(90deg,var(--ink) 292px,transparent 292px)}
+.rail{position:sticky;top:0;height:100vh;overflow:auto;background:var(--ink);color:#d9e6e3;padding:30px 26px 24px;display:flex;flex-direction:column;gap:22px}
+.rail a{color:#d9e6e3;text-decoration:none}.rail a:hover{color:#fff}
+.brand{display:flex;gap:12px;align-items:center;text-decoration:none}.brand b{display:block;font-family:"Source Serif 4",serif;font-size:1.42rem;color:#fff;line-height:1.05;font-weight:600}.brand small{display:block;font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:#9fc2bc;margin-top:4px}
+.rail nav ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:2px}
+.rail nav a{display:flex;justify-content:space-between;align-items:center;padding:9px 12px;border-radius:10px;font-weight:500;font-size:.98rem}
+.rail nav a:hover{background:rgba(255,255,255,.07)}.rail nav a::after{content:"→";opacity:.0;transition:.2s}.rail nav a:hover::after{opacity:.7}
+.callcard{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:14px 16px;font-size:.9rem}
+.callcard b{color:#fff;font-size:1.15rem;display:block;font-family:"IBM Plex Mono",monospace;font-weight:500}
+.openchip{display:inline-flex;align-items:center;gap:7px;font-size:.78rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;margin-bottom:6px}.openchip i{width:8px;height:8px;border-radius:50%;background:#7fe0b4;box-shadow:0 0 0 4px rgba(127,224,180,.18)}.openchip.closed i{background:#e8a28f;box-shadow:0 0 0 4px rgba(232,162,143,.18)}
+.acct{margin-top:auto;font-size:.88rem;display:flex;flex-direction:column;gap:6px;border-top:1px solid rgba(255,255,255,.1);padding-top:16px}
+.acct .fx{font-size:.7rem;letter-spacing:.1em;color:#7f9e99;text-transform:uppercase}
+.main{min-width:0}
+.w{max-width:1120px;margin:0 auto;padding:0 44px}
+.sec{padding:64px 0}.sec.tight{padding:34px 0 56px}.sec.alt{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.kick{font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--teal2);margin:0 0 12px}
+.lede{font-size:1.16rem;color:var(--ink2);max-width:680px}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--teal);color:#fff;text-decoration:none;font-weight:600;padding:12px 20px;border-radius:999px;border:0;font:inherit;font-weight:600;cursor:pointer}.btn:hover{background:var(--ink);color:#fff}
+.btn.line{background:transparent;color:var(--teal);box-shadow:inset 0 0 0 1.5px var(--teal)}.btn.line:hover{background:var(--teal);color:#fff}
+.btn.coral{background:var(--coral)}.cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:24px}
+.tg{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:3px 9px;border-radius:999px;background:var(--mint);color:var(--teal);vertical-align:middle}
+.tg.lock{background:var(--coral2);color:#a2412b}.tg.sky{background:var(--sky);color:#245468}
+.crumbs{list-style:none;display:flex;gap:8px;padding:0;margin:0 0 18px;font-size:.86rem;color:var(--muted)}.crumbs li+li::before{content:"/";margin-right:8px;opacity:.5}.crumbs a{color:var(--muted)}
+.phead{padding:54px 0 30px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,var(--paper),var(--bg))}
+/* hero */
+.hero{padding:46px 0 30px;background:radial-gradient(1100px 500px at 85% 20%,var(--mint2),transparent 60%),var(--bg)}
+.herog{display:grid;grid-template-columns:1fr 1.08fr;gap:34px;align-items:center}
+.hero h1{font-size:clamp(2.4rem,4.4vw,3.7rem)}.hero h1 em{font-style:italic;color:var(--teal2)}
+.facts3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:28px}.facts3 div{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:12px 14px}.facts3 b{display:block;font-family:"Source Serif 4",serif;font-size:1.6rem;line-height:1}.facts3 span{font-size:.82rem;color:var(--muted)}
+.mapcard{background:var(--paper);border:1px solid var(--line);border-radius:28px;padding:18px 18px 12px;box-shadow:0 30px 60px -40px rgba(18,48,47,.45)}
+.maphead{display:flex;justify-content:space-between;align-items:center;font-size:.8rem;color:var(--muted);padding:2px 8px 0}
+/* arch svg */
+.arch{width:100%;height:auto;display:block}
+.arch .th{fill:var(--enamel);stroke:#b9c7c3;stroke-width:1.4;transition:fill .15s}
+.arch a:hover .th{fill:var(--mint);stroke:var(--teal2)}
+.arch .th.hl{fill:var(--mint);stroke:var(--teal2);stroke-width:2}
+.arch .th.sel{fill:var(--coral);stroke:#b6452d;stroke-width:2.4}
+.arch .fis{stroke:#d6dfdc;stroke-width:1.4;fill:none;pointer-events:none}.arch .th.sel+.fis{stroke:#ffd3c6}
+.arch .tn{font:600 12.5px "IBM Plex Mono",monospace;fill:#8aa09b}.arch .tn.sel{fill:var(--coral);font-size:15px}
+.arch .ax{font:600 11px Figtree,sans-serif;letter-spacing:.24em;fill:#a7b5b1}
+.arch .ctr1{font:600 15px Figtree,sans-serif;fill:var(--muted);letter-spacing:.04em}.arch .ctr2{font:600 40px "Source Serif 4",serif;fill:var(--ink)}.arch .ctr3{font:500 14px Figtree,sans-serif;fill:var(--ink2)}
+.arch.mini .tn{display:none}.arch.mini .ax{display:none}
+/* treatment ledger */
+.ledger{border-top:1.5px solid var(--ink)}
+.lrow{display:grid;grid-template-columns:1.5fr 130px 120px 1.3fr 96px;gap:18px;align-items:center;padding:16px 4px;border-bottom:1px solid var(--line);text-decoration:none;color:inherit}
+.lrow:hover{background:var(--paper)}.lrow b{font-family:"Source Serif 4",serif;font-size:1.15rem;font-weight:600}.lrow small{display:block;color:var(--muted);font-size:.86rem}
+.lhead{white-space:nowrap;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:700;padding:10px 4px}
+.feel{display:inline-flex;gap:4px}.stats .feel{display:inline-flex;margin:2px 0 0}.feel i{display:block;width:14px;height:14px;border-radius:50%;background:#e4e0d6}.feel i.on{background:var(--coral)}
+.feel.big i{width:22px;height:22px}
+.vbar{display:flex;gap:3px;height:14px}.vbar span{background:var(--teal2);border-radius:4px;min-width:6px}.vbar span:nth-child(2){background:#4fa79c}.vbar span:nth-child(3){background:#8cc8bb}.vbar span:nth-child(4){background:#b7dccf}
+.mins{font-family:"IBM Plex Mono",monospace;font-size:.86rem;color:var(--ink2);text-align:right}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:26px}.filters a{padding:7px 14px;border-radius:999px;background:var(--paper);border:1px solid var(--line);text-decoration:none;color:var(--ink2);font-weight:500;font-size:.92rem}.filters a.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+/* treatment detail */
+.tgrid{display:grid;grid-template-columns:1.25fr .9fr;gap:34px;align-items:start}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;margin-bottom:28px}
+.stats div{background:var(--paper);padding:16px 18px}.stats span{display:block;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:6px}.stats b{font-family:"Source Serif 4",serif;font-size:1.25rem;font-weight:600;line-height:1.2}
+.visits{display:flex;gap:10px;margin:10px 0 30px}.visit{background:var(--paper);border:1px solid var(--line);border-top:5px solid var(--teal2);border-radius:14px;padding:14px 16px;min-width:0}
+.visit:nth-child(2){border-top-color:#4fa79c}.visit:nth-child(3){border-top-color:#8cc8bb}.visit:nth-child(4){border-top-color:#b7dccf}
+.visit .vn{font:600 .74rem "IBM Plex Mono",monospace;letter-spacing:.06em;color:var(--muted)}.visit .vm{font-family:"Source Serif 4",serif;font-size:1.5rem;font-weight:600;display:block;line-height:1.1;margin:4px 0 6px}.visit p{margin:0;font-size:.93rem;color:var(--ink2)}
+.prose{font-size:1.06rem}.prose p{margin:0 0 1.05em}.prose h2{margin-top:1.4em}
+.side{position:sticky;top:24px}
+.guidecard{display:flex;gap:16px;align-items:flex-start;text-decoration:none;color:inherit;background:var(--mint2);border:1px solid var(--mint);border-radius:var(--r);padding:18px 20px;margin-top:16px}
+.guidecard .code{font:600 .8rem "IBM Plex Mono",monospace;background:var(--paper);border-radius:8px;padding:8px 9px;color:var(--teal)}
+.guidecard.locked{background:var(--coral2);border-color:#f6c8b9}
+/* chart page */
+.chartg{display:grid;grid-template-columns:1.15fr .85fr;gap:30px;align-items:start}
+.tinfo{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:16px 0 22px}.tinfo div{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:10px 12px}.tinfo span{display:block;font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:700}.tinfo b{font-weight:600}
+.hit{display:block;padding:14px 0;border-bottom:1px solid var(--line);text-decoration:none;color:inherit}.hit b{font-family:"Source Serif 4",serif;font-size:1.12rem;font-weight:600;color:var(--ink)}.hit:hover b{color:var(--coral)}.hit p{margin:4px 0 0;color:var(--ink2);font-size:.95rem}
+.grp{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-family:Figtree,sans-serif;font-weight:700;margin:30px 0 4px}
+.toothnav{display:flex;justify-content:space-between;margin-top:8px;font-size:.9rem}
+/* team */
+.people{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.person{display:flex;flex-direction:column;gap:10px;text-decoration:none;color:inherit}.person:hover{border-color:var(--teal2)}
+.ini{width:58px;height:58px;border-radius:18px;background:var(--ink);color:#fff;display:grid;place-items:center;font:600 1.2rem "Source Serif 4",serif}
+.person:nth-child(2n) .ini{background:var(--teal2)}.person:nth-child(3n) .ini{background:var(--coral)}
+.days{display:flex;gap:4px}.days span{font:600 .7rem "IBM Plex Mono",monospace;padding:3px 6px;border-radius:6px;background:#ece7dc;color:#a39d90}.days span.on{background:var(--ink);color:#fff}
+/* library */
+.shelf{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.sheet{position:relative;background:var(--paper);border:1px solid var(--line);border-radius:6px 22px 6px 6px;padding:22px 22px 18px;text-decoration:none;color:inherit;box-shadow:0 1px 0 var(--line),0 12px 24px -20px rgba(0,0,0,.4);display:flex;flex-direction:column;gap:6px;min-height:190px}
+.sheet:hover{border-color:var(--teal2);transform:translateY(-2px)}.sheet .code{font:600 .76rem "IBM Plex Mono",monospace;color:var(--muted)}.sheet b{font-family:"Source Serif 4",serif;font-size:1.18rem;font-weight:600}.sheet p{font-size:.93rem;color:var(--ink2);margin:0}.sheet .ft{margin-top:auto;display:flex;justify-content:space-between;font-size:.8rem;color:var(--muted);padding-top:8px}
+.sheet.lockd{background:repeating-linear-gradient(135deg,var(--paper),var(--paper) 10px,#faf5ec 10px,#faf5ec 20px)}
+.track{position:relative;margin:26px 0 34px;padding-top:6px}
+.track ol{list-style:none;margin:0;padding:0;display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:12px;position:relative}
+.track ol::before{content:"";position:absolute;left:8px;right:8px;top:9px;height:3px;background:linear-gradient(90deg,var(--coral),var(--teal2) 60%,var(--mint))}
+.track li{position:relative;padding-top:28px}.track li::before{content:"";position:absolute;top:2px;left:0;width:17px;height:17px;border-radius:50%;background:var(--paper);border:3px solid var(--teal2)}.track li:first-child::before{border-color:var(--coral)}
+.track b{display:block;font:600 .82rem "IBM Plex Mono",monospace;color:var(--teal);margin-bottom:4px}.track span{font-size:.92rem;color:var(--ink2);display:block;line-height:1.4}
+/* answers */
+details.qa{background:var(--paper);border:1px solid var(--line);border-radius:14px;margin-bottom:10px}details.qa summary{cursor:pointer;list-style:none;padding:16px 20px;font-family:"Source Serif 4",serif;font-size:1.12rem;font-weight:600;display:flex;justify-content:space-between;gap:20px}details.qa summary::after{content:"+";color:var(--teal2);font-family:Figtree}details.qa[open] summary::after{content:"–"}details.qa .a{padding:0 20px 16px;color:var(--ink2)}
+/* notes */
+.notes{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.note{text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:8px}.note .tbig{font:600 3.2rem/1 "Source Serif 4",serif;color:var(--coral)}.note .tbig small{font:600 .72rem Figtree,sans-serif;letter-spacing:.12em;color:var(--muted);text-transform:uppercase;display:block;margin-bottom:4px}.note b{font-family:"Source Serif 4",serif;font-size:1.2rem;font-weight:600}.note:hover b{color:var(--coral)}
+/* members band, locks */
+.band{background:var(--ink);color:#d9e6e3;border-radius:28px;padding:42px;display:grid;grid-template-columns:1.1fr 1fr;gap:34px}
+.band h2{color:#fff}.band .kick{color:#8fd3c6}.band .btn{background:var(--coral)}.band .btn.line{background:transparent;color:#fff;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.5)}
+.lockrow{display:flex;gap:12px;align-items:center;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.1);font-size:.95rem}.lockrow .tg{flex:none}
+.lockp{background:var(--paper);border:1px dashed #e3a693;border-radius:var(--r);padding:34px;max-width:760px}
+.notice{background:var(--coral2);border-radius:12px;padding:12px 16px;margin-bottom:16px;color:#8a3a26}
+label{display:block;font-weight:600;font-size:.92rem;margin-bottom:6px}
+input[type=email],input[type=password],.searchbar input{width:100%;padding:13px 15px;border:1.5px solid var(--line);border-radius:12px;font:inherit;background:#fff}
+input:focus{outline:2px solid var(--teal2);border-color:transparent}
+.searchbar{display:flex;gap:10px;max-width:640px;margin-top:20px}.searchbar .btn{flex:none}
+/* desk */
+.board{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.col{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:16px}.col h3{font-size:1rem;display:flex;justify-content:space-between}
+.item{border:1px solid var(--line);border-left:4px solid var(--teal2);border-radius:10px;padding:10px 12px;margin-top:10px;background:#fff;font-size:.93rem}.item.late{border-left-color:var(--coral)}.item.done{opacity:.55;border-left-color:#bbb}.item small{display:block;color:var(--muted);font-size:.8rem}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:26px}.kpis div{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:16px}.kpis b{font:600 2rem/1 "Source Serif 4",serif;display:block}.kpis span{font-size:.84rem;color:var(--muted)}
+/* visit */
+.steps{counter-reset:s;display:grid;gap:0;border-left:3px solid var(--mint);margin-left:10px}
+.step{position:relative;padding:0 0 26px 30px}.step::before{counter-increment:s;content:counter(s);position:absolute;left:-17px;top:-2px;width:31px;height:31px;border-radius:50%;background:var(--teal);color:#fff;display:grid;place-items:center;font:600 .9rem "IBM Plex Mono",monospace}
+.step b{font-family:"Source Serif 4",serif;font-size:1.15rem}.step .mins{text-align:left;display:inline-block;margin-left:8px}
+.hours{width:100%;border-collapse:collapse;font-size:.96rem}.hours td{padding:9px 6px;border-bottom:1px solid var(--line)}.hours td:last-child{text-align:right;font-family:"IBM Plex Mono",monospace;font-size:.88rem}.hours tr.today td{font-weight:700;color:var(--teal)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:34px}
+.foot{border-top:1px solid var(--line);padding:30px 0 40px;font-size:.88rem;color:var(--muted)}.foot .w{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+@media (max-width:1100px){.shell{grid-template-columns:240px 1fr;background:linear-gradient(90deg,var(--ink) 240px,transparent 240px)}.w{padding:0 28px}.lrow{grid-template-columns:1.4fr 110px 1fr 70px}.lrow .vcol{display:none}}
+@media (max-width:860px){
+ .shell{display:block;background:none}.rail{position:static;height:auto;padding:16px 18px;gap:12px}
+ .rail nav ul{flex-direction:row;overflow-x:auto;gap:4px;padding-bottom:4px;scrollbar-width:none}.rail nav a{white-space:nowrap;padding:7px 11px;background:rgba(255,255,255,.07)}
+ .callcard,.acct .fx{display:none}.acct{margin:0;flex-direction:row;flex-wrap:wrap;gap:14px;padding-top:10px}
+ .w{padding:0 18px}.herog,.tgrid,.chartg,.band,.two{grid-template-columns:1fr}.people,.shelf,.notes,.board,.kpis{grid-template-columns:1fr}.kpis{grid-template-columns:1fr 1fr}
+ .lrow{grid-template-columns:1fr auto;gap:8px}.lrow .fcol,.lrow .vcol{display:none}.lhead{white-space:nowrap;display:none}
+ .stats{grid-template-columns:1fr 1fr}.visits{flex-direction:column}.sec{padding:44px 0}.band{padding:26px}.facts3{grid-template-columns:repeat(3,1fr)}.side{position:static}
+ .track ol{grid-auto-flow:row;grid-auto-columns:auto}.track ol::before{left:8px;right:auto;top:8px;bottom:8px;width:3px;height:auto;background:linear-gradient(180deg,var(--coral),var(--teal2) 60%,var(--mint))}.track li{padding:0 0 0 30px}.track li::before{top:2px}
+}
+</style></head><body>{%- assign todayn = "now" | date: "%Y%m%d" | plus: 0 -%}{%- assign todays = "now" | date: "%Y-%m-%d" -%}{%- assign nows = todays | date: "%s" | plus: 0 -%}{%- assign nowh = "now" | date: "%H" | plus: 0 -%}{%- assign wdn = "now" | date: "%w" | plus: 0 -%}{%- assign wds = "now" | date: "%a" -%}{%- assign tdate = "now" | date: "%A, %B %-d" -%}{%- assign in_pt=false -%}{%- assign in_tm=false -%}{%- for g in CurrentUser.UserGroups -%}{%- if g == "patients" -%}{%- assign in_pt=true -%}{%- endif -%}{%- if g == "team" -%}{%- assign in_tm=true -%}{%- assign in_pt=true -%}{%- endif -%}{%- endfor -%}{%- if CurrentUser.IsAdmin -%}{%- assign in_pt=true -%}{%- assign in_tm=true -%}{%- endif -%}{%- assign isopen=false -%}{%- if wdn >= 1 and wdn <= 4 and nowh >= 8 and nowh < 18 -%}{%- assign isopen=true -%}{%- endif -%}{%- if wdn == 5 and nowh >= 8 and nowh < 15 -%}{%- assign isopen=true -%}{%- endif -%}{%- if wdn == 6 and nowh >= 8 and nowh < 12 -%}{%- assign isopen=true -%}{%- endif -%}
+<a class="skip" href="#main">Skip to content</a>
+<div class="shell"><aside class="rail"><a class="brand" href="{{ PathBase }}/" aria-label="Merriwold Dental, home"><svg width="44" height="44" viewBox="0 0 44 44" aria-hidden="true"><rect width="44" height="44" rx="13" fill="#e8664a"/><path d="M13 12c3-2.4 6-1.6 9 0 3-1.6 6-2.4 9 0 3 2.6 2.4 8-.6 12.4-1.2 1.8-1.6 4.4-2.2 7.6-.5 2.6-3 2.6-3.4.1L23.6 26c-.3-1.6-2.9-1.6-3.2 0l-1.2 6.1c-.4 2.5-2.9 2.5-3.4-.1-.6-3.2-1-5.8-2.2-7.6C10.6 20 10 14.6 13 12z" fill="#fff"/></svg><span><b>Merriwold Dental</b><small>Tansey Ford · since 2014</small></span></a>
+<nav aria-label="Main"><ul>{%- assign menu = get_main_menu() -%}{% for mi in menu.MenuItems %}<li><a href="{{ mi.Url }}">{{ mi.Label }}</a></li>{% endfor %}<li><a href="{{ PathBase }}/search">Search</a></li></ul></nav>
+<div class="callcard"><span class="openchip{% unless isopen %} closed{% endunless %}"><i></i>{% if isopen %}Open now{% else %}Closed now{% endif %}</span><b>555-0181</b>Mon–Thu 8–6 · Fri 8–3 · Sat 8–12<br>Same-day slots for toothache: call before 9.<br><a href="{{ PathBase }}/visit" style="text-decoration:underline">Your first visit</a></div>
+<div class="acct">{% if CurrentUser.IsAuthenticated %}<a href="{{ PathBase }}/patients">Patient room</a>{% if in_tm %}<a href="{{ PathBase }}/desk">Team huddle</a>{% endif %}<a href="{{ PathBase }}/account/logout">Sign out {{ CurrentUser.FirstName }}</a>{% else %}<a href="{{ PathBase }}/account/login?returnUrl=/patients">Patient sign-in</a>{% endif %}<span class="fx">Fictional · a Raytha example</span></div></aside>
+<div class="main"><main id="main">{% renderbody %}</main>
+<footer class="foot"><div class="w"><span>© 2026 Merriwold Dental (fictional) · 22 Ferry Street, Tansey Ford · hello@merriwold.example · a Raytha example site with no booking, sign-up or payment forms</span><span>{%- assign fm = get_menu("footer") -%}{% for mi in fm.MenuItems %}<a href="{{ mi.Url }}" style="margin-left:14px">{{ mi.Label }}</a>{% endfor %}</span></div></footer></div></div></body></html>

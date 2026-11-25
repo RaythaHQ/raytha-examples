@@ -1,0 +1,39 @@
+[
+ {
+  "title": "Merriwold Dental",
+  "routePath": "home",
+  "template": "md_home",
+  "sections": "pages/home.json",
+  "home": true
+ },
+ {
+  "title": "Tooth map",
+  "routePath": "chart",
+  "template": "md_chart",
+  "sections": "pages/chart.json"
+ },
+ {
+  "title": "Your first visit",
+  "routePath": "visit",
+  "template": "md_visit",
+  "sections": "pages/visit.json"
+ },
+ {
+  "title": "Patient room",
+  "routePath": "patients",
+  "template": "md_patients",
+  "sections": "pages/patients.json"
+ },
+ {
+  "title": "Team huddle",
+  "routePath": "desk",
+  "template": "md_desk",
+  "sections": "pages/desk.json"
+ },
+ {
+  "title": "Search",
+  "routePath": "search",
+  "template": "md_search",
+  "sections": "pages/search.json"
+ }
+]

@@ -1,0 +1,25 @@
+{
+ "slug": "merriwold-dental",
+ "name": "Merriwold Dental",
+ "base": "http://localhost:5426",
+ "viewport": [1440, 810],
+ "output": [1920, 1080],
+ "colorScheme": "light",
+ "login": {"path": "/account/login", "emailEnv": "SITE_USER_EMAIL", "passwordEnv": "SITE_USER_PASSWORD"},
+ "title": {"kicker": "Raytha use case", "heading": "Merriwold Dental", "subheading": "A dental office website: a tooth map of all 32 teeth drawn on the server, treatments with visits, chair time and how they feel, aftercare guides, and a patients-only room.", "hold": 1.3},
+ "end": {"heading": "Built with Raytha", "subheading": "Open-source .NET CMS. Get the brief, screenshots and a one-command rebuild kit.", "url": "raytha.com/use-cases/merriwold-dental", "hold": 2.3},
+ "scenes": [
+  {"url": "/", "caption": "Home: a chart of all 32 teeth, every tooth a link, and the treatment ledger with visits, chair time and how it feels",
+   "actions": [{"hold": 1.8, "poster": true}, {"scroll": 640, "dur": 1.3}, {"hold": 1.0}]},
+  {"url": "/chart?t=30", "caption": "Pick tooth 30: the server lists every treatment for that tooth, with answers and notes about it",
+   "actions": [{"hold": 1.4}, {"scroll": 380, "dur": 1.1}, {"hold": 0.7}]},
+  {"url": "/chart?f=cosmetic", "caption": "Pick a family and the teeth it covers light up", "actions": [{"hold": 1.4}]},
+  {"url": "/treatments/crown", "caption": "A treatment: visit by visit with chair minutes, an honest how-it-feels rating, and where in the mouth",
+   "actions": [{"hold": 1.3}, {"scroll": 360, "dur": 1.0}, {"hold": 0.7}]},
+  {"url": "/library/after-wisdom-tooth-removal", "caption": "Signed out, aftercare stays on the server", "actions": [{"hold": 1.1}]},
+  {"url": "/library/after-wisdom-tooth-removal", "signin": true, "caption": "Signed in as a patient: aftercare hour by hour, then the patient room",
+   "actions": [{"hold": 1.6}, {"scroll": 260, "dur": 1.0}, {"hold": 0.6}]},
+  {"url": "/", "phone": true, "phoneCaption": {"kicker": "Responsive", "text": "The same pages on a phone"},
+   "actions": [{"hold": 0.5}, {"scroll": 1200, "dur": 2.0}, {"hold": 0.4}]}
+ ]
+}
