@@ -1,0 +1,36 @@
+{
+ "name": "Wyndleford Parish Church",
+ "theme": "wyndleford",
+ "types": [
+  "sermons",
+  "seasons",
+  "events",
+  "ministries",
+  "groups",
+  "people",
+  "households",
+  "prayers",
+  "rota"
+ ],
+ "detailTemplates": {
+  "sermons": "wp_detail_sermons",
+  "seasons": "wp_detail_seasons",
+  "events": "wp_detail_events",
+  "ministries": "wp_detail_ministries",
+  "groups": "wp_detail_groups",
+  "people": "wp_detail_people",
+  "households": "wp_detail_households",
+  "prayers": "wp_detail_prayers",
+  "rota": "wp_detail_rota"
+ },
+ "groups": [
+  {
+   "developerName": "members",
+   "label": "Wyndleford members"
+  },
+  {
+   "developerName": "clergy",
+   "label": "Wyndleford clergy and pastoral team"
+  }
+ ]
+}

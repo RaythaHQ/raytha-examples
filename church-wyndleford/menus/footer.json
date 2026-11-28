@@ -1,0 +1,26 @@
+{
+ "developerName": "footer",
+ "label": "Footer",
+ "items": [
+  {
+   "label": "Members",
+   "link": "/members"
+  },
+  {
+   "label": "Prayer list",
+   "link": "/prayer"
+  },
+  {
+   "label": "Directory",
+   "link": "/directory"
+  },
+  {
+   "label": "Rota",
+   "link": "/rota"
+  },
+  {
+   "label": "Search",
+   "link": "/search"
+  }
+ ]
+}

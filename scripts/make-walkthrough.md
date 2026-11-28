@@ -84,6 +84,7 @@ fields), and link the raytha.com copy from the example's README.
 | Noor Halvorsen for County Commission | [walkthrough.json](../political-campaign-halvorsen/walkthrough.json) | [use case page](https://raytha.com/use-cases/halvorsen-for-wrenfield#walkthrough) · [MP4](https://raytha.com/raytha/media-items/objectkey/xWLGSPq93UCeEqt7S5kOJg_halvorsen_for_wrenfield_walkthrough.mp4) |
 | Halflight | [walkthrough.json](../podcast-magazine-halflight/walkthrough.json) | [use case page](https://raytha.com/use-cases/halflight-magazine#walkthrough) · [MP4](https://raytha.com/raytha/media-items/objectkey/MafyEFgnzU6C-jWgmYdqfA_halflight_magazine_walkthrough.mp4) |
 | Merriwold Dental | [walkthrough.json](../dental-office-merriwold/walkthrough.json) | [use case page](https://raytha.com/use-cases/merriwold-dental#walkthrough) · [MP4](https://raytha.com/raytha/media-items/objectkey/an5zVTDQ7UGMPhaA648vuA_merriwold_dental_walkthrough.mp4) |
+| Wyndleford Parish Church | [walkthrough.json](../church-wyndleford/walkthrough.json) | [use case page](https://raytha.com/use-cases/wyndleford-parish-church#walkthrough) · [MP4](https://raytha.com/raytha/media-items/objectkey/NqYWLpm2eUWg2TJT1m61gA_wyndleford_parish_church_walkthrough.mp4) |
 
 ## Shot list
 

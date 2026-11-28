@@ -1,0 +1,26 @@
+{
+ "slug": "wyndleford-parish-church",
+ "name": "Wyndleford Parish Church",
+ "base": "http://localhost:5427",
+ "viewport": [1440, 810],
+ "output": [1920, 1080],
+ "colorScheme": "light",
+ "login": {"path": "/account/login", "emailEnv": "SITE_USER_EMAIL", "passwordEnv": "SITE_USER_PASSWORD"},
+ "title": {"kicker": "Raytha use case", "heading": "Wyndleford Parish Church", "subheading": "A church website that follows the church year: Sundays with readings and hymns, a calendar, ministries and small groups, and members-only directory, prayer list and rota.", "hold": 1.3},
+ "end": {"heading": "Built with Raytha", "subheading": "Open-source .NET CMS. Get the brief, screenshots and a one-command rebuild kit.", "url": "raytha.com/use-cases/wyndleford-parish-church", "hold": 2.3},
+ "scenes": [
+  {"url": "/", "caption": "Home: this Sunday's bulletin, with the readings, hymns and preacher, under a ribbon of the whole church year",
+   "actions": [{"hold": 1.8, "poster": true}, {"scroll": 700, "dur": 1.3}, {"hold": 1.0}]},
+  {"url": "/year", "caption": "The church year as a wheel, drawn on the server from the seasons and their dates",
+   "actions": [{"hold": 0.6}, {"scroll": 330, "dur": 0.9}, {"hold": 1.0}]},
+  {"url": "/year?s=lent", "caption": "Pick a season and the whole site takes its colors", "actions": [{"scroll": 330, "dur": 0.1}, {"hold": 1.6}]},
+  {"url": "/calendar?m=2026-12", "caption": "The calendar: a month grid with each day's season and the name of every Sunday",
+   "actions": [{"hold": 0.6}, {"scroll": 330, "dur": 1.0}, {"hold": 0.9}]},
+  {"url": "/sundays/ten-bridesmaids-and-a-long-night", "caption": "A Sunday: readings, hymns, the preacher and the sermon text", "actions": [{"hold": 1.2}, {"scroll": 300, "dur": 0.9}, {"hold": 0.5}]},
+  {"url": "/members", "caption": "Signed out, the directory, prayer list and rota stay on the server", "actions": [{"hold": 1.2}]},
+  {"url": "/rota", "signin": true, "caption": "Signed in as a member: the volunteer rota, with your own slots and swaps wanted",
+   "actions": [{"hold": 1.2}, {"scroll": 300, "dur": 1.0}, {"hold": 0.8}]},
+  {"url": "/", "phone": true, "phoneCaption": {"kicker": "Responsive", "text": "The same pages on a phone"},
+   "actions": [{"hold": 0.5}, {"scroll": 1300, "dur": 2.0}, {"hold": 0.4}]}
+ ]
+}

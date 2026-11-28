@@ -1,0 +1,27 @@
+[
+ {
+  "title": "Wyndleford Parish Church",
+  "routePath": "home",
+  "template": "wp_home",
+  "sections": "pages/home.json",
+  "home": true
+ },
+ {
+  "title": "Plan a visit",
+  "routePath": "visit",
+  "template": "wp_visit",
+  "sections": "pages/visit.json"
+ },
+ {
+  "title": "Members",
+  "routePath": "members",
+  "template": "wp_members",
+  "sections": "pages/members.json"
+ },
+ {
+  "title": "Search",
+  "routePath": "search",
+  "template": "wp_search",
+  "sections": "pages/search.json"
+ }
+]
